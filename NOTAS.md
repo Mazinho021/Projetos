@@ -6,6 +6,8 @@ Atualizado em **25 de outubro de 2026**, depois da primeira prova completa do ep
 
 Produzir uma série ficcional de suspense para TikTok, com foco em retenção, continuidade entre episódios e receita por visualizações. O objetivo do criador não é vender curso. A conta informada tem aproximadamente 19 mil seguidores; a elegibilidade e a receita do programa de monetização ainda não foram verificadas.
 
+**Formato definido pelo criador:** cenas ilustradas estáticas em sequência, com movimento de câmera, cartões de TV/celular, legendas e narração. Não haverá animação corporal nem 3D. A publicação está prevista no **TikTok** e no **Instagram Reels**, com o mesmo vídeo vertical.
+
 O título de trabalho é **A parte que faltou**. O protagonista é **Zinho**, participante de um assalto que encontra roupas velhas na mochila da divisão enquanto seu rosto aparece no noticiário. O episódio 1, **A mochila**, termina com o amigo à porta e a pergunta “Você deixa ele entrar?”. O arco proposto tem cinco episódios: A mochila, A dívida, A divisão, A proposta e O preço.
 
 A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](crimecarton-analise/zinho-referencia-v3.png): personagem adulto, cabelo preto cacheado no topo e laterais em degradê, jaqueta azul-marinho com capuz vermelho e faixas brancas. A versão 4 com tranças foi descartada pelo usuário. As versões anteriores permanecem arquivadas. Manter o traço cartoon 2D, a identidade e o figurino da versão 3 nas próximas cenas.
@@ -25,21 +27,19 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 ## Em andamento e pendências
 
 - **A prova v1 aguarda revisão do criador**: ritmo, cortes, legendas, pausa final e escolha dos enquadramentos.
-- O renderizador produz um **animatic**, isto é, uma prova de ritmo com ilustrações, câmera e elementos gráficos. Ainda não foi gerada animação corporal contínua de Zinho abrindo a mochila, retirando roupas ou caminhando.
-- O retrato da TV e da comparação é um recorte da cena 1, com Zinho olhando para baixo. Uma imagem frontal dedicada deixaria mais clara a pista de que a foto enviada ao amigo é a mesma do jornal.
-- O marcador “A PARTE QUE FALTOU” no topo fica sob as abas do TikTok. Decidir na versão final se ele sai ou muda de lugar.
+- **Retrato frontal do Zinho**, pedido pelo criador para a TV e a comparação: hoje é um recorte da cena 1, com Zinho olhando para baixo. A nova imagem deve ser gerada onde houver gerador de imagens (o Claude Code desta sessão não tem) e salva como `crimecarton-analise/episodio-01/retrato-zinho.png`. O renderizador passa a usá-la automaticamente quando o arquivo existe.
+- O marcador “A PARTE QUE FALTOU” no topo fica sob as abas do TikTok e o cabeçalho dos Reels. Recomendação: tirá-lo na versão final e pôr o nome da série e o episódio no texto do post. Aguarda decisão do criador.
 - O amigo aparece na cena 9, mas ainda não tem ficha visual própria. Criá-la a partir dessa cena antes do episódio 2.
 - Trilha, efeitos sonoros e mixagem final ainda precisam ser definidos e revisados. Os tempos de 75–85 segundos nos documentos iniciais eram alvos de planejamento; a sincronização deve seguir a locução real de 71,28 segundos.
-- Houve estimativa de geração de um teste de vídeo de 8 segundos, mas essa geração não foi autorizada nem executada. Qualquer serviço pago adicional precisa de orçamento e autorização próprios.
+- O teste de vídeo de 8 segundos estimado no Codex não será feito, porque o formato não usa animação. Qualquer serviço pago adicional precisa de orçamento e autorização próprios.
 - Não houve publicação do piloto no TikTok. O formato e as hipóteses de retenção ainda precisam ser testados; os materiais não comprovam monetização ou alcance.
 
 ## Como retomar
 
 1. Revisar a prova v1 e anotar os ajustes de ritmo, cortes, legendas e final.
-2. Aplicar os ajustes em `montagem/timeline.json`, usando os tempos de `alinhamento-narracao.json`, e renderizar a v2. Os campos da timeline estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md).
+2. Gerar o retrato frontal `retrato-zinho.png`, aplicar os ajustes em `montagem/timeline.json` (usando os tempos de `alinhamento-narracao.json`) e renderizar a v2. Os campos da timeline estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md).
 3. Definir trilha, efeitos sonoros e mixagem.
-4. Decidir quais planos precisam de movimento corporal e produzir esses planos mantendo a referência visual v3. Geração paga só com orçamento e autorização próprios.
-5. Revisar a versão final, exportar com `--clean` e usar os resultados reais de retenção para orientar os episódios seguintes.
+4. Revisar a versão final, exportar com `--clean` e usar os resultados reais de retenção no TikTok e nos Reels para orientar os episódios seguintes.
 
 Requisitos locais do renderizador: **Python 3 com Pillow, FFmpeg com libass, FFprobe e fontes DejaVu Sans**. Os caminhos de fontes usados no script são os convencionais de Linux em `/usr/share/fonts/truetype/dejavu/`; adaptar se necessário em outro sistema. O alinhamento precisa também de faster-whisper, instalado à parte conforme o README da montagem.
 

@@ -87,6 +87,10 @@ def rounded_image(target, image, box, radius=20):
 
 def face_photo():
     # Exactly the same fictional portrait is used on the TV and in the earlier message.
+    # A dedicated frontal portrait, when present, replaces the crop of scene 01.
+    portrait = EPISODE / 'retrato-zinho.png'
+    if portrait.exists():
+        return ImageOps.fit(Image.open(portrait).convert('RGB'), (520, 440), Image.Resampling.LANCZOS, centering=(.5, .4))
     im = Image.open(EPISODE / 'cena-01-base.png').convert('RGB')
     crop = im.crop((int(im.width*.21), int(im.height*.13), int(im.width*.81), int(im.height*.48)))
     return ImageOps.fit(crop, (520, 440), Image.Resampling.LANCZOS)

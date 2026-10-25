@@ -20,10 +20,13 @@
     "jobId": "mcp_media_678267053bf243d53bc29ddaa43e0876a7fd2cba0c873f85cb39142a45f074b5"
   },
   "animacao": {
-    "status": "planejada, ainda não gerada",
-    "teste_segundos": 8,
-    "nota": "O teste final deve receber a imagem base como referência. A cotação de texto para vídeo é somente uma estimativa de preço, não um pedido pronto para execução."
+    "status": "não será feita: o criador definiu o formato como cenas ilustradas estáticas com narração, sem animação corporal ou 3D"
   },
+  "retrato_tv": {
+    "arquivo": "retrato-zinho.png",
+    "status": "a gerar: retrato frontal do Zinho para a TV e a comparação; até lá o renderizador usa um recorte da cena 1"
+  },
+  "publicacao": ["TikTok", "Instagram Reels"],
   "montagem": {
     "status": "prova v1 completa renderizada; aguarda revisão do criador",
     "alinhamento": "montagem/alinhamento-narracao.json",
@@ -34,5 +37,5 @@
     "planos": 20,
     "legendas": 40
   },
-  "video_final": "prova v1 com ilustrações, câmera e grafismos; animação corporal ainda não gerada"
+  "video_final": "prova v1 com ilustrações, câmera, grafismos, legendas e narração"
 }

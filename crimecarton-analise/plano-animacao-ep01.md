@@ -1,5 +1,7 @@
 # Plano de animação — Zinho, episódio 1: A mochila
 
+> **Atualização (25/10/2026):** o criador definiu o formato como cenas ilustradas estáticas com narração, sem animação corporal ou 3D. As partes deste plano sobre movimento do personagem e o teste de oito segundos ficam como histórico; o estado atual está em [NOTAS.md](../NOTAS.md).
+
 ## Base de continuidade
 
 Usar [a ficha v3 do Zinho](zinho-referencia-v3.png): cabelo preto cacheado com volume no topo e laterais em degradê, rosto sem barba, jaqueta azul-marinho com capuz e cordões vermelhos, faixas brancas nas mangas, jeans escuro e tênis claros. A versão com tranças não é a referência atual.

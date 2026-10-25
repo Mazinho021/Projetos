@@ -61,7 +61,7 @@ Campos opcionais das cenas:
 
 Nas legendas, `"voice": "amigo"` usa itálico âmbar para as falas do amigo, já que a mesma voz narra tudo. As legendas ficam acima da área inferior em que o TikTok sobrepõe legenda e nome de usuário, e os cartões são deslocados para cima para deixar espaço a elas.
 
-Ativos esperados na pasta pai: `cena-01-base.png`, `cena-03-roupas.png`, `cena-07-audio.png`, `cena-09-porta.png`. Na ausência de um ativo, o script avisa e usa a primeira cena como fallback provisório.
+Ativos esperados na pasta pai: `cena-01-base.png`, `cena-03-roupas.png`, `cena-07-audio.png`, `cena-09-porta.png`. Na ausência de um ativo, o script avisa e usa a primeira cena como fallback provisório. Opcionalmente, `retrato-zinho.png`, um retrato frontal em formato horizontal, substitui o recorte da cena 1 na TV e na comparação de fotos.
 
 ## Revisão antes de publicar
 
