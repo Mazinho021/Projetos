@@ -1,8 +1,9 @@
 {
-  "output": "/workspace/crimecarton-analise/episodio-01/montagem/smoke-audio.mp4",
-  "duration": 2.0,
-  "audio_duration": 2.0,
-  "scenes": 1,
-  "captions": 1,
+  "output": "crimecarton-analise/episodio-01/piloto-zinho-ep01-v1.mp4",
+  "duration": 72.48,
+  "audio_duration": 71.28,
+  "tail": 1.2,
+  "scenes": 20,
+  "captions": 40,
   "type": "illustrated animatic with camera motion and graphics; no generated body animation"
 }

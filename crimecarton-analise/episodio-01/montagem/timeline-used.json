@@ -1,17 +1,418 @@
 {
+  "timing_status": "aligned_to_voice",
+  "alignment": "alinhamento-narracao.json",
+  "audio": "narracao-original.wav",
+  "tail": 1.2,
   "scenes": [
     {
       "start": 0,
-      "end": 2,
-      "kind": "audio",
+      "end": 4.88,
+      "kind": "art",
+      "asset": "cena-01-base.png",
+      "zoom": 0.06
+    },
+    {
+      "start": 4.88,
+      "end": 8.3,
+      "kind": "art",
+      "asset": "cena-01-base.png",
+      "crop": [
+        0.25,
+        0.03,
+        0.85,
+        0.63
+      ],
+      "zoom": 0.05
+    },
+    {
+      "start": 8.3,
+      "end": 14.35,
+      "kind": "tv",
+      "asset": "cena-01-base.png"
+    },
+    {
+      "start": 14.35,
+      "end": 18.41,
+      "kind": "art",
+      "asset": "cena-01-base.png",
+      "crop": [
+        0.1,
+        0.36,
+        0.75,
+        1.0
+      ],
+      "zoom": 0.04
+    },
+    {
+      "start": 18.41,
+      "end": 19.82,
+      "kind": "art",
+      "asset": "cena-03-roupas.png",
+      "crop": [
+        0.0,
+        0.4,
+        0.6,
+        1.0
+      ],
+      "zoom": 0.03
+    },
+    {
+      "start": 19.82,
+      "end": 21.4,
+      "kind": "art",
+      "asset": "cena-03-roupas.png",
+      "crop": [
+        0.35,
+        0.38,
+        0.95,
+        0.98
+      ],
+      "zoom": 0.03
+    },
+    {
+      "start": 21.4,
+      "end": 25.43,
+      "kind": "art",
+      "asset": "cena-03-roupas.png",
+      "zoom": 0.05,
+      "direction": "out"
+    },
+    {
+      "start": 25.43,
+      "end": 26.65,
+      "kind": "art",
+      "asset": "cena-03-roupas.png",
+      "crop": [
+        0.225,
+        0.025,
+        0.775,
+        0.575
+      ],
+      "zoom": 0.04
+    },
+    {
+      "start": 26.65,
+      "end": 31.58,
+      "kind": "art",
+      "asset": "cena-07-audio.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 31.58,
+      "end": 34.98,
+      "kind": "chat",
+      "asset": "cena-07-audio.png",
+      "status": "sent"
+    },
+    {
+      "start": 34.98,
+      "end": 40.48,
+      "kind": "art",
+      "asset": "cena-07-audio.png",
+      "crop": [
+        0.22,
+        0.03,
+        0.82,
+        0.63
+      ],
+      "zoom": 0.05
+    },
+    {
+      "start": 40.48,
+      "end": 43.35,
+      "kind": "chat",
+      "asset": "cena-07-audio.png",
+      "status": "seen"
+    },
+    {
+      "start": 43.35,
+      "end": 45.76,
+      "kind": "tv",
       "asset": "cena-07-audio.png"
+    },
+    {
+      "start": 45.76,
+      "end": 52.23,
+      "kind": "comparison",
+      "asset": "cena-07-audio.png"
+    },
+    {
+      "start": 52.23,
+      "end": 59.15,
+      "kind": "audio",
+      "asset": "cena-07-audio.png",
+      "play": [
+        53.854,
+        58.376
+      ]
+    },
+    {
+      "start": 59.15,
+      "end": 61.07,
+      "kind": "audio",
+      "asset": "cena-07-audio.png",
+      "crop": [
+        0.22,
+        0.03,
+        0.82,
+        0.63
+      ],
+      "play": [
+        59.55,
+        64.07
+      ]
+    },
+    {
+      "start": 61.07,
+      "end": 64.29,
+      "kind": "art",
+      "asset": "cena-09-porta.png",
+      "crop": [
+        0.0,
+        0.08,
+        0.6,
+        0.68
+      ],
+      "zoom": 0.04
+    },
+    {
+      "start": 64.29,
+      "end": 66.59,
+      "kind": "art",
+      "asset": "cena-09-porta.png",
+      "zoom": 0.05
+    },
+    {
+      "start": 66.59,
+      "end": 69.98,
+      "kind": "art",
+      "asset": "cena-09-porta.png",
+      "crop": [
+        0.5,
+        0.11,
+        1.0,
+        0.61
+      ],
+      "zoom": 0.05
+    },
+    {
+      "start": 69.98,
+      "end": 72.48,
+      "kind": "art",
+      "asset": "cena-09-porta.png",
+      "crop": [
+        0.4,
+        0.4,
+        1.0,
+        1.0
+      ],
+      "zoom": 0.06
     }
   ],
   "captions": [
     {
-      "start": 0.1,
-      "end": 1.9,
-      "text": "Eu estava devendo para eles."
+      "start": 0.21,
+      "end": 2.42,
+      "text": "O assalto deu certo."
+    },
+    {
+      "start": 2.42,
+      "end": 4.95,
+      "text": "Seu parceiro ficou\ncom dez milhões."
+    },
+    {
+      "start": 4.95,
+      "end": 7.68,
+      "text": "Você ficou com o\nrosto no jornal."
+    },
+    {
+      "start": 8.37,
+      "end": 10.3,
+      "text": "Na tela, seu nome:"
+    },
+    {
+      "start": 10.3,
+      "end": 11.74,
+      "text": "Zinho."
+    },
+    {
+      "start": 11.74,
+      "end": 13.8,
+      "text": "Primeiro suspeito\nidentificado."
+    },
+    {
+      "start": 14.42,
+      "end": 15.37,
+      "text": "Você baixa o volume"
+    },
+    {
+      "start": 15.37,
+      "end": 16.43,
+      "text": "e abre a mochila"
+    },
+    {
+      "start": 16.43,
+      "end": 17.81,
+      "text": "que recebeu na divisão."
+    },
+    {
+      "start": 18.48,
+      "end": 19.89,
+      "text": "Roupa velha."
+    },
+    {
+      "start": 19.89,
+      "end": 20.94,
+      "text": "Nenhuma nota."
+    },
+    {
+      "start": 21.47,
+      "end": 22.79,
+      "text": "Confere os bolsos,"
+    },
+    {
+      "start": 22.79,
+      "end": 23.51,
+      "text": "revira o fundo,"
+    },
+    {
+      "start": 23.51,
+      "end": 24.99,
+      "text": "espalha tudo no chão."
+    },
+    {
+      "start": 25.5,
+      "end": 26.16,
+      "text": "Nada."
+    },
+    {
+      "start": 26.72,
+      "end": 27.69,
+      "text": "Há vinte minutos,"
+    },
+    {
+      "start": 27.69,
+      "end": 29.43,
+      "text": "vocês ainda\nestavam juntos."
+    },
+    {
+      "start": 29.43,
+      "end": 31.19,
+      "text": "Agora, ninguém atende."
+    },
+    {
+      "start": 31.65,
+      "end": 33.23,
+      "text": "Você manda uma foto\nda mochila"
+    },
+    {
+      "start": 33.23,
+      "end": 35.05,
+      "text": "para o amigo que\ncolocou você no grupo."
+    },
+    {
+      "start": 35.05,
+      "end": 37.54,
+      "text": "O cara que cresceu\nna sua rua."
+    },
+    {
+      "start": 37.54,
+      "end": 38.57,
+      "text": "Que prometeu:"
+    },
+    {
+      "start": 38.57,
+      "end": 40.07,
+      "text": "“Eu garanto a sua parte”.",
+      "voice": "amigo"
+    },
+    {
+      "start": 40.55,
+      "end": 41.91,
+      "text": "Ele visualiza."
+    },
+    {
+      "start": 41.91,
+      "end": 42.84,
+      "text": "Não responde."
+    },
+    {
+      "start": 43.42,
+      "end": 45.27,
+      "text": "Você olha de novo\npara a televisão"
+    },
+    {
+      "start": 45.27,
+      "end": 47.45,
+      "text": "e reconhece a fotografia."
+    },
+    {
+      "start": 47.45,
+      "end": 49.09,
+      "text": "Foi a mesma\nque enviou a ele"
+    },
+    {
+      "start": 49.09,
+      "end": 51.82,
+      "text": "quando disseram que\nprecisavam conhecer você."
+    },
+    {
+      "start": 52.3,
+      "end": 53.2,
+      "text": "Chega um áudio."
+    },
+    {
+      "start": 53.8,
+      "end": 55.75,
+      "text": "“Eu estava devendo\npara eles.",
+      "voice": "amigo"
+    },
+    {
+      "start": 55.75,
+      "end": 57.01,
+      "text": "Disseram que\na dívida acabava",
+      "voice": "amigo"
+    },
+    {
+      "start": 57.01,
+      "end": 58.63,
+      "text": "se eu colocasse alguém\nno meu lugar.”",
+      "voice": "amigo"
+    },
+    {
+      "start": 59.22,
+      "end": 60.71,
+      "text": "Você escuta outra vez."
+    },
+    {
+      "start": 61.14,
+      "end": 62.47,
+      "text": "Antes de responder,"
+    },
+    {
+      "start": 62.47,
+      "end": 63.8,
+      "text": "alguém bate à porta."
+    },
+    {
+      "start": 64.36,
+      "end": 66.16,
+      "text": "Pela janela,\nvocê vê seu amigo."
+    },
+    {
+      "start": 66.66,
+      "end": 68.43,
+      "text": "É o homem que\nacabou de admitir"
+    },
+    {
+      "start": 68.43,
+      "end": 69.6,
+      "text": "que vendeu seu nome."
+    },
+    {
+      "start": 70.05,
+      "end": 72.48,
+      "text": "Você deixa ele entrar?"
     }
   ]
 }

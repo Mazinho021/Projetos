@@ -24,5 +24,15 @@
     "teste_segundos": 8,
     "nota": "O teste final deve receber a imagem base como referência. A cotação de texto para vídeo é somente uma estimativa de preço, não um pedido pronto para execução."
   },
-  "video_final": "prova de ritmo em montagem; animação corporal ainda não gerada"
+  "montagem": {
+    "status": "prova v1 completa renderizada; aguarda revisão do criador",
+    "alinhamento": "montagem/alinhamento-narracao.json",
+    "timeline": "montagem/timeline.json",
+    "arquivo": "piloto-zinho-ep01-v1.mp4",
+    "duracao_segundos": 72.48,
+    "pausa_final_segundos": 1.2,
+    "planos": 20,
+    "legendas": 40
+  },
+  "video_final": "prova v1 com ilustrações, câmera e grafismos; animação corporal ainda não gerada"
 }

@@ -19,6 +19,10 @@ EPISODE = HERE.parent
 REGULAR = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 BOLD = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 W, H = 720, 1280
+# TikTok draws its caption and buttons over the lower fifth of the frame. Subtitles sit
+# above that area, and the TV/phone cards are lifted to leave room for them.
+CAPTION_MARGIN = 290
+CARD_LIFT = 60
 AMBER = (246, 190, 73)
 WHITE = (246, 242, 232)
 INK = (13, 23, 30)
@@ -37,8 +41,12 @@ def font(size, bold=False):
     return ImageFont.truetype(BOLD if bold else REGULAR, size)
 
 
-def cover(path, size=(W, H), center=(.5, .5)):
+def cover(path, size=(W, H), center=(.5, .5), crop=None):
     im = Image.open(path).convert('RGB')
+    if crop:
+        # Optional framing inside the illustration: left, top, right, bottom as fractions.
+        l, t, r, b = crop
+        im = im.crop((round(l*im.width), round(t*im.height), round(r*im.width), round(b*im.height)))
     return ImageOps.fit(im, size, method=Image.Resampling.LANCZOS, centering=center)
 
 
@@ -84,8 +92,8 @@ def face_photo():
     return ImageOps.fit(crop, (520, 440), Image.Resampling.LANCZOS)
 
 
-def backdrop(path, dark=False, blur=False):
-    im = cover(path)
+def backdrop(path, dark=False, blur=False, crop=None):
+    im = cover(path, crop=crop)
     if blur:
         im = im.filter(ImageFilter.GaussianBlur(15))
     if dark:
@@ -126,8 +134,11 @@ def make_card(kind, scene, portrait):
         clothes_path = resolve_asset('cena-03-roupas.png')
         rounded_image(card, Image.open(clothes_path), (155, 375, 570, 725), radius=16)
         d = ImageDraw.Draw(card)
-        text(d, (565, 747), 'Visualizado', 23, (128, 192, 211), anchor='ra')
-        text(d, (360, 856), 'Nenhuma resposta.', 25, (176, 185, 188), anchor='mm')
+        if scene.get('status', 'seen') == 'seen':
+            text(d, (565, 747), 'Visualizado', 23, (128, 192, 211), anchor='ra')
+            text(d, (360, 856), 'Nenhuma resposta.', 25, (176, 185, 188), anchor='mm')
+        else:
+            text(d, (565, 747), 'Enviada', 23, (141, 149, 152), anchor='ra')
     elif kind == 'comparison':
         for y, label in [(180, 'A FOTO ENVIADA'), (580, 'A FOTO NO JORNAL')]:
             d.rounded_rectangle((92, y, 628, y+365), 22, fill=(19, 31, 39, 255), outline=(100, 112, 117), width=2)
@@ -142,7 +153,7 @@ def make_card(kind, scene, portrait):
             x = 112 + j*9
             d.rounded_rectangle((x, 903-amp, x+4, 903+amp), 2, fill=(171, 193, 195))
         d.rounded_rectangle((112, 941, 598, 946), 2, fill=(66, 85, 95))
-    return card
+    return card.crop((0, CARD_LIFT, W, H+CARD_LIFT))
 
 
 def resolve_asset(name):
@@ -158,7 +169,7 @@ def resolve_asset(name):
 def make_scene_assets(scene, index, work, preview=True):
     kind = scene.get('kind', 'art')
     path = resolve_asset(scene.get('asset', 'cena-01-base.png'))
-    bg = backdrop(path, dark=kind in ('tv', 'chat', 'comparison'), blur=kind in ('tv', 'chat', 'comparison'))
+    bg = backdrop(path, dark=kind in ('tv', 'chat', 'comparison'), blur=kind in ('tv', 'chat', 'comparison'), crop=scene.get('crop'))
     bg = caption_gradient(bg)
     d = ImageDraw.Draw(bg)
     d.rounded_rectangle((38, 36, 412, 105), 13, fill=(10, 17, 22, 180))
@@ -185,11 +196,13 @@ def render_scene(scene, index, work, fps, preview):
     camera = f"scale=1440:2560,zoompan=z='{expr}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d={frames}:s={W}x{H}:fps={fps}"
     graph = f'[0:v]{camera}[bg];[1:v]format=rgba,fade=t=in:st=0.12:d=0.28:alpha=1[card];[bg][card]overlay=0:0:shortest=1[composed];'
     if scene.get('kind') == 'audio':
-        # A subtle progress marker follows scene time. The waveform artwork is
+        # A subtle progress marker follows the friend's voice: "play" holds its absolute
+        # start and end, and defaults to the scene. The waveform artwork is
         # deliberately illustrative; it is not presented as measured audio data.
         duration = frames/fps
-        travel = max(.1, duration-.4)
-        graph += f"color=c=0xF6BE49:s=10x6:r={fps}:d={duration}[progress];[composed][progress]overlay=x='112+476*min(max(t-0.4,0)/{travel},1)':y=941:enable='gte(t,0.4)':shortest=1,format=yuv420p[v]"
+        p0, p1 = (float(v)-start for v in scene.get('play', [start+.4, end]))
+        travel = max(.1, p1-p0)
+        graph += f"color=c=0xF6BE49:s=10x6:r={fps}:d={duration}[progress];[composed][progress]overlay=x='112+476*min(max(t-{p0:.3f},0)/{travel:.3f},1)':y={941-CARD_LIFT}:enable='gte(t,0.4)':shortest=1,format=yuv420p[v]"
     elif scene.get('kind') == 'tv':
         # Less than one RGB level: a small TV-light modulation, never a flash.
         graph += "[composed]eq=brightness='0.003*sin(2*PI*t*1.7)':eval=frame,format=yuv420p[v]"
@@ -222,7 +235,8 @@ def ass_text(value):
 
 
 def write_subtitles(captions, path):
-    header = '''[Script Info]
+    # The friend's lines ("voice": "amigo") use amber italics, since one narrator reads every line.
+    header = f'''[Script Info]
 ScriptType: v4.00+
 PlayResX: 720
 PlayResY: 1280
@@ -231,7 +245,8 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,DejaVu Sans,36,&H00F7F3EC,&H000000FF,&H0010181B,&H8C000000,-1,0,0,0,100,100,0,0,1,3,1,2,58,72,166,1
+Style: Default,DejaVu Sans,36,&H00F7F3EC,&H000000FF,&H0010181B,&H8C000000,-1,0,0,0,100,100,0,0,1,3,1,2,58,72,{CAPTION_MARGIN},1
+Style: Amigo,DejaVu Sans,36,&H0049BEF6,&H000000FF,&H0010181B,&H8C000000,-1,-1,0,0,100,100,0,0,1,3,1,2,58,72,{CAPTION_MARGIN},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -240,7 +255,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     for cap in captions:
         if cap['end'] <= cap['start']:
             continue
-        lines.append(f"Dialogue: 0,{ass_time(cap['start'])},{ass_time(cap['end'])},Default,,0,0,0,,{{\\fad(60,60)}}{ass_text(cap['text'])}\n")
+        style = 'Amigo' if cap.get('voice') == 'amigo' else 'Default'
+        lines.append(f"Dialogue: 0,{ass_time(cap['start'])},{ass_time(cap['end'])},{style},,0,0,0,,{{\\fad(60,60)}}{ass_text(cap['text'])}\n")
     path.write_text(''.join(lines), encoding='utf-8')
 
 
@@ -266,13 +282,16 @@ def main():
     parser.add_argument('--clean', action='store_true', help='Omit PRÉVIA in series marker')
     parser.add_argument('--prepare-only', action='store_true')
     args = parser.parse_args()
-    duration = probe(args.audio)
+    audio_duration = probe(args.audio)
     work = HERE / 'work'
     work.mkdir(parents=True, exist_ok=True)
     if args.timeline:
         timeline = json.loads(args.timeline.read_text())
     else:
-        timeline = template(duration)
+        timeline = template(audio_duration)
+    # "tail" holds the last scene, in silence, for that many seconds after the voice.
+    tail = float(timeline.get('tail', 0))
+    duration = audio_duration + tail
     scenes = timeline['scenes']
     if not scenes:
         raise ValueError('At least one scene is required')
@@ -283,7 +302,7 @@ def main():
             raise ValueError(f'Non-contiguous or invalid scene: {scene}')
         edge = float(scene['end'])
     if abs(edge-duration) > .15:
-        raise ValueError(f'Timeline ends at {edge:.3f}s; audio is {duration:.3f}s. Adjust timeline first.')
+        raise ValueError(f'Timeline ends at {edge:.3f}s; audio plus tail is {duration:.3f}s. Adjust timeline first.')
     used = HERE / 'timeline-used.json'
     used.write_text(json.dumps(timeline, ensure_ascii=False, indent=2))
     ass = work / 'captions.ass'
@@ -300,12 +319,13 @@ def main():
     playlist.write_text(''.join(f"file '{p.as_posix()}'\n" for p in parts))
     args.output.parent.mkdir(parents=True, exist_ok=True)
     # All inputs share codec/rate. Final pass burns captions and normalizes speech gently.
+    audio_filter = 'loudnorm=I=-16:TP=-1.5:LRA=9' + (f',apad=pad_dur={tail}' if tail > 0 else '')
     run(['ffmpeg', '-y', '-hide_banner', '-loglevel', 'warning', '-f', 'concat', '-safe', '0', '-i', playlist,
          '-i', args.audio, '-map', '0:v:0', '-map', '1:a:0', '-vf', f'ass={ass.as_posix()}',
-         '-af', 'loudnorm=I=-16:TP=-1.5:LRA=9', '-t', str(duration), '-c:v', 'libx264', '-preset', 'fast',
+         '-af', audio_filter, '-t', str(duration), '-c:v', 'libx264', '-preset', 'fast',
          '-crf', '19', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart',
          '-threads', '2', args.output])
-    result = {'output': str(args.output), 'duration': probe(args.output), 'audio_duration': duration,
+    result = {'output': str(args.output), 'duration': probe(args.output), 'audio_duration': audio_duration, 'tail': tail,
               'scenes': len(scenes), 'captions': len(timeline.get('captions', [])),
               'type': 'illustrated animatic with camera motion and graphics; no generated body animation'}
     (HERE / 'render-report.json').write_text(json.dumps(result, indent=2))
