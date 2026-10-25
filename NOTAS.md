@@ -6,7 +6,7 @@ Atualizado em **25 de outubro de 2026**, depois da primeira prova completa do ep
 
 Produzir uma série ficcional de suspense para TikTok, com foco em retenção, continuidade entre episódios e receita por visualizações. O objetivo do criador não é vender curso. A conta informada tem aproximadamente 19 mil seguidores; a elegibilidade e a receita do programa de monetização ainda não foram verificadas.
 
-**Formato definido pelo criador:** cenas ilustradas estáticas em sequência, com movimento de câmera, cartões de TV/celular, legendas e narração. Não haverá animação corporal nem 3D. A publicação está prevista no **TikTok** e no **Instagram Reels**, com o mesmo vídeo vertical.
+**Formato definido pelo criador:** cenas ilustradas estáticas em sequência, com movimento de câmera, cartões de TV/celular, legendas e narração. Não haverá animação corporal nem 3D. A publicação está prevista no **TikTok** e no **Instagram Reels**, com o mesmo vídeo vertical. O vídeo não leva selo da série no topo, que fica coberto pelas interfaces das duas redes: o nome da série e o episódio vão no texto do post.
 
 O título de trabalho é **A parte que faltou**. O protagonista é **Zinho**, participante de um assalto que encontra roupas velhas na mochila da divisão enquanto seu rosto aparece no noticiário. O episódio 1, **A mochila**, termina com o amigo à porta e a pergunta “Você deixa ele entrar?”. O arco proposto tem cinco episódios: A mochila, A dívida, A divisão, A proposta e O preço.
 
@@ -28,7 +28,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 
 - **A prova v1 aguarda revisão do criador**: ritmo, cortes, legendas, pausa final e escolha dos enquadramentos.
 - **Retrato frontal do Zinho**, pedido pelo criador para a TV e a comparação: hoje é um recorte da cena 1, com Zinho olhando para baixo. A nova imagem deve ser gerada onde houver gerador de imagens (o Claude Code desta sessão não tem) e salva como `crimecarton-analise/episodio-01/retrato-zinho.png`. O renderizador passa a usá-la automaticamente quando o arquivo existe.
-- O marcador “A PARTE QUE FALTOU” no topo fica sob as abas do TikTok e o cabeçalho dos Reels. Recomendação: tirá-lo na versão final e pôr o nome da série e o episódio no texto do post. Aguarda decisão do criador.
+- A prova v1 ainda mostra o selo “A PARTE QUE FALTOU · EP. 01 · PRÉVIA” no topo. O renderizador já não o desenha, então ele sai a partir da v2.
 - O amigo aparece na cena 9, mas ainda não tem ficha visual própria. Criá-la a partir dessa cena antes do episódio 2.
 - Trilha, efeitos sonoros e mixagem final ainda precisam ser definidos e revisados. Os tempos de 75–85 segundos nos documentos iniciais eram alvos de planejamento; a sincronização deve seguir a locução real de 71,28 segundos.
 - O teste de vídeo de 8 segundos estimado no Codex não será feito, porque o formato não usa animação. Qualquer serviço pago adicional precisa de orçamento e autorização próprios.
@@ -39,7 +39,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 1. Revisar a prova v1 e anotar os ajustes de ritmo, cortes, legendas e final.
 2. Gerar o retrato frontal `retrato-zinho.png`, aplicar os ajustes em `montagem/timeline.json` (usando os tempos de `alinhamento-narracao.json`) e renderizar a v2. Os campos da timeline estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md).
 3. Definir trilha, efeitos sonoros e mixagem.
-4. Revisar a versão final, exportar com `--clean` e usar os resultados reais de retenção no TikTok e nos Reels para orientar os episódios seguintes.
+4. Revisar a versão final, publicar com o nome da série e o episódio no texto do post e usar os resultados reais de retenção no TikTok e nos Reels para orientar os episódios seguintes.
 
 Requisitos locais do renderizador: **Python 3 com Pillow, FFmpeg com libass, FFprobe e fontes DejaVu Sans**. Os caminhos de fontes usados no script são os convencionais de Linux em `/usr/share/fonts/truetype/dejavu/`; adaptar se necessário em outro sistema. O alinhamento precisa também de faster-whisper, instalado à parte conforme o README da montagem.
 

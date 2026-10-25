@@ -28,7 +28,7 @@ python crimecarton-analise/episodio-01/montagem/render_animatic.py \
 
 Sem `--timeline`, o script usa um esboço escalado para a duração da voz, **sem legendas**, com estado `provisional_scaled_to_audio`. Esse modo permite testar o render, mas os cortes devem ser conferidos com a fala antes de apresentar um piloto sincronizado.
 
-`--prepare-only` produz os cartões estáticos e o ASS, sem codificar vídeo. `--workers 2` limita o paralelismo. `--clean` remove a indicação de prévia no marcador da série.
+`--prepare-only` produz os cartões estáticos e o ASS, sem codificar vídeo. `--workers 2` limita o paralelismo.
 
 ## Timeline
 
@@ -59,7 +59,7 @@ Campos opcionais das cenas:
 - `status` (`chat`): `sent` mostra a foto como enviada; `seen`, o padrão, mostra “Visualizado” e “Nenhuma resposta.”.
 - `play` (`audio`): início e fim absolutos da fala do amigo. O marcador de progresso percorre a barra nesse intervalo e pode ser interrompido pelo corte.
 
-Nas legendas, `"voice": "amigo"` usa itálico âmbar para as falas do amigo, já que a mesma voz narra tudo. As legendas ficam acima da área inferior em que o TikTok sobrepõe legenda e nome de usuário, e os cartões são deslocados para cima para deixar espaço a elas.
+Nas legendas, `"voice": "amigo"` usa itálico âmbar para as falas do amigo, já que a mesma voz narra tudo. As legendas ficam acima da área inferior em que o TikTok e os Reels sobrepõem legenda e nome de usuário, e os cartões são deslocados para cima para deixar espaço a elas. O vídeo não tem selo da série, porque o topo fica coberto pelas duas interfaces; o nome da série e o episódio vão no texto do post.
 
 Ativos esperados na pasta pai: `cena-01-base.png`, `cena-03-roupas.png`, `cena-07-audio.png`, `cena-09-porta.png`. Na ausência de um ativo, o script avisa e usa a primeira cena como fallback provisório. Opcionalmente, `retrato-zinho.png`, um retrato frontal em formato horizontal, substitui o recorte da cena 1 na TV e na comparação de fotos.
 

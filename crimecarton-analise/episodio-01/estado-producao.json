@@ -26,7 +26,10 @@
     "arquivo": "retrato-zinho.png",
     "status": "a gerar: retrato frontal do Zinho para a TV e a comparação; até lá o renderizador usa um recorte da cena 1"
   },
-  "publicacao": ["TikTok", "Instagram Reels"],
+  "publicacao": {
+    "redes": ["TikTok", "Instagram Reels"],
+    "selo_da_serie": "fora do vídeo; nome da série e episódio no texto do post"
+  },
   "montagem": {
     "status": "prova v1 completa renderizada; aguarda revisão do criador",
     "alinhamento": "montagem/alinhamento-narracao.json",

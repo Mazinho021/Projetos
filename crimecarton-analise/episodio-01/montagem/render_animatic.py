@@ -170,15 +170,13 @@ def resolve_asset(name):
     return p
 
 
-def make_scene_assets(scene, index, work, preview=True):
+def make_scene_assets(scene, index, work):
+    # No series marker: TikTok and Reels cover the top of the frame, so the series
+    # name and episode go in the post text instead.
     kind = scene.get('kind', 'art')
     path = resolve_asset(scene.get('asset', 'cena-01-base.png'))
     bg = backdrop(path, dark=kind in ('tv', 'chat', 'comparison'), blur=kind in ('tv', 'chat', 'comparison'), crop=scene.get('crop'))
     bg = caption_gradient(bg)
-    d = ImageDraw.Draw(bg)
-    d.rounded_rectangle((38, 36, 412, 105), 13, fill=(10, 17, 22, 180))
-    text(d, (56, 48), 'A PARTE QUE FALTOU', 21, WHITE, True)
-    text(d, (56, 78), 'EP. 01 · PRÉVIA' if preview else 'EP. 01', 13, AMBER)
     bg_path = work / f'{index:02d}-bg.png'
     bg.convert('RGB').save(bg_path)
     card = make_card(kind, scene, face_photo())
@@ -187,12 +185,12 @@ def make_scene_assets(scene, index, work, preview=True):
     return bg_path, card_path
 
 
-def render_scene(scene, index, work, fps, preview):
+def render_scene(scene, index, work, fps):
     start, end = float(scene['start']), float(scene['end'])
     # Quantize absolute boundaries, preventing small per-scene rounding errors
     # from accumulating into subtitle drift across the assembled episode.
     frames = max(1, round(end*fps) - round(start*fps))
-    bg, card = make_scene_assets(scene, index, work, preview)
+    bg, card = make_scene_assets(scene, index, work)
     out = work / f'{index:02d}.mp4'
     zoom = float(scene.get('zoom', .028 if scene.get('kind', 'art') == 'art' else .012))
     direction = scene.get('direction', 'in')
@@ -283,7 +281,6 @@ def main():
     parser.add_argument('--output', type=Path, default=HERE / 'zinho-ep01-animatic.mp4')
     parser.add_argument('--fps', type=int, default=25)
     parser.add_argument('--workers', type=int, default=2)
-    parser.add_argument('--clean', action='store_true', help='Omit PRÉVIA in series marker')
     parser.add_argument('--prepare-only', action='store_true')
     args = parser.parse_args()
     audio_duration = probe(args.audio)
@@ -313,11 +310,11 @@ def main():
     write_subtitles(timeline.get('captions', []), ass)
     if args.prepare_only:
         for i, s in enumerate(scenes):
-            make_scene_assets(s, i, work, not args.clean)
+            make_scene_assets(s, i, work)
         print(f'Prepared cards and captions in {work}')
         return
     with ThreadPoolExecutor(max_workers=max(1, args.workers)) as pool:
-        futures = [pool.submit(render_scene, s, i, work, args.fps, not args.clean) for i, s in enumerate(scenes)]
+        futures = [pool.submit(render_scene, s, i, work, args.fps) for i, s in enumerate(scenes)]
         parts = [f.result() for f in futures]
     playlist = work / 'concat.txt'
     playlist.write_text(''.join(f"file '{p.as_posix()}'\n" for p in parts))
