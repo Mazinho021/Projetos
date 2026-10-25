@@ -1,0 +1,28 @@
+{
+  "serie": "A parte que faltou",
+  "episodio": "01 — A mochila",
+  "personagem": "Zinho",
+  "referencia_personagem": "../zinho-referencia-v3.png",
+  "cabelo_atual": "cacheado no topo, laterais em degradê",
+  "imagem_base_cena_01": "cena-01-base.png",
+  "imagem_base_status": "gerada e inspecionada",
+  "narracao": {
+    "roteiro": "../narracao-ep01-zinho.txt",
+    "pedido": "../pedido-narracao-ep01.json",
+    "status": "concluída",
+    "custo_cotado_creditos": 2,
+    "idempotencyKey": "zinho-ep01-narracao-charon-v1-20261025",
+    "cobranca_executada": true,
+    "creditos_cobrados": 2,
+    "arquivo": "narracao-original.wav",
+    "arquivo_mp3": "narracao-zinho-ep01.mp3",
+    "duracao_segundos": 71.28,
+    "jobId": "mcp_media_678267053bf243d53bc29ddaa43e0876a7fd2cba0c873f85cb39142a45f074b5"
+  },
+  "animacao": {
+    "status": "planejada, ainda não gerada",
+    "teste_segundos": 8,
+    "nota": "O teste final deve receber a imagem base como referência. A cotação de texto para vídeo é somente uma estimativa de preço, não um pedido pronto para execução."
+  },
+  "video_final": "prova de ritmo em montagem; animação corporal ainda não gerada"
+}
