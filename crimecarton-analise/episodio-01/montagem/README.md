@@ -58,6 +58,21 @@ Sem `--audio`, o script usa o áudio indicado em `audio` na timeline, ao lado do
 
 `--prepare-only` produz os fundos e cartões estáticos e o ASS, sem codificar vídeo. `--workers 2` limita o paralelismo.
 
+### Versão do TikTok
+
+Cada episódio sai em duas versões: `timeline.json` para o Instagram e `timeline-tiktok.json` para o TikTok, ambas geradas por `montar_timeline.py`. A do TikTok difere em dois pontos:
+
+- **Abertura:** começa com 3,3 s de flash-forward. Zinho aparece assustado, com borda vermelha, enquanto toca a frase do amigo com voz de celular. O texto “SEU AMIGO / TE VENDEU.” já está na tela no primeiro quadro. No TikTok, a maioria dos espectadores da primeira versão saiu no primeiro segundo. O episódio vem em seguida, igual, e o áudio `narracao-ep01-com-cta-tiktok.wav` é a narração com esses 3,3 s de silêncio no início.
+- **Topo:** a barra de busca do TikTok cobre os 11,4% de cima da tela. Por isso, o painel desce 67 px, as etiquetas passam para `y` 297, os cartões começam em 334 e o carimbo vai para 629.
+
+```bash
+python crimecarton-analise/episodio-01/montagem/render_animatic.py \
+  --timeline crimecarton-analise/episodio-01/montagem/timeline-tiktok.json \
+  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v8-tiktok.mp4
+```
+
+Cada versão grava o próprio registro: `timeline-used.json` e `render-report.json` para a do Instagram, `timeline-tiktok-used.json` e `render-report-tiktok.json` para a do TikTok.
+
 ## Timeline
 
 Os tempos são segundos absolutos na locução. As cenas devem cobrir de zero até a duração do áudio somada a `tail`, sem espaços ou sobreposições. `tail` mantém o último plano em silêncio depois da voz.
@@ -88,6 +103,7 @@ Campos opcionais das cenas:
 - `zoom` e `direction` (`in` ou `out`): intensidade e sentido do movimento de câmera.
 - `brightness`: escurece a ilustração (por exemplo, `0.5`) para destacar texto ou cartão.
 - `status` (`chat`): `sent` mostra a foto como enviada; `seen`, o padrão, mostra “Visualizado” e “Nenhuma resposta.”.
+- `card_top` (`tv`, `chat`, `comparison`): altura do topo do cartão, 300 por padrão; a versão do TikTok usa 334.
 - `play` (`audio`): início e fim absolutos da fala do amigo. O marcador de progresso percorre a barra nesse intervalo e pode ser interrompido pelo corte.
 
 ### Gráficos
@@ -95,7 +111,7 @@ Campos opcionais das cenas:
 Cada item de `graphics` tem `type`, `start` e `end`; os subitens entram nos seus próprios `at`. Cores: `white`, `yellow`, `green`, `red`, `gray`.
 
 - `phrase`: bloco centrado em `y`, com `lines` que entram com “pop” no `at` de cada uma. `size` vale para o bloco e pode ser trocado por linha. Linhas com `"style": "label"` são rótulos pequenos em maiúsculas espaçadas; `"shake": true` treme a linha ao entrar; `count` (`from`, `to`, `start`, `end`, `format`) faz a linha contar um valor em reais.
-- `hud`: painel fixo do topo, com `label`, `values` (texto e cor a partir de cada `at`, com `shake` opcional) e `stars` (`count` estrelas de suspeita que enchem a partir de `at`, uma a cada `step` segundos).
+- `hud`: painel fixo do topo, com `label`, `values` (texto e cor a partir de cada `at`, com `shake` opcional) e `stars` (`count` estrelas de suspeita que enchem a partir de `at`, uma a cada `step` segundos). `dy` desce o painel inteiro, como na versão do TikTok.
 - `tag`: etiqueta de capítulo abaixo do painel; `color` `yellow` ou `red`.
 - `list`: itens empilhados a partir de `y`, cada um com `left`, `right` e `at`, ligados por uma seta.
 - `stamp`: carimbo em `x`, `y`, inclinado em `angle` graus.

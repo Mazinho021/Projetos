@@ -198,7 +198,8 @@ def draw_hud(canvas, el, t):
         scale = popped(t - ft, dur=.25, origin=1.7)[0] if on else 1
         place(layer, star, 454 + i*44, 154, star.width/2, star.height/2, scale)
     alpha = min(1, age/.3) * fading(t, el['end'], .25)
-    place(canvas, layer, 0, -18*(1 - min(1, age/.3))**2, 0, 0, 1, alpha)
+    # "dy" moves the whole panel down, below the search bar TikTok draws at the top.
+    place(canvas, layer, 0, el.get('dy', 0) - 18*(1 - min(1, age/.3))**2, 0, 0, 1, alpha)
 
 
 @lru_cache(maxsize=32)

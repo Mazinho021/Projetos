@@ -120,7 +120,7 @@ def make_card(kind, scene, portrait):
     # Dark panels, Poppins and the yellow/green/red accents of the reference video.
     card = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(card)
-    top, frame = CARD_TOP, (64, 70, 72)
+    top, frame = scene.get('card_top', CARD_TOP), (64, 70, 72)
     if kind == 'tv':
         d.rounded_rectangle((45, top, 675, top+660), 30, fill=(14, 17, 18, 255), outline=frame, width=4)
         d.rectangle((70, top+25, 650, top+595), fill=(18, 30, 36))
@@ -347,7 +347,10 @@ def main():
     missing = sorted({e['sound'] for e in sfx if not (EFFECTS / e['sound']).exists()})
     if missing:
         raise FileNotFoundError(f'Sound effects missing from {EFFECTS}: {missing}')
-    used = HERE / 'timeline-used.json'
+    # Each version of the episode keeps its own record: timeline-tiktok.json writes
+    # timeline-tiktok-used.json and render-report-tiktok.json.
+    variant = args.timeline.stem.removeprefix('timeline') if args.timeline else ''
+    used = HERE / f'timeline{variant}-used.json'
     used.write_text(json.dumps(timeline, ensure_ascii=False, indent=2))
     ass = work / 'captions.ass'
     write_subtitles(timeline.get('captions', []), ass)
@@ -394,7 +397,7 @@ def main():
               'scenes': len(scenes), 'captions': len(timeline.get('captions', [])), 'graphics': len(graphics),
               'sound_effects': len(sfx),
               'type': 'illustrated animatic with camera motion and graphics; no generated body animation'}
-    (HERE / 'render-report.json').write_text(json.dumps(result, indent=2))
+    (HERE / f'render-report{variant}.json').write_text(json.dumps(result, indent=2))
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

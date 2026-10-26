@@ -7,6 +7,9 @@ re-aligned. The audio this timeline uses, narracao-ep01-com-cta.wav, is the narr
 with a pause opened after “Você escuta outra vez.” (the friend's key sentence plays again
 and Zinho reacts) and the separately voiced request to comment appended, loudness-matched.
 The look follows the series' reference video; see guia-de-estilo-referencia.md.
+
+It also builds timeline-tiktok.json, the TikTok version: the same episode after a short
+flash-forward, with the top elements moved below TikTok's search bar.
 """
 from __future__ import annotations
 
@@ -24,7 +27,15 @@ MAIN = EPISODE / 'narracao-original.wav'
 FRIEND = HERE / 'efeitos' / 'audio-amigo.wav'
 CTA = EPISODE / 'narracao-cta-ep01.wav'
 AUDIO = EPISODE / 'narracao-ep01-com-cta.wav'
+AUDIO_TIKTOK = EPISODE / 'narracao-ep01-com-cta-tiktok.wav'
 TAIL = 1.2
+# The TikTok version opens on a flash-forward, since most TikTok viewers of the first
+# upload left within a second: Zinho's face as the friend's message plays, with the
+# betrayal on screen from the first frame. The episode follows HOOK seconds later.
+HOOK = 3.3
+# TikTok's search bar covers the top 11.4% of the frame (146 px here), so on TikTok the
+# HUD, the tags, the cards and the stamp over them move down below it.
+TIKTOK_LAYOUT = {'hud_dy': 67, 'tag_y': 297, 'card_top': 334, 'stamp_y': 629}
 
 
 def probe(path, entry):
@@ -240,6 +251,41 @@ def sound_effects():
     ]
 
 
+TIME_KEYS = {'start', 'end', 'at', 'prompt_at'}
+
+
+def shifted(item, by):
+    # The same scenes, graphics or effects, every time in them `by` seconds later.
+    if isinstance(item, list):
+        return [shifted(v, by) for v in item]
+    if not isinstance(item, dict):
+        return item
+    return {k: round(v + by, 3) if k in TIME_KEYS else [round(p + by, 3) for p in v] if k == 'play' else shifted(v, by)
+            for k, v in item.items()}
+
+
+def tiktok_version(scenes, graphics, effects):
+    hook_scene = {'start': 0, 'end': HOOK, 'kind': 'art', 'asset': 'cena-07-audio.png', 'crop': EYES07, 'zoom': .1}
+    scenes = [hook_scene] + [dict(s, card_top=TIKTOK_LAYOUT['card_top']) if s['kind'] in ('tv', 'chat', 'comparison') else s
+                             for s in shifted(scenes, HOOK)]
+    moved = {'hud': {'dy': TIKTOK_LAYOUT['hud_dy']}, 'tag': {'y': TIKTOK_LAYOUT['tag_y']}, 'stamp': {'y': TIKTOK_LAYOUT['stamp_y']}}
+    hook = [
+        {'type': 'vignette', 'start': 0, 'end': HOOK, 'color': 'alert', 'strength': .9},
+        # Both lines "entered" just before the first frame, so they are already there.
+        phrase(0, HOOK - .1, 900, [line('SEU AMIGO', -.07), line('TE VENDEU.', -.07, 'yellow', shake=True)], 84),
+    ]
+    graphics = hook + [dict(g, **moved.get(g['type'], {})) for g in shifted(graphics, HOOK)]
+    effects = [sfx('impacto.wav', 0, -4), sfx('replay-amigo.wav', .3, 2), sfx('whoosh.wav', HOOK - WHOOSH_PEAK, -2),
+               *shifted(effects, HOOK)]
+    return scenes, graphics, effects
+
+
+def tiktok_audio():
+    # The same narration, HOOK seconds later: the flash-forward plays over silence.
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', AUDIO, '-af', f'adelay={round(HOOK*1000)}:all=1',
+                    '-c:a', 'pcm_f32le', AUDIO_TIKTOK], check=True)
+
+
 def too_wide(graphics, limit=570):
     # Lines must stay clear of the buttons that TikTok and Reels draw on the right.
     wide = []
@@ -259,18 +305,24 @@ def too_wide(graphics, limit=570):
 
 def main():
     scenes, graphics, effects = build()
-    wide = too_wide(graphics)
-    if wide:
-        raise ValueError(f'Lines wider than the safe area: {wide}')
-    graficos.check(graphics)
+    # timeline.json is the Instagram version; timeline-tiktok.json, the TikTok one.
+    versions = {'timeline.json': (scenes, graphics, effects, AUDIO, 0),
+                'timeline-tiktok.json': (*tiktok_version(scenes, graphics, effects), AUDIO_TIKTOK, HOOK)}
+    for _, g, _, _, _ in versions.values():
+        wide = too_wide(g)
+        if wide:
+            raise ValueError(f'Lines wider than the safe area: {wide}')
+        graficos.check(g)
     gain = join_narration()
-    timeline = {'timing_status': 'aligned_to_voice', 'style': 'guia-de-estilo-referencia.md',
-                'alignment': ['alinhamento-narracao.json', 'alinhamento-cta.json'], 'audio': AUDIO.name, 'tail': TAIL,
-                'pause_after_listen_again': {'at': INSERT_AT, 'seconds': GAP},
-                'scenes': scenes, 'graphics': graphics, 'sfx': effects, 'captions': []}
-    (HERE / 'timeline.json').write_text(json.dumps(timeline, ensure_ascii=False, indent=1), encoding='utf-8')
+    tiktok_audio()
+    for name, (sc, g, ef, audio, hook) in versions.items():
+        timeline = {'timing_status': 'aligned_to_voice', 'style': 'guia-de-estilo-referencia.md',
+                    'alignment': ['alinhamento-narracao.json', 'alinhamento-cta.json'], 'audio': audio.name, 'tail': TAIL,
+                    'opening_hook_seconds': hook, 'pause_after_listen_again': {'at': round(INSERT_AT + hook, 3), 'seconds': GAP},
+                    'scenes': sc, 'graphics': g, 'sfx': ef, 'captions': []}
+        (HERE / name).write_text(json.dumps(timeline, ensure_ascii=False, indent=1), encoding='utf-8')
+        print(f'{name}: {len(sc)} scenes, {len(g)} graphics, {len(ef)} sound effects, ends at {round(END + hook, 2)}s')
     print(f'{AUDIO.name}: {GAP}s pause at {INSERT_AT}s; closing request raised {gain:+.1f} dB to match the narration')
-    print(f'{len(scenes)} scenes, {len(graphics)} graphics, {len(effects)} sound effects, ends at {END}s')
 
 
 if __name__ == '__main__':

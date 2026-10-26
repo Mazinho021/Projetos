@@ -7,6 +7,7 @@
  ],
  "audio": "narracao-ep01-com-cta.wav",
  "tail": 1.2,
+ "opening_hook_seconds": 0,
  "pause_after_listen_again": {
   "at": 60.8,
   "seconds": 4.4

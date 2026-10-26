@@ -57,6 +57,7 @@
     "alinhamento": "montagem/alinhamento-narracao.json",
     "timeline": "montagem/timeline.json",
     "arquivo": "piloto-zinho-ep01-v7.mp4",
+    "arquivo_tiktok": "piloto-zinho-ep01-v7-tiktok.mp4 (86,88 s: flash-forward de 3,3 s na abertura e topo abaixo da barra de busca do TikTok; timeline montagem/timeline-tiktok.json)",
     "voz_do_amigo": "montagem/efeitos/audio-amigo.wav, criada por montagem/voz_amigo.py a partir da própria narração (tom médio de uns 110 Hz contra uns 85 Hz do narrador, som de celular, mesma duração)",
     "duracao_segundos": 83.56,
     "pausa_final_segundos": 1.2,
