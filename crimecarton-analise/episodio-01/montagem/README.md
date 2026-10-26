@@ -17,7 +17,16 @@ Na primeira execução o modelo é baixado da Hugging Face. Use esse arquivo par
 
 ## Montar a timeline
 
-`montar_timeline.py` gera `timeline.json` a partir do alinhamento. Os cortes e os gráficos estão presos aos números das palavras do roteiro, então a edição acompanha a voz se a narração for alinhada de novo. O script também recusa frases mais largas que a área segura. Ajustes de edição podem ser feitos nele, rodando-o em seguida, ou direto no `timeline.json`.
+`montar_timeline.py` gera `timeline.json` a partir dos alinhamentos da narração e do pedido de comentário. Os cortes, os gráficos e os efeitos estão presos aos números das palavras, então a edição acompanha a voz se a narração for alinhada de novo. O script também junta o pedido de comentário, gravado à parte, à narração principal em `narracao-ep01-com-cta.wav`, igualando o volume das duas, e recusa frases mais largas que a área segura. Ajustes de edição podem ser feitos nele, rodando-o em seguida, ou direto no `timeline.json`.
+
+O pedido de comentário foi alinhado com o mesmo script de alinhamento:
+
+```bash
+.venv/bin/python crimecarton-analise/episodio-01/montagem/alinhar_narracao.py \
+  --audio crimecarton-analise/episodio-01/narracao-cta-ep01.wav \
+  --script crimecarton-analise/narracao-cta-ep01.txt \
+  --output crimecarton-analise/episodio-01/montagem/alinhamento-cta.json
+```
 
 ```bash
 python crimecarton-analise/episodio-01/montagem/montar_timeline.py
@@ -29,12 +38,11 @@ A partir da raiz do repositório:
 
 ```bash
 python crimecarton-analise/episodio-01/montagem/render_animatic.py \
-  --audio crimecarton-analise/episodio-01/narracao-original.wav \
   --timeline crimecarton-analise/episodio-01/montagem/timeline.json \
-  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v3.mp4
+  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v5.mp4
 ```
 
-Sem `--timeline`, o script usa um esboço escalado para a duração da voz, sem gráficos nem legendas, com estado `provisional_scaled_to_audio`. Esse modo permite testar o render, mas os cortes devem ser conferidos com a fala antes de apresentar um piloto sincronizado.
+Sem `--audio`, o script usa o áudio indicado em `audio` na timeline, ao lado do episódio. Sem `--timeline`, usa `narracao-original.wav` e um esboço escalado para a duração da voz, sem gráficos nem legendas, com estado `provisional_scaled_to_audio`. Esse modo permite testar o render, mas os cortes devem ser conferidos com a fala antes de apresentar um piloto sincronizado.
 
 `--prepare-only` produz os fundos e cartões estáticos e o ASS, sem codificar vídeo. `--workers 2` limita o paralelismo.
 

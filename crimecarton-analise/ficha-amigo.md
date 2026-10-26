@@ -1,6 +1,8 @@
 # Ficha visual — o amigo
 
-Ficha provisória, tirada da única imagem em que ele aparece: [`episodio-01/cena-09-porta.png`](episodio-01/cena-09-porta.png), recortada em [`amigo-referencia-provisoria.png`](amigo-referencia-provisoria.png). Ela vale até que exista uma folha de personagem própria, gerada a partir deste texto, como foi feito com Zinho. O nome do amigo ainda não foi definido.
+**Folha de personagem atual: [`amigo-referencia-v1.png`](amigo-referencia-v1.png)**, gerada no Codex a partir deste texto (corpo inteiro de frente, de lado e de costas, e três expressões). Usá-la nos próximos episódios, como a v3 de Zinho.
+
+Este texto foi tirado da única imagem em que ele aparece no episódio 1, [`episodio-01/cena-09-porta.png`](episodio-01/cena-09-porta.png), recortada em [`amigo-referencia-provisoria.png`](amigo-referencia-provisoria.png). O nome do amigo ainda não foi definido.
 
 ## Papel na história
 

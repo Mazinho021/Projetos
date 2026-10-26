@@ -1,27 +1,54 @@
 #!/usr/bin/env python3
-"""Build timeline.json for episode 1 from alinhamento-narracao.json.
+"""Build timeline.json for episode 1 from alinhamento-narracao.json and alinhamento-cta.json.
 
 Cuts and graphics are anchored to word numbers of the script (the "i" field of the
 alignment), so the edit follows the voice again if the narration is re-aligned.
+The closing request to comment was voiced separately; it is loudness-matched and
+appended to the narration in narracao-ep01-com-cta.wav, the audio this timeline uses.
 The look follows the series' reference video; see guia-de-estilo-referencia.md.
 """
 from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
 import subprocess
 
 import graficos
 
 HERE = Path(__file__).resolve().parent
 EPISODE = HERE.parent
-AUDIO = EPISODE / 'narracao-original.wav'
-TAIL = 3.0
+MAIN = EPISODE / 'narracao-original.wav'
+CTA = EPISODE / 'narracao-cta-ep01.wav'
+AUDIO = EPISODE / 'narracao-ep01-com-cta.wav'
+TAIL = 1.2
+
+
+def duration(path):
+    return float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path],
+                                check=True, capture_output=True, text=True).stdout)
+
+
+def loudness(path):
+    r = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-i', path, '-af', 'ebur128', '-f', 'null', '-'],
+                       check=True, capture_output=True, text=True)
+    return float(re.findall(r'I:\s+(-?[\d.]+) LUFS', r.stderr)[-1])
+
+
+def join_narration():
+    # The closing request came out quieter than the episode's narration: match it and
+    # append it. Float samples keep the raised peaks for the final loudness pass.
+    gain = loudness(MAIN) - loudness(CTA)
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', MAIN, '-i', CTA, '-filter_complex',
+                    f'[1:a]volume={gain:.2f}dB[c];[0:a][c]concat=n=2:v=0:a=1[a]', '-map', '[a]', '-c:a', 'pcm_f32le', AUDIO],
+                    check=True)
+    return gain
+
 
 WORDS = json.loads((HERE / 'alinhamento-narracao.json').read_text(encoding='utf-8'))['words']
-DURATION = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', AUDIO],
-                                check=True, capture_output=True, text=True).stdout)
-END = round(DURATION + TAIL, 2)
+CTA_WORDS = json.loads((HERE / 'alinhamento-cta.json').read_text(encoding='utf-8'))['words']
+MAIN_DURATION = duration(MAIN)
+END = round(MAIN_DURATION + duration(CTA) + TAIL, 2)
 
 
 def s(i):
@@ -30,6 +57,11 @@ def s(i):
 
 def e(i):
     return WORDS[i]['end']
+
+
+def c(i):
+    # Start of word i of the closing request, on the joined narration's clock.
+    return MAIN_DURATION + CTA_WORDS[i]['start']
 
 
 def cut(i, lead=.12):
@@ -75,6 +107,8 @@ PLAN = [
     (cut(149), dict(kind='art', asset='cena-09-porta.png', zoom=.05)),
     (cut(155), dict(kind='art', asset='cena-09-porta.png', crop=FRIEND09, zoom=.05)),
     (cut(166), dict(kind='art', asset='cena-09-porta.png', crop=DOOR09, zoom=.06, brightness=.5)),
+    # The request to comment opens back onto the whole dilemma: Zinho inside, the friend outside.
+    (round(c(0) - .12, 2), dict(kind='art', asset='cena-09-porta.png', zoom=.04, direction='out', brightness=.45)),
 ]
 
 
@@ -136,10 +170,11 @@ def build():
         phrase(s(163) - .05, cuts[19], 930, [line('VENDEU', s(163)), line('SEU NOME.', s(164), 'yellow')], 72),
         # The closing block stays on screen to the last frame, as in the reference.
         phrase(cuts[19], END + .5, 420, [line('VOCÊ DEIXA', s(166)), line('ELE ENTRAR?', s(168), 'yellow')], 76),
-        {'type': 'buttons', 'start': round(e(169), 2), 'end': END + .5, 'y': 720, 'prompt': 'COMENTA UMA PALAVRA',
-         'prompt_at': round(e(169), 2), 'items': [{'text': 'ABRIR', 'at': round(e(169) + .25, 2), 'style': 'yellow'},
-                                                  {'text': 'NÃO ABRIR', 'at': round(e(169) + .45, 2), 'style': 'white'}]},
-        {'type': 'box', 'start': round(e(169) + 1, 2), 'end': END + .5, 'y': 880, 'title': 'PARTE 2',
+        # The request to comment: each button and the box enter on their spoken words.
+        {'type': 'buttons', 'start': round(c(0) - .05, 2), 'end': END + .5, 'y': 720, 'prompt': 'COMENTA UMA PALAVRA',
+         'prompt_at': round(c(0), 2), 'items': [{'text': 'ABRIR', 'at': round(c(4), 2), 'style': 'yellow'},
+                                                {'text': 'NÃO ABRIR', 'at': round(c(6), 2), 'style': 'white'}]},
+        {'type': 'box', 'start': round(c(15), 2), 'end': END + .5, 'y': 880, 'title': 'PARTE 2',
          'sub': 'a maioria decide o próximo passo'},
     ]
     return scenes, graphics, sound_effects(cuts)
@@ -155,7 +190,7 @@ def sound_effects(cuts):
     count_start, count_end = s(5), e(9) - .3
     ticks = [sfx('tique.wav', count_start + (count_end - count_start)*(1 - (1 - k/14)**(1/3)), -18) for k in range(1, 15)]
     return [
-        *[sfx('whoosh.wav', cuts[n] - WHOOSH_PEAK, -2) for n in (2, 3, 9, 12, 19)],
+        *[sfx('whoosh.wav', cuts[n] - WHOOSH_PEAK, -2) for n in (2, 3, 9, 12, 19, 20)],
         *ticks,
         sfx('impacto-suave.wav', s(39) - .08, -10),
         sfx('impacto.wav', s(51) - .1, -5),
@@ -165,7 +200,7 @@ def sound_effects(cuts):
         sfx('replay-amigo.wav', REPLAY_AT, -3),
         sfx('batida-1.wav', KNOCKS[0], -2),
         sfx('batida-2.wav', KNOCKS[1], -3),
-        *[sfx('pop.wav', at, -10) for at in (e(169) + .25, e(169) + .45, e(169) + 1)],
+        *[sfx('pop.wav', at, -10) for at in (c(4), c(6), c(15))],
     ]
 
 
@@ -177,7 +212,7 @@ def too_wide(graphics, limit=570):
             if ln.get('style') == 'label':
                 size = ln.get('size', 22)
                 f = graficos.font(size, 'SemiBold')
-                width = sum(f.getlength(c) for c in ln['text']) + round(size*.22)*(len(ln['text'])-1)
+                width = sum(f.getlength(ch) for ch in ln['text']) + round(size*.22)*(len(ln['text'])-1)
             else:
                 size = ln.get('size', g['size'])
                 width = graficos.font(size, ln.get('weight', 'Bold')).getlength(ln['text'])
@@ -192,10 +227,12 @@ def main():
     if wide:
         raise ValueError(f'Lines wider than the safe area: {wide}')
     graficos.check(graphics)
+    gain = join_narration()
     timeline = {'timing_status': 'aligned_to_voice', 'style': 'guia-de-estilo-referencia.md',
-                'alignment': 'alinhamento-narracao.json', 'audio': AUDIO.name, 'tail': TAIL,
+                'alignment': ['alinhamento-narracao.json', 'alinhamento-cta.json'], 'audio': AUDIO.name, 'tail': TAIL,
                 'scenes': scenes, 'graphics': graphics, 'sfx': effects, 'captions': []}
     (HERE / 'timeline.json').write_text(json.dumps(timeline, ensure_ascii=False, indent=1), encoding='utf-8')
+    print(f'{AUDIO.name}: closing request raised {gain:+.1f} dB to match the narration')
     print(f'{len(scenes)} scenes, {len(graphics)} graphics, {len(effects)} sound effects, ends at {END}s')
 
 

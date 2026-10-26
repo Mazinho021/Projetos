@@ -1,5 +1,7 @@
 # Pedido para o Codex — materiais da v4 do episódio 1
 
+**Entregue em 26/10/2026** (commit “Adiciona retrato de Zinho, ficha do amigo e narração curta para v4”) e usado na prova v4.
+
 Criado em 26/10/2026 no Claude Code, que não tem gerador de imagens nem a geração de voz do OpusClip. São três materiais. Não alterar nenhum outro arquivo do projeto.
 
 ## 1. Retrato frontal do Zinho

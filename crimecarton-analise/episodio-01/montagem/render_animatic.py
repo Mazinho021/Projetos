@@ -304,19 +304,20 @@ def template(duration):
 def main():
     global W, H
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--audio', type=Path, required=True)
+    parser.add_argument('--audio', type=Path, help='Narration; defaults to the timeline\'s "audio", next to the episode')
     parser.add_argument('--timeline', type=Path)
     parser.add_argument('--output', type=Path, default=HERE / 'zinho-ep01-animatic.mp4')
     parser.add_argument('--fps', type=int, default=25)
     parser.add_argument('--workers', type=int, default=2)
     parser.add_argument('--prepare-only', action='store_true')
     args = parser.parse_args()
+    timeline = json.loads(args.timeline.read_text()) if args.timeline else None
+    if args.audio is None:
+        args.audio = EPISODE / (timeline or {}).get('audio', 'narracao-original.wav')
     audio_duration = probe(args.audio)
     work = HERE / 'work'
     work.mkdir(parents=True, exist_ok=True)
-    if args.timeline:
-        timeline = json.loads(args.timeline.read_text())
-    else:
+    if timeline is None:
         timeline = template(audio_duration)
     # "tail" holds the last scene, in silence, for that many seconds after the voice.
     tail = float(timeline.get('tail', 0))

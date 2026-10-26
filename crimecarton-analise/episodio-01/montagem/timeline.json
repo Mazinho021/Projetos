@@ -1,9 +1,12 @@
 {
  "timing_status": "aligned_to_voice",
  "style": "guia-de-estilo-referencia.md",
- "alignment": "alinhamento-narracao.json",
- "audio": "narracao-original.wav",
- "tail": 3.0,
+ "alignment": [
+  "alinhamento-narracao.json",
+  "alinhamento-cta.json"
+ ],
+ "audio": "narracao-ep01-com-cta.wav",
+ "tail": 1.2,
  "scenes": [
   {
    "start": 0,
@@ -199,7 +202,7 @@
   },
   {
    "start": 69.98,
-   "end": 74.28,
+   "end": 71.44,
    "kind": "art",
    "asset": "cena-09-porta.png",
    "crop": [
@@ -210,6 +213,15 @@
    ],
    "zoom": 0.06,
    "brightness": 0.5
+  },
+  {
+   "start": 71.44,
+   "end": 79.16,
+   "kind": "art",
+   "asset": "cena-09-porta.png",
+   "zoom": 0.04,
+   "direction": "out",
+   "brightness": 0.45
   }
  ],
  "graphics": [
@@ -565,7 +577,7 @@
   {
    "type": "phrase",
    "start": 69.98,
-   "end": 74.78,
+   "end": 79.66,
    "y": 420,
    "size": 76,
    "lines": [
@@ -583,28 +595,28 @@
   },
   {
    "type": "buttons",
-   "start": 70.96,
-   "end": 74.78,
+   "start": 71.51,
+   "end": 79.66,
    "y": 720,
    "prompt": "COMENTA UMA PALAVRA",
-   "prompt_at": 70.96,
+   "prompt_at": 71.56,
    "items": [
     {
      "text": "ABRIR",
-     "at": 71.21,
+     "at": 73.16,
      "style": "yellow"
     },
     {
      "text": "NÃO ABRIR",
-     "at": 71.41,
+     "at": 74.2,
      "style": "white"
     }
    ]
   },
   {
    "type": "box",
-   "start": 71.96,
-   "end": 74.78,
+   "start": 77.3,
+   "end": 79.66,
    "y": 880,
    "title": "PARTE 2",
    "sub": "a maioria decide o próximo passo"
@@ -634,6 +646,11 @@
   {
    "sound": "whoosh.wav",
    "at": 69.62,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 71.08,
    "gain": -2
   },
   {
@@ -748,17 +765,17 @@
   },
   {
    "sound": "pop.wav",
-   "at": 71.206,
+   "at": 73.157,
    "gain": -10
   },
   {
    "sound": "pop.wav",
-   "at": 71.406,
+   "at": 74.2,
    "gain": -10
   },
   {
    "sound": "pop.wav",
-   "at": 71.956,
+   "at": 77.3,
    "gain": -10
   }
  ],
