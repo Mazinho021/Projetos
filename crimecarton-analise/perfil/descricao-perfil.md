@@ -2,12 +2,17 @@
 
 Foto, nome e descrição do perfil novo de **A parte que faltou**, no Instagram e no TikTok. O perfil se liga ao do [@crimecarton](https://www.instagram.com/crimecarton/), em cujas histórias a série se inspira, pela foto e pela bio:
 
-- A foto dele mostra um personagem preocupado com um saco de dinheiro, num quarto escuro iluminado por abajur. A nossa responde a ela: Zinho, preocupado, segura a roupa velha que veio na mochila no lugar da parte dele, no quarto da cena 3, à noite.
+- A foto dele mostra um personagem preocupado com um saco de dinheiro, num quarto escuro iluminado por abajur. A nossa responde a ela: Zinho, preocupado, segura aberta a mochila que veio com roupa velha no lugar da parte dele, num quarto escuro à noite, com luz de abajur.
 - A bio segue a mesma estrutura de linhas curtas com emoji, sem repetir as frases dele. Abre com “O assalto deu certo.”, a frase que abre o vídeo de referência e o episódio 1, e dá o crédito.
 
 ## Foto
 
-[`foto-perfil.png`](foto-perfil.png), 1080 × 1080, recortada de [`cena-03-roupas.png`](../episodio-01/cena-03-roupas.png) por [`gerar_foto_perfil.py`](gerar_foto_perfil.py). As duas redes cortam a foto em círculo. [`previa-circular.png`](previa-circular.png) mostra esse corte em tamanho grande e nos tamanhos pequenos do feed e dos comentários, em fundo escuro e claro. Uma ilustração feita só para o perfil foi pedida ao Codex em [`pedido-codex-perfil.md`](pedido-codex-perfil.md). Quando chegar, substitui este recorte.
+As fotos vêm das ilustrações feitas no Codex para o perfil, conforme [`pedido-codex-perfil.md`](pedido-codex-perfil.md): Zinho de frente, preocupado, segurando aberta a mochila com roupa velha, num quarto escuro com luz de abajur.
+
+- [`foto-perfil.png`](foto-perfil.png), a recomendada: ele olha para a câmera, o que chama mais atenção no feed e continua legível em tamanho pequeno. Vem de [`ilustracao-perfil.png`](ilustracao-perfil.png).
+- [`foto-perfil-b.png`](foto-perfil-b.png): ele olha para dentro da mochila. Vem de [`ilustracao-perfil-b.png`](ilustracao-perfil-b.png).
+
+[`gerar_foto_perfil.py`](gerar_foto_perfil.py) recorta as duas em 1080 × 1080, um pouco mais perto do rosto. As duas redes cortam a foto em círculo. [`previa-circular.png`](previa-circular.png) mostra esse corte nas duas versões, em tamanho grande e nos tamanhos pequenos do feed e dos comentários, em fundo escuro e claro. O recorte provisório da cena 3, usado antes das ilustrações, ficou no histórico do Git.
 
 ```bash
 python crimecarton-analise/perfil/gerar_foto_perfil.py

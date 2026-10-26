@@ -1,5 +1,7 @@
 # Pedido para o Codex — ilustração do perfil
 
+**Entregue em 26/10/2026** (commit “Adiciona ilustrações de perfil de Zinho e variação do olhar”), com a variação. As duas viraram `foto-perfil.png` e `foto-perfil-b.png`.
+
 Criado em 26/10/2026 no Claude Code, que não tem gerador de imagens. É uma ilustração, com uma variação opcional. Não alterar nenhum outro arquivo do projeto.
 
 ## Ilustração do perfil

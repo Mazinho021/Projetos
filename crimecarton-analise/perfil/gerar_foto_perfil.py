@@ -1,34 +1,35 @@
 #!/usr/bin/env python3
-"""Make the series profile photo from the scene where Zinho finds the old clothes.
+"""Make the series profile photos from the Codex profile illustrations.
 
 The @crimecarton avatar shows a worried character holding a money bag in a dark,
-lamp-lit room. This one answers it: Zinho, worried, holding the old clothes that came
-in the backpack instead of his share. The photo is square because Instagram and TikTok
-crop it to a circle; previa-circular.png shows that crop large and small.
+lamp-lit room. These answer it: Zinho, worried, holding open the backpack that came
+with old clothes instead of his share. Version A looks at the camera, version B into
+the backpack. The photos are square because Instagram and TikTok crop them to a
+circle; previa-circular.png shows that crop large and small for both versions.
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageEnhance
+from PIL import Image, ImageDraw
 
 HERE = Path(__file__).resolve().parent
-SCENE = HERE.parent / 'episodio-01' / 'cena-03-roupas.png'
-CROP = (.04, .13, .84)  # left and top of the square, then its side, as fractions of the scene
+VERSIONS = {  # source illustration -> profile photo
+    'ilustracao-perfil.png': 'foto-perfil.png',
+    'ilustracao-perfil-b.png': 'foto-perfil-b.png',
+}
+CROP = (.90, .47)  # side of the centered square and its vertical center, as fractions of the illustration
 SIZE = 1080
 PREVIEW_SIZES = (360, 150, 77, 40)
 
 
-def photo():
-    im = Image.open(SCENE).convert('RGB')
-    left, top, side = CROP
-    x0, y0, px = round(left*im.width), round(top*im.height), round(side*im.width)
-    out = im.crop((x0, y0, x0+px, y0+px)).resize((SIZE, SIZE), Image.Resampling.LANCZOS)
-    out = ImageEnhance.Contrast(out).enhance(1.06)
-    # Darken toward the edge, like the lamp-lit room in the reference avatar.
-    ramp = Image.radial_gradient('L').resize((SIZE, SIZE), Image.Resampling.BICUBIC)
-    shade = ramp.point(lambda v: round(255*.82*max(0, (v/255-.42)/.58)**1.3))
-    return Image.composite(Image.new('RGB', (SIZE, SIZE), (8, 6, 6)), out, shade)
+def photo(source):
+    im = Image.open(source).convert('RGB')
+    side, center = CROP
+    px = round(side*im.width)
+    x0 = (im.width - px)//2
+    y0 = min(max(0, round(center*im.height - px/2)), im.height - px)
+    return im.crop((x0, y0, x0+px, y0+px)).resize((SIZE, SIZE), Image.Resampling.LANCZOS)
 
 
 def circle(im, d):
@@ -39,26 +40,30 @@ def circle(im, d):
     return out
 
 
-def preview(im, gap=48):
-    """The circle crop at each preview size, on a dark row and a light row."""
+def preview(photos, gap=48):
+    """Each photo's circle crop at the preview sizes, on a dark row and a light row."""
     row = PREVIEW_SIZES[0] + 2*gap
     width = sum(PREVIEW_SIZES) + gap*(len(PREVIEW_SIZES)+1)
-    sheet = Image.new('RGB', (width, 2*row))
-    for y, background in ((0, (0, 0, 0)), (row, (255, 255, 255))):
-        sheet.paste(background, (0, y, width, y+row))
-        x = gap
-        for d in PREVIEW_SIZES:
-            avatar = circle(im, d)
-            sheet.paste(avatar, (x, y + (row-d)//2), avatar)
-            x += d + gap
+    sheet = Image.new('RGB', (width*len(photos), 2*row))
+    for i, im in enumerate(photos):
+        for y, background in ((0, (0, 0, 0)), (row, (255, 255, 255))):
+            sheet.paste(background, (i*width, y, (i+1)*width, y+row))
+            x = i*width + gap
+            for d in PREVIEW_SIZES:
+                avatar = circle(im, d)
+                sheet.paste(avatar, (x, y + (row-d)//2), avatar)
+                x += d + gap
     return sheet
 
 
 def main():
-    im = photo()
-    im.save(HERE / 'foto-perfil.png', optimize=True)
-    preview(im).save(HERE / 'previa-circular.png', optimize=True)
-    print(f'{HERE / "foto-perfil.png"} {im.size[0]}x{im.size[1]}')
+    photos = []
+    for source, target in VERSIONS.items():
+        im = photo(HERE / source)
+        im.save(HERE / target, optimize=True)
+        photos.append(im)
+        print(f'{HERE / target} {im.size[0]}x{im.size[1]}')
+    preview(photos).save(HERE / 'previa-circular.png', optimize=True)
 
 
 if __name__ == '__main__':
