@@ -7,7 +7,7 @@ Foto, nome e descrição do perfil novo de **A parte que faltou**, no Instagram 
 
 ## Foto
 
-[`foto-perfil.png`](foto-perfil.png), 1080 × 1080, recortada de [`cena-03-roupas.png`](../episodio-01/cena-03-roupas.png) por [`gerar_foto_perfil.py`](gerar_foto_perfil.py). As duas redes cortam a foto em círculo. [`previa-circular.png`](previa-circular.png) mostra esse corte em tamanho grande e nos tamanhos pequenos do feed e dos comentários, em fundo escuro e claro.
+[`foto-perfil.png`](foto-perfil.png), 1080 × 1080, recortada de [`cena-03-roupas.png`](../episodio-01/cena-03-roupas.png) por [`gerar_foto_perfil.py`](gerar_foto_perfil.py). As duas redes cortam a foto em círculo. [`previa-circular.png`](previa-circular.png) mostra esse corte em tamanho grande e nos tamanhos pequenos do feed e dos comentários, em fundo escuro e claro. Uma ilustração feita só para o perfil foi pedida ao Codex em [`pedido-codex-perfil.md`](pedido-codex-perfil.md). Quando chegar, substitui este recorte.
 
 ```bash
 python crimecarton-analise/perfil/gerar_foto_perfil.py
@@ -15,7 +15,14 @@ python crimecarton-analise/perfil/gerar_foto_perfil.py
 
 ## Nome
 
-**A Parte Que Faltou**, com o usuário sugerido `@apartequefaltou`. A disponibilidade do usuário nas duas redes ainda precisa ser conferida.
+O criador vai escolher entre um nome no estilo de “Crime Cartoon”, o nome do perfil do @crimecarton, e o nome da série:
+
+- **Golpe Cartoon** (`@golpecartoon`), a sugestão principal: tem o ritmo de “Crime Cartoon”, e golpe é o que Zinho levou.
+- **Assalto Cartoon** (`@assaltocartoon`), a ligação mais direta com o assalto.
+- **Cilada Cartoon** (`@ciladacartoon`), pela armadilha que o amigo à porta pode estar armando.
+- **A Parte Que Faltou** (`@apartequefaltou`), o nome da série.
+
+Com um nome “Cartoon”, “A parte que faltou” continua como título da série no texto dos posts. A bio serve para qualquer um deles. O nome não deve conter “Crime Cartoon”, para o perfil não ser confundido com o dele. A disponibilidade dos usuários nas duas redes ainda precisa ser conferida.
 
 ## Bio do Instagram
 
