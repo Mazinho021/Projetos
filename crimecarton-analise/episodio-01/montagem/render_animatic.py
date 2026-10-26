@@ -92,6 +92,11 @@ def face_photo():
     return ImageOps.fit(crop, (520, 440), Image.Resampling.LANCZOS)
 
 
+def bag_photo():
+    # The photo Zinho sends the friend shows only the open backpack full of old clothes.
+    return cover(resolve_asset('cena-03-roupas.png'), (340, 310), crop=(0.20, 0.62, 0.95, 0.90))
+
+
 def backdrop(path, brightness=1, blur=False, crop=None):
     im = cover(path, crop=crop)
     if blur:
@@ -136,7 +141,7 @@ def make_card(kind, scene, portrait):
         d.rectangle((130, top+108, 590, top+130), fill=(31, 39, 43))
         d.ellipse((150, top+66, 198, top+114), fill=(70, 82, 88))
         label(card, 216, top+90, 'AMIGO', 24)
-        rounded_image(card, Image.open(resolve_asset('cena-03-roupas.png')), (232, top+160, 572, top+470), radius=16)
+        rounded_image(card, bag_photo(), (232, top+160, 572, top+470), radius=16)
         d = ImageDraw.Draw(card)
         if scene.get('status', 'seen') == 'seen':
             blue = (83, 189, 235)

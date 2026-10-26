@@ -39,7 +39,7 @@ A partir da raiz do repositório:
 ```bash
 python crimecarton-analise/episodio-01/montagem/render_animatic.py \
   --timeline crimecarton-analise/episodio-01/montagem/timeline.json \
-  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v6.mp4
+  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v7.mp4
 ```
 
 Sem `--audio`, o script usa o áudio indicado em `audio` na timeline, ao lado do episódio. Sem `--timeline`, usa `narracao-original.wav` e um esboço escalado para a duração da voz, sem gráficos nem legendas, com estado `provisional_scaled_to_audio`. Esse modo permite testar o render, mas os cortes devem ser conferidos com a fala antes de apresentar um piloto sincronizado.
