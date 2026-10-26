@@ -1,8 +1,9 @@
 {
   "timing_status": "aligned_to_voice",
+  "style": "video de referencia da serie (Design sem nome.mp4)",
   "alignment": "alinhamento-narracao.json",
   "audio": "narracao-original.wav",
-  "tail": 1.2,
+  "tail": 3.0,
   "scenes": [
     {
       "start": 0,
@@ -141,6 +142,7 @@
       "end": 59.15,
       "kind": "audio",
       "asset": "cena-07-audio.png",
+      "brightness": 0.55,
       "play": [
         53.854,
         58.376
@@ -197,7 +199,7 @@
     },
     {
       "start": 69.98,
-      "end": 72.48,
+      "end": 74.28,
       "kind": "art",
       "asset": "cena-09-porta.png",
       "crop": [
@@ -206,213 +208,401 @@
         1.0,
         1.0
       ],
-      "zoom": 0.06
+      "zoom": 0.06,
+      "brightness": 0.5
     }
   ],
-  "captions": [
+  "graphics": [
     {
-      "start": 0.21,
-      "end": 2.42,
-      "text": "O assalto deu certo."
+      "type": "phrase",
+      "start": 0.2,
+      "end": 2.4,
+      "y": 700,
+      "size": 78,
+      "lines": [
+        {
+          "text": "O ASSALTO",
+          "at": 0.26,
+          "color": "white"
+        },
+        {
+          "text": "DEU CERTO.",
+          "at": 1.08,
+          "color": "yellow"
+        }
+      ]
     },
     {
-      "start": 2.42,
-      "end": 4.95,
-      "text": "Seu parceiro ficou\ncom dez milhões."
+      "type": "phrase",
+      "start": 2.4,
+      "end": 4.88,
+      "y": 700,
+      "size": 78,
+      "lines": [
+        {
+          "style": "label",
+          "text": "SEU PARCEIRO FICOU COM",
+          "at": 2.47
+        },
+        {
+          "text": "R$ 10.000.000",
+          "at": 2.55,
+          "color": "green",
+          "size": 74,
+          "count": {
+            "from": 0,
+            "to": 10000000,
+            "start": 2.86,
+            "end": 4.402
+          }
+        },
+        {
+          "style": "label",
+          "text": "EM DINHEIRO VIVO",
+          "at": 3.88
+        }
+      ]
     },
     {
-      "start": 4.95,
-      "end": 7.68,
-      "text": "Você ficou com o\nrosto no jornal."
+      "type": "phrase",
+      "start": 4.93,
+      "end": 8.3,
+      "y": 880,
+      "size": 64,
+      "lines": [
+        {
+          "text": "VOCÊ FICOU COM",
+          "at": 5.0,
+          "color": "white"
+        },
+        {
+          "text": "O ROSTO",
+          "at": 6.62,
+          "color": "yellow"
+        },
+        {
+          "text": "NO JORNAL.",
+          "at": 6.9,
+          "color": "yellow"
+        }
+      ]
     },
     {
-      "start": 8.37,
-      "end": 10.3,
-      "text": "Na tela, seu nome:"
+      "type": "hud",
+      "start": 11.79,
+      "end": 69.98,
+      "label": "A SUA PARTE",
+      "values": [
+        {
+          "at": 11.79,
+          "text": "R$ ?",
+          "color": "white"
+        },
+        {
+          "at": 19.94,
+          "text": "R$ 0",
+          "color": "red",
+          "shake": true
+        }
+      ],
+      "stars": [
+        {
+          "at": 12.4,
+          "count": 5,
+          "step": 0.12
+        }
+      ]
     },
     {
-      "start": 10.3,
-      "end": 11.74,
-      "text": "Zinho."
+      "type": "tag",
+      "start": 14.47,
+      "end": 31.58,
+      "text": "PISTA 1 · A MOCHILA"
     },
     {
-      "start": 11.74,
-      "end": 13.8,
-      "text": "Primeiro suspeito\nidentificado."
+      "type": "phrase",
+      "start": 18.41,
+      "end": 21.4,
+      "y": 640,
+      "size": 66,
+      "lines": [
+        {
+          "text": "ROUPA VELHA.",
+          "at": 18.53,
+          "color": "white"
+        },
+        {
+          "text": "NENHUMA NOTA.",
+          "at": 19.94,
+          "color": "yellow"
+        }
+      ]
     },
     {
-      "start": 14.42,
-      "end": 15.37,
-      "text": "Você baixa o volume"
+      "type": "list",
+      "start": 21.52,
+      "end": 25.43,
+      "y": 600,
+      "items": [
+        {
+          "at": 22.12,
+          "left": "BOLSOS",
+          "right": "VAZIOS"
+        },
+        {
+          "at": 23.12,
+          "left": "FUNDO",
+          "right": "VAZIO"
+        },
+        {
+          "at": 24.38,
+          "left": "NO CHÃO",
+          "right": "SÓ ROUPA"
+        }
+      ]
     },
     {
-      "start": 15.37,
-      "end": 16.43,
-      "text": "e abre a mochila"
+      "type": "phrase",
+      "start": 25.43,
+      "end": 26.65,
+      "y": 920,
+      "size": 120,
+      "lines": [
+        {
+          "text": "NADA.",
+          "at": 25.55,
+          "color": "white",
+          "shake": true
+        }
+      ]
     },
     {
-      "start": 16.43,
-      "end": 17.81,
-      "text": "que recebeu na divisão."
+      "type": "phrase",
+      "start": 26.65,
+      "end": 29.38,
+      "y": 900,
+      "size": 64,
+      "lines": [
+        {
+          "style": "label",
+          "text": "HÁ 20 MINUTOS",
+          "at": 26.77
+        },
+        {
+          "text": "VOCÊS ESTAVAM",
+          "at": 27.74,
+          "color": "white"
+        },
+        {
+          "text": "JUNTOS.",
+          "at": 28.58,
+          "color": "yellow"
+        }
+      ]
     },
     {
-      "start": 18.48,
-      "end": 19.89,
-      "text": "Roupa velha."
+      "type": "phrase",
+      "start": 29.38,
+      "end": 31.58,
+      "y": 900,
+      "size": 62,
+      "lines": [
+        {
+          "text": "AGORA,",
+          "at": 29.48,
+          "color": "white"
+        },
+        {
+          "text": "NINGUÉM ATENDE.",
+          "at": 30.28,
+          "color": "yellow"
+        }
+      ]
     },
     {
-      "start": 19.89,
-      "end": 20.94,
-      "text": "Nenhuma nota."
+      "type": "tag",
+      "start": 31.7,
+      "end": 43.35,
+      "text": "PISTA 2 · O SILÊNCIO"
     },
     {
-      "start": 21.47,
-      "end": 22.79,
-      "text": "Confere os bolsos,"
+      "type": "phrase",
+      "start": 37.49,
+      "end": 40.48,
+      "y": 910,
+      "size": 64,
+      "lines": [
+        {
+          "style": "label",
+          "text": "ELE PROMETEU",
+          "at": 37.59
+        },
+        {
+          "text": "“EU GARANTO",
+          "at": 38.62,
+          "color": "white"
+        },
+        {
+          "text": "A SUA PARTE.”",
+          "at": 39.22,
+          "color": "yellow"
+        }
+      ]
     },
     {
-      "start": 22.79,
-      "end": 23.51,
-      "text": "revira o fundo,"
+      "type": "tag",
+      "start": 43.47,
+      "end": 52.23,
+      "text": "PISTA 3 · A FOTO"
     },
     {
-      "start": 23.51,
-      "end": 24.99,
-      "text": "espalha tudo no chão."
+      "type": "stamp",
+      "start": 48.06,
+      "end": 52.23,
+      "text": "A MESMA FOTO",
+      "y": 595,
+      "angle": -7
     },
     {
-      "start": 25.5,
-      "end": 26.16,
-      "text": "Nada."
+      "type": "tag",
+      "start": 52.35,
+      "end": 61.07,
+      "text": "PISTA 4 · O ÁUDIO"
     },
     {
-      "start": 26.72,
-      "end": 27.69,
-      "text": "Há vinte minutos,"
-    },
-    {
-      "start": 27.69,
-      "end": 29.43,
-      "text": "vocês ainda\nestavam juntos."
-    },
-    {
-      "start": 29.43,
-      "end": 31.19,
-      "text": "Agora, ninguém atende."
-    },
-    {
-      "start": 31.65,
-      "end": 33.23,
-      "text": "Você manda uma foto\nda mochila"
-    },
-    {
-      "start": 33.23,
-      "end": 35.05,
-      "text": "para o amigo que\ncolocou você no grupo."
-    },
-    {
-      "start": 35.05,
-      "end": 37.54,
-      "text": "O cara que cresceu\nna sua rua."
-    },
-    {
-      "start": 37.54,
-      "end": 38.57,
-      "text": "Que prometeu:"
-    },
-    {
-      "start": 38.57,
-      "end": 40.07,
-      "text": "“Eu garanto a sua parte”.",
-      "voice": "amigo"
-    },
-    {
-      "start": 40.55,
-      "end": 41.91,
-      "text": "Ele visualiza."
-    },
-    {
-      "start": 41.91,
-      "end": 42.84,
-      "text": "Não responde."
-    },
-    {
-      "start": 43.42,
-      "end": 45.27,
-      "text": "Você olha de novo\npara a televisão"
-    },
-    {
-      "start": 45.27,
-      "end": 47.45,
-      "text": "e reconhece a fotografia."
-    },
-    {
-      "start": 47.45,
-      "end": 49.09,
-      "text": "Foi a mesma\nque enviou a ele"
-    },
-    {
-      "start": 49.09,
-      "end": 51.82,
-      "text": "quando disseram que\nprecisavam conhecer você."
-    },
-    {
-      "start": 52.3,
-      "end": 53.2,
-      "text": "Chega um áudio."
-    },
-    {
+      "type": "phrase",
       "start": 53.8,
-      "end": 55.75,
-      "text": "“Eu estava devendo\npara eles.",
-      "voice": "amigo"
+      "end": 55.7,
+      "y": 560,
+      "size": 60,
+      "lines": [
+        {
+          "text": "“EU ESTAVA",
+          "at": 53.85,
+          "color": "white"
+        },
+        {
+          "text": "DEVENDO",
+          "at": 54.22,
+          "color": "white"
+        },
+        {
+          "text": "PARA ELES.",
+          "at": 54.64,
+          "color": "yellow"
+        }
+      ]
     },
     {
-      "start": 55.75,
-      "end": 57.01,
-      "text": "Disseram que\na dívida acabava",
-      "voice": "amigo"
+      "type": "phrase",
+      "start": 55.7,
+      "end": 59.15,
+      "y": 560,
+      "size": 58,
+      "lines": [
+        {
+          "text": "A DÍVIDA ACABAVA",
+          "at": 55.8,
+          "color": "white"
+        },
+        {
+          "text": "SE EU COLOCASSE",
+          "at": 57.06,
+          "color": "white"
+        },
+        {
+          "text": "ALGUÉM NO",
+          "at": 57.64,
+          "color": "yellow"
+        },
+        {
+          "text": "MEU LUGAR.”",
+          "at": 57.86,
+          "color": "yellow"
+        }
+      ]
     },
     {
-      "start": 57.01,
-      "end": 58.63,
-      "text": "se eu colocasse alguém\nno meu lugar.”",
-      "voice": "amigo"
+      "type": "phrase",
+      "start": 62.75,
+      "end": 64.29,
+      "y": 930,
+      "size": 92,
+      "lines": [
+        {
+          "text": "TOC! TOC!",
+          "at": 62.8,
+          "color": "white",
+          "shake": true
+        }
+      ]
     },
     {
-      "start": 59.22,
-      "end": 60.71,
-      "text": "Você escuta outra vez."
+      "type": "phrase",
+      "start": 68.61,
+      "end": 69.98,
+      "y": 930,
+      "size": 72,
+      "lines": [
+        {
+          "text": "VENDEU",
+          "at": 68.66,
+          "color": "white"
+        },
+        {
+          "text": "SEU NOME.",
+          "at": 68.9,
+          "color": "yellow"
+        }
+      ]
     },
     {
-      "start": 61.14,
-      "end": 62.47,
-      "text": "Antes de responder,"
+      "type": "phrase",
+      "start": 69.98,
+      "end": 74.78,
+      "y": 420,
+      "size": 76,
+      "lines": [
+        {
+          "text": "VOCÊ DEIXA",
+          "at": 70.1,
+          "color": "white"
+        },
+        {
+          "text": "ELE ENTRAR?",
+          "at": 70.58,
+          "color": "yellow"
+        }
+      ]
     },
     {
-      "start": 62.47,
-      "end": 63.8,
-      "text": "alguém bate à porta."
+      "type": "buttons",
+      "start": 70.96,
+      "end": 74.78,
+      "y": 720,
+      "prompt": "COMENTA UMA PALAVRA",
+      "prompt_at": 70.96,
+      "items": [
+        {
+          "text": "ABRIR",
+          "at": 71.21,
+          "style": "yellow"
+        },
+        {
+          "text": "NÃO ABRIR",
+          "at": 71.41,
+          "style": "white"
+        }
+      ]
     },
     {
-      "start": 64.36,
-      "end": 66.16,
-      "text": "Pela janela,\nvocê vê seu amigo."
-    },
-    {
-      "start": 66.66,
-      "end": 68.43,
-      "text": "É o homem que\nacabou de admitir"
-    },
-    {
-      "start": 68.43,
-      "end": 69.6,
-      "text": "que vendeu seu nome."
-    },
-    {
-      "start": 70.05,
-      "end": 72.48,
-      "text": "Você deixa ele entrar?"
+      "type": "box",
+      "start": 71.96,
+      "end": 74.78,
+      "y": 880,
+      "title": "PARTE 2",
+      "sub": "a maioria decide o próximo passo"
     }
-  ]
+  ],
+  "captions": []
 }

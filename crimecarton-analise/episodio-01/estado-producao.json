@@ -31,14 +31,17 @@
     "selo_da_serie": "fora do vídeo; nome da série e episódio no texto do post"
   },
   "montagem": {
-    "status": "prova v1 completa renderizada; aguarda revisão do criador",
+    "status": "prova v2 no estilo do vídeo de referência; aguarda revisão do criador",
+    "referencia": "../guia-de-estilo-referencia.md",
     "alinhamento": "montagem/alinhamento-narracao.json",
     "timeline": "montagem/timeline.json",
-    "arquivo": "piloto-zinho-ep01-v1.mp4",
-    "duracao_segundos": 72.48,
-    "pausa_final_segundos": 1.2,
+    "arquivo": "piloto-zinho-ep01-v2.mp4",
+    "duracao_segundos": 74.28,
+    "pausa_final_segundos": 3.0,
     "planos": 20,
-    "legendas": 40
+    "elementos_graficos": 22,
+    "legendas": 0,
+    "versoes_anteriores": ["piloto-zinho-ep01-v1.mp4 (legendas corridas, antes da referência)"]
   },
-  "video_final": "prova v1 com ilustrações, câmera, grafismos, legendas e narração"
+  "video_final": "prova v2 com ilustrações, câmera, cartões, frases animadas e narração"
 }
