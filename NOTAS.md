@@ -40,8 +40,9 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 - **A prova v3 aguarda revisão do criador**: ritmo, textos na tela, painel, etiquetas, efeitos sonoros e final.
 - **Retrato frontal do Zinho**, pedido pelo criador para a TV e a comparação: hoje é um recorte da cena 1, com Zinho olhando para baixo. A nova imagem deve ser gerada onde houver gerador de imagens (o Claude Code desta sessão não tem) e salva como `crimecarton-analise/episodio-01/retrato-zinho.png`. O renderizador passa a usá-la automaticamente quando o arquivo existe.
 - O final promete, como a referência, que “a maioria decide o próximo passo”. Se a maioria comentar NÃO ABRIR, o episódio 2 precisa seguir esse caminho; o arco em `producao-zinho.md` supõe que o amigo entra.
-- O final é só visual: a narração termina na pergunta. Narrar o pedido de comentário, como na referência, exigiria nova geração de voz, que é paga e precisa de autorização.
-- O amigo aparece na cena 9, mas ainda não tem ficha visual própria. Criá-la a partir dessa cena antes do episódio 2.
+- **Narração do pedido de comentário**, autorizada pelo criador em 26/10/2026: o texto e os parâmetros estão em [`pedido-narracao-cta-ep01.json`](crimecarton-analise/pedido-narracao-cta-ep01.json), com a mesma voz da narração principal. A geração é paga e fica com o Codex, que tem o OpusClip de voz; até lá, o final é só visual.
+- **Folha de personagem do amigo**: a ficha escrita está em [`ficha-amigo.md`](crimecarton-analise/ficha-amigo.md), com um recorte provisório da cena 9 em [`amigo-referencia-provisoria.png`](crimecarton-analise/amigo-referencia-provisoria.png). A imagem final será gerada no Codex.
+- Os três materiais que dependem do Codex (retrato, folha do amigo e narração final) estão descritos em [`pedido-codex.md`](crimecarton-analise/pedido-codex.md).
 - Outras histórias do @crimecarton só podem ser analisadas se o criador enviar os vídeos: o Instagram bloqueia o acesso automático.
 - A referência não usa trilha de fundo, e o episódio também não usa.
 - O teste de vídeo de 8 segundos estimado no Codex não será feito, porque o formato não usa animação. Qualquer serviço pago adicional precisa de orçamento e autorização próprios.

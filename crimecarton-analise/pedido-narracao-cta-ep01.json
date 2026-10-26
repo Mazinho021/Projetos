@@ -1,0 +1,7 @@
+{
+  "idempotencyKey": "zinho-ep01-cta-charon-v1-20261026",
+  "voice": "Charon",
+  "style": "Português brasileiro. Voz adulta masculina, natural e conversacional, tensão contida de narrador de suspense. Dicção clara, sem tom de publicidade, sem gritar. Ritmo alvo entre 140 e 150 palavras por minuto, com pausas curtas nas revelações. Nas falas entre aspas, mudar levemente a intenção sem caricatura. A pronúncia do nome é Zinho, com som de z no início e nh palatal.",
+  "text": "Comenta uma palavra só: abrir ou não abrir. O que a maioria escolher vira a parte dois.",
+  "observacao": "Pedido de comentário narrado no fim do episódio 1, depois de \"Você deixa ele entrar?\". Mesma voz e estilo da narração principal (pedido-narracao-ep01.json). Geração paga, autorizada pelo criador em 26/10/2026; confirmar o custo antes de executar."
+}
