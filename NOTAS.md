@@ -10,14 +10,16 @@ Produzir uma série ficcional de suspense para TikTok, com foco em retenção, c
 
 **Duração a partir do episódio 2:** por decisão do criador, os episódios passam a ter **mais de 1 min 30 s, com alvo de 1 min 50 s**, perto de 2 min. O público do @crimecarton reclama nos comentários que os vídeos dele são curtos e gosta de ficar mais tempo na história. O episódio 1 fica como está, com 83,56 s. O tempo a mais vem de mais história, com mais acontecimentos, pistas e reviravoltas, e não de narração mais lenta ou planos esticados. No ritmo da voz do episódio 1, cerca de 2,4 palavras por segundo com as pausas, 1 min 50 s pedem uma narração principal de **cerca de 230 palavras**; o episódio 1 tem 170. Somam-se a ela o pedido de comentário, a pausa de reação e o final, uns 12 s no episódio 1. Para passar de 1 min 30 s com folga, são pelo menos 190 palavras. Mantido o corte médio de 3,8 s, são cerca de 29 planos, com umas seis ilustrações-base. O custo da narração precisa ser cotado de novo antes de gerar, porque o texto fica mais longo.
 
-**Formato definido pelo criador:** cenas ilustradas estáticas em sequência, com movimento de câmera, cartões de TV/celular, gráficos animados e narração. Não haverá animação corporal nem 3D. A publicação está prevista no **TikTok** e no **Instagram Reels**, com o mesmo vídeo vertical. O vídeo não leva selo da série no topo, que fica coberto pelas interfaces das duas redes: o nome da série e o episódio vão no texto do post, que também **credita o @crimecarton**, por decisão do criador. Texto sugerido:
+**Formato definido pelo criador:** cenas ilustradas estáticas em sequência, com movimento de câmera, cartões de TV/celular, gráficos animados e narração. Não haverá animação corporal nem 3D. A publicação está prevista no **TikTok** e no **Instagram Reels**, com o mesmo vídeo vertical. O vídeo não leva selo da série no topo, que fica coberto pelas interfaces das duas redes: o nome da série e o episódio vão no texto do post, que também **credita o @crimecarton**, por decisão do criador. Texto do post:
 
 ```
 A parte que faltou | Ep. 1: A mochila
-Você deixaria ele entrar? 👇
+Você deixa ele entrar? Comenta: ABRIR ou NÃO ABRIR 👇
 Inspirado nas histórias de @crimecarton
-#suspense #série #história
+#suspense #crime #animação #série #apartequefaltou
 ```
+
+No TikTok, a terceira linha passa a ser “Inspirado nas histórias do @crimecarton no Instagram”, porque não foi encontrada conta dele lá. O pedido de comentário repete as palavras do final do vídeo, para facilitar a contagem da maioria. São cinco hashtags, o limite atual do Instagram, iguais nas duas redes. `#apartequefaltou` é a hashtag da série e entra em todos os episódios, para reunir a sequência.
 
 O título de trabalho é **A parte que faltou**. O protagonista é **Zinho**, participante de um assalto que encontra roupas velhas na mochila da divisão enquanto seu rosto aparece no noticiário. O episódio 1, **A mochila**, termina com o amigo à porta e a pergunta “Você deixa ele entrar?”. O arco proposto tem cinco episódios: A mochila, A dívida, A divisão, A proposta e O preço.
 
@@ -34,7 +36,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 - Renderizador local [`render_animatic.py`](crimecarton-analise/episodio-01/montagem/render_animatic.py), com câmera sobre ilustrações, enquadramentos recortados das imagens base, cartões de TV/celular e saída vertical de 720 × 1280 a 25 fps por padrão. A camada de gráficos animados está em [`graficos.py`](crimecarton-analise/episodio-01/montagem/graficos.py), com a fonte Poppins em [`fontes/`](crimecarton-analise/fontes/) (licença OFL).
 - Alinhamento palavra por palavra da narração em [`alinhamento-narracao.json`](crimecarton-analise/episodio-01/montagem/alinhamento-narracao.json), gerado por [`alinhar_narracao.py`](crimecarton-analise/episodio-01/montagem/alinhar_narracao.py) com reconhecimento de fala local: as 170 palavras do roteiro têm início e fim medidos na voz, com as bordas ajustadas às pausas do áudio.
 - Timeline atual em [`montagem/timeline.json`](crimecarton-analise/episodio-01/montagem/timeline.json), gerada por [`montar_timeline.py`](crimecarton-analise/episodio-01/montagem/montar_timeline.py): **22 planos, 24 elementos gráficos e 32 efeitos sonoros** de 0 a 83,56 s, isto é, a narração com uma pausa de 4,4 s depois de “Você escuta outra vez.” e o pedido de comentário (82,36 s), mais 1,2 s de final. Como na referência, não há legenda corrida: as frases-chave entram linha por linha na palavra falada. O painel “A SUA PARTE” passa de “R$ ?” a “R$ 0” em “Nenhuma nota” e as cinco estrelas de suspeita enchem em “suspeito identificado”. As etiquetas marcam PISTA 1 · A MOCHILA, PISTA 2 · O SILÊNCIO, PISTA 3 · A FOTO e PISTA 4 · O ÁUDIO. Entram ainda a lista “BOLSOS → VAZIOS”, o carimbo “A MESMA FOTO”, “TOC! TOC!”, “VENDEU / SEU NOME.” e o final “VOCÊ DEIXA / ELE ENTRAR?”. No pedido de comentário, a imagem volta para a cena inteira da janela, escurecida, e “ABRIR”, “NÃO ABRIR” e “PARTE 2” entram nas palavras faladas.
-- **Prova v6, a mais recente:** [`piloto-zinho-ep01-v6.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v6.mp4), com 83,56 s. É a v5 com a foto que Zinho manda ao amigo mostrando só a mochila aberta cheia de roupa velha, sem ele, como pediu o criador (recorte da cena 3).
+- **Prova v6, aprovada pelo criador para publicação:** [`piloto-zinho-ep01-v6.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v6.mp4), com 83,56 s. É a v5 com a foto que Zinho manda ao amigo mostrando só a mochila aberta cheia de roupa velha, sem ele, como pediu o criador (recorte da cena 3).
 - Prova v5: [`piloto-zinho-ep01-v5.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v5.mp4), com 83,56 s. Atende ao pedido do criador de não cortar o momento em que Zinho escuta o áudio de novo: depois de “Você escuta outra vez.” a narração para por 4,4 s, a frase principal do amigo (“Disseram que a dívida acabava se eu colocasse alguém no meu lugar.”) toca de novo com som de alto-falante de celular, 3 dB abaixo do narrador, enquanto o marcador do cartão de áudio anda e “SE EU COLOCASSE / ALGUÉM NO / MEU LUGAR.” volta na tela; em “lugar” corta para um close fechado no rosto assustado de Zinho, com câmera avançando, bordas vermelhas e impacto, antes das batidas na porta. Volume integrado de -14,0 LUFS em estéreo, pico de -1,0 dBFS.
 - Prova v4: [`piloto-zinho-ep01-v4.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v4.mp4), com 79,16 s. É a v3 com o retrato frontal na TV e na comparação, o pedido de comentário narrado e o novo plano final. Áudio em estéreo, com a voz igual nos dois canais: volume integrado de -13,9 LUFS, perto do padrão das redes, e pico de -1,2 dBFS. A narração e o pedido de comentário ficam a 0,6 dB um do outro.
 - Prova v3: [`piloto-zinho-ep01-v3.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v3.mp4), com 74,28 s. É a v2 com **30 efeitos sonoros** nas pausas da voz, seguindo a referência: whoosh nas trocas de capítulo, tique no contador de dinheiro, impactos em “R$ 0”, “NADA.” e no carimbo (que passou para a pausa depois de “fotografia.”), toque de chamada em “ninguém atende”, notificação em “Chega um áudio”, o começo do áudio do amigo repetido em “Você escuta outra vez”, duas batidas na porta junto com “TOC! / TOC!” e “pops” nos botões do final. A voz fica intacta e na mesma posição; volume integrado de -17 LUFS, pico de -1,4 dBFS. Os efeitos estão em [`montagem/efeitos/`](crimecarton-analise/episodio-01/montagem/efeitos/).
@@ -45,7 +47,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 
 ## Em andamento e pendências
 
-- **A prova v6 aguarda revisão do criador** antes da publicação.
+- **A prova v6 foi aprovada pelo criador** e é a versão de publicação do episódio 1, junto com a bio. Ainda não foi publicada.
 - O final promete, como a referência, que “a maioria decide o próximo passo”. Se a maioria comentar NÃO ABRIR, o episódio 2 precisa seguir esse caminho; o arco em `producao-zinho.md` supõe que o amigo entra.
 - O amigo ainda não tem nome. Definir antes do episódio 2.
 - O criador ainda escolhe entre as duas versões da foto do perfil. O nome do perfil está entre **Golpe Cartoon**, no estilo de “Crime Cartoon”, e **A Parte Que Faltou**; as opções estão em [`descricao-perfil.md`](crimecarton-analise/perfil/descricao-perfil.md).
@@ -56,9 +58,9 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 
 ## Como retomar
 
-1. Revisar a prova v6 e anotar os ajustes.
-2. Aplicar os ajustes com `montagem/montar_timeline.py` (ou direto em `timeline.json`) e renderizar a próxima versão. Os campos da timeline, dos gráficos e dos efeitos estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md); o estilo, no [guia da referência](crimecarton-analise/guia-de-estilo-referencia.md).
-3. Revisar a versão final, publicar com o nome da série e o episódio no texto do post e usar os resultados reais de retenção no TikTok e nos Reels para orientar os episódios seguintes.
+1. Publicar a v6 no TikTok e nos Reels com o texto do post acima. O arquivo também pode ser baixado direto do GitHub, sem computador, pelo [link do arquivo bruto](https://raw.githubusercontent.com/Mazinho021/Projetos/claude/ecstatic-brown-xb2qxd/crimecarton-analise/episodio-01/piloto-zinho-ep01-v6.mp4).
+2. Para ajustes de montagem, usar `montagem/montar_timeline.py` (ou direto em `timeline.json`) e renderizar uma nova versão. Os campos da timeline, dos gráficos e dos efeitos estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md); o estilo, no [guia da referência](crimecarton-analise/guia-de-estilo-referencia.md).
+3. Contar nos comentários a escolha da maioria, ABRIR ou NÃO ABRIR, que define o episódio 2, e usar os resultados reais de retenção no TikTok e nos Reels para orientar os episódios seguintes.
 
 Requisitos locais do renderizador: **Python 3 com Pillow, FFmpeg com libass e FFprobe**; a fonte Poppins já está no repositório. O alinhamento precisa também de faster-whisper, instalado à parte conforme o README da montagem.
 

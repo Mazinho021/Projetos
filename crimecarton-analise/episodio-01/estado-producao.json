@@ -50,7 +50,7 @@
     "perfil": "../perfil/descricao-perfil.md (foto, nome e bio do perfil novo)"
   },
   "montagem": {
-    "status": "prova v6 no estilo do vídeo de referência, com efeitos sonoros, retrato frontal, pedido de comentário narrado e a repetição do áudio do amigo com a reação de Zinho; aguarda revisão do criador",
+    "status": "prova v6 no estilo do vídeo de referência, com efeitos sonoros, retrato frontal, pedido de comentário narrado e a repetição do áudio do amigo com a reação de Zinho; aprovada pelo criador para publicação",
     "referencia": "../guia-de-estilo-referencia.md",
     "alinhamento": "montagem/alinhamento-narracao.json",
     "timeline": "montagem/timeline.json",
@@ -71,5 +71,5 @@
     ],
     "foto_enviada_ao_amigo": "só a mochila aberta com roupa velha (recorte da cena 3)"
   },
-  "video_final": "prova v6 com ilustrações, câmera, cartões, frases animadas, efeitos sonoros e narração"
+  "video_final": "piloto-zinho-ep01-v6.mp4, aprovada pelo criador: ilustrações, câmera, cartões, frases animadas, efeitos sonoros e narração"
 }
