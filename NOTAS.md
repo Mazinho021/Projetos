@@ -49,7 +49,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 
 ## Em andamento e pendências
 
-- **A v7 é a versão de publicação do episódio 1**: a v6 aprovada pelo criador, com a voz própria do amigo que ele pediu depois. A bio também foi aprovada. Ainda não foi publicada.
+- **A Parte 1 foi publicada pelo criador em 26/10/2026, no TikTok e no Instagram**, com a v7, a capa e o texto do post acima. A v7 é a v6 aprovada pelo criador, com a voz própria do amigo que ele pediu depois. A bio também foi aprovada.
 - A publicação pode ser feita pelo OpusClip, que tem conectados os TikToks @jotape2117 e @mazinho_edits e o canal CORTESZINHO no YouTube, mas não o Instagram nem o perfil novo da série. O post só sai depois que o criador confirma no app. Subir o vídeo inteiro, sem cortes e sem legendas do OpusClip, custa cerca de 2 créditos e precisa da autorização dele. As contas aparecem no OpusClip como “TikTok Business”, e conta comercial não entra no Programa de Recompensas para Criadores do TikTok. Por isso, não converter o perfil novo em conta comercial para conectá-lo.
 - O final promete, como a referência, que “a maioria decide o próximo passo”. Se a maioria comentar NÃO ABRIR, o episódio 2 precisa seguir esse caminho; o arco em `producao-zinho.md` supõe que o amigo entra.
 - O amigo ainda não tem nome. Definir antes do episódio 2.
@@ -57,13 +57,13 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 - Outras histórias do @crimecarton só podem ser analisadas se o criador enviar os vídeos: o Instagram bloqueia o acesso automático.
 - A referência não usa trilha de fundo, e o episódio também não usa.
 - O teste de vídeo de 8 segundos estimado no Codex não será feito, porque o formato não usa animação. Qualquer serviço pago adicional precisa de orçamento e autorização próprios.
-- Não houve publicação do piloto no TikTok. O formato e as hipóteses de retenção ainda precisam ser testados; os materiais não comprovam monetização ou alcance.
+- Os resultados da Parte 1 ainda não foram informados. O formato e as hipóteses de retenção só se confirmam com os números reais; os materiais não comprovam monetização ou alcance.
 
 ## Como retomar
 
-1. Publicar a v7 no TikTok e nos Reels com o texto do post acima e a capa da Parte 1. No Instagram, a capa entra em “Editar capa” → “Adicionar do rolo da câmera”. No TikTok, em “Editar capa” → “Carregar”, se o app tiver essa opção; senão, só dá para escolher um quadro do próprio vídeo. O arquivo também pode ser baixado direto do GitHub, sem computador, pelo [link do arquivo bruto](https://raw.githubusercontent.com/Mazinho021/Projetos/claude/ecstatic-brown-xb2qxd/crimecarton-analise/episodio-01/piloto-zinho-ep01-v7.mp4).
-2. Para ajustes de montagem, usar `montagem/montar_timeline.py` (ou direto em `timeline.json`) e renderizar uma nova versão. Os campos da timeline, dos gráficos e dos efeitos estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md); o estilo, no [guia da referência](crimecarton-analise/guia-de-estilo-referencia.md).
-3. Contar nos comentários a escolha da maioria, ABRIR ou NÃO ABRIR, que define o episódio 2, e usar os resultados reais de retenção no TikTok e nos Reels para orientar os episódios seguintes.
+1. Acompanhar a Parte 1 nas primeiras 48 horas. Contar ABRIR × NÃO ABRIR nos comentários e anotar, nas duas redes, as visualizações, o tempo médio assistido, a porcentagem que viu até o fim, o ponto em que o público sai e os seguidores ganhos. Publicada em 26/10/2026 com a capa: no Instagram, ela entra em “Editar capa” → “Adicionar do rolo da câmera”; no TikTok, em “Editar capa” → “Carregar”. O vídeo pode ser baixado direto do GitHub pelo [link do arquivo bruto](https://raw.githubusercontent.com/Mazinho021/Projetos/claude/ecstatic-brown-xb2qxd/crimecarton-analise/episodio-01/piloto-zinho-ep01-v7.mp4).
+2. Escrever a Parte 2 pelo caminho que a maioria escolher, no padrão de 1 min 50 s, com cerca de 230 palavras, dar nome ao amigo e usar os resultados de retenção no TikTok e nos Reels para ajustar o ritmo. Gerar a capa com uma nova entrada em `capas/gerar_capas.py`.
+3. Para ajustes de montagem, usar `montagem/montar_timeline.py` (ou direto em `timeline.json`) e renderizar uma nova versão. Os campos da timeline, dos gráficos e dos efeitos estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md); o estilo, no [guia da referência](crimecarton-analise/guia-de-estilo-referencia.md).
 
 Requisitos locais do renderizador: **Python 3 com Pillow, FFmpeg com libass e FFprobe**; a fonte Poppins já está no repositório. O alinhamento precisa também de faster-whisper, e a voz do amigo, de praat-parselmouth, instalados à parte conforme o README da montagem.
 
