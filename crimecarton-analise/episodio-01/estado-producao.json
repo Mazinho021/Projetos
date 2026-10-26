@@ -28,7 +28,8 @@
   },
   "publicacao": {
     "redes": ["TikTok", "Instagram Reels"],
-    "selo_da_serie": "fora do vídeo; nome da série e episódio no texto do post"
+    "selo_da_serie": "fora do vídeo; nome da série e episódio no texto do post",
+    "credito": "Inspirado nas histórias de @crimecarton (no texto do post)"
   },
   "montagem": {
     "status": "prova v2 no estilo do vídeo de referência; aguarda revisão do criador",
