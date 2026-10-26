@@ -13,13 +13,13 @@ Produzir uma série ficcional de suspense para TikTok, com foco em retenção, c
 **Formato definido pelo criador:** cenas ilustradas estáticas em sequência, com movimento de câmera, cartões de TV/celular, gráficos animados e narração. Não haverá animação corporal nem 3D. A publicação está prevista no **TikTok** e no **Instagram Reels**, com o mesmo vídeo vertical. O vídeo não leva selo da série no topo, que fica coberto pelas interfaces das duas redes: o nome da série e o episódio vão no texto do post, que também **credita o @crimecarton**, por decisão do criador. Texto do post:
 
 ```
-A parte que faltou | Ep. 1: A mochila
+A parte que faltou | Parte 1: A mochila
 Você deixa ele entrar? Comenta: ABRIR ou NÃO ABRIR 👇
 Inspirado nas histórias de @crimecarton
-#suspense #crime #animação #série #apartequefaltou
+#apartequefaltou #zinho #amochila #assalto #traição
 ```
 
-No TikTok, a terceira linha passa a ser “Inspirado nas histórias do @crimecarton no Instagram”, porque não foi encontrada conta dele lá. O pedido de comentário repete as palavras do final do vídeo, para facilitar a contagem da maioria. São cinco hashtags, o limite atual do Instagram, iguais nas duas redes. `#apartequefaltou` é a hashtag da série e entra em todos os episódios, para reunir a sequência.
+No TikTok, a terceira linha passa a ser “Inspirado nas histórias do @crimecarton no Instagram”, porque não foi encontrada conta dele lá. O pedido de comentário repete as palavras do final do vídeo, para facilitar a contagem da maioria. Os episódios são chamados de partes, como na capa e no final do vídeo (“vira a parte dois”). As hashtags falam do próprio vídeo, como as do @crimecarton, em vez de serem genéricas. `#apartequefaltou`, a da série, entra em todas as partes, para reunir a sequência. `#zinho` é a do personagem; as outras mudam a cada parte. São cinco, o limite atual do Instagram, iguais nas duas redes.
 
 O título de trabalho é **A parte que faltou**. O protagonista é **Zinho**, participante de um assalto que encontra roupas velhas na mochila da divisão enquanto seu rosto aparece no noticiário. O episódio 1, **A mochila**, termina com o amigo à porta e a pergunta “Você deixa ele entrar?”. O arco proposto tem cinco episódios: A mochila, A dívida, A divisão, A proposta e O preço.
 
@@ -44,6 +44,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 - Prova v2, no estilo da referência e sem efeitos: [`piloto-zinho-ep01-v2.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v2.mp4).
 - Prova v1, anterior à referência, com legendas corridas: [`piloto-zinho-ep01-v1.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v1.mp4). A timeline dela está no histórico do Git.
 - Perfil novo da série, no Instagram e no TikTok, em [`crimecarton-analise/perfil/`](crimecarton-analise/perfil/descricao-perfil.md). A foto responde à do @crimecarton, em que o personagem dele segura o saco de dinheiro: Zinho, preocupado, segura aberta a mochila com roupa velha num quarto escuro com luz de abajur. Ela vem da ilustração feita no Codex para o perfil. A versão recomendada, [`foto-perfil.png`](crimecarton-analise/perfil/foto-perfil.png), olha para a câmera; a alternativa, [`foto-perfil-b.png`](crimecarton-analise/perfil/foto-perfil-b.png), olha para dentro da mochila. As duas são geradas por `gerar_foto_perfil.py`, com prévia do corte circular. As bios, de 137 caracteres no Instagram e de 75 no TikTok, que aceita 80, abrem com “O assalto deu certo.” e creditam o @crimecarton.
+- Capa da Parte 1 em [`capas/capa-parte-01.png`](crimecarton-analise/capas/capa-parte-01.png), no layout das capas do @crimecarton. A ilustração ocupa a capa, e embaixo, sobre um degradê escuro, vêm uma etiqueta com o nome da série, “PARTE 1” em branco, “A MOCHILA” em amarelo e “CADÊ O DINHEIRO?” em branco. A arte é a ilustração do perfil em que Zinho olha para dentro da mochila. A capa tem 1080 × 1920, e o texto fica no recorte 3:4 que as grades do Instagram e do TikTok mostram. [`gerar_capas.py`](crimecarton-analise/capas/gerar_capas.py) tem uma entrada por parte, para todas as capas saírem iguais e a grade ficar organizada.
 - Testes curtos de montagem em `montagem/smoke.mp4` e `montagem/smoke-audio.mp4`. `render-report.json` e `timeline-used.json` correspondem à prova v7.
 
 ## Em andamento e pendências
@@ -60,7 +61,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 
 ## Como retomar
 
-1. Publicar a v7 no TikTok e nos Reels com o texto do post acima. O arquivo também pode ser baixado direto do GitHub, sem computador, pelo [link do arquivo bruto](https://raw.githubusercontent.com/Mazinho021/Projetos/claude/ecstatic-brown-xb2qxd/crimecarton-analise/episodio-01/piloto-zinho-ep01-v7.mp4).
+1. Publicar a v7 no TikTok e nos Reels com o texto do post acima e a capa da Parte 1. No Instagram, a capa entra em “Editar capa” → “Adicionar do rolo da câmera”. No TikTok, em “Editar capa” → “Carregar”, se o app tiver essa opção; senão, só dá para escolher um quadro do próprio vídeo. O arquivo também pode ser baixado direto do GitHub, sem computador, pelo [link do arquivo bruto](https://raw.githubusercontent.com/Mazinho021/Projetos/claude/ecstatic-brown-xb2qxd/crimecarton-analise/episodio-01/piloto-zinho-ep01-v7.mp4).
 2. Para ajustes de montagem, usar `montagem/montar_timeline.py` (ou direto em `timeline.json`) e renderizar uma nova versão. Os campos da timeline, dos gráficos e dos efeitos estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md); o estilo, no [guia da referência](crimecarton-analise/guia-de-estilo-referencia.md).
 3. Contar nos comentários a escolha da maioria, ABRIR ou NÃO ABRIR, que define o episódio 2, e usar os resultados reais de retenção no TikTok e nos Reels para orientar os episódios seguintes.
 
