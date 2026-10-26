@@ -272,8 +272,11 @@ def sound_mix(sfx, tail, first_input, cmd):
     timeline's "sfx" list ("sound", "at" in seconds, "gain" in dB) placed under it.
     Appends one input per distinct sound to `cmd`."""
     voice = 'loudnorm=I=-16:TP=-1.5:LRA=9,aresample=48000' + (f',apad=pad_dur={tail}' if tail > 0 else '')
+    # The mono mix goes out as stereo, the layout phones and social platforms expect, with
+    # the full signal on both sides (a plain -ac 2 would lower each side by 3 dB).
+    stereo = 'pan=stereo|c0=c0|c1=c0'
     if not sfx:
-        return [f'[1:a]{voice}[a]']
+        return [f'[1:a]{voice},{stereo}[a]']
     chains, mixed = [f'[1:a]{voice}[voice]'], []
     for k, name in enumerate(sorted({e['sound'] for e in sfx})):
         cmd += ['-i', EFFECTS / name]
@@ -286,7 +289,7 @@ def sound_mix(sfx, tail, first_input, cmd):
     # normalize=0 keeps every level as written; the limiter only catches overlapping peaks.
     # Its 5 ms look-ahead delays the output, so that much is trimmed to keep the voice in sync.
     chains.append(f"[voice]{''.join(mixed)}amix=inputs={len(mixed)+1}:duration=first:normalize=0,"
-                  "alimiter=limit=0.89:level=0:attack=5,atrim=start=0.005,asetpts=PTS-STARTPTS[a]")
+                  f"alimiter=limit=0.89:level=0:attack=5,atrim=start=0.005,asetpts=PTS-STARTPTS,{stereo}[a]")
     return chains
 
 
