@@ -57,7 +57,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 - Outras histórias do @crimecarton só podem ser analisadas se o criador enviar os vídeos: o Instagram bloqueia o acesso automático.
 - A referência não usa trilha de fundo, e o episódio também não usa.
 - O teste de vídeo de 8 segundos estimado no Codex não será feito, porque o formato não usa animação. Qualquer serviço pago adicional precisa de orçamento e autorização próprios.
-- Os resultados da Parte 1 ainda não foram informados. O formato e as hipóteses de retenção só se confirmam com os números reais; os materiais não comprovam monetização ou alcance.
+- **Primeiros resultados da Parte 1 no Instagram**, pelos insights do reel enviados pelo criador em 26/10/2026: 1.506 visualizações, 1.266 contas, tempo médio de 37 s, quase metade dos 83,56 s, 51 curtidas, ou 4% das contas, 12 comentários, 1 salvamento, 0 compartilhamentos, 0 reposts e 5 seguidores. O tempo médio indica que boa parte do público sai antes do áudio do amigo, aos 53 s, a virada da história. O ponto mais fraco são os compartilhamentos: segundo Adam Mosseri, os envios por alcance estão entre os sinais que mais levam um reel a quem não segue o perfil, ao lado do tempo assistido e das curtidas. Faltam o gráfico de retenção e a taxa de pulo, os números do TikTok e a contagem dos votos. Os materiais não comprovam monetização ou alcance futuro.
 
 ## Como retomar
 
