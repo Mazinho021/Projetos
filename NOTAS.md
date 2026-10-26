@@ -1,6 +1,6 @@
 # Estado do projeto — Zinho
 
-Atualizado em **26 de outubro de 2026**, depois da prova v4 do episódio 1, no estilo do vídeo de referência da série. O backup do Codex foi retomado no Claude Code, onde foram feitos o alinhamento da narração, as timelines, os efeitos sonoros e as provas v1 a v4; o Codex gerou o retrato de Zinho, a folha do amigo e a narração do pedido de comentário. Alguns documentos de planejamento ainda apresentam etapas já concluídas como futuras; para retomar, usar o estado registrado aqui e os arquivos existentes.
+Atualizado em **26 de outubro de 2026**, depois da prova v6 do episódio 1, no estilo do vídeo de referência da série, e da foto e da bio do perfil. O backup do Codex foi retomado no Claude Code, onde foram feitos o alinhamento da narração, as timelines, os efeitos sonoros, as provas v1 a v6 e o perfil; o Codex gerou o retrato de Zinho, a folha do amigo e a narração do pedido de comentário. Alguns documentos de planejamento ainda apresentam etapas já concluídas como futuras; para retomar, usar o estado registrado aqui e os arquivos existentes.
 
 ## Objetivo e decisões
 
@@ -38,6 +38,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 - Prova v3: [`piloto-zinho-ep01-v3.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v3.mp4), com 74,28 s. É a v2 com **30 efeitos sonoros** nas pausas da voz, seguindo a referência: whoosh nas trocas de capítulo, tique no contador de dinheiro, impactos em “R$ 0”, “NADA.” e no carimbo (que passou para a pausa depois de “fotografia.”), toque de chamada em “ninguém atende”, notificação em “Chega um áudio”, o começo do áudio do amigo repetido em “Você escuta outra vez”, duas batidas na porta junto com “TOC! / TOC!” e “pops” nos botões do final. A voz fica intacta e na mesma posição; volume integrado de -17 LUFS, pico de -1,4 dBFS. Os efeitos estão em [`montagem/efeitos/`](crimecarton-analise/episodio-01/montagem/efeitos/).
 - Prova v2, no estilo da referência e sem efeitos: [`piloto-zinho-ep01-v2.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v2.mp4).
 - Prova v1, anterior à referência, com legendas corridas: [`piloto-zinho-ep01-v1.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v1.mp4). A timeline dela está no histórico do Git.
+- Perfil novo da série, no Instagram e no TikTok, em [`crimecarton-analise/perfil/`](crimecarton-analise/perfil/descricao-perfil.md). A foto [`foto-perfil.png`](crimecarton-analise/perfil/foto-perfil.png) responde à do @crimecarton: Zinho preocupado com a roupa velha da mochila no quarto escuro da cena 3, como o personagem dele com o saco de dinheiro. Ela é gerada por `gerar_foto_perfil.py`, com prévia do corte circular. O nome sugerido é **A Parte Que Faltou**. As bios, de 137 caracteres no Instagram e de 75 no TikTok, que aceita 80, abrem com “O assalto deu certo.” e creditam o @crimecarton.
 - Testes curtos de montagem em `montagem/smoke.mp4` e `montagem/smoke-audio.mp4`. `render-report.json` e `timeline-used.json` correspondem à prova v6.
 
 ## Em andamento e pendências
@@ -52,7 +53,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 
 ## Como retomar
 
-1. Revisar a prova v4 e anotar os ajustes.
+1. Revisar a prova v6 e anotar os ajustes.
 2. Aplicar os ajustes com `montagem/montar_timeline.py` (ou direto em `timeline.json`) e renderizar a próxima versão. Os campos da timeline, dos gráficos e dos efeitos estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md); o estilo, no [guia da referência](crimecarton-analise/guia-de-estilo-referencia.md).
 3. Revisar a versão final, publicar com o nome da série e o episódio no texto do post e usar os resultados reais de retenção no TikTok e nos Reels para orientar os episódios seguintes.
 
