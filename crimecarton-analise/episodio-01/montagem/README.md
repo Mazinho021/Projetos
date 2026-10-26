@@ -31,7 +31,7 @@ A partir da raiz do repositório:
 python crimecarton-analise/episodio-01/montagem/render_animatic.py \
   --audio crimecarton-analise/episodio-01/narracao-original.wav \
   --timeline crimecarton-analise/episodio-01/montagem/timeline.json \
-  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v2.mp4
+  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v3.mp4
 ```
 
 Sem `--timeline`, o script usa um esboço escalado para a duração da voz, sem gráficos nem legendas, com estado `provisional_scaled_to_audio`. Esse modo permite testar o render, mas os cortes devem ser conferidos com a fala antes de apresentar um piloto sincronizado.
@@ -81,6 +81,12 @@ Cada item de `graphics` tem `type`, `start` e `end`; os subitens entram nos seus
 - `stamp`: carimbo em `x`, `y`, inclinado em `angle` graus.
 - `buttons`: `prompt` e botões (`text`, `at`, `style` `yellow` ou `white`) centrados em `y`.
 - `box`: caixa com `title` e `sub`, como “PARTE 2”.
+
+### Efeitos sonoros
+
+`sfx` lista os efeitos do episódio, cada um com `sound` (arquivo em `efeitos/`), `at` (início em segundos) e `gain` (dB). Eles são somados por baixo da narração já normalizada, nas pausas da voz, como na referência: whoosh nas trocas de capítulo, tique enquanto o dinheiro conta, impactos nas perdas e no carimbo, toque de chamada, notificação, o trecho do áudio do amigo repetido e as batidas na porta. Um limitador só segura picos sobrepostos.
+
+`gerar_efeitos.py` sintetiza `whoosh.wav`, `tique.wav`, `notificacao.wav` e `chamada.wav` e recorta `replay-amigo.wav` da própria narração. `batida-1.wav`, `batida-2.wav`, `impacto.wav`, `impacto-suave.wav` e `pop.wav` são gravações do pacote Impact Sounds de Kenney, em domínio público (CC0, ver `efeitos/LICENCA-kenney-impact-sounds.txt`).
 
 `captions` continua disponível para legendas corridas em ASS, que ficam acima da área inferior em que o TikTok e os Reels sobrepõem legenda e nome de usuário. A referência não usa legenda corrida, então a timeline atual a deixa vazia. O vídeo não tem selo da série no topo, porque essa área fica coberta pelas duas interfaces; o nome da série e o episódio vão no texto do post.
 

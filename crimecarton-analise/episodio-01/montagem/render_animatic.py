@@ -26,6 +26,7 @@ CAPTION_MARGIN = 290
 # Cards start below the HUD and its tag, drawn by graficos.
 CARD_TOP = 300
 AUDIO_TRACK_Y = 941
+EFFECTS = HERE / 'efeitos'
 
 
 def run(args, **kwargs):
@@ -266,6 +267,29 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     path.write_text(''.join(lines), encoding='utf-8')
 
 
+def sound_mix(sfx, tail, first_input, cmd):
+    """Audio filter chains ending in [a]: the normalized voice with each effect from the
+    timeline's "sfx" list ("sound", "at" in seconds, "gain" in dB) placed under it.
+    Appends one input per distinct sound to `cmd`."""
+    voice = 'loudnorm=I=-16:TP=-1.5:LRA=9,aresample=48000' + (f',apad=pad_dur={tail}' if tail > 0 else '')
+    if not sfx:
+        return [f'[1:a]{voice}[a]']
+    chains, mixed = [f'[1:a]{voice}[voice]'], []
+    for k, name in enumerate(sorted({e['sound'] for e in sfx})):
+        cmd += ['-i', EFFECTS / name]
+        events = [e for e in sfx if e['sound'] == name]
+        copies = [f'[s{k}_{j}]' for j in range(len(events))]
+        chains.append(f'[{first_input + k}:a]aresample=48000,aformat=channel_layouts=mono,asplit={len(events)}' + ''.join(copies))
+        for j, e in enumerate(events):
+            chains.append(f"{copies[j]}adelay={round(float(e['at'])*1000)}:all=1,volume={float(e.get('gain', 0))}dB[m{k}_{j}]")
+            mixed.append(f'[m{k}_{j}]')
+    # normalize=0 keeps every level as written; the limiter only catches overlapping peaks.
+    # Its 5 ms look-ahead delays the output, so that much is trimmed to keep the voice in sync.
+    chains.append(f"[voice]{''.join(mixed)}amix=inputs={len(mixed)+1}:duration=first:normalize=0,"
+                  "alimiter=limit=0.89:level=0:attack=5,atrim=start=0.005,asetpts=PTS-STARTPTS[a]")
+    return chains
+
+
 def template(duration):
     spans = [(0, 8, 'art', 'cena-01-base.png'), (8, 14, 'tv', 'cena-01-base.png'),
              (14, 22, 'art', 'cena-03-roupas.png'), (22, 32, 'art', 'cena-07-audio.png'),
@@ -310,6 +334,10 @@ def main():
         raise ValueError(f'Timeline ends at {edge:.3f}s; audio plus tail is {duration:.3f}s. Adjust timeline first.')
     graphics = timeline.get('graphics', [])
     graficos.check(graphics)
+    sfx = timeline.get('sfx', [])
+    missing = sorted({e['sound'] for e in sfx if not (EFFECTS / e['sound']).exists()})
+    if missing:
+        raise FileNotFoundError(f'Sound effects missing from {EFFECTS}: {missing}')
     used = HERE / 'timeline-used.json'
     used.write_text(json.dumps(timeline, ensure_ascii=False, indent=2))
     ass = work / 'captions.ass'
@@ -326,9 +354,8 @@ def main():
     playlist.write_text(''.join(f"file '{p.as_posix()}'\n" for p in parts))
     args.output.parent.mkdir(parents=True, exist_ok=True)
     # All inputs share codec/rate. The final pass lays the graphics layer, streamed frame
-    # by frame from graficos, over the scenes, burns captions if the timeline has any and
-    # normalizes speech gently.
-    audio_filter = 'loudnorm=I=-16:TP=-1.5:LRA=9' + (f',apad=pad_dur={tail}' if tail > 0 else '')
+    # by frame from graficos, over the scenes, burns captions if the timeline has any,
+    # normalizes speech gently and mixes the sound effects under it.
     cmd = ['ffmpeg', '-y', '-hide_banner', '-loglevel', 'warning', '-f', 'concat', '-safe', '0', '-i', playlist, '-i', args.audio]
     chain = []
     if graphics:
@@ -337,10 +364,11 @@ def main():
     if timeline.get('captions'):
         chain.append(f'ass={ass.as_posix()}:fontsdir={FONTS.as_posix()}')
     chain.append('format=yuv420p')
-    cmd += ['-filter_complex', ('[0:v][2:v]' if graphics else '[0:v]') + ','.join(chain) + '[v]',
-            '-map', '[v]', '-map', '1:a:0', '-af', audio_filter, '-t', str(duration), '-c:v', 'libx264', '-preset', 'fast',
-            '-crf', '19', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart',
-            '-threads', '2', args.output]
+    graph = [('[0:v][2:v]' if graphics else '[0:v]') + ','.join(chain) + '[v]']
+    graph += sound_mix(sfx, tail, 3 if graphics else 2, cmd)
+    cmd += ['-filter_complex', ';'.join(graph), '-map', '[v]', '-map', '[a]', '-t', str(duration),
+            '-c:v', 'libx264', '-preset', 'fast', '-crf', '19', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k',
+            '-ar', '48000', '-movflags', '+faststart', '-threads', '2', args.output]
     if graphics:
         proc = subprocess.Popen([str(a) for a in cmd], stdin=subprocess.PIPE)
         try:
@@ -355,6 +383,7 @@ def main():
         run(cmd)
     result = {'output': str(args.output), 'duration': probe(args.output), 'audio_duration': audio_duration, 'tail': tail,
               'scenes': len(scenes), 'captions': len(timeline.get('captions', [])), 'graphics': len(graphics),
+              'sound_effects': len(sfx),
               'type': 'illustrated animatic with camera motion and graphics; no generated body animation'}
     (HERE / 'render-report.json').write_text(json.dumps(result, indent=2))
     print(json.dumps(result, ensure_ascii=False, indent=2))

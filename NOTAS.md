@@ -30,28 +30,28 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 - Renderizador local [`render_animatic.py`](crimecarton-analise/episodio-01/montagem/render_animatic.py), com câmera sobre ilustrações, enquadramentos recortados das imagens base, cartões de TV/celular e saída vertical de 720 × 1280 a 25 fps por padrão. A camada de gráficos animados está em [`graficos.py`](crimecarton-analise/episodio-01/montagem/graficos.py), com a fonte Poppins em [`fontes/`](crimecarton-analise/fontes/) (licença OFL).
 - Alinhamento palavra por palavra da narração em [`alinhamento-narracao.json`](crimecarton-analise/episodio-01/montagem/alinhamento-narracao.json), gerado por [`alinhar_narracao.py`](crimecarton-analise/episodio-01/montagem/alinhar_narracao.py) com reconhecimento de fala local: as 170 palavras do roteiro têm início e fim medidos na voz, com as bordas ajustadas às pausas do áudio.
 - Timeline atual em [`montagem/timeline.json`](crimecarton-analise/episodio-01/montagem/timeline.json): **20 planos e 22 elementos gráficos** de 0 a 74,28 s, isto é, a locução de 71,28 s mais **3 s de final** com o pedido de comentário. Como na referência, não há legenda corrida: as frases-chave entram linha por linha na palavra falada. O painel “A SUA PARTE” passa de “R$ ?” a “R$ 0” em “Nenhuma nota” e as cinco estrelas de suspeita enchem em “suspeito identificado”. As etiquetas marcam PISTA 1 · A MOCHILA, PISTA 2 · O SILÊNCIO, PISTA 3 · A FOTO e PISTA 4 · O ÁUDIO. Entram ainda a lista “BOLSOS → VAZIOS”, o carimbo “A MESMA FOTO”, “TOC! TOC!”, “VENDEU / SEU NOME.” e o final “VOCÊ DEIXA / ELE ENTRAR?” com “ABRIR / NÃO ABRIR” e “PARTE 2”.
-- **Prova v2, no estilo da referência:** [`piloto-zinho-ep01-v2.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v2.mp4), com 74,28 s. As pausas do áudio final coincidem com as da narração original.
+- **Prova v3, a mais recente:** [`piloto-zinho-ep01-v3.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v3.mp4), com 74,28 s. É a v2 com **30 efeitos sonoros** nas pausas da voz, seguindo a referência: whoosh nas trocas de capítulo, tique no contador de dinheiro, impactos em “R$ 0”, “NADA.” e no carimbo (que passou para a pausa depois de “fotografia.”), toque de chamada em “ninguém atende”, notificação em “Chega um áudio”, o começo do áudio do amigo repetido em “Você escuta outra vez”, duas batidas na porta junto com “TOC! / TOC!” e “pops” nos botões do final. A voz fica intacta e na mesma posição; volume integrado de -17 LUFS, pico de -1,4 dBFS. Os efeitos estão em [`montagem/efeitos/`](crimecarton-analise/episodio-01/montagem/efeitos/).
+- Prova v2, no estilo da referência e sem efeitos: [`piloto-zinho-ep01-v2.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v2.mp4).
 - Prova v1, anterior à referência, com legendas corridas: [`piloto-zinho-ep01-v1.mp4`](crimecarton-analise/episodio-01/piloto-zinho-ep01-v1.mp4). A timeline dela está no histórico do Git.
 - Testes curtos de montagem em `montagem/smoke.mp4` e `montagem/smoke-audio.mp4`. `render-report.json` e `timeline-used.json` correspondem à prova v2.
 
 ## Em andamento e pendências
 
-- **A prova v2 aguarda revisão do criador**: ritmo, textos na tela, painel, etiquetas e final.
+- **A prova v3 aguarda revisão do criador**: ritmo, textos na tela, painel, etiquetas, efeitos sonoros e final.
 - **Retrato frontal do Zinho**, pedido pelo criador para a TV e a comparação: hoje é um recorte da cena 1, com Zinho olhando para baixo. A nova imagem deve ser gerada onde houver gerador de imagens (o Claude Code desta sessão não tem) e salva como `crimecarton-analise/episodio-01/retrato-zinho.png`. O renderizador passa a usá-la automaticamente quando o arquivo existe.
 - O final promete, como a referência, que “a maioria decide o próximo passo”. Se a maioria comentar NÃO ABRIR, o episódio 2 precisa seguir esse caminho; o arco em `producao-zinho.md` supõe que o amigo entra.
 - O final é só visual: a narração termina na pergunta. Narrar o pedido de comentário, como na referência, exigiria nova geração de voz, que é paga e precisa de autorização.
 - O amigo aparece na cena 9, mas ainda não tem ficha visual própria. Criá-la a partir dessa cena antes do episódio 2.
 - Outras histórias do @crimecarton só podem ser analisadas se o criador enviar os vídeos: o Instagram bloqueia o acesso automático.
-- A referência não usa trilha de fundo. Efeitos sonoros (celular, batidas na porta) continuam opcionais e não foram feitos.
+- A referência não usa trilha de fundo, e o episódio também não usa.
 - O teste de vídeo de 8 segundos estimado no Codex não será feito, porque o formato não usa animação. Qualquer serviço pago adicional precisa de orçamento e autorização próprios.
 - Não houve publicação do piloto no TikTok. O formato e as hipóteses de retenção ainda precisam ser testados; os materiais não comprovam monetização ou alcance.
 
 ## Como retomar
 
-1. Revisar a prova v2 e anotar os ajustes.
-2. Gerar o retrato frontal `retrato-zinho.png`, aplicar os ajustes em `montagem/timeline.json` (usando os tempos de `alinhamento-narracao.json`) e renderizar a v3. Os campos da timeline e dos gráficos estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md); o estilo, no [guia da referência](crimecarton-analise/guia-de-estilo-referencia.md).
-3. Decidir se entram efeitos sonoros.
-4. Revisar a versão final, publicar com o nome da série e o episódio no texto do post e usar os resultados reais de retenção no TikTok e nos Reels para orientar os episódios seguintes.
+1. Revisar a prova v3 e anotar os ajustes.
+2. Receber do Codex o retrato frontal `retrato-zinho.png`, a ficha do amigo e a narração do pedido de comentário; aplicar os ajustes com `montagem/montar_timeline.py` (ou direto em `timeline.json`) e renderizar a v4. Os campos da timeline, dos gráficos e dos efeitos estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md); o estilo, no [guia da referência](crimecarton-analise/guia-de-estilo-referencia.md).
+3. Revisar a versão final, publicar com o nome da série e o episódio no texto do post e usar os resultados reais de retenção no TikTok e nos Reels para orientar os episódios seguintes.
 
 Requisitos locais do renderizador: **Python 3 com Pillow, FFmpeg com libass e FFprobe**; a fonte Poppins já está no repositório. O alinhamento precisa também de faster-whisper, instalado à parte conforme o README da montagem.
 
@@ -61,7 +61,7 @@ Para renderizar, executar a partir da raiz do repositório:
 python crimecarton-analise/episodio-01/montagem/render_animatic.py \
   --audio crimecarton-analise/episodio-01/narracao-original.wav \
   --timeline crimecarton-analise/episodio-01/montagem/timeline.json \
-  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v3.mp4 \
+  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v4.mp4 \
   --workers 2
 ```
 

@@ -47,6 +47,11 @@ CURTAIN09 = [0.0, 0.08, 0.60, 0.68]
 FRIEND09 = [0.50, 0.11, 1.0, 0.61]
 DOOR09 = [0.40, 0.40, 1.0, 1.0]
 FRIEND_LINE = (121, 137)  # “Eu estava devendo … no meu lugar.”
+# Sound effects sit in the pauses of the voice, as in the reference.
+REPLAY_AT = round(e(141) + .04, 2)       # the friend's line restarts after “Você escuta outra vez.”
+STAMP_AT = round(e(104) + .08, 2)        # “A MESMA FOTO” lands in the pause after “fotografia.”
+KNOCKS = (round(e(148) + .07, 2), round(e(148) + .33, 2))
+WHOOSH_PEAK = .36                        # seconds from the start of whoosh.wav to its loudest point
 
 PLAN = [
     (0, dict(kind='art', asset='cena-01-base.png', zoom=.06)),
@@ -90,8 +95,7 @@ def build():
     for n, (t, fields) in enumerate(PLAN):
         scene = {'start': t, 'end': PLAN[n+1][0] if n+1 < len(PLAN) else END, **fields}
         if scene.get('play') == 'replay':
-            p0 = round(t + .4, 2)
-            scene['play'] = [p0, round(p0 + e(FRIEND_LINE[1]) - s(FRIEND_LINE[0]), 2)]
+            scene['play'] = [REPLAY_AT, round(REPLAY_AT + e(FRIEND_LINE[1]) - s(FRIEND_LINE[0]), 2)]
         scenes.append(scene)
     cuts = [scene['start'] for scene in scenes]
     graphics = [
@@ -121,13 +125,14 @@ def build():
         phrase(s(83) - .1, cuts[11], 910, [label('ELE PROMETEU', s(83)), line('“EU GARANTO', s(85)),
                                            line('A SUA PARTE.”', s(87), 'yellow')], 64),
         {'type': 'tag', 'start': round(s(94), 2), 'end': cuts[14], 'text': 'PISTA 3 · A FOTO'},
-        {'type': 'stamp', 'start': round(s(107), 2), 'end': cuts[14], 'text': 'A MESMA FOTO', 'y': 595, 'angle': -7},
+        {'type': 'stamp', 'start': STAMP_AT, 'end': cuts[14], 'text': 'A MESMA FOTO', 'y': 595, 'angle': -7},
         {'type': 'tag', 'start': round(s(118), 2), 'end': cuts[16], 'text': 'PISTA 4 · O ÁUDIO'},
         phrase(s(121) - .05, s(126) - .1, 560, [line('“EU ESTAVA', s(121)), line('DEVENDO', s(123)),
                                                 line('PARA ELES.', s(124), 'yellow')], 60),
         phrase(s(126) - .1, cuts[15], 560, [line('A DÍVIDA ACABAVA', s(126)), line('SE EU COLOCASSE', s(131)),
                                             line('ALGUÉM NO', s(134), 'yellow'), line('MEU LUGAR.”', s(135), 'yellow')], 58),
-        phrase(s(146) - .05, cuts[17], 930, [line('TOC! TOC!', s(146), shake=True)], 92),
+        phrase(KNOCKS[0] - .05, cuts[17], 880, [line('TOC!', KNOCKS[0], shake=True),
+                                                line('TOC!', KNOCKS[1], 'yellow', shake=True)], 96),
         phrase(s(163) - .05, cuts[19], 930, [line('VENDEU', s(163)), line('SEU NOME.', s(164), 'yellow')], 72),
         # The closing block stays on screen to the last frame, as in the reference.
         phrase(cuts[19], END + .5, 420, [line('VOCÊ DEIXA', s(166)), line('ELE ENTRAR?', s(168), 'yellow')], 76),
@@ -137,7 +142,31 @@ def build():
         {'type': 'box', 'start': round(e(169) + 1, 2), 'end': END + .5, 'y': 880, 'title': 'PARTE 2',
          'sub': 'a maioria decide o próximo passo'},
     ]
-    return scenes, graphics
+    return scenes, graphics, sound_effects(cuts)
+
+
+def sfx(sound, at, gain):
+    return {'sound': sound, 'at': round(at, 3), 'gain': gain}
+
+
+def sound_effects(cuts):
+    # Whooshes on the chapter changes, ticks while the money counts, impacts on the
+    # losses and the stamp, and the concrete sounds the narration mentions.
+    count_start, count_end = s(5), e(9) - .3
+    ticks = [sfx('tique.wav', count_start + (count_end - count_start)*(1 - (1 - k/14)**(1/3)), -18) for k in range(1, 15)]
+    return [
+        *[sfx('whoosh.wav', cuts[n] - WHOOSH_PEAK, -2) for n in (2, 3, 9, 12, 19)],
+        *ticks,
+        sfx('impacto-suave.wav', s(39) - .08, -10),
+        sfx('impacto.wav', s(51) - .1, -5),
+        sfx('chamada.wav', e(58) + .03, -24),
+        sfx('impacto.wav', STAMP_AT - .02, -5),
+        sfx('notificacao.wav', e(117) + .18, -8),
+        sfx('replay-amigo.wav', REPLAY_AT, -3),
+        sfx('batida-1.wav', KNOCKS[0], -2),
+        sfx('batida-2.wav', KNOCKS[1], -3),
+        *[sfx('pop.wav', at, -10) for at in (e(169) + .25, e(169) + .45, e(169) + 1)],
+    ]
 
 
 def too_wide(graphics, limit=570):
@@ -158,16 +187,16 @@ def too_wide(graphics, limit=570):
 
 
 def main():
-    scenes, graphics = build()
+    scenes, graphics, effects = build()
     wide = too_wide(graphics)
     if wide:
         raise ValueError(f'Lines wider than the safe area: {wide}')
     graficos.check(graphics)
     timeline = {'timing_status': 'aligned_to_voice', 'style': 'guia-de-estilo-referencia.md',
                 'alignment': 'alinhamento-narracao.json', 'audio': AUDIO.name, 'tail': TAIL,
-                'scenes': scenes, 'graphics': graphics, 'captions': []}
+                'scenes': scenes, 'graphics': graphics, 'sfx': effects, 'captions': []}
     (HERE / 'timeline.json').write_text(json.dumps(timeline, ensure_ascii=False, indent=1), encoding='utf-8')
-    print(f'{len(scenes)} scenes, {len(graphics)} graphics, ends at {END}s')
+    print(f'{len(scenes)} scenes, {len(graphics)} graphics, {len(effects)} sound effects, ends at {END}s')
 
 
 if __name__ == '__main__':

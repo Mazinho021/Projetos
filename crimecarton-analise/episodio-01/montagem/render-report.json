@@ -1,10 +1,11 @@
 {
-  "output": "crimecarton-analise/episodio-01/piloto-zinho-ep01-v2.mp4",
+  "output": "crimecarton-analise/episodio-01/piloto-zinho-ep01-v3.mp4",
   "duration": 74.28,
   "audio_duration": 71.28,
   "tail": 3.0,
   "scenes": 20,
   "captions": 0,
   "graphics": 22,
+  "sound_effects": 30,
   "type": "illustrated animatic with camera motion and graphics; no generated body animation"
 }

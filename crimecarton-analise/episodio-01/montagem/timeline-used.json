@@ -1,6 +1,6 @@
 {
   "timing_status": "aligned_to_voice",
-  "style": "video de referencia da serie (Design sem nome.mp4)",
+  "style": "guia-de-estilo-referencia.md",
   "alignment": "alinhamento-narracao.json",
   "audio": "narracao-original.wav",
   "tail": 3.0,
@@ -160,8 +160,8 @@
         0.63
       ],
       "play": [
-        59.55,
-        64.07
+        60.5,
+        65.02
       ]
     },
     {
@@ -457,7 +457,7 @@
     },
     {
       "type": "stamp",
-      "start": 48.06,
+      "start": 47.05,
       "end": 52.23,
       "text": "A MESMA FOTO",
       "y": 595,
@@ -524,15 +524,21 @@
     },
     {
       "type": "phrase",
-      "start": 62.75,
+      "start": 63.57,
       "end": 64.29,
-      "y": 930,
-      "size": 92,
+      "y": 880,
+      "size": 96,
       "lines": [
         {
-          "text": "TOC! TOC!",
-          "at": 62.8,
+          "text": "TOC!",
+          "at": 63.62,
           "color": "white",
+          "shake": true
+        },
+        {
+          "text": "TOC!",
+          "at": 63.88,
+          "color": "yellow",
           "shake": true
         }
       ]
@@ -602,6 +608,158 @@
       "y": 880,
       "title": "PARTE 2",
       "sub": "a maioria decide o próximo passo"
+    }
+  ],
+  "sfx": [
+    {
+      "sound": "whoosh.wav",
+      "at": 7.94,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 13.99,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 31.22,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 42.99,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 69.62,
+      "gain": -2
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.898,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.937,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.979,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.024,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.071,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.122,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.178,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.239,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.308,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.386,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.479,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.596,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.762,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 4.402,
+      "gain": -18
+    },
+    {
+      "sound": "impacto-suave.wav",
+      "at": 19.856,
+      "gain": -10
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 25.454,
+      "gain": -5
+    },
+    {
+      "sound": "chamada.wav",
+      "at": 29.005,
+      "gain": -24
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 47.03,
+      "gain": -5
+    },
+    {
+      "sound": "notificacao.wav",
+      "at": 51.746,
+      "gain": -8
+    },
+    {
+      "sound": "replay-amigo.wav",
+      "at": 60.5,
+      "gain": -3
+    },
+    {
+      "sound": "batida-1.wav",
+      "at": 63.62,
+      "gain": -2
+    },
+    {
+      "sound": "batida-2.wav",
+      "at": 63.88,
+      "gain": -3
+    },
+    {
+      "sound": "pop.wav",
+      "at": 71.206,
+      "gain": -10
+    },
+    {
+      "sound": "pop.wav",
+      "at": 71.406,
+      "gain": -10
+    },
+    {
+      "sound": "pop.wav",
+      "at": 71.956,
+      "gain": -10
     }
   ],
   "captions": []

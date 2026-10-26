@@ -32,17 +32,19 @@
     "credito": "Inspirado nas histórias de @crimecarton (no texto do post)"
   },
   "montagem": {
-    "status": "prova v2 no estilo do vídeo de referência; aguarda revisão do criador",
+    "status": "prova v3 no estilo do vídeo de referência, com efeitos sonoros; aguarda revisão do criador",
     "referencia": "../guia-de-estilo-referencia.md",
     "alinhamento": "montagem/alinhamento-narracao.json",
     "timeline": "montagem/timeline.json",
-    "arquivo": "piloto-zinho-ep01-v2.mp4",
+    "arquivo": "piloto-zinho-ep01-v3.mp4",
     "duracao_segundos": 74.28,
     "pausa_final_segundos": 3.0,
     "planos": 20,
     "elementos_graficos": 22,
+    "efeitos_sonoros": 30,
     "legendas": 0,
-    "versoes_anteriores": ["piloto-zinho-ep01-v1.mp4 (legendas corridas, antes da referência)"]
+    "versoes_anteriores": ["piloto-zinho-ep01-v1.mp4 (legendas corridas, antes da referência)",
+                           "piloto-zinho-ep01-v2.mp4 (estilo da referência, sem efeitos sonoros)"]
   },
   "video_final": "prova v2 com ilustrações, câmera, cartões, frases animadas e narração"
 }
