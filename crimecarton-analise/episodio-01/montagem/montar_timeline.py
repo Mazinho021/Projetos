@@ -15,12 +15,13 @@ from pathlib import Path
 import re
 import subprocess
 
-from gerar_efeitos import REPLAY_PAD, REPLAY_WORDS
+from gerar_efeitos import FRIEND_LINE, FRIEND_PAD, REPLAY_PAD, REPLAY_WORDS
 import graficos
 
 HERE = Path(__file__).resolve().parent
 EPISODE = HERE.parent
 MAIN = EPISODE / 'narracao-original.wav'
+FRIEND = HERE / 'efeitos' / 'audio-amigo.wav'
 CTA = EPISODE / 'narracao-cta-ep01.wav'
 AUDIO = EPISODE / 'narracao-ep01-com-cta.wav'
 TAIL = 1.2
@@ -82,16 +83,21 @@ def replayed(i):
 
 
 def join_narration():
-    # The closing request came out quieter than the episode's narration: match it. Float
+    # The friend's message plays in his own voice, audio-amigo.wav from voz_amigo.py, in
+    # place of the narrator's reading; it has the same length, so the timing holds. The
+    # closing request came out quieter than the episode's narration: match it. Float
     # samples keep the raised peaks for the final loudness pass.
     gain = loudness(MAIN) - loudness(CTA)
-    rate = probe(MAIN, 'stream=sample_rate')
+    rate = int(probe(MAIN, 'stream=sample_rate'))
+    first = round((WORDS[FRIEND_LINE[0]]['start'] - FRIEND_PAD) * rate)
+    last = first + int(probe(FRIEND, 'stream=duration_ts'))
     fmt = f'aformat=sample_fmts=flt:sample_rates={rate}:channel_layouts=mono'
-    graph = (f'[0:a]{fmt},asplit=2[m1][m2];[m1]atrim=end={INSERT_AT},asetpts=PTS-STARTPTS[a];'
-             f'[m2]atrim=start={INSERT_AT},asetpts=PTS-STARTPTS[b];aevalsrc=0:d={GAP}:s={rate}:c=mono,{fmt}[g];'
-             f'[1:a]{fmt},volume={gain:.2f}dB[cta];[a][g][b][cta]concat=n=4:v=0:a=1[out]')
-    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', MAIN, '-i', CTA, '-filter_complex', graph, '-map', '[out]',
-                    '-c:a', 'pcm_f32le', AUDIO], check=True)
+    graph = (f'[0:a]{fmt},asplit=3[m1][m2][m3];[m1]atrim=end_sample={first}[a1];[2:a]{fmt}[friend];'
+             f'[m2]atrim=start_sample={last}:end={INSERT_AT},asetpts=PTS-STARTPTS[a2];'
+             f'[m3]atrim=start={INSERT_AT},asetpts=PTS-STARTPTS[b];aevalsrc=0:d={GAP}:s={rate}:c=mono,{fmt}[g];'
+             f'[1:a]{fmt},volume={gain:.2f}dB[cta];[a1][friend][a2][g][b][cta]concat=n=6:v=0:a=1[out]')
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', MAIN, '-i', CTA, '-i', FRIEND, '-filter_complex', graph,
+                    '-map', '[out]', '-c:a', 'pcm_f32le', AUDIO], check=True)
     return gain
 
 
@@ -105,7 +111,6 @@ EYES07 = [0.34, 0.16, 0.74, 0.56]
 CURTAIN09 = [0.0, 0.08, 0.60, 0.68]
 FRIEND09 = [0.50, 0.11, 1.0, 0.61]
 DOOR09 = [0.40, 0.40, 1.0, 1.0]
-FRIEND_LINE = (121, 137)  # “Eu estava devendo … no meu lugar.”
 # Sound effects sit in the pauses of the voice, as in the reference.
 STAMP_AT = round(e(104) + .08, 2)        # “A MESMA FOTO” lands in the pause after “fotografia.”
 KNOCKS = (round(e(148) + .07, 2), round(e(148) + .33, 2))

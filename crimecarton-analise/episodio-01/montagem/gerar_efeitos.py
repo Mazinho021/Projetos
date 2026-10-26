@@ -2,7 +2,8 @@
 """Synthesize the episode's sound effects into efeitos/.
 
 Whoosh, counter tick, notification chime and ringback tone are generated here with
-the standard library only. The replay snippet is cut from the narration itself. Wood
+the standard library only. The replay snippet is cut from the friend's voice message,
+efeitos/audio-amigo.wav, which voz_amigo.py makes from the narration. Wood
 knocks, impacts and pops are CC0 recordings by Kenney, kept as WAV in efeitos/.
 """
 from __future__ import annotations
@@ -17,6 +18,8 @@ import wave
 HERE = Path(__file__).resolve().parent
 OUT = HERE / 'efeitos'
 SR = 48000
+FRIEND_LINE = (121, 137)   # the friend's voice message, “Eu estava devendo … no meu lugar.”
+FRIEND_PAD = .3            # seconds of the pauses around it that go with it into audio-amigo.wav
 REPLAY_WORDS = (126, 137)  # “Disseram que a dívida acabava se eu colocasse alguém no meu lugar.”
 REPLAY_PAD = (.05, .12)    # seconds kept before the first word and after the last
 
@@ -80,15 +83,16 @@ def ringback(dur=.42):
 
 
 def replay_snippet():
-    # The key sentence of the friend's line, thinned like a phone speaker, for "Você escuta
-    # outra vez". Its bounds come from the narration's word alignment.
+    # The key sentence of the friend's message, in his voice from audio-amigo.wav (made by
+    # voz_amigo.py), for "Você escuta outra vez". Its bounds come from the word alignment.
     words = json.loads((HERE / 'alinhamento-narracao.json').read_text(encoding='utf-8'))['words']
     start = words[REPLAY_WORDS[0]]['start'] - REPLAY_PAD[0]
     length = words[REPLAY_WORDS[1]]['end'] + REPLAY_PAD[1] - start
-    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{start:.3f}', '-t', f'{length:.3f}',
-                    '-i', str(HERE.parent / 'narracao-original.wav'),
-                    '-af', f'highpass=f=350,lowpass=f=3200,afade=t=in:d=0.03,afade=t=out:st={length-.15:.3f}:d=0.15',
-                    '-ar', str(SR), '-ac', '1', str(OUT / 'replay-amigo.wav')], check=True)
+    offset = start - (words[FRIEND_LINE[0]]['start'] - FRIEND_PAD)
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{offset:.3f}', '-t', f'{length:.3f}',
+                    '-i', str(OUT / 'audio-amigo.wav'),
+                    '-af', f'afade=t=in:d=0.03,afade=t=out:st={length-.15:.3f}:d=0.15',
+                    '-ar', str(SR), '-ac', '1', '-c:a', 'pcm_s16le', str(OUT / 'replay-amigo.wav')], check=True)
 
 
 def main():

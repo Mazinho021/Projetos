@@ -50,11 +50,12 @@
     "perfil": "../perfil/descricao-perfil.md (foto, nome e bio do perfil novo)"
   },
   "montagem": {
-    "status": "prova v6 no estilo do vídeo de referência, com efeitos sonoros, retrato frontal, pedido de comentário narrado e a repetição do áudio do amigo com a reação de Zinho; aprovada pelo criador para publicação",
+    "status": "prova v7 no estilo do vídeo de referência, com efeitos sonoros, retrato frontal, pedido de comentário narrado, a repetição do áudio do amigo com a reação de Zinho e a voz própria do amigo; é a v6 aprovada pelo criador com a voz do amigo que ele pediu, versão de publicação",
     "referencia": "../guia-de-estilo-referencia.md",
     "alinhamento": "montagem/alinhamento-narracao.json",
     "timeline": "montagem/timeline.json",
-    "arquivo": "piloto-zinho-ep01-v6.mp4",
+    "arquivo": "piloto-zinho-ep01-v7.mp4",
+    "voz_do_amigo": "montagem/efeitos/audio-amigo.wav, criada por montagem/voz_amigo.py a partir da própria narração (tom médio de uns 110 Hz contra uns 85 Hz do narrador, som de celular, mesma duração)",
     "duracao_segundos": 83.56,
     "pausa_final_segundos": 1.2,
     "pausa_escuta_outra_vez_segundos": 4.4,
@@ -67,9 +68,10 @@
       "piloto-zinho-ep01-v2.mp4 (estilo da referência, sem efeitos sonoros)",
       "piloto-zinho-ep01-v3.mp4 (com efeitos sonoros, antes do retrato e do pedido de comentário narrado)",
       "piloto-zinho-ep01-v4.mp4 (com retrato e pedido de comentário; o “Você escuta outra vez” ainda curto)",
-      "piloto-zinho-ep01-v5.mp4 (a foto enviada ao amigo ainda mostrava Zinho)"
+      "piloto-zinho-ep01-v5.mp4 (a foto enviada ao amigo ainda mostrava Zinho)",
+      "piloto-zinho-ep01-v6.mp4 (aprovada pelo criador; o áudio do amigo ainda na voz do narrador)"
     ],
     "foto_enviada_ao_amigo": "só a mochila aberta com roupa velha (recorte da cena 3)"
   },
-  "video_final": "piloto-zinho-ep01-v6.mp4, aprovada pelo criador: ilustrações, câmera, cartões, frases animadas, efeitos sonoros e narração"
+  "video_final": "piloto-zinho-ep01-v7.mp4: a v6 aprovada pelo criador, com a voz própria do amigo; ilustrações, câmera, cartões, frases animadas, efeitos sonoros e narração"
 }

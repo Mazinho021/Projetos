@@ -15,9 +15,21 @@ python -m venv .venv && .venv/bin/pip install faster-whisper
 
 Na primeira execução o modelo é baixado da Hugging Face. Use esse arquivo para posicionar cortes e gráficos; refaça o alinhamento se a narração for gerada de novo.
 
+## Dar voz ao amigo
+
+Na narração, o áudio que o amigo manda (“Eu estava devendo … no meu lugar.”) foi lido pela mesma voz grave do narrador, e a repetição soava como o narrador outra vez. `voz_amigo.py` recorta essa fala de `narracao-original.wav` e a passa para outra voz com a função “Change gender” do Praat: tom médio de 112 Hz, contra uns 85 Hz do narrador, e formantes 8% mais altos, como os de um trato vocal menor. Depois ela ganha o som de um alto-falante de celular. O resultado, `efeitos/audio-amigo.wav`, tem exatamente a duração da fala original. `montar_timeline.py` o põe no lugar da leitura do narrador, e `gerar_efeitos.py` recorta dele a repetição, sem mudar a sincronização.
+
+```bash
+.venv/bin/pip install praat-parselmouth
+.venv/bin/python crimecarton-analise/episodio-01/montagem/voz_amigo.py
+python crimecarton-analise/episodio-01/montagem/gerar_efeitos.py
+```
+
+Se a narração for gerada ou alinhada de novo, rode os dois antes de `montar_timeline.py`.
+
 ## Montar a timeline
 
-`montar_timeline.py` gera `timeline.json` a partir dos alinhamentos da narração e do pedido de comentário. Os cortes, os gráficos e os efeitos estão presos aos números das palavras, então a edição acompanha a voz se a narração for alinhada de novo. O script também monta o áudio do episódio em `narracao-ep01-com-cta.wav`: abre uma pausa depois de “Você escuta outra vez.”, onde a frase principal do amigo toca de novo e Zinho reage, e junta no fim o pedido de comentário gravado à parte, igualando o volume. Tudo o que vem depois da pausa é deslocado automaticamente. O script ainda recusa frases mais largas que a área segura. Ajustes de edição podem ser feitos nele, rodando-o em seguida, ou direto no `timeline.json`.
+`montar_timeline.py` gera `timeline.json` a partir dos alinhamentos da narração e do pedido de comentário. Os cortes, os gráficos e os efeitos estão presos aos números das palavras, então a edição acompanha a voz se a narração for alinhada de novo. O script também monta o áudio do episódio em `narracao-ep01-com-cta.wav`: põe o áudio do amigo na voz dele, abre uma pausa depois de “Você escuta outra vez.”, onde a frase principal do amigo toca de novo e Zinho reage, e junta no fim o pedido de comentário gravado à parte, igualando o volume. Tudo o que vem depois da pausa é deslocado automaticamente. O script ainda recusa frases mais largas que a área segura. Ajustes de edição podem ser feitos nele, rodando-o em seguida, ou direto no `timeline.json`.
 
 O pedido de comentário foi alinhado com o mesmo script de alinhamento:
 
@@ -39,7 +51,7 @@ A partir da raiz do repositório:
 ```bash
 python crimecarton-analise/episodio-01/montagem/render_animatic.py \
   --timeline crimecarton-analise/episodio-01/montagem/timeline.json \
-  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v7.mp4
+  --output crimecarton-analise/episodio-01/piloto-zinho-ep01-v8.mp4
 ```
 
 Sem `--audio`, o script usa o áudio indicado em `audio` na timeline, ao lado do episódio. Sem `--timeline`, usa `narracao-original.wav` e um esboço escalado para a duração da voz, sem gráficos nem legendas, com estado `provisional_scaled_to_audio`. Esse modo permite testar o render, mas os cortes devem ser conferidos com a fala antes de apresentar um piloto sincronizado.
@@ -95,7 +107,7 @@ Cada item de `graphics` tem `type`, `start` e `end`; os subitens entram nos seus
 
 `sfx` lista os efeitos do episódio, cada um com `sound` (arquivo em `efeitos/`), `at` (início em segundos) e `gain` (dB). Eles são somados por baixo da narração já normalizada, nas pausas da voz, como na referência: whoosh nas trocas de capítulo, tique enquanto o dinheiro conta, impactos nas perdas e no carimbo, toque de chamada, notificação, o trecho do áudio do amigo repetido e as batidas na porta. Um limitador só segura picos sobrepostos.
 
-`gerar_efeitos.py` sintetiza `whoosh.wav`, `tique.wav`, `notificacao.wav` e `chamada.wav` e recorta `replay-amigo.wav` da própria narração. `batida-1.wav`, `batida-2.wav`, `impacto.wav`, `impacto-suave.wav` e `pop.wav` são gravações do pacote Impact Sounds de Kenney, em domínio público (CC0, ver `efeitos/LICENCA-kenney-impact-sounds.txt`).
+`gerar_efeitos.py` sintetiza `whoosh.wav`, `tique.wav`, `notificacao.wav` e `chamada.wav` e recorta `replay-amigo.wav` de `audio-amigo.wav`, a fala do amigo na voz dele, criada por `voz_amigo.py`. `batida-1.wav`, `batida-2.wav`, `impacto.wav`, `impacto-suave.wav` e `pop.wav` são gravações do pacote Impact Sounds de Kenney, em domínio público (CC0, ver `efeitos/LICENCA-kenney-impact-sounds.txt`).
 
 `captions` continua disponível para legendas corridas em ASS, que ficam acima da área inferior em que o TikTok e os Reels sobrepõem legenda e nome de usuário. A referência não usa legenda corrida, então a timeline atual a deixa vazia. O vídeo não tem selo da série no topo, porque essa área fica coberta pelas duas interfaces; o nome da série e o episódio vão no texto do post.
 
