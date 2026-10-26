@@ -7,6 +7,7 @@ knocks, impacts and pops are CC0 recordings by Kenney, kept as WAV in efeitos/.
 """
 from __future__ import annotations
 
+import json
 import math
 from pathlib import Path
 import random
@@ -16,6 +17,8 @@ import wave
 HERE = Path(__file__).resolve().parent
 OUT = HERE / 'efeitos'
 SR = 48000
+REPLAY_WORDS = (126, 137)  # “Disseram que a dívida acabava se eu colocasse alguém no meu lugar.”
+REPLAY_PAD = (.05, .12)    # seconds kept before the first word and after the last
 
 
 def save(name, samples, peak_db=-1.0):
@@ -77,10 +80,15 @@ def ringback(dur=.42):
 
 
 def replay_snippet():
-    # The start of the friend's line, thinned like a phone speaker, for "você escuta outra vez".
-    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', '53.85', '-t', '0.75', '-i', str(HERE.parent / 'narracao-original.wav'),
-                    '-af', 'highpass=f=350,lowpass=f=3200,afade=t=out:st=0.55:d=0.2', '-ar', str(SR), '-ac', '1',
-                    str(OUT / 'replay-amigo.wav')], check=True)
+    # The key sentence of the friend's line, thinned like a phone speaker, for "Você escuta
+    # outra vez". Its bounds come from the narration's word alignment.
+    words = json.loads((HERE / 'alinhamento-narracao.json').read_text(encoding='utf-8'))['words']
+    start = words[REPLAY_WORDS[0]]['start'] - REPLAY_PAD[0]
+    length = words[REPLAY_WORDS[1]]['end'] + REPLAY_PAD[1] - start
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{start:.3f}', '-t', f'{length:.3f}',
+                    '-i', str(HERE.parent / 'narracao-original.wav'),
+                    '-af', f'highpass=f=350,lowpass=f=3200,afade=t=in:d=0.03,afade=t=out:st={length-.15:.3f}:d=0.15',
+                    '-ar', str(SR), '-ac', '1', str(OUT / 'replay-amigo.wav')], check=True)
 
 
 def main():

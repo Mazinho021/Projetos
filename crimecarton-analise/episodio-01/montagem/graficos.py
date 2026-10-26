@@ -304,8 +304,22 @@ def draw_box(canvas, el, t):
     place(canvas, box, W/2, el.get('y', 860), box.width/2, box.height/2, scale, alpha*fading(t, el['end'], .2))
 
 
+@lru_cache(maxsize=4)
+def vignette_sprite(color, strength):
+    # Clear centre, edges tinted towards `color`: the reference's red alarm around a character.
+    ramp = Image.radial_gradient('L').resize((W, H), Image.Resampling.BICUBIC)
+    sprite = Image.new('RGBA', (W, H), color + (0,))
+    sprite.putalpha(ramp.point(lambda v: round(255*strength*max(0, (v/255 - .3)/.7)**1.4)))
+    return sprite
+
+
+def draw_vignette(canvas, el, t):
+    alpha = min(1, max(0, t - el['start'])/.12) * fading(t, el['end'], .3)
+    place(canvas, vignette_sprite(rgb(el.get('color', 'alert')), el.get('strength', .85)), 0, 0, 0, 0, 1, alpha)
+
+
 DRAW = {'phrase': draw_phrase, 'hud': draw_hud, 'tag': draw_tag, 'list': draw_list, 'stamp': draw_stamp,
-        'buttons': draw_buttons, 'box': draw_box}
+        'buttons': draw_buttons, 'box': draw_box, 'vignette': draw_vignette}
 
 
 def check(elements):

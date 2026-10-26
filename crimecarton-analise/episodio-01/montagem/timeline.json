@@ -7,6 +7,10 @@
  ],
  "audio": "narracao-ep01-com-cta.wav",
  "tail": 1.2,
+ "pause_after_listen_again": {
+  "at": 60.8,
+  "seconds": 4.4
+ },
  "scenes": [
   {
    "start": 0,
@@ -153,7 +157,7 @@
   },
   {
    "start": 59.15,
-   "end": 61.07,
+   "end": 63.6,
    "kind": "audio",
    "asset": "cena-07-audio.png",
    "crop": [
@@ -162,14 +166,28 @@
     0.82,
     0.63
    ],
+   "brightness": 0.6,
    "play": [
-    60.5,
-    65.02
+    60.95,
+    63.7
    ]
   },
   {
-   "start": 61.07,
-   "end": 64.29,
+   "start": 63.6,
+   "end": 65.47,
+   "kind": "art",
+   "asset": "cena-07-audio.png",
+   "crop": [
+    0.34,
+    0.16,
+    0.74,
+    0.56
+   ],
+   "zoom": 0.1
+  },
+  {
+   "start": 65.47,
+   "end": 68.69,
    "kind": "art",
    "asset": "cena-09-porta.png",
    "crop": [
@@ -181,15 +199,15 @@
    "zoom": 0.04
   },
   {
-   "start": 64.29,
-   "end": 66.59,
+   "start": 68.69,
+   "end": 70.99,
    "kind": "art",
    "asset": "cena-09-porta.png",
    "zoom": 0.05
   },
   {
-   "start": 66.59,
-   "end": 69.98,
+   "start": 70.99,
+   "end": 74.38,
    "kind": "art",
    "asset": "cena-09-porta.png",
    "crop": [
@@ -201,8 +219,8 @@
    "zoom": 0.05
   },
   {
-   "start": 69.98,
-   "end": 71.44,
+   "start": 74.38,
+   "end": 75.84,
    "kind": "art",
    "asset": "cena-09-porta.png",
    "crop": [
@@ -215,8 +233,8 @@
    "brightness": 0.5
   },
   {
-   "start": 71.44,
-   "end": 79.16,
+   "start": 75.84,
+   "end": 83.56,
    "kind": "art",
    "asset": "cena-09-porta.png",
    "zoom": 0.04,
@@ -225,6 +243,13 @@
   }
  ],
  "graphics": [
+  {
+   "type": "vignette",
+   "start": 63.6,
+   "end": 65.47,
+   "color": "alert",
+   "strength": 0.9
+  },
   {
    "type": "phrase",
    "start": 0.2,
@@ -302,7 +327,7 @@
   {
    "type": "hud",
    "start": 11.79,
-   "end": 69.98,
+   "end": 74.38,
    "label": "A SUA PARTE",
    "values": [
     {
@@ -478,7 +503,7 @@
   {
    "type": "tag",
    "start": 52.35,
-   "end": 61.07,
+   "end": 65.47,
    "text": "PISTA 4 · O ÁUDIO"
   },
   {
@@ -529,27 +554,51 @@
     },
     {
      "text": "MEU LUGAR.”",
-     "at": 57.86,
+     "at": 58.04,
      "color": "yellow"
     }
    ]
   },
   {
    "type": "phrase",
-   "start": 63.57,
-   "end": 64.29,
+   "start": 60.95,
+   "end": 63.6,
+   "y": 540,
+   "size": 60,
+   "lines": [
+    {
+     "text": "“SE EU COLOCASSE",
+     "at": 62.27,
+     "color": "white"
+    },
+    {
+     "text": "ALGUÉM NO",
+     "at": 62.84,
+     "color": "yellow"
+    },
+    {
+     "text": "MEU LUGAR.”",
+     "at": 63.24,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 67.97,
+   "end": 68.69,
    "y": 880,
    "size": 96,
    "lines": [
     {
      "text": "TOC!",
-     "at": 63.62,
+     "at": 68.02,
      "color": "white",
      "shake": true
     },
     {
      "text": "TOC!",
-     "at": 63.88,
+     "at": 68.28,
      "color": "yellow",
      "shake": true
     }
@@ -557,66 +606,66 @@
   },
   {
    "type": "phrase",
-   "start": 68.61,
-   "end": 69.98,
+   "start": 73.01,
+   "end": 74.38,
    "y": 930,
    "size": 72,
    "lines": [
     {
      "text": "VENDEU",
-     "at": 68.66,
+     "at": 73.06,
      "color": "white"
     },
     {
      "text": "SEU NOME.",
-     "at": 68.9,
+     "at": 73.3,
      "color": "yellow"
     }
    ]
   },
   {
    "type": "phrase",
-   "start": 69.98,
-   "end": 79.66,
+   "start": 74.38,
+   "end": 84.06,
    "y": 420,
    "size": 76,
    "lines": [
     {
      "text": "VOCÊ DEIXA",
-     "at": 70.1,
+     "at": 74.5,
      "color": "white"
     },
     {
      "text": "ELE ENTRAR?",
-     "at": 70.58,
+     "at": 74.98,
      "color": "yellow"
     }
    ]
   },
   {
    "type": "buttons",
-   "start": 71.51,
-   "end": 79.66,
+   "start": 75.91,
+   "end": 84.06,
    "y": 720,
    "prompt": "COMENTA UMA PALAVRA",
-   "prompt_at": 71.56,
+   "prompt_at": 75.96,
    "items": [
     {
      "text": "ABRIR",
-     "at": 73.16,
+     "at": 77.56,
      "style": "yellow"
     },
     {
      "text": "NÃO ABRIR",
-     "at": 74.2,
+     "at": 78.6,
      "style": "white"
     }
    ]
   },
   {
    "type": "box",
-   "start": 77.3,
-   "end": 79.66,
+   "start": 81.7,
+   "end": 84.06,
    "y": 880,
    "title": "PARTE 2",
    "sub": "a maioria decide o próximo passo"
@@ -645,12 +694,12 @@
   },
   {
    "sound": "whoosh.wav",
-   "at": 69.62,
+   "at": 74.02,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 71.08,
+   "at": 75.48,
    "gain": -2
   },
   {
@@ -750,32 +799,37 @@
   },
   {
    "sound": "replay-amigo.wav",
-   "at": 60.5,
-   "gain": -3
+   "at": 60.95,
+   "gain": 2
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 63.58,
+   "gain": -4
   },
   {
    "sound": "batida-1.wav",
-   "at": 63.62,
+   "at": 68.02,
    "gain": -2
   },
   {
    "sound": "batida-2.wav",
-   "at": 63.88,
+   "at": 68.28,
    "gain": -3
   },
   {
    "sound": "pop.wav",
-   "at": 73.157,
+   "at": 77.557,
    "gain": -10
   },
   {
    "sound": "pop.wav",
-   "at": 74.2,
+   "at": 78.6,
    "gain": -10
   },
   {
    "sound": "pop.wav",
-   "at": 77.3,
+   "at": 81.7,
    "gain": -10
   }
  ],

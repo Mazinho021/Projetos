@@ -46,20 +46,22 @@
     "credito": "Inspirado nas histórias de @crimecarton (no texto do post)"
   },
   "montagem": {
-    "status": "prova v4 no estilo do vídeo de referência, com efeitos sonoros, retrato frontal e pedido de comentário narrado; aguarda revisão do criador",
+    "status": "prova v5 no estilo do vídeo de referência, com efeitos sonoros, retrato frontal, pedido de comentário narrado e a repetição do áudio do amigo com a reação de Zinho; aguarda revisão do criador",
     "referencia": "../guia-de-estilo-referencia.md",
     "alinhamento": "montagem/alinhamento-narracao.json",
     "timeline": "montagem/timeline.json",
-    "arquivo": "piloto-zinho-ep01-v4.mp4",
-    "duracao_segundos": 79.16,
+    "arquivo": "piloto-zinho-ep01-v5.mp4",
+    "duracao_segundos": 83.56,
     "pausa_final_segundos": 1.2,
-    "planos": 21,
-    "elementos_graficos": 22,
-    "efeitos_sonoros": 31,
+    "pausa_escuta_outra_vez_segundos": 4.4,
+    "planos": 22,
+    "elementos_graficos": 24,
+    "efeitos_sonoros": 32,
     "legendas": 0,
     "versoes_anteriores": ["piloto-zinho-ep01-v1.mp4 (legendas corridas, antes da referência)",
                            "piloto-zinho-ep01-v2.mp4 (estilo da referência, sem efeitos sonoros)",
-                           "piloto-zinho-ep01-v3.mp4 (com efeitos sonoros, antes do retrato e do pedido de comentário narrado)"]
+                           "piloto-zinho-ep01-v3.mp4 (com efeitos sonoros, antes do retrato e do pedido de comentário narrado)",
+                           "piloto-zinho-ep01-v4.mp4 (com retrato e pedido de comentário; o “Você escuta outra vez” ainda curto)"]
   },
   "video_final": "prova v2 com ilustrações, câmera, cartões, frases animadas e narração"
 }
