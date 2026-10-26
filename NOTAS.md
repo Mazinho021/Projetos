@@ -6,7 +6,7 @@ Atualizado em **26 de outubro de 2026**, depois da prova v2 do episódio 1, refe
 
 Produzir uma série ficcional de suspense para TikTok, com foco em retenção, continuidade entre episódios e receita por visualizações. O objetivo do criador não é vender curso. A conta informada tem aproximadamente 19 mil seguidores; a elegibilidade e a receita do programa de monetização ainda não foram verificadas.
 
-**Base da série:** o criador definiu o vídeo de referência “Design sem nome.mp4” como modelo de frases animadas, tema, história e acabamento. A análise está em [`guia-de-estilo-referencia.md`](crimecarton-analise/guia-de-estilo-referencia.md). A referência acompanha o parceiro que ficou com os dez milhões; o episódio 1 de Zinho é o outro lado do mesmo assalto e abre com a mesma frase.
+**Base da série:** o criador definiu o vídeo de referência “Design sem nome.mp4”, das histórias do perfil [@crimecarton](https://www.instagram.com/crimecarton/) no Instagram, como modelo de frases animadas, tema, história e acabamento. A análise está em [`guia-de-estilo-referencia.md`](crimecarton-analise/guia-de-estilo-referencia.md). A referência acompanha o parceiro que ficou com os dez milhões; o episódio 1 de Zinho é o outro lado do mesmo assalto e abre com a mesma frase.
 
 **Formato definido pelo criador:** cenas ilustradas estáticas em sequência, com movimento de câmera, cartões de TV/celular, gráficos animados e narração. Não haverá animação corporal nem 3D. A publicação está prevista no **TikTok** e no **Instagram Reels**, com o mesmo vídeo vertical. O vídeo não leva selo da série no topo, que fica coberto pelas interfaces das duas redes: o nome da série e o episódio vão no texto do post.
 
@@ -34,6 +34,7 @@ A referência visual atual é [`crimecarton-analise/zinho-referencia-v3.png`](cr
 - O final promete, como a referência, que “a maioria decide o próximo passo”. Se a maioria comentar NÃO ABRIR, o episódio 2 precisa seguir esse caminho; o arco em `producao-zinho.md` supõe que o amigo entra.
 - O final é só visual: a narração termina na pergunta. Narrar o pedido de comentário, como na referência, exigiria nova geração de voz, que é paga e precisa de autorização.
 - O amigo aparece na cena 9, mas ainda não tem ficha visual própria. Criá-la a partir dessa cena antes do episódio 2.
+- A referência é de outro perfil e o episódio continua a história dele. Decidir se o texto do post credita o @crimecarton. Outras histórias do perfil só podem ser analisadas se o criador enviar os vídeos: o Instagram bloqueia o acesso automático.
 - A referência não usa trilha de fundo. Efeitos sonoros (celular, batidas na porta) continuam opcionais e não foram feitos.
 - O teste de vídeo de 8 segundos estimado no Codex não será feito, porque o formato não usa animação. Qualquer serviço pago adicional precisa de orçamento e autorização próprios.
 - Não houve publicação do piloto no TikTok. O formato e as hipóteses de retenção ainda precisam ser testados; os materiais não comprovam monetização ou alcance.

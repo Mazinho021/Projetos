@@ -1,6 +1,6 @@
 # Guia de estilo — vídeo de referência da série
 
-O criador definiu como base da série o vídeo **“Design sem nome.mp4”** (exportado do Canva; 89,9 s, 720 × 1280, 30 fps), enviado na sessão de 25/10/2026. O arquivo não está versionado; este guia registra o que foi medido nele. A referência acompanha o parceiro que ficou com os dez milhões. O episódio 1 de Zinho mostra o outro lado do mesmo assalto e por isso abre com a mesma frase: “O assalto deu certo.”
+O criador definiu como base da série o vídeo **“Design sem nome.mp4”** (exportado do Canva; 89,9 s, 720 × 1280, 30 fps), enviado na sessão de 25/10/2026. Segundo o criador, ele vem das histórias do perfil [@crimecarton](https://www.instagram.com/crimecarton/) no Instagram, que dá nome à pasta `crimecarton-analise`. Por ser conteúdo de outro perfil, o arquivo não está versionado neste repositório público; este guia registra o que foi medido nele. Personagem, roteiro, ilustrações e gráficos de Zinho são próprios, refeitos a partir dessas medidas. A referência acompanha o parceiro que ficou com os dez milhões. O episódio 1 de Zinho mostra o outro lado do mesmo assalto e por isso abre com a mesma frase: “O assalto deu certo.”
 
 ## Estrutura narrativa
 
