@@ -1,0 +1,11 @@
+{
+  "idempotencyKey": "zinho-ep02-amigo-v1-20261027",
+  "voice": "Fenrir",
+  "voice_alternativas": [
+    "Enceladus",
+    "Umbriel"
+  ],
+  "style": "Português brasileiro. Voz masculina adulta, fim dos 20 anos, diferente da voz do narrador (Charon) e um pouco mais aguda. É o amigo de infância de Zinho, que o traiu para pagar uma dívida: fala em pessoa, nervoso, baixo e rápido, com culpa e medo, olhando para a porta. Natural, sem caricatura e sem gritar. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+  "text": "Eles tão te procurando. E agora tão me procurando também.\n\nOitenta mil.\n\nPra quem bancou o assalto.\n\nEles juraram que ninguém ia ver o seu rosto.\n\nEu não tive escolha. Eles sabiam onde a minha mãe mora.",
+  "observacao": "Falas do amigo na Parte 2, numa voz própria. Se Fenrir não existir ou soar cômica, usar Enceladus ou Umbriel e registrar no job. Geração paga, autorizada pelo criador em 27/10/2026; mostrar o custo antes de executar."
+}
