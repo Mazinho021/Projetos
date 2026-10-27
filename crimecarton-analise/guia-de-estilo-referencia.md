@@ -15,6 +15,27 @@ O criador definiu como base da série o vídeo **“Design sem nome.mp4”** (ex
 
 A narração da referência fala em segunda pessoa, com cerca de 160 palavras por minuto, e não tem trilha de fundo: as pausas da voz ficam em silêncio.
 
+## Abertura das partes seguintes
+
+Em 27/10/2026, o criador enviou uma gravação de tela de 65 s com o começo das Partes 2 a 6 do @crimecarton. Ela não está versionada, pelo mesmo motivo do vídeo de referência. Todas as partes abrem com o mesmo bloco, de 13 a 16 s, antes da história nova:
+
+| Tempo | Na tela | Narração |
+|---|---|---|
+| 0–2 s | A mesma ilustração em todas as partes, o personagem num quarto com sacos de dinheiro, com a etiqueta amarela “PARTE N” no topo. Sobre ela, “O ASSALTO / DEU CERTO.” | “O assalto deu certo.” |
+| 2–5 s | Contador verde subindo até “R$ 10.000.000”, com o rótulo “EM DINHEIRO VIVO” | “Dez milhões de reais em dinheiro vivo.” |
+| 5–7 s | Tela preta com o slogan dele, “MAS TODO REAL / DEIXA RASTRO.”, e pontos amarelos em onda | “Mas todo real deixa rastro.” |
+| 7–10 s | De volta à ilustração, um aviso que muda a cada parte: “PERDEU A PARTE 1? TÁ NO PERFIL →”, “OS EPISÓDIOS TÃO NO PERFIL ↑” ou “QUER SABER COMO CHEGAMOS ATÉ AQUI? A HISTÓRIA COMPLETA TÁ NO PERFIL ↑”, com o @ do perfil | A mesma ideia, por exemplo “Os episódios anteriores estão no perfil.” |
+| 10–14 s | Fundo escuro com “PARTE N−1 · VOCÊS VOTARAM”, duas barras que enchem até a porcentagem real de cada opção (por exemplo “FECHA 85% / CAVA 15%”) e o carimbo amarelo da vencedora | “Vocês decidiram: …” com a opção vencedora |
+
+Às vezes entra também uma linha de situação, como “Até aqui, 98 mil parados no banco.”, com o painel do topo já atualizado. Depois vem a história nova. As três primeiras frases e a ilustração são idênticas em todas as partes e funcionam como a vinheta da série; só a etiqueta da parte, o aviso e a votação mudam.
+
+**Adaptação para Zinho:** o mesmo molde, com material próprio:
+
+1. A ilustração fixa é a da mochila, `cena-01-base.png`, com “PARTE N” no topo.
+2. As três frases fixas são as da Parte 1, com o mesmo áudio: “O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.”
+3. A tela preta usa a nossa frase, “VOCÊ FICOU COM / O ROSTO NO JORNAL.”, com as cinco estrelas de suspeita da série no lugar dos pontos dele.
+4. O aviso do perfil e a votação, com as porcentagens reais, são narrados a cada parte.
+
 ## Texto na tela
 
 - **Não há legenda corrida.** Só frases-chave grandes, centralizadas, que entram linha por linha no momento em que são faladas.
