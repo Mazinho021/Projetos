@@ -73,6 +73,23 @@ python crimecarton-analise/episodio-01/montagem/render_animatic.py \
 
 Cada versão grava o próprio registro: `timeline-used.json` e `render-report.json` para a do Instagram, `timeline-tiktok-used.json` e `render-report-tiktok.json` para a do TikTok.
 
+### Trechos para o TikTok
+
+`montar_cortes.py` corta a versão do TikTok em três trechos de 26 a 29 s. Cada um vai até uma virada da história, e juntos eles cobrem o episódio inteiro, sem o pedido de comentário:
+
+1. Do começo até “Nada.”.
+2. Da ligação sem resposta até a foto no jornal.
+3. Do áudio do amigo até “Você deixa ele entrar?”.
+
+Cada trecho tem texto na tela desde o primeiro quadro e um impacto no início. No trecho 1 é a frase de abertura; nos outros, “QUEM VAZOU / A SUA FOTO?” e “O ÁUDIO QUE / ENTREGOU TUDO.”. O final é um cartão de 2,2 s com “PARTE 1 COMPLETA / NO PERFIL” sobre o último plano escurecido. O script grava `timeline-corte-N.json` e `narracao-ep01-corte-N.wav`. Ele lê `timeline-tiktok.json`, então deve rodar depois de `montar_timeline.py`.
+
+```bash
+python crimecarton-analise/episodio-01/montagem/montar_cortes.py
+python crimecarton-analise/episodio-01/montagem/render_animatic.py \
+  --timeline crimecarton-analise/episodio-01/montagem/timeline-corte-1.json \
+  --output crimecarton-analise/episodio-01/cortes-tiktok/corte-1-a-mochila.mp4
+```
+
 ## Timeline
 
 Os tempos são segundos absolutos na locução. As cenas devem cobrir de zero até a duração do áudio somada a `tail`, sem espaços ou sobreposições. `tail` mantém o último plano em silêncio depois da voz.

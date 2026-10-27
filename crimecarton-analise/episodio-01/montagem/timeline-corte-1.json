@@ -1,0 +1,408 @@
+{
+ "timing_status": "aligned_to_voice",
+ "style": "guia-de-estilo-referencia.md",
+ "source": "timeline-tiktok.json",
+ "window": [
+  3.3,
+  29.95
+ ],
+ "audio": "narracao-ep01-corte-1.wav",
+ "tail": 2.2,
+ "scenes": [
+  {
+   "start": 0,
+   "end": 4.88,
+   "kind": "art",
+   "asset": "cena-01-base.png",
+   "zoom": 0.06
+  },
+  {
+   "start": 4.88,
+   "end": 8.3,
+   "kind": "art",
+   "asset": "cena-01-base.png",
+   "crop": [
+    0.25,
+    0.03,
+    0.85,
+    0.63
+   ],
+   "zoom": 0.05
+  },
+  {
+   "start": 8.3,
+   "end": 14.35,
+   "kind": "tv",
+   "asset": "cena-01-base.png",
+   "card_top": 334
+  },
+  {
+   "start": 14.35,
+   "end": 18.41,
+   "kind": "art",
+   "asset": "cena-01-base.png",
+   "crop": [
+    0.1,
+    0.36,
+    0.75,
+    1.0
+   ],
+   "zoom": 0.04
+  },
+  {
+   "start": 18.41,
+   "end": 19.82,
+   "kind": "art",
+   "asset": "cena-03-roupas.png",
+   "crop": [
+    0.0,
+    0.4,
+    0.6,
+    1.0
+   ],
+   "zoom": 0.03
+  },
+  {
+   "start": 19.82,
+   "end": 21.4,
+   "kind": "art",
+   "asset": "cena-03-roupas.png",
+   "crop": [
+    0.35,
+    0.38,
+    0.95,
+    0.98
+   ],
+   "zoom": 0.03
+  },
+  {
+   "start": 21.4,
+   "end": 25.43,
+   "kind": "art",
+   "asset": "cena-03-roupas.png",
+   "zoom": 0.05,
+   "direction": "out"
+  },
+  {
+   "start": 25.43,
+   "end": 26.65,
+   "kind": "art",
+   "asset": "cena-03-roupas.png",
+   "crop": [
+    0.225,
+    0.025,
+    0.775,
+    0.575
+   ],
+   "zoom": 0.04
+  },
+  {
+   "start": 26.65,
+   "end": 28.85,
+   "kind": "art",
+   "asset": "cena-03-roupas.png",
+   "crop": [
+    0.225,
+    0.025,
+    0.775,
+    0.575
+   ],
+   "brightness": 0.35,
+   "zoom": 0.03
+  }
+ ],
+ "graphics": [
+  {
+   "type": "phrase",
+   "start": 0,
+   "end": 2.4,
+   "y": 700,
+   "size": 78,
+   "lines": [
+    {
+     "text": "O ASSALTO",
+     "at": -0.07,
+     "color": "white"
+    },
+    {
+     "text": "DEU CERTO.",
+     "at": -0.07,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 2.4,
+   "end": 4.88,
+   "y": 700,
+   "size": 78,
+   "lines": [
+    {
+     "style": "label",
+     "text": "SEU PARCEIRO FICOU COM",
+     "at": 2.47
+    },
+    {
+     "text": "R$ 10.000.000",
+     "at": 2.55,
+     "color": "green",
+     "size": 74,
+     "count": {
+      "from": 0,
+      "to": 10000000,
+      "start": 2.86,
+      "end": 4.402
+     }
+    },
+    {
+     "style": "label",
+     "text": "EM DINHEIRO VIVO",
+     "at": 3.88
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 4.93,
+   "end": 8.3,
+   "y": 880,
+   "size": 64,
+   "lines": [
+    {
+     "text": "VOCÊ FICOU COM",
+     "at": 5.0,
+     "color": "white"
+    },
+    {
+     "text": "O ROSTO",
+     "at": 6.62,
+     "color": "yellow"
+    },
+    {
+     "text": "NO JORNAL.",
+     "at": 6.9,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "hud",
+   "start": 11.79,
+   "end": 26.65,
+   "label": "A SUA PARTE",
+   "values": [
+    {
+     "at": 11.79,
+     "text": "R$ ?",
+     "color": "white"
+    },
+    {
+     "at": 19.94,
+     "text": "R$ 0",
+     "color": "red",
+     "shake": true
+    }
+   ],
+   "stars": [
+    {
+     "at": 12.4,
+     "count": 5,
+     "step": 0.12
+    }
+   ],
+   "dy": 67
+  },
+  {
+   "type": "tag",
+   "start": 14.47,
+   "end": 26.65,
+   "text": "PISTA 1 · A MOCHILA",
+   "y": 297
+  },
+  {
+   "type": "phrase",
+   "start": 18.41,
+   "end": 21.4,
+   "y": 640,
+   "size": 66,
+   "lines": [
+    {
+     "text": "ROUPA VELHA.",
+     "at": 18.53,
+     "color": "white"
+    },
+    {
+     "text": "NENHUMA NOTA.",
+     "at": 19.94,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "list",
+   "start": 21.52,
+   "end": 25.43,
+   "y": 600,
+   "items": [
+    {
+     "at": 22.12,
+     "left": "BOLSOS",
+     "right": "VAZIOS"
+    },
+    {
+     "at": 23.12,
+     "left": "FUNDO",
+     "right": "VAZIO"
+    },
+    {
+     "at": 24.38,
+     "left": "NO CHÃO",
+     "right": "SÓ ROUPA"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 25.43,
+   "end": 26.65,
+   "y": 920,
+   "size": 120,
+   "lines": [
+    {
+     "text": "NADA.",
+     "at": 25.55,
+     "color": "white",
+     "shake": true
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 26.65,
+   "end": 29.35,
+   "y": 720,
+   "size": 52,
+   "lines": [
+    {
+     "style": "label",
+     "text": "A PARTE QUE FALTOU",
+     "at": 26.7
+    },
+    {
+     "text": "PARTE 1 COMPLETA",
+     "at": 26.77,
+     "color": "white"
+    },
+    {
+     "text": "NO PERFIL",
+     "at": 26.95,
+     "color": "yellow"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "sound": "impacto.wav",
+   "at": 0,
+   "gain": -6
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 7.94,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 13.99,
+   "gain": -2
+  },
+  {
+   "sound": "tique.wav",
+   "at": 2.898,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 2.937,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 2.979,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.024,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.071,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.122,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.178,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.239,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.308,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.386,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.479,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.596,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.762,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 4.402,
+   "gain": -18
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 19.856,
+   "gain": -10
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 25.454,
+   "gain": -5
+  },
+  {
+   "sound": "pop.wav",
+   "at": 26.77,
+   "gain": -10
+  }
+ ],
+ "captions": []
+}

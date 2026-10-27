@@ -1,0 +1,380 @@
+{
+ "timing_status": "aligned_to_voice",
+ "style": "guia-de-estilo-referencia.md",
+ "source": "timeline-tiktok.json",
+ "window": [
+  55.53,
+  79.14
+ ],
+ "audio": "narracao-ep01-corte-3.wav",
+ "tail": 2.2,
+ "scenes": [
+  {
+   "start": 0,
+   "end": 6.92,
+   "kind": "audio",
+   "asset": "cena-07-audio.png",
+   "brightness": 0.55,
+   "play": [
+    1.624,
+    6.146
+   ]
+  },
+  {
+   "start": 6.92,
+   "end": 11.37,
+   "kind": "audio",
+   "asset": "cena-07-audio.png",
+   "crop": [
+    0.22,
+    0.03,
+    0.82,
+    0.63
+   ],
+   "brightness": 0.6,
+   "play": [
+    8.72,
+    11.47
+   ]
+  },
+  {
+   "start": 11.37,
+   "end": 13.24,
+   "kind": "art",
+   "asset": "cena-07-audio.png",
+   "crop": [
+    0.34,
+    0.16,
+    0.74,
+    0.56
+   ],
+   "zoom": 0.1
+  },
+  {
+   "start": 13.24,
+   "end": 16.46,
+   "kind": "art",
+   "asset": "cena-09-porta.png",
+   "crop": [
+    0.0,
+    0.08,
+    0.6,
+    0.68
+   ],
+   "zoom": 0.04
+  },
+  {
+   "start": 16.46,
+   "end": 18.76,
+   "kind": "art",
+   "asset": "cena-09-porta.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 18.76,
+   "end": 22.15,
+   "kind": "art",
+   "asset": "cena-09-porta.png",
+   "crop": [
+    0.5,
+    0.11,
+    1.0,
+    0.61
+   ],
+   "zoom": 0.05
+  },
+  {
+   "start": 22.15,
+   "end": 23.61,
+   "kind": "art",
+   "asset": "cena-09-porta.png",
+   "crop": [
+    0.4,
+    0.4,
+    1.0,
+    1.0
+   ],
+   "zoom": 0.06,
+   "brightness": 0.5
+  },
+  {
+   "start": 23.61,
+   "end": 25.81,
+   "kind": "art",
+   "asset": "cena-09-porta.png",
+   "crop": [
+    0.4,
+    0.4,
+    1.0,
+    1.0
+   ],
+   "brightness": 0.35,
+   "zoom": 0.03
+  }
+ ],
+ "graphics": [
+  {
+   "type": "vignette",
+   "start": 11.37,
+   "end": 13.24,
+   "color": "alert",
+   "strength": 0.9
+  },
+  {
+   "type": "hud",
+   "start": 0,
+   "end": 22.15,
+   "label": "A SUA PARTE",
+   "values": [
+    {
+     "at": -40.44,
+     "text": "R$ ?",
+     "color": "white"
+    },
+    {
+     "at": -32.29,
+     "text": "R$ 0",
+     "color": "red",
+     "shake": true
+    }
+   ],
+   "stars": [
+    {
+     "at": -39.83,
+     "count": 5,
+     "step": 0.12
+    }
+   ],
+   "dy": 67
+  },
+  {
+   "type": "tag",
+   "start": 0.12,
+   "end": 13.24,
+   "text": "PISTA 4 · O ÁUDIO",
+   "y": 297
+  },
+  {
+   "type": "phrase",
+   "start": 1.57,
+   "end": 3.47,
+   "y": 560,
+   "size": 60,
+   "lines": [
+    {
+     "text": "“EU ESTAVA",
+     "at": 1.62,
+     "color": "white"
+    },
+    {
+     "text": "DEVENDO",
+     "at": 1.99,
+     "color": "white"
+    },
+    {
+     "text": "PARA ELES.",
+     "at": 2.41,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 3.47,
+   "end": 6.92,
+   "y": 560,
+   "size": 58,
+   "lines": [
+    {
+     "text": "A DÍVIDA ACABAVA",
+     "at": 3.57,
+     "color": "white"
+    },
+    {
+     "text": "SE EU COLOCASSE",
+     "at": 4.83,
+     "color": "white"
+    },
+    {
+     "text": "ALGUÉM NO",
+     "at": 5.41,
+     "color": "yellow"
+    },
+    {
+     "text": "MEU LUGAR.”",
+     "at": 5.81,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 8.72,
+   "end": 11.37,
+   "y": 540,
+   "size": 60,
+   "lines": [
+    {
+     "text": "“SE EU COLOCASSE",
+     "at": 10.04,
+     "color": "white"
+    },
+    {
+     "text": "ALGUÉM NO",
+     "at": 10.61,
+     "color": "yellow"
+    },
+    {
+     "text": "MEU LUGAR.”",
+     "at": 11.01,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 15.74,
+   "end": 16.46,
+   "y": 880,
+   "size": 96,
+   "lines": [
+    {
+     "text": "TOC!",
+     "at": 15.79,
+     "color": "white",
+     "shake": true
+    },
+    {
+     "text": "TOC!",
+     "at": 16.05,
+     "color": "yellow",
+     "shake": true
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 20.78,
+   "end": 22.15,
+   "y": 930,
+   "size": 72,
+   "lines": [
+    {
+     "text": "VENDEU",
+     "at": 20.83,
+     "color": "white"
+    },
+    {
+     "text": "SEU NOME.",
+     "at": 21.07,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 22.15,
+   "end": 25.81,
+   "y": 420,
+   "size": 76,
+   "lines": [
+    {
+     "text": "VOCÊ DEIXA",
+     "at": 22.27,
+     "color": "white"
+    },
+    {
+     "text": "ELE ENTRAR?",
+     "at": 22.75,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 0,
+   "end": 1.52,
+   "y": 560,
+   "size": 60,
+   "lines": [
+    {
+     "text": "O ÁUDIO QUE",
+     "at": -0.07,
+     "color": "white"
+    },
+    {
+     "text": "ENTREGOU TUDO.",
+     "at": -0.07,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 23.61,
+   "end": 26.31,
+   "y": 720,
+   "size": 52,
+   "lines": [
+    {
+     "style": "label",
+     "text": "A PARTE QUE FALTOU",
+     "at": 23.66
+    },
+    {
+     "text": "PARTE 1 COMPLETA",
+     "at": 23.73,
+     "color": "white"
+    },
+    {
+     "text": "NO PERFIL",
+     "at": 23.91,
+     "color": "yellow"
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "sound": "impacto.wav",
+   "at": 0,
+   "gain": -6
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 21.79,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 23.25,
+   "gain": -2
+  },
+  {
+   "sound": "replay-amigo.wav",
+   "at": 8.72,
+   "gain": 2
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 11.35,
+   "gain": -4
+  },
+  {
+   "sound": "batida-1.wav",
+   "at": 15.79,
+   "gain": -2
+  },
+  {
+   "sound": "batida-2.wav",
+   "at": 16.05,
+   "gain": -3
+  },
+  {
+   "sound": "pop.wav",
+   "at": 23.73,
+   "gain": -10
+  }
+ ],
+ "captions": []
+}

@@ -1,0 +1,277 @@
+{
+  "timing_status": "aligned_to_voice",
+  "style": "guia-de-estilo-referencia.md",
+  "source": "timeline-tiktok.json",
+  "window": [
+    29.95,
+    55.53
+  ],
+  "audio": "narracao-ep01-corte-2.wav",
+  "tail": 2.2,
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4.93,
+      "kind": "art",
+      "asset": "cena-07-audio.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 4.93,
+      "end": 8.33,
+      "kind": "chat",
+      "asset": "cena-07-audio.png",
+      "status": "sent",
+      "card_top": 334
+    },
+    {
+      "start": 8.33,
+      "end": 13.83,
+      "kind": "art",
+      "asset": "cena-07-audio.png",
+      "crop": [
+        0.22,
+        0.03,
+        0.82,
+        0.63
+      ],
+      "zoom": 0.05
+    },
+    {
+      "start": 13.83,
+      "end": 16.7,
+      "kind": "chat",
+      "asset": "cena-07-audio.png",
+      "status": "seen",
+      "card_top": 334
+    },
+    {
+      "start": 16.7,
+      "end": 19.11,
+      "kind": "tv",
+      "asset": "cena-07-audio.png",
+      "card_top": 334
+    },
+    {
+      "start": 19.11,
+      "end": 25.58,
+      "kind": "comparison",
+      "asset": "cena-07-audio.png",
+      "card_top": 334
+    },
+    {
+      "start": 25.58,
+      "end": 27.78,
+      "kind": "art",
+      "asset": "cena-07-audio.png",
+      "brightness": 0.35,
+      "zoom": 0.03
+    }
+  ],
+  "graphics": [
+    {
+      "type": "hud",
+      "start": 0,
+      "end": 25.58,
+      "label": "A SUA PARTE",
+      "values": [
+        {
+          "at": -14.86,
+          "text": "R$ ?",
+          "color": "white"
+        },
+        {
+          "at": -6.71,
+          "text": "R$ 0",
+          "color": "red",
+          "shake": true
+        }
+      ],
+      "stars": [
+        {
+          "at": -14.25,
+          "count": 5,
+          "step": 0.12
+        }
+      ],
+      "dy": 67
+    },
+    {
+      "type": "tag",
+      "start": 0,
+      "end": 4.93,
+      "text": "PISTA 1 · A MOCHILA",
+      "y": 297
+    },
+    {
+      "type": "phrase",
+      "start": 0,
+      "end": 2.73,
+      "y": 900,
+      "size": 64,
+      "lines": [
+        {
+          "style": "label",
+          "text": "HÁ 20 MINUTOS",
+          "at": 0.12
+        },
+        {
+          "text": "VOCÊS ESTAVAM",
+          "at": 1.09,
+          "color": "white"
+        },
+        {
+          "text": "JUNTOS.",
+          "at": 1.93,
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "start": 2.73,
+      "end": 4.93,
+      "y": 900,
+      "size": 62,
+      "lines": [
+        {
+          "text": "AGORA,",
+          "at": 2.83,
+          "color": "white"
+        },
+        {
+          "text": "NINGUÉM ATENDE.",
+          "at": 3.63,
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "tag",
+      "start": 5.05,
+      "end": 16.7,
+      "text": "PISTA 2 · O SILÊNCIO",
+      "y": 297
+    },
+    {
+      "type": "phrase",
+      "start": 10.84,
+      "end": 13.83,
+      "y": 910,
+      "size": 64,
+      "lines": [
+        {
+          "style": "label",
+          "text": "ELE PROMETEU",
+          "at": 10.94
+        },
+        {
+          "text": "“EU GARANTO",
+          "at": 11.97,
+          "color": "white"
+        },
+        {
+          "text": "A SUA PARTE.”",
+          "at": 12.57,
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "tag",
+      "start": 16.82,
+      "end": 25.58,
+      "text": "PISTA 3 · A FOTO",
+      "y": 297
+    },
+    {
+      "type": "stamp",
+      "start": 20.4,
+      "end": 25.58,
+      "text": "A MESMA FOTO",
+      "y": 629,
+      "angle": -7
+    },
+    {
+      "type": "phrase",
+      "start": 0,
+      "end": 2.6,
+      "y": 560,
+      "size": 60,
+      "lines": [
+        {
+          "text": "QUEM VAZOU",
+          "at": -0.07,
+          "color": "white"
+        },
+        {
+          "text": "A SUA FOTO?",
+          "at": -0.07,
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "start": 25.58,
+      "end": 28.28,
+      "y": 720,
+      "size": 52,
+      "lines": [
+        {
+          "style": "label",
+          "text": "A PARTE QUE FALTOU",
+          "at": 25.63
+        },
+        {
+          "text": "PARTE 1 COMPLETA",
+          "at": 25.7,
+          "color": "white"
+        },
+        {
+          "text": "NO PERFIL",
+          "at": 25.88,
+          "color": "yellow"
+        }
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "sound": "impacto.wav",
+      "at": 0,
+      "gain": -6
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 4.57,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 16.34,
+      "gain": -2
+    },
+    {
+      "sound": "chamada.wav",
+      "at": 2.355,
+      "gain": -24
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 20.38,
+      "gain": -5
+    },
+    {
+      "sound": "notificacao.wav",
+      "at": 25.096,
+      "gain": -8
+    },
+    {
+      "sound": "pop.wav",
+      "at": 25.7,
+      "gain": -10
+    }
+  ],
+  "captions": []
+}
