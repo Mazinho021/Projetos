@@ -75,13 +75,22 @@ Tempos são alvos de montagem, não marcações de uma locução já produzida. 
 
 ## Arco da primeira temporada
 
-1. **A mochila:** Zinho descobre o acordo de substituição e precisa decidir como receber o amigo.
-2. **A dívida:** o amigo apresenta sua versão e uma pista verificável. Zinho testa uma afirmação em vez de aceitar apenas a fala dele.
-3. **A divisão:** outro participante confirma uma parte da história e revela quem controlava a divisão do dinheiro.
-4. **A proposta:** Zinho recebe uma oferta para permanecer em silêncio; precisa decidir o que fazer com o que descobriu.
-5. **O preço:** as evidências permitem revelar a armação. Zinho enfrenta as consequências de sua participação e o conflito principal recebe resolução.
+Por decisão do criador, em 27/10/2026, a temporada passa de 5 para **pelo menos 12 partes**; a série do @crimecarton já vai para a 12ª. O arco abaixo é a espinha da história, com os marcos principais. Entre eles, as votações mudam o caminho, e cada votação precisa ter consequência real na parte seguinte. Cada parte tem 2 minutos ou mais e abre com o bloco padrão do [guia de estilo](guia-de-estilo-referencia.md).
 
-Os detalhes dos episódios 2–5 precisam preservar as pistas estabelecidas no piloto. Não prometer que uma votação decide o roteiro se o arco permanecer previamente definido.
+1. **A mochila** (publicada em 26/10/2026): roupa velha no lugar da parte, o rosto no jornal, o áudio do amigo e a batida na porta. A votação deu ABRIR.
+2. **A dívida:** o amigo entra e conta a versão dele: devia para “eles”, que exigiram alguém de fora para levar a culpa. Ele mostra uma pista que dá para conferir, uma foto da noite da divisão, e Zinho testa a história em vez de aceitar a palavra dele. Parte da história bate, mas chega no celular do amigo: “Já tá com ele?”. **A votação é o nome do amigo**, escolhido pelo público.
+3. **A noite:** os dois saem antes de “eles” chegarem. Há uma fuga pela vizinhança, e o rosto de Zinho aparece na TV de um bar. A votação decide para onde ir.
+4. **O esconderijo:** o lugar escolhido traz um aliado ou um risco. Na foto da divisão, Zinho reconhece mais alguém, o motorista do assalto.
+5. **A divisão:** o motorista confirma que a divisão foi armada e conta quem controlava o dinheiro: o parceiro dos dez milhões não agia sozinho.
+6. **A recompensa:** sai uma recompensa por informações sobre Zinho, os vizinhos começam a desconfiar e o amigo some por algumas horas. A votação decide se Zinho confia nele.
+7. **A proposta:** uma ligação oferece um acordo: Zinho assume a culpa e recebe uma parte. A votação decide se ele aceita ou recusa.
+8. **A prova:** Zinho junta o que prova a armação: o áudio, a foto e o depoimento do motorista.
+9. **O traidor:** a verdade sobre o amigo vem à tona. Conforme as votações, ele vira aliado ou trai de novo.
+10. **O parceiro:** Zinho chega ao parceiro que ficou com os dez milhões.
+11. **O encontro:** Zinho fica frente a frente com “eles”.
+12. **A parte que faltou:** Zinho recebe ou perde a parte dele, a armação vem à tona e fica o gancho para a segunda temporada.
+
+O parceiro dos dez milhões e “eles” são personagens próprios; nenhum personagem ou nome do @crimecarton entra na série. Se o público pedir, a temporada pode passar de 12 partes, abrindo novos desvios entre os marcos.
 
 ## Próxima etapa de produção
 
