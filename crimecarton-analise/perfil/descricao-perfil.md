@@ -53,6 +53,32 @@ Limite de 80 caracteres. Esta tem 75, ou 77 se cada emoji contar como dois:
 
 “no Insta” indica que o @crimecarton é o perfil do Instagram: não foi encontrada conta dele no TikTok. Se houver uma com o mesmo nome, “no Insta” pode sair.
 
+## Canal do YouTube
+
+Para o canal próprio da série no YouTube, chamado Golpe Cartoon. O limite da descrição é de 1.000 caracteres, e esta tem 530:
+
+```
+Golpe Cartoon é uma série de histórias animadas de suspense sobre crime, golpes e traição.
+
+🎒 A parte que faltou: o assalto deu certo, mas a parte do Zinho não veio. Agora ele precisa descobrir quem armou pra ele, e quem está batendo na porta.
+
+💬 Você decide o próximo passo: no fim de cada parte, a resposta mais votada nos comentários vira a parte seguinte.
+
+📺 Comece pela Parte 1 e assista na ordem pela playlist da série.
+
+🧩 Inspirado nas histórias do crimecarton, no Instagram.
+
+🔔 Inscreva-se para não perder a próxima parte.
+```
+
+O crimecarton vai sem @ porque, no YouTube, o @ aponta para um canal com esse nome. Palavras-chave do canal, em YouTube Studio → Configurações → Canal:
+
+```
+história animada, série animada, suspense, crime, assalto, golpe, traição, desenho animado, Zinho, A parte que faltou
+```
+
+Criar a playlist “A parte que faltou” com as partes em ordem e pôr os links do Instagram e do TikTok na seção de links do canal. A foto do canal é a mesma do perfil, [`foto-perfil.png`](foto-perfil.png).
+
 ## Ao publicar
 
 - Fixar o Ep. 1 no topo do perfil nas duas redes, para o “Comece pelo Ep. 1” apontar para ele.
