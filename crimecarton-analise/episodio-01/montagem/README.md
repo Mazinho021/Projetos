@@ -90,6 +90,17 @@ python crimecarton-analise/episodio-01/montagem/render_animatic.py \
   --output crimecarton-analise/episodio-01/cortes-tiktok/corte-1-a-mochila.mp4
 ```
 
+### Resultado da votação
+
+`montar_resultado.py` monta um vídeo de 8,4 s para os stories, no estilo do episódio, que anuncia o resultado da votação. A narração usa falas que a mesma voz já gravou: “Você deixa ele entrar?”, do episódio, e depois “Abrir.” e “O que a maioria escolher vira a parte dois.”, do pedido de comentário. O “abrir” é o primeiro da frase, porque o último sai grudado no “não”. Não mostra números de votos.
+
+```bash
+python crimecarton-analise/episodio-01/montagem/montar_resultado.py
+python crimecarton-analise/episodio-01/montagem/render_animatic.py \
+  --timeline crimecarton-analise/episodio-01/montagem/timeline-resultado.json \
+  --output crimecarton-analise/episodio-01/resultado-votacao.mp4
+```
+
 ## Timeline
 
 Os tempos são segundos absolutos na locução. As cenas devem cobrir de zero até a duração do áudio somada a `tail`, sem espaços ou sobreposições. `tail` mantém o último plano em silêncio depois da voz.

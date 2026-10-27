@@ -1,0 +1,99 @@
+{
+ "timing_status": "aligned_to_voice",
+ "style": "guia-de-estilo-referencia.md",
+ "audio": "narracao-resultado-votacao.wav",
+ "tail": 1.6,
+ "scenes": [
+  {
+   "start": 0,
+   "end": 2.5,
+   "kind": "art",
+   "asset": "cena-09-porta.png",
+   "crop": [
+    0.4,
+    0.4,
+    1.0,
+    1.0
+   ],
+   "zoom": 0.06,
+   "brightness": 0.5
+  },
+  {
+   "start": 2.5,
+   "end": 8.43,
+   "kind": "art",
+   "asset": "cena-09-porta.png",
+   "zoom": 0.04,
+   "direction": "out",
+   "brightness": 0.45
+  }
+ ],
+ "graphics": [
+  {
+   "type": "phrase",
+   "start": 0,
+   "end": 2.45,
+   "y": 420,
+   "size": 76,
+   "lines": [
+    {
+     "text": "VOCÊ DEIXA",
+     "at": -0.07,
+     "color": "white"
+    },
+    {
+     "text": "ELE ENTRAR?",
+     "at": 0.88,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 2.5,
+   "end": 8.93,
+   "y": 560,
+   "size": 80,
+   "lines": [
+    {
+     "style": "label",
+     "text": "A MAIORIA ESCOLHEU",
+     "at": 2.55
+    },
+    {
+     "text": "ABRIR",
+     "at": 2.9,
+     "color": "yellow",
+     "size": 150,
+     "shake": true
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "start": 6.24,
+   "end": 8.93,
+   "y": 880,
+   "title": "PARTE 2",
+   "sub": "em breve"
+  }
+ ],
+ "sfx": [
+  {
+   "sound": "whoosh.wav",
+   "at": 2.14,
+   "gain": -2
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 2.88,
+   "gain": -5
+  },
+  {
+   "sound": "pop.wav",
+   "at": 6.243,
+   "gain": -10
+  }
+ ],
+ "captions": []
+}
