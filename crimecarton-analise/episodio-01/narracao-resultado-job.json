@@ -1,0 +1,18 @@
+{
+  "jobId": "mcp_media_d621f68bdb548537ed6f57e420316e60d9271077709d2a7ca0913f6600b482f9",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_d621f68bdb548537ed6f57e420316e60d9271077709d2a7ca0913f6600b482f9/0.wav?hdnts=FullPath~Expires=1793202161~Signature=txJpoQ_mGueUxe2kxlCZMWj8nqJZoQbgMBW3fv9peDC_W7pGzy5Uj33DS7JJxtCqLTCXcZicQOB8A00VvwlWAw",
+      "expiresAt": "2026-10-28T15:42:41.711Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 11.92
+    }
+  ]
+}
