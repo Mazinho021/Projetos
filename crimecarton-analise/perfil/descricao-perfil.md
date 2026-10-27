@@ -79,6 +79,8 @@ história animada, série animada, suspense, crime, assalto, golpe, traição, d
 
 Criar a playlist “A parte que faltou” com as partes em ordem e pôr os links do Instagram e do TikTok na seção de links do canal. A foto do canal é a mesma do perfil, [`foto-perfil.png`](foto-perfil.png).
 
+O banner do canal é [`banner-youtube.jpg`](banner-youtube.jpg), em 2560 × 1440, feito por [`gerar_banner_youtube.py`](gerar_banner_youtube.py) com as ilustrações do episódio 1. Zinho ao telefone fica à esquerda, o amigo na janela à direita, e no meio vêm a etiqueta “A PARTE QUE FALTOU”, “GOLPE CARTOON” e “HISTÓRIAS ANIMADAS DE SUSPENSE”. O YouTube mostra a imagem inteira só na TV, uma faixa de 2560 × 423 no computador e o centro de 1546 × 423 no celular. Por isso, rostos e texto ficam nesse centro. [`previa-banner-youtube.jpg`](previa-banner-youtube.jpg) mostra os três cortes.
+
 ## Ao publicar
 
 - Fixar o Ep. 1 no topo do perfil nas duas redes, para o “Comece pelo Ep. 1” apontar para ele.
