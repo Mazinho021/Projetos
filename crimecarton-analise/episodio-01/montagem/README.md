@@ -58,9 +58,9 @@ Sem `--audio`, o script usa o áudio indicado em `audio` na timeline, ao lado do
 
 `--prepare-only` produz os fundos e cartões estáticos e o ASS, sem codificar vídeo. `--workers 2` limita o paralelismo.
 
-### Versão do TikTok
+### Versão do TikTok e do YouTube Shorts
 
-Cada episódio sai em duas versões: `timeline.json` para o Instagram e `timeline-tiktok.json` para o TikTok, ambas geradas por `montar_timeline.py`. A do TikTok difere em dois pontos:
+Cada episódio sai em duas versões: `timeline.json` para o Instagram e `timeline-tiktok.json` para o TikTok e o YouTube Shorts, ambas geradas por `montar_timeline.py`. As margens publicadas para o Shorts são 12,5% em cima, 19,8% embaixo e 17,8% à direita, e a versão do TikTok já fica dentro delas. Nas versões verticais, os elementos devem ficar à esquerda de x = 590 px, por causa da coluna de botões. A do TikTok difere em dois pontos:
 
 - **Abertura:** começa com 3,3 s de flash-forward. Zinho aparece assustado, com borda vermelha, enquanto toca a frase do amigo com voz de celular. O texto “SEU AMIGO / TE VENDEU.” já está na tela no primeiro quadro. No TikTok, a maioria dos espectadores da primeira versão saiu no primeiro segundo. O episódio vem em seguida, igual, e o áudio `narracao-ep01-com-cta-tiktok.wav` é a narração com esses 3,3 s de silêncio no início.
 - **Topo:** a barra de busca do TikTok cobre os 11,4% de cima da tela. Por isso, o painel desce 67 px, as etiquetas passam para `y` 297, os cartões começam em 334 e o carimbo vai para 629.
