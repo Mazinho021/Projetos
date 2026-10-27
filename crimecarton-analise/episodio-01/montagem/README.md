@@ -4,6 +4,8 @@ Esta ferramenta monta o episódio narrado: ilustrações com câmera suave, cart
 
 Requisitos locais: Python com Pillow, FFmpeg com libass, FFprobe e a fonte Poppins em `crimecarton-analise/fontes/` (incluída no repositório). Não usa serviços externos nem geração paga.
 
+O renderizador, a camada de gráficos e o alinhador desta pasta servem todas as partes. Cada parte tem a própria pasta `montagem/`, com o script que gera as timelines dela, como [`episodio-02/montagem/`](../../episodio-02/montagem/README.md). Os ativos de uma timeline são procurados na pasta do episódio dela, e os arquivos de trabalho e relatórios ficam ao lado dela.
+
 ## Alinhar a narração
 
 `alinhar_narracao.py` mede o tempo de cada palavra do roteiro na voz gravada e grava `alinhamento-narracao.json`. O reconhecimento de fala (faster-whisper, modelo `medium`, executado localmente) fornece só os tempos; as palavras gravadas são sempre as do roteiro. As bordas das palavras vizinhas a uma pausa são ajustadas às pausas medidas pelo FFmpeg.
@@ -129,7 +131,7 @@ Os tempos são segundos absolutos na locução. As cenas devem cobrir de zero at
 }
 ```
 
-Tipos de cena: `art`, `tv`, `chat`, `comparison`, `audio`. Os cartões usam textos do roteiro. A comparação repete o mesmo retrato ficcional nos dois lugares. O waveform do cartão de áudio é ilustrativo, não uma medição da fala. Os textos de TV e telefone são aplicados por código para manter ortografia e legibilidade.
+Tipos de cena: `art`, `tv`, `chat`, `comparison`, `audio` e, a partir da Parte 2, `black` (a tela preta da abertura), `photo` (uma foto aberta num celular), `call` (uma ligação) e `notification` (uma mensagem que acende a tela, sobre a ilustração). Os cartões usam textos do roteiro. A comparação repete o mesmo retrato ficcional nos dois lugares. O waveform do cartão de áudio é ilustrativo, não uma medição da fala. Os textos de TV e telefone são aplicados por código para manter ortografia e legibilidade.
 
 Campos opcionais das cenas:
 
@@ -137,7 +139,12 @@ Campos opcionais das cenas:
 - `zoom` e `direction` (`in` ou `out`): intensidade e sentido do movimento de câmera.
 - `brightness`: escurece a ilustração (por exemplo, `0.5`) para destacar texto ou cartão.
 - `status` (`chat`): `sent` mostra a foto como enviada; `seen`, o padrão, mostra “Visualizado” e “Nenhuma resposta.”.
-- `card_top` (`tv`, `chat`, `comparison`): altura do topo do cartão, 300 por padrão; a versão do TikTok usa 334.
+- `card_top` (cartões): altura do topo do cartão, 300 por padrão; a versão do TikTok usa 334.
+- `card_dx` e `card_scale` (cartões): deslocam o cartão na horizontal e o reduzem a partir do centro do topo, para as versões verticais o manterem longe da coluna de botões.
+- `photo` e `photo_crop` (`photo`): a ilustração que aparece na tela do celular e o enquadramento dela.
+- `status` e `number` (`call`): `calling`, `answered` (com o tempo em `clock`) ou `ended`, e o número exibido.
+- `sender`, `message` e `when` (`notification`): remetente, texto e horário da mensagem.
+- `paint`: textos aplicados sobre uma superfície em branco da ilustração, como um calendário na parede, e que acompanham a câmera. Cada item tem `text` (aceita `\n`), `box` em frações da ilustração inteira, e opcionalmente `color`, `weight`, `angle`, `opacity` e `blur`.
 - `play` (`audio`): início e fim absolutos da fala do amigo. O marcador de progresso percorre a barra nesse intervalo e pode ser interrompido pelo corte.
 
 ### Gráficos
@@ -146,16 +153,22 @@ Cada item de `graphics` tem `type`, `start` e `end`; os subitens entram nos seus
 
 - `phrase`: bloco centrado em `y`, com `lines` que entram com “pop” no `at` de cada uma. `size` vale para o bloco e pode ser trocado por linha. Linhas com `"style": "label"` são rótulos pequenos em maiúsculas espaçadas; `"shake": true` treme a linha ao entrar; `count` (`from`, `to`, `start`, `end`, `format`) faz a linha contar um valor em reais.
 - `hud`: painel fixo do topo, com `label`, `values` (texto e cor a partir de cada `at`, com `shake` opcional) e `stars` (`count` estrelas de suspeita que enchem a partir de `at`, uma a cada `step` segundos). `dy` desce o painel inteiro, como na versão do TikTok.
-- `tag`: etiqueta de capítulo abaixo do painel; `color` `yellow` ou `red`.
+- `tag`: etiqueta de capítulo abaixo do painel; `color` `yellow` ou `red`; `size` aumenta a etiqueta, como na “PARTE N” da abertura.
 - `list`: itens empilhados a partir de `y`, cada um com `left`, `right` e `at`, ligados por uma seta.
-- `stamp`: carimbo em `x`, `y`, inclinado em `angle` graus.
+- `stamp`: carimbo em `x`, `y`, inclinado em `angle` graus; com `"filled": true`, todo pintado na cor, como o da opção vencedora.
 - `buttons`: `prompt` e botões (`text`, `at`, `style` `yellow` ou `white`) centrados em `y`.
 - `box`: caixa com `title` e `sub`, como “PARTE 2”.
 - `vignette`: bordas da tela tingidas com `color` (por padrão o vermelho de alerta), com intensidade `strength`, para momentos de choque, como na referência.
+- `stars`: as cinco estrelas de suspeita em tamanho grande, na tela preta da abertura; enchem a partir de `at`, uma a cada `step` segundos.
+- `pointer`: o @ do perfil numa pílula branca, com uma seta que desce em direção ao nome de usuário que os apps mostram embaixo do vídeo.
+- `bars`: o resultado da votação anterior, com `title` e `items` (`label`, `pct`, `at`, `winner`); cada barra enche até a porcentagem real.
+- `input`: a caixa de comentário vazia, com cursor piscando, de uma votação livre como a do nome do amigo; `placeholder` e `width`.
+
+Todos os elementos centrados aceitam `x`; as versões verticais centram os da metade de baixo em x = 330.
 
 ### Efeitos sonoros
 
-`sfx` lista os efeitos do episódio, cada um com `sound` (arquivo em `efeitos/`), `at` (início em segundos) e `gain` (dB). Eles são somados por baixo da narração já normalizada, nas pausas da voz, como na referência: whoosh nas trocas de capítulo, tique enquanto o dinheiro conta, impactos nas perdas e no carimbo, toque de chamada, notificação, o trecho do áudio do amigo repetido e as batidas na porta. Um limitador só segura picos sobrepostos.
+`sfx` lista os efeitos do episódio, cada um com `sound` (arquivo na pasta `efeitos/` ao lado da timeline ou, se não estiver lá, na desta pasta; `effects` na timeline acrescenta outras pastas), `at` (início em segundos) e `gain` (dB). Eles são somados por baixo da narração já normalizada, nas pausas da voz, como na referência: whoosh nas trocas de capítulo, tique enquanto o dinheiro conta, impactos nas perdas e no carimbo, toque de chamada, notificação, o trecho do áudio do amigo repetido e as batidas na porta. Um limitador só segura picos sobrepostos.
 
 `gerar_efeitos.py` sintetiza `whoosh.wav`, `tique.wav`, `notificacao.wav` e `chamada.wav` e recorta `replay-amigo.wav` de `audio-amigo.wav`, a fala do amigo na voz dele, criada por `voz_amigo.py`. `batida-1.wav`, `batida-2.wav`, `impacto.wav`, `impacto-suave.wav` e `pop.wav` são gravações do pacote Impact Sounds de Kenney, em domínio público (CC0, ver `efeitos/LICENCA-kenney-impact-sounds.txt`).
 

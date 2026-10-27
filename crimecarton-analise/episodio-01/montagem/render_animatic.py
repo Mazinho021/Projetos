@@ -2,7 +2,9 @@
 """Render a narrated, illustrated animatic. No character motion is synthesized.
 
 Needs Pillow, FFmpeg (libass), FFprobe and the Poppins fonts in crimecarton-analise/fontes.
-All generated working files stay in montagem/.
+It serves every part of the series: a timeline's assets are found next to its episode
+(the parent of the timeline's folder), and its working files, records and its own sound
+effects stay in the timeline's folder. Effects it does not have come from Part 1's efeitos/.
 """
 from __future__ import annotations
 
@@ -27,6 +29,9 @@ CAPTION_MARGIN = 290
 CARD_TOP = 300
 AUDIO_TRACK_Y = 941
 EFFECTS = HERE / 'efeitos'
+# Set from the timeline's location in main(); Part 1's folders by default.
+ROOT = EPISODE
+SOUNDS = [EFFECTS]
 
 
 def run(args, **kwargs):
@@ -38,8 +43,40 @@ def probe(path):
     return float(json.loads(r.stdout)['format']['duration'])
 
 
-def cover(path, size=(W, H), center=(.5, .5), crop=None):
+def painted(im, items):
+    # Text applied by the edit onto a blank surface of the artwork, such as a calendar on
+    # a wall, so it moves with the camera. "box" is left, top, right, bottom as fractions
+    # of the whole illustration; the text is fitted into it, then turned by "angle".
+    im = im.convert('RGBA')
+    for item in items:
+        l, t, r, b = item['box']
+        box = (round(l*im.width), round(t*im.height), round(r*im.width), round(b*im.height))
+        w, h = box[2] - box[0], box[3] - box[1]
+        lines = item['text'].split('\n')
+        size = h
+        while size > 6:
+            f = graficos.font(size, item.get('weight', 'ExtraBold'))
+            if max(f.getlength(ln) for ln in lines) <= w*.94 and size*1.15*len(lines) <= h:
+                break
+            size -= 1
+        layer = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+        d = ImageDraw.Draw(layer)
+        for k, ln in enumerate(lines):
+            y = h/2 + (k - (len(lines) - 1)/2)*size*1.15
+            d.text((w/2, y), ln, font=f, fill=tuple(item.get('color', (40, 34, 30))) + (round(255*item.get('opacity', .9)),),
+                   anchor='mm')
+        if item.get('angle'):
+            layer = layer.rotate(item['angle'], resample=Image.Resampling.BICUBIC)
+        if item.get('blur'):
+            layer = layer.filter(ImageFilter.GaussianBlur(item['blur']))
+        im.alpha_composite(layer, box[:2])
+    return im.convert('RGB')
+
+
+def cover(path, size=(W, H), center=(.5, .5), crop=None, paint=None):
     im = Image.open(path).convert('RGB')
+    if paint:
+        im = painted(im, paint)
     if crop:
         # Optional framing inside the illustration: left, top, right, bottom as fractions.
         l, t, r, b = crop
@@ -94,11 +131,11 @@ def face_photo():
 
 def bag_photo():
     # The photo Zinho sends the friend shows only the open backpack full of old clothes.
-    return cover(resolve_asset('cena-03-roupas.png'), (340, 310), crop=(0.20, 0.62, 0.95, 0.90))
+    return cover(EPISODE / 'cena-03-roupas.png', (340, 310), crop=(0.20, 0.62, 0.95, 0.90))
 
 
-def backdrop(path, brightness=1, blur=False, crop=None):
-    im = cover(path, crop=crop)
+def backdrop(path, brightness=1, blur=False, crop=None, paint=None):
+    im = cover(path, crop=crop, paint=paint)
     if blur:
         im = im.filter(ImageFilter.GaussianBlur(15))
     if brightness != 1:
@@ -114,6 +151,19 @@ def caption_gradient(im):
         a = int(95 * ((y-920)/(H-920)))
         d.line((0, y, W, y), fill=(3, 8, 12, a))
     return Image.alpha_composite(im, layer)
+
+
+def phone(d, top, frame):
+    # The phone of the message cards: body, notch and screen.
+    d.rounded_rectangle((110, top, 610, top+680), 46, fill=(14, 17, 18, 255), outline=frame, width=3)
+    d.rounded_rectangle((270, top+14, 450, top+36), 11, fill=(4, 6, 7))
+    d.rounded_rectangle((130, top+50, 590, top+660), 22, fill=(20, 27, 30))
+
+
+def handset(d, cx, cy, fill, k=1):
+    # A round call button with a telephone receiver, drawn as a thick arc.
+    d.ellipse((cx-38*k, cy-38*k, cx+38*k, cy+38*k), fill=fill)
+    d.arc((cx-20*k, cy-12*k, cx+20*k, cy+26*k), 200, 340, fill=(246, 240, 226), width=9*k)
 
 
 def make_card(kind, scene, portrait):
@@ -157,6 +207,34 @@ def make_card(kind, scene, portrait):
             rounded_image(card, portrait, (110, y+62, 610, y+310), radius=12)
             d = ImageDraw.Draw(card)
             label(card, 360, y+34, name, 21, 'yellow', 'Bold', 'center', 2)
+    elif kind == 'photo':
+        # A photo open on someone's phone: "photo" is the illustration it shows.
+        phone(d, top, frame)
+        shot = cover(resolve_asset(scene['photo']), (460, 610), crop=scene.get('photo_crop'), paint=scene.get('paint'))
+        rounded_image(card, shot, (130, top+50, 590, top+660), radius=22)
+    elif kind == 'call':
+        # A call placed from Zinho's phone: "status" is calling, answered or ended.
+        phone(d, top, frame)
+        status = scene.get('status', 'calling')
+        d.ellipse((300, top+130, 420, top+250), fill=(70, 82, 88))
+        d.ellipse((339, top+152, 381, top+194), fill=(120, 132, 136))
+        d.pieslice((318, top+196, 402, top+280), 180, 360, fill=(120, 132, 136))
+        label(card, 360, top+310, scene.get('number', ''), 38, 'white', 'Bold', 'center')
+        note = {'calling': ('chamando…', 'gray'), 'answered': (scene.get('clock', '00:03'), 'green'),
+                'ended': ('chamada encerrada', 'red')}[status]
+        label(card, 360, top+366, note[0], 26, note[1], 'Medium', 'center')
+        d = ImageDraw.Draw(card)
+        if status != 'ended':
+            handset(d, 360, top+560, rgb('red'))
+    elif kind == 'notification':
+        # A message notification, as it lights up a phone's screen: "sender" and "message".
+        d.rounded_rectangle((52, top, 668, top+168), 30, fill=(28, 30, 31, 242), outline=frame, width=2)
+        d.rounded_rectangle((80, top+30, 152, top+102), 18, fill=rgb('green'))
+        d.rounded_rectangle((97, top+48, 135, top+78), 9, fill=(246, 240, 226))
+        d.polygon([(104, top+74), (104, top+88), (118, top+76)], fill=(246, 240, 226))
+        label(card, 176, top+50, scene.get('sender', ''), 28, 'white', 'Bold')
+        label(card, 640, top+50, scene.get('when', 'agora'), 20, 'gray', 'Medium', 'right')
+        label(card, 176, top+100, scene.get('message', ''), 32, 'white', 'Medium')
     elif kind == 'audio':
         d.rounded_rectangle((80, 795, 640, 958), 24, fill=(16, 15, 12, 236), outline=frame, width=2)
         label(card, 110, 830, 'ÁUDIO DO AMIGO', 20, 'yellow', tracking=1.5)
@@ -165,13 +243,22 @@ def make_card(kind, scene, portrait):
             x = 112 + j*9
             d.rounded_rectangle((x, 903-amp, x+4, 903+amp), 2, fill=(196, 198, 190))
         d.rounded_rectangle((112, AUDIO_TRACK_Y, 598, AUDIO_TRACK_Y+5), 2, fill=(70, 74, 70))
+    if scene.get('card_dx') or scene.get('card_scale'):
+        # The vertical versions move the cards sideways, and shrink the widest about their
+        # top centre, to keep them clear of the button column.
+        k = float(scene.get('card_scale', 1))
+        if k != 1:
+            card = card.resize((round(W*k), round(H*k)), Image.Resampling.LANCZOS)
+        moved = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+        graficos.put(moved, card, W/2*(1 - k) + scene.get('card_dx', 0), top*(1 - k))
+        card = moved
     return card
 
 
 def resolve_asset(name):
     p = Path(name)
     if not p.is_absolute():
-        p = EPISODE / p
+        p = ROOT / p
     if not p.exists():
         print(f'NOTE: {p.name} missing; using scene 01 as temporary fallback.', flush=True)
         p = EPISODE / 'cena-01-base.png'
@@ -182,11 +269,16 @@ def make_scene_assets(scene, index, work):
     # No series marker: TikTok and Reels cover the top of the frame, so the series
     # name and episode go in the post text instead.
     kind = scene.get('kind', 'art')
-    path = resolve_asset(scene.get('asset', 'cena-01-base.png'))
-    # Card scenes blur and darken the artwork; "brightness" darkens any other scene.
-    behind = kind in ('tv', 'chat', 'comparison')
-    bg = backdrop(path, .34 if behind else float(scene.get('brightness', 1)), behind, scene.get('crop'))
-    bg = caption_gradient(bg)
+    # Card scenes blur and darken the artwork; "brightness" darkens any other scene. A
+    # notification lights up over the artwork itself, and "black" is the opening's black card.
+    behind = kind in ('tv', 'chat', 'comparison', 'photo', 'call')
+    if kind == 'black':
+        bg = Image.new('RGBA', (W, H), (11, 10, 9, 255))
+    else:
+        path = resolve_asset(scene.get('asset', 'cena-01-base.png'))
+        bg = backdrop(path, .34 if behind else float(scene.get('brightness', 1)), behind, scene.get('crop'),
+                      scene.get('paint'))
+        bg = caption_gradient(bg)
     bg_path = work / f'{index:02d}-bg.png'
     bg.convert('RGB').save(bg_path)
     card = make_card(kind, scene, face_photo())
@@ -272,6 +364,11 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     path.write_text(''.join(lines), encoding='utf-8')
 
 
+def sound_path(name):
+    # The timeline's own efeitos/ first, then Part 1's shared ones.
+    return next((d / name for d in SOUNDS if (d / name).exists()), SOUNDS[-1] / name)
+
+
 def sound_mix(sfx, tail, first_input, cmd):
     """Audio filter chains ending in [a]: the normalized voice with each effect from the
     timeline's "sfx" list ("sound", "at" in seconds, "gain" in dB) placed under it.
@@ -284,7 +381,7 @@ def sound_mix(sfx, tail, first_input, cmd):
         return [f'[1:a]{voice},{stereo}[a]']
     chains, mixed = [f'[1:a]{voice}[voice]'], []
     for k, name in enumerate(sorted({e['sound'] for e in sfx})):
-        cmd += ['-i', EFFECTS / name]
+        cmd += ['-i', sound_path(name)]
         events = [e for e in sfx if e['sound'] == name]
         copies = [f'[s{k}_{j}]' for j in range(len(events))]
         chains.append(f'[{first_input + k}:a]aresample=48000,aformat=channel_layouts=mono,asplit={len(events)}' + ''.join(copies))
@@ -310,7 +407,7 @@ def template(duration):
 
 
 def main():
-    global W, H
+    global W, H, ROOT, SOUNDS
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--audio', type=Path, help='Narration; defaults to the timeline\'s "audio", next to the episode')
     parser.add_argument('--timeline', type=Path)
@@ -320,10 +417,14 @@ def main():
     parser.add_argument('--prepare-only', action='store_true')
     args = parser.parse_args()
     timeline = json.loads(args.timeline.read_text()) if args.timeline else None
+    base = args.timeline.resolve().parent if args.timeline else HERE
+    # A timeline may name more effect folders, relative to its own folder.
+    extra = [base / d for d in (timeline or {}).get('effects', [])]
+    ROOT, SOUNDS = base.parent, list(dict.fromkeys([base / 'efeitos', *extra, EFFECTS]))
     if args.audio is None:
-        args.audio = EPISODE / (timeline or {}).get('audio', 'narracao-original.wav')
+        args.audio = ROOT / (timeline or {}).get('audio', 'narracao-original.wav')
     audio_duration = probe(args.audio)
-    work = HERE / 'work'
+    work = base / 'work'
     work.mkdir(parents=True, exist_ok=True)
     if timeline is None:
         timeline = template(audio_duration)
@@ -344,13 +445,13 @@ def main():
     graphics = timeline.get('graphics', [])
     graficos.check(graphics)
     sfx = timeline.get('sfx', [])
-    missing = sorted({e['sound'] for e in sfx if not (EFFECTS / e['sound']).exists()})
+    missing = sorted({e['sound'] for e in sfx if not sound_path(e['sound']).exists()})
     if missing:
-        raise FileNotFoundError(f'Sound effects missing from {EFFECTS}: {missing}')
+        raise FileNotFoundError(f'Sound effects missing from {[str(d) for d in SOUNDS]}: {missing}')
     # Each version of the episode keeps its own record: timeline-tiktok.json writes
     # timeline-tiktok-used.json and render-report-tiktok.json.
     variant = args.timeline.stem.removeprefix('timeline') if args.timeline else ''
-    used = HERE / f'timeline{variant}-used.json'
+    used = base / f'timeline{variant}-used.json'
     used.write_text(json.dumps(timeline, ensure_ascii=False, indent=2))
     ass = work / 'captions.ass'
     write_subtitles(timeline.get('captions', []), ass)
@@ -397,7 +498,7 @@ def main():
               'scenes': len(scenes), 'captions': len(timeline.get('captions', [])), 'graphics': len(graphics),
               'sound_effects': len(sfx),
               'type': 'illustrated animatic with camera motion and graphics; no generated body animation'}
-    (HERE / f'render-report{variant}.json').write_text(json.dumps(result, indent=2))
+    (base / f'render-report{variant}.json').write_text(json.dumps(result, indent=2))
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
