@@ -4,7 +4,7 @@
 
 - Nome confirmado pelo criador: **Zinho**, escrito Z-I-N-H-O. Substitui Léo em toda a série.
 - Premissa aprovada: acompanhar outro participante do assalto, com um destino diferente do personagem que recebeu a fortuna.
-- Formato proposto: suspense criminal ficcional em cinco episódios verticais, inicialmente com alvo de 75–85 segundos por episódio. O episódio 1 ficou com 83,56 s. A partir do episódio 2, o criador padronizou episódios com mais de 1 min 30 s, com alvo de 1 min 50 s, e narração principal de cerca de 230 palavras; os detalhes estão em [`NOTAS.md`](../NOTAS.md).
+- Formato proposto: suspense criminal ficcional em cinco episódios verticais, inicialmente com alvo de 75–85 segundos por episódio. O episódio 1 ficou com 83,56 s. A partir do episódio 2, o criador padronizou episódios de 2 minutos ou mais, abaixo do limite de 3 minutos dos Reels e do Shorts, com narração principal de cerca de 290 palavras; os detalhes estão em [`NOTAS.md`](../NOTAS.md).
 - Materiais desta etapa: roteiro narrado do episódio 1, planejamento de cenas e proposta de identidade visual. Ainda não constituem o episódio final renderizado.
 - O usuário definiu a referência de rosto e roupa e reforçou, com uma imagem das capas, que o traço deve acompanhar o padrão cartoon 2D do vídeo analisado. A escolha atual de cabelo é cacheado com volume no topo e laterais em degradê, conforme a referência reenviada. A versão 3 volta a ser a ficha de trabalho. O nome e a direção narrativa estão confirmados; o título segue provisório.
 
