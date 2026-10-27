@@ -1,12 +1,15 @@
 {
   "timing_status": "aligned_to_voice",
   "style": "guia-de-estilo-referencia.md",
-  "audio": "narracao-resultado-votacao.wav",
-  "tail": 1.6,
+  "alignment": [
+    "alinhamento-resultado.json"
+  ],
+  "audio": "narracao-resultado-ep01.wav",
+  "tail": 1.8,
   "scenes": [
     {
       "start": 0,
-      "end": 2.5,
+      "end": 3.17,
       "kind": "art",
       "asset": "cena-09-porta.png",
       "crop": [
@@ -19,50 +22,72 @@
       "brightness": 0.5
     },
     {
-      "start": 2.5,
-      "end": 8.43,
+      "start": 3.17,
+      "end": 5.35,
       "kind": "art",
       "asset": "cena-09-porta.png",
       "zoom": 0.04,
       "direction": "out",
       "brightness": 0.45
+    },
+    {
+      "start": 5.35,
+      "end": 9.48,
+      "kind": "art",
+      "asset": "cena-09-porta.png",
+      "crop": [
+        0.5,
+        0.11,
+        1.0,
+        0.61
+      ],
+      "zoom": 0.06
+    },
+    {
+      "start": 9.48,
+      "end": 13.72,
+      "kind": "art",
+      "asset": "cena-09-porta.png",
+      "crop": [
+        0.0,
+        0.08,
+        0.6,
+        0.68
+      ],
+      "zoom": 0.08,
+      "brightness": 0.8
     }
   ],
   "graphics": [
     {
-      "type": "phrase",
-      "start": 0,
-      "end": 2.45,
-      "y": 420,
-      "size": 76,
-      "lines": [
-        {
-          "text": "VOCÊ DEIXA",
-          "at": -0.07,
-          "color": "white"
-        },
-        {
-          "text": "ELE ENTRAR?",
-          "at": 0.88,
-          "color": "yellow"
-        }
-      ]
+      "type": "vignette",
+      "start": 9.48,
+      "end": 14.22,
+      "color": "alert",
+      "strength": 0.7
     },
     {
       "type": "phrase",
-      "start": 2.5,
-      "end": 8.93,
+      "start": 0,
+      "end": 3.12,
       "y": 560,
       "size": 80,
       "lines": [
         {
-          "style": "label",
-          "text": "A MAIORIA ESCOLHEU",
-          "at": 2.55
+          "text": "A MAIORIA",
+          "at": -0.07,
+          "color": "white",
+          "size": 64
+        },
+        {
+          "text": "DECIDIU:",
+          "at": -0.07,
+          "color": "white",
+          "size": 64
         },
         {
           "text": "ABRIR",
-          "at": 2.9,
+          "at": 1.82,
           "color": "yellow",
           "size": 150,
           "shake": true
@@ -70,28 +95,129 @@
       ]
     },
     {
+      "type": "phrase",
+      "start": 3.22,
+      "end": 5.3,
+      "y": 600,
+      "size": 80,
+      "lines": [
+        {
+          "style": "label",
+          "text": "NA PARTE 2",
+          "at": 3.29
+        },
+        {
+          "text": "A PORTA",
+          "at": 4.4,
+          "color": "white"
+        },
+        {
+          "text": "SE ABRE.",
+          "at": 4.7,
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "start": 5.4,
+      "end": 7.46,
+      "y": 900,
+      "size": 72,
+      "lines": [
+        {
+          "text": "VENDEU",
+          "at": 6.44,
+          "color": "white"
+        },
+        {
+          "text": "SEU NOME.",
+          "at": 6.84,
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "start": 7.46,
+      "end": 9.43,
+      "y": 900,
+      "size": 72,
+      "lines": [
+        {
+          "text": "VAI TER QUE",
+          "at": 7.56,
+          "color": "white"
+        },
+        {
+          "text": "SE EXPLICAR.",
+          "at": 8.32,
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "start": 9.53,
+      "end": 14.22,
+      "y": 860,
+      "size": 72,
+      "lines": [
+        {
+          "text": "MAS DÁ PARA",
+          "at": 10.41,
+          "color": "white"
+        },
+        {
+          "text": "ACREDITAR",
+          "at": 10.92,
+          "color": "white"
+        },
+        {
+          "text": "NELE?",
+          "at": 11.34,
+          "color": "yellow"
+        }
+      ]
+    },
+    {
       "type": "box",
-      "start": 6.24,
-      "end": 8.93,
-      "y": 880,
+      "start": 11.72,
+      "end": 14.22,
+      "y": 1045,
       "title": "PARTE 2",
       "sub": "em breve"
     }
   ],
   "sfx": [
     {
-      "sound": "whoosh.wav",
-      "at": 2.14,
-      "gain": -2
-    },
-    {
       "sound": "impacto.wav",
-      "at": 2.88,
+      "at": 1.8,
       "gain": -5
     },
     {
+      "sound": "whoosh.wav",
+      "at": 2.81,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 4.99,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 9.12,
+      "gain": -2
+    },
+    {
+      "sound": "impacto-suave.wav",
+      "at": 6.39,
+      "gain": -10
+    },
+    {
       "sound": "pop.wav",
-      "at": 6.243,
+      "at": 11.723,
       "gain": -10
     }
   ],

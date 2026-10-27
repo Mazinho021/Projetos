@@ -1,5 +1,7 @@
 # Pedido para o Codex — narração do resultado da votação
 
+**Entregue em 27/10/2026** (commit “Adiciona narração do resultado da votação da Parte 1”), com 11,92 s e 1 crédito, e usado em `resultado-votacao.mp4`.
+
 Criado em 27/10/2026 no Claude Code, que não tem a geração de voz do OpusClip. É um áudio só. Não alterar nenhum outro arquivo do projeto.
 
 ## Narração

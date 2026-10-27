@@ -92,9 +92,15 @@ python crimecarton-analise/episodio-01/montagem/render_animatic.py \
 
 ### Resultado da votação
 
-`montar_resultado.py` monta um vídeo de 8,4 s para os stories, no estilo do episódio, que anuncia o resultado da votação. A narração usa falas que a mesma voz já gravou: “Você deixa ele entrar?”, do episódio, e depois “Abrir.” e “O que a maioria escolher vira a parte dois.”, do pedido de comentário. O “abrir” é o primeiro da frase, porque o último sai grudado no “não”. Não mostra números de votos.
+`montar_resultado.py` monta um vídeo de 13,7 s para os stories que anuncia o resultado da votação, no estilo do episódio e com narração própria, na mesma voz: `narracao-resultado-ep01.wav`, gerada no Codex conforme [`pedido-codex-resultado.md`](../../pedido-codex-resultado.md) e alinhada em `alinhamento-resultado.json`. O texto é “A maioria decidiu: abrir. Na parte dois, a porta se abre, e o homem que vendeu seu nome vai ter que se explicar. Mas dá para acreditar nele?”.
+
+As cenas acompanham as palavras: a porta com “A MAIORIA DECIDIU:” e “ABRIR”, o quarto inteiro com “A PORTA SE ABRE.”, o amigo na janela com “VENDEU SEU NOME.” e “VAI TER QUE SE EXPLICAR.”, e Zinho desconfiado, com borda vermelha, com a pergunta e a caixa “PARTE 2 · em breve”. O vídeo não mostra números de votos.
 
 ```bash
+.venv/bin/python crimecarton-analise/episodio-01/montagem/alinhar_narracao.py \
+  --audio crimecarton-analise/episodio-01/narracao-resultado-ep01.wav \
+  --script crimecarton-analise/narracao-resultado-ep01.txt \
+  --output crimecarton-analise/episodio-01/montagem/alinhamento-resultado.json
 python crimecarton-analise/episodio-01/montagem/montar_resultado.py
 python crimecarton-analise/episodio-01/montagem/render_animatic.py \
   --timeline crimecarton-analise/episodio-01/montagem/timeline-resultado.json \
