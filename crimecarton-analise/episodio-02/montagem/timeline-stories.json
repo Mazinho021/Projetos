@@ -1,0 +1,315 @@
+{
+ "timing_status": "aligned_to_voice",
+ "style": "guia-de-estilo-referencia.md",
+ "note": "Stories teaser for Part 2, cut from the episode’s own recordings.",
+ "audio": "narracao-ep02-stories.wav",
+ "tail": 1.8,
+ "scenes": [
+  {
+   "start": 0,
+   "end": 1.18,
+   "kind": "art",
+   "asset": "cena-01-porta-aberta.png",
+   "zoom": 0.06,
+   "brightness": 0.55
+  },
+  {
+   "start": 1.18,
+   "end": 5.45,
+   "kind": "art",
+   "asset": "cena-02-luz-apagada.png",
+   "crop": [
+    0.4,
+    0.08,
+    1.0,
+    0.68
+   ],
+   "zoom": 0.05,
+   "brightness": 0.55
+  },
+  {
+   "start": 5.45,
+   "end": 8.54,
+   "kind": "art",
+   "asset": "cena-06-celular-mesa.png",
+   "crop": [
+    0.185,
+    0.234,
+    0.805,
+    0.854
+   ],
+   "zoom": 0.07,
+   "screen": {
+    "quad": [
+     [
+      0.4666,
+      0.4137
+     ],
+     [
+      0.7031,
+      0.4344
+     ],
+     [
+      0.5938,
+      0.6811
+     ],
+     [
+      0.2791,
+      0.6466
+     ]
+    ],
+    "state": "lock",
+    "date": "terça-feira, 27 de outubro",
+    "time": "23:47",
+    "app": "MENSAGENS",
+    "sender": "Cobrança",
+    "message": "Já tá com ele?",
+    "when": "agora"
+   }
+  },
+  {
+   "start": 8.54,
+   "end": 11.42,
+   "kind": "art",
+   "asset": "cena-07-carro.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 11.42,
+   "end": 13.01,
+   "kind": "art",
+   "asset": "cena-07-carro.png",
+   "crop": [
+    0.3,
+    0.2,
+    0.88,
+    0.78
+   ],
+   "zoom": 0.08,
+   "brightness": 0.8
+  },
+  {
+   "start": 13.01,
+   "end": 17.39,
+   "kind": "art",
+   "asset": "cena-07-carro.png",
+   "zoom": 0.03,
+   "direction": "out",
+   "brightness": 0.4
+  }
+ ],
+ "graphics": [
+  {
+   "type": "vignette",
+   "start": 5.45,
+   "end": 8.54,
+   "color": "alert",
+   "strength": 0.8
+  },
+  {
+   "type": "vignette",
+   "start": 11.42,
+   "end": 13.01,
+   "color": "alert",
+   "strength": 0.9
+  },
+  {
+   "type": "tag",
+   "start": 0.1,
+   "end": 1.18,
+   "text": "PARTE 2",
+   "y": 470,
+   "size": 34
+  },
+  {
+   "type": "phrase",
+   "start": 0.15,
+   "end": 1.18,
+   "y": 640,
+   "size": 104,
+   "lines": [
+    {
+     "text": "A DÍVIDA",
+     "at": 0.2,
+     "color": "yellow",
+     "size": 104
+    },
+    {
+     "text": "JÁ TÁ NO AR",
+     "at": 0.55,
+     "color": "white",
+     "size": 54
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 1.25,
+   "end": 5.45,
+   "y": 900,
+   "size": 60,
+   "lines": [
+    {
+     "text": "“ELES TÃO",
+     "at": 1.3,
+     "color": "white"
+    },
+    {
+     "text": "TE PROCURANDO.”",
+     "at": 2.06,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 8.66,
+   "end": 11.42,
+   "y": 900,
+   "size": 70,
+   "lines": [
+    {
+     "text": "UM CARRO",
+     "at": 9.38,
+     "color": "white"
+    },
+    {
+     "text": "NO PORTÃO.",
+     "at": 10.44,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 11.42,
+   "end": 13.01,
+   "y": 900,
+   "size": 80,
+   "lines": [
+    {
+     "text": "DE FAROL",
+     "at": 11.54,
+     "color": "white"
+    },
+    {
+     "text": "APAGADO.",
+     "at": 12.0,
+     "color": "red",
+     "shake": true
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 13.01,
+   "end": 17.89,
+   "y": 400,
+   "size": 88,
+   "lines": [
+    {
+     "text": "FUGIR OU",
+     "at": 14.37,
+     "color": "white"
+    },
+    {
+     "text": "FICAR?",
+     "at": 15.13,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 15.37,
+   "end": 17.89,
+   "y": 640,
+   "size": 56,
+   "lines": [
+    {
+     "style": "label",
+     "text": "A PARTE 2",
+     "at": 15.42,
+     "size": 26,
+     "color": "yellow"
+    },
+    {
+     "text": "JÁ TÁ NO PERFIL",
+     "at": 15.57,
+     "color": "white",
+     "size": 56
+    }
+   ]
+  },
+  {
+   "type": "pointer",
+   "start": 15.82,
+   "end": 17.89,
+   "y": 790,
+   "text": "@golpecartoon"
+  }
+ ],
+ "sfx": [
+  {
+   "sound": "impacto.wav",
+   "at": 0.12,
+   "gain": -5
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 0.82,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 8.18,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 12.65,
+   "gain": -2
+  },
+  {
+   "sound": "vibracao.wav",
+   "at": 5.4,
+   "gain": -6
+  },
+  {
+   "sound": "notificacao.wav",
+   "at": 5.75,
+   "gain": -8
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 6.687,
+   "gain": -6
+  },
+  {
+   "sound": "carro.wav",
+   "at": 9.229,
+   "gain": -6
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 11.4,
+   "gain": -5
+  },
+  {
+   "sound": "pop.wav",
+   "at": 15.131,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 15.573,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 15.823,
+   "gain": -10
+  }
+ ],
+ "captions": []
+}

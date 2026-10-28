@@ -95,3 +95,14 @@ python crimecarton-analise/episodio-02/montagem/gerar_efeitos.py
 ```bash
 python crimecarton-analise/episodio-02/montagem/montar_timeline.py --estimar /tmp/parte-02
 ```
+
+## Stories
+
+`montar_stories.py` monta o vídeo dos stories que chama para a Parte 2, `../stories-parte-02.mp4`, com 17,4 s. É um trailer com as gravações da própria parte: a primeira fala do amigo, o narrador lendo a mensagem, o carro no portão e a pergunta do fim. Tudo fica entre as barras que os stories desenham em cima e embaixo, com espaço para um adesivo de link abaixo do @.
+
+```bash
+python crimecarton-analise/episodio-02/montagem/montar_stories.py
+python crimecarton-analise/episodio-01/montagem/render_animatic.py \
+  --timeline crimecarton-analise/episodio-02/montagem/timeline-stories.json \
+  --output crimecarton-analise/episodio-02/stories-parte-02.mp4
+```
