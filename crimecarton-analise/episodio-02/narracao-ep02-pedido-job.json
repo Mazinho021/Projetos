@@ -1,0 +1,25 @@
+{
+  "jobId": "mcp_media_0f56b9633527c9cf2fe71fa02ee5db987ffdba745649c6511a920cb228b27911",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_0f56b9633527c9cf2fe71fa02ee5db987ffdba745649c6511a920cb228b27911/0.wav?hdnts=FullPath~Expires=1793238210~Signature=CmjG1mxt_irX9XdLccma23uq8NbytBukn3ukiH0IC91vbzLsf6NAb1G4TfDD9nFi07ejHJ6jglMIhmEZEgNJAg",
+      "expiresAt": "2026-10-29T01:43:30.985Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 7.6
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep02-pedido-charon-v2-20261028",
+    "voice": "Charon",
+    "style": "Português brasileiro. Voz adulta masculina, natural e conversacional, suspense com tensão contida. Dicção clara; sem tom publicitário, caricatura ou gritos. Ritmo de 140 a 150 palavras por minuto. Pausas curtas nas revelações e entre parágrafos (falas separadas). Nas aspas, manter a mesma voz, mais baixa, mudando só a intenção. Pronunciar Zinho com z inicial e nh palatal.",
+    "text": "E agora: fugir ou ficar? Comenta uma palavra só. O que a maioria escolher vira a parte três.",
+    "sourceFile": "pedido-narracao-pedido-ep02.json"
+  }
+}
