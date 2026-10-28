@@ -2,9 +2,16 @@
 
 Proposta de 28/10/2026, a pedido do criador, para testar uma renda direta com a série. O criador mandou seguir em 28/10/2026. O site está em [`site/index.html`](site/index.html), com prévia privada no Claude.
 
-Na terceira versão, também de 28/10/2026, o site segue de perto o crimecartoon.com, como pediu o criador, com nomes, textos e imagens próprios e sem contar as histórias. A página tem as seções abaixo, nesta ordem:
+Na terceira versão, também de 28/10/2026, o site segue de perto o crimecartoon.com, como pediu o criador, com nomes, textos e imagens próprios e sem contar as histórias. Na quarta, as cores passaram a ser as do Zinho, a pedido do criador, para o site não lembrar tanto o de referência:
 
-- **Topo e faixa amarela:** a marca, o botão “Quero ser aliado” e uma faixa amarela que roda com as vagas, o prazo e a votação aberta.
+- o marrom do quarto à noite no fundo;
+- o vermelho do moletom nos botões e no que se clica;
+- o azul da jaqueta na faixa de avisos, no relógio, nos créditos e nos ícones;
+- o caramelo do abajur nos detalhes.
+
+A faixa de avisos leva as duas listras brancas da manga da jaqueta. A página tem as seções abaixo, nesta ordem:
+
+- **Topo e faixa azul:** a marca, o botão “Quero ser aliado” e uma faixa azul que roda com as vagas, o prazo e a votação aberta.
 - **Abertura:** “O assalto deu certo. A sua parte, não.”, com o fim da Parte 2 num celular e o aviso das vagas com contagem regressiva.
 - **Votação aberta:** FUGIR ou FICAR, o pedido do nome do amigo e o quadro “O caso até aqui”.
 - **Passe de aliado:** R$ 9,90 por parte, no Pix, com o que o passe dá. Mostra também:
@@ -53,9 +60,9 @@ O que muda toda parte fica no começo do script, em `CONFIG`:
 
 A contagem, a lista dos créditos, a legenda e o número do próximo aliado saem daí. No HTML, a cada parte nova:
 
-1. **A capa.** Gravar a capa de `capas/` em `site/img/parte-NN.jpg`, em 540 × 960, e copiar um item da lista “Assista do começo”. Na parte que acabou de ser votada, o carimbo amarelo “Em votação” vira o carimbo com a escolha e a porcentagem.
+1. **A capa.** Gravar a capa de `capas/` em `site/img/parte-NN.jpg`, em 540 × 960, e copiar um item da lista “Assista do começo”. Na parte que acabou de ser votada, o carimbo azul “Em votação” vira o carimbo com a escolha e a porcentagem.
 2. **A votação.** Trocar a pergunta, as duas opções e o link do Reel no cartão da votação.
-3. **Os textos fixos.** Trocar o número da parte e o prazo na faixa amarela, no aviso das vagas e nos créditos.
+3. **Os textos fixos.** Trocar o número da parte e o prazo na faixa azul, no aviso das vagas e nos créditos.
 4. **O link do Reel.** Até o criador mandar os links dos Reels, as capas e os botões de voto abrem o perfil.
 
 As imagens do site vêm do próprio material da série:
