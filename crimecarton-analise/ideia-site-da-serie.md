@@ -49,10 +49,12 @@ Os lugares do @ são feitos por código, como os textos de tela e o calendário 
 
 O pagamento usa o Checkout Pro do Mercado Pago, com Pix e cartão. O boleto fica de fora, porque pode levar dias e passar do prazo da lista. O caminho de uma compra é este:
 
-1. A pessoa preenche o @, o e-mail e a autorização, e toca em “Pagar R$ 9,90”.
+1. A pessoa preenche o @, o e-mail e a autorização, e toca em “Pagar R$ 9,90 com Mercado Pago”. O total aparece logo acima do botão.
 2. A função `/api/checkout` confere os dados e vê em que parte o passe vai entrar. Ela recusa um @ que já está na lista daquela parte.
 3. A função cria o pagamento no Mercado Pago com a referência `aliado|<parte>|<@>` e manda a pessoa para a página de pagamento. Lá, ela escolhe Pix ou cartão.
-4. Depois de pagar, o Mercado Pago devolve a pessoa ao site, que mostra “Pagamento aprovado”, “Pagamento em andamento” (Pix ainda não pago) ou “O pagamento não foi concluído”.
+4. Depois de pagar, o Mercado Pago devolve a pessoa ao site. A função `/api/pagamento` confere o pagamento no Mercado Pago, em vez de confiar no endereço da volta, e o site mostra “Pagamento aprovado”, “Pagamento em andamento” (Pix ainda não pago) ou “O pagamento não foi concluído”.
+
+Sem JavaScript, o formulário vai direto para `/api/checkout`, que leva ao Mercado Pago ou volta ao formulário com o erro. O `auto_return` só vai na preferência quando o site está num endereço `https` público, porque o Mercado Pago recusa a preferência com endereço local.
 
 A lista vem dos próprios pagamentos, sem banco de dados.
 
@@ -61,7 +63,7 @@ A lista vem dos próprios pagamentos, sem banco de dados.
 - **Vagas:** quando uma parte enche, os passes seguintes vão para a próxima.
 - **Correções:** um @ digitado errado se corrige em `correcoes`, no arquivo `site/netlify/lib/serie.mjs`, com `{ errado: 'certo' }`. Um @ ofensivo sai da lista com `{ ofensivo: '' }`, e o valor deve ser devolvido.
 
-Os testes ficam em `site/testes/`:
+A integração segue o guia do plugin oficial do Mercado Pago para o Claude, instalado em 28/10/2026. O Checkout Pro foi escolhido por ser o certo para uma venda avulsa de valor baixo, com Pix e cartão e sem dados de cartão no site. As checagens do plugin passam, com o comando `node <plugin>/scripts/validate-checkout-cta.mjs checkout-pro index.html /api/checkout` e o `validate-checkout-pro-server.mjs` em `netlify/functions/checkout.mjs`. Os testes ficam em `site/testes/`:
 
 ```bash
 node --test crimecarton-analise/site/testes/*.test.mjs
@@ -72,7 +74,15 @@ node --test crimecarton-analise/site/testes/*.test.mjs
 1. Entrar em https://www.mercadopago.com.br/developers/panel/app com a conta do Mercado Pago que vai receber o dinheiro. Criar uma aplicação para pagamentos online com o Checkout Pro.
 2. Em “Credenciais de produção”, ativar as credenciais, informando o ramo e o site `https://golpecartoon.netlify.app`, e copiar o **Access Token**, que começa com `APP_USR-`.
 3. No Netlify, no projeto `golpecartoon`, ir em **Project configuration → Environment variables** e criar `MP_ACCESS_TOKEN` com o token, marcado como secreto e com escopo **Functions**.
-4. Publicar de novo, como em “Publicar” abaixo, porque as variáveis só valem a partir da publicação seguinte. Depois disso, o botão volta a dizer “Pagar R$ 9,90”.
+4. Publicar de novo, como em “Publicar” abaixo, porque as variáveis só valem a partir da publicação seguinte. Depois disso, o botão volta a dizer “Pagar R$ 9,90 com Mercado Pago”.
+
+Para testar antes de vender, usar primeiro o token da aba **Teste**:
+
+1. Na página de pagamento, entrar com uma conta de comprador de teste, criada no painel em “Contas de teste”.
+2. Pagar com um cartão de teste: Visa 4235 6477 2802 5682 ou Mastercard 5031 4332 1540 6351, CVV 123, validade 11/30, CPF 12345678909. O nome no cartão define o resultado: APRO aprova e FUND recusa por saldo.
+3. Depois, trocar pelo token da aba **Produção**.
+
+Enquanto o token de teste estiver no site, ninguém consegue pagar de verdade, então o teste deve ser rápido e antes de divulgar o link.
 
 O token dá acesso à conta, então não vai no código nem no GitHub. Para testar, não dá para pagar com o e-mail da própria conta do Mercado Pago, porque o Mercado Pago recusa quando quem paga e quem recebe são a mesma pessoa.
 

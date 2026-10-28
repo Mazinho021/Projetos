@@ -1,2 +1,5 @@
 dist/
 .netlify/
+.mp-integrate-progress.md
+.env
+.env.*.local

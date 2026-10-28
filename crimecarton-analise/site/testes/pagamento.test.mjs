@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { montarLista, parteDaCompra } from '../netlify/lib/aliados.mjs';
 import checkout from '../netlify/functions/checkout.mjs';
 import aliados from '../netlify/functions/aliados.mjs';
+import pagamento from '../netlify/functions/pagamento.mjs';
 
 const SERIE = { parte: 3, vagas: 2, fecha: '2026-10-30T21:00:00-03:00' };
 const pago = (arroba, parte, hora, status = 'approved') => ({
@@ -59,15 +60,26 @@ beforeEach(() => {
     if (String(url).endsWith('/checkout/preferences')) {
       return Response.json({ id: 'pref-1', init_point: 'https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=pref-1' });
     }
-    return new Response('{}', { status: 404 });
+    const umPagamento = String(url).match(/\/v1\/payments\/(\d+)$/);
+    if (umPagamento && pagamentosPorId[umPagamento[1]]) return Response.json(pagamentosPorId[umPagamento[1]]);
+    return Response.json({ message: 'not found' }, { status: 404 });
   };
 });
-const pedido = corpo => new Request('https://golpecartoon.netlify.app/api/checkout', { method: 'POST', body: JSON.stringify(corpo) });
+const pagamentosPorId = {
+  111: { status: 'approved', external_reference: 'aliado|3|ana', payer: { email: 'ana@email.com' } },
+  222: { status: 'pending', external_reference: 'aliado|4|beto' },
+  333: { status: 'approved', external_reference: 'outra-venda' },
+};
+const pedido = (corpo, site = 'https://golpecartoon.netlify.app') => new Request(`${site}/api/checkout`,
+  { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) });
+const formulario = campos => new Request('https://golpecartoon.netlify.app/api/checkout',
+  { method: 'POST', body: new URLSearchParams(campos) });
+const volta = id => new Request(`https://golpecartoon.netlify.app/api/pagamento?id=${id}`);
 
 test('checkout opens a Pix-or-card checkout for the open part', async () => {
   const res = await checkout(pedido({ arroba: '@Seu.Perfil', email: 'voce@email.com', autorizo: true }));
   assert.equal(res.status, 200);
-  assert.equal((await res.json()).url, 'https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=pref-1');
+  assert.equal((await res.json()).init_point, 'https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=pref-1');
   const criar = chamadas.find(c => c.url.endsWith('/checkout/preferences'));
   const corpo = JSON.parse(criar.opcoes.body);
   assert.equal(criar.opcoes.headers.Authorization, 'Bearer TESTE');
@@ -75,7 +87,35 @@ test('checkout opens a Pix-or-card checkout for the open part', async () => {
   assert.equal(corpo.items[0].unit_price, 9.9);
   assert.deepEqual(corpo.payment_methods.excluded_payment_types, [{ id: 'ticket' }]);
   assert.equal(corpo.back_urls.success, 'https://golpecartoon.netlify.app/?pagamento=aprovado&parte=3');
+  assert.equal(corpo.auto_return, 'approved');
   assert.equal(corpo.payer.email, 'voce@email.com');
+});
+
+test('without JavaScript, the posted form goes straight to Mercado Pago or back with an error code', async () => {
+  const certo = await checkout(formulario({ arroba: 'ana', email: 'ana@email.com', autorizo: 'sim' }));
+  assert.equal(certo.status, 303);
+  assert.equal(certo.headers.get('Location'), 'https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=pref-1');
+  const errado = await checkout(formulario({ arroba: 'ana', email: 'ana@email.com' }));
+  assert.equal(errado.headers.get('Location'), 'https://golpecartoon.netlify.app/?erro=autorizo#aliado');
+});
+
+test('checkout leaves auto_return out when the site is not public HTTPS', async () => {
+  await checkout(pedido({ arroba: 'ana', email: 'voce@email.com', autorizo: true }, 'http://localhost:8888'));
+  const corpo = JSON.parse(chamadas.find(c => c.url.endsWith('/checkout/preferences')).opcoes.body);
+  assert.equal(corpo.auto_return, undefined);
+  assert.equal(corpo.back_urls.success, 'http://localhost:8888/?pagamento=aprovado&parte=3');
+});
+
+test('the return is checked with Mercado Pago and tells only the status and the part', async () => {
+  const aprovado = await pagamento(volta(111));
+  assert.equal(aprovado.headers.get('Cache-Control'), 'no-store');
+  assert.deepEqual(await aprovado.json(), { status: 'aprovado', parte: 3 });
+  assert.deepEqual(await (await pagamento(volta(222))).json(), { status: 'pendente', parte: 4 });
+  assert.equal((await pagamento(volta(333))).status, 404);
+  assert.equal((await pagamento(volta(999))).status, 404);
+  assert.equal((await pagamento(volta('1;drop'))).status, 400);
+  delete process.env.MP_ACCESS_TOKEN;
+  assert.equal((await pagamento(volta(111))).status, 503);
 });
 
 test('checkout refuses a bad handle, a missing consent and a handle already on the list', async () => {

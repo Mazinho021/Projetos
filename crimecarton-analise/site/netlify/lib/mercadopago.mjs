@@ -12,7 +12,9 @@ export async function mp(caminho, { method = 'GET', body } = {}) {
   const res = await fetch(API + caminho, { method, headers, body: body && JSON.stringify(body) });
   const dados = await res.json().catch(() => ({}));
   if (!res.ok) {
-    throw new Error(`Mercado Pago ${res.status} em ${caminho.split('?')[0]}: ${dados.message || res.statusText}`);
+    const erro = new Error(`Mercado Pago ${res.status} em ${caminho.split('?')[0]}: ${dados.message || res.statusText}`);
+    erro.status = res.status;
+    throw erro;
   }
   return dados;
 }
