@@ -96,13 +96,13 @@ Inspirado nas histórias do @crimecarton no Instagram
    As ilustrações e as vozes vieram do Codex, as primeiras depois do limite de uso. Foram 5 créditos ao todo: 1 do pedido do fim, 1 das falas do amigo gravadas de novo (18,9 s) e estes 3: 2 da narração, com 93,1 s, e 1 da primeira gravação do amigo, com 16,4 s, na voz Fenrir, que soava como outra pessoa (174 Hz) e saiu da montagem. O alinhamento acertou 227 de 240 palavras do narrador e 34 de 37 do amigo. A montagem, com a abertura padrão, está em [`episodio-02/montagem/`](crimecarton-analise/episodio-02/montagem/README.md). Texto do post:
 
    ```
-   A parte que faltou | Parte 2: A dívida
-   Fugir ou ficar? Comenta uma palavra só 👇 E deixa um nome pra ele: o mais curtido vira o nome dele na Parte 3.
-   Inspirado nas histórias de @crimecarton
-   #apartequefaltou #zinho #adivida #assalto #traição
+   Parte 2 – A dívida 🎒
+   Fugir ou ficar? E qual o nome dele? Comenta 👇
+   Inspirado em @crimecarton
+   #apartequefaltou
    ```
 
-   No TikTok e no Shorts, a terceira linha é “Inspirado nas histórias do @crimecarton no Instagram”. Título no Shorts: “Ele vendeu seu nome 😨 | A parte que faltou – Parte 2: A dívida”. Comentário para fixar nas três redes: “💬 FUGIR ou FICAR? E qual é o nome dele? A maioria decide a Parte 3, e o nome mais curtido vira o nome dele.” Marcar o conteúdo de IA, como na Parte 1. FUGIR × FICAR vale pela maioria dos comentários. O nome soma as curtidas do mesmo nome nas três redes; se o mais curtido for ofensivo ou não servir de nome, vale o seguinte. A Parte 3, “A noite”, muda conforme a escolha (ver `producao-zinho.md`) e abre com o resultado das duas votações.
+   Por decisão do criador, em 28/10/2026, as legendas são curtas assim: a parte, o título, a pergunta, o crédito e a hashtag da série. No TikTok e no Shorts, o crédito é “Inspirado no @crimecarton (Insta)”. Título no Shorts: “Parte 2 – A dívida 😨”. Comentário para fixar nas três redes: “Fugir ou ficar? E qual o nome dele? 👇”. Marcar o conteúdo de IA, como na Parte 1. FUGIR × FICAR vale pela maioria dos comentários. O nome soma as curtidas do mesmo nome nas três redes; se o mais curtido for ofensivo ou não servir de nome, vale o seguinte. A Parte 3, “A noite”, muda conforme a escolha (ver `producao-zinho.md`) e abre com o resultado das duas votações.
 3. Para ajustes de montagem, usar `montagem/montar_timeline.py` (ou direto em `timeline.json`) e renderizar uma nova versão. Os campos da timeline, dos gráficos e dos efeitos estão no [`README da montagem`](crimecarton-analise/episodio-01/montagem/README.md); o estilo, no [guia da referência](crimecarton-analise/guia-de-estilo-referencia.md).
 
 Requisitos locais do renderizador: **Python 3 com Pillow, FFmpeg com libass e FFprobe**; a fonte Poppins já está no repositório. O alinhamento precisa também de faster-whisper, e a voz do amigo, de praat-parselmouth, instalados à parte conforme o README da montagem.
