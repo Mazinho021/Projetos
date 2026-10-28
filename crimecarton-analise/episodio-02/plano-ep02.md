@@ -1,6 +1,6 @@
 # Parte 2 — A dívida
 
-Roteiro em [`roteiro-ep02.txt`](roteiro-ep02.txt), com a voz de cada fala. O episódio montado tem **2 min 04 s**: a vinheta da Parte 1, 93 s do narrador, 16 s do amigo, as pausas de montagem (os três toques do telefone, a vibração, o carro parando e as revelações) e 2 s de final. Fica dentro da regra de 2 a 3 minutos. A montagem está em [`montagem/`](montagem/README.md).
+Roteiro em [`roteiro-ep02.txt`](roteiro-ep02.txt), com a voz de cada fala. O episódio montado tem **2 min 12 s**: a vinheta da Parte 1, 93 s do narrador (já com o pedido do nome), 16 s do amigo, 7,6 s do pedido do fim, as pausas de montagem (os três toques do telefone, a vibração, o carro parando e as revelações) e 2 s de final. Fica dentro da regra de 2 a 3 minutos. A montagem está em [`montagem/`](montagem/README.md).
 
 ## Estrutura
 

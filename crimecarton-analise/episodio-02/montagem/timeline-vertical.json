@@ -5,7 +5,8 @@
  "alignment": [
   "episodio-01/montagem/alinhamento-narracao.json",
   "episodio-02/montagem/alinhamento-narrador.json",
-  "episodio-02/montagem/alinhamento-amigo.json"
+  "episodio-02/montagem/alinhamento-amigo.json",
+  "episodio-02/montagem/alinhamento-pedido.json"
  ],
  "audio": "narracao-ep02.wav",
  "tail": 2.0,
@@ -66,14 +67,30 @@
   },
   {
    "start": 24.27,
-   "end": 28.86,
+   "end": 28.01,
+   "kind": "art",
+   "asset": "cena-08-retrato-amigo.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 28.01,
+   "end": 32.66,
+   "kind": "art",
+   "asset": "cena-08-retrato-amigo.png",
+   "zoom": 0.03,
+   "direction": "out",
+   "brightness": 0.5
+  },
+  {
+   "start": 32.66,
+   "end": 37.25,
    "kind": "art",
    "asset": "cena-03-versao.png",
    "zoom": 0.04
   },
   {
-   "start": 28.86,
-   "end": 30.5,
+   "start": 37.25,
+   "end": 38.88,
    "kind": "art",
    "asset": "cena-03-versao.png",
    "crop": [
@@ -85,8 +102,8 @@
    "zoom": 0.08
   },
   {
-   "start": 30.5,
-   "end": 31.26,
+   "start": 38.88,
+   "end": 39.64,
    "kind": "art",
    "asset": "cena-02-luz-apagada.png",
    "crop": [
@@ -99,8 +116,8 @@
    "brightness": 0.6
   },
   {
-   "start": 31.26,
-   "end": 33.7,
+   "start": 39.64,
+   "end": 42.09,
    "kind": "art",
    "asset": "cena-03-versao.png",
    "crop": [
@@ -112,8 +129,8 @@
    "zoom": 0.05
   },
   {
-   "start": 33.7,
-   "end": 36.63,
+   "start": 42.09,
+   "end": 45.01,
    "kind": "art",
    "asset": "cena-03-versao.png",
    "crop": [
@@ -125,16 +142,16 @@
    "zoom": 0.04
   },
   {
-   "start": 36.63,
-   "end": 43.68,
+   "start": 45.01,
+   "end": 52.06,
    "kind": "art",
    "asset": "cena-03-versao.png",
    "zoom": 0.05,
    "direction": "out"
   },
   {
-   "start": 43.68,
-   "end": 46.67,
+   "start": 52.06,
+   "end": 55.05,
    "kind": "art",
    "asset": "cena-02-luz-apagada.png",
    "crop": [
@@ -147,8 +164,8 @@
    "brightness": 0.6
   },
   {
-   "start": 46.67,
-   "end": 49.34,
+   "start": 55.05,
+   "end": 57.72,
    "kind": "art",
    "asset": "cena-03-versao.png",
    "crop": [
@@ -160,8 +177,8 @@
    "zoom": 0.06
   },
   {
-   "start": 49.34,
-   "end": 52.07,
+   "start": 57.72,
+   "end": 60.46,
    "kind": "tv",
    "asset": "cena-03-versao.png",
    "card_top": 334,
@@ -169,8 +186,8 @@
    "card_scale": 0.88
   },
   {
-   "start": 52.07,
-   "end": 56.69,
+   "start": 60.46,
+   "end": 65.07,
    "kind": "art",
    "asset": "cena-03-versao.png",
    "crop": [
@@ -182,8 +199,8 @@
    "zoom": 0.08
   },
   {
-   "start": 56.69,
-   "end": 61.34,
+   "start": 65.07,
+   "end": 69.73,
    "kind": "art",
    "asset": "cena-02-luz-apagada.png",
    "crop": [
@@ -196,15 +213,15 @@
    "brightness": 0.6
   },
   {
-   "start": 61.34,
-   "end": 64.8,
+   "start": 69.73,
+   "end": 73.18,
    "kind": "art",
    "asset": "cena-03-versao.png",
    "zoom": 0.04
   },
   {
-   "start": 64.8,
-   "end": 69.45,
+   "start": 73.18,
+   "end": 77.84,
    "kind": "photo",
    "asset": "cena-03-versao.png",
    "photo": "cena-04-foto-divisao.png",
@@ -279,8 +296,8 @@
    "card_dx": -25
   },
   {
-   "start": 69.45,
-   "end": 72.71,
+   "start": 77.84,
+   "end": 81.09,
    "kind": "art",
    "asset": "cena-04-foto-divisao.png",
    "zoom": 0.06,
@@ -353,8 +370,8 @@
    ]
   },
   {
-   "start": 72.71,
-   "end": 78.78,
+   "start": 81.09,
+   "end": 87.17,
    "kind": "art",
    "asset": "cena-04-foto-divisao.png",
    "crop": [
@@ -433,15 +450,15 @@
    ]
   },
   {
-   "start": 78.78,
-   "end": 80.94,
+   "start": 87.17,
+   "end": 89.32,
    "kind": "art",
    "asset": "cena-05-ligacao.png",
    "zoom": 0.04
   },
   {
-   "start": 80.94,
-   "end": 84.52,
+   "start": 89.32,
+   "end": 92.9,
    "kind": "call",
    "asset": "cena-05-ligacao.png",
    "status": "calling",
@@ -450,8 +467,8 @@
    "card_dx": -25
   },
   {
-   "start": 84.52,
-   "end": 88.92,
+   "start": 92.9,
+   "end": 97.31,
    "kind": "call",
    "asset": "cena-05-ligacao.png",
    "status": "answered",
@@ -461,8 +478,8 @@
    "card_dx": -25
   },
   {
-   "start": 88.92,
-   "end": 91.0,
+   "start": 97.31,
+   "end": 99.38,
    "kind": "call",
    "asset": "cena-05-ligacao.png",
    "status": "ended",
@@ -471,8 +488,8 @@
    "card_dx": -25
   },
   {
-   "start": 91.0,
-   "end": 94.45,
+   "start": 99.38,
+   "end": 102.83,
    "kind": "art",
    "asset": "cena-05-ligacao.png",
    "crop": [
@@ -484,15 +501,15 @@
    "zoom": 0.05
   },
   {
-   "start": 94.45,
-   "end": 98.01,
+   "start": 102.83,
+   "end": 106.4,
    "kind": "art",
    "asset": "cena-06-celular-mesa.png",
    "zoom": 0.05
   },
   {
-   "start": 98.01,
-   "end": 104.38,
+   "start": 106.4,
+   "end": 112.76,
    "kind": "art",
    "asset": "cena-06-celular-mesa.png",
    "crop": [
@@ -531,8 +548,8 @@
    ]
   },
   {
-   "start": 104.38,
-   "end": 107.9,
+   "start": 112.76,
+   "end": 116.28,
    "kind": "art",
    "asset": "cena-06-celular-mesa.png",
    "crop": [
@@ -571,15 +588,15 @@
    ]
   },
   {
-   "start": 107.9,
-   "end": 111.8,
+   "start": 116.28,
+   "end": 120.19,
    "kind": "art",
    "asset": "cena-07-carro.png",
    "zoom": 0.05
   },
   {
-   "start": 111.8,
-   "end": 114.02,
+   "start": 120.19,
+   "end": 122.28,
    "kind": "art",
    "asset": "cena-07-carro.png",
    "crop": [
@@ -592,20 +609,13 @@
    "brightness": 0.8
   },
   {
-   "start": 114.02,
-   "end": 117.76,
+   "start": 122.28,
+   "end": 131.84,
    "kind": "art",
-   "asset": "cena-08-retrato-amigo.png",
-   "zoom": 0.05
-  },
-  {
-   "start": 117.76,
-   "end": 123.9,
-   "kind": "art",
-   "asset": "cena-08-retrato-amigo.png",
+   "asset": "cena-07-carro.png",
    "zoom": 0.03,
    "direction": "out",
-   "brightness": 0.5
+   "brightness": 0.42
   }
  ],
  "graphics": [
@@ -777,7 +787,7 @@
   {
    "type": "hud",
    "start": 13.34,
-   "end": 117.76,
+   "end": 122.28,
    "label": "A SUA PARTE",
    "dy": 67,
    "values": [
@@ -797,36 +807,36 @@
   },
   {
    "type": "tag",
-   "start": 24.27,
-   "end": 61.34,
+   "start": 32.66,
+   "end": 69.73,
    "text": "PISTA 1 · A VERSÃO DELE",
    "y": 297
   },
   {
    "type": "tag",
-   "start": 61.34,
-   "end": 94.45,
+   "start": 69.73,
+   "end": 102.83,
    "text": "PISTA 2 · A FOTO DA DIVISÃO",
    "y": 297
   },
   {
    "type": "tag",
-   "start": 94.45,
-   "end": 107.9,
+   "start": 102.83,
+   "end": 116.28,
    "text": "PISTA 3 · A MENSAGEM",
    "y": 297
   },
   {
    "type": "vignette",
-   "start": 98.01,
-   "end": 107.9,
+   "start": 106.4,
+   "end": 116.28,
    "color": "alert",
    "strength": 0.8
   },
   {
    "type": "vignette",
-   "start": 111.8,
-   "end": 117.76,
+   "start": 120.19,
+   "end": 122.28,
    "color": "alert",
    "strength": 0.9
   },
@@ -852,19 +862,19 @@
   },
   {
    "type": "phrase",
-   "start": 27.59,
-   "end": 28.86,
+   "start": 35.98,
+   "end": 37.25,
    "y": 900,
    "size": 63,
    "lines": [
     {
      "text": "QUANTO",
-     "at": 27.64,
+     "at": 36.02,
      "color": "white"
     },
     {
      "text": "ELE DEVIA?",
-     "at": 27.91,
+     "at": 36.29,
      "color": "yellow"
     }
    ],
@@ -872,27 +882,27 @@
   },
   {
    "type": "phrase",
-   "start": 28.86,
-   "end": 30.5,
+   "start": 37.25,
+   "end": 38.88,
    "y": 880,
    "size": 87,
    "lines": [
     {
      "style": "label",
      "text": "A DÍVIDA",
-     "at": 28.98
+     "at": 37.37
     },
     {
      "text": "R$ 80.000",
-     "at": 29.03,
+     "at": 37.41,
      "color": "red",
      "size": 87,
      "shake": true,
      "count": {
       "from": 0,
       "to": 80000,
-      "start": 28.982,
-      "end": 30.174
+      "start": 37.365,
+      "end": 38.557
      }
     }
    ],
@@ -900,19 +910,19 @@
   },
   {
    "type": "phrase",
-   "start": 31.33,
-   "end": 33.7,
+   "start": 39.71,
+   "end": 42.09,
    "y": 900,
    "size": 52,
    "lines": [
     {
      "text": "PRA QUEM BANCOU",
-     "at": 31.38,
+     "at": 39.76,
      "color": "white"
     },
     {
      "text": "O ASSALTO.",
-     "at": 32.5,
+     "at": 40.88,
      "color": "yellow"
     }
    ],
@@ -920,22 +930,22 @@
   },
   {
    "type": "list",
-   "start": 36.7,
-   "end": 46.67,
+   "start": 45.08,
+   "end": 55.05,
    "y": 560,
    "items": [
     {
-     "at": 36.75,
+     "at": 45.13,
      "left": "A DÍVIDA",
      "right": "R$ 80 MIL"
     },
     {
-     "at": 40.61,
+     "at": 48.99,
      "left": "A SAÍDA",
      "right": "ALGUÉM DE FORA"
     },
     {
-     "at": 45.73,
+     "at": 54.11,
      "left": "A CULPA",
      "right": "VOCÊ"
     }
@@ -944,19 +954,19 @@
   },
   {
    "type": "phrase",
-   "start": 46.74,
-   "end": 49.34,
+   "start": 55.12,
+   "end": 57.72,
    "y": 900,
    "size": 54,
    "lines": [
     {
      "text": "“NINGUÉM IA VER",
-     "at": 47.64,
+     "at": 56.03,
      "color": "white"
     },
     {
      "text": "O SEU ROSTO.”",
-     "at": 48.02,
+     "at": 56.41,
      "color": "yellow"
     }
    ],
@@ -964,8 +974,8 @@
   },
   {
    "type": "stamp",
-   "start": 50.18,
-   "end": 52.07,
+   "start": 58.56,
+   "end": 60.46,
    "text": "FOI ELE",
    "y": 714,
    "x": 440,
@@ -973,19 +983,19 @@
   },
   {
    "type": "phrase",
-   "start": 54.1,
-   "end": 56.69,
+   "start": 62.49,
+   "end": 65.07,
    "y": 900,
    "size": 47,
    "lines": [
     {
      "text": "“ELES SABIAM ONDE",
-     "at": 54.15,
+     "at": 62.54,
      "color": "white"
     },
     {
      "text": "A MINHA MÃE MORA.”",
-     "at": 54.9,
+     "at": 63.29,
      "color": "yellow"
     }
    ],
@@ -993,19 +1003,19 @@
   },
   {
    "type": "phrase",
-   "start": 63.01,
-   "end": 64.8,
+   "start": 71.39,
+   "end": 73.18,
    "y": 900,
    "size": 60,
    "lines": [
     {
      "text": "PALAVRA,",
-     "at": 63.06,
+     "at": 71.44,
      "color": "white"
     },
     {
      "text": "ELE JÁ GASTOU.",
-     "at": 63.54,
+     "at": 71.93,
      "color": "yellow"
     }
    ],
@@ -1013,19 +1023,19 @@
   },
   {
    "type": "phrase",
-   "start": 68.11,
-   "end": 69.45,
+   "start": 76.5,
+   "end": 77.84,
    "y": 924,
    "size": 51,
    "lines": [
     {
      "text": "A NOITE",
-     "at": 68.16,
+     "at": 76.55,
      "color": "white"
     },
     {
      "text": "DA DIVISÃO.",
-     "at": 68.44,
+     "at": 76.83,
      "color": "yellow"
     }
    ],
@@ -1033,19 +1043,19 @@
   },
   {
    "type": "phrase",
-   "start": 87.3,
-   "end": 88.92,
+   "start": 95.69,
+   "end": 97.31,
    "y": 799,
    "size": 45,
    "lines": [
     {
      "text": "“FERRO-VELHO",
-     "at": 87.35,
+     "at": 95.74,
      "color": "white"
     },
     {
      "text": "SÃO JORGE.”",
-     "at": 87.89,
+     "at": 96.28,
      "color": "yellow"
     }
    ],
@@ -1053,19 +1063,19 @@
   },
   {
    "type": "phrase",
-   "start": 91.0,
-   "end": 93.49,
+   "start": 99.38,
+   "end": 101.88,
    "y": 900,
    "size": 69,
    "lines": [
     {
      "text": "O LUGAR",
-     "at": 91.12,
+     "at": 99.5,
      "color": "white"
     },
     {
      "text": "EXISTE.",
-     "at": 91.47,
+     "at": 99.86,
      "color": "yellow"
     }
    ],
@@ -1073,8 +1083,8 @@
   },
   {
    "type": "stamp",
-   "start": 93.51,
-   "end": 94.45,
+   "start": 101.9,
+   "end": 102.83,
    "text": "VERDADE",
    "y": 900,
    "x": 330,
@@ -1083,14 +1093,14 @@
   },
   {
    "type": "phrase",
-   "start": 106.36,
-   "end": 107.9,
+   "start": 114.74,
+   "end": 116.28,
    "y": 900,
    "size": 65,
    "lines": [
     {
      "text": "NEM A VOCÊ.",
-     "at": 106.41,
+     "at": 114.79,
      "color": "yellow"
     }
    ],
@@ -1098,19 +1108,19 @@
   },
   {
    "type": "phrase",
-   "start": 111.8,
-   "end": 114.02,
+   "start": 120.19,
+   "end": 122.28,
    "y": 900,
    "size": 72,
    "lines": [
     {
      "text": "DE FAROL",
-     "at": 111.92,
+     "at": 120.31,
      "color": "white"
     },
     {
      "text": "APAGADO.",
-     "at": 112.39,
+     "at": 120.77,
      "color": "red",
      "shake": true
     }
@@ -1119,30 +1129,30 @@
   },
   {
    "type": "phrase",
-   "start": 114.02,
-   "end": 117.76,
+   "start": 24.27,
+   "end": 28.01,
    "y": 820,
    "size": 65,
    "lines": [
     {
      "text": "ELE VENDEU",
-     "at": 114.14,
+     "at": 24.39,
      "color": "white"
     },
     {
      "text": "O SEU NOME.",
-     "at": 114.7,
+     "at": 24.96,
      "color": "yellow"
     },
     {
      "text": "AGORA VOCÊ",
-     "at": 115.82,
+     "at": 26.07,
      "color": "white",
      "size": 52
     },
     {
      "text": "ESCOLHE O DELE.",
-     "at": 116.6,
+     "at": 26.86,
      "color": "yellow",
      "size": 52
     }
@@ -1151,19 +1161,19 @@
   },
   {
    "type": "phrase",
-   "start": 117.76,
-   "end": 124.4,
+   "start": 28.01,
+   "end": 32.66,
    "y": 660,
    "size": 63,
    "lines": [
     {
      "text": "QUAL É O",
-     "at": 117.88,
+     "at": 28.13,
      "color": "white"
     },
     {
      "text": "NOME DELE?",
-     "at": 118.03,
+     "at": 28.28,
      "color": "yellow"
     }
    ],
@@ -1171,8 +1181,8 @@
   },
   {
    "type": "input",
-   "start": 118.26,
-   "end": 124.4,
+   "start": 28.52,
+   "end": 32.66,
    "y": 820,
    "x": 330,
    "placeholder": "Comenta o nome dele…",
@@ -1180,12 +1190,62 @@
   },
   {
    "type": "box",
-   "start": 119.21,
-   "end": 124.4,
+   "start": 29.47,
+   "end": 32.66,
    "y": 950,
    "x": 330,
    "title": "PARTE 3",
    "sub": "o mais curtido vira o nome dele"
+  },
+  {
+   "type": "phrase",
+   "start": 122.28,
+   "end": 132.34,
+   "y": 420,
+   "size": 80,
+   "lines": [
+    {
+     "text": "FUGIR OU",
+     "at": 123.64,
+     "color": "white"
+    },
+    {
+     "text": "FICAR?",
+     "at": 124.4,
+     "color": "yellow"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "buttons",
+   "start": 125.53,
+   "end": 132.34,
+   "y": 660,
+   "x": 330,
+   "prompt": "COMENTA UMA PALAVRA",
+   "prompt_at": 125.58,
+   "items": [
+    {
+     "text": "FUGIR",
+     "at": 126.04,
+     "style": "yellow"
+    },
+    {
+     "text": "FICAR",
+     "at": 126.38,
+     "style": "white"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "start": 127.1,
+   "end": 132.34,
+   "y": 830,
+   "x": 330,
+   "title": "PARTE 3",
+   "sub": "a maioria decide o próximo passo"
   }
  ],
  "sfx": [
@@ -1366,27 +1426,32 @@
   },
   {
    "sound": "whoosh.wav",
-   "at": 64.44,
+   "at": 32.3,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 78.42,
+   "at": 72.82,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 94.09,
+   "at": 86.81,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 107.54,
+   "at": 102.47,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 117.4,
+   "at": 115.92,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 121.92,
    "gain": -2
   },
   {
@@ -1421,147 +1486,162 @@
   },
   {
    "sound": "tique.wav",
-   "at": 29.034,
+   "at": 37.417,
    "gain": -18
   },
   {
    "sound": "tique.wav",
-   "at": 29.091,
+   "at": 37.474,
    "gain": -18
   },
   {
    "sound": "tique.wav",
-   "at": 29.155,
+   "at": 37.538,
    "gain": -18
   },
   {
    "sound": "tique.wav",
-   "at": 29.228,
+   "at": 37.611,
    "gain": -18
   },
   {
    "sound": "tique.wav",
-   "at": 29.314,
+   "at": 37.697,
    "gain": -18
   },
   {
    "sound": "tique.wav",
-   "at": 29.423,
+   "at": 37.806,
    "gain": -18
   },
   {
    "sound": "tique.wav",
-   "at": 29.578,
+   "at": 37.961,
    "gain": -18
   },
   {
    "sound": "tique.wav",
-   "at": 30.174,
+   "at": 38.557,
    "gain": -18
   },
   {
    "sound": "impacto-suave.wav",
-   "at": 30.124,
+   "at": 38.507,
    "gain": -8
   },
   {
    "sound": "pop.wav",
-   "at": 36.75,
+   "at": 45.13,
    "gain": -10
   },
   {
    "sound": "pop.wav",
-   "at": 40.61,
+   "at": 48.99,
    "gain": -10
   },
   {
    "sound": "pop.wav",
-   "at": 45.73,
+   "at": 54.11,
    "gain": -10
   },
   {
    "sound": "impacto.wav",
-   "at": 50.16,
+   "at": 58.543,
    "gain": -5
   },
   {
    "sound": "impacto-suave.wav",
-   "at": 64.917,
+   "at": 73.3,
    "gain": -12
   },
   {
    "sound": "chamada-longa.wav",
-   "at": 80.409,
+   "at": 88.792,
    "gain": -14
   },
   {
    "sound": "chamada-longa.wav",
-   "at": 82.217,
+   "at": 90.6,
    "gain": -14
   },
   {
    "sound": "chamada-longa.wav",
-   "at": 83.467,
+   "at": 91.85,
    "gain": -14
   },
   {
    "sound": "atende.wav",
-   "at": 84.467,
+   "at": 92.85,
    "gain": -10
   },
   {
    "sound": "desliga.wav",
-   "at": 90.327,
+   "at": 98.71,
    "gain": -10
   },
   {
    "sound": "impacto-suave.wav",
-   "at": 93.492,
+   "at": 101.875,
    "gain": -8
   },
   {
    "sound": "vibracao.wav",
-   "at": 96.644,
+   "at": 105.027,
    "gain": -6
   },
   {
    "sound": "notificacao.wav",
-   "at": 98.084,
+   "at": 106.467,
    "gain": -8
   },
   {
    "sound": "impacto.wav",
-   "at": 101.969,
+   "at": 110.352,
    "gain": -6
   },
   {
    "sound": "carro.wav",
-   "at": 108.585,
+   "at": 116.968,
    "gain": -6
   },
   {
    "sound": "impacto.wav",
-   "at": 111.78,
+   "at": 120.17,
    "gain": -5
   },
   {
    "sound": "impacto-suave.wav",
-   "at": 114.098,
+   "at": 24.352,
    "gain": -8
   },
   {
    "sound": "pop.wav",
-   "at": 117.879,
+   "at": 28.133,
    "gain": -10
   },
   {
    "sound": "pop.wav",
-   "at": 118.264,
+   "at": 28.518,
    "gain": -10
   },
   {
    "sound": "pop.wav",
-   "at": 119.212,
+   "at": 29.466,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 126.041,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 126.381,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 127.101,
    "gain": -10
   }
  ],

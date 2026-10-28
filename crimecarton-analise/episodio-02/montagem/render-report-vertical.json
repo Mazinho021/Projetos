@@ -1,11 +1,11 @@
 {
   "output": "crimecarton-analise/episodio-02/parte-02-a-divida-vertical.mp4",
-  "duration": 123.92,
-  "audio_duration": 121.901,
+  "duration": 131.842,
+  "audio_duration": 129.842,
   "tail": 2.0,
-  "scenes": 34,
+  "scenes": 35,
   "captions": 0,
-  "graphics": 34,
-  "sound_effects": 75,
+  "graphics": 37,
+  "sound_effects": 79,
   "type": "illustrated animatic with camera motion and graphics; no generated body animation"
 }

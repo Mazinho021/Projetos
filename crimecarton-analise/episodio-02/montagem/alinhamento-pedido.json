@@ -1,0 +1,131 @@
+{
+ "audio": "narracao-ep02-pedido.wav",
+ "script": "narracao-ep02-pedido.txt",
+ "model": "medium",
+ "words_in_script": 18,
+ "words_matched_exactly": 17,
+ "pauses": [
+  [
+   1.477,
+   1.808
+  ],
+  [
+   2.242,
+   3.182
+  ],
+  [
+   7.221,
+   7.6
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "E",
+   "start": 0.0,
+   "end": 0.38
+  },
+  {
+   "i": 1,
+   "text": "agora:",
+   "start": 0.38,
+   "end": 0.84
+  },
+  {
+   "i": 2,
+   "text": "fugir",
+   "start": 1.24,
+   "end": 1.477
+  },
+  {
+   "i": 3,
+   "text": "ou",
+   "start": 1.808,
+   "end": 2.0
+  },
+  {
+   "i": 4,
+   "text": "ficar?",
+   "start": 2.0,
+   "end": 2.242
+  },
+  {
+   "i": 5,
+   "text": "Comenta",
+   "start": 3.182,
+   "end": 3.52
+  },
+  {
+   "i": 6,
+   "text": "uma",
+   "start": 3.52,
+   "end": 3.64
+  },
+  {
+   "i": 7,
+   "text": "palavra",
+   "start": 3.64,
+   "end": 3.98
+  },
+  {
+   "i": 8,
+   "text": "só.",
+   "start": 3.98,
+   "end": 4.28
+  },
+  {
+   "i": 9,
+   "text": "O",
+   "start": 4.7,
+   "end": 4.78
+  },
+  {
+   "i": 10,
+   "text": "que",
+   "start": 4.78,
+   "end": 4.9
+  },
+  {
+   "i": 11,
+   "text": "a",
+   "start": 4.9,
+   "end": 4.98
+  },
+  {
+   "i": 12,
+   "text": "maioria",
+   "start": 4.98,
+   "end": 5.28
+  },
+  {
+   "i": 13,
+   "text": "escolher",
+   "start": 5.28,
+   "end": 6.0
+  },
+  {
+   "i": 14,
+   "text": "vira",
+   "start": 6.0,
+   "end": 6.52
+  },
+  {
+   "i": 15,
+   "text": "a",
+   "start": 6.52,
+   "end": 6.66
+  },
+  {
+   "i": 16,
+   "text": "parte",
+   "start": 6.66,
+   "end": 6.84
+  },
+  {
+   "i": 17,
+   "text": "três.",
+   "start": 6.84,
+   "end": 7.221
+  }
+ ]
+}

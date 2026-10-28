@@ -4,7 +4,7 @@ Esta pasta monta a Parte 2, “A dívida”, com as ferramentas de [`episodio-01
 
 ## Montar e renderizar
 
-O Codex entregou em `episodio-02/` as ilustrações `cena-01-porta-aberta.png` a `cena-08-retrato-amigo.png` e as duas vozes, `narracao-ep02-narrador.wav` e `narracao-ep02-amigo.wav`. O resultado são [`parte-02-a-divida.mp4`](../parte-02-a-divida.mp4) e [`parte-02-a-divida-vertical.mp4`](../parte-02-a-divida-vertical.mp4), com 2 min 04 s. Para refazer, a partir da raiz do repositório:
+O Codex entregou em `episodio-02/` as ilustrações `cena-01-porta-aberta.png` a `cena-08-retrato-amigo.png` e as vozes `narracao-ep02-narrador.wav`, `narracao-ep02-amigo.wav` e `narracao-ep02-pedido.wav`, a do pedido do fim. O resultado são [`parte-02-a-divida.mp4`](../parte-02-a-divida.mp4) e [`parte-02-a-divida-vertical.mp4`](../parte-02-a-divida-vertical.mp4), com 2 min 12 s. Para refazer, a partir da raiz do repositório:
 
 1. Alinhar cada voz ao próprio texto, com o mesmo alinhador da Parte 1:
 
