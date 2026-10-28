@@ -31,7 +31,7 @@ O Codex entregou em `episodio-02/` as ilustrações `cena-01-porta-aberta.png` a
 
 ## Como a timeline é montada
 
-`montar_timeline.py` junta, na ordem do roteiro, a vinheta, as falas do narrador e as do amigo numa só faixa, `narracao-ep02.wav`. A vinheta são as 17 primeiras palavras da narração da Parte 1, com a mesma voz. A faixa ainda leva as pausas abertas para os sons da história. As falas são cortadas só onde a voz muda ou onde entra uma pausa; os volumes da vinheta e do amigo são igualados ao do narrador. Cortes, gráficos e efeitos ficam presos a palavras do roteiro, achadas pelo texto (`N('Toca três vezes.')`, `A('Oitenta mil.')`), então a edição acompanha as vozes se elas forem geradas ou alinhadas de novo.
+`montar_timeline.py` junta, na ordem do roteiro, a vinheta, as falas do narrador, as do amigo e o pedido de comentário, gravado à parte, numa só faixa, `narracao-ep02.wav`. A gravação do narrador termina com o pedido antigo, que só pedia o nome, e ele fica de fora. A vinheta são as 17 primeiras palavras da narração da Parte 1, com a mesma voz. A faixa ainda leva as pausas abertas para os sons da história. As falas são cortadas só onde a voz muda ou onde entra uma pausa; os volumes da vinheta e do amigo são igualados ao do narrador. Cortes, gráficos e efeitos ficam presos a palavras do roteiro, achadas pelo texto (`N('Toca três vezes.')`, `A('Oitenta mil.')`), então a edição acompanha as vozes se elas forem geradas ou alinhadas de novo.
 
 As pausas, em `PAUSES`, entram depois destas palavras:
 
@@ -57,9 +57,16 @@ O script grava `timeline.json`, a versão do Instagram, e `timeline-vertical.jso
 
 `abertura()` monta o bloco que toda parte repete, descrito no [guia de estilo](../../guia-de-estilo-referencia.md#abertura-das-partes-seguintes). Ele leva a ilustração da mochila com a etiqueta “PARTE N” e as três frases fixas na voz da Parte 1, com o contador até R$ 10.000.000. Depois vêm a tela preta “VOCÊ FICOU COM / O ROSTO NO JORNAL.”, com as cinco estrelas de suspeita, e o aviso “CHEGOU AGORA? A PARTE N−1 TÁ NO PERFIL” com o @golpecartoon. Por fim, as barras com o resultado real da votação anterior e o carimbo da vencedora. Nas próximas partes, basta passar o número da parte, as opções com as porcentagens e as palavras do narrador que abrem o aviso e o resultado.
 
-### Votação do nome
+### Votações
 
-A Parte 2 termina com a votação livre do nome do amigo, sem opções, como pediu o criador. Abaixo do rosto dele aparecem “QUAL É O / NOME DELE?”, uma caixa de comentário vazia com “Comenta o nome dele…” e o cursor piscando e a caixa “PARTE 3 · o mais curtido vira o nome dele”, cada uma na sua palavra da narração.
+A Parte 2 termina com duas votações, como pediu o criador. Sobre o carro parado no portão, escurecido, entram “FUGIR OU / FICAR?”, “COMENTA A SUA ESCOLHA” com os botões FUGIR e FICAR, como os de ABRIR e NÃO ABRIR na Parte 1, e uma caixa de comentário vazia com “e um nome pra ele…” e o cursor piscando, porque o nome do amigo é livre, sem opções. Por último entra a caixa “PARTE 3 · vence a maioria e o nome mais curtido”. Cada elemento entra na sua palavra do pedido.
+
+O pedido, `narracao-ep02-pedido.wav`, é alinhado como as outras vozes:
+
+```bash
+.venv/bin/python crimecarton-analise/episodio-01/montagem/alinhar_narracao.py \
+  --audio $A/narracao-ep02-pedido.wav --script $A/narracao-ep02-pedido.txt --output $A/montagem/alinhamento-pedido.json
+```
 
 ## Efeitos sonoros
 

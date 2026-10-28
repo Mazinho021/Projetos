@@ -4,7 +4,9 @@
 The track joins, in the order of roteiro-ep02.txt: the series' opening, cut from Part 1's
 narration (its first 17 words, the same art and audio in every part); the narrator's
 lines from narracao-ep02-narrador.wav; the friend's from narracao-ep02-amigo.wav, in his
-own voice; and the pauses the edit opens for sounds, such as the three rings of the call.
+own voice; the closing request to comment, with both votes, from narracao-ep02-pedido.wav;
+and the pauses the edit opens for sounds, such as the three rings of the call. The
+narrator's recording ends with the earlier request, for the name alone, which is left out.
 Every cut, graphic and effect is anchored to a word of the script, so the edit follows
 the voices again if they are re-aligned.
 
@@ -12,9 +14,8 @@ timeline.json is the Instagram version. timeline-vertical.json, for TikTok and S
 moves the top elements below TikTok's search bar and keeps the rest left of the buttons.
 Render each with ../../episodio-01/montagem/render_animatic.py --timeline.
 
---estimar DIR builds everything in DIR from estimated word timings and silent stand-ins
-for the two new voices, for checking the edit before they exist; the opening keeps
-Part 1's real audio.
+--estimar DIR builds everything in DIR, with estimated word timings and a silent stand-in
+for each voice that has no alignment yet, for checking the edit before it exists.
 """
 from __future__ import annotations
 
@@ -36,7 +37,8 @@ import graficos  # noqa: E402
 SCRIPT = EPISODE / 'roteiro-ep02.txt'
 VOICES = {'VINHETA': (PART1 / 'narracao-original.wav', TOOLS / 'alinhamento-narracao.json'),
           'NARRADOR': (EPISODE / 'narracao-ep02-narrador.wav', HERE / 'alinhamento-narrador.json'),
-          'AMIGO': (EPISODE / 'narracao-ep02-amigo.wav', HERE / 'alinhamento-amigo.json')}
+          'AMIGO': (EPISODE / 'narracao-ep02-amigo.wav', HERE / 'alinhamento-amigo.json'),
+          'PEDIDO': (EPISODE / 'narracao-ep02-pedido.wav', HERE / 'alinhamento-pedido.json')}
 AUDIO = EPISODE / 'narracao-ep02.wav'
 TAIL = 2.0
 PART, VOTE = 2, [('ABRIR', 86), ('NÃO ABRIR', 14)]   # Part 1's vote: 6 of 7 comments said ABRIR
@@ -75,7 +77,7 @@ def loudness(path):
 
 def read_script():
     # [(voice, text, first word, last word)], words numbered per voice as the aligner does.
-    lines, count = [], {'VINHETA': 0, 'NARRADOR': 0, 'AMIGO': 0}
+    lines, count = [], dict.fromkeys(VOICES, 0)
     for raw in SCRIPT.read_text(encoding='utf-8').splitlines():
         if raw.strip():
             voice, text = raw.split(': ', 1)
@@ -106,6 +108,10 @@ def A(phrase, k=0):
     return 'AMIGO', find('AMIGO', phrase) + k
 
 
+def P(phrase, k=0):
+    return 'PEDIDO', find('PEDIDO', phrase) + k
+
+
 def V(i):
     return 'VINHETA', i
 
@@ -128,7 +134,8 @@ PAUSES = {
 }
 # Silences at changes of voice other than SWITCH: a breath after the opening, and the
 # quick exchange about the debt.
-SWITCHES = {V(16): .35, A('Oitenta mil.', 1): .12, N('Para quem?', 1): .12, A('minha mãe mora.', 2): .6}
+SWITCHES = {V(16): .35, A('Oitenta mil.', 1): .12, N('Para quem?', 1): .12, A('minha mãe mora.', 2): .6,
+            N('escolhe o dele.', 2): .45}
 
 
 def estimated_words(voice):
@@ -144,24 +151,25 @@ def estimated_words(voice):
 
 
 def load_words(estimate=None):
-    words = {}
+    # {voice: (audio, words)} and the voices given silent stand-ins by an estimate.
+    words, stand_ins = {}, set()
     for voice, (audio, alignment) in VOICES.items():
-        if estimate and voice != 'VINHETA':
+        if estimate and not alignment.exists():
             est, duration = estimated_words(voice)
             audio = estimate / audio.name
             subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i', 'anullsrc=r=24000:cl=mono',
                             '-t', f'{duration:.3f}', '-c:a', 'pcm_s16le', audio], check=True)
             words[voice] = (audio, est)
+            stand_ins.add(voice)
         else:
             words[voice] = (audio, json.loads(alignment.read_text(encoding='utf-8'))['words'])
+    # The script uses the first words of each recording; the opening's recording, Part 1's
+    # narration, and the narrator's, which ends with the earlier request, go on past them.
     for voice, (_, w) in words.items():
-        if voice == 'VINHETA':
-            heard = [norm(x['text']) for x in w[:len(TEXT[voice])]]
-            if heard != [norm(x) for x in TEXT[voice]]:
-                raise ValueError('The opening line no longer matches the first words of Part 1')
-        elif len(w) != len(TEXT[voice]):
-            raise ValueError(f'{voice}: {len(w)} aligned words, {len(TEXT[voice])} in the script')
-    return words
+        heard = [norm(x['text']) for x in w[:len(TEXT[voice])]]
+        if heard != [norm(x) for x in TEXT[voice]]:
+            raise ValueError(f'{voice}: the script no longer matches the first words of the aligned recording')
+    return words, stand_ins
 
 
 def segments(words):
@@ -216,16 +224,13 @@ def timing(words, pieces):
     return at, round(clock, 3)
 
 
-def join(words, pieces, output, estimate=False):
-    # One mono float track; the opening and the friend are matched to the narrator's
-    # loudness (the silent stand-ins of an estimate have none to match).
+def join(words, pieces, output, stand_ins=()):
+    # One mono float track; every voice is matched to the narrator's loudness (the silent
+    # stand-ins of an estimate have none to match).
     files = {v: words[v][0] for v in VOICES}
-    if estimate:
-        gains = dict.fromkeys(VOICES, 0)
-    else:
-        ref = loudness(files['NARRADOR'])
-        gains = {'NARRADOR': 0, 'VINHETA': ref - loudness(files['VINHETA']),
-                 'AMIGO': ref - loudness(files['AMIGO']) + FRIEND_GAIN}
+    ref = loudness(files['NARRADOR'])
+    gains = {v: 0 if v in stand_ins or v == 'NARRADOR' else ref - loudness(files[v]) for v in VOICES}
+    gains['AMIGO'] += FRIEND_GAIN
     order = list(VOICES)
     # The voices' own rate; the renderer resamples the mix to 48 kHz.
     rate = int(probe(files['NARRADOR'], 'stream=sample_rate'))
@@ -419,9 +424,9 @@ def build(ed):
         ('lights-off', cut(N('De farol apagado.')), dict(kind='art', asset='cena-07-carro.png', crop=CAR07, zoom=.08,
                                                         brightness=.8)),
         ('sold', cut(N('Ele vendeu o')), dict(kind='art', asset='cena-08-retrato-amigo.png', zoom=.05)),
-        # The request to comment: the friend's face, darker, above the comment box.
-        ('name', cut(N('Comenta um nome.')), dict(kind='art', asset='cena-08-retrato-amigo.png', zoom=.03,
-                                                  direction='out', brightness=.5)),
+        # The request to comment, with both votes, over the car that waits at the gate.
+        ('choice', cut(P('E com aquele')), dict(kind='art', asset='cena-07-carro.png', zoom=.03, direction='out',
+                                               brightness=.42)),
     ]
     AT = {name: t for name, t, _ in plan}
     scenes = [{'start': t, 'end': plan[k+1][1] if k + 1 < len(plan) else END, **fields}
@@ -438,7 +443,7 @@ def build(ed):
              {'at': round(s(N('alguém de fora,')), 2), 'left': 'A SAÍDA', 'right': 'ALGUÉM DE FORA'},
              {'at': round(s(N('essa pessoa.')), 2), 'left': 'A CULPA', 'right': 'VOCÊ'}]
     graphics = og + [
-        {'type': 'hud', 'start': story, 'end': AT['name'], 'label': 'A SUA PARTE', 'dy': L['hud_dy'],
+        {'type': 'hud', 'start': story, 'end': AT['choice'], 'label': 'A SUA PARTE', 'dy': L['hud_dy'],
          'values': [{'at': story, 'text': 'R$ 0', 'color': 'red'}],
          'stars': [{'at': story, 'count': 5, 'step': 0}]},
         {'type': 'tag', 'start': AT['question'], 'end': AT['proof'], 'text': 'PISTA 1 · A VERSÃO DELE', 'y': L['tag_y']},
@@ -446,7 +451,7 @@ def build(ed):
         {'type': 'tag', 'start': AT['buzz'], 'end': AT['car'], 'text': 'PISTA 3 · A MENSAGEM', 'y': L['tag_y']},
         # Red alarm while the message sits on the screen and while the car waits outside.
         {'type': 'vignette', 'start': AT['message'], 'end': AT['car'], 'color': 'alert', 'strength': .8},
-        {'type': 'vignette', 'start': AT['lights-off'], 'end': AT['name'], 'color': 'alert', 'strength': .9},
+        {'type': 'vignette', 'start': AT['lights-off'], 'end': AT['choice'], 'color': 'alert', 'strength': .9},
         phrase(s(A('Eles tão te')) - .05, AT['question'], 900, [line('“ELES TÃO', s(A('Eles tão te'))),
                                                                line('TE PROCURANDO.”', s(A('te procurando.')), 'yellow')],
                60, x),
@@ -485,21 +490,25 @@ def build(ed):
         phrase(s(N('Nem a você.')) - .05, AT['car'], 900, [line('NEM A VOCÊ.', s(N('Nem a você.')), 'yellow')], 72, x),
         phrase(AT['lights-off'], AT['sold'], 900, [line('DE FAROL', s(N('De farol apagado.'))),
                                                    line('APAGADO.', s(N('apagado.')), 'red', shake=True)], 80, x),
-        phrase(AT['sold'], AT['name'], 820, [line('ELE VENDEU', s(N('Ele vendeu o'))),
+        phrase(AT['sold'], AT['choice'], 820, [line('ELE VENDEU', s(N('Ele vendeu o'))),
                                              line('O SEU NOME.', s(N('o seu nome.')), 'yellow'),
                                              line('AGORA VOCÊ', s(N('Agora você escolhe')), size=58),
                                              line('ESCOLHE O DELE.', s(N('escolhe o dele.')), 'yellow', size=58)], 72, x),
-        # The free vote for the friend's name, below his face: no options, only the empty
-        # comment box, and the rule in the box of the next part.
-        phrase(AT['name'], END + .5, 660, [line('QUAL É O', s(N('Comenta um nome.'))),
-                                           line('NOME DELE?', s(N('Comenta um nome.')) + .15, 'yellow')], 70, x),
-        {'type': 'input', 'start': round(s(N('um nome.')), 2), 'end': END + .5, 'y': 820, 'x': x,
-         'placeholder': 'Comenta o nome dele…', 'width': L['input']},
-        {'type': 'box', 'start': round(s(N('O mais curtido')), 2), 'end': END + .5, 'y': 950, 'x': x,
-         'title': f'PARTE {PART + 1}', 'sub': 'o mais curtido vira o nome dele'},
+        # Both votes: the choice, with its two buttons, as Part 1 asked ABRIR or NÃO ABRIR,
+        # and the friend's name, free, in an empty comment box, with the rules of the next part.
+        phrase(AT['choice'], END + .5, 400, [line('FUGIR OU', s(P('fugir ou ficar?'))),
+                                             line('FICAR?', s(P('ficar? Comenta')), 'yellow')], 88, x),
+        {'type': 'buttons', 'start': round(s(P('Comenta a sua')) - .05, 2), 'end': END + .5, 'y': 620, 'x': x,
+         'prompt': 'COMENTA A SUA ESCOLHA', 'prompt_at': round(s(P('Comenta a sua')), 2),
+         'items': [{'text': 'FUGIR', 'at': round(s(P('sua escolha', 1)), 2), 'style': 'yellow'},
+                   {'text': 'FICAR', 'at': round(s(P('sua escolha', 1)) + .2, 2), 'style': 'white'}]},
+        {'type': 'input', 'start': round(s(P('e um nome.', 1)), 2), 'end': END + .5, 'y': 765, 'x': x,
+         'placeholder': 'e um nome pra ele…', 'width': L['input']},
+        {'type': 'box', 'start': round(s(P('O mais curtido')), 2), 'end': END + .5, 'y': 900, 'x': x,
+         'title': f'PARTE {PART + 1}', 'sub': 'vence a maioria e o nome mais curtido'},
     ]
     effects = oe + [
-        *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('door', 'question', 'shows', 'dial', 'buzz', 'car', 'name')],
+        *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('door', 'question', 'shows', 'dial', 'buzz', 'car', 'choice')],
         sfx('tranca.wav', e(N('a porta.', 1)) + .05, -6),
         sfx('porta-abre.wav', e(N('a porta.', 1)) + .3, -8),
         sfx('passos.wav', s(N('Ele entra sem')) + .1, -12),
@@ -521,7 +530,8 @@ def build(ed):
         sfx('carro.wav', e(N('ao portão.', 1)) - 1.6, -6),
         sfx('impacto.wav', AT['lights-off'] - .02, -5),
         sfx('impacto-suave.wav', s(N('Ele vendeu o')) - .04, -8),
-        *[sfx('pop.wav', t, -10) for t in (s(N('Comenta um nome.')), s(N('um nome.')), s(N('O mais curtido')))],
+        *[sfx('pop.wav', t, -10) for t in (s(P('sua escolha', 1)), s(P('sua escolha', 1)) + .2, s(P('e um nome.', 1)),
+                                           s(P('O mais curtido')))],
     ]
     # The vertical version's narrower column takes the phrases a little smaller.
     k = L['width']/INSTAGRAM['width']
@@ -556,12 +566,12 @@ def main():
     args = parser.parse_args()
     out = args.estimar.resolve() if args.estimar else HERE
     out.mkdir(parents=True, exist_ok=True)
-    words = load_words(out if args.estimar else None)
+    words, stand_ins = load_words(out if args.estimar else None)
     pieces = segments(words)
     at, length = timing(words, pieces)
     end = round(length + TAIL, 2)
     audio = out / AUDIO.name if args.estimar else AUDIO
-    gains = join(words, pieces, audio, bool(args.estimar))
+    gains = join(words, pieces, audio, stand_ins)
     for layout in (INSTAGRAM, VERTICAL):
         scenes, graphics, effects = build(Edit(at, end, layout))
         wide = too_wide(graphics, layout['width'])

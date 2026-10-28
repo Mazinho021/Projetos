@@ -14,13 +14,14 @@ Roteiro em [`roteiro-ep02.txt`](roteiro-ep02.txt), com a voz de cada fala. O epi
 | O teste | Narrador e três toques de chamada | `cena-05-ligacao` e a tela da ligação: “chamando…”, o número com dígitos escondidos, a chamada atendida e encerrada | “FERRO-VELHO / SÃO JORGE.”, “O LUGAR / EXISTE.” e o carimbo “VERDADE” |
 | PISTA 3 · A MENSAGEM | Narrador | `cena-06-celular-mesa`, com a mensagem “COBRANÇA / Já tá com ele?” pintada por código na tela do celular dele | Borda vermelha |
 | Virada | Narrador | `cena-07-carro` | “DE FAROL / APAGADO.” |
-| Votação | “Ele vendeu o seu nome. Agora você escolhe o dele. Comenta um nome. O mais curtido vira o nome dele na parte três.” | `cena-08-retrato-amigo` | “QUAL É O / NOME DELE?”, a caixa de comentário vazia “Comenta o nome dele…” e a caixa “PARTE 3 · o mais curtido vira o nome dele” |
+| O nome | “Ele vendeu o seu nome. Agora você escolhe o dele.” | `cena-08-retrato-amigo` | “ELE VENDEU / O SEU NOME. / AGORA VOCÊ / ESCOLHE O DELE.” |
+| Votação | Pedido gravado à parte: “E com aquele carro lá fora: fugir ou ficar? Comenta a sua escolha e um nome. O mais curtido vira o nome dele na parte três.” | `cena-07-carro`, escurecida | “FUGIR OU / FICAR?”, “COMENTA A SUA ESCOLHA” com os botões FUGIR e FICAR, a caixa de comentário vazia “e um nome pra ele…” e a caixa “PARTE 3 · vence a maioria e o nome mais curtido” |
 
-O painel do topo continua com “A SUA PARTE R$ 0 · SUSPEITA ★★★★★”. O pedido de comentário dura uns 7 s, mais que os 2 a 3 s da lição da Parte 1, porque o nome livre precisa da regra (“o mais curtido vence”); a caixa e as frases entram juntas com a fala para encurtar a espera.
+O painel do topo continua com “A SUA PARTE R$ 0 · SUSPEITA ★★★★★”. O pedido de comentário dura uns 9 s, mais que os 2 a 3 s da lição da Parte 1, porque traz as duas votações e a regra do nome; os botões, a caixa e as frases entram com a fala para encurtar a espera.
 
-## Votação do nome
+## Votações
 
-O nome é livre, por decisão do criador: sem opções. Vence o comentário com o nome mais curtido, somando as redes. Se o vencedor for ofensivo ou não funcionar como nome de personagem, vale o seguinte mais curtido. A Parte 3 abre com “PARTE 2 · VOCÊS ESCOLHERAM” e o nome vencedor.
+Por decisão do criador, em 28/10/2026, a Parte 2 tem duas votações, como a Parte 1 teve ABRIR ou NÃO ABRIR. A primeira é FUGIR ou FICAR, e a maioria decide; ela muda a Parte 3, conforme [`producao-zinho.md`](../producao-zinho.md). A segunda é o nome do amigo. O nome é livre, por decisão do criador: sem opções. Vence o comentário com o nome mais curtido, somando as redes. Se o vencedor for ofensivo ou não funcionar como nome de personagem, vale o seguinte mais curtido. A Parte 3 abre com as barras de FUGIR e FICAR, no bloco “PARTE 2 · VOCÊS VOTARAM”, e com o nome vencedor.
 
 ## Versões
 

@@ -21,4 +21,5 @@ NARRADOR: O lugar existe. Pelo menos essa parte é verdade.
 NARRADOR: Então o celular dele vibra em cima da mesa. Uma mensagem de um contato salvo só como “Cobrança”: “Já tá com ele?”
 NARRADOR: Ele não responde a mensagem. Nem a você.
 NARRADOR: Lá fora, um carro para em frente ao portão. De farol apagado.
-NARRADOR: Ele vendeu o seu nome. Agora você escolhe o dele. Comenta um nome. O mais curtido vira o nome dele na parte três.
+NARRADOR: Ele vendeu o seu nome. Agora você escolhe o dele.
+PEDIDO: E com aquele carro lá fora: fugir ou ficar? Comenta a sua escolha e um nome. O mais curtido vira o nome dele na parte três.
