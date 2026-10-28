@@ -1,6 +1,6 @@
 # Ideia — site da série e “entre na história”
 
-Proposta de 28/10/2026, a pedido do criador, para testar uma renda direta com a série. Ainda é uma ideia: nada foi publicado nem contratado.
+Proposta de 28/10/2026, a pedido do criador, para testar uma renda direta com a série. O criador mandou seguir em 28/10/2026. A primeira versão do site está em [`site/index.html`](site/index.html), com prévia privada no Claude. Ela traz as Partes 1 e 2 em texto, as votações e a oferta. Enquanto não há conta de pagamento, o botão abre o direct do Instagram, e a venda é por Pix. Falta publicar o site num endereço público, por exemplo no Netlify, e pôr o link na bio.
 
 ## Como funciona
 
@@ -27,7 +27,7 @@ Os papéis são feitos por código, como os textos de tela e o calendário da Pa
 
 - Dizer com clareza o que a pessoa compra, em que parte o nome entra e até quando; compra pela internet tem 7 dias de arrependimento (art. 49 do Código de Defesa do Consumidor), então prever o reembolso.
 - Só nomes ou apelidos que a pessoa autoriza; recusar ofensivos ou nomes de terceiros.
-- Manter no site o crédito “inspirado nas histórias de @crimecarton” e o aviso de que imagens e vozes são feitas com IA.
+- Manter no site o aviso de que imagens e vozes são feitas com IA. Por decisão do criador, em 28/10/2026, o site não cita o @crimecarton.
 - No TikTok, a conta pessoal com mais de mil seguidores já pode pôr link na bio; não mudar para conta comercial, que perde o Programa de Recompensas.
 - A renda precisa ser declarada; se crescer, vale abrir um MEI.
 

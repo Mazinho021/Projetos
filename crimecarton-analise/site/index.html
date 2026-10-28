@@ -1,0 +1,267 @@
+<title>A parte que faltou</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="O assalto deu certo. A sua parte, não. Uma série de suspense em partes, em que você vota no que acontece.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Poppins:wght@600;700;800&display=swap">
+<style>
+/* Layout: one reading column, like a case file read at night; the series' yellow marks what you act on. */
+:root {
+  --bg: #13110f;          /* the night of the illustrations */
+  --surface: #1d1a16;
+  --line: #3b342b;
+  --fg: #f6f0e2;          /* the series' white */
+  --muted: #b8ae9e;
+  --accent: #fdb822;      /* the series' yellow: tags, votes, the call to act */
+  --ink: #18160f;         /* text on yellow */
+  --alert: #e9584c;
+  --display: "Poppins", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --prose: "Literata", Georgia, "Times New Roman", serif;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.6rem;
+  --step-3: clamp(2.3rem, 9vw, 3.6rem);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 var(--step-0)/1.7 var(--prose);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 640px; margin: 0 auto; padding-block: 28px 48px; display: grid; gap: 64px; }
+img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 6px; }
+a { color: var(--accent); }
+a:focus-visible, .botao:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+h1, h2, h3, .rotulo, .botao, .hud, .barra, .tag { font-family: var(--display); }
+h1, h2 { text-wrap: balance; margin: 0; line-height: 1.05; }
+p { margin: 0; }
+
+.tag {
+  justify-self: start; display: inline-block; background: var(--accent); color: var(--ink);
+  font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
+  padding: .3em .75em; border-radius: 6px;
+}
+.rotulo { font-weight: 600; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+/* Opening */
+.abertura { display: grid; gap: 20px; }
+.abertura h1 { font-weight: 800; font-size: var(--step-3); text-transform: uppercase; letter-spacing: -.01em; }
+.abertura h1 span { color: var(--accent); display: block; }
+.gancho { font-size: var(--step-1); line-height: 1.5; }
+.hud {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 16px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px;
+}
+.hud .valor { font-weight: 700; font-size: 1.7rem; color: var(--alert); line-height: 1.1; }
+.hud .estrelas { color: var(--accent); font-size: 1.3rem; letter-spacing: .12em; text-align: right; }
+.acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+.botao {
+  display: inline-block; text-decoration: none; font-weight: 700; font-size: 1rem;
+  padding: .85em 1.3em; border-radius: 999px; border: 2px solid var(--accent);
+}
+.botao.cheio { background: var(--accent); color: var(--ink); }
+.botao.vazado { color: var(--accent); }
+
+/* Parts */
+.parte { display: grid; gap: 22px; }
+.parte header { display: grid; gap: 10px; }
+.parte h2 { font-weight: 800; font-size: var(--step-2); text-transform: uppercase; }
+.texto { display: grid; gap: 1.05em; }
+.texto .fala { padding-left: 1em; border-left: 2px solid var(--line); }
+.texto .pausa { font-family: var(--display); font-weight: 700; letter-spacing: .02em; }
+.texto em { color: var(--muted); }
+.cena { display: grid; gap: 8px; }
+.cena figcaption { font-family: var(--display); font-size: .8rem; color: var(--muted); }
+
+.votos { display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 16px; }
+.barra { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; font-weight: 700; }
+.barra .trilho { grid-column: 1 / -1; height: 12px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.barra .cheia { height: 100%; background: var(--muted); border-radius: 99px; }
+.barra.vence { color: var(--fg); }
+.barra.vence .num { color: var(--accent); }
+.barra.vence .cheia { background: var(--accent); }
+.barra:not(.vence) { color: var(--muted); }
+.aberta h3 { margin: 0; font-weight: 800; font-size: var(--step-1); text-transform: uppercase; }
+
+/* The offer */
+.entre { display: grid; gap: 18px; border: 2px solid var(--accent); border-radius: 12px; padding: 22px 18px; }
+.entre h2 { font-weight: 800; font-size: var(--step-2); text-transform: uppercase; }
+.preco { font-family: var(--display); font-weight: 800; font-size: 2.4rem; color: var(--accent); line-height: 1; }
+.preco small { font-size: .9rem; font-weight: 600; color: var(--muted); letter-spacing: .04em; }
+.papeis { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 10px; padding: 0; margin: 0; list-style: none; }
+.papeis li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; line-height: 1.4; min-width: 0; }
+.papeis b { display: block; font-family: var(--display); font-weight: 700; }
+.passos { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; }
+.creditos {
+  display: grid; justify-items: center; gap: 4px; text-align: center; background: #000;
+  border-radius: 8px; padding: 18px 12px; font-family: var(--display);
+}
+.creditos .rotulo { color: var(--muted); }
+.creditos .nome { font-weight: 800; font-size: 1.4rem; color: var(--accent); }
+.miudo { font-size: .92rem; color: var(--muted); line-height: 1.6; display: grid; gap: .6em; }
+
+footer { border-top: 1px solid var(--line); padding-top: 22px; display: grid; gap: 10px; font-size: .92rem; color: var(--muted); }
+footer .marca { font-family: var(--display); font-weight: 800; color: var(--fg); text-transform: uppercase; letter-spacing: .04em; }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; font-family: var(--display); font-weight: 600; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .botao { transition: transform .15s ease; }
+  .botao:hover { transform: translateY(-1px); }
+}
+</style>
+
+<main>
+  <section class="abertura" aria-labelledby="titulo">
+    <span class="tag">Uma série da Golpe Cartoon</span>
+    <h1 id="titulo">A parte <span>que faltou</span></h1>
+    <p class="gancho">O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.</p>
+    <img src="img/capa.jpg" width="720" height="900" alt="Zinho abre a mochila da divisão e encontra roupa velha.">
+    <div class="hud" role="img" aria-label="A sua parte: zero reais. Suspeita: cinco estrelas.">
+      <span class="rotulo">A sua parte</span><span class="rotulo">Suspeita</span>
+      <span class="valor">R$ 0</span><span class="estrelas">★★★★★</span>
+    </div>
+    <p>Uma história de suspense em partes. No fim de cada uma, você vota nos comentários do vídeo, e o que a maioria escolher vira a parte seguinte.</p>
+    <div class="acoes">
+      <a class="botao cheio" href="#parte-1">Ler do começo</a>
+      <a class="botao vazado" href="#entre">Entrar na história</a>
+    </div>
+  </section>
+
+  <article class="parte" id="parte-1" aria-labelledby="t-parte-1">
+    <header>
+      <span class="tag">Parte 1</span>
+      <h2 id="t-parte-1">A mochila</h2>
+      <span class="rotulo">Publicada em 26 de outubro</span>
+    </header>
+    <figure class="cena"><img src="img/p1-mochila.jpg" width="720" height="900" loading="lazy" alt="Zinho abre a mochila na mesa do quarto, iluminado pela televisão."></figure>
+    <div class="texto">
+      <p>O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.</p>
+      <p>A televisão do quarto está ligada no noticiário da noite. Na tela, a sua foto e o seu nome: Zinho. Embaixo, uma faixa amarela: primeiro suspeito identificado.</p>
+      <p>Você baixa o volume e puxa a mochila preta que recebeu na divisão. Abre o zíper devagar.</p>
+      <p class="pausa">Roupa velha.</p>
+      <p class="pausa">Nenhuma nota.</p>
+      <p>Você confere os bolsos de fora, depois os de dentro. Revira o fundo. Vira a mochila de cabeça para baixo e espalha tudo no chão: uma camiseta furada, uma calça de moletom, um casaco que nunca foi seu. Nada.</p>
+      <p>Há vinte minutos, vocês ainda estavam juntos. Agora, ninguém atende. O telefone chama até cair.</p>
+      <p>Você fotografa a mochila aberta e manda para o amigo que colocou você no grupo. O cara que cresceu na sua rua. O que olhou nos seus olhos e prometeu: “Eu garanto a sua parte.”</p>
+      <p>Ele visualiza. Não responde.</p>
+      <p>Você olha de novo para a televisão e, dessa vez, reconhece a fotografia. É a mesma que você mandou para ele semanas atrás, quando disseram que precisavam conhecer o seu rosto antes de te chamar.</p>
+    </div>
+    <figure class="cena"><img src="img/p1-audio.jpg" width="720" height="900" loading="lazy" alt="Zinho, com o celular no ouvido, escuta o áudio do amigo."></figure>
+    <div class="texto">
+      <p>Chega um áudio.</p>
+      <p class="fala">“Eu estava devendo para eles. Disseram que a dívida acabava se eu colocasse alguém no meu lugar.”</p>
+      <p>Você escuta outra vez. E outra.</p>
+      <p>Antes de responder, alguém bate à porta. Duas batidas, secas.</p>
+      <p>Pela janela, atrás da cortina, você vê o seu amigo no portão, olhando para os lados.</p>
+      <p>É o homem que acabou de admitir que vendeu o seu nome.</p>
+      <p class="pausa">Você deixa ele entrar?</p>
+    </div>
+    <figure class="cena"><img src="img/p1-porta.jpg" width="720" height="900" loading="lazy" alt="Pela janela, atrás da cortina, o amigo espera do lado de fora."></figure>
+    <div class="votos" aria-label="Resultado da votação da Parte 1">
+      <span class="rotulo">Parte 1 · vocês votaram</span>
+      <div class="barra vence"><span>Abrir</span><span class="num">86%</span><span class="trilho"><span class="cheia" style="display:block;width:86%"></span></span></div>
+      <div class="barra"><span>Não abrir</span><span class="num">14%</span><span class="trilho"><span class="cheia" style="display:block;width:14%"></span></span></div>
+    </div>
+  </article>
+
+  <article class="parte" id="parte-2" aria-labelledby="t-parte-2">
+    <header>
+      <span class="tag">Parte 2</span>
+      <h2 id="t-parte-2">A dívida</h2>
+      <span class="rotulo">Publicada em 28 de outubro</span>
+    </header>
+    <figure class="cena"><img src="img/p2-porta.jpg" width="720" height="900" loading="lazy" alt="Zinho abre a porta e o amigo, tenso, olha para a rua."></figure>
+    <div class="texto">
+      <p>Vocês decidiram: abrir.</p>
+      <p>Você destranca a porta. Ele entra sem pedir licença, passa a chave por dentro e apaga a luz da sala. Fica um tempo parado no escuro, ouvindo a rua.</p>
+      <p class="fala">“Eles tão te procurando. E agora tão me procurando também.”</p>
+      <p>Ele vendeu o seu nome. Nesta história, ele ainda não tem um. <em>O nome dele está em votação nos comentários do vídeo da Parte 2.</em></p>
+      <p>Você não oferece cadeira. Ele senta mesmo assim, na mesa onde a mochila ainda está aberta. Você pergunta uma coisa só: quanto ele devia.</p>
+      <p class="fala">“Oitenta mil.”</p>
+      <p>Para quem?</p>
+      <p class="fala">“Pra quem bancou o assalto.”</p>
+      <p>Ele fala rápido, como quem ensaiou no caminho. Perdeu um dinheiro que não era dele. Eles deram uma saída: trazer alguém de fora, alguém que ninguém ligasse ao grupo. Se desse errado, a culpa ficava com essa pessoa.</p>
+      <p class="fala">“Eles juraram que ninguém ia ver o seu rosto.”</p>
+      <p>Mas foi ele quem entregou a sua foto.</p>
+      <p class="fala">“Eu não tive escolha. Eles sabiam onde a minha mãe mora.”</p>
+      <p>Você conhece essa mãe. Ela te dava almoço quando vocês eram moleques.</p>
+      <p>Você pede uma prova. Palavra, ele já gastou.</p>
+    </div>
+    <figure class="cena"><img src="img/p2-foto.jpg" width="720" height="900" loading="lazy" alt="A foto escondida da divisão: dinheiro na mesa, mãos contando notas e um calendário de ferro-velho na parede.">
+      <figcaption>A foto da noite da divisão. Repara na mão da direita.</figcaption></figure>
+    <div class="texto">
+      <p>Ele mostra o celular. Uma foto escondida, tirada na noite da divisão: a mesa coberta de dinheiro, as mãos de quem contava. Nenhum rosto. Numa das mãos, um anel grosso de ouro.</p>
+      <p>Você amplia a imagem. Na parede, um calendário de ferro-velho, com nome e telefone.</p>
+      <p>Você liga do seu celular. Toca três vezes. Do outro lado, alguém atende: “Ferro-Velho São Jorge.” Você desliga sem dizer nada.</p>
+      <p>O lugar existe. Pelo menos essa parte é verdade.</p>
+    </div>
+    <figure class="cena"><img src="img/p2-mensagem.jpg" width="720" height="900" loading="lazy" alt="O celular do amigo acende na mesa com a mensagem: Já tá com ele?"></figure>
+    <div class="texto">
+      <p>Então o celular dele vibra em cima da mesa. A tela acende. Uma mensagem de um contato salvo só como “Cobrança”:</p>
+      <p class="fala">“Já tá com ele?”</p>
+      <p>Você pergunta o que é aquilo. Ele não responde a mensagem. Nem a você.</p>
+      <p>Lá fora, um carro para em frente ao portão. De farol apagado.</p>
+      <p class="pausa">Fugir ou ficar?</p>
+    </div>
+    <figure class="cena"><img src="img/p2-carro.jpg" width="720" height="900" loading="lazy" alt="Pela janela, um carro escuro parado no portão, de farol apagado."></figure>
+    <div class="votos aberta">
+      <span class="rotulo">Votação aberta</span>
+      <h3>Fugir ou ficar? E qual é o nome dele?</h3>
+      <p>Comenta no vídeo da Parte 2. A maioria decide o que acontece, e o nome mais curtido vira o nome dele na Parte 3.</p>
+      <div class="acoes">
+        <a class="botao vazado" href="https://www.instagram.com/golpecartoon/">Ver no Instagram</a>
+        <a class="botao vazado" href="https://www.youtube.com/@golpecartoon/shorts">Ver no YouTube</a>
+      </div>
+    </div>
+  </article>
+
+  <section class="parte" aria-labelledby="t-parte-3">
+    <header>
+      <span class="tag">Parte 3</span>
+      <h2 id="t-parte-3">A noite</h2>
+      <span class="rotulo">Sai depois da votação</span>
+    </header>
+  </section>
+
+  <section class="entre" id="entre" aria-labelledby="t-entre">
+    <span class="rotulo">Para quem acompanha</span>
+    <h2 id="t-entre">Entre na história</h2>
+    <p class="preco">R$ 9,90 <small>· 10 vagas na Parte 4</small></p>
+    <p>Seu nome, ou apelido, aparece na Parte 4 num papel que você escolhe. E entra nos créditos do fim do vídeo.</p>
+    <ul class="papeis">
+      <li><b>Contato no celular do Zinho</b>Seu nome na lista de contatos, quando ele procura em quem confiar.</li>
+      <li><b>Nome pichado no muro</b>Seu nome no muro da rua por onde a fuga passa.</li>
+      <li><b>Testemunha na TV</b>Seu nome na reportagem sobre o assalto.</li>
+      <li><b>Cliente do ferro-velho</b>Seu nome no caderno de clientes do Ferro-Velho São Jorge.</li>
+    </ul>
+    <div class="creditos" aria-label="Exemplo dos créditos no fim do vídeo">
+      <span class="rotulo">Com a participação de</span>
+      <span class="nome">SEU NOME AQUI</span>
+    </div>
+    <ol class="passos">
+      <li>Chama a gente no direct do Instagram.</li>
+      <li>Paga R$ 9,90 por Pix.</li>
+      <li>Manda o nome ou apelido e o papel que você quer.</li>
+      <li>Pronto: você aparece na Parte 4.</li>
+    </ol>
+    <div class="acoes"><a class="botao cheio" href="https://ig.me/m/golpecartoon">Quero entrar na história</a></div>
+    <div class="miudo">
+      <p>Vale só o seu nome ou apelido. Não usamos nome ofensivo nem o nome de outra pessoa.</p>
+      <p>Se mudar de ideia em até 7 dias depois de pagar, devolvemos o valor.</p>
+      <p>A votação nos comentários continua valendo igual para todo mundo: pagar não muda o voto.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span class="marca">Golpe Cartoon</span>
+    <nav aria-label="Perfis">
+      <a href="https://www.instagram.com/golpecartoon/">Instagram</a>
+      <a href="https://www.youtube.com/@golpecartoon">YouTube</a>
+    </nav>
+    <p>As ilustrações e as vozes da série são feitas com inteligência artificial. Personagens, lugares e fatos são ficção.</p>
+  </footer>
+</main>
