@@ -85,7 +85,7 @@ test('checkout opens a Pix-or-card checkout for the open part', async () => {
   assert.equal(criar.opcoes.headers.Authorization, 'Bearer TESTE');
   assert.equal(corpo.external_reference.split('|')[2], 'seu.perfil');
   assert.equal(corpo.items[0].unit_price, 9.9);
-  assert.deepEqual(corpo.payment_methods.excluded_payment_types, [{ id: 'ticket' }]);
+  assert.deepEqual(corpo.payment_methods.excluded_payment_types, [{ id: 'ticket' }, { id: 'debit_card' }]);
   assert.equal(corpo.back_urls.success, 'https://golpecartoon.netlify.app/?pagamento=aprovado&parte=3');
   assert.equal(corpo.auto_return, 'approved');
   assert.equal(corpo.payer.email, 'voce@email.com');

@@ -47,7 +47,7 @@ Os lugares do @ são feitos por código, como os textos de tela e o calendário 
 
 ## Pagamento
 
-O pagamento usa o Checkout Pro do Mercado Pago, com Pix e cartão. O boleto fica de fora, porque pode levar dias e passar do prazo da lista. O caminho de uma compra é este:
+O pagamento usa o Checkout Pro do Mercado Pago, com Pix e cartão de crédito. O boleto fica de fora, porque pode levar dias e passar do prazo da lista. O cartão de débito também, a pedido do criador, em 28/10/2026, porque o Pix já faz o papel dele. O caminho de uma compra é este:
 
 1. A pessoa preenche o @, o e-mail e a autorização, e toca em “Pagar R$ 9,90 com Mercado Pago”. O total aparece logo acima do botão.
 2. A função `/api/checkout` confere os dados e vê em que parte o passe vai entrar. Ela recusa um @ que já está na lista daquela parte.

@@ -69,8 +69,9 @@ export default async (req) => {
           failure: `${site}/?pagamento=falhou&parte=${parte}`,
         },
         ...(publico ? { auto_return: 'approved' } : {}),
-        // Pix and cards only: a boleto can take days, past the deadline of the list.
-        payment_methods: { excluded_payment_types: [{ id: 'ticket' }], installments: 1 },
+        // Pix and credit cards only: a boleto can take days, past the deadline of the list,
+        // and Pix already does what a debit card would.
+        payment_methods: { excluded_payment_types: [{ id: 'ticket' }, { id: 'debit_card' }], installments: 1 },
         statement_descriptor: 'GOLPECARTOON',
       },
     });
