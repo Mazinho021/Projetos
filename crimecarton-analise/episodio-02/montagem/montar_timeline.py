@@ -37,10 +37,11 @@ sys.path.insert(0, str(TOOLS))
 import graficos  # noqa: E402
 
 SCRIPT = EPISODE / 'roteiro-ep02.txt'
-VOICES = {'VINHETA': (PART1 / 'narracao-original.wav', TOOLS / 'alinhamento-narracao.json'),
+# The opening and the closing request come matched to the narrator by igualar_vozes.py.
+VOICES = {'VINHETA': (HERE / 'vozes' / 'vinheta.wav', TOOLS / 'alinhamento-narracao.json'),
           'NARRADOR': (EPISODE / 'narracao-ep02-narrador.wav', HERE / 'alinhamento-narrador.json'),
           'AMIGO': (EPISODE / 'narracao-ep02-amigo.wav', HERE / 'alinhamento-amigo.json'),
-          'PEDIDO': (EPISODE / 'narracao-ep02-pedido.wav', HERE / 'alinhamento-pedido.json')}
+          'PEDIDO': (HERE / 'vozes' / 'pedido.wav', HERE / 'alinhamento-pedido.json')}
 AUDIO = EPISODE / 'narracao-ep02.wav'
 TAIL = 2.0
 PART, VOTE = 2, [('ABRIR', 86), ('NÃO ABRIR', 14)]   # Part 1's vote: 6 of 7 comments said ABRIR
@@ -368,10 +369,15 @@ CALENDAR_PAINT = [
     {'text': '1  2  3  4  5  6  7\n8  9  10  11  12  13  14\n15  16  17  18  19  20  21\n22  23  24  25  26  27  28',
      'box': [.335, .220, .593, .268], 'color': [95, 82, 70], 'weight': 'Medium', 'opacity': .75, 'blur': .3},
 ]
-# The message on the friend's phone, a dark banner near the top of the lit screen of
-# scene 6, turned with the phone (about 18 degrees clockwise).
-PHONE_PAINT = [{'text': 'COBRANÇA\nJá tá com ele?', 'box': [.4166, .4510, .6504, .5048], 'color': [246, 240, 226],
-                'opacity': 1, 'weight': 'Bold', 'fill': [32, 34, 36, 242], 'radius': 16, 'pad': 10, 'angle': -17.8}]
+# The friend's phone in scene 6: the corners of its screen, a little outside the lit
+# area so the rounded corners are covered. The screen is off until the phone buzzes,
+# then it lights up on the lock screen with the message's notification.
+_CORNERS = [(.4687, .4199), (.6939, .4396), (.5898, .6746), (.2901, .6417)]
+_MIDDLE = (sum(x for x, _ in _CORNERS)/4, sum(y for _, y in _CORNERS)/4)
+SCREEN06 = [[round(_MIDDLE[0] + (x - _MIDDLE[0])*1.05, 4), round(_MIDDLE[1] + (y - _MIDDLE[1])*1.05, 4)] for x, y in _CORNERS]
+SCREEN_OFF = {'quad': SCREEN06, 'state': 'off'}
+SCREEN_MESSAGE = {'quad': SCREEN06, 'state': 'lock', 'date': 'terça-feira, 27 de outubro', 'time': '23:47',
+                  'app': 'MENSAGENS', 'sender': 'Cobrança', 'message': 'Já tá com ele?', 'when': 'agora'}
 
 
 def build(ed):
@@ -422,12 +428,16 @@ def build(ed):
         ('ended', cut(N('Você desliga sem')), dict(kind='call', asset='cena-05-ligacao.png', status='ended',
                                                    number='(••) 3•••-••47', card_top=top, card_dx=L['card_dx'])),
         ('exists', cut(N('O lugar existe.')), dict(kind='art', asset='cena-05-ligacao.png', crop=FACE05, zoom=.05)),
-        ('buzz', cut(N('Então o celular')), dict(kind='art', asset='cena-06-celular-mesa.png', zoom=.05)),
+        # Locked and dark while the narrator speaks; it lights up as it buzzes.
+        ('buzz', cut(N('Então o celular')), dict(kind='art', asset='cena-06-celular-mesa.png', zoom=.05, brightness=.8,
+                                                  screen=SCREEN_OFF)),
+        ('lit', round(e(N('cima da mesa.', 2)) + .05, 2), dict(kind='art', asset='cena-06-celular-mesa.png', zoom=.04,
+                                                               screen=SCREEN_MESSAGE)),
         # The message lights up on his phone's screen; it stays there, unanswered.
         ('message', cut(N('Uma mensagem de')), dict(kind='art', asset='cena-06-celular-mesa.png', crop=PHONE06, zoom=.06,
-                                                    paint=PHONE_PAINT)),
+                                                    screen=SCREEN_MESSAGE)),
         ('silent', cut(N('Ele não responde')), dict(kind='art', asset='cena-06-celular-mesa.png', crop=HAND06, zoom=.06,
-                                                    paint=PHONE_PAINT)),
+                                                    screen=SCREEN_MESSAGE)),
         ('car', cut(N('Lá fora, um')), dict(kind='art', asset='cena-07-carro.png', zoom=.05)),
         ('lights-off', cut(N('De farol apagado.')), dict(kind='art', asset='cena-07-carro.png', crop=CAR07, zoom=.08,
                                                         brightness=.8)),

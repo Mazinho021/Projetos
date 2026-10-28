@@ -1,0 +1,7 @@
+{
+  "idempotencyKey": "zinho-ep02-amigo-charon-v1-20261028",
+  "voice": "Charon",
+  "style": "Português brasileiro. A mesma voz do narrador, mas interpretando o amigo de infância de Zinho, que o traiu para pagar uma dívida: fala em pessoa, nervoso, baixo e rápido, com culpa e medo, olhando para a porta. Natural, sem caricatura e sem gritar. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+  "text": "Eles tão te procurando. E agora tão me procurando também.\n\nOitenta mil.\n\nPra quem bancou o assalto.\n\nEles juraram que ninguém ia ver o seu rosto.\n\nEu não tive escolha. Eles sabiam onde a minha mãe mora.",
+  "observacao": "Falas do amigo na Parte 2 com a voz Charon. O Claude Code passa a gravação pela mesma transformação de voz da mensagem de áudio da Parte 1 (voz_amigo.py), para o amigo ter a mesma voz nas duas partes. Substitui a gravação com a voz Fenrir. Geração paga, autorizada pelo criador; mostrar o custo antes de executar."
+}

@@ -15,6 +15,7 @@ import math
 from pathlib import Path
 import subprocess
 
+import numpy as np
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageOps
 
 import graficos
@@ -77,10 +78,73 @@ def painted(im, items):
     return im.convert('RGB')
 
 
-def cover(path, size=(W, H), center=(.5, .5), crop=None, paint=None):
+def lock_screen(spec, w=600, h=1300):
+    # A phone's lock screen, flat, before it is fitted to the phone in the artwork: dark
+    # when "state" is "off"; otherwise the wallpaper, the date and the clock and, when
+    # "sender" is given, the notification of a message, as phones show it.
+    im = Image.new('RGBA', (w, h), (9, 10, 12, 255))
+    d = ImageDraw.Draw(im)
+    if spec.get('state') == 'off':
+        for k in range(h):
+            d.line((0, k, w, k), fill=(9 + round(6*k/h), 10 + round(6*k/h), 13 + round(8*k/h), 255))
+    else:
+        for k in range(h):
+            f = k/h
+            d.line((0, k, w, k), fill=(round(22 - 12*f), round(30 - 18*f), round(58 - 36*f), 255))
+        label(im, w/2, h*.085, spec.get('date', ''), 30, 'white', 'Medium', 'center')
+        label(im, w/2, h*.19, spec.get('time', ''), 150, 'white', 'Medium', 'center')
+        if spec.get('sender'):
+            top, side = round(h*.40), round(w*.05)
+            card = Image.new('RGBA', (w - 2*side, 200), (0, 0, 0, 0))
+            cd = ImageDraw.Draw(card)
+            cd.rounded_rectangle((0, 0, card.width - 1, card.height - 1), 34, fill=(236, 236, 240, 228))
+            cd.rounded_rectangle((26, 28, 98, 100), 20, fill=rgb('green'))
+            cd.rounded_rectangle((44, 46, 80, 74), 9, fill=(246, 240, 226))
+            cd.polygon([(50, 70), (50, 84), (64, 72)], fill=(246, 240, 226))
+            label(card, 120, 46, spec.get('app', 'MENSAGENS'), 22, (110, 110, 118), 'SemiBold', tracking=1.5)
+            label(card, card.width - 28, 46, spec.get('when', 'agora'), 22, (110, 110, 118), 'Medium', 'right')
+            label(card, 120, 92, spec['sender'], 34, (20, 20, 24), 'Bold')
+            label(card, 120, 146, spec.get('message', ''), 34, (32, 32, 38), 'Regular')
+            im.alpha_composite(card, (side, top))
+        # The flashlight and camera buttons and the home bar, already blended into the wallpaper.
+        d.rounded_rectangle((w/2 - 70, h - 34, w/2 + 70, h - 24), 5, fill=(196, 196, 202, 255))
+        for cx in (w*.16, w*.84):
+            d.ellipse((cx - 40, h*.9 - 40, cx + 40, h*.9 + 40), fill=(44, 48, 62, 255))
+            d.ellipse((cx - 9, h*.9 - 9, cx + 9, h*.9 + 9), outline=(206, 206, 212, 255), width=3)
+    mask = Image.new('L', (w, h), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, w - 1, h - 1), round(w*.09), fill=255)
+    im.putalpha(mask)
+    return im
+
+
+def perspective(src, dst):
+    # Coefficients for Image.transform that send each point of `dst` to the point of `src`.
+    rows, rhs = [], []
+    for (x, y), (u, v) in zip(dst, src):
+        rows += [[x, y, 1, 0, 0, 0, -u*x, -u*y], [0, 0, 0, x, y, 1, -v*x, -v*y]]
+        rhs += [u, v]
+    a = np.linalg.solve(np.array(rows, float), np.array(rhs, float))
+    return tuple(a)
+
+
+def on_screen(im, spec):
+    # Fits the lock screen to a phone in the artwork: "quad" holds the screen's corners,
+    # top left, top right, bottom right and bottom left, as fractions of the illustration.
+    flat = lock_screen(spec)
+    quad = [(x*im.width, y*im.height) for x, y in spec['quad']]
+    corners = [(0, 0), (flat.width, 0), (flat.width, flat.height), (0, flat.height)]
+    layer = flat.transform(im.size, Image.Transform.PERSPECTIVE, perspective(corners, quad), Image.Resampling.BICUBIC)
+    out = im.convert('RGBA')
+    out.alpha_composite(layer)
+    return out.convert('RGB')
+
+
+def cover(path, size=(W, H), center=(.5, .5), crop=None, paint=None, screen=None):
     im = Image.open(path).convert('RGB')
     if paint:
         im = painted(im, paint)
+    if screen:
+        im = on_screen(im, screen)
     if crop:
         # Optional framing inside the illustration: left, top, right, bottom as fractions.
         l, t, r, b = crop
@@ -138,8 +202,8 @@ def bag_photo():
     return cover(EPISODE / 'cena-03-roupas.png', (340, 310), crop=(0.20, 0.62, 0.95, 0.90))
 
 
-def backdrop(path, brightness=1, blur=False, crop=None, paint=None):
-    im = cover(path, crop=crop, paint=paint)
+def backdrop(path, brightness=1, blur=False, crop=None, paint=None, screen=None):
+    im = cover(path, crop=crop, paint=paint, screen=screen)
     if blur:
         im = im.filter(ImageFilter.GaussianBlur(15))
     if brightness != 1:
@@ -281,7 +345,7 @@ def make_scene_assets(scene, index, work):
     else:
         path = resolve_asset(scene.get('asset', 'cena-01-base.png'))
         bg = backdrop(path, .34 if behind else float(scene.get('brightness', 1)), behind, scene.get('crop'),
-                      scene.get('paint'))
+                      scene.get('paint'), scene.get('screen'))
         bg = caption_gradient(bg)
     bg_path = work / f'{index:02d}-bg.png'
     bg.convert('RGB').save(bg_path)
