@@ -1,0 +1,26 @@
+{
+  "jobId": "mcp_media_f9a2139a04f0352267affab7153fe1b4fbac90bdaae9adc661a8e4549648b3e1",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 2,
+  "reservedCredits": 0,
+  "chargedCredits": 2,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_f9a2139a04f0352267affab7153fe1b4fbac90bdaae9adc661a8e4549648b3e1/0.wav?hdnts=FullPath~Expires=1793209433~Signature=DiZzR8u_Dz05uBDf4XmzpDWGP4N5DfpcZ1o8HuKkAP0wPH8LKmCdpBMZPwTnioNXrssPhzi2HwmP4g1OlNP2Cg",
+      "expiresAt": "2026-10-28T17:43:53.116Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 93.12
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep02-narrador-charon-v1-20261027-style500",
+    "voice": "Charon",
+    "style": "Português brasileiro. Voz adulta masculina, natural e conversacional, suspense com tensão contida. Dicção clara; sem tom publicitário, caricatura ou gritos. Ritmo de 140 a 150 palavras por minuto. Pausas curtas nas revelações e entre parágrafos (falas separadas). Nas aspas, manter a mesma voz, mais baixa, mudando só a intenção. Pronunciar Zinho com z inicial e nh palatal.",
+    "text": "Chegou agora? A parte um está no perfil.\n\nVocês decidiram: abrir.\n\nVocê destranca a porta.\n\nEle entra sem pedir licença, passa a chave por dentro e apaga a luz da sala.\n\nVocê não oferece cadeira. Pergunta uma coisa só: quanto ele devia.\n\nPara quem?\n\nEle fala rápido, como quem ensaiou no caminho. Perdeu um dinheiro que não era dele. Eles deram uma saída: trazer alguém de fora, alguém que ninguém ligasse ao grupo. Se desse errado, a culpa ficava com essa pessoa.\n\nMas foi ele quem entregou a sua foto.\n\nVocê conhece essa mãe. Ela te dava almoço quando vocês eram moleques.\n\nVocê pede uma prova. Palavra, ele já gastou.\n\nEle mostra o celular. Uma foto escondida, tirada na noite da divisão. A mesa, o dinheiro, as mãos de quem contava.\n\nVocê amplia a imagem. Na parede, um calendário de ferro-velho, com nome e telefone.\n\nVocê liga do seu celular. Toca três vezes. Do outro lado, alguém atende: “Ferro-Velho São Jorge.” Você desliga sem dizer nada.\n\nO lugar existe. Pelo menos essa parte é verdade.\n\nEntão o celular dele vibra em cima da mesa. Uma mensagem de um contato salvo só como “Cobrança”: “Já tá com ele?”\n\nEle não responde a mensagem. Nem a você.\n\nLá fora, um carro para em frente ao portão. De farol apagado.\n\nEle vendeu o seu nome. Agora você escolhe o dele. Comenta um nome. O mais curtido vira o nome dele na parte três.",
+    "sourceFile": "pedido-narracao-ep02.json",
+    "note": "Orientação de interpretação condensada, preservando o sentido, para respeitar o limite de 500 caracteres do campo style. Texto falado e voz mantidos. A tentativa de cotação com a orientação original foi rejeitada por validação antes de criar um job ou cobrar créditos."
+  }
+}

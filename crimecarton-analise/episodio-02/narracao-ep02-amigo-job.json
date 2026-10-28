@@ -1,0 +1,25 @@
+{
+  "jobId": "mcp_media_b976ff1bc02aa99825e2b1c174a2c812a3a5b3deac0804c7f907522010b3f09e",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_b976ff1bc02aa99825e2b1c174a2c812a3a5b3deac0804c7f907522010b3f09e/0.wav?hdnts=FullPath~Expires=1793209332~Signature=cYy8BVQblTi3TIBXY8gyaADTZtIkEaOsAqH_Jf5XCj2n_OSI9PYZYbU5EqH3Zi_8_6kt2r3Gter3lbfLvIRtCg",
+      "expiresAt": "2026-10-28T17:42:12.978Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 16.4
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep02-amigo-v1-20261027",
+    "voice": "Fenrir",
+    "style": "Português brasileiro. Voz masculina adulta, fim dos 20 anos, diferente da voz do narrador (Charon) e um pouco mais aguda. É o amigo de infância de Zinho, que o traiu para pagar uma dívida: fala em pessoa, nervoso, baixo e rápido, com culpa e medo, olhando para a porta. Natural, sem caricatura e sem gritar. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+    "text": "Eles tão te procurando. E agora tão me procurando também.\n\nOitenta mil.\n\nPra quem bancou o assalto.\n\nEles juraram que ninguém ia ver o seu rosto.\n\nEu não tive escolha. Eles sabiam onde a minha mãe mora.",
+    "sourceFile": "pedido-narracao-amigo-ep02.json"
+  }
+}
