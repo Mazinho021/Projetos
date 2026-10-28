@@ -1,0 +1,25 @@
+{
+  "jobId": "mcp_media_bba0be39e708f4e1d0025c99e7cfbb7744c63bd9c89c92280ff90b69b77ba986",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_bba0be39e708f4e1d0025c99e7cfbb7744c63bd9c89c92280ff90b69b77ba986/0.wav?hdnts=FullPath~Expires=1793240695~Signature=Ce6z2ggmmZqjTmOdwtjCp1mec-HiP2VXStsVHjyVBvZOlc5GNONhgo9LZJal05GIlTt2_dKyk_d2PhITr7IMBg",
+      "expiresAt": "2026-10-29T02:24:55.035Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 18.92
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep02-amigo-charon-v1-20261028",
+    "voice": "Charon",
+    "style": "Português brasileiro. A mesma voz do narrador, mas interpretando o amigo de infância de Zinho, que o traiu para pagar uma dívida: fala em pessoa, nervoso, baixo e rápido, com culpa e medo, olhando para a porta. Natural, sem caricatura e sem gritar. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+    "text": "Eles tão te procurando. E agora tão me procurando também.\n\nOitenta mil.\n\nPra quem bancou o assalto.\n\nEles juraram que ninguém ia ver o seu rosto.\n\nEu não tive escolha. Eles sabiam onde a minha mãe mora.",
+    "sourceFile": "pedido-narracao-amigo-charon-ep02.json"
+  }
+}
