@@ -1,419 +1,788 @@
 <title>A parte que faltou</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="O assalto deu certo. A sua parte, não. Uma série de suspense em desenho em que o público decide o que acontece.">
+<meta name="description" content="O assalto deu certo. A sua parte, não. Série de suspense em desenho em que você decide, nos comentários, o próximo passo do Zinho. Vire aliado e apareça dentro do episódio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Poppins:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,alternate_email,arrow_outward,check,confirmation_number,content_copy,movie&display=block">
 <style>
-/* Layout: one column read on a phone at night, like a case file; the series' yellow marks what you act on. */
+/* Layout: the HUD of the Reels opened into a page, at night. Night-blue bands alternate;
+   the series' yellow marks everything you act on, red only what is live. */
 :root {
-  --bg: #13110f;          /* the night of the illustrations */
-  --surface: #1d1a16;
-  --raised: #26221c;
-  --line: #3b342b;
-  --fg: #f6f0e2;          /* the series' white */
-  --muted: #b8ae9e;
-  --accent: #fdb822;      /* the series' yellow: tags, votes, the call to act */
-  --ink: #18160f;         /* text on yellow */
-  --alert: #e9584c;
-  --money: #34c077;       /* the counter's green */
+  --noite: #0f1218;         /* the page, the night outside the window */
+  --noite-2: #141922;       /* alternate band */
+  --painel: #1a202b;        /* cards */
+  --moldura: #090b10;       /* phone bezel, credits, inputs */
+  --linha: #2b3442;
+  --creme: #f6f0e2;         /* the series' white */
+  --creme-escuro: #b9b0a0;  /* lip under the cream button */
+  --cinza: #a7afbc;         /* secondary text */
+  --cinza-2: #8c95a5;       /* placeholders, open slots */
+  --amarelo: #fdb822;       /* the series' yellow: tags, votes, the pass */
+  --amarelo-escuro: #a8740b;/* lip under the yellow button */
+  --tinta: #18160f;         /* text on yellow and on cream */
+  --vermelho: #eb584c;      /* live, and the R$ 0 */
+  --verde: #34c077;         /* the money counter */
+  --sombra: rgba(0, 0, 0, .55);
   --display: "Poppins", "Arial Black", "Helvetica Neue", Arial, sans-serif;
-  --prose: "Literata", Georgia, "Times New Roman", serif;
-  --step-0: 1.0625rem;
-  --step-1: 1.25rem;
-  --step-2: 1.65rem;
-  --step-3: clamp(2.3rem, 9vw, 3.6rem);
+  --texto: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --t-xs: .8125rem;
+  --t-s: .9375rem;
+  --t-m: 1.0625rem;
+  --t-l: 1.25rem;
+  --t-xl: clamp(1.9rem, 4.6vw, 2.75rem);
+  --t-2xl: clamp(2.6rem, 7.4vw, 4rem);
+  --raio: 18px;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font: 400 var(--step-0)/1.7 var(--prose);
+  background: var(--noite);
+  color: var(--creme);
+  font: 400 var(--t-m)/1.6 var(--texto);
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--noite); }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3, h4 { font-family: var(--display); margin: 0; text-wrap: balance; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 3px; border-radius: 6px; }
+section { scroll-margin-top: 72px; }
+
+.ico {
+  font-family: "Material Symbols Rounded";
+  font-weight: normal; font-style: normal; font-size: 22px; line-height: 1;
+  display: inline-block; width: 1em; overflow: hidden; white-space: nowrap; flex: none;
+  font-feature-settings: "liga"; font-variation-settings: "FILL" 1, "wght" 500, "opsz" 24;
+}
+
+.pular {
+  position: absolute; left: 16px; top: -100px; z-index: 50;
+  background: var(--amarelo); color: var(--tinta); padding: 10px 14px; border-radius: 10px;
+  font: 700 var(--t-s)/1 var(--display); text-decoration: none;
+}
+.pular:focus { top: calc(10px + env(safe-area-inset-top, 0px)); }
+
+/* Bands span the width; their inner wrapper keeps the gutter. */
+.faixa { padding-block: 64px; }
+.faixa-alt { background: var(--noite-2); }
+.faixa-int {
+  width: 100%; max-width: 1184px; margin-inline: auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
-.topo {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg);
-  border-bottom: 1px solid var(--line); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
-  padding: 10px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px));
+@media (min-width: 768px) {
+  .faixa { padding-block: 96px; }
+  .faixa-int { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
 }
-.topo div { max-width: 640px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; }
-.topo .marca { font-family: var(--display); font-weight: 800; letter-spacing: .04em; text-transform: uppercase; margin-right: auto; color: var(--fg); text-decoration: none; }
-.topo a:not(.marca) { font-family: var(--display); font-weight: 600; font-size: .85rem; color: var(--muted); text-decoration: none; }
-.topo a.destaque { color: var(--accent); }
-main { max-width: 640px; margin: 0 auto; padding-block: 28px 48px; display: grid; gap: 60px; }
-section, article { scroll-margin-top: 72px; }
-img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 6px; }
-a { color: var(--accent); }
-a:focus-visible, .botao:focus-visible, input:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-h1, h2, h3, .rotulo, .botao, .hud, .barra, .tag, .preco, button, label { font-family: var(--display); }
-h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.08; }
-p { margin: 0; }
 
-.tag {
-  justify-self: start; display: inline-block; background: var(--accent); color: var(--ink);
-  font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
-  padding: .3em .75em; border-radius: 6px;
-}
-.rotulo { font-weight: 600; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+/* Buttons are pressed like the ones in the videos: a lip underneath that sinks on tap. */
 .botao {
-  display: inline-block; text-decoration: none; font-weight: 700; font-size: 1rem; cursor: pointer;
-  padding: .85em 1.3em; border-radius: 999px; border: 2px solid var(--accent); line-height: 1.2;
+  display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+  min-height: 52px; padding: 0 24px; border-radius: 12px; border: 2px solid transparent;
+  font: 700 1rem/1 var(--display); text-decoration: none; white-space: nowrap; cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
 }
-.botao.cheio { background: var(--accent); color: var(--ink); }
-.botao.vazado { background: transparent; color: var(--accent); }
+.botao-amarelo { background: var(--amarelo); color: var(--tinta); box-shadow: 0 4px 0 var(--amarelo-escuro); }
+.botao-amarelo:hover { transform: translateY(-1px); box-shadow: 0 5px 0 var(--amarelo-escuro); }
+.botao-amarelo:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--amarelo-escuro); }
+.botao-vazado { border-color: var(--creme); color: var(--creme); background: transparent; }
+.botao-vazado:hover { background: color-mix(in srgb, var(--creme) 8%, transparent); }
+.botao-vazado:active { transform: translateY(2px); }
+.botao-p { min-height: 40px; padding: 0 14px; font-size: .875rem; border-radius: 10px; box-shadow: 0 3px 0 var(--amarelo-escuro); }
 
-/* Opening */
-.abertura { display: grid; gap: 20px; }
-.abertura h1 { font-weight: 800; font-size: var(--step-3); text-transform: uppercase; letter-spacing: -.01em; }
-.abertura h1 span { color: var(--accent); display: block; }
-.gancho { font-family: var(--display); font-weight: 600; font-size: var(--step-1); line-height: 1.4; }
-.aviso {
-  display: grid; gap: 2px; border-left: 4px solid var(--alert); background: var(--surface);
-  border-radius: 0 8px 8px 0; padding: 12px 14px; font-family: var(--display);
+/* Header */
+.topo {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--noite) 94%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--linha);
 }
-.aviso b { font-weight: 800; color: var(--fg); }
-.aviso span { color: var(--muted); font-size: .92rem; }
+.topo .faixa-int { display: flex; align-items: center; gap: 16px; min-height: 62px; }
+.marca {
+  display: inline-flex; align-items: center; gap: .4em; text-decoration: none;
+  font: 800 1.0625rem/1 var(--display); letter-spacing: .02em; text-transform: uppercase;
+}
+.marca-tag { background: var(--amarelo); color: var(--tinta); padding: .32em .45em .26em; border-radius: 6px; transform: rotate(-3deg); }
+.menu { display: none; margin-left: auto; gap: 28px; }
+.menu a { font: 600 var(--t-s)/1 var(--display); color: var(--cinza); text-decoration: none; }
+.menu a:hover { color: var(--creme); }
+.topo .botao { margin-left: auto; }
+@media (min-width: 900px) {
+  .menu { display: flex; }
+  .topo .botao { margin-left: 12px; }
+}
 
-/* Where the money is */
-.dinheiro { display: grid; gap: 10px; }
-.contas { display: grid; gap: 8px; }
-.conta { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: baseline; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
-.conta .quem { font-family: var(--display); font-weight: 600; }
-.conta .quanto { font-family: var(--display); font-weight: 800; font-size: 1.2rem; font-variant-numeric: tabular-nums; }
-.conta .nota { grid-column: 1 / -1; font-size: .9rem; color: var(--muted); line-height: 1.5; }
-.verde { color: var(--money); }
-.vermelho { color: var(--alert); }
-.estrelas { color: var(--accent); letter-spacing: .12em; }
+/* The one moving strip on the page */
+.aviso-faixa { background: var(--amarelo); color: var(--tinta); overflow: hidden; }
+.aviso-trilho { display: flex; width: max-content; animation: rolar 36s linear infinite; }
+.aviso-trilho ul { display: flex; margin: 0; padding: 0; list-style: none; }
+.aviso-trilho li {
+  white-space: nowrap; padding-block: 11px;
+  font: 700 .8125rem/1 var(--display); letter-spacing: .05em; text-transform: uppercase;
+}
+.aviso-trilho li::after { content: "★"; margin-inline: 22px; }
+@keyframes rolar { to { transform: translateX(-50%); } }
 
-/* Votes */
-.votos { display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 16px; }
-.votos h3 { font-weight: 800; font-size: var(--step-1); text-transform: uppercase; }
-.opcoes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.opcoes span { display: grid; place-items: center; min-height: 64px; border-radius: 10px; font-family: var(--display); font-weight: 800; font-size: 1.3rem; }
-.opcoes span:first-child { background: var(--accent); color: var(--ink); }
-.opcoes span:last-child { background: var(--fg); color: var(--ink); }
-.barra { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; font-weight: 700; }
-.barra .trilho { grid-column: 1 / -1; height: 12px; background: var(--line); border-radius: 99px; overflow: hidden; }
-.barra .cheia { display: block; height: 100%; background: var(--muted); border-radius: 99px; }
-.barra.vence .num { color: var(--accent); }
-.barra.vence .cheia { background: var(--accent); }
-.barra:not(.vence) { color: var(--muted); }
+/* Hero */
+.hero { position: relative; overflow: hidden; padding-block: 44px 56px; }
+.hero::before {
+  content: ""; position: absolute; pointer-events: none;
+  width: 760px; height: 760px; right: -220px; top: -120px;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--amarelo) 11%, transparent), transparent);
+}
+.hero-grade { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; grid-template-areas: "texto" "vagas" "celular"; }
+.hero-texto { grid-area: texto; }
+.vagas { grid-area: vagas; }
+.celular { grid-area: celular; }
+.selo {
+  display: inline-block; border: 2px solid var(--amarelo); color: var(--amarelo); border-radius: 999px;
+  padding: .55em 1.05em .5em; font: 700 .75rem/1 var(--display); letter-spacing: .16em; text-transform: uppercase;
+}
+h1 { margin-top: 20px; font: 800 var(--t-2xl)/1.02 var(--display); letter-spacing: -.03em; }
+h1 span { display: block; }
+.amarelo { color: var(--amarelo); }
+.hero-sub { margin-top: 18px; font-size: var(--t-l); line-height: 1.5; color: var(--cinza); max-width: 30ch; }
+.acoes { display: flex; flex-wrap: wrap; gap: 14px 12px; margin-top: 28px; }
+.acoes .botao { flex: 1 1 220px; }
+@media (min-width: 560px) { .acoes .botao { flex: 0 0 auto; } }
+
+.celular {
+  justify-self: center; width: min(280px, 76vw); margin: 0; padding: 9px;
+  background: var(--moldura); border: 1px solid var(--linha); border-radius: 42px;
+  box-shadow: 0 34px 60px -24px var(--sombra), inset 0 0 0 2px var(--painel);
+  transform: rotate(2.5deg);
+}
+.celular img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 33px; }
+
+.vagas {
+  display: grid; gap: 18px; padding: 20px; border-radius: var(--raio);
+  background: var(--painel); border: 1px solid var(--linha);
+}
+.ao-vivo { display: flex; align-items: center; gap: 10px; font: 700 var(--t-m)/1.3 var(--display); }
+.ponto {
+  width: 10px; height: 10px; border-radius: 50%; flex: none; background: var(--vermelho);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--vermelho) 28%, transparent);
+}
+.vagas-prazo { margin-top: 4px; padding-left: 20px; font-size: var(--t-s); color: var(--cinza); }
+.contagem { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.contagem span {
+  display: grid; justify-items: center; gap: 6px; padding: 12px 4px 10px;
+  background: var(--moldura); border: 1px solid var(--linha); border-radius: 12px;
+}
+.contagem b { font: 800 1.75rem/1 var(--display); color: var(--amarelo); }
+.contagem small { font: 600 .6875rem/1 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--cinza); }
+
+@media (min-width: 900px) {
+  .hero { padding-block: 64px 72px; }
+  .hero-grade {
+    grid-template-columns: minmax(0, 1fr) 300px; gap: 48px 72px; align-items: center;
+    grid-template-areas: "texto celular" "vagas vagas";
+  }
+  .celular { width: 280px; }
+  .vagas { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); align-items: center; padding: 22px 28px; }
+}
+
+/* Section heads: headline over a short line, stacked */
+.cabeca { display: grid; gap: 12px; max-width: 46rem; margin-bottom: 36px; }
+.cabeca h2 { font: 800 var(--t-xl)/1.08 var(--display); letter-spacing: -.025em; }
+.cabeca p { color: var(--cinza); max-width: 58ch; }
+
+/* Vote */
+.voto-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+@media (min-width: 900px) { .voto-grade { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: start; } }
+.voto-card { display: grid; gap: 20px; padding: 24px; border-radius: var(--raio); background: var(--painel); border: 1px solid var(--linha); }
+.voto-card .ao-vivo { font: 600 .875rem/1 var(--display); color: var(--cinza); }
+.voto-card h3 { font: 800 clamp(1.4rem, 3.2vw, 1.85rem)/1.18 var(--display); letter-spacing: -.015em; }
+.opcoes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.opcao {
+  display: grid; justify-items: center; gap: 8px; padding: 20px 8px 16px; border-radius: 16px;
+  color: var(--tinta); text-decoration: none; transition: transform .15s ease, box-shadow .15s ease;
+}
+.opcao b { font: 900 clamp(1.6rem, 6vw, 2.3rem)/1 var(--display); letter-spacing: .01em; }
+.opcao small { font: 600 .8125rem/1 var(--display); }
+.opcao-amarela { background: var(--amarelo); box-shadow: 0 5px 0 var(--amarelo-escuro); }
+.opcao-creme { background: var(--creme); box-shadow: 0 5px 0 var(--creme-escuro); }
+.opcao:hover { transform: translateY(-2px); }
+.opcao-amarela:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--amarelo-escuro); }
+.opcao-creme:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--creme-escuro); }
+.nota { font-size: var(--t-s); color: var(--cinza); }
+.voto-nome { display: grid; gap: 6px; padding-top: 20px; border-top: 1px solid var(--linha); }
+.voto-nome h4 { font: 700 var(--t-m)/1.3 var(--display); }
+.voto-nome p { font-size: var(--t-s); color: var(--cinza); }
+
+.caso { padding: 24px; border-radius: var(--raio); background: var(--painel); border: 1px solid var(--linha); }
+.caso h3 { font: 700 var(--t-l)/1.2 var(--display); }
+.caso dl { display: grid; margin: 12px 0 0; }
+.caso dl div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-block: 14px; border-bottom: 1px dashed var(--linha); }
+.caso dl div:last-child { border-bottom: 0; padding-bottom: 0; }
+.caso dt { font-size: var(--t-s); color: var(--cinza); }
+.caso dd { margin: 0; text-align: right; font: 800 1.3rem/1 var(--display); }
+.verde { color: var(--verde); }
+.vermelho { color: var(--vermelho); }
+.estrelas { color: var(--amarelo); letter-spacing: .1em; }
 
 /* The pass */
-.entre { display: grid; gap: 18px; border: 2px solid var(--accent); border-radius: 12px; padding: 22px 18px; }
-.entre h2 { font-weight: 800; font-size: var(--step-2); text-transform: uppercase; }
-.preco { font-weight: 800; font-size: 2.4rem; color: var(--accent); line-height: 1; }
-.preco small { font-size: .9rem; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
-.ganhos { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
-.ganhos li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; line-height: 1.45; min-width: 0; }
-.ganhos b { display: block; font-family: var(--display); font-weight: 700; }
-.vagas { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--display); font-weight: 600; font-size: .95rem; }
-.vagas b { color: var(--accent); }
-.creditos {
-  display: grid; justify-items: center; gap: 4px; text-align: center; background: #000;
-  border-radius: 8px; padding: 18px 12px; font-family: var(--display);
+.cabeca .preco { margin-top: 4px; font: 600 var(--t-m)/1.2 var(--display); color: var(--amarelo); }
+.cabeca .preco b { font: 800 clamp(2.3rem, 6vw, 3rem)/1 var(--display); letter-spacing: -.02em; margin-right: .18em; }
+.aliado-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+@media (min-width: 900px) { .aliado-grade { grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: 48px; align-items: start; } }
+.aliado-mostra, .aliado-compra { display: grid; gap: 20px; min-width: 0; }
+.ganhos { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.ganhos li {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; align-items: start;
+  padding: 18px; border-radius: 16px; background: var(--painel); border: 1px solid var(--linha);
 }
-.creditos .nome { font-weight: 800; font-size: 1.3rem; color: var(--accent); overflow-wrap: anywhere; }
-form { display: grid; gap: 14px; }
-label { display: grid; gap: 6px; font-weight: 600; font-size: .95rem; }
-input[type="text"], input[type="email"] {
-  font: 500 1rem var(--display); color: var(--fg); background: var(--surface);
-  border: 1px solid var(--line); border-radius: 8px; padding: .8em .9em; width: 100%;
+.ganhos .ico {
+  width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px;
+  color: var(--amarelo); background: color-mix(in srgb, var(--amarelo) 14%, transparent);
 }
-.consentimento { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; font-weight: 500; font-size: .9rem; line-height: 1.45; color: var(--muted); }
-.consentimento input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--accent); }
-.erro { color: var(--alert); font-family: var(--display); font-size: .9rem; }
-.pix { display: grid; gap: 10px; background: var(--raised); border-radius: 10px; padding: 16px; }
-.pix h3 { font-weight: 800; font-size: var(--step-1); }
-.chave { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-.chave code { font: 600 1rem/1.4 var(--display); color: var(--accent); overflow-wrap: anywhere; user-select: all; }
-.chave button { font-weight: 700; font-size: .85rem; background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: .45em .9em; cursor: pointer; }
-.miudo { font-size: .9rem; color: var(--muted); line-height: 1.6; display: grid; gap: .6em; }
+.ganhos h3 { font: 700 var(--t-m)/1.3 var(--display); }
+.ganhos p { margin-top: 4px; font-size: var(--t-s); color: var(--cinza); }
+.na-cena { margin: 0; overflow: hidden; border-radius: var(--raio); background: var(--painel); border: 1px solid var(--linha); }
+.na-cena img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.na-cena figcaption { padding: 16px 18px 18px; font-size: var(--t-s); color: var(--cinza); }
+.na-cena figcaption b { display: block; margin-bottom: 4px; font: 700 var(--t-m)/1.3 var(--display); color: var(--creme); }
+@media (min-width: 900px) {
+  .na-cena { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+  .na-cena figcaption { padding: 28px; }
+}
+.legenda-post {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: start;
+  padding: 16px; border-radius: 16px; background: var(--moldura); border: 1px solid var(--linha);
+}
+.legenda-post img { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--vermelho); padding: 2px; background: var(--moldura); }
+.legenda-post p { font-size: var(--t-s); line-height: 1.5; }
+.legenda-post .quem { font-weight: 700; }
+.legenda-post .onde { margin-left: 6px; font-size: var(--t-xs); color: var(--cinza); }
 
-/* Parts */
-.parte { display: grid; gap: 22px; }
-.parte header { display: grid; gap: 10px; }
-.parte h2 { font-weight: 800; font-size: var(--step-2); text-transform: uppercase; }
-.texto { display: grid; gap: 1.05em; }
-.texto .fala { padding-left: 1em; border-left: 2px solid var(--line); }
-.texto .pausa { font-family: var(--display); font-weight: 700; letter-spacing: .02em; }
-.texto em { color: var(--muted); }
-.cena { display: grid; gap: 8px; margin: 0; }
-.cena figcaption { font-family: var(--display); font-size: .82rem; color: var(--muted); }
+.creditos { padding: 26px 22px; border-radius: var(--raio); text-align: center; background: var(--moldura); border: 1px solid var(--linha); }
+.creditos-topo { font: 700 .75rem/1.3 var(--display); letter-spacing: .18em; text-transform: uppercase; color: var(--cinza); }
+.creditos-parte { margin-top: 10px; font: 900 2.9rem/1 var(--display); letter-spacing: -.01em; text-transform: uppercase; color: var(--amarelo); }
+.creditos-sub { margin-top: 6px; font: 600 .875rem/1.3 var(--display); }
+.creditos-lista {
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(5, auto); grid-auto-flow: column;
+  gap: 10px 18px; margin: 22px 0 0; padding: 0; list-style: none; text-align: left;
+}
+.creditos-lista li { display: flex; gap: 10px; min-width: 0; font-size: var(--t-s); color: var(--cinza-2); }
+.creditos-lista li span { min-width: 1.7em; font-weight: 700; color: var(--cinza); }
+.creditos-lista li.tem { color: var(--creme); font-weight: 600; overflow-wrap: anywhere; }
 
-/* Questions and terms */
-.perguntas { display: grid; gap: 10px; }
-.perguntas h2, .termos h2 { font-weight: 800; font-size: var(--step-2); text-transform: uppercase; }
-details { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
-summary { font-family: var(--display); font-weight: 700; cursor: pointer; }
-details p { margin-top: 8px; color: var(--muted); line-height: 1.6; }
-.termos { display: grid; gap: 10px; font-size: .92rem; color: var(--muted); line-height: 1.6; }
-.termos h3 { font-weight: 700; font-size: 1rem; color: var(--fg); }
+.quadros { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.quadros div { display: grid; gap: 6px; align-content: start; padding: 16px; border-radius: 16px; background: var(--painel); border: 1px solid var(--linha); }
+.quadros b { font: 800 1.75rem/1 var(--display); color: var(--amarelo); }
+.quadros b.vermelho { color: var(--vermelho); }
+.quadros span { font-size: var(--t-xs); line-height: 1.35; color: var(--cinza); }
 
-footer { border-top: 1px solid var(--line); padding-top: 22px; display: grid; gap: 10px; font-size: .92rem; color: var(--muted); }
-footer .marca { font-family: var(--display); font-weight: 800; color: var(--fg); text-transform: uppercase; letter-spacing: .04em; }
-footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; font-family: var(--display); font-weight: 600; }
+.passe, .pix { display: grid; gap: 18px; padding: 24px; border-radius: var(--raio); background: var(--painel); border: 1px solid var(--linha); }
+.passe h3, .pix h3 { font: 800 1.375rem/1.2 var(--display); }
+.campo { display: grid; gap: 8px; }
+.campo label { font: 600 var(--t-s)/1.2 var(--display); }
+.entrada { display: flex; align-items: center; border-radius: 12px; background: var(--moldura); border: 1px solid var(--linha); transition: border-color .15s ease, box-shadow .15s ease; }
+.entrada:focus-within { border-color: var(--amarelo); box-shadow: 0 0 0 3px color-mix(in srgb, var(--amarelo) 25%, transparent); }
+.entrada > span { padding-left: 14px; font-weight: 600; color: var(--cinza); }
+.entrada input { flex: 1 1 0; width: 0; min-width: 0; padding: 14px; border: 0; outline: none; background: transparent; color: var(--creme); font: 500 1rem/1.2 var(--texto); }
+.entrada > span + input { padding-left: 2px; }
+.entrada input::placeholder { color: var(--cinza-2); }
+.consentimento { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; align-items: start; font-size: .875rem; line-height: 1.5; color: var(--cinza); }
+.consentimento input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--amarelo); }
+.consentimento a { color: var(--amarelo); }
+.erro { font: 600 .875rem/1.4 var(--display); color: var(--vermelho); }
+.passe .botao, .pix .botao { width: 100%; }
+.miudo { display: grid; gap: 8px; font-size: var(--t-xs); line-height: 1.5; color: var(--cinza); }
+.miudo b { color: var(--amarelo); }
+.pix { border: 2px solid var(--amarelo); }
+.pix h3 { display: flex; align-items: center; gap: 10px; }
+.pix h3 .ico { color: var(--amarelo); font-size: 26px; }
+.pix p { color: var(--cinza); font-size: var(--t-s); }
+.pix p b { color: var(--creme); }
+.chave { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 10px 10px 14px; border-radius: 12px; background: var(--moldura); border: 1px dashed var(--linha); }
+.chave code { flex: 1 1 160px; min-width: 0; overflow-wrap: anywhere; font: 600 var(--t-s)/1.4 var(--mono); color: var(--creme); }
+.copiar {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 10px;
+  border: 2px solid var(--amarelo); background: transparent; color: var(--amarelo); font: 700 .875rem/1 var(--display); cursor: pointer;
+}
+.copiar:active { transform: translateY(2px); }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* Chapters: the covers in a row you swipe, as on the profile grid */
+.capitulos {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(196px, 236px); gap: 16px;
+  margin: 0 calc(-1 * max(16px, env(safe-area-inset-right, 0px))) 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  padding: 6px max(16px, env(safe-area-inset-right, 0px)) 22px max(16px, env(safe-area-inset-left, 0px));
+  scroll-padding-inline: max(16px, env(safe-area-inset-left, 0px));
+  list-style: none; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  scrollbar-color: var(--linha) transparent;
+}
+@media (min-width: 768px) {
+  .capitulos {
+    margin-inline: calc(-1 * max(32px, env(safe-area-inset-left, 0px))) calc(-1 * max(32px, env(safe-area-inset-right, 0px)));
+    padding-inline: max(32px, env(safe-area-inset-left, 0px)) max(32px, env(safe-area-inset-right, 0px));
+    scroll-padding-inline: max(32px, env(safe-area-inset-left, 0px));
+  }
+}
+.capitulos li { scroll-snap-align: start; }
+.capitulo {
+  position: relative; display: block; aspect-ratio: 9 / 16; overflow: hidden; border-radius: var(--raio);
+  background: var(--painel); border: 1px solid var(--linha); text-decoration: none; transition: transform .2s ease;
+}
+.capitulo img { width: 100%; height: 100%; object-fit: cover; }
+a.capitulo:hover { transform: translateY(-4px); }
+.carimbo {
+  position: absolute; top: 5%; left: 50%; transform: translateX(-50%) rotate(-8deg);
+  padding: 8px 14px 6px; border: 3px solid var(--vermelho); border-radius: 8px; white-space: nowrap; text-align: center;
+  background: color-mix(in srgb, var(--creme) 94%, transparent); color: var(--vermelho);
+  font: 900 1.4rem/1 var(--display); letter-spacing: .02em; text-transform: uppercase;
+  box-shadow: 0 8px 20px var(--sombra);
+}
+.carimbo small { display: block; margin-top: 4px; font: 700 .6875rem/1.2 var(--display); letter-spacing: .06em; }
+.carimbo-amarelo { background: var(--amarelo); color: var(--tinta); border-color: var(--tinta); font-size: 1.15rem; }
+.capitulo-breve {
+  display: grid; place-content: center; gap: 8px; text-align: center; padding: 20px;
+  background: var(--noite); border: 2px dashed var(--linha);
+}
+.capitulo-breve b { font: 900 2.2rem/1 var(--display); text-transform: uppercase; color: var(--amarelo); }
+.capitulo-breve span { font: 700 var(--t-m)/1.2 var(--display); }
+.capitulo-breve small { font-size: var(--t-xs); color: var(--cinza); }
+
+/* Questions */
+.perguntas, .termos { max-width: 820px; }
+.perguntas details { border-bottom: 1px solid var(--linha); }
+.perguntas summary, .termos summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 20px;
+  list-style: none; cursor: pointer; font: 700 var(--t-m)/1.35 var(--display);
+}
+.perguntas summary::-webkit-details-marker, .termos summary::-webkit-details-marker { display: none; }
+.perguntas summary .ico, .termos summary .ico { color: var(--amarelo); transition: transform .2s ease; }
+.perguntas details[open] summary .ico, .termos details[open] summary .ico { transform: rotate(45deg); }
+.perguntas details p, .termos details p { padding-bottom: 20px; max-width: 62ch; color: var(--cinza); }
+.termos { margin-top: 56px; display: grid; gap: 14px; }
+.termos h3 { font: 800 var(--t-l)/1.2 var(--display); }
+.termos details { border-radius: 14px; background: var(--painel); border: 1px solid var(--linha); padding-inline: 18px; }
+.termos summary { padding-block: 16px; font-size: var(--t-s); }
+.termos details p { font-size: var(--t-s); }
+
+/* Footer */
+.rodape { padding-block: 52px 44px; border-top: 1px solid var(--linha); }
+.rodape-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+.rodape-marca p { margin-top: 14px; max-width: 40ch; font-size: var(--t-s); color: var(--cinza); }
+.rodape nav { display: grid; gap: 10px; align-content: start; }
+.rodape nav h2 { font: 700 var(--t-xs)/1 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--cinza); margin-bottom: 4px; }
+.rodape nav a { width: fit-content; font-size: var(--t-s); text-decoration: none; }
+.rodape nav a:hover { color: var(--amarelo); }
+.rodape-fim { padding-top: 22px; border-top: 1px solid var(--linha); font: 700 var(--t-s)/1.5 var(--display); }
+@media (min-width: 768px) {
+  .rodape-grade { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr); }
+  .rodape-fim { grid-column: 1 / -1; }
+}
+
+.recado {
+  position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 40;
+  transform: translateX(-50%); max-width: calc(100% - 32px); width: max-content; padding: 12px 18px; border-radius: 12px;
+  background: var(--creme); color: var(--tinta); box-shadow: 0 10px 30px var(--sombra);
+  font: 600 var(--t-s)/1.35 var(--display); text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-texto > *, .vagas { animation: entrar .7s cubic-bezier(.16, 1, .3, 1) both; }
+  .hero-texto > :nth-child(2) { animation-delay: .06s; }
+  .hero-texto > :nth-child(3) { animation-delay: .12s; }
+  .hero-texto > :nth-child(4) { animation-delay: .18s; }
+  .vagas { animation-delay: .26s; }
+  .celular { animation: entrar-celular .9s cubic-bezier(.16, 1, .3, 1) .12s both; }
+  .ponto { animation: pulsar 1.8s ease-in-out infinite; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .aviso-trilho { animation: none; }
+}
+@keyframes entrar { from { transform: translateY(14px); opacity: .35; } }
+@keyframes entrar-celular { from { transform: translateY(28px) rotate(0deg); opacity: .35; } to { transform: rotate(2.5deg); opacity: 1; } }
+@keyframes pulsar { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--vermelho) 0%, transparent); } }
 </style>
 
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="topo">
-  <div>
-    <a class="marca" href="#inicio">Golpe Cartoon</a>
-    <a class="destaque" href="#entre">Entrar na história</a>
-    <a href="#partes">Partes</a>
-    <a href="#perguntas">Perguntas</a>
+  <div class="faixa-int">
+    <a class="marca" href="#inicio" aria-label="Golpe Cartoon, voltar ao início"><span class="marca-tag">Golpe</span>Cartoon</a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#votacao">Votação</a>
+      <a href="#aliado">Aliados</a>
+      <a href="#capitulos">Capítulos</a>
+      <a href="#perguntas">Perguntas</a>
+    </nav>
+    <a class="botao botao-amarelo botao-p" href="#aliado">Quero ser aliado</a>
   </div>
 </header>
 
-<main>
-  <section class="abertura" id="inicio" aria-labelledby="titulo">
-    <span class="tag">Série em desenho · você decide</span>
-    <h1 id="titulo">A parte <span>que faltou</span></h1>
-    <p class="gancho">O assalto deu certo. A sua parte, não.</p>
-    <img src="img/capa.jpg" width="720" height="900" alt="Zinho abre a mochila da divisão e encontra roupa velha.">
-    <p>Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal. A cada parte, o público decide nos comentários o que o Zinho faz.</p>
-    <div class="aviso" role="status">
-      <b>Parte 3: <span data-vagas>10</span> vagas de aliado abertas</b>
-      <span>Fecham em <span data-prazo>30 de outubro, às 21h</span>, junto com a votação da Parte 2.</span>
-    </div>
-    <div class="acoes">
-      <a class="botao cheio" href="#entre">Quero entrar na história</a>
-      <a class="botao vazado" href="https://www.instagram.com/golpecartoon/">Assistir no Instagram</a>
-    </div>
-  </section>
-
-  <section class="dinheiro" aria-labelledby="t-dinheiro">
-    <span class="rotulo" id="t-dinheiro">Onde está o dinheiro</span>
-    <div class="contas">
-      <div class="conta"><span class="quem">Com o seu parceiro</span><span class="quanto verde">R$ 10.000.000</span>
-        <span class="nota">Em dinheiro vivo. Ele não atende.</span></div>
-      <div class="conta"><span class="quem">Com você</span><span class="quanto vermelho">R$ 0</span>
-        <span class="nota">Na mochila da divisão, só roupa velha. Suspeita: <span class="estrelas" aria-label="cinco estrelas">★★★★★</span></span></div>
-      <div class="conta"><span class="quem">A dívida do seu amigo</span><span class="quanto vermelho">R$ 80.000</span>
-        <span class="nota">Com quem bancou o assalto. Para pagar, ele vendeu o seu nome.</span></div>
-    </div>
-  </section>
-
-  <section class="votos" aria-labelledby="t-voto">
-    <span class="rotulo">Votação aberta · Parte 2</span>
-    <h3 id="t-voto">Lá fora, um carro de farol apagado. Fugir ou ficar?</h3>
-    <div class="opcoes" aria-hidden="true"><span>FUGIR</span><span>FICAR</span></div>
-    <p>Comenta no vídeo da Parte 2. Deixa também um nome para o amigo do Zinho: o mais curtido vira o nome dele na Parte 3.</p>
-    <div class="acoes">
-      <a class="botao vazado" href="https://www.instagram.com/golpecartoon/">Votar no Instagram</a>
-      <a class="botao vazado" href="https://www.youtube.com/@golpecartoon/shorts">Votar no YouTube</a>
-    </div>
-  </section>
-
-  <section class="entre" id="entre" aria-labelledby="t-entre">
-    <span class="rotulo">Passe de aliado</span>
-    <h2 id="t-entre">Vire aliado do Zinho</h2>
-    <p class="preco">R$ 9,90 <small>por parte, no Pix</small></p>
-    <p>O Zinho foi traído e precisa de gente do lado dele. Com o passe, o seu @ entra na próxima parte.</p>
-    <ul class="ganhos">
-      <li><b>Dentro do episódio</b>Seu @ aparece na história: na lista de contatos do celular do Zinho, num muro da rua, na reportagem da TV ou nos créditos do fim.</li>
-      <li><b>Na legenda do post</b>Seu @ na legenda do vídeo no Instagram, para quem assistir chegar até você.</li>
-      <li><b>Número de aliado</b>Você ganha um número, como #001, que fica com você nas próximas partes.</li>
+<div class="aviso-faixa" aria-label="Avisos">
+  <div class="aviso-trilho">
+    <ul>
+      <li>Parte 3: <span data-vagas>10</span> vagas de aliado</li>
+      <li>Fecham sexta, às 21h</li>
+      <li>Votação aberta: fugir ou ficar?</li>
+      <li>A Parte 2 já tá no perfil</li>
     </ul>
-    <div class="creditos" aria-label="Exemplo dos créditos no fim do vídeo">
-      <span class="rotulo">Aliados desta parte</span>
-      <span class="nome">@seuperfil · #001</span>
-    </div>
-    <p class="vagas"><span><b data-vagas>10</b> vagas na Parte 3</span><span>Fecham em <span data-prazo>30 de outubro, às 21h</span></span></p>
-
-    <form id="passe" name="aliados" method="POST" data-netlify="true" netlify-honeypot="campo-extra" novalidate>
-      <input type="hidden" name="form-name" value="aliados">
-      <p hidden><label>Não preencha <input name="campo-extra" type="text" id="campo-extra"></label></p>
-      <label for="arroba">Seu @ no Instagram
-        <input type="text" id="arroba" name="arroba" placeholder="@seuperfil" autocomplete="username" required>
-      </label>
-      <label for="email">Seu e-mail
-        <input type="email" id="email" name="email" placeholder="voce@email.com" autocomplete="email" required>
-      </label>
-      <label class="consentimento" for="autorizo">
-        <input type="checkbox" id="autorizo" name="autorizo" value="sim" required>
-        <span>Autorizo usar o meu @ numa história de ficção da Golpe Cartoon e li os <a href="#termos">termos</a>.</span>
-      </label>
-      <p class="erro" id="erro" role="alert" hidden></p>
-      <div class="acoes"><button class="botao cheio" type="submit">Virar aliado por R$ 9,90</button></div>
-    </form>
-
-    <div class="pix" id="pix" hidden>
-      <h3>Falta só o Pix</h3>
-      <p>Pague <b>R$ 9,90</b> para a chave abaixo e mande o comprovante no direct do Instagram. Assim que confirmarmos, o seu @ entra na lista da Parte 3.</p>
-      <div class="chave">
-        <code id="chave-pix" data-chave-pix>chave Pix a definir</code>
-        <button type="button" id="copiar">Copiar chave</button>
-      </div>
-      <div class="acoes"><a class="botao vazado" href="https://ig.me/m/golpecartoon">Mandar o comprovante no direct</a></div>
-    </div>
-
-    <div class="miudo">
-      <p>Quem pagar depois do prazo, ou com as vagas esgotadas, entra na parte seguinte.</p>
-      <p>O passe não muda a votação: nos comentários, o voto de todo mundo vale igual.</p>
-    </div>
-  </section>
-
-  <div id="partes" class="parte" aria-label="Partes">
-    <span class="rotulo">Os capítulos até aqui · chegou agora? comece pela Parte 1</span>
+    <ul aria-hidden="true">
+      <li>Parte 3: <span data-vagas>10</span> vagas de aliado</li>
+      <li>Fecham sexta, às 21h</li>
+      <li>Votação aberta: fugir ou ficar?</li>
+      <li>A Parte 2 já tá no perfil</li>
+    </ul>
   </div>
+</div>
 
-  <article class="parte" id="parte-1" aria-labelledby="t-parte-1">
-    <header>
-      <span class="tag">Parte 1</span>
-      <h2 id="t-parte-1">A mochila</h2>
-      <span class="rotulo">Publicada em 26 de outubro</span>
-    </header>
-    <figure class="cena"><img src="img/p1-mochila.jpg" width="720" height="900" loading="lazy" alt="Zinho abre a mochila na mesa do quarto, iluminado pela televisão."></figure>
-    <div class="texto">
-      <p>O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.</p>
-      <p>A televisão do quarto está ligada no noticiário da noite. Na tela, a sua foto e o seu nome: Zinho. Embaixo, uma faixa amarela: primeiro suspeito identificado.</p>
-      <p>Você baixa o volume e puxa a mochila preta que recebeu na divisão. Abre o zíper devagar.</p>
-      <p class="pausa">Roupa velha.</p>
-      <p class="pausa">Nenhuma nota.</p>
-      <p>Você confere os bolsos de fora, depois os de dentro. Revira o fundo. Vira a mochila de cabeça para baixo e espalha tudo no chão: uma camiseta furada, uma calça de moletom, um casaco que nunca foi seu. Nada.</p>
-      <p>Há vinte minutos, vocês ainda estavam juntos. Agora, ninguém atende. O telefone chama até cair.</p>
-      <p>Você fotografa a mochila aberta e manda para o amigo que colocou você no grupo. O cara que cresceu na sua rua. O que olhou nos seus olhos e prometeu: “Eu garanto a sua parte.”</p>
-      <p>Ele visualiza. Não responde.</p>
-      <p>Você olha de novo para a televisão e, dessa vez, reconhece a fotografia. É a mesma que você mandou para ele semanas atrás, quando disseram que precisavam conhecer o seu rosto antes de te chamar.</p>
-    </div>
-    <figure class="cena"><img src="img/p1-audio.jpg" width="720" height="900" loading="lazy" alt="Zinho, com o celular no ouvido, escuta o áudio do amigo."></figure>
-    <div class="texto">
-      <p>Chega um áudio.</p>
-      <p class="fala">“Eu estava devendo para eles. Disseram que a dívida acabava se eu colocasse alguém no meu lugar.”</p>
-      <p>Você escuta outra vez. E outra.</p>
-      <p>Antes de responder, alguém bate à porta. Duas batidas, secas.</p>
-      <p>Pela janela, atrás da cortina, você vê o seu amigo no portão, olhando para os lados.</p>
-      <p>É o homem que acabou de admitir que vendeu o seu nome.</p>
-      <p class="pausa">Você deixa ele entrar?</p>
-    </div>
-    <figure class="cena"><img src="img/p1-porta.jpg" width="720" height="900" loading="lazy" alt="Pela janela, atrás da cortina, o amigo espera do lado de fora."></figure>
-    <div class="votos" aria-label="Resultado da votação da Parte 1">
-      <span class="rotulo">Parte 1 · vocês votaram</span>
-      <div class="barra vence"><span>Abrir</span><span class="num">86%</span><span class="trilho"><span class="cheia" style="width:86%"></span></span></div>
-      <div class="barra"><span>Não abrir</span><span class="num">14%</span><span class="trilho"><span class="cheia" style="width:14%"></span></span></div>
-    </div>
-  </article>
+<main id="conteudo">
+  <section class="hero" id="inicio" aria-labelledby="titulo">
+    <div class="faixa-int hero-grade">
+      <div class="hero-texto">
+        <p class="selo">A parte que faltou</p>
+        <h1 id="titulo"><span>O assalto deu certo.</span> <span class="amarelo">A sua parte, não.</span></h1>
+        <p class="hero-sub">Série de suspense em desenho. Nos comentários, você decide o próximo passo do Zinho.</p>
+        <div class="acoes">
+          <a class="botao botao-amarelo" href="#aliado">Quero ser aliado</a>
+          <a class="botao botao-vazado" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener">Assistir no Instagram<span class="ico" aria-hidden="true">arrow_outward</span></a>
+        </div>
+      </div>
 
-  <article class="parte" id="parte-2" aria-labelledby="t-parte-2">
-    <header>
-      <span class="tag">Parte 2</span>
-      <h2 id="t-parte-2">A dívida</h2>
-      <span class="rotulo">Publicada em 28 de outubro</span>
-    </header>
-    <figure class="cena"><img src="img/p2-porta.jpg" width="720" height="900" loading="lazy" alt="Zinho abre a porta e o amigo, tenso, olha para a rua."></figure>
-    <div class="texto">
-      <p>Vocês decidiram: abrir.</p>
-      <p>Você destranca a porta. Ele entra sem pedir licença, passa a chave por dentro e apaga a luz da sala. Fica um tempo parado no escuro, ouvindo a rua.</p>
-      <p class="fala">“Eles tão te procurando. E agora tão me procurando também.”</p>
-      <p>Ele vendeu o seu nome. Nesta história, ele ainda não tem um. <em>O nome dele está em votação nos comentários do vídeo da Parte 2.</em></p>
-      <p>Você não oferece cadeira. Ele senta mesmo assim, na mesa onde a mochila ainda está aberta. Você pergunta uma coisa só: quanto ele devia.</p>
-      <p class="fala">“Oitenta mil.”</p>
-      <p>Para quem?</p>
-      <p class="fala">“Pra quem bancou o assalto.”</p>
-      <p>Ele fala rápido, como quem ensaiou no caminho. Perdeu um dinheiro que não era dele. Eles deram uma saída: trazer alguém de fora, alguém que ninguém ligasse ao grupo. Se desse errado, a culpa ficava com essa pessoa.</p>
-      <p class="fala">“Eles juraram que ninguém ia ver o seu rosto.”</p>
-      <p>Mas foi ele quem entregou a sua foto.</p>
-      <p class="fala">“Eu não tive escolha. Eles sabiam onde a minha mãe mora.”</p>
-      <p>Você conhece essa mãe. Ela te dava almoço quando vocês eram moleques.</p>
-      <p>Você pede uma prova. Palavra, ele já gastou.</p>
-    </div>
-    <figure class="cena"><img src="img/p2-foto.jpg" width="720" height="900" loading="lazy" alt="A foto escondida da divisão: dinheiro na mesa, mãos contando notas e um calendário de ferro-velho na parede.">
-      <figcaption>A foto da noite da divisão. Repara na mão da direita.</figcaption></figure>
-    <div class="texto">
-      <p>Ele mostra o celular. Uma foto escondida, tirada na noite da divisão: a mesa coberta de dinheiro, as mãos de quem contava. Nenhum rosto. Numa das mãos, um anel grosso de ouro.</p>
-      <p>Você amplia a imagem. Na parede, um calendário de ferro-velho, com nome e telefone.</p>
-      <p>Você liga do seu celular. Toca três vezes. Do outro lado, alguém atende: “Ferro-Velho São Jorge.” Você desliga sem dizer nada.</p>
-      <p>O lugar existe. Pelo menos essa parte é verdade.</p>
-    </div>
-    <figure class="cena"><img src="img/p2-mensagem.jpg" width="720" height="900" loading="lazy" alt="O celular do amigo acende na mesa com a mensagem: Já tá com ele?"></figure>
-    <div class="texto">
-      <p>Então o celular dele vibra em cima da mesa. A tela acende. Uma mensagem de um contato salvo só como “Cobrança”:</p>
-      <p class="fala">“Já tá com ele?”</p>
-      <p>Você pergunta o que é aquilo. Ele não responde a mensagem. Nem a você.</p>
-      <p>Lá fora, um carro para em frente ao portão. De farol apagado.</p>
-      <p class="pausa">Fugir ou ficar?</p>
-    </div>
-    <figure class="cena"><img src="img/p2-carro.jpg" width="720" height="900" loading="lazy" alt="Pela janela, um carro escuro parado no portão, de farol apagado."></figure>
-  </article>
+      <aside class="vagas" aria-label="Vagas de aliado na Parte 3">
+        <div>
+          <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>Parte 3: <span data-vagas>10</span> vagas de aliado abertas</span></p>
+          <p class="vagas-prazo">Fecham na sexta, 30 de outubro, às 21h.</p>
+        </div>
+        <div class="contagem" data-contagem aria-hidden="true">
+          <span><b data-dias>02</b><small>dias</small></span>
+          <span><b data-horas>00</b><small>horas</small></span>
+          <span><b data-min>00</b><small>min</small></span>
+          <span><b data-seg>00</b><small>seg</small></span>
+        </div>
+      </aside>
 
-  <section class="parte" aria-labelledby="t-parte-3">
-    <header>
-      <span class="tag">Parte 3</span>
-      <h2 id="t-parte-3">A noite</h2>
-      <span class="rotulo">Sai depois da votação · com os aliados da Parte 3</span>
-    </header>
+      <figure class="celular">
+        <img src="img/votacao-parte-02.jpg" width="540" height="960" alt="O fim da Parte 2 na tela do celular: um carro parado no portão, a pergunta FUGIR OU FICAR? e os botões das duas opções.">
+      </figure>
+    </div>
   </section>
 
-  <section class="perguntas" id="perguntas" aria-labelledby="t-perguntas">
-    <h2 id="t-perguntas">Perguntas</h2>
-    <details><summary>A história é real?</summary><p>Não. Personagens, lugares e fatos são ficção. As ilustrações e as vozes são feitas com inteligência artificial.</p></details>
-    <details><summary>Como eu voto?</summary><p>Comentando no vídeo da parte, no Instagram, no TikTok ou no YouTube. A opção mais comentada vira a parte seguinte.</p></details>
-    <details><summary>Até quando posso virar aliado?</summary><p>Até o prazo da parte ou até as vagas acabarem. Quem pagar depois entra na parte seguinte.</p></details>
-    <details><summary>Posso entrar de novo em outra parte?</summary><p>Pode. Cada passe vale para uma parte, e o seu número de aliado continua o mesmo.</p></details>
-    <details><summary>Errei o meu @. E agora?</summary><p>Manda uma mensagem no direct do Instagram antes do prazo que a gente corrige.</p></details>
-    <details><summary>E se eu desistir ou a parte não sair?</summary><p>Você pode desistir em até 7 dias depois de pagar, e devolvemos o valor. Se a parte não for publicada, devolvemos também.</p></details>
+  <section class="faixa faixa-alt" id="votacao" aria-labelledby="t-votacao">
+    <div class="faixa-int">
+      <header class="cabeca">
+        <h2 id="t-votacao">Você decide o próximo passo</h2>
+        <p>Cada parte termina com uma pergunta. A resposta mais comentada vira a parte seguinte.</p>
+      </header>
+      <div class="voto-grade">
+        <article class="voto-card" aria-labelledby="t-pergunta">
+          <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>Parte 2 · votação aberta</span></p>
+          <h3 id="t-pergunta">Um carro parou no portão, de farol apagado. Fugir ou ficar?</h3>
+          <div class="opcoes">
+            <!-- Trocar pelo link do Reel da Parte 2 quando o criador mandar. -->
+            <a class="opcao opcao-amarela" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" data-palavra="FUGIR"><b>FUGIR</b><small>comentar no Reel</small></a>
+            <a class="opcao opcao-creme" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" data-palavra="FICAR"><b>FICAR</b><small>comentar no Reel</small></a>
+          </div>
+          <p class="nota">Ao tocar, a palavra é copiada e o Reel abre: é só colar nos comentários. No TikTok e no YouTube, o comentário vale do mesmo jeito.</p>
+          <div class="voto-nome">
+            <h4>E o nome do amigo?</h4>
+            <p>Ele vendeu o seu nome. Agora você escolhe o dele: comenta um nome no vídeo da Parte 2. O mais curtido vira o nome dele na Parte 3.</p>
+          </div>
+        </article>
+
+        <aside class="caso" aria-labelledby="t-caso">
+          <h3 id="t-caso">O caso até aqui</h3>
+          <dl>
+            <div><dt>O assalto</dt><dd class="verde">R$ 10.000.000</dd></div>
+            <div><dt>A sua parte</dt><dd class="vermelho">R$ 0</dd></div>
+            <div><dt>A dívida do amigo</dt><dd>R$ 80.000</dd></div>
+            <div><dt>Suspeita</dt><dd class="estrelas" aria-label="cinco de cinco estrelas">★★★★★</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
   </section>
 
-  <section class="termos" id="termos" aria-labelledby="t-termos">
-    <h2 id="t-termos">Termos e privacidade</h2>
-    <h3>O passe</h3>
-    <p>O passe de aliado custa R$ 9,90 e vale para uma parte. O seu @ aparece no episódio, num lugar escolhido pela produção, e na legenda do post no Instagram. Não usamos @ ofensivo nem o @ de outra pessoa, e podemos recusar um pedido devolvendo o valor.</p>
-    <h3>Seus dados</h3>
-    <p>Pedimos só o seu @ e o seu e-mail, para colocar o seu @ na história e falar com você sobre o passe. Não vendemos nem passamos esses dados para ninguém. Para corrigir ou apagar os seus dados, mande uma mensagem no direct do Instagram.</p>
+  <section class="faixa" id="aliado" aria-labelledby="t-aliado">
+    <div class="faixa-int">
+      <header class="cabeca">
+        <h2 id="t-aliado">Vire aliado do Zinho</h2>
+        <p>Cada passe vale para uma parte. O seu @ aparece dentro do episódio e na legenda do post.</p>
+        <p class="preco"><b>R$ 9,90</b>por parte, no Pix</p>
+      </header>
+
+      <div class="aliado-grade">
+        <div class="aliado-mostra">
+          <ul class="ganhos">
+            <li><span class="ico" aria-hidden="true">movie</span>
+              <div><h3>Dentro do episódio</h3><p>Nos contatos do celular do Zinho, num muro da rua, na reportagem da TV ou nos créditos do fim. Pause, ache o seu @ e marque os amigos.</p></div></li>
+            <li><span class="ico" aria-hidden="true">alternate_email</span>
+              <div><h3>Na legenda do post</h3><p>O seu @ marcado como aliado na legenda da parte, no Instagram, para quem assistir chegar até você.</p></div></li>
+            <li><span class="ico" aria-hidden="true">confirmation_number</span>
+              <div><h3>Número de aliado</h3><p>Aliado nº 001, 002, 003… O número fica com você nas próximas partes e mostra quem chegou primeiro.</p></div></li>
+          </ul>
+
+          <figure class="na-cena">
+            <img src="img/aliado-na-cena.jpg" width="720" height="900" loading="lazy" alt="Um celular numa mesa de madeira, numa cena da série, com a notificação de mensagem: @seuperfil, Tô contigo, Zinho.">
+            <figcaption><b>Assim aparece o seu @</b>Numa cena, ele chega como mensagem no celular. Em outra, pode estar num muro, na TV ou nos créditos do fim.</figcaption>
+          </figure>
+
+          <div class="legenda-post" aria-label="Exemplo da legenda do post no Instagram">
+            <img src="img/perfil.jpg" width="96" height="96" alt="">
+            <p><span class="quem">golpecartoon</span><span class="onde">legenda do post</span><br>Aliados da Parte 3: <span data-legenda>ainda ninguém. Quer aparecer na próxima? Link na bio.</span></p>
+          </div>
+        </div>
+
+        <div class="aliado-compra">
+          <div class="creditos" aria-labelledby="t-creditos">
+            <p class="creditos-topo">A parte que faltou · aliados</p>
+            <p class="creditos-parte" id="t-creditos">Parte 3</p>
+            <p class="creditos-sub">sai depois da votação</p>
+            <ol class="creditos-lista" data-lista>
+              <li><span>01</span>vaga aberta</li>
+              <li><span>02</span>vaga aberta</li>
+              <li><span>03</span>vaga aberta</li>
+              <li><span>04</span>vaga aberta</li>
+              <li><span>05</span>vaga aberta</li>
+              <li><span>06</span>vaga aberta</li>
+              <li><span>07</span>vaga aberta</li>
+              <li><span>08</span>vaga aberta</li>
+              <li><span>09</span>vaga aberta</li>
+              <li><span>10</span>vaga aberta</li>
+            </ol>
+          </div>
+
+          <div class="quadros">
+            <div><b data-vagas>10</b><span>vagas na Parte 3</span></div>
+            <div><b class="vermelho" data-relogio>2d 00h</b><span>para a lista fechar, sexta às 21h</span></div>
+          </div>
+
+          <form class="passe" id="passe" name="aliados" method="POST" data-netlify="true" netlify-honeypot="campo-extra" novalidate>
+            <input type="hidden" name="form-name" value="aliados">
+            <p hidden><label for="campo-extra">Não preencha</label><input name="campo-extra" type="text" id="campo-extra"></p>
+            <h3>Garanta a sua vaga</h3>
+            <div class="campo">
+              <label for="arroba">Seu @ no Instagram</label>
+              <div class="entrada"><span aria-hidden="true">@</span><input type="text" id="arroba" name="arroba" placeholder="seuperfil" autocomplete="username" autocapitalize="none" spellcheck="false" required></div>
+            </div>
+            <div class="campo">
+              <label for="email">Seu e-mail (para a confirmação)</label>
+              <div class="entrada"><input type="email" id="email" name="email" placeholder="voce@email.com" autocomplete="email" required></div>
+            </div>
+            <label class="consentimento" for="autorizo">
+              <input type="checkbox" id="autorizo" name="autorizo" value="sim" required>
+              <span>Concordo em aparecer como aliado numa história de ficção, com o meu @ no vídeo, na legenda do post e neste site, e aceito os <a href="#termos">termos e a privacidade</a>.</span>
+            </label>
+            <p class="erro" id="erro" role="alert" hidden></p>
+            <button class="botao botao-amarelo" type="submit">Continuar para o Pix</button>
+            <div class="miudo">
+              <p><b>Aliado nº <span data-proximo>001</span></b> é o próximo número. Pagamentos depois das 21h de sexta, ou com as vagas esgotadas, entram na parte seguinte.</p>
+              <p>O passe não muda a votação: nos comentários, o voto de todo mundo vale igual.</p>
+            </div>
+          </form>
+
+          <div class="pix" id="pix" hidden>
+            <h3><span class="ico" aria-hidden="true">check</span>Falta só o Pix</h3>
+            <p>Pague <b>R$ 9,90</b> para a chave abaixo e mande o comprovante no direct do @golpecartoon, junto com <b data-seu-arroba>o seu @</b>. Quando confirmarmos, o seu nome entra na lista da Parte 3.</p>
+            <div class="chave">
+              <code id="chave-pix">chave Pix a definir</code>
+              <button class="copiar" type="button" id="copiar"><span class="ico" aria-hidden="true">content_copy</span><span>Copiar</span></button>
+            </div>
+            <a class="botao botao-vazado" href="https://ig.me/m/golpecartoon" target="_blank" rel="noopener">Mandar o comprovante no direct</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <span class="marca">Golpe Cartoon</span>
-    <nav aria-label="Perfis">
-      <a href="https://www.instagram.com/golpecartoon/">Instagram</a>
-      <a href="https://www.youtube.com/@golpecartoon">YouTube</a>
-      <a href="https://ig.me/m/golpecartoon">Falar no direct</a>
-    </nav>
-    <p>As ilustrações e as vozes da série são feitas com inteligência artificial. Personagens, lugares e fatos são ficção.</p>
-  </footer>
+  <section class="faixa faixa-alt" id="capitulos" aria-labelledby="t-capitulos">
+    <div class="faixa-int">
+      <header class="cabeca">
+        <h2 id="t-capitulos">Assista do começo</h2>
+        <p>Chegou agora? Comece pela Parte 1. O carimbo em cada capa é o que a maioria escolheu.</p>
+      </header>
+      <!-- Parte nova: copiar um item, trocar a capa, o carimbo e o link do Reel. -->
+      <ol class="capitulos">
+        <li>
+          <a class="capitulo" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" aria-label="Assistir à Parte 1, A mochila. Vocês votaram abrir, com 86% dos votos.">
+            <img src="img/parte-01.jpg" width="540" height="960" loading="lazy" alt="">
+            <span class="carimbo" aria-hidden="true">Abrir<small>86% dos votos</small></span>
+          </a>
+        </li>
+        <li>
+          <a class="capitulo" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" aria-label="Assistir à Parte 2, A dívida. Em votação: fugir ou ficar.">
+            <img src="img/parte-02.jpg" width="540" height="960" loading="lazy" alt="">
+            <span class="carimbo carimbo-amarelo" aria-hidden="true">Em votação<small>fugir ou ficar?</small></span>
+          </a>
+        </li>
+        <li>
+          <div class="capitulo capitulo-breve">
+            <b>Parte 3</b>
+            <span>em breve</span>
+            <small>a votação decide</small>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="faixa" id="perguntas" aria-labelledby="t-perguntas">
+    <div class="faixa-int">
+      <header class="cabeca">
+        <h2 id="t-perguntas">Perguntas</h2>
+      </header>
+      <div class="perguntas">
+        <details><summary>Isso é real?<span class="ico" aria-hidden="true">add</span></summary>
+          <p>Não. A parte que faltou é ficção: os personagens são inventados, e as imagens e as vozes são feitas com inteligência artificial.</p></details>
+        <details><summary>Como eu voto?<span class="ico" aria-hidden="true">add</span></summary>
+          <p>Comentando no vídeo da parte mais recente, no Instagram, no TikTok ou no YouTube. Vale uma palavra só, e a opção mais comentada, somando as três redes, vira a parte seguinte.</p></details>
+        <details><summary>Onde o meu @ vai aparecer?<span class="ico" aria-hidden="true">add</span></summary>
+          <p>Num lugar da cena escolhido pela produção, como os contatos de um celular, um muro, uma tela de TV ou os créditos do fim, e na legenda do post no Instagram.</p></details>
+        <details><summary>Até quando posso virar aliado de uma parte?<span class="ico" aria-hidden="true">add</span></summary>
+          <p>Até as 21h do dia em que a votação fecha, ou até acabarem as 10 vagas. Depois disso, o passe vale para a parte seguinte.</p></details>
+        <details><summary>Preciso comprar de novo em cada parte?<span class="ico" aria-hidden="true">add</span></summary>
+          <p>Sim. Cada passe vale para uma parte. Entrou de novo, aparece de novo, e o seu número de aliado continua o mesmo.</p></details>
+        <details><summary>Errei meu @. E agora?<span class="ico" aria-hidden="true">add</span></summary>
+          <p>Manda uma mensagem no direct do @golpecartoon antes de as vagas fecharem, que a gente corrige.</p></details>
+        <details><summary>Como funciona o pagamento?<span class="ico" aria-hidden="true">add</span></summary>
+          <p>Por Pix, para a chave que aparece depois do formulário. Depois de pagar, mande o comprovante no direct: é ele que confirma a sua vaga.</p></details>
+        <details><summary>E se eu desistir, ou a parte não sair?<span class="ico" aria-hidden="true">add</span></summary>
+          <p>Você pode desistir em até 7 dias depois do pagamento, e o valor volta inteiro pelo mesmo Pix. Se a parte com o seu @ não sair, devolvemos também.</p></details>
+      </div>
+
+      <div class="termos" id="termos">
+        <h3>Termos e privacidade</h3>
+        <details><summary>O passe de aliado<span class="ico" aria-hidden="true">add</span></summary>
+          <p>O passe custa R$ 9,90 e vale para uma parte. O seu @ aparece no episódio, num lugar escolhido pela produção, e na legenda do post no Instagram. Não usamos @ ofensivo, de marca ou de outra pessoa sem autorização: nesses casos, recusamos o pedido e devolvemos o valor. O passe não dá voto extra nem muda a história. Pelo artigo 49 do Código de Defesa do Consumidor, você pode desistir em até 7 dias depois da compra.</p></details>
+        <details><summary>Os seus dados<span class="ico" aria-hidden="true">add</span></summary>
+          <p>Pedimos só o seu @ e o seu e-mail, para colocar o seu @ na história e falar com você sobre o passe. Não vendemos nem passamos esses dados para ninguém. Para corrigir ou apagar os seus dados, como garante a Lei Geral de Proteção de Dados, mande uma mensagem no direct do @golpecartoon.</p></details>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer class="rodape">
+  <div class="faixa-int rodape-grade">
+    <div class="rodape-marca">
+      <a class="marca" href="#inicio" aria-label="Golpe Cartoon, voltar ao início"><span class="marca-tag">Golpe</span>Cartoon</a>
+      <p>Séries de suspense em desenho. As imagens e as vozes são feitas com inteligência artificial.</p>
+    </div>
+    <nav aria-labelledby="t-redes">
+      <h2 id="t-redes">Redes</h2>
+      <a href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@golpecartoon" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://ig.me/m/golpecartoon" target="_blank" rel="noopener">Falar no direct</a>
+    </nav>
+    <nav aria-labelledby="t-site">
+      <h2 id="t-site">No site</h2>
+      <a href="#votacao">Votação</a>
+      <a href="#aliado">Aliados</a>
+      <a href="#capitulos">Capítulos</a>
+      <a href="#perguntas">Perguntas</a>
+      <a href="#termos">Termos e privacidade</a>
+    </nav>
+    <p class="rodape-fim">Os personagens são inventados. A votação é de verdade.</p>
+  </div>
+</footer>
+
+<p class="recado" id="recado" role="status" hidden></p>
 
 <script>
 (function () {
-  var form = document.getElementById('passe');
-  var erro = document.getElementById('erro');
-  var pix = document.getElementById('pix');
+  // O que muda a cada parte fica aqui.
+  var CONFIG = {
+    fecha: '2026-10-30T21:00:00-03:00',  // fim das vagas e da votação
+    vagas: 10,
+    aliados: [],                          // '@perfil', na ordem em que o Pix foi confirmado
+    proximoNumero: 1,                     // o número do próximo aliado novo
+    chavePix: ''                          // chave aleatória do Pix
+  };
+
+  var $ = function (sel) { return document.querySelector(sel); };
+  var $$ = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
+  var dois = function (n) { return (n < 10 ? '0' : '') + n; };
+  var tres = function (n) { return ('00' + n).slice(-3); };
+
+  // Vagas, créditos e legenda
+  var livres = Math.max(0, CONFIG.vagas - CONFIG.aliados.length);
+  $$('[data-vagas]').forEach(function (el) { el.textContent = livres; });
+  $$('[data-proximo]').forEach(function (el) { el.textContent = tres(CONFIG.proximoNumero); });
+  if (CONFIG.aliados.length) {
+    $$('[data-lista] li').forEach(function (li, k) {
+      if (!CONFIG.aliados[k]) return;
+      li.className = 'tem';
+      li.innerHTML = '<span>' + dois(k + 1) + '</span>';
+      li.appendChild(document.createTextNode(CONFIG.aliados[k]));
+    });
+    $('[data-legenda]').textContent = CONFIG.aliados.join(', ') + '.';
+  }
+  if (CONFIG.chavePix) $('#chave-pix').textContent = CONFIG.chavePix;
+
+  // Contagem até as vagas fecharem
+  var fim = new Date(CONFIG.fecha).getTime();
+  var partes = { d: $('[data-dias]'), h: $('[data-horas]'), m: $('[data-min]'), s: $('[data-seg]') };
+  var relogio = $('[data-relogio]');
+  function contar() {
+    var falta = Math.max(0, Math.floor((fim - Date.now()) / 1000));
+    var d = Math.floor(falta / 86400), h = Math.floor(falta % 86400 / 3600), m = Math.floor(falta % 3600 / 60), s = falta % 60;
+    partes.d.textContent = dois(d); partes.h.textContent = dois(h); partes.m.textContent = dois(m); partes.s.textContent = dois(s);
+    relogio.textContent = falta === 0 ? 'Fechou' : d > 0 ? d + 'd ' + dois(h) + 'h' : dois(h) + ':' + dois(m) + ':' + dois(s);
+    if (falta === 0) {
+      $$('.vagas-prazo').forEach(function (el) { el.textContent = 'As vagas desta parte fecharam. As da próxima abrem com ela.'; });
+      return;
+    }
+    setTimeout(contar, 1000 - Date.now() % 1000);
+  }
+  contar();
+
+  // Recado curto no pé da tela
+  var recado = $('#recado'), apagar;
+  function avisar(texto) {
+    recado.textContent = texto; recado.hidden = false;
+    clearTimeout(apagar); apagar = setTimeout(function () { recado.hidden = true; }, 3200);
+  }
+  function copiar(texto) {
+    try { return navigator.clipboard.writeText(texto); } catch (e) { return Promise.reject(e); }
+  }
+
+  // Votar: copia a palavra e deixa o link abrir o Reel
+  $$('[data-palavra]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var palavra = a.getAttribute('data-palavra');
+      copiar(palavra).then(function () { avisar(palavra + ' copiado. Cola nos comentários do Reel.'); }, function () {});
+    });
+  });
+
+  // Formulário do passe
+  var form = $('#passe'), erro = $('#erro'), pix = $('#pix');
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    var arroba = form.arroba.value.trim().replace(/^@*/, '');
+    var arroba = form.arroba.value.trim().replace(/^@+/, '');
     var email = form.email.value.trim();
     var msg = '';
     if (!/^[A-Za-z0-9._]{1,30}$/.test(arroba)) msg = 'Escreva o seu @ do Instagram, só com letras, números, ponto ou sublinhado.';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) msg = 'Confira o seu e-mail.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) msg = 'Confira o seu e-mail: ele precisa ter @ e um domínio, como voce@email.com.';
     else if (!form.autorizo.checked) msg = 'Marque a autorização para usarmos o seu @ na história.';
     erro.textContent = msg;
     erro.hidden = !msg;
     if (msg) return;
-    form.arroba.value = '@' + arroba;
-    // On the published site, Netlify keeps the request; in a preview there is nowhere to send it.
-    var dados = new URLSearchParams(new FormData(form)).toString();
-    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: dados })
+    form.arroba.value = arroba;
+    $('[data-seu-arroba]').textContent = '@' + arroba;
+    // No site publicado, o Netlify guarda o pedido; na prévia, não há para onde mandar.
+    var dados = new URLSearchParams(new FormData(form));
+    dados.set('arroba', '@' + arroba);
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: dados.toString() })
       .catch(function () {})
       .then(function () { form.hidden = true; pix.hidden = false; pix.scrollIntoView({ block: 'nearest' }); });
   });
-  document.getElementById('copiar').addEventListener('click', function () {
-    var chave = document.getElementById('chave-pix');
-    var botao = this;
-    var feito = function () { botao.textContent = 'Copiada'; };
-    var selecionar = function () {
+
+  $('#copiar').addEventListener('click', function () {
+    var chave = $('#chave-pix'), rotulo = this.lastElementChild;
+    copiar(chave.textContent.trim()).then(function () { rotulo.textContent = 'Copiada'; }, function () {
       var r = document.createRange(); r.selectNodeContents(chave);
       var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-      botao.textContent = 'Selecionada: copie';
-    };
-    try { navigator.clipboard.writeText(chave.textContent.trim()).then(feito, selecionar); } catch (e) { selecionar(); }
+      rotulo.textContent = 'Selecionada';
+    });
   });
 })();
 </script>
