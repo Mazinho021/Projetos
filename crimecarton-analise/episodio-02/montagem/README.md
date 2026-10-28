@@ -2,9 +2,9 @@
 
 Esta pasta monta a Parte 2, “A dívida”, com as ferramentas de [`episodio-01/montagem/`](../../episodio-01/montagem/README.md): o renderizador, a camada de gráficos e o alinhador. O roteiro, com a voz de cada fala, está em [`../roteiro-ep02.txt`](../roteiro-ep02.txt), e o plano de cenas em [`../plano-ep02.md`](../plano-ep02.md).
 
-## Quando o Codex entregar
+## Montar e renderizar
 
-As ilustrações `cena-01-porta-aberta.png` a `cena-08-retrato-amigo.png` e as duas vozes, `narracao-ep02-narrador.wav` e `narracao-ep02-amigo.wav`, chegam em `episodio-02/`. A partir da raiz do repositório:
+O Codex entregou em `episodio-02/` as ilustrações `cena-01-porta-aberta.png` a `cena-08-retrato-amigo.png` e as duas vozes, `narracao-ep02-narrador.wav` e `narracao-ep02-amigo.wav`. O resultado são [`parte-02-a-divida.mp4`](../parte-02-a-divida.mp4) e [`parte-02-a-divida-vertical.mp4`](../parte-02-a-divida-vertical.mp4), com 2 min 04 s. Para refazer, a partir da raiz do repositório:
 
 1. Alinhar cada voz ao próprio texto, com o mesmo alinhador da Parte 1:
 
@@ -16,7 +16,7 @@ As ilustrações `cena-01-porta-aberta.png` a `cena-08-retrato-amigo.png` e as d
      --audio $A/narracao-ep02-amigo.wav --script $A/narracao-ep02-amigo.txt --output $A/montagem/alinhamento-amigo.json
    ```
 
-2. Ajustar em `montar_timeline.py` os enquadramentos dentro das ilustrações novas (`FRIEND02`, `ZINHO02`, `FRIEND03`, `EYES03`, `CALENDAR04`, `FACE05`, `HAND06`, `CAR07`) e o nome e o telefone pintados no calendário da foto da divisão (`CALENDAR_PAINT`). Enquanto valem `None`, a cena usa a ilustração inteira.
+2. Conferir em `montar_timeline.py` os enquadramentos dentro das ilustrações (`FRIEND02`, `ZINHO02`, `FRIEND03`, `EYES03`, `CALENDAR04`, `FACE05`, `PHONE06`, `HAND06`, `CAR07`), o calendário do ferro-velho pintado na folha em branco da foto da divisão (`CALENDAR_PAINT`) e a mensagem “COBRANÇA / Já tá com ele?” pintada na tela do celular do amigo, girada com ele (`PHONE_PAINT`).
 
 3. Montar o áudio e as timelines, e renderizar as duas versões:
 
@@ -40,11 +40,16 @@ As pausas, em `PAUSES`, entram depois destas palavras:
 | “Vocês decidiram: abrir.” | 0,3 s | o carimbo da opção vencedora |
 | “Você destranca a porta.” | 0,9 s | a tranca e a porta abrindo |
 | “…apaga a luz da sala.” | 0,35 s | o interruptor, com a cena escurecendo |
+| “Mas foi ele quem entregou a sua foto.” | 0,9 s | o carimbo “FOI ELE” |
 | “Toca três vezes.” | 2,75 s | o segundo e o terceiro toque; o primeiro soa sob a fala; depois alguém atende |
 | “Você desliga sem dizer nada.” | 0,5 s | o fim da ligação |
 | “…vibra em cima da mesa.” | 1,2 s | o celular vibrando duas vezes na mesa |
+| ““Já tá com ele?”” | 1,0 s | a mensagem na tela, com o alarme vermelho |
+| “Nem a você.” | 0,8 s | o silêncio dele |
 | “…em frente ao portão.” | 1,4 s | o carro parando lá fora |
-| “De farol apagado.” | 0,6 s | o respiro antes da votação |
+| “De farol apagado.” | 1,0 s | o respiro antes da votação |
+
+Cada pausa substitui o silêncio que a própria voz já tinha ali, menos o que fica antes e depois do corte (`LEAD` e `TRAIL`), então uma pausa curta quase não alonga o vídeo. A mãe do amigo ganha 0,6 s entre a fala dele e a resposta do narrador.
 
 O script grava `timeline.json`, a versão do Instagram, e `timeline-vertical.json`, a do TikTok e do Shorts. Na vertical, o painel, as etiquetas e os cartões descem para baixo da barra de busca do TikTok. Da metade de baixo, tudo fica à esquerda de x = 590, longe da coluna de botões: os elementos centram em x = 330, as frases ficam 9% menores, os cartões andam 25 px para a esquerda e a TV encolhe para 88%. O script recusa frases mais largas que cada versão permite.
 
@@ -54,7 +59,7 @@ O script grava `timeline.json`, a versão do Instagram, e `timeline-vertical.jso
 
 ### Votação do nome
 
-A Parte 2 termina com a votação livre do nome do amigo, sem opções, como pediu o criador. Na tela aparecem “QUAL É O / NOME DELE?”, “COMENTA UM NOME” e uma caixa de comentário vazia com o cursor piscando, a regra “O MAIS CURTIDO VENCE” e a caixa “PARTE 3”.
+A Parte 2 termina com a votação livre do nome do amigo, sem opções, como pediu o criador. Abaixo do rosto dele aparecem “QUAL É O / NOME DELE?”, uma caixa de comentário vazia com “Comenta o nome dele…” e o cursor piscando e a caixa “PARTE 3 · o mais curtido vira o nome dele”, cada uma na sua palavra da narração.
 
 ## Efeitos sonoros
 

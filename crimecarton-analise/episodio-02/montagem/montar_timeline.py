@@ -38,7 +38,7 @@ VOICES = {'VINHETA': (PART1 / 'narracao-original.wav', TOOLS / 'alinhamento-narr
           'NARRADOR': (EPISODE / 'narracao-ep02-narrador.wav', HERE / 'alinhamento-narrador.json'),
           'AMIGO': (EPISODE / 'narracao-ep02-amigo.wav', HERE / 'alinhamento-amigo.json')}
 AUDIO = EPISODE / 'narracao-ep02.wav'
-TAIL = 1.5
+TAIL = 2.0
 PART, VOTE = 2, [('ABRIR', 86), ('NÃO ABRIR', 14)]   # Part 1's vote: 6 of 7 comments said ABRIR
 HANDLE = '@golpecartoon'
 # The friend talks in the room, as loud as the narrator.
@@ -111,20 +111,24 @@ def V(i):
 
 
 # Silence the edit opens after a word, in seconds, for the sounds of the story. Phrases
-# point at their first word; the offset picks the word the pause follows.
+# point at their first word; the offset picks the word the pause follows. The pause
+# replaces the voice's own silence there, except for LEAD and TRAIL around the cut.
 PAUSES = {
     N('decidiram: abrir.', 1): .3,      # the vote's stamp lands
     N('a porta.', 1): .9,               # the lock turns and the door opens
     N('da sala.', 1): .35,              # the light goes out
+    N('sua foto.', 1): .9,              # the stamp "FOI ELE" sinks in
     N('três vezes.', 1): 2.75,          # the second and third rings, then someone answers
     N('dizer nada.', 1): .5,            # the call ends
     N('cima da mesa.', 2): 1.2,         # the phone buzzes twice on the table
+    N('"Já tá com ele?"', 3): 1.0,       # the message, under the red alarm
+    N('Nem a você.', 2): .8,
     N('ao portão.', 1): 1.4,            # the car stops outside
-    N('farol apagado.', 1): .6,
+    N('farol apagado.', 1): 1.0,
 }
 # Silences at changes of voice other than SWITCH: a breath after the opening, and the
 # quick exchange about the debt.
-SWITCHES = {V(16): .35, A('Oitenta mil.', 1): .12, N('Para quem?', 1): .12}
+SWITCHES = {V(16): .35, A('Oitenta mil.', 1): .12, N('Para quem?', 1): .12, A('minha mãe mora.', 2): .6}
 
 
 def estimated_words(voice):
@@ -223,7 +227,8 @@ def join(words, pieces, output, estimate=False):
         gains = {'NARRADOR': 0, 'VINHETA': ref - loudness(files['VINHETA']),
                  'AMIGO': ref - loudness(files['AMIGO']) + FRIEND_GAIN}
     order = list(VOICES)
-    rate = 48000
+    # The voices' own rate; the renderer resamples the mix to 48 kHz.
+    rate = int(probe(files['NARRADOR'], 'stream=sample_rate'))
     fmt = f'aresample={rate},aformat=sample_fmts=flt:sample_rates={rate}:channel_layouts=mono'
     graph, labels = [], []
     for k, p in enumerate(pieces):
@@ -334,17 +339,30 @@ def abertura(ed, part, vote, pointer, profile, decided, winner_word, story):
     return scenes, graphics, effects
 
 
-# Framings inside the new illustrations, left, top, right, bottom as fractions. They are
-# provisional until the art arrives.
-FRIEND02 = None
-ZINHO02 = None
-FRIEND03 = None
-EYES03 = None
-CALENDAR04 = None
-FACE05 = None
-HAND06 = None
-CAR07 = None
-CALENDAR_PAINT = None
+# Framings inside the new illustrations, left, top, right, bottom as fractions. Equal
+# width and height keep the 9:16 shape.
+FRIEND02 = [0.40, 0.08, 1.0, 0.68]       # the friend at the door, by the light switch
+ZINHO02 = [0.0, 0.12, 0.44, 0.56]        # Zinho in the middle of the room, arms crossed
+FRIEND03 = [0.38, 0.10, 0.98, 0.70]      # the friend at the table, telling his version
+EYES03 = [0.50, 0.16, 0.86, 0.52]        # his face, close
+CALENDAR04 = [0.265, 0.0, 0.665, 0.40]   # the calendar on the wall of the hidden photo
+FACE05 = [0.06, 0.12, 0.70, 0.76]        # Zinho on the phone
+PHONE06 = [0.185, 0.234, 0.805, 0.854]   # the friend's phone on the table
+HAND06 = [0.40, 0.0, 1.0, 0.60]          # his hand, stopped above it
+CAR07 = [0.30, 0.20, 0.88, 0.78]         # the car at the gate
+# The junkyard's calendar, printed on the blank sheet of scene 4 (x .31–.62, y .11–.28 of
+# the illustration): name, a partly hidden number, the month and its days.
+CALENDAR_PAINT = [
+    {'text': 'FERRO-VELHO\nSÃO JORGE', 'box': [.335, .128, .593, .178], 'color': [150, 38, 28], 'opacity': .88, 'blur': .3},
+    {'text': '(••) 3•••-••47', 'box': [.36, .183, .57, .200], 'color': [55, 42, 34], 'weight': 'Bold', 'blur': .3},
+    {'text': 'OUTUBRO', 'box': [.40, .205, .53, .216], 'color': [120, 50, 40], 'weight': 'Bold', 'blur': .3},
+    {'text': '1  2  3  4  5  6  7\n8  9  10  11  12  13  14\n15  16  17  18  19  20  21\n22  23  24  25  26  27  28',
+     'box': [.335, .220, .593, .268], 'color': [95, 82, 70], 'weight': 'Medium', 'opacity': .75, 'blur': .3},
+]
+# The message on the friend's phone, a dark banner near the top of the lit screen of
+# scene 6, turned with the phone (about 18 degrees clockwise).
+PHONE_PAINT = [{'text': 'COBRANÇA\nJá tá com ele?', 'box': [.4166, .4510, .6504, .5048], 'color': [246, 240, 226],
+                'opacity': 1, 'weight': 'Bold', 'fill': [32, 34, 36, 242], 'radius': 16, 'pad': 10, 'angle': -17.8}]
 
 
 def build(ed):
@@ -392,17 +410,18 @@ def build(ed):
                                                    number='(••) 3•••-••47', card_top=top, card_dx=L['card_dx'])),
         ('exists', cut(N('O lugar existe.')), dict(kind='art', asset='cena-05-ligacao.png', crop=FACE05, zoom=.05)),
         ('buzz', cut(N('Então o celular')), dict(kind='art', asset='cena-06-celular-mesa.png', zoom=.05)),
-        ('message', cut(N('Uma mensagem de')), dict(kind='notification', asset='cena-06-celular-mesa.png',
-                                                    brightness=.6, sender='Cobrança', message='Já tá com ele?',
-                                                    card_top=top, card_dx=L['card_dx'])),
-        ('silent', cut(N('Ele não responde')), dict(kind='art', asset='cena-06-celular-mesa.png', crop=HAND06, zoom=.06)),
+        # The message lights up on his phone's screen; it stays there, unanswered.
+        ('message', cut(N('Uma mensagem de')), dict(kind='art', asset='cena-06-celular-mesa.png', crop=PHONE06, zoom=.06,
+                                                    paint=PHONE_PAINT)),
+        ('silent', cut(N('Ele não responde')), dict(kind='art', asset='cena-06-celular-mesa.png', crop=HAND06, zoom=.06,
+                                                    paint=PHONE_PAINT)),
         ('car', cut(N('Lá fora, um')), dict(kind='art', asset='cena-07-carro.png', zoom=.05)),
         ('lights-off', cut(N('De farol apagado.')), dict(kind='art', asset='cena-07-carro.png', crop=CAR07, zoom=.08,
                                                         brightness=.8)),
         ('sold', cut(N('Ele vendeu o')), dict(kind='art', asset='cena-08-retrato-amigo.png', zoom=.05)),
-        # The request to comment: the friend's face, darker, under the comment box.
+        # The request to comment: the friend's face, darker, above the comment box.
         ('name', cut(N('Comenta um nome.')), dict(kind='art', asset='cena-08-retrato-amigo.png', zoom=.03,
-                                                  direction='out', brightness=.45)),
+                                                  direction='out', brightness=.5)),
     ]
     AT = {name: t for name, t, _ in plan}
     scenes = [{'start': t, 'end': plan[k+1][1] if k + 1 < len(plan) else END, **fields}
@@ -470,17 +489,14 @@ def build(ed):
                                              line('O SEU NOME.', s(N('o seu nome.')), 'yellow'),
                                              line('AGORA VOCÊ', s(N('Agora você escolhe')), size=58),
                                              line('ESCOLHE O DELE.', s(N('escolhe o dele.')), 'yellow', size=58)], 72, x),
-        # The free vote for the friend's name: no options, the comment box and the rule.
-        phrase(AT['name'], END + .5, 400, [line('QUAL É O', s(N('Comenta um nome.'))),
-                                           line('NOME DELE?', s(N('Comenta um nome.')) + .15, 'yellow')], 78, x),
-        phrase(s(N('Comenta um nome.')) - .05, END + .5, 604, [label('COMENTA UM NOME', s(N('Comenta um nome.')),
-                                                                     size=28, color='yellow')], 28, x),
-        {'type': 'input', 'start': round(s(N('um nome.')), 2), 'end': END + .5, 'y': 700, 'x': x,
-         'placeholder': 'Escreve o nome dele…', 'width': L['input']},
-        phrase(s(N('O mais curtido')) - .05, END + .5, 812, [label('O MAIS CURTIDO VENCE', s(N('O mais curtido')),
-                                                                   size=24)], 24, x),
-        {'type': 'box', 'start': round(s(N('parte três.')), 2), 'end': END + .5, 'y': 960, 'x': x,
-         'title': f'PARTE {PART + 1}', 'sub': 'o nome vencedor entra na história'},
+        # The free vote for the friend's name, below his face: no options, only the empty
+        # comment box, and the rule in the box of the next part.
+        phrase(AT['name'], END + .5, 660, [line('QUAL É O', s(N('Comenta um nome.'))),
+                                           line('NOME DELE?', s(N('Comenta um nome.')) + .15, 'yellow')], 70, x),
+        {'type': 'input', 'start': round(s(N('um nome.')), 2), 'end': END + .5, 'y': 820, 'x': x,
+         'placeholder': 'Comenta o nome dele…', 'width': L['input']},
+        {'type': 'box', 'start': round(s(N('O mais curtido')), 2), 'end': END + .5, 'y': 950, 'x': x,
+         'title': f'PARTE {PART + 1}', 'sub': 'o mais curtido vira o nome dele'},
     ]
     effects = oe + [
         *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('door', 'question', 'shows', 'dial', 'buzz', 'car', 'name')],
@@ -505,7 +521,7 @@ def build(ed):
         sfx('carro.wav', e(N('ao portão.', 1)) - 1.6, -6),
         sfx('impacto.wav', AT['lights-off'] - .02, -5),
         sfx('impacto-suave.wav', s(N('Ele vendeu o')) - .04, -8),
-        *[sfx('pop.wav', t, -10) for t in (s(N('Comenta um nome.')), s(N('um nome.')), s(N('parte três.')))],
+        *[sfx('pop.wav', t, -10) for t in (s(N('Comenta um nome.')), s(N('um nome.')), s(N('O mais curtido')))],
     ]
     # The vertical version's narrower column takes the phrases a little smaller.
     k = L['width']/INSTAGRAM['width']

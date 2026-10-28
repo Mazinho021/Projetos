@@ -1,0 +1,1563 @@
+{
+  "timing_status": "aligned_to_voice",
+  "style": "guia-de-estilo-referencia.md",
+  "script": "roteiro-ep02.txt",
+  "alignment": [
+    "episodio-01/montagem/alinhamento-narracao.json",
+    "episodio-02/montagem/alinhamento-narrador.json",
+    "episodio-02/montagem/alinhamento-amigo.json"
+  ],
+  "audio": "narracao-ep02.wav",
+  "tail": 2.0,
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4.74,
+      "kind": "art",
+      "asset": "../episodio-01/cena-01-base.png",
+      "zoom": 0.06
+    },
+    {
+      "start": 4.74,
+      "end": 7.74,
+      "kind": "black"
+    },
+    {
+      "start": 7.74,
+      "end": 10.78,
+      "kind": "art",
+      "asset": "../episodio-01/cena-01-base.png",
+      "brightness": 0.5,
+      "zoom": 0.05,
+      "direction": "out"
+    },
+    {
+      "start": 10.78,
+      "end": 13.34,
+      "kind": "black"
+    },
+    {
+      "start": 13.34,
+      "end": 15.53,
+      "kind": "art",
+      "asset": "cena-01-porta-aberta.png",
+      "zoom": 0.05
+    },
+    {
+      "start": 15.53,
+      "end": 19.03,
+      "kind": "art",
+      "asset": "cena-02-luz-apagada.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 19.03,
+      "end": 24.27,
+      "kind": "art",
+      "asset": "cena-02-luz-apagada.png",
+      "zoom": 0.03,
+      "brightness": 0.55,
+      "crop": [
+        0.4,
+        0.08,
+        1.0,
+        0.68
+      ]
+    },
+    {
+      "start": 24.27,
+      "end": 28.86,
+      "kind": "art",
+      "asset": "cena-03-versao.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 28.86,
+      "end": 30.5,
+      "kind": "art",
+      "asset": "cena-03-versao.png",
+      "crop": [
+        0.38,
+        0.1,
+        0.98,
+        0.7
+      ],
+      "zoom": 0.08
+    },
+    {
+      "start": 30.5,
+      "end": 31.26,
+      "kind": "art",
+      "asset": "cena-02-luz-apagada.png",
+      "crop": [
+        0.0,
+        0.12,
+        0.44,
+        0.56
+      ],
+      "zoom": 0.05,
+      "brightness": 0.6
+    },
+    {
+      "start": 31.26,
+      "end": 33.7,
+      "kind": "art",
+      "asset": "cena-03-versao.png",
+      "crop": [
+        0.38,
+        0.1,
+        0.98,
+        0.7
+      ],
+      "zoom": 0.05
+    },
+    {
+      "start": 33.7,
+      "end": 36.63,
+      "kind": "art",
+      "asset": "cena-03-versao.png",
+      "crop": [
+        0.38,
+        0.1,
+        0.98,
+        0.7
+      ],
+      "zoom": 0.04
+    },
+    {
+      "start": 36.63,
+      "end": 43.68,
+      "kind": "art",
+      "asset": "cena-03-versao.png",
+      "zoom": 0.05,
+      "direction": "out"
+    },
+    {
+      "start": 43.68,
+      "end": 46.67,
+      "kind": "art",
+      "asset": "cena-02-luz-apagada.png",
+      "crop": [
+        0.0,
+        0.12,
+        0.44,
+        0.56
+      ],
+      "zoom": 0.06,
+      "brightness": 0.6
+    },
+    {
+      "start": 46.67,
+      "end": 49.34,
+      "kind": "art",
+      "asset": "cena-03-versao.png",
+      "crop": [
+        0.38,
+        0.1,
+        0.98,
+        0.7
+      ],
+      "zoom": 0.06
+    },
+    {
+      "start": 49.34,
+      "end": 52.07,
+      "kind": "tv",
+      "asset": "cena-03-versao.png",
+      "card_top": 300
+    },
+    {
+      "start": 52.07,
+      "end": 56.69,
+      "kind": "art",
+      "asset": "cena-03-versao.png",
+      "crop": [
+        0.5,
+        0.16,
+        0.86,
+        0.52
+      ],
+      "zoom": 0.08
+    },
+    {
+      "start": 56.69,
+      "end": 61.34,
+      "kind": "art",
+      "asset": "cena-02-luz-apagada.png",
+      "crop": [
+        0.0,
+        0.12,
+        0.44,
+        0.56
+      ],
+      "zoom": 0.04,
+      "brightness": 0.6
+    },
+    {
+      "start": 61.34,
+      "end": 64.8,
+      "kind": "art",
+      "asset": "cena-03-versao.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 64.8,
+      "end": 69.45,
+      "kind": "photo",
+      "asset": "cena-03-versao.png",
+      "photo": "cena-04-foto-divisao.png",
+      "paint": [
+        {
+          "text": "FERRO-VELHO\nSÃO JORGE",
+          "box": [
+            0.335,
+            0.128,
+            0.593,
+            0.178
+          ],
+          "color": [
+            150,
+            38,
+            28
+          ],
+          "opacity": 0.88,
+          "blur": 0.3
+        },
+        {
+          "text": "(••) 3•••-••47",
+          "box": [
+            0.36,
+            0.183,
+            0.57,
+            0.2
+          ],
+          "color": [
+            55,
+            42,
+            34
+          ],
+          "weight": "Bold",
+          "blur": 0.3
+        },
+        {
+          "text": "OUTUBRO",
+          "box": [
+            0.4,
+            0.205,
+            0.53,
+            0.216
+          ],
+          "color": [
+            120,
+            50,
+            40
+          ],
+          "weight": "Bold",
+          "blur": 0.3
+        },
+        {
+          "text": "1  2  3  4  5  6  7\n8  9  10  11  12  13  14\n15  16  17  18  19  20  21\n22  23  24  25  26  27  28",
+          "box": [
+            0.335,
+            0.22,
+            0.593,
+            0.268
+          ],
+          "color": [
+            95,
+            82,
+            70
+          ],
+          "weight": "Medium",
+          "opacity": 0.75,
+          "blur": 0.3
+        }
+      ],
+      "card_top": 300
+    },
+    {
+      "start": 69.45,
+      "end": 72.71,
+      "kind": "art",
+      "asset": "cena-04-foto-divisao.png",
+      "zoom": 0.06,
+      "paint": [
+        {
+          "text": "FERRO-VELHO\nSÃO JORGE",
+          "box": [
+            0.335,
+            0.128,
+            0.593,
+            0.178
+          ],
+          "color": [
+            150,
+            38,
+            28
+          ],
+          "opacity": 0.88,
+          "blur": 0.3
+        },
+        {
+          "text": "(••) 3•••-••47",
+          "box": [
+            0.36,
+            0.183,
+            0.57,
+            0.2
+          ],
+          "color": [
+            55,
+            42,
+            34
+          ],
+          "weight": "Bold",
+          "blur": 0.3
+        },
+        {
+          "text": "OUTUBRO",
+          "box": [
+            0.4,
+            0.205,
+            0.53,
+            0.216
+          ],
+          "color": [
+            120,
+            50,
+            40
+          ],
+          "weight": "Bold",
+          "blur": 0.3
+        },
+        {
+          "text": "1  2  3  4  5  6  7\n8  9  10  11  12  13  14\n15  16  17  18  19  20  21\n22  23  24  25  26  27  28",
+          "box": [
+            0.335,
+            0.22,
+            0.593,
+            0.268
+          ],
+          "color": [
+            95,
+            82,
+            70
+          ],
+          "weight": "Medium",
+          "opacity": 0.75,
+          "blur": 0.3
+        }
+      ]
+    },
+    {
+      "start": 72.71,
+      "end": 78.78,
+      "kind": "art",
+      "asset": "cena-04-foto-divisao.png",
+      "crop": [
+        0.265,
+        0.0,
+        0.665,
+        0.4
+      ],
+      "zoom": 0.12,
+      "paint": [
+        {
+          "text": "FERRO-VELHO\nSÃO JORGE",
+          "box": [
+            0.335,
+            0.128,
+            0.593,
+            0.178
+          ],
+          "color": [
+            150,
+            38,
+            28
+          ],
+          "opacity": 0.88,
+          "blur": 0.3
+        },
+        {
+          "text": "(••) 3•••-••47",
+          "box": [
+            0.36,
+            0.183,
+            0.57,
+            0.2
+          ],
+          "color": [
+            55,
+            42,
+            34
+          ],
+          "weight": "Bold",
+          "blur": 0.3
+        },
+        {
+          "text": "OUTUBRO",
+          "box": [
+            0.4,
+            0.205,
+            0.53,
+            0.216
+          ],
+          "color": [
+            120,
+            50,
+            40
+          ],
+          "weight": "Bold",
+          "blur": 0.3
+        },
+        {
+          "text": "1  2  3  4  5  6  7\n8  9  10  11  12  13  14\n15  16  17  18  19  20  21\n22  23  24  25  26  27  28",
+          "box": [
+            0.335,
+            0.22,
+            0.593,
+            0.268
+          ],
+          "color": [
+            95,
+            82,
+            70
+          ],
+          "weight": "Medium",
+          "opacity": 0.75,
+          "blur": 0.3
+        }
+      ]
+    },
+    {
+      "start": 78.78,
+      "end": 80.94,
+      "kind": "art",
+      "asset": "cena-05-ligacao.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 80.94,
+      "end": 84.52,
+      "kind": "call",
+      "asset": "cena-05-ligacao.png",
+      "status": "calling",
+      "number": "(••) 3•••-••47",
+      "card_top": 300
+    },
+    {
+      "start": 84.52,
+      "end": 88.92,
+      "kind": "call",
+      "asset": "cena-05-ligacao.png",
+      "status": "answered",
+      "clock": "00:01",
+      "number": "(••) 3•••-••47",
+      "card_top": 300
+    },
+    {
+      "start": 88.92,
+      "end": 91.0,
+      "kind": "call",
+      "asset": "cena-05-ligacao.png",
+      "status": "ended",
+      "number": "(••) 3•••-••47",
+      "card_top": 300
+    },
+    {
+      "start": 91.0,
+      "end": 94.45,
+      "kind": "art",
+      "asset": "cena-05-ligacao.png",
+      "crop": [
+        0.06,
+        0.12,
+        0.7,
+        0.76
+      ],
+      "zoom": 0.05
+    },
+    {
+      "start": 94.45,
+      "end": 98.01,
+      "kind": "art",
+      "asset": "cena-06-celular-mesa.png",
+      "zoom": 0.05
+    },
+    {
+      "start": 98.01,
+      "end": 104.38,
+      "kind": "art",
+      "asset": "cena-06-celular-mesa.png",
+      "crop": [
+        0.185,
+        0.234,
+        0.805,
+        0.854
+      ],
+      "zoom": 0.06,
+      "paint": [
+        {
+          "text": "COBRANÇA\nJá tá com ele?",
+          "box": [
+            0.4166,
+            0.451,
+            0.6504,
+            0.5048
+          ],
+          "color": [
+            246,
+            240,
+            226
+          ],
+          "opacity": 1,
+          "weight": "Bold",
+          "fill": [
+            32,
+            34,
+            36,
+            242
+          ],
+          "radius": 16,
+          "pad": 10,
+          "angle": -17.8
+        }
+      ]
+    },
+    {
+      "start": 104.38,
+      "end": 107.9,
+      "kind": "art",
+      "asset": "cena-06-celular-mesa.png",
+      "crop": [
+        0.4,
+        0.0,
+        1.0,
+        0.6
+      ],
+      "zoom": 0.06,
+      "paint": [
+        {
+          "text": "COBRANÇA\nJá tá com ele?",
+          "box": [
+            0.4166,
+            0.451,
+            0.6504,
+            0.5048
+          ],
+          "color": [
+            246,
+            240,
+            226
+          ],
+          "opacity": 1,
+          "weight": "Bold",
+          "fill": [
+            32,
+            34,
+            36,
+            242
+          ],
+          "radius": 16,
+          "pad": 10,
+          "angle": -17.8
+        }
+      ]
+    },
+    {
+      "start": 107.9,
+      "end": 111.8,
+      "kind": "art",
+      "asset": "cena-07-carro.png",
+      "zoom": 0.05
+    },
+    {
+      "start": 111.8,
+      "end": 114.02,
+      "kind": "art",
+      "asset": "cena-07-carro.png",
+      "crop": [
+        0.3,
+        0.2,
+        0.88,
+        0.78
+      ],
+      "zoom": 0.08,
+      "brightness": 0.8
+    },
+    {
+      "start": 114.02,
+      "end": 117.76,
+      "kind": "art",
+      "asset": "cena-08-retrato-amigo.png",
+      "zoom": 0.05
+    },
+    {
+      "start": 117.76,
+      "end": 123.9,
+      "kind": "art",
+      "asset": "cena-08-retrato-amigo.png",
+      "zoom": 0.03,
+      "direction": "out",
+      "brightness": 0.5
+    }
+  ],
+  "graphics": [
+    {
+      "type": "tag",
+      "start": 0.15,
+      "end": 13.34,
+      "text": "PARTE 2",
+      "y": 230,
+      "size": 32
+    },
+    {
+      "type": "phrase",
+      "start": 0.2,
+      "end": 2.26,
+      "y": 700,
+      "size": 78,
+      "lines": [
+        {
+          "text": "O ASSALTO",
+          "at": 0.12,
+          "color": "white"
+        },
+        {
+          "text": "DEU CERTO.",
+          "at": 0.94,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 2.26,
+      "end": 4.74,
+      "y": 700,
+      "size": 78,
+      "lines": [
+        {
+          "style": "label",
+          "text": "SEU PARCEIRO FICOU COM",
+          "at": 2.33
+        },
+        {
+          "text": "R$ 10.000.000",
+          "at": 2.41,
+          "color": "green",
+          "size": 74,
+          "count": {
+            "from": 0,
+            "to": 10000000,
+            "start": 2.722,
+            "end": 4.264
+          }
+        },
+        {
+          "style": "label",
+          "text": "EM DINHEIRO VIVO",
+          "at": 3.74
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 4.79,
+      "end": 7.74,
+      "y": 560,
+      "size": 64,
+      "lines": [
+        {
+          "text": "VOCÊ FICOU COM",
+          "at": 4.86,
+          "color": "white"
+        },
+        {
+          "text": "O ROSTO",
+          "at": 6.48,
+          "color": "yellow"
+        },
+        {
+          "text": "NO JORNAL.",
+          "at": 6.76,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "stars",
+      "start": 4.79,
+      "end": 7.74,
+      "y": 790,
+      "x": 360,
+      "at": 6.482,
+      "step": 0.12
+    },
+    {
+      "type": "phrase",
+      "start": 7.79,
+      "end": 10.78,
+      "y": 590,
+      "size": 72,
+      "lines": [
+        {
+          "text": "CHEGOU AGORA?",
+          "at": 7.86,
+          "color": "yellow",
+          "size": 64
+        },
+        {
+          "text": "A PARTE 1 TÁ",
+          "at": 9.1,
+          "color": "white",
+          "size": 52
+        },
+        {
+          "text": "NO PERFIL",
+          "at": 9.55,
+          "color": "white",
+          "size": 52
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "pointer",
+      "start": 9.55,
+      "end": 10.78,
+      "y": 800,
+      "x": 360,
+      "text": "@golpecartoon"
+    },
+    {
+      "type": "bars",
+      "start": 10.83,
+      "end": 13.34,
+      "y": 500,
+      "x": 360,
+      "width": 540,
+      "title": "PARTE 1 · VOCÊS VOTARAM",
+      "title_at": 10.9,
+      "items": [
+        {
+          "label": "ABRIR",
+          "pct": 86,
+          "at": 11.0,
+          "winner": true
+        },
+        {
+          "label": "NÃO ABRIR",
+          "pct": 14,
+          "at": 11.15,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "type": "stamp",
+      "start": 12.46,
+      "end": 13.34,
+      "text": "ABRIR",
+      "y": 860,
+      "x": 360,
+      "angle": -7,
+      "color": "yellow",
+      "filled": true
+    },
+    {
+      "type": "hud",
+      "start": 13.34,
+      "end": 117.76,
+      "label": "A SUA PARTE",
+      "dy": 0,
+      "values": [
+        {
+          "at": 13.34,
+          "text": "R$ 0",
+          "color": "red"
+        }
+      ],
+      "stars": [
+        {
+          "at": 13.34,
+          "count": 5,
+          "step": 0
+        }
+      ]
+    },
+    {
+      "type": "tag",
+      "start": 24.27,
+      "end": 61.34,
+      "text": "PISTA 1 · A VERSÃO DELE",
+      "y": 230
+    },
+    {
+      "type": "tag",
+      "start": 61.34,
+      "end": 94.45,
+      "text": "PISTA 2 · A FOTO DA DIVISÃO",
+      "y": 230
+    },
+    {
+      "type": "tag",
+      "start": 94.45,
+      "end": 107.9,
+      "text": "PISTA 3 · A MENSAGEM",
+      "y": 230
+    },
+    {
+      "type": "vignette",
+      "start": 98.01,
+      "end": 107.9,
+      "color": "alert",
+      "strength": 0.8
+    },
+    {
+      "type": "vignette",
+      "start": 111.8,
+      "end": 117.76,
+      "color": "alert",
+      "strength": 0.9
+    },
+    {
+      "type": "phrase",
+      "start": 20.2,
+      "end": 24.27,
+      "y": 900,
+      "size": 60,
+      "lines": [
+        {
+          "text": "“ELES TÃO",
+          "at": 20.25,
+          "color": "white"
+        },
+        {
+          "text": "TE PROCURANDO.”",
+          "at": 20.91,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 27.59,
+      "end": 28.86,
+      "y": 900,
+      "size": 70,
+      "lines": [
+        {
+          "text": "QUANTO",
+          "at": 27.64,
+          "color": "white"
+        },
+        {
+          "text": "ELE DEVIA?",
+          "at": 27.91,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 28.86,
+      "end": 30.5,
+      "y": 880,
+      "size": 96,
+      "lines": [
+        {
+          "style": "label",
+          "text": "A DÍVIDA",
+          "at": 28.98
+        },
+        {
+          "text": "R$ 80.000",
+          "at": 29.03,
+          "color": "red",
+          "size": 96,
+          "shake": true,
+          "count": {
+            "from": 0,
+            "to": 80000,
+            "start": 28.982,
+            "end": 30.174
+          }
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 31.33,
+      "end": 33.7,
+      "y": 900,
+      "size": 58,
+      "lines": [
+        {
+          "text": "PRA QUEM BANCOU",
+          "at": 31.38,
+          "color": "white"
+        },
+        {
+          "text": "O ASSALTO.",
+          "at": 32.5,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "list",
+      "start": 36.7,
+      "end": 46.67,
+      "y": 560,
+      "items": [
+        {
+          "at": 36.75,
+          "left": "A DÍVIDA",
+          "right": "R$ 80 MIL"
+        },
+        {
+          "at": 40.61,
+          "left": "A SAÍDA",
+          "right": "ALGUÉM DE FORA"
+        },
+        {
+          "at": 45.73,
+          "left": "A CULPA",
+          "right": "VOCÊ"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 46.74,
+      "end": 49.34,
+      "y": 900,
+      "size": 60,
+      "lines": [
+        {
+          "text": "“NINGUÉM IA VER",
+          "at": 47.64,
+          "color": "white"
+        },
+        {
+          "text": "O SEU ROSTO.”",
+          "at": 48.02,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "stamp",
+      "start": 50.18,
+      "end": 52.07,
+      "text": "FOI ELE",
+      "y": 680,
+      "x": 470,
+      "angle": -8
+    },
+    {
+      "type": "phrase",
+      "start": 54.1,
+      "end": 56.69,
+      "y": 900,
+      "size": 52,
+      "lines": [
+        {
+          "text": "“ELES SABIAM ONDE",
+          "at": 54.15,
+          "color": "white"
+        },
+        {
+          "text": "A MINHA MÃE MORA.”",
+          "at": 54.9,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 63.01,
+      "end": 64.8,
+      "y": 900,
+      "size": 66,
+      "lines": [
+        {
+          "text": "PALAVRA,",
+          "at": 63.06,
+          "color": "white"
+        },
+        {
+          "text": "ELE JÁ GASTOU.",
+          "at": 63.54,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 68.11,
+      "end": 69.45,
+      "y": 890,
+      "size": 56,
+      "lines": [
+        {
+          "text": "A NOITE",
+          "at": 68.16,
+          "color": "white"
+        },
+        {
+          "text": "DA DIVISÃO.",
+          "at": 68.44,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 87.3,
+      "end": 88.92,
+      "y": 765,
+      "size": 50,
+      "lines": [
+        {
+          "text": "“FERRO-VELHO",
+          "at": 87.35,
+          "color": "white"
+        },
+        {
+          "text": "SÃO JORGE.”",
+          "at": 87.89,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 91.0,
+      "end": 93.49,
+      "y": 900,
+      "size": 76,
+      "lines": [
+        {
+          "text": "O LUGAR",
+          "at": 91.12,
+          "color": "white"
+        },
+        {
+          "text": "EXISTE.",
+          "at": 91.47,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "stamp",
+      "start": 93.51,
+      "end": 94.45,
+      "text": "VERDADE",
+      "y": 900,
+      "x": 360,
+      "angle": -6,
+      "color": "green"
+    },
+    {
+      "type": "phrase",
+      "start": 106.36,
+      "end": 107.9,
+      "y": 900,
+      "size": 72,
+      "lines": [
+        {
+          "text": "NEM A VOCÊ.",
+          "at": 106.41,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 111.8,
+      "end": 114.02,
+      "y": 900,
+      "size": 80,
+      "lines": [
+        {
+          "text": "DE FAROL",
+          "at": 111.92,
+          "color": "white"
+        },
+        {
+          "text": "APAGADO.",
+          "at": 112.39,
+          "color": "red",
+          "shake": true
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 114.02,
+      "end": 117.76,
+      "y": 820,
+      "size": 72,
+      "lines": [
+        {
+          "text": "ELE VENDEU",
+          "at": 114.14,
+          "color": "white"
+        },
+        {
+          "text": "O SEU NOME.",
+          "at": 114.7,
+          "color": "yellow"
+        },
+        {
+          "text": "AGORA VOCÊ",
+          "at": 115.82,
+          "color": "white",
+          "size": 58
+        },
+        {
+          "text": "ESCOLHE O DELE.",
+          "at": 116.6,
+          "color": "yellow",
+          "size": 58
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "phrase",
+      "start": 117.76,
+      "end": 124.4,
+      "y": 660,
+      "size": 70,
+      "lines": [
+        {
+          "text": "QUAL É O",
+          "at": 117.88,
+          "color": "white"
+        },
+        {
+          "text": "NOME DELE?",
+          "at": 118.03,
+          "color": "yellow"
+        }
+      ],
+      "x": 360
+    },
+    {
+      "type": "input",
+      "start": 118.26,
+      "end": 124.4,
+      "y": 820,
+      "x": 360,
+      "placeholder": "Comenta o nome dele…",
+      "width": 600
+    },
+    {
+      "type": "box",
+      "start": 119.21,
+      "end": 124.4,
+      "y": 950,
+      "x": 360,
+      "title": "PARTE 3",
+      "sub": "o mais curtido vira o nome dele"
+    }
+  ],
+  "sfx": [
+    {
+      "sound": "whoosh.wav",
+      "at": 4.38,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 7.38,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 10.42,
+      "gain": -2
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.76,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.799,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.841,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.886,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.933,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.984,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.04,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.101,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.17,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.248,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.341,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.458,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.624,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 4.264,
+      "gain": -18
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 6.852,
+      "gain": -5
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.482,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.602,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.722,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.842,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.962,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 9.554,
+      "gain": -10
+    },
+    {
+      "sound": "tique.wav",
+      "at": 11.031,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 11.069,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 11.112,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 11.161,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 11.219,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 11.292,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 11.396,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 11.796,
+      "gain": -20
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 12.443,
+      "gain": -5
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 12.98,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 23.91,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 64.44,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 78.42,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 94.09,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 107.54,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 117.4,
+      "gain": -2
+    },
+    {
+      "sound": "tranca.wav",
+      "at": 14.458,
+      "gain": -6
+    },
+    {
+      "sound": "porta-abre.wav",
+      "at": 14.708,
+      "gain": -8
+    },
+    {
+      "sound": "passos.wav",
+      "at": 15.748,
+      "gain": -12
+    },
+    {
+      "sound": "porta-fecha.wav",
+      "at": 17.313,
+      "gain": -10
+    },
+    {
+      "sound": "tranca.wav",
+      "at": 17.983,
+      "gain": -8
+    },
+    {
+      "sound": "interruptor.wav",
+      "at": 19.003,
+      "gain": -8
+    },
+    {
+      "sound": "tique.wav",
+      "at": 29.034,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 29.091,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 29.155,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 29.228,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 29.314,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 29.423,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 29.578,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 30.174,
+      "gain": -18
+    },
+    {
+      "sound": "impacto-suave.wav",
+      "at": 30.124,
+      "gain": -8
+    },
+    {
+      "sound": "pop.wav",
+      "at": 36.75,
+      "gain": -10
+    },
+    {
+      "sound": "pop.wav",
+      "at": 40.61,
+      "gain": -10
+    },
+    {
+      "sound": "pop.wav",
+      "at": 45.73,
+      "gain": -10
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 50.16,
+      "gain": -5
+    },
+    {
+      "sound": "impacto-suave.wav",
+      "at": 64.917,
+      "gain": -12
+    },
+    {
+      "sound": "chamada-longa.wav",
+      "at": 80.409,
+      "gain": -14
+    },
+    {
+      "sound": "chamada-longa.wav",
+      "at": 82.217,
+      "gain": -14
+    },
+    {
+      "sound": "chamada-longa.wav",
+      "at": 83.467,
+      "gain": -14
+    },
+    {
+      "sound": "atende.wav",
+      "at": 84.467,
+      "gain": -10
+    },
+    {
+      "sound": "desliga.wav",
+      "at": 90.327,
+      "gain": -10
+    },
+    {
+      "sound": "impacto-suave.wav",
+      "at": 93.492,
+      "gain": -8
+    },
+    {
+      "sound": "vibracao.wav",
+      "at": 96.644,
+      "gain": -6
+    },
+    {
+      "sound": "notificacao.wav",
+      "at": 98.084,
+      "gain": -8
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 101.969,
+      "gain": -6
+    },
+    {
+      "sound": "carro.wav",
+      "at": 108.585,
+      "gain": -6
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 111.78,
+      "gain": -5
+    },
+    {
+      "sound": "impacto-suave.wav",
+      "at": 114.098,
+      "gain": -8
+    },
+    {
+      "sound": "pop.wav",
+      "at": 117.879,
+      "gain": -10
+    },
+    {
+      "sound": "pop.wav",
+      "at": 118.264,
+      "gain": -10
+    },
+    {
+      "sound": "pop.wav",
+      "at": 119.212,
+      "gain": -10
+    }
+  ],
+  "captions": []
+}

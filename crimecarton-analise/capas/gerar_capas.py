@@ -26,6 +26,8 @@ SERIES = 'A PARTE QUE FALTOU'
 COVERS = [
     dict(part=1, title='A MOCHILA', line='CADÊ O DINHEIRO?', art='../perfil/ilustracao-perfil-b.png',
          scale=1.10, focus=(.5, .40), at=(540, 640)),
+    dict(part=2, title='A DÍVIDA', line='QUANTO ELE DEVIA?', art='../episodio-02/cena-08-retrato-amigo.png',
+         scale=1.10, focus=(.5, .30), at=(540, 660)),
 ]
 
 

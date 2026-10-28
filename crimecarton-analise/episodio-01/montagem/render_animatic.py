@@ -45,31 +45,35 @@ def probe(path):
 
 def painted(im, items):
     # Text applied by the edit onto a blank surface of the artwork, such as a calendar on
-    # a wall, so it moves with the camera. "box" is left, top, right, bottom as fractions
-    # of the whole illustration; the text is fitted into it, then turned by "angle".
+    # a wall or a phone's screen, so it moves with the camera. "box" is left, top, right,
+    # bottom as fractions of the whole illustration; the text is fitted into it, over an
+    # optional rounded "fill", and the whole turns by "angle" degrees about the box centre.
     im = im.convert('RGBA')
     for item in items:
         l, t, r, b = item['box']
         box = (round(l*im.width), round(t*im.height), round(r*im.width), round(b*im.height))
         w, h = box[2] - box[0], box[3] - box[1]
         lines = item['text'].split('\n')
+        pad = item.get('pad', 0)
         size = h
         while size > 6:
             f = graficos.font(size, item.get('weight', 'ExtraBold'))
-            if max(f.getlength(ln) for ln in lines) <= w*.94 and size*1.15*len(lines) <= h:
+            if max(f.getlength(ln) for ln in lines) <= (w - 2*pad)*.94 and size*1.15*len(lines) <= h - 2*pad:
                 break
             size -= 1
         layer = Image.new('RGBA', (w, h), (0, 0, 0, 0))
         d = ImageDraw.Draw(layer)
+        if item.get('fill'):
+            d.rounded_rectangle((0, 0, w-1, h-1), item.get('radius', 0), fill=tuple(item['fill']))
         for k, ln in enumerate(lines):
             y = h/2 + (k - (len(lines) - 1)/2)*size*1.15
             d.text((w/2, y), ln, font=f, fill=tuple(item.get('color', (40, 34, 30))) + (round(255*item.get('opacity', .9)),),
                    anchor='mm')
         if item.get('angle'):
-            layer = layer.rotate(item['angle'], resample=Image.Resampling.BICUBIC)
+            layer = layer.rotate(item['angle'], resample=Image.Resampling.BICUBIC, expand=True)
         if item.get('blur'):
             layer = layer.filter(ImageFilter.GaussianBlur(item['blur']))
-        im.alpha_composite(layer, box[:2])
+        im.alpha_composite(layer, (round((box[0] + box[2] - layer.width)/2), round((box[1] + box[3] - layer.height)/2)))
     return im.convert('RGB')
 
 
