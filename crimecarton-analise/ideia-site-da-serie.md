@@ -61,7 +61,7 @@ A lista vem dos próprios pagamentos, sem banco de dados.
 - **Montagem:** a função `/api/aliados` busca no Mercado Pago os pagamentos feitos desde 28/10 e separa os passes aprovados. A resposta fica guardada por um minuto, então um pagamento aparece na página em até um minuto.
 - **Números:** cada aliado tem o número do seu primeiro passe aprovado. Um passe devolvido sai da lista, mas o número continua reservado, para ninguém mudar de número.
 - **Vagas:** quando uma parte enche, os passes seguintes vão para a próxima.
-- **Correções:** um @ digitado errado se corrige em `correcoes`, no arquivo `site/netlify/lib/serie.mjs`, com `{ errado: 'certo' }`. Um @ ofensivo sai da lista com `{ ofensivo: '' }`, e o valor deve ser devolvido.
+- **Correções:** um @ digitado errado se corrige em `correcoes`, no arquivo `site/netlify/lib/serie.mjs`, com `{ errado: 'certo' }`. Um @ ofensivo sai da lista com `{ ofensivo: '' }`, e o valor deve ser devolvido. O @ `teste.golpe` já está fora da lista: é o @ das compras de teste do criador, que não ocupam vaga nem número.
 
 A integração segue o guia do plugin oficial do Mercado Pago para o Claude, instalado em 28/10/2026. O Checkout Pro foi escolhido por ser o certo para uma venda avulsa de valor baixo, com Pix e cartão e sem dados de cartão no site. As checagens do plugin passam, com o comando `node <plugin>/scripts/validate-checkout-cta.mjs checkout-pro index.html /api/checkout` e o `validate-checkout-pro-server.mjs` em `netlify/functions/checkout.mjs`. Os testes ficam em `site/testes/`:
 

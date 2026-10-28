@@ -6,5 +6,6 @@ export const SERIE = {
   inicio: '2026-10-28T00:00:00.000-03:00', // first day of sales: the payments search starts here
   preco: 9.9,                              // R$ per pass
   // Fixes to handles on the list: { errado: 'certo' }, or { ofensivo: '' } to leave one out.
-  correcoes: {},
+  // teste.golpe is the handle for the creator's own test purchases: no place, no number.
+  correcoes: { 'teste.golpe': '' },
 };
