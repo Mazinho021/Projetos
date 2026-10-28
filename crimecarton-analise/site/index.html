@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,alternate_email,arrow_outward,check,confirmation_number,content_copy,movie&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,alternate_email,arrow_outward,check,confirmation_number,error,lock,movie,schedule&display=block">
 <style>
 /* Layout: Zinho's own colors. The brown of his room at night is the ground, the red of his
    hoodie marks what you act on, the blue of his track jacket carries the facts and the clock,
@@ -276,6 +276,7 @@ h1 span { display: block; }
 .creditos-lista li { display: flex; gap: 10px; min-width: 0; font-size: var(--t-s); color: var(--areia-2); }
 .creditos-lista li span { min-width: 1.7em; font-weight: 700; color: var(--areia); }
 .creditos-lista li.tem { color: var(--creme); font-weight: 600; overflow-wrap: anywhere; }
+.creditos-lista li.tem small { margin-left: 2px; font-size: .75rem; font-weight: 600; color: var(--areia); }
 
 .quadros { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .quadros div { display: grid; gap: 6px; align-content: start; padding: 16px; border-radius: 16px; background: var(--painel); border: 1px solid var(--linha); }
@@ -283,8 +284,8 @@ h1 span { display: block; }
 .quadros b.alerta { color: var(--vermelho-texto); }
 .quadros span { font-size: var(--t-xs); line-height: 1.35; color: var(--areia); }
 
-.passe, .pix { display: grid; gap: 18px; padding: 24px; border-radius: var(--raio); background: var(--painel); border: 1px solid var(--linha); }
-.passe h3, .pix h3 { font: 800 1.375rem/1.2 var(--display); }
+.passe { display: grid; gap: 18px; padding: 24px; border-radius: var(--raio); background: var(--painel); border: 1px solid var(--linha); }
+.passe h3 { font: 800 1.375rem/1.2 var(--display); }
 .campo { display: grid; gap: 8px; }
 .campo label { font: 600 var(--t-s)/1.2 var(--display); }
 .entrada { display: flex; align-items: center; border-radius: 12px; background: var(--poco); border: 1px solid var(--linha); transition: border-color .15s ease, box-shadow .15s ease; }
@@ -297,21 +298,18 @@ h1 span { display: block; }
 .consentimento input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--vermelho); }
 .consentimento a { color: var(--vermelho-texto); }
 .erro { font: 600 .875rem/1.4 var(--display); color: var(--vermelho-texto); }
-.passe .botao, .pix .botao { width: 100%; }
+.passe .botao { width: 100%; }
+.botao[disabled] { opacity: .7; cursor: progress; transform: none; }
+.meios { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: -6px; font-size: var(--t-xs); color: var(--areia); }
+.meios .ico { font-size: 16px; }
 .miudo { display: grid; gap: 8px; font-size: var(--t-xs); line-height: 1.5; color: var(--areia); }
 .miudo b { color: var(--caramelo); }
-.pix { border: 2px solid var(--vermelho); }
-.pix h3 { display: flex; align-items: center; gap: 10px; }
-.pix h3 .ico { color: var(--vermelho-texto); font-size: 26px; }
-.pix p { color: var(--areia); font-size: var(--t-s); }
-.pix p b { color: var(--creme); }
-.chave { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 10px 10px 14px; border-radius: 12px; background: var(--poco); border: 1px dashed var(--linha); }
-.chave code { flex: 1 1 160px; min-width: 0; overflow-wrap: anywhere; font: 600 var(--t-s)/1.4 var(--mono); color: var(--creme); }
-.copiar {
-  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 10px;
-  border: 2px solid var(--vermelho-texto); background: transparent; color: var(--vermelho-texto); font: 700 .875rem/1 var(--display); cursor: pointer;
-}
-.copiar:active { transform: translateY(2px); }
+.retorno { display: grid; gap: 10px; padding: 22px 24px; border-radius: var(--raio); background: var(--painel); border: 2px solid var(--azul); }
+.retorno h3 { display: flex; align-items: center; gap: 12px; font: 800 1.3rem/1.2 var(--display); }
+.retorno h3 .ico { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: var(--azul); color: var(--creme); }
+.retorno p { font-size: var(--t-s); color: var(--areia); }
+.retorno[data-tipo="falhou"] { border-color: var(--vermelho); }
+.retorno[data-tipo="falhou"] h3 .ico { background: var(--vermelho); }
 
 /* Chapters: the covers in a row you swipe, as on the profile grid */
 .capitulos {
@@ -431,12 +429,14 @@ a.capitulo:hover { transform: translateY(-4px); }
       <li>Fecham sexta, às 21h</li>
       <li>Votação aberta: fugir ou ficar?</li>
       <li>A Parte 2 já tá no perfil</li>
+      <li>Passe de aliado: R$ 9,90 no Pix ou no cartão</li>
     </ul>
     <ul aria-hidden="true">
       <li>Parte 3: <span data-vagas>10</span> vagas de aliado</li>
       <li>Fecham sexta, às 21h</li>
       <li>Votação aberta: fugir ou ficar?</li>
       <li>A Parte 2 já tá no perfil</li>
+      <li>Passe de aliado: R$ 9,90 no Pix ou no cartão</li>
     </ul>
   </div>
 </div>
@@ -513,7 +513,7 @@ a.capitulo:hover { transform: translateY(-4px); }
       <header class="cabeca">
         <h2 id="t-aliado">Vire aliado do Zinho</h2>
         <p>Cada passe vale para uma parte. O seu @ aparece dentro do episódio e na legenda do post.</p>
-        <p class="preco"><b>R$ 9,90</b>por parte, no Pix</p>
+        <p class="preco"><b>R$ 9,90</b>por parte, no Pix ou no cartão</p>
       </header>
 
       <div class="aliado-grade">
@@ -562,16 +562,19 @@ a.capitulo:hover { transform: translateY(-4px); }
             <div><b class="alerta" data-relogio>2d 00h</b><span>para a lista fechar, sexta às 21h</span></div>
           </div>
 
-          <form class="passe" id="passe" name="aliados" method="POST" data-netlify="true" netlify-honeypot="campo-extra" novalidate>
-            <input type="hidden" name="form-name" value="aliados">
-            <p hidden><label for="campo-extra">Não preencha</label><input name="campo-extra" type="text" id="campo-extra"></p>
+          <div class="retorno" id="retorno" role="status" hidden>
+            <h3><span class="ico" aria-hidden="true">check</span><span data-retorno-titulo>Pagamento aprovado</span></h3>
+            <p data-retorno-texto></p>
+          </div>
+
+          <form class="passe" id="passe" novalidate>
             <h3>Garanta a sua vaga</h3>
             <div class="campo">
               <label for="arroba">Seu @ no Instagram</label>
               <div class="entrada"><span aria-hidden="true">@</span><input type="text" id="arroba" name="arroba" placeholder="seuperfil" autocomplete="username" autocapitalize="none" spellcheck="false" required></div>
             </div>
             <div class="campo">
-              <label for="email">Seu e-mail (para a confirmação)</label>
+              <label for="email">Seu e-mail (para o comprovante)</label>
               <div class="entrada"><input type="email" id="email" name="email" placeholder="voce@email.com" autocomplete="email" required></div>
             </div>
             <label class="consentimento" for="autorizo">
@@ -579,21 +582,13 @@ a.capitulo:hover { transform: translateY(-4px); }
               <span>Concordo em aparecer como aliado numa história de ficção, com o meu @ no vídeo, na legenda do post e neste site, e aceito os <a href="#termos">termos e a privacidade</a>.</span>
             </label>
             <p class="erro" id="erro" role="alert" hidden></p>
-            <button class="botao botao-cheio" type="submit">Continuar para o Pix</button>
+            <button class="botao botao-cheio" type="submit">Pagar R$ 9,90</button>
+            <p class="meios"><span class="ico" aria-hidden="true">lock</span>Pix ou cartão de crédito, pelo Mercado Pago</p>
             <div class="miudo">
               <p><b>Aliado nº <span data-proximo>001</span></b> é o próximo número. Pagamentos depois das 21h de sexta, ou com as vagas esgotadas, entram na parte seguinte.</p>
               <p>O passe não muda a votação: nos comentários, o voto de todo mundo vale igual.</p>
             </div>
           </form>
-
-          <div class="pix" id="pix" hidden>
-            <h3><span class="ico" aria-hidden="true">check</span>Falta só o Pix</h3>
-            <p>Pague <b>R$ 9,90</b> para a chave abaixo e mande o comprovante no direct do @golpecartoon, junto com <b data-seu-arroba>o seu @</b>. Quando confirmarmos, o seu nome entra na lista da Parte 3.</p>
-            <div class="chave">
-              <code id="chave-pix">chave Pix a definir</code>
-              <button class="copiar" type="button" id="copiar"><span class="ico" aria-hidden="true">content_copy</span><span>Copiar</span></button>
-            </div>
-            <a class="botao botao-vazado" href="https://ig.me/m/golpecartoon" target="_blank" rel="noopener">Mandar o comprovante no direct</a>
           </div>
         </div>
       </div>
@@ -650,9 +645,9 @@ a.capitulo:hover { transform: translateY(-4px); }
         <details><summary>Errei meu @. E agora?<span class="ico" aria-hidden="true">add</span></summary>
           <p>Manda uma mensagem no direct do @golpecartoon antes de as vagas fecharem, que a gente corrige.</p></details>
         <details><summary>Como funciona o pagamento?<span class="ico" aria-hidden="true">add</span></summary>
-          <p>Por Pix, para a chave que aparece depois do formulário. Depois de pagar, mande o comprovante no direct: é ele que confirma a sua vaga.</p></details>
+          <p>Pelo Mercado Pago, com Pix ou cartão de crédito. Quando o pagamento é aprovado, o seu @ entra sozinho na lista desta página, em alguns minutos.</p></details>
         <details><summary>E se eu desistir, ou a parte não sair?<span class="ico" aria-hidden="true">add</span></summary>
-          <p>Você pode desistir em até 7 dias depois do pagamento, e o valor volta inteiro pelo mesmo Pix. Se a parte com o seu @ não sair, devolvemos também.</p></details>
+          <p>Você pode desistir em até 7 dias depois do pagamento, e o valor volta inteiro pelo Mercado Pago, no mesmo meio que você usou. Se a parte com o seu @ não sair, devolvemos também.</p></details>
       </div>
 
       <div class="termos" id="termos">
@@ -660,7 +655,7 @@ a.capitulo:hover { transform: translateY(-4px); }
         <details><summary>O passe de aliado<span class="ico" aria-hidden="true">add</span></summary>
           <p>O passe custa R$ 9,90 e vale para uma parte. O seu @ aparece no episódio, num lugar escolhido pela produção, e na legenda do post no Instagram. Não usamos @ ofensivo, de marca ou de outra pessoa sem autorização: nesses casos, recusamos o pedido e devolvemos o valor. O passe não dá voto extra nem muda a história. Pelo artigo 49 do Código de Defesa do Consumidor, você pode desistir em até 7 dias depois da compra.</p></details>
         <details><summary>Os seus dados<span class="ico" aria-hidden="true">add</span></summary>
-          <p>Pedimos só o seu @ e o seu e-mail, para colocar o seu @ na história e falar com você sobre o passe. Não vendemos nem passamos esses dados para ninguém. Para corrigir ou apagar os seus dados, como garante a Lei Geral de Proteção de Dados, mande uma mensagem no direct do @golpecartoon.</p></details>
+          <p>Pedimos só o seu @ e o seu e-mail. O @ vai para a história; o e-mail vai para o Mercado Pago, que processa o pagamento e manda o comprovante. Os dados do cartão ficam só com o Mercado Pago, e a gente não vê. Não vendemos nem passamos os seus dados para mais ninguém. Para corrigir ou apagar os seus dados, como garante a Lei Geral de Proteção de Dados, mande uma mensagem no direct do @golpecartoon.</p></details>
       </div>
     </div>
   </section>
@@ -694,13 +689,12 @@ a.capitulo:hover { transform: translateY(-4px); }
 
 <script>
 (function () {
-  // O que muda a cada parte fica aqui.
+  // Valores de reserva. O site publicado pega os de verdade em /api/aliados.
   var CONFIG = {
+    parte: 3,
     fecha: '2026-10-30T21:00:00-03:00',  // fim das vagas e da votação
     vagas: 10,
-    aliados: [],                          // '@perfil', na ordem em que o Pix foi confirmado
-    proximoNumero: 1,                     // o número do próximo aliado novo
-    chavePix: ''                          // chave aleatória do Pix
+    proximoNumero: 1                      // o número do próximo aliado novo
   };
 
   var $ = function (sel) { return document.querySelector(sel); };
@@ -708,23 +702,8 @@ a.capitulo:hover { transform: translateY(-4px); }
   var dois = function (n) { return (n < 10 ? '0' : '') + n; };
   var tres = function (n) { return ('00' + n).slice(-3); };
 
-  // Vagas, créditos e legenda
-  var livres = Math.max(0, CONFIG.vagas - CONFIG.aliados.length);
-  $$('[data-vagas]').forEach(function (el) { el.textContent = livres; });
-  $$('[data-proximo]').forEach(function (el) { el.textContent = tres(CONFIG.proximoNumero); });
-  if (CONFIG.aliados.length) {
-    $$('[data-lista] li').forEach(function (li, k) {
-      if (!CONFIG.aliados[k]) return;
-      li.className = 'tem';
-      li.innerHTML = '<span>' + dois(k + 1) + '</span>';
-      li.appendChild(document.createTextNode(CONFIG.aliados[k]));
-    });
-    $('[data-legenda]').textContent = CONFIG.aliados.join(', ') + '.';
-  }
-  if (CONFIG.chavePix) $('#chave-pix').textContent = CONFIG.chavePix;
-
   // Contagem até as vagas fecharem
-  var fim = new Date(CONFIG.fecha).getTime();
+  var fim = Date.parse(CONFIG.fecha);
   var partes = { d: $('[data-dias]'), h: $('[data-horas]'), m: $('[data-min]'), s: $('[data-seg]') };
   var relogio = $('[data-relogio]');
   function contar() {
@@ -739,6 +718,90 @@ a.capitulo:hover { transform: translateY(-4px); }
     setTimeout(contar, 1000 - Date.now() % 1000);
   }
   contar();
+
+  // Créditos, vagas e legenda, com a lista dos pagamentos aprovados
+  function mostrarLista(aliados) {
+    $$('[data-vagas]').forEach(function (el) { el.textContent = Math.max(0, CONFIG.vagas - aliados.length); });
+    $$('[data-proximo]').forEach(function (el) { el.textContent = tres(CONFIG.proximoNumero); });
+    $$('[data-lista] li').forEach(function (li, k) {
+      var aliado = aliados[k], vaga = document.createElement('span');
+      li.className = aliado ? 'tem' : '';
+      li.textContent = '';
+      vaga.textContent = dois(k + 1);
+      li.appendChild(vaga);
+      li.appendChild(document.createTextNode(aliado ? aliado.arroba : 'vaga aberta'));
+      if (aliado) {
+        var numero = document.createElement('small');
+        numero.textContent = 'nº ' + tres(aliado.numero);
+        li.appendChild(numero);
+      }
+    });
+    if (aliados.length) $('[data-legenda]').textContent = aliados.map(function (a) { return a.arroba; }).join(', ') + '.';
+  }
+
+  // Formulário do passe: abre o pagamento no Mercado Pago
+  var form = $('#passe'), erro = $('#erro'), botao = form.querySelector('[type="submit"]');
+  var rotulo = botao.textContent;
+  function falhar(msg) {
+    erro.textContent = msg; erro.hidden = false;
+    botao.disabled = false; botao.textContent = rotulo;
+  }
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var arroba = form.arroba.value.trim().replace(/^@+/, '');
+    var email = form.email.value.trim();
+    var msg = '';
+    if (!/^[A-Za-z0-9._]{1,30}$/.test(arroba)) msg = 'Escreva o seu @ do Instagram, só com letras, números, ponto ou sublinhado.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) msg = 'Confira o seu e-mail: ele precisa ter @ e um domínio, como voce@email.com.';
+    else if (!form.autorizo.checked) msg = 'Marque a autorização para usarmos o seu @ na história.';
+    erro.textContent = msg;
+    erro.hidden = !msg;
+    if (msg) return;
+    botao.disabled = true;
+    botao.textContent = 'Abrindo o pagamento…';
+    fetch('/api/checkout', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ arroba: arroba, email: email, autorizo: true })
+    })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        if (res.ok && res.d.url) { location.href = res.d.url; return; }
+        falhar(res.d.erro || 'Não deu para abrir o pagamento agora. Tenta de novo em alguns minutos.');
+      })
+      .catch(function () { falhar('Não deu para abrir o pagamento agora. Confira a sua internet e tente de novo.'); });
+  });
+  // Quem volta do Mercado Pago pelo botão de voltar encontra o formulário pronto de novo.
+  window.addEventListener('pageshow', function (ev) {
+    if (ev.persisted && botao.textContent !== rotulo) { botao.disabled = false; botao.textContent = rotulo; }
+  });
+
+  fetch('/api/aliados').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    if (!d || !Array.isArray(d.aliados)) return;
+    CONFIG.vagas = d.vagas; CONFIG.proximoNumero = d.proximoNumero;
+    if (d.fecha) fim = Date.parse(d.fecha);
+    mostrarLista(d.aliados);
+    if (d.ligado === false) { botao.disabled = true; botao.textContent = rotulo = 'Pagamento abre em breve'; }
+  }).catch(function () {});
+
+  // A volta do Mercado Pago
+  var busca = new URLSearchParams(location.search);
+  var parteComprada = busca.get('parte') || CONFIG.parte;
+  var retornos = {
+    aprovado: ['check', 'Pagamento aprovado', 'Você é aliado da Parte ' + parteComprada + '! O seu @ entra na lista em alguns minutos e depois aparece no episódio e na legenda do post.'],
+    pendente: ['schedule', 'Pagamento em andamento', 'Se você escolheu Pix, falta pagar o código no app do banco. Quando o pagamento for aprovado, o seu @ entra na lista sozinho.'],
+    falhou: ['error', 'O pagamento não foi concluído', 'Ele foi recusado ou cancelado, e nada foi cobrado. Você pode tentar de novo aqui embaixo, com Pix ou outro cartão.']
+  };
+  var volta = retornos[busca.get('pagamento')];
+  if (volta) {
+    var painel = $('#retorno');
+    painel.setAttribute('data-tipo', busca.get('pagamento'));
+    painel.querySelector('.ico').textContent = volta[0];
+    $('[data-retorno-titulo]').textContent = volta[1];
+    $('[data-retorno-texto]').textContent = volta[2];
+    painel.hidden = false;
+    try { history.replaceState(null, '', location.pathname + '#aliado'); } catch (e) {}
+    painel.scrollIntoView({ block: 'center' });
+  }
 
   // Recado curto no pé da tela
   var recado = $('#recado'), apagar;
@@ -755,38 +818,6 @@ a.capitulo:hover { transform: translateY(-4px); }
     a.addEventListener('click', function () {
       var palavra = a.getAttribute('data-palavra');
       copiar(palavra).then(function () { avisar(palavra + ' copiado. Cola nos comentários do Reel.'); }, function () {});
-    });
-  });
-
-  // Formulário do passe
-  var form = $('#passe'), erro = $('#erro'), pix = $('#pix');
-  form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    var arroba = form.arroba.value.trim().replace(/^@+/, '');
-    var email = form.email.value.trim();
-    var msg = '';
-    if (!/^[A-Za-z0-9._]{1,30}$/.test(arroba)) msg = 'Escreva o seu @ do Instagram, só com letras, números, ponto ou sublinhado.';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) msg = 'Confira o seu e-mail: ele precisa ter @ e um domínio, como voce@email.com.';
-    else if (!form.autorizo.checked) msg = 'Marque a autorização para usarmos o seu @ na história.';
-    erro.textContent = msg;
-    erro.hidden = !msg;
-    if (msg) return;
-    form.arroba.value = arroba;
-    $('[data-seu-arroba]').textContent = '@' + arroba;
-    // No site publicado, o Netlify guarda o pedido; na prévia, não há para onde mandar.
-    var dados = new URLSearchParams(new FormData(form));
-    dados.set('arroba', '@' + arroba);
-    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: dados.toString() })
-      .catch(function () {})
-      .then(function () { form.hidden = true; pix.hidden = false; pix.scrollIntoView({ block: 'nearest' }); });
-  });
-
-  $('#copiar').addEventListener('click', function () {
-    var chave = $('#chave-pix'), rotulo = this.lastElementChild;
-    copiar(chave.textContent.trim()).then(function () { rotulo.textContent = 'Copiada'; }, function () {
-      var r = document.createRange(); r.selectNodeContents(chave);
-      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-      rotulo.textContent = 'Selecionada';
     });
   });
 })();

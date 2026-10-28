@@ -1,0 +1,12 @@
+# The series' site: montar.mjs writes the page and its images to dist/,
+# and the payment API (/api/checkout, /api/aliados) runs as functions.
+[build]
+  command = "node montar.mjs"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
