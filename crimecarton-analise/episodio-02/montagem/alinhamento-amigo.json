@@ -1,41 +1,57 @@
 {
- "audio": "narracao-ep02-amigo.wav",
+ "audio": "narracao-ep02-amigo-charon.wav",
  "script": "narracao-ep02-amigo.txt",
  "model": "medium",
  "words_in_script": 37,
- "words_matched_exactly": 34,
+ "words_matched_exactly": 35,
  "pauses": [
   [
-   1.269,
-   2.002
+   1.61,
+   1.955
   ],
   [
-   3.547,
-   5.044
+   2.157,
+   2.416
   ],
   [
-   6.236,
-   6.64
+   3.747,
+   5.025
   ],
   [
-   6.827,
-   7.153
+   5.762,
+   7.085
   ],
   [
-   8.496,
-   9.102
+   8.624,
+   9.684
   ],
   [
-   11.181,
-   12.23
+   9.799,
+   10.294
   ],
   [
-   13.769,
-   14.19
+   12.809,
+   13.432
   ],
   [
-   15.907,
-   16.4
+   13.491,
+   14.523
+  ],
+  [
+   14.529,
+   15.032
+  ],
+  [
+   16.233,
+   16.499
+  ],
+  [
+   18.343,
+   18.593
+  ],
+  [
+   18.609,
+   18.92
   ]
  ],
  "words": [
@@ -43,223 +59,223 @@
    "i": 0,
    "text": "Eles",
    "start": 0.0,
-   "end": 0.54
+   "end": 0.64
   },
   {
    "i": 1,
    "text": "tão",
-   "start": 0.54,
-   "end": 0.66
+   "start": 0.64,
+   "end": 0.76
   },
   {
    "i": 2,
    "text": "te",
-   "start": 0.66,
-   "end": 0.9
+   "start": 0.76,
+   "end": 0.98
   },
   {
    "i": 3,
    "text": "procurando.",
-   "start": 0.9,
-   "end": 1.269
+   "start": 0.98,
+   "end": 1.61
   },
   {
    "i": 4,
    "text": "E",
-   "start": 2.002,
-   "end": 2.2
+   "start": 1.955,
+   "end": 2.157
   },
   {
    "i": 5,
    "text": "agora",
-   "start": 2.2,
-   "end": 2.4
+   "start": 2.416,
+   "end": 2.78
   },
   {
    "i": 6,
    "text": "tão",
-   "start": 2.4,
-   "end": 2.54
+   "start": 2.78,
+   "end": 2.88
   },
   {
    "i": 7,
    "text": "me",
-   "start": 2.54,
-   "end": 2.86
+   "start": 2.88,
+   "end": 3.14
   },
   {
    "i": 8,
    "text": "procurando",
-   "start": 2.86,
-   "end": 3.24
+   "start": 3.14,
+   "end": 3.46
   },
   {
    "i": 9,
    "text": "também.",
-   "start": 3.24,
-   "end": 3.547
+   "start": 3.46,
+   "end": 3.747
   },
   {
    "i": 10,
    "text": "Oitenta",
-   "start": 5.044,
-   "end": 5.72
+   "start": 5.025,
+   "end": 5.6
   },
   {
    "i": 11,
    "text": "mil.",
-   "start": 5.72,
-   "end": 6.236
+   "start": 5.6,
+   "end": 5.762
   },
   {
    "i": 12,
    "text": "Pra",
-   "start": 6.64,
-   "end": 6.827
+   "start": 7.085,
+   "end": 7.42
   },
   {
    "i": 13,
    "text": "quem",
-   "start": 7.153,
-   "end": 7.42
+   "start": 7.42,
+   "end": 7.6
   },
   {
    "i": 14,
    "text": "bancou",
-   "start": 7.42,
-   "end": 7.76
+   "start": 7.6,
+   "end": 7.92
   },
   {
    "i": 15,
    "text": "o",
-   "start": 7.76,
-   "end": 7.9
+   "start": 7.92,
+   "end": 8.1
   },
   {
    "i": 16,
    "text": "assalto.",
-   "start": 7.9,
-   "end": 8.496
+   "start": 8.1,
+   "end": 9.799
   },
   {
    "i": 17,
    "text": "Eles",
-   "start": 9.102,
-   "end": 9.38
+   "start": 10.294,
+   "end": 10.82
   },
   {
    "i": 18,
    "text": "juraram",
-   "start": 9.38,
-   "end": 9.78
+   "start": 10.82,
+   "end": 11.32
   },
   {
    "i": 19,
    "text": "que",
-   "start": 9.78,
-   "end": 9.96
+   "start": 11.32,
+   "end": 11.58
   },
   {
    "i": 20,
    "text": "ninguém",
-   "start": 9.96,
-   "end": 10.14
+   "start": 11.58,
+   "end": 11.94
   },
   {
    "i": 21,
    "text": "ia",
-   "start": 10.14,
-   "end": 10.28
+   "start": 11.94,
+   "end": 12.16
   },
   {
    "i": 22,
    "text": "ver",
-   "start": 10.28,
-   "end": 10.34
+   "start": 12.16,
+   "end": 12.26
   },
   {
    "i": 23,
    "text": "o",
-   "start": 10.34,
-   "end": 10.46
+   "start": 12.26,
+   "end": 12.4
   },
   {
    "i": 24,
    "text": "seu",
-   "start": 10.46,
-   "end": 10.54
+   "start": 12.4,
+   "end": 12.46
   },
   {
    "i": 25,
    "text": "rosto.",
-   "start": 10.54,
-   "end": 11.181
+   "start": 12.46,
+   "end": 14.529
   },
   {
    "i": 26,
    "text": "Eu",
-   "start": 12.23,
-   "end": 12.62
+   "start": 15.032,
+   "end": 15.24
   },
   {
    "i": 27,
    "text": "não",
-   "start": 12.62,
-   "end": 12.82
+   "start": 15.24,
+   "end": 15.38
   },
   {
    "i": 28,
    "text": "tive",
-   "start": 12.82,
-   "end": 12.98
+   "start": 15.38,
+   "end": 15.52
   },
   {
    "i": 29,
    "text": "escolha.",
-   "start": 12.98,
-   "end": 13.769
+   "start": 15.52,
+   "end": 16.233
   },
   {
    "i": 30,
    "text": "Eles",
-   "start": 14.19,
-   "end": 14.42
+   "start": 16.499,
+   "end": 16.92
   },
   {
    "i": 31,
    "text": "sabiam",
-   "start": 14.42,
-   "end": 14.76
+   "start": 16.92,
+   "end": 17.32
   },
   {
    "i": 32,
    "text": "onde",
-   "start": 14.76,
-   "end": 14.94
+   "start": 17.32,
+   "end": 17.56
   },
   {
    "i": 33,
    "text": "a",
-   "start": 14.94,
-   "end": 15.04
+   "start": 17.56,
+   "end": 17.72
   },
   {
    "i": 34,
    "text": "minha",
-   "start": 15.04,
-   "end": 15.16
+   "start": 17.72,
+   "end": 17.86
   },
   {
    "i": 35,
    "text": "mãe",
-   "start": 15.16,
-   "end": 15.26
+   "start": 17.86,
+   "end": 18.02
   },
   {
    "i": 36,
    "text": "mora.",
-   "start": 15.26,
-   "end": 15.907
+   "start": 18.02,
+   "end": 18.609
   }
  ]
 }

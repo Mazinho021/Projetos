@@ -40,7 +40,8 @@ SCRIPT = EPISODE / 'roteiro-ep02.txt'
 # The opening and the closing request come matched to the narrator by igualar_vozes.py.
 VOICES = {'VINHETA': (HERE / 'vozes' / 'vinheta.wav', TOOLS / 'alinhamento-narracao.json'),
           'NARRADOR': (EPISODE / 'narracao-ep02-narrador.wav', HERE / 'alinhamento-narrador.json'),
-          'AMIGO': (EPISODE / 'narracao-ep02-amigo.wav', HERE / 'alinhamento-amigo.json'),
+          # The friend in the voice of his message in Part 1, made by voz_amigo.py.
+          'AMIGO': (HERE / 'vozes' / 'amigo.wav', HERE / 'alinhamento-amigo.json'),
           'PEDIDO': (HERE / 'vozes' / 'pedido.wav', HERE / 'alinhamento-pedido.json')}
 AUDIO = EPISODE / 'narracao-ep02.wav'
 TAIL = 2.0
@@ -358,7 +359,6 @@ EYES03 = [0.50, 0.16, 0.86, 0.52]        # his face, close
 CALENDAR04 = [0.265, 0.0, 0.665, 0.40]   # the calendar on the wall of the hidden photo
 FACE05 = [0.06, 0.12, 0.70, 0.76]        # Zinho on the phone
 PHONE06 = [0.185, 0.234, 0.805, 0.854]   # the friend's phone on the table
-HAND06 = [0.40, 0.0, 1.0, 0.60]          # his hand, stopped above it
 CAR07 = [0.30, 0.20, 0.88, 0.78]         # the car at the gate
 # The junkyard's calendar, printed on the blank sheet of scene 4 (x .31–.62, y .11–.28 of
 # the illustration): name, a partly hidden number, the month and its days.
@@ -376,6 +376,12 @@ _CORNERS = [(.4687, .4199), (.6939, .4396), (.5898, .6746), (.2901, .6417)]
 _MIDDLE = (sum(x for x, _ in _CORNERS)/4, sum(y for _, y in _CORNERS)/4)
 SCREEN06 = [[round(_MIDDLE[0] + (x - _MIDDLE[0])*1.05, 4), round(_MIDDLE[1] + (y - _MIDDLE[1])*1.05, 4)] for x, y in _CORNERS]
 SCREEN_OFF = {'quad': SCREEN06, 'state': 'off'}
+# The same phone in scene 9, lying sideways on the table, its top towards the left.
+_CORNERS9 = [(.4481, .7287), (.5367, .7191), (.6808, .7566), (.5739, .7669)]
+_MIDDLE9 = (sum(x for x, _ in _CORNERS9)/4, sum(y for _, y in _CORNERS9)/4)
+SCREEN09 = [[round(_MIDDLE9[0] + (x - _MIDDLE9[0])*1.05, 4), round(_MIDDLE9[1] + (y - _MIDDLE9[1])*1.05, 4)]
+            for x, y in _CORNERS9]
+FRIEND09 = [0.015, 0.125, 0.565, 0.675]  # the friend's face in scene 9, looking down, silent
 SCREEN_MESSAGE = {'quad': SCREEN06, 'state': 'lock', 'date': 'terça-feira, 27 de outubro', 'time': '23:47',
                   'app': 'MENSAGENS', 'sender': 'Cobrança', 'message': 'Já tá com ele?', 'when': 'agora'}
 
@@ -436,8 +442,10 @@ def build(ed):
         # The message lights up on his phone's screen; it stays there, unanswered.
         ('message', cut(N('Uma mensagem de')), dict(kind='art', asset='cena-06-celular-mesa.png', crop=PHONE06, zoom=.06,
                                                     screen=SCREEN_MESSAGE)),
-        ('silent', cut(N('Ele não responde')), dict(kind='art', asset='cena-06-celular-mesa.png', crop=HAND06, zoom=.06,
-                                                    screen=SCREEN_MESSAGE)),
+        # Zinho asks what that is, pointing at the phone; the friend looks down and says nothing.
+        ('ask', cut(N('Ele não responde')), dict(kind='art', asset='cena-09-pergunta.png', zoom=.05,
+                                                 screen=dict(SCREEN_MESSAGE, quad=SCREEN09))),
+        ('silent', cut(N('Nem a você.')), dict(kind='art', asset='cena-09-pergunta.png', crop=FRIEND09, zoom=.06)),
         ('car', cut(N('Lá fora, um')), dict(kind='art', asset='cena-07-carro.png', zoom=.05)),
         ('lights-off', cut(N('De farol apagado.')), dict(kind='art', asset='cena-07-carro.png', crop=CAR07, zoom=.08,
                                                         brightness=.8)),
@@ -504,6 +512,8 @@ def build(ed):
                                                            line('EXISTE.', s(N('existe.')), 'yellow')], 76, x),
         {'type': 'stamp', 'start': round(s(N('verdade.')) - .02, 2), 'end': AT['buzz'], 'text': 'VERDADE', 'y': 900,
          'x': x, 'angle': -6, 'color': 'green'},
+        # Zinho's question, on screen only, since he never speaks aloud in the series.
+        phrase(AT['ask'] + .05, AT['silent'], 620, [line('“O QUE É ISSO?”', AT['ask'] + .1, shake=True)], 70, x),
         phrase(s(N('Nem a você.')) - .05, AT['car'], 900, [line('NEM A VOCÊ.', s(N('Nem a você.')), 'yellow')], 72, x),
         phrase(AT['lights-off'], AT['choice'], 900, [line('DE FAROL', s(N('De farol apagado.'))),
                                                    line('APAGADO.', s(N('apagado.')), 'red', shake=True)], 80, x),
@@ -530,6 +540,7 @@ def build(ed):
          'title': f'PARTE {PART + 1}', 'sub': 'a maioria decide o próximo passo'},
     ]
     effects = oe + [
+        sfx('impacto-suave.wav', AT['ask'] + .05, -9),
         *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('door', 'sold', 'question', 'shows', 'dial', 'buzz', 'car',
                                                                'choice')],
         sfx('tranca.wav', e(N('a porta.', 1)) + .05, -6),

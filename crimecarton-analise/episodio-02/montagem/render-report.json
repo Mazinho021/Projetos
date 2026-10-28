@@ -1,11 +1,11 @@
 {
   "output": "crimecarton-analise/episodio-02/parte-02-a-divida.mp4",
-  "duration": 131.842,
-  "audio_duration": 129.842,
+  "duration": 134.52,
+  "audio_duration": 132.519,
   "tail": 2.0,
-  "scenes": 35,
+  "scenes": 37,
   "captions": 0,
-  "graphics": 37,
-  "sound_effects": 79,
+  "graphics": 38,
+  "sound_effects": 80,
   "type": "illustrated animatic with camera motion and graphics; no generated body animation"
 }

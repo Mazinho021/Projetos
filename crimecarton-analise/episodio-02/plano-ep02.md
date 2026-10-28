@@ -1,6 +1,6 @@
 # Parte 2 — A dívida
 
-Roteiro em [`roteiro-ep02.txt`](roteiro-ep02.txt), com a voz de cada fala. O episódio montado tem **2 min 12 s**: a vinheta da Parte 1, 93 s do narrador (já com o pedido do nome), 16 s do amigo, 7,6 s do pedido do fim, as pausas de montagem (os três toques do telefone, a vibração, o carro parando e as revelações) e 2 s de final. Fica dentro da regra de 2 a 3 minutos. A montagem está em [`montagem/`](montagem/README.md).
+Roteiro em [`roteiro-ep02.txt`](roteiro-ep02.txt), com a voz de cada fala. O episódio montado tem **2 min 14 s**: a vinheta da Parte 1, 93 s do narrador (já com o pedido do nome), 19 s do amigo, 7,6 s do pedido do fim, as pausas de montagem (os três toques do telefone, a vibração, o carro parando e as revelações) e 2 s de final. Fica dentro da regra de 2 a 3 minutos. A montagem está em [`montagem/`](montagem/README.md).
 
 ## Estrutura
 
@@ -13,7 +13,8 @@ Roteiro em [`roteiro-ep02.txt`](roteiro-ep02.txt), com a voz de cada fala. O epi
 | PISTA 1 · A VERSÃO DELE | Narrador e amigo | `cena-01-porta-aberta`, `cena-02-luz-apagada`, `cena-03-versao` | “R$ 80.000” contando, “PRA QUEM BANCOU / O ASSALTO.”, a lista “A DÍVIDA → R$ 80 MIL / A SAÍDA → ALGUÉM DE FORA / A CULPA → VOCÊ”, a TV da Parte 1 com o carimbo “FOI ELE” e “ELES SABIAM ONDE / A MINHA MÃE MORA.” |
 | PISTA 2 · A FOTO DA DIVISÃO | Narrador | Cartão de celular com `cena-04-foto-divisao`, ampliado até o calendário | “A NOITE / DA DIVISÃO.” e, no calendário, “FERRO-VELHO SÃO JORGE” com telefone parcial, os dois aplicados por código |
 | O teste | Narrador e três toques de chamada | `cena-05-ligacao` e a tela da ligação: “chamando…”, o número com dígitos escondidos, a chamada atendida e encerrada | “FERRO-VELHO / SÃO JORGE.”, “O LUGAR / EXISTE.” e o carimbo “VERDADE” |
-| PISTA 3 · A MENSAGEM | Narrador | `cena-06-celular-mesa`, com a mensagem “COBRANÇA / Já tá com ele?” pintada por código na tela do celular dele | Borda vermelha |
+| PISTA 3 · A MENSAGEM | Narrador | `cena-06-celular-mesa`: o celular bloqueado e apagado, que acende ao vibrar na tela de bloqueio com a notificação “Mensagens · Cobrança · Já tá com ele?”, aplicada por código em perspectiva | Borda vermelha |
+| A pergunta | “Ele não responde a mensagem. Nem a você.” | `cena-09-pergunta`: Zinho espantado aponta o celular; o amigo olha para baixo, calado | “O QUE É ISSO?”, a pergunta de Zinho só na tela, e “NEM A VOCÊ.” no rosto do amigo |
 | Virada | Narrador | `cena-07-carro` | “DE FAROL / APAGADO.” |
 | Votação | Pedido gravado à parte: “E agora: fugir ou ficar? Comenta uma palavra só. O que a maioria escolher vira a parte três.” | `cena-07-carro`, escurecida | “FUGIR OU / FICAR?”, “COMENTA UMA PALAVRA” com os botões FUGIR e FICAR e a caixa “PARTE 3 · a maioria decide o próximo passo” |
 

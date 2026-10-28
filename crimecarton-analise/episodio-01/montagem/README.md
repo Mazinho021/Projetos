@@ -144,6 +144,7 @@ Campos opcionais das cenas:
 - `photo` e `photo_crop` (`photo`): a ilustração que aparece na tela do celular e o enquadramento dela.
 - `status` e `number` (`call`): `calling`, `answered` (com o tempo em `clock`) ou `ended`, e o número exibido.
 - `sender`, `message` e `when` (`notification`): remetente, texto e horário da mensagem.
+- `screen`: a tela de bloqueio de um celular da ilustração, encaixada em perspectiva nos quatro cantos de `quad` (em frações, a partir do canto de cima à esquerda da tela). Com `state` `off`, a tela fica apagada; senão, mostra `date`, `time` e, quando há `sender`, a notificação com `app`, `sender`, `message` e `when`.
 - `paint`: textos aplicados sobre uma superfície em branco da ilustração, como um calendário na parede, e que acompanham a câmera. Cada item tem `text` (aceita `\n`), `box` em frações da ilustração inteira, e opcionalmente `color`, `weight`, `angle`, `opacity` e `blur`.
 - `play` (`audio`): início e fim absolutos da fala do amigo. O marcador de progresso percorre a barra nesse intervalo e pode ser interrompido pelo corte.
 
