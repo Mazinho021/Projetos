@@ -1,7 +1,7 @@
 {
-  "idempotencyKey": "zinho-ep02-pedido-charon-v1-20261028",
+  "idempotencyKey": "zinho-ep02-pedido-charon-v2-20261028",
   "voice": "Charon",
   "style": "Português brasileiro. Voz adulta masculina, natural e conversacional, suspense com tensão contida. Dicção clara; sem tom publicitário, caricatura ou gritos. Ritmo de 140 a 150 palavras por minuto. Pausas curtas nas revelações e entre parágrafos (falas separadas). Nas aspas, manter a mesma voz, mais baixa, mudando só a intenção. Pronunciar Zinho com z inicial e nh palatal.",
-  "text": "E com aquele carro lá fora: fugir ou ficar? Comenta a sua escolha e um nome. O mais curtido vira o nome dele na parte três.",
-  "observacao": "Novo pedido de comentário do fim da Parte 2, com as duas votações: FUGIR ou FICAR, e o nome do amigo. Mesma voz e mesmo estilo da narração da Parte 2 (narracao-ep02-narrador-job.json). Geração paga, autorizada pelo criador; mostrar o custo antes de executar."
+  "text": "E agora: fugir ou ficar? Comenta uma palavra só. O que a maioria escolher vira a parte três.",
+  "observacao": "Novo pedido de comentário do fim da Parte 2: FUGIR ou FICAR. O nome do amigo passou para o começo, com a fala que já está na narração. Mesma voz e mesmo estilo da narração da Parte 2 (narracao-ep02-narrador-job.json). Geração paga, autorizada pelo criador; mostrar o custo antes de executar."
 }

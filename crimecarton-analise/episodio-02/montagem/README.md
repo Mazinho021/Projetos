@@ -31,7 +31,7 @@ O Codex entregou em `episodio-02/` as ilustrações `cena-01-porta-aberta.png` a
 
 ## Como a timeline é montada
 
-`montar_timeline.py` junta, na ordem do roteiro, a vinheta, as falas do narrador, as do amigo e o pedido de comentário, gravado à parte, numa só faixa, `narracao-ep02.wav`. A gravação do narrador termina com o pedido antigo, que só pedia o nome, e ele fica de fora. A vinheta são as 17 primeiras palavras da narração da Parte 1, com a mesma voz. A faixa ainda leva as pausas abertas para os sons da história. As falas são cortadas só onde a voz muda ou onde entra uma pausa; os volumes da vinheta e do amigo são igualados ao do narrador. Cortes, gráficos e efeitos ficam presos a palavras do roteiro, achadas pelo texto (`N('Toca três vezes.')`, `A('Oitenta mil.')`), então a edição acompanha as vozes se elas forem geradas ou alinhadas de novo.
+`montar_timeline.py` junta, na ordem do roteiro, a vinheta, as falas do narrador, as do amigo e o pedido de comentário do fim, gravado à parte, numa só faixa, `narracao-ep02.wav`. Cada linha do roteiro é achada na sua gravação pelo texto, então as falas podem entrar em outra ordem. O narrador gravou o pedido do nome por último, e a montagem o põe logo depois da primeira fala do amigo. A vinheta são as 17 primeiras palavras da narração da Parte 1, com a mesma voz. A faixa ainda leva as pausas abertas para os sons da história. As falas são cortadas só onde a voz muda ou onde entra uma pausa; os volumes da vinheta e do amigo são igualados ao do narrador. Cortes, gráficos e efeitos ficam presos a palavras do roteiro, achadas pelo texto (`N('Toca três vezes.')`, `A('Oitenta mil.')`), então a edição acompanha as vozes se elas forem geradas ou alinhadas de novo.
 
 As pausas, em `PAUSES`, entram depois destas palavras:
 
@@ -59,7 +59,7 @@ O script grava `timeline.json`, a versão do Instagram, e `timeline-vertical.jso
 
 ### Votações
 
-A Parte 2 termina com duas votações, como pediu o criador. Sobre o carro parado no portão, escurecido, entram “FUGIR OU / FICAR?”, “COMENTA A SUA ESCOLHA” com os botões FUGIR e FICAR, como os de ABRIR e NÃO ABRIR na Parte 1, e uma caixa de comentário vazia com “e um nome pra ele…” e o cursor piscando, porque o nome do amigo é livre, sem opções. Por último entra a caixa “PARTE 3 · vence a maioria e o nome mais curtido”. Cada elemento entra na sua palavra do pedido.
+A Parte 2 tem duas votações, como pediu o criador. A do nome vem logo depois que o amigo aparece e fala pela primeira vez, sobre o retrato dele. Entram “ELE VENDEU / O SEU NOME. / AGORA VOCÊ / ESCOLHE O DELE.” e, abaixo do rosto, “QUAL É O / NOME DELE?”. Segue uma caixa de comentário vazia com “Comenta o nome dele…” e o cursor piscando, porque o nome é livre, sem opções, e por fim a caixa “PARTE 3 · o mais curtido vira o nome dele”. A do fim é sobre o carro parado no portão, escurecido. Ela mostra “FUGIR OU / FICAR?”, “COMENTA UMA PALAVRA” com os botões FUGIR e FICAR, como os de ABRIR e NÃO ABRIR na Parte 1, e a caixa “PARTE 3 · a maioria decide o próximo passo”. Cada elemento entra na sua palavra da narração.
 
 O pedido, `narracao-ep02-pedido.wav`, é alinhado como as outras vozes:
 
