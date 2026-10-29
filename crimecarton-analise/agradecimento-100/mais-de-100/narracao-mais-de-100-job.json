@@ -1,0 +1,25 @@
+{
+  "jobId": "mcp_media_fd6ee4172aea3ce6fc6da272baf4025b64927899c8096c4e77b3a3d6ec736d87",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_fd6ee4172aea3ce6fc6da272baf4025b64927899c8096c4e77b3a3d6ec736d87/0.wav?hdnts=FullPath~Expires=1793361201~Signature=59F9s7FVtS2MFl60RJ7_an6k3JIxLIBvto_TH-PWokQ47quzV4MM_P0d9q-eevBDPHZ-JBC-C34ZGP0cMyzVDQ",
+      "expiresAt": "2026-10-30T11:53:21.550Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 19.32
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-mais-de-100-narrador-charon-v1-20261029",
+    "voice": "Charon",
+    "style": "Português brasileiro. A mesma voz adulta masculina do narrador da série, agora num agradecimento: leve suspense nas duas primeiras falas, depois caloroso e sorridente. Natural e conversacional, sem tom de propaganda e sem gritar. Ritmo de 140 a 150 palavras por minuto. Cada parágrafo é uma fala separada, com pausa curta entre eles. Em “Dessa vez… veio cheia”, segurar um instante antes de “veio cheia”. Pronunciar Zinho com z inicial e nh palatal.",
+    "text": "Lembra da mochila?\n\nNa primeira vez, ela veio só com roupa velha.\n\nDessa vez… veio cheia.\n\nMais de cem seguidores. O Zinho aprovou.\n\nObrigado, aliados. Cada um de vocês faz parte dessa história.\n\nE a parte três já tá chegando.\n\nSegue o perfil pra não perder.",
+    "sourceFile": "pedido-narracao-mais-de-100.json"
+  }
+}
