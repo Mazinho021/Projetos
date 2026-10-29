@@ -24,9 +24,8 @@ A faixa de avisos leva as duas listras brancas da manga da jaqueta. Na quinta ve
 
 Por decisão do criador, o site não cita o @crimecarton.
 
-Faltam três coisas do criador:
+O Mercado Pago está ligado desde 28/10/2026, direto com o token de produção. No mesmo dia, o criador fez a primeira compra de verdade, um Pix de R$ 9,90 com o @ `teste.golpe`. O pagamento foi aprovado e o @ ficou fora da lista, como devia. Faltam duas coisas do criador:
 
-- ligar a conta do Mercado Pago (ver abaixo); até lá, o botão do passe diz “Pagamento abre em breve”;
 - a confirmação do prazo e das vagas;
 - os links dos Reels.
 
@@ -73,8 +72,9 @@ node --test crimecarton-analise/site/testes/*.test.mjs
 
 1. Entrar em https://www.mercadopago.com.br/developers/panel/app com a conta do Mercado Pago que vai receber o dinheiro. Criar uma aplicação para pagamentos online com o Checkout Pro.
 2. Em “Credenciais de produção”, ativar as credenciais, informando o ramo e o site `https://golpecartoon.netlify.app`, e copiar o **Access Token**, que começa com `APP_USR-`.
-3. No Netlify, no projeto `golpecartoon`, ir em **Project configuration → Environment variables** e criar `MP_ACCESS_TOKEN` com o token, marcado como secreto e com escopo **Functions**.
-4. Publicar de novo, como em “Publicar” abaixo, porque as variáveis só valem a partir da publicação seguinte. Depois disso, o botão volta a dizer “Pagar R$ 9,90 com Mercado Pago”.
+3. Cadastrar uma chave Pix na mesma conta, no app do Mercado Pago. Sem chave, a página de pagamento não mostra o Pix.
+4. No Netlify, no projeto `golpecartoon`, ir em **Project configuration → Environment variables** e criar `MP_ACCESS_TOKEN` com o token, marcado como secreto e com escopo **Functions**.
+5. Publicar de novo, como em “Publicar” abaixo, porque as variáveis só valem a partir da publicação seguinte. Depois disso, o botão volta a dizer “Pagar R$ 9,90 com Mercado Pago”.
 
 Para testar antes de vender, usar primeiro o token da aba **Teste**:
 
@@ -84,7 +84,9 @@ Para testar antes de vender, usar primeiro o token da aba **Teste**:
 
 Enquanto o token de teste estiver no site, ninguém consegue pagar de verdade, então o teste deve ser rápido e antes de divulgar o link.
 
-O token dá acesso à conta, então não vai no código nem no GitHub. Para testar, não dá para pagar com o e-mail da própria conta do Mercado Pago, porque o Mercado Pago recusa quando quem paga e quem recebe são a mesma pessoa.
+O token dá acesso à conta, então não vai no código nem no GitHub.
+
+Para uma compra de teste com o token de produção, abrir o site numa aba anônima, sem entrar na conta do Mercado Pago que recebe, porque ela não pode pagar a si mesma. Usar o @ `teste.golpe` e pagar o Pix pelo app do banco. No teste de 28/10, o Itaú mostrou “Instabilidade no banco de destino” na primeira tentativa, e o mesmo Pix foi aprovado depois.
 
 ## Atualizar a cada parte
 
