@@ -10,11 +10,13 @@ thank-you, whose drawing and sound tools it borrows (../agradecimento-100/mais-d
   "O seu arroba entra no episódio:"         "@seuperfil" types itself in.
   "no celular dele, num muro, na TV ou nos créditos."   four quick shots, each with the @.
   "E vai na legenda do post, com o seu número de aliado."   the post's caption, then the ally badge.
-  "São só dez vagas, até sexta, às nove da noite."   ten open places light up; the deadline.
+  (a pause) "até sexta, às nove da noite."  "até 30 vagas": thirty open places light up; the deadline.
   (no voice)                                Zinho calls you in: "Faça parte da história".
 
 The creator asked for no price, Pix or link on screen: the narration's last two lines ("Nove e
-noventa no Pix…" and "O link tá na bio.") are cut, and the video ends on Zinho calling.
+noventa no Pix…" and "O link tá na bio.") are cut, and the video ends on Zinho calling. Then the
+places went from 10 to 30, after the narration was made: "São só dez vagas," is cut out of it too,
+and the screen alone says "até 30 vagas".
 
 The picture follows the narration's words (alinhamento-narracao.json). Codex drew the wall, the TV
 and Zinho pointing at you (cut out by recortar.py); the @ is painted on them here.
@@ -67,15 +69,22 @@ ALINHAMENTO = HERE / 'alinhamento-narracao.json'
 ARROBA = '@seuperfil'
 ATRASO = .3  # the voice starts as the card spins in
 
+# The narration as heard: "São só dez vagas," (its words 37 to 40) is cut, and the voice goes from
+# "aliado." to "até sexta" after a pause that shows the 30 places. It stops after "às nove da noite.",
+# word 46; the rest stays out.
+SALTO = (37, 40)
+PAUSA_DAS_VAGAS = 1.15  # from the end of "aliado." to "até"
+ULTIMA = 46
+
 _PALAVRAS = json.loads(ALINHAMENTO.read_text(encoding='utf-8'))['words']
-_P = [(w['start'] + ATRASO, w['end'] + ATRASO) for w in _PALAVRAS]
+_ADIANTA = _PALAVRAS[SALTO[1] + 1]['start'] - _PALAVRAS[SALTO[0] - 1]['end'] - PAUSA_DAS_VAGAS
+_P = [(w['start'] + ATRASO - (_ADIANTA if i > SALTO[1] else 0), w['end'] + ATRASO - (_ADIANTA if i > SALTO[1] else 0))
+      for i, w in enumerate(_PALAVRAS)]
 # The words the picture follows, by their place in narracao-chamada.txt.
 T = {nome: _P[i][0] for nome, i in (
     ('quer', 0), ('parte', 3), ('vire', 5), ('aliado', 6), ('zinho', 8), ('o_seu', 9), ('arroba', 11),
     ('entra', 12), ('celular', 15), ('muro', 18), ('tv', 20), ('creditos', 23), ('e', 25), ('legenda', 28),
-    ('numero', 34), ('sao', 37), ('dez', 39), ('ate', 41), ('nove', 44))}
-# The voice stops after "às nove da noite."; the rest of the narration stays out.
-ULTIMA = 46
+    ('numero', 34), ('ate', 41))}
 VOZ_FIM = _P[ULTIMA][1]
 
 # Cuts, each just ahead of the word that brings the next picture.
@@ -86,8 +95,9 @@ C_MURO = T['muro'] - .06
 C_TV = T['tv'] - .06
 C_CREDITOS = T['creditos'] - .06
 C_LEGENDA = T['e'] - .3
-C_VAGAS = T['sao'] - .14
-C_FINAL = VOZ_FIM + .35        # Zinho calling, once the deadline has been said
+C_VAGAS = _P[SALTO[0] - 1][1] + .2  # in the pause after "aliado."
+VAGAS_30 = C_VAGAS + .3              # "30 VAGAS" lands
+C_FINAL = VOZ_FIM + .35              # Zinho calling, once the deadline has been said
 DURACAO = round((C_FINAL + 3)*FPS)/FPS
 EMPURRA = .14
 
@@ -503,27 +513,25 @@ def cracha():
 
 
 def cena_vagas(t):
-    """"São só dez vagas, até sexta, às nove da noite.": ten open places, and the deadline."""
+    """The pause, then "até sexta, às nove da noite.": up to thirty places, all open, and the deadline."""
     tela = Image.new('RGBA', (W, H), (0, 0, 0, 255))
     base.faixas_da_jaqueta(tela, t)
-    aparece(tela, texto('SÓ', 90, CREME), W/2, 300, T['sao'] - .02, t)
-    aparece(tela, texto('10 VAGAS', 150, VERMELHO_TEXTO, contorno=8), W/2, 440, T['dez'], t, tipo='pancada')
-    for i in range(10):
-        coluna, linha = i % 2, i // 2
-        x, y = (300 if coluna == 0 else 780), 690 + linha*120
-        aparece(tela, vaga(i + 1), x, y, T['sao'] + .04*i, t)
+    aparece(tela, texto('ATÉ', 90, CREME), W/2, 300, C_VAGAS + .1, t)
+    aparece(tela, texto('30 VAGAS', 150, VERMELHO_TEXTO, contorno=8), W/2, 440, VAGAS_30, t, tipo='pancada')
+    for i in range(30):
+        coluna, linha = i % 5, i // 5
+        aparece(tela, vaga(i + 1), 156 + coluna*192, 640 + linha*112, C_VAGAS + .15 + .02*i, t)
     if t >= T['ate'] - .05:
         colar(tela, relogio(t), W/2, 1400, sai_volta(prog(t, T['ate'] - .05, T['ate'] + .25)), alfa=prog(t, T['ate'] - .05, T['ate']))
-    return sacudir(tela, t, T['dez'], 12, cor=AZUL_ESCURO)
+    return sacudir(tela, t, VAGAS_30, 12, cor=AZUL_ESCURO)
 
 
-@lru_cache(maxsize=10)
+@lru_cache(maxsize=30)
 def vaga(n):
-    im = retangulo((440, 96), 48, PAINEL + (235,), LINHA + (255,), 4)
-    num = texto(f'{n:02d}', 40, CARAMELO, 'Bold', sombra=False)
-    im.alpha_composite(num, (34, (96 - num.height)//2))
-    s = texto('vaga aberta', 38, CREME, 'SemiBold', sombra=False)
-    im.alpha_composite(s, (110, (96 - s.height)//2))
+    """An open place: its number in a dark pill."""
+    im = retangulo((168, 92), 46, PAINEL + (235,), LINHA + (255,), 4)
+    num = texto(f'{n:02d}', 46, CARAMELO, 'Bold', sombra=False)
+    im.alpha_composite(num, ((168 - num.width)//2, (92 - num.height)//2))
     return im
 
 
@@ -636,7 +644,7 @@ def eventos():
         (C_CREDITOS, 'whoosh', -14, .4, 1.6),
         (C_LEGENDA - .02, 'whoosh', -8, .6, .9), (C_LEGENDA + .2, 'whoosh', -14, 0, 1.1), (T['legenda'], 'pop', -15, 0, 1.3),
         (T['numero'] - .06, 'impacto', -8, 0, 1),
-        (C_VAGAS, 'whoosh', -13, .4, 1.4), (T['dez'], 'impacto-suave', -10, 0, 1),
+        (C_VAGAS, 'whoosh', -13, .4, 1.4), (VAGAS_30, 'impacto-suave', -10, 0, 1),
         # The close, with no voice: the effects can be fuller.
         (C_FINAL - .02, 'whoosh', -6, -.6, .9), (C_FINAL + .05, 'whoosh', -9, 0, 1.05), (C_FINAL + .3, 'impacto', -4, 0, 1),
         (C_FINAL + .55, 'impacto-suave', -6, 0, 1), (C_FINAL + .95, 'pop', -7, 0, 1), (C_FINAL + 1.0, 'notificacao', -10, 0, 1),
@@ -645,24 +653,30 @@ def eventos():
     letras = len(ARROBA) - 1
     for k in range(letras):
         ev.append((T['arroba'] + (T['entra'] - T['arroba'])*k/letras, 'tique', -13, 0, 1.2))
-    # The ten places popping up, and the clock ticking.
-    for i in range(10):
-        ev.append((T['sao'] + .04*i, 'pop', -19, (-1)**i*.4, 1 + .06*i))
+    # The thirty places popping up, a pop for every third, and the clock ticking.
+    for k, i in enumerate(range(0, 30, 3)):
+        ev.append((C_VAGAS + .15 + .02*i, 'pop', -19, (-1)**k*.4, 1 + .06*k))
     for i in range(6):
         ev.append((T['ate'] + .1 + i*.16, 'tique', -14, 0, 1))
     return ev
 
 
 def voz():
-    """The narration up to "às nove da noite.", faded out right after it."""
+    """The narration as heard: up to "aliado.", the pause, then "até sexta" to "às nove da noite."."""
     pcm = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(NARRACAO), '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'],
                          capture_output=True, check=True).stdout
     som = np.frombuffer(pcm, np.float32)
-    fim = int((_PALAVRAS[ULTIMA]['end'] + .12)*SR)
-    som = som[:fim].copy()
-    queda = int(.06*SR)
-    som[-queda:] *= np.linspace(1, 0, queda, dtype=np.float32)
-    return som/np.abs(som).max()*10**(-3/20)
+    # Both cuts fall in the narrator's own pauses, around the words left out.
+    antes = _PALAVRAS[SALTO[0] - 1]['end'] + .08
+    depois = _PALAVRAS[SALTO[1] + 1]['start'] - .06
+    fim = _PALAVRAS[ULTIMA]['end'] + .12
+    ate_aliado, resto = som[:int(antes*SR)].copy(), som[int(depois*SR):int(fim*SR)].copy()
+    curto, queda = int(.01*SR), int(.06*SR)
+    ate_aliado[-curto:] *= np.linspace(1, 0, curto, dtype=np.float32)
+    resto[:curto] *= np.linspace(0, 1, curto, dtype=np.float32)
+    resto[-queda:] *= np.linspace(1, 0, queda, dtype=np.float32)
+    fala = np.concatenate([ate_aliado, np.zeros(int((PAUSA_DAS_VAGAS - .14)*SR), np.float32), resto])
+    return fala/np.abs(fala).max()*10**(-3/20)
 
 
 def abaixar_sob_a_voz(fala, n):

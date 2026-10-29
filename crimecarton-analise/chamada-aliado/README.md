@@ -1,8 +1,11 @@
 # Chamada — Vire aliado
 
-Vídeo que chama o público para virar aliado da Parte 3, pedido pelo criador em 29/10/2026. O aliado tem o @ dele dentro do episódio. No mesmo dia, o criador pediu para tirar o Pix, o preço e o link: o vídeo acaba nas 10 vagas, com o Zinho chamando quem assiste.
+Vídeo que chama o público para virar aliado da Parte 3, pedido pelo criador em 29/10/2026. O aliado tem o @ dele dentro do episódio. No mesmo dia, o criador pediu duas mudanças:
 
-É vertical, 1080 × 1920 a 30 fps, com 18,0 s. O narrador da série conta tudo, com a voz Charon. O estilo, as cores e os sons são os do agradecimento dos [mais de 100 seguidores](../agradecimento-100/mais-de-100/), de onde vêm as ferramentas de desenho e de som. Tudo segue as palavras da narração. Os efeitos abaixam sozinhos enquanto o narrador fala. O texto fica entre y = 240 e y = 1500, longe das barras e dos botões que Reels e TikTok desenham por cima.
+- **Sem Pix, preço nem link:** o vídeo acaba no prazo das vagas, com o Zinho chamando quem assiste.
+- **Até 30 vagas:** as vagas passaram de 10 para 30.
+
+É vertical, 1080 × 1920 a 30 fps, com 17,3 s. O narrador da série conta tudo, com a voz Charon. O estilo, as cores e os sons são os do agradecimento dos [mais de 100 seguidores](../agradecimento-100/mais-de-100/), de onde vêm as ferramentas de desenho e de som. Tudo segue as palavras da narração. Os efeitos abaixam sozinhos enquanto o narrador fala. O texto fica entre y = 240 e y = 1500, longe das barras e dos botões que Reels e TikTok desenham por cima.
 
 | Narração | Na tela | Animação |
 |---|---|---|
@@ -11,17 +14,20 @@ Vídeo que chama o público para virar aliado da Parte 3, pedido pelo criador em
 | “O seu arroba entra no episódio:” | “O SEU”, “@seuperfil” e “ENTRA NO EPISÓDIO” | Sob o holofote, o @ é digitado letra por letra numa caixa. |
 | “no celular dele, num muro, na TV ou nos créditos.” | Uma etiqueta para cada lugar | Quatro cortes rápidos. A mensagem do @ chega no celular do Zinho, o da Parte 2. O @ é pichado com spray no muro do bairro, aparece no plantão de uma TV de tubo e sobe nos créditos da Parte 3. |
 | “E vai na legenda do post, com o seu número de aliado.” | “NA LEGENDA DO POST” e “COM O SEU NÚMERO” | A legenda do post sobe com o @ sublinhado, e o crachá “Nº 001” bate na tela. |
-| “São só dez vagas, até sexta, às nove da noite.” | “SÓ 10 VAGAS” e “ATÉ SEXTA, 21H” | Dez vagas abertas pipocam, e um relógio marca o prazo. |
+| (pausa) “Até sexta, às nove da noite.” | “ATÉ 30 VAGAS” e “ATÉ SEXTA, 21H” | Na pausa do narrador, trinta vagas abertas pipocam. Na fala, um relógio marca o prazo. |
 | (sem voz) | “FAÇA PARTE / DA HISTÓRIA” e “VIRE ALIADO” | Uma faixa vermelha abre os raios vermelhos. O Zinho sobe apontando para quem assiste, e estrelinhas piscam em volta do título. |
 
-A narração que o Codex gerou tem mais duas falas: “Nove e noventa no Pix, direto no site.” e “O link tá na bio.”. Como o criador pediu para tirar essas partes, a voz é cortada logo depois de “às nove da noite”.
+A narração que o Codex gerou ainda fala de 10 vagas e tem mais duas falas no fim. O vídeo corta essas partes da voz:
 
-Medido no MP4: -16,0 LUFS, com pico de -2,3 dBFS. Em cada palavra, a voz fica pelo menos 8,9 dB acima dos efeitos (25,5 dB na mediana). O reconhecimento de fala (faster-whisper) transcreve o áudio final inteiro, e a voz termina em “às nove da noite”.
+- “Nove e noventa no Pix, direto no site.” e “O link tá na bio.” saem, e a voz para logo depois de “às nove da noite”.
+- “São só dez vagas,” também sai, porque as vagas passaram para 30 depois da narração. A voz vai de “aliado.” direto para “até sexta”, com uma pausa de 1,15 s em que a tela mostra as 30 vagas. Os dois cortes caem nas pausas do próprio narrador e não se ouvem.
+
+Medido no MP4: -16,0 LUFS, com pico de -2,0 dBFS. Em cada palavra, a voz fica pelo menos 8,9 dB acima dos efeitos (25,8 dB na mediana). O reconhecimento de fala (faster-whisper) transcreve o áudio final inteiro: “dez vagas” não aparece mais, e a voz termina em “às nove da noite”.
 
 ## Arquivos
 
 - `chamada-aliado.mp4`: o vídeo.
-- `capa-chamada-aliado.jpg`: o quadro de 16,7 s, com o Zinho apontando e “FAÇA PARTE DA HISTÓRIA”, para usar de capa no Instagram e no TikTok.
+- `capa-chamada-aliado.jpg`: o quadro de 16,0 s, com o Zinho apontando e “FAÇA PARTE DA HISTÓRIA”, para usar de capa no Instagram e no TikTok.
 - `narracao-chamada.wav`, com o registro `narracao-chamada-job.json`: a narração. O Codex gerou o áudio no OpusClip com [`pedido-narracao-chamada.json`](pedido-narracao-chamada.json) (voz Charon, 1 crédito). O pedido completo ao Codex está em [`pedido-codex-chamada.md`](pedido-codex-chamada.md).
 - `narracao-chamada.txt` e `alinhamento-narracao.json`: o texto da narração e o tempo de cada palavra, medido por [`alinhar_narracao.py`](../episodio-01/montagem/alinhar_narracao.py) com o modelo `medium` (53 de 60 palavras reconhecidas exatamente).
 - `zinho-apontando-a.png` e `zinho-apontando-b.png`: as duas versões do Zinho apontando que o Codex desenhou. As duas ficaram fiéis ao retrato da série, então o vídeo usa as duas: a B, com a sobrancelha levantada, no “Vire aliado”, e a A, com o sorriso aberto, no fim.
@@ -41,7 +47,7 @@ python recortar.py /caminho/isnet-anime.onnx   # só se os recortes mudarem
 python ../episodio-01/montagem/alinhar_narracao.py --audio narracao-chamada.wav \
   --script narracao-chamada.txt --output alinhamento-narracao.json   # só se a narração mudar
 python animar.py                              # o vídeo, em cerca de 1 minuto
-python animar.py --quadros 2.6 6.9 16.7       # só alguns quadros, em work/, para conferir
+python animar.py --quadros 2.6 6.9 12.5       # só alguns quadros, em work/, para conferir
 ```
 
-Com uma narração nova, as cenas se ajustam sozinhas às palavras. Se o texto mudar, os números das palavras em `T` e o `ULTIMA`, a última palavra que entra no vídeo, precisam acompanhar.
+Com uma narração nova, as cenas se ajustam sozinhas às palavras. Se o texto mudar, os números das palavras precisam acompanhar: os de `T`, o `SALTO` (as palavras cortadas) e o `ULTIMA` (a última palavra que entra no vídeo).
