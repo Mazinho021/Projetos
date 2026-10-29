@@ -24,9 +24,8 @@ A faixa de avisos leva as duas listras brancas da manga da jaqueta. Na quinta ve
 
 Por decisão do criador, o site não cita o @crimecarton.
 
-O Mercado Pago está ligado desde 28/10/2026, direto com o token de produção. No mesmo dia, o criador fez a primeira compra de verdade, um Pix de R$ 9,90 com o @ `teste.golpe`. O pagamento foi aprovado e o @ ficou fora da lista, como devia. Faltam três coisas do criador:
+O Mercado Pago está ligado desde 28/10/2026, direto com o token de produção. No mesmo dia, o criador fez a primeira compra de verdade, um Pix de R$ 9,90 com o @ `teste.golpe`. O pagamento foi aprovado e o @ ficou fora da lista, como devia. Faltam duas coisas do criador:
 
-- a Public Key do Mercado Pago, para o cartão também ser pago dentro do site (ver “Ligar o Mercado Pago”);
 - a confirmação do prazo e das vagas;
 - os links dos Reels.
 
@@ -57,7 +56,7 @@ O pagamento acontece no próprio site, processado pelo Mercado Pago, com Pix e c
    - Quando o pagamento é aprovado, a janela mostra “Pagamento aprovado” e o número de aliado, e a lista da página se atualiza na hora.
 4. **No cartão,** a janela mostra o formulário de cartão do próprio Mercado Pago (o Card Payment Brick), nas cores do site. Os dados do cartão vão direto ao Mercado Pago, que devolve um código de uso único. A função cobra esse código, com o valor e uma parcela definidos no servidor, e a janela mostra a aprovação ou o motivo da recusa.
 
-O formulário de cartão só aparece com a chave pública ligada (ver “Ligar o Mercado Pago”). Sem ela, ou se o formulário não carregar, o cartão abre a página do Mercado Pago, o Checkout Pro, como antes.
+O formulário de cartão só aparece com a chave pública ligada (ver “Ligar o Mercado Pago”). Sem ela, ou se o formulário não carregar, o cartão abre a página do Mercado Pago, o Checkout Pro, como antes. Em 29/10/2026, o criador decidiu deixar o cartão na página do Mercado Pago, sem a chave pública.
 
 O Pix aberto fica guardado no aparelho até ser pago ou vencer. Se o navegador do Instagram recarregar a página na volta do app do banco, a janela abre de novo e confirma o pagamento. O mesmo @ com o mesmo e-mail reabre o mesmo Pix, em vez de criar outro.
 
