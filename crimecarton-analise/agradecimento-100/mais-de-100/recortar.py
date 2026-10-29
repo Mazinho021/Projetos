@@ -39,23 +39,27 @@ def mask_of(session, im):
     return Image.fromarray((pred*255).astype(np.uint8)).resize(im.size, Image.Resampling.LANCZOS)
 
 
+def cut_out(session, part):
+    """The drawing in `part` without its paper, cropped to the drawing."""
+    # Pad with the sheet's paper colour, so a drawing touching the crop's edge is not cut flat.
+    pad = 24
+    canvas = Image.new('RGB', (part.width + 2*pad, part.height + 2*pad), part.getpixel((4, 4)))
+    canvas.paste(part, (pad, pad))
+    alpha = mask_of(session, canvas)
+    # A firm edge: the model's soft fringe of paper is pushed out, the line art kept.
+    alpha = alpha.point(lambda v: 0 if v < 40 else 255 if v > 215 else round((v - 40) * 255 / 175))
+    alpha = alpha.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(.7))
+    cut = canvas.convert('RGBA')
+    cut.putalpha(alpha)
+    return cut.crop(cut.getchannel('A').point(lambda v: 255 if v > 8 else 0).getbbox())
+
+
 def main():
     session = ort.InferenceSession(sys.argv[1], providers=['CPUExecutionProvider'])
     (HERE / 'recortes').mkdir(exist_ok=True)
     for name, (source, box) in PARTS.items():
         part = Image.open(source).convert('RGB')
-        part = part.crop(box) if box else part
-        # Pad with the sheet's paper colour, so a drawing touching the crop's edge is not cut flat.
-        pad = 24
-        canvas = Image.new('RGB', (part.width + 2*pad, part.height + 2*pad), part.getpixel((4, 4)))
-        canvas.paste(part, (pad, pad))
-        alpha = mask_of(session, canvas)
-        # A firm edge: the model's soft fringe of paper is pushed out, the line art kept.
-        alpha = alpha.point(lambda v: 0 if v < 40 else 255 if v > 215 else round((v - 40) * 255 / 175))
-        alpha = alpha.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(.7))
-        cut = canvas.convert('RGBA')
-        cut.putalpha(alpha)
-        cut = cut.crop(cut.getchannel('A').point(lambda v: 255 if v > 8 else 0).getbbox())
+        cut = cut_out(session, part.crop(box) if box else part)
         cut.save(HERE / 'recortes' / f'{name}.png', optimize=True)
         print(name, cut.size)
 

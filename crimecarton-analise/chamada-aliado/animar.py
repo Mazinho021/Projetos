@@ -3,7 +3,7 @@
 
 It invites the audience to become allies of Part 3, in the look of the "mais de 100 seguidores"
 thank-you, whose drawing and sound tools it borrows (../agradecimento-100/mais-de-100/animar.py).
-1080 × 1920 at 30 fps, about 22 s:
+1080 × 1920 at 30 fps, about 18 s:
 
   "Quer aparecer na parte três?"            Part 3's card spins in and turns to "em breve".
   "Vire aliado do Zinho."                   Zinho points at you over turning caramel rays.
@@ -16,9 +16,8 @@ thank-you, whose drawing and sound tools it borrows (../agradecimento-100/mais-d
 The creator asked for no price, Pix or link on screen: the narration's last two lines ("Nove e
 noventa no Pix…" and "O link tá na bio.") are cut, and the video ends on Zinho calling.
 
-The picture follows the narration's words (alinhamento-narracao.json). Until Codex delivers
-narracao-chamada.wav, the timing is estimated from narracao-chamada.txt, the video has effects
-only, and drawn stand-ins replace the wall, the TV and the pointing Zinho.
+The picture follows the narration's words (alinhamento-narracao.json). Codex drew the wall, the TV
+and Zinho pointing at you (cut out by recortar.py); the @ is painted on them here.
 
     python animar.py                          # the video, next to this script
     python animar.py --quadros 1.2 9.8 20     # stills for a look, in work/
@@ -33,13 +32,12 @@ import math
 from multiprocessing import Pool
 from pathlib import Path
 import random
-import re
 import subprocess
 import sys
 import wave
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 HERE = Path(__file__).resolve().parent
 SERIE = HERE.parent
@@ -66,25 +64,10 @@ from animar_agradecimento import (  # noqa: E402
 SAIDA = HERE / 'chamada-aliado.mp4'
 NARRACAO = HERE / 'narracao-chamada.wav'
 ALINHAMENTO = HERE / 'alinhamento-narracao.json'
-TEXTO = HERE / 'narracao-chamada.txt'
 ARROBA = '@seuperfil'
 ATRASO = .3  # the voice starts as the card spins in
 
-
-def estimadas(txt):
-    """Word timings guessed from the text, for drafts made before the narration exists."""
-    saida, t = [], 0.0
-    for i, w in enumerate(txt.split()):
-        silabas = max(1, len(re.findall(r'[aeiouáéíóúâêôãõ]+', w.lower())))
-        dur = .08 + .15*silabas
-        saida.append({'i': i, 'text': w, 'start': round(t, 3), 'end': round(t + dur, 3)})
-        t += dur + (.55 if w[-1] in '.?!' else .2 if w[-1] in ',:' else 0)
-    return saida
-
-
-COM_VOZ = NARRACAO.exists() and ALINHAMENTO.exists()
-_PALAVRAS = (json.loads(ALINHAMENTO.read_text(encoding='utf-8'))['words'] if COM_VOZ
-             else estimadas(TEXTO.read_text(encoding='utf-8')))
+_PALAVRAS = json.loads(ALINHAMENTO.read_text(encoding='utf-8'))['words']
 _P = [(w['start'] + ATRASO, w['end'] + ATRASO) for w in _PALAVRAS]
 # The words the picture follows, by their place in narracao-chamada.txt.
 T = {nome: _P[i][0] for nome, i in (
@@ -105,12 +88,24 @@ C_CREDITOS = T['creditos'] - .06
 C_LEGENDA = T['e'] - .3
 C_VAGAS = T['sao'] - .14
 C_FINAL = VOZ_FIM + .35        # Zinho calling, once the deadline has been said
-DURACAO = round((C_FINAL + 2.6)*FPS)/FPS
+DURACAO = round((C_FINAL + 3)*FPS)/FPS
 EMPURRA = .14
 
 PHONE_QUAD = [[0.4666, 0.4137], [0.7031, 0.4344], [0.5938, 0.6811], [0.2791, 0.6466]]  # Part 2's phone, scene 6
 LOCK = {'state': 'lock', 'date': 'terça-feira, 27 de outubro', 'time': '23:47', 'app': 'MENSAGENS',
         'sender': ARROBA, 'message': 'Tô contigo, Zinho.', 'when': 'agora'}
+
+# The @ sprayed on cena-muro.png's empty plaster, at eye height from x 120 to 880 (the middle of its
+# two ends). The wall recedes to the right, its top falling from y 440 to 545 while its foot stays at
+# 1400, so the @ is 12% shorter at its right end.
+MURO_X, MURO_Y = (120, 880), (854, 871)
+MURO_ENCOLHE = .88
+REBOCO = np.array((236, 226, 206), np.float32)  # the plaster in full light: the wall over it is the light falling there
+
+# cena-tv.png's screen: the corners of its glass as if they were square (top left, top right, bottom
+# right, bottom left), and the colour of its empty glow, which the news report covers.
+TV_QUAD = [(207, 800), (913, 778), (913, 1308), (207, 1301)]
+TV_BRILHO = (141, 229, 252)
 
 
 # ---------------------------------------------------------------- assets
@@ -130,11 +125,9 @@ def carregar():
     if A:
         return
     base.carregar_assets()
-    A['joia'] = base.A['joia']
     # Zinho pointing at you, cut from Codex's drawings: one for "Vire aliado", one for the close.
     for nome in ('apontando', 'chamando'):
-        recorte = HERE / 'recortes' / f'zinho-{nome}.png'
-        A[nome] = Image.open(recorte).convert('RGBA') if recorte.exists() else A.get('apontando', base.A['joia'])
+        A[nome] = Image.open(HERE / 'recortes' / f'zinho-{nome}.png').convert('RGBA')
 
     # Caramel rays for "Vire aliado": the lamp's colour, dark at the edges.
     yy, xx = np.mgrid[0:H, 0:W]
@@ -158,45 +151,27 @@ def carregar():
     quad = [(x*cena.width, y*cena.height) for x, y in PHONE_QUAD]
     A['celular_coef'] = render_animatic.perspective([(0, 0), (w, 0), (w, h), (0, h)], quad)
 
-    muro = HERE / 'cena-muro.png'
-    A['muro'] = cobrir(Image.open(muro).convert('RGB')) if muro.exists() else muro_provisorio()
-    A['tv'], A['tv_quad'] = tv()
+    A['muro'] = cobrir(Image.open(HERE / 'cena-muro.png').convert('RGB'))
+    A['muro_luz'] = np.clip(np.asarray(A['muro'].convert('RGB'), np.float32)/REBOCO, .3, 1)
+    A['tv'] = cobrir(Image.open(HERE / 'cena-tv.png').convert('RGB'))
+    A['tv_vidro'], A['tv_bordas'] = vidro_da_tv(A['tv'])
 
     A['avatar'] = avatar_redondo(Image.open(SERIE / 'site' / 'img' / 'perfil.jpg'), 104)
 
 
-def muro_provisorio():
-    """A stand-in for cena-muro.png: worn plaster at night under a street lamp."""
-    rng = np.random.default_rng(4)
-    yy, xx = np.mgrid[0:H, 0:W]
-    manchas = Image.fromarray((rng.random((24, 14))*255).astype(np.uint8)).resize((W, H), Image.Resampling.BICUBIC)
-    m = np.asarray(manchas, np.float32)/255
-    muro = np.array((158, 146, 128))*(.82 + .18*m)[..., None] + rng.normal(0, 6, (H, W, 1))
-    calcada = yy > H*.84
-    muro[calcada] = np.array((88, 86, 84)) + rng.normal(0, 5, (int(calcada.sum()), 3))
-    luz = np.exp(-(((xx - W*.2)/(W*.9))**2 + ((yy - H*.05)/(H*.7))**2))
-    noite = (.28 + .72*luz)[..., None]*np.array((1.0, .86, .62))
-    return Image.fromarray(np.clip(muro*noite, 0, 255).astype(np.uint8)).convert('RGBA')
-
-
-def tv():
-    """The TV shot and its screen's corners: Codex's cena-tv.png, or a drawn stand-in."""
-    caminho = HERE / 'cena-tv.png'
-    quad_arquivo = HERE / 'cena-tv-tela.json'
-    if caminho.exists() and quad_arquivo.exists():
-        fundo = cobrir(Image.open(caminho).convert('RGB'))
-        return fundo, [tuple(p) for p in json.loads(quad_arquivo.read_text())['quad']]
-    fundo = Image.new('RGBA', (W, H), (0, 0, 0, 255))
-    d = ImageDraw.Draw(fundo)
-    for k in range(H):
-        f = k/H
-        d.line((0, k, W, k), fill=(round(34 - 20*f), round(24 - 14*f), round(20 - 12*f), 255))
-    d.rectangle((0, 1380, W, H), fill=(60, 38, 26, 255))
-    d.rounded_rectangle((70, 560, 1010, 1400), 60, fill=(48, 42, 40, 255), outline=(16, 12, 10, 255), width=8)
-    d.rounded_rectangle((120, 610, 960, 1250), 40, fill=(20, 18, 18, 255))
-    for cx in (300, 780):
-        d.ellipse((cx - 26, 1300, cx + 26, 1352), fill=(30, 26, 24, 255))
-    return fundo, [(140, 630), (940, 630), (940, 1230), (140, 1230)]
+def vidro_da_tv(fundo):
+    """Where the news shows on cena-tv.png: the screen's glass, with its rounded edge, and the
+    shadow that darkens a tube TV's picture towards that edge."""
+    rgb = np.asarray(fundo.convert('RGB')).astype(int)
+    vidro = np.abs(rgb - TV_BRILHO).sum(axis=2) < 70
+    xs, ys = zip(*TV_QUAD)
+    perto = np.zeros_like(vidro)
+    perto[min(ys) - 20:max(ys) + 20, min(xs) - 20:max(xs) + 20] = True
+    m = Image.fromarray((vidro & perto).astype(np.uint8)*255)
+    m = m.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.MinFilter(5))
+    bordas = Image.new('RGBA', fundo.size, (6, 10, 30, 255))
+    bordas.putalpha(ImageChops.multiply(m.filter(ImageFilter.GaussianBlur(28)).point(lambda v: round((255 - v)*.55)), m))
+    return m.filter(ImageFilter.GaussianBlur(1.2)), bordas
 
 
 def avatar_redondo(im, d):
@@ -354,48 +329,62 @@ def cena_celular(t):
 
 
 def cena_muro(t):
-    """"num muro": the @ sprayed on a street wall."""
+    """"num muro": the @ sprayed on the street wall, in the light of the street lamp."""
     tela = A['muro'].copy()
-    pich = pichacao()
-    p = prog(t, C_MURO + .08, C_MURO + .55)
+    p = prog(t, C_MURO + .05, C_MURO + .38)
     if p > 0:
-        corte = pich.copy()
-        mascara = Image.new('L', pich.size, 0)
-        ImageDraw.Draw(mascara).rectangle((0, 0, round(pich.width*p), pich.height), fill=255)
-        corte.putalpha(Image.composite(pich.getchannel('A'), Image.new('L', pich.size, 0), mascara))
-        colar(tela, corte, W/2, 980, 1, 7)
+        pich = pichacao()
+        w, h = pich.size
+        tinta = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+        borda = round(w*p)
+        tinta.paste(pich.crop((0, 0, borda, h)))
         if p < 1:
-            # The spray: dots around the can's moving edge.
-            d = ImageDraw.Draw(tela)
+            # The spray: drops around the can's moving edge.
+            d = ImageDraw.Draw(tinta)
             rnd = random.Random(int(t*FPS))
-            borda_x = W/2 - pich.width/2 + pich.width*p
             for _ in range(70):
-                x, y = borda_x + rnd.gauss(0, 26), 980 + rnd.gauss(0, 70) - (borda_x - W/2)*math.tan(math.radians(7))
+                x, y = borda + rnd.gauss(0, 22), h/2 + rnd.gauss(0, h*.3)
                 r = rnd.uniform(1.5, 4.5)
                 d.ellipse((x - r, y - r, x + r, y + r), fill=VERMELHO_TEXTO + (rnd.randint(90, 220),))
+        coef = render_animatic.perspective([(0, 0), (w, 0), (w, h), (0, h)], quad_do_muro(w, h))
+        camada = np.asarray(tinta.transform((W, H), Image.Transform.PERSPECTIVE, coef, Image.Resampling.BICUBIC), np.float32)
+        camada[..., :3] *= A['muro_luz']
+        tela.alpha_composite(Image.fromarray(camada.astype(np.uint8)))
     lugar(tela, t, C_MURO + .05, 'NUM MURO')
     return tela
 
 
+def quad_do_muro(w, h):
+    """Where a w × h sprite goes on the wall: its corners from the top left, clockwise."""
+    (x0, x1), (y0, y1) = MURO_X, MURO_Y
+    h0 = h*(x1 - x0)/w*2/(1 + MURO_ENCOLHE)  # the left end, so that the middle keeps the sprite's shape
+    h1 = h0*MURO_ENCOLHE
+    return [(x0, y0 - h0/2), (x1, y1 - h1/2), (x1, y1 + h1/2), (x0, y0 + h0/2)]
+
+
 @lru_cache(maxsize=1)
 def pichacao():
-    s = texto(ARROBA, 150, VERMELHO_TEXTO, contorno=10, cor_contorno=CREME, sombra=False)
-    sombra = sombra_de(s, 6, 160)
-    im = Image.new('RGBA', (sombra.width, sombra.height), (0, 0, 0, 0))
-    im.alpha_composite(sombra, (10, 14))
-    im.alpha_composite(s, ((im.width - s.width)//2, (im.height - s.height)//2))
+    """The @ in spray paint: red, a dark outline and a soft mist of red around it."""
+    s = texto(ARROBA, 150, VERMELHO_TEXTO, contorno=10, sombra=False)
+    margem = 30
+    im = Image.new('RGBA', (s.width + 2*margem, s.height + 2*margem), VERMELHO_TEXTO + (0,))
+    nevoa = Image.new('L', im.size, 0)
+    nevoa.paste(s.getchannel('A'), (margem, margem))
+    im.putalpha(nevoa.filter(ImageFilter.GaussianBlur(10)).point(lambda v: round(v*.4)))
+    im.alpha_composite(s, (margem, margem))
     return im
 
 
 def cena_tv(t):
-    """"na TV": the @ on a news report."""
+    """"na TV": the @ on a news report, on the TV's glass."""
     tela = A['tv'].copy()
     jornal = telejornal(t)
-    quad = A['tv_quad']
     w, h = jornal.size
-    coef = render_animatic.perspective([(0, 0), (w, 0), (w, h), (0, h)], quad)
+    coef = render_animatic.perspective([(0, 0), (w, 0), (w, h), (0, h)], TV_QUAD)
     camada = jornal.transform((W, H), Image.Transform.PERSPECTIVE, coef, Image.Resampling.BICUBIC)
+    camada.putalpha(A['tv_vidro'])
     tela.alpha_composite(camada)
+    tela.alpha_composite(A['tv_bordas'])
     lugar(tela, t, C_TV + .05, 'NA TV')
     return tela
 
@@ -407,24 +396,25 @@ def telejornal(t):
     d = ImageDraw.Draw(im)
     for k in range(h):
         d.line((0, k, w, k), fill=(round(20 + 20*k/h), round(44 + 30*k/h), round(110 + 40*k/h), 255))
-    d.rectangle((40, 40, 300, 104), fill=VERMELHO + (255,))
+    # Everything stays clear of the glass's rounded corners.
+    d.rectangle((130, 50, 390, 114), fill=VERMELHO + (255,))
     s = texto('PLANTÃO', 44, CREME, sombra=False)
-    im.alpha_composite(s, (60, 72 - s.height//2))
+    im.alpha_composite(s, (150, 82 - s.height//2))
     p = sai_cubica(prog(t, C_TV + .1, C_TV + .4))
-    faixa = Image.new('RGBA', (w - 80, 150), (247, 243, 236, 255))
+    faixa = Image.new('RGBA', (w - 140, 150), (247, 243, 236, 255))
     fd = ImageDraw.Draw(faixa)
     fd.rectangle((0, 0, 18, 150), fill=VERMELHO + (255,))
     nome = texto(ARROBA, 70, TINTA, sombra=False)
     faixa.alpha_composite(nome, (44, 18))
     sub = texto('aliado do Zinho', 38, (110, 92, 78), 'SemiBold', sombra=False)
     faixa.alpha_composite(sub, (48, 98))
-    im.alpha_composite(faixa, (round(40 - (w + 40)*(1 - p)), 340))
+    im.alpha_composite(faixa, (round(70 - (w + 70)*(1 - p)), 300))
     d.rectangle((0, h - 60, w, h), fill=(10, 14, 30, 255))
     rodape = texto('A PARTE QUE FALTOU  •  PARTE 3  •  ALIADOS DO ZINHO  •  ', 30, CREME, 'Bold', sombra=False)
     x = -((t - C_TV)*160) % rodape.width
     for dx in (-rodape.width, 0, rodape.width):
         colar(im, rodape, x + dx, h - 30, ancora=(0, .5))
-    # The CRT: scan lines and a soft glow.
+    # The tube's scan lines.
     linhas = Image.new('RGBA', (w, h), (0, 0, 0, 0))
     ld = ImageDraw.Draw(linhas)
     for k in range(0, h, 4):
@@ -559,7 +549,7 @@ def cena_final(t):
     aparece(tela, texto('FAÇA PARTE', 120, CREME, contorno=9), W/2, 330, C_FINAL + .3, t, tipo='pancada')
     aparece(tela, texto('DA HISTÓRIA', 104, OURO, contorno=8), W/2, 470, C_FINAL + .55, t, tipo='pancada')
     aparece(tela, etiqueta('VIRE ALIADO', 76), W/2, 640, C_FINAL + .95, t, angulo=4)
-    cintilar(tela, t, C_FINAL + 1.0, ((115, 255), (965, 330), (145, 505), (935, 545), (860, 735)))
+    cintilar(tela, t, C_FINAL + 1.0, ((95, 245), (990, 300), (125, 505), (955, 545), (880, 760)))
     return sacudir(tela, t, C_FINAL + .3, 14, cor=VERMELHO_ESCURO)
 
 
@@ -627,8 +617,8 @@ def quadro_bytes(i):
 
 # ---------------------------------------------------------------- sound
 
-def spray(dur=.5):
-    """A spray can: hissing noise, with a short shake of the ball first."""
+def spray(dur):
+    """A spray can's hiss."""
     rng = np.random.default_rng(13)
     n = int(dur*SR)
     som = base.ruido_em_faixa(n, 2500, 9000, rng)*np.minimum(1, np.arange(n)/(.03*SR))*np.minimum(1, (n - np.arange(n))/(.08*SR))
@@ -638,9 +628,9 @@ def spray(dur=.5):
 def eventos():
     """Every effect, tied to the narrator's words: time, effect, gain in dB, pan, speed."""
     ev = [
-        (.02, 'whoosh', -9, 0, 1), (T['parte'] - .05, 'impacto-suave', -11, 0, 1), (T['parte'] + .05, 'whoosh', -15, 0, 1.6),
+        (.02, 'whoosh', -12, 0, 1), (T['parte'] - .05, 'impacto-suave', -11, 0, 1), (T['parte'] + .05, 'whoosh', -15, 0, 1.6),
         (C_VIRE, 'impacto', -6, 0, 1), (C_VIRE + .02, 'whoosh', -10, 0, 1.05), (T['aliado'], 'impacto-suave', -10, 0, 1),
-        (C_ARROBA - .02, 'whoosh', -7, -.6, .9), (T['o_seu'], 'pop', -13, 0, 1), (T['entra'], 'impacto-suave', -11, 0, 1),
+        (C_ARROBA - .02, 'whoosh', -11, -.6, .9), (T['o_seu'], 'pop', -13, 0, 1), (T['entra'], 'impacto-suave', -11, 0, 1),
         (C_CELULAR, 'whoosh', -14, .4, 1.6), (C_CELULAR + .12, 'notificacao', -11, .2, 1),
         (C_MURO, 'whoosh', -14, .4, 1.6), (C_TV, 'whoosh', -14, .4, 1.6), (C_TV + .1, 'impacto-suave', -14, 0, 1.3),
         (C_CREDITOS, 'whoosh', -14, .4, 1.6),
@@ -705,15 +695,14 @@ def mixar(caminho):
         if velocidade != 1:
             amostra = np.interp(np.arange(0, len(amostra) - 1, velocidade), np.arange(len(amostra)), amostra).astype(np.float32)
         por(inicio, amostra, ganho, pan)
-    por(C_MURO + .08, spray(), -16, .2)
+    por(C_MURO + .05, spray(.36), -16, .2)
     brilho = base.brilho_sonoro()
     por(T['parte'] + .45, brilho, -16, 0)
     por(C_CREDITOS + .15, brilho, -18, 0)
     por(C_FINAL + 1.0, brilho, -12, 0)
-    if COM_VOZ:
-        fala = voz()
-        som *= abaixar_sob_a_voz(fala, n)[:, None]
-        por(ATRASO, fala, 0, 0)
+    fala = voz()
+    som *= abaixar_sob_a_voz(fala, n)[:, None]
+    por(ATRASO, fala, 0, 0)
     som = np.tanh(som*1.1)/np.tanh(1.1)
     with wave.open(str(caminho), 'wb') as w:
         w.setnchannels(2)
@@ -734,7 +723,7 @@ def main():
     if args.quadros:
         for t in args.quadros:
             quadro(t).save(trabalho / f'quadro-{t:05.2f}.png')
-        print(' '.join(f'{k}={v:.2f}' for k, v in T.items()), f'fim={DURACAO}', 'com voz' if COM_VOZ else 'sem voz')
+        print(' '.join(f'{k}={v:.2f}' for k, v in T.items()), f'fim={DURACAO}')
         return
     audio, normalizado = trabalho / 'som.wav', trabalho / 'som-normalizado.wav'
     mixar(audio)

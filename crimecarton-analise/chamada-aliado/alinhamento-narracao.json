@@ -1,0 +1,407 @@
+{
+ "audio": "narracao-chamada.wav",
+ "script": "narracao-chamada.txt",
+ "model": "medium",
+ "words_in_script": 60,
+ "words_matched_exactly": 53,
+ "pauses": [
+  [
+   1.286,
+   1.56
+  ],
+  [
+   2.732,
+   3.14
+  ],
+  [
+   7.124,
+   7.426
+  ],
+  [
+   8.219,
+   8.7
+  ],
+  [
+   11.255,
+   11.62
+  ],
+  [
+   12.799,
+   13.095
+  ],
+  [
+   14.329,
+   14.8
+  ],
+  [
+   17.092,
+   17.572
+  ],
+  [
+   18.176,
+   18.44
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Quer",
+   "start": 0.0,
+   "end": 0.36
+  },
+  {
+   "i": 1,
+   "text": "aparecer",
+   "start": 0.36,
+   "end": 0.66
+  },
+  {
+   "i": 2,
+   "text": "na",
+   "start": 0.66,
+   "end": 0.8
+  },
+  {
+   "i": 3,
+   "text": "parte",
+   "start": 0.8,
+   "end": 0.96
+  },
+  {
+   "i": 4,
+   "text": "três?",
+   "start": 0.96,
+   "end": 1.286
+  },
+  {
+   "i": 5,
+   "text": "Vire",
+   "start": 1.56,
+   "end": 1.88
+  },
+  {
+   "i": 6,
+   "text": "aliado",
+   "start": 1.88,
+   "end": 2.24
+  },
+  {
+   "i": 7,
+   "text": "do",
+   "start": 2.24,
+   "end": 2.48
+  },
+  {
+   "i": 8,
+   "text": "Zinho.",
+   "start": 2.48,
+   "end": 2.732
+  },
+  {
+   "i": 9,
+   "text": "O",
+   "start": 3.14,
+   "end": 3.32
+  },
+  {
+   "i": 10,
+   "text": "seu",
+   "start": 3.32,
+   "end": 3.54
+  },
+  {
+   "i": 11,
+   "text": "arroba",
+   "start": 3.54,
+   "end": 3.98
+  },
+  {
+   "i": 12,
+   "text": "entra",
+   "start": 3.98,
+   "end": 4.14
+  },
+  {
+   "i": 13,
+   "text": "no",
+   "start": 4.14,
+   "end": 4.3
+  },
+  {
+   "i": 14,
+   "text": "episódio:",
+   "start": 4.3,
+   "end": 4.7
+  },
+  {
+   "i": 15,
+   "text": "no",
+   "start": 4.96,
+   "end": 5.04
+  },
+  {
+   "i": 16,
+   "text": "celular",
+   "start": 5.04,
+   "end": 5.38
+  },
+  {
+   "i": 17,
+   "text": "dele,",
+   "start": 5.38,
+   "end": 5.72
+  },
+  {
+   "i": 18,
+   "text": "num",
+   "start": 5.96,
+   "end": 6.04
+  },
+  {
+   "i": 19,
+   "text": "muro,",
+   "start": 6.04,
+   "end": 6.52
+  },
+  {
+   "i": 20,
+   "text": "na",
+   "start": 6.76,
+   "end": 6.86
+  },
+  {
+   "i": 21,
+   "text": "TV",
+   "start": 6.86,
+   "end": 7.124
+  },
+  {
+   "i": 22,
+   "text": "ou",
+   "start": 7.426,
+   "end": 7.58
+  },
+  {
+   "i": 23,
+   "text": "nos",
+   "start": 7.58,
+   "end": 7.8
+  },
+  {
+   "i": 24,
+   "text": "créditos.",
+   "start": 7.8,
+   "end": 8.219
+  },
+  {
+   "i": 25,
+   "text": "E",
+   "start": 8.7,
+   "end": 8.9
+  },
+  {
+   "i": 26,
+   "text": "vai",
+   "start": 8.9,
+   "end": 9.06
+  },
+  {
+   "i": 27,
+   "text": "na",
+   "start": 9.06,
+   "end": 9.22
+  },
+  {
+   "i": 28,
+   "text": "legenda",
+   "start": 9.22,
+   "end": 9.5
+  },
+  {
+   "i": 29,
+   "text": "do",
+   "start": 9.5,
+   "end": 9.7
+  },
+  {
+   "i": 30,
+   "text": "post,",
+   "start": 9.7,
+   "end": 10.0
+  },
+  {
+   "i": 31,
+   "text": "com",
+   "start": 10.0,
+   "end": 10.4
+  },
+  {
+   "i": 32,
+   "text": "o",
+   "start": 10.4,
+   "end": 10.52
+  },
+  {
+   "i": 33,
+   "text": "seu",
+   "start": 10.52,
+   "end": 10.64
+  },
+  {
+   "i": 34,
+   "text": "número",
+   "start": 10.64,
+   "end": 10.86
+  },
+  {
+   "i": 35,
+   "text": "de",
+   "start": 10.86,
+   "end": 11.04
+  },
+  {
+   "i": 36,
+   "text": "aliado.",
+   "start": 11.04,
+   "end": 11.255
+  },
+  {
+   "i": 37,
+   "text": "São",
+   "start": 11.62,
+   "end": 11.88
+  },
+  {
+   "i": 38,
+   "text": "só",
+   "start": 11.88,
+   "end": 12.16
+  },
+  {
+   "i": 39,
+   "text": "dez",
+   "start": 12.16,
+   "end": 12.44
+  },
+  {
+   "i": 40,
+   "text": "vagas,",
+   "start": 12.44,
+   "end": 12.799
+  },
+  {
+   "i": 41,
+   "text": "até",
+   "start": 13.095,
+   "end": 13.36
+  },
+  {
+   "i": 42,
+   "text": "sexta,",
+   "start": 13.36,
+   "end": 13.74
+  },
+  {
+   "i": 43,
+   "text": "às",
+   "start": 13.74,
+   "end": 13.8
+  },
+  {
+   "i": 44,
+   "text": "nove",
+   "start": 13.8,
+   "end": 13.96
+  },
+  {
+   "i": 45,
+   "text": "da",
+   "start": 13.96,
+   "end": 14.12
+  },
+  {
+   "i": 46,
+   "text": "noite.",
+   "start": 14.12,
+   "end": 14.329
+  },
+  {
+   "i": 47,
+   "text": "Nove",
+   "start": 14.8,
+   "end": 14.847
+  },
+  {
+   "i": 48,
+   "text": "e",
+   "start": 14.847,
+   "end": 14.938
+  },
+  {
+   "i": 49,
+   "text": "noventa",
+   "start": 14.938,
+   "end": 15.58
+  },
+  {
+   "i": 50,
+   "text": "no",
+   "start": 15.58,
+   "end": 15.76
+  },
+  {
+   "i": 51,
+   "text": "Pix,",
+   "start": 15.76,
+   "end": 16.0
+  },
+  {
+   "i": 52,
+   "text": "direto",
+   "start": 16.38,
+   "end": 16.68
+  },
+  {
+   "i": 53,
+   "text": "no",
+   "start": 16.68,
+   "end": 16.8
+  },
+  {
+   "i": 54,
+   "text": "site.",
+   "start": 16.8,
+   "end": 17.092
+  },
+  {
+   "i": 55,
+   "text": "O",
+   "start": 17.572,
+   "end": 17.68
+  },
+  {
+   "i": 56,
+   "text": "link",
+   "start": 17.68,
+   "end": 17.8
+  },
+  {
+   "i": 57,
+   "text": "tá",
+   "start": 17.8,
+   "end": 17.92
+  },
+  {
+   "i": 58,
+   "text": "na",
+   "start": 17.92,
+   "end": 18.06
+  },
+  {
+   "i": 59,
+   "text": "bio.",
+   "start": 18.06,
+   "end": 18.176
+  }
+ ]
+}
