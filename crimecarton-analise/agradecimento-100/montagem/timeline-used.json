@@ -1,0 +1,401 @@
+{
+  "timing_status": "designed_without_voice",
+  "style": "../guia-de-estilo-referencia.md",
+  "note": "Thank-you for the first 100 followers; no voice, so no credits.",
+  "audio": "silencio.wav",
+  "tail": 1.0,
+  "scenes": [
+    {
+      "start": 0,
+      "end": 2.8,
+      "kind": "art",
+      "asset": "../episodio-01/cena-01-base.png",
+      "zoom": 0.06,
+      "brightness": 0.72
+    },
+    {
+      "start": 2.8,
+      "end": 5.4,
+      "kind": "art",
+      "asset": "../perfil/ilustracao-perfil.png",
+      "crop": [
+        0.24,
+        0.02,
+        0.76,
+        0.94
+      ],
+      "zoom": 0.06,
+      "brightness": 0.7
+    },
+    {
+      "start": 5.4,
+      "end": 8.9,
+      "kind": "black"
+    },
+    {
+      "start": 8.9,
+      "end": 11.9,
+      "kind": "art",
+      "asset": "zinho-obrigado.png",
+      "zoom": 0.05
+    },
+    {
+      "start": 11.9,
+      "end": 14.4,
+      "kind": "art",
+      "asset": "../episodio-02/cena-07-carro.png",
+      "zoom": 0.06,
+      "brightness": 0.5
+    }
+  ],
+  "graphics": [
+    {
+      "type": "vignette",
+      "start": 11.9,
+      "end": 14.9,
+      "color": "alert",
+      "strength": 0.6
+    },
+    {
+      "type": "confetti",
+      "start": 7.55,
+      "end": 10.95,
+      "x": 360,
+      "y": 600,
+      "count": 110
+    },
+    {
+      "type": "phrase",
+      "start": 0,
+      "end": 2.72,
+      "y": 700,
+      "size": 78,
+      "lines": [
+        {
+          "text": "O ASSALTO",
+          "at": -0.07,
+          "color": "white"
+        },
+        {
+          "text": "DEU CERTO.",
+          "at": 0.75,
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "start": 2.88,
+      "end": 5.3,
+      "y": 880,
+      "size": 62,
+      "lines": [
+        {
+          "text": "MAS A SUA PARTE",
+          "at": 2.95,
+          "color": "white"
+        },
+        {
+          "text": "ERA OUTRA.",
+          "at": 3.7,
+          "color": "yellow",
+          "size": 92,
+          "shake": true
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "start": 5.45,
+      "end": 8.8,
+      "y": 640,
+      "size": 64,
+      "lines": [
+        {
+          "style": "label",
+          "text": "AGORA SÃO",
+          "at": 5.5,
+          "size": 28,
+          "color": "yellow"
+        },
+        {
+          "text": "100",
+          "at": 5.6000000000000005,
+          "color": "green",
+          "size": 240,
+          "count": {
+            "from": 0,
+            "to": 100,
+            "start": 5.65,
+            "end": 7.5,
+            "format": "{}"
+          }
+        },
+        {
+          "text": "SEGUIDORES.",
+          "at": 7.55,
+          "color": "white",
+          "size": 64
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "start": 9.0,
+      "end": 11.8,
+      "y": 870,
+      "size": 56,
+      "lines": [
+        {
+          "text": "OBRIGADO!",
+          "at": 9.1,
+          "color": "yellow",
+          "size": 94,
+          "shake": true
+        },
+        {
+          "text": "A CADA UM",
+          "at": 9.8,
+          "color": "white",
+          "size": 56
+        },
+        {
+          "text": "DE VOCÊS.",
+          "at": 10.15,
+          "color": "white",
+          "size": 56
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "start": 12.05,
+      "end": 14.9,
+      "y": 850,
+      "size": 64,
+      "lines": [
+        {
+          "style": "label",
+          "text": "A PARTE 3",
+          "at": 12.1,
+          "size": 28,
+          "color": "yellow"
+        },
+        {
+          "text": "TÁ A CAMINHO.",
+          "at": 12.4,
+          "color": "white",
+          "size": 64
+        }
+      ]
+    },
+    {
+      "type": "hud",
+      "start": -0.3,
+      "end": 8.75,
+      "label": "A SUA PARTE",
+      "dy": 100,
+      "values": [
+        {
+          "text": "R$ 0",
+          "color": "red",
+          "at": -0.3
+        },
+        {
+          "text": "100 SEGUIDORES",
+          "color": "green",
+          "at": 7.55,
+          "shake": true
+        }
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "sound": "impacto.wav",
+      "at": 0.05,
+      "gain": -5
+    },
+    {
+      "sound": "impacto-suave.wav",
+      "at": 0.77,
+      "gain": -10
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 2.44,
+      "gain": -2
+    },
+    {
+      "sound": "pop.wav",
+      "at": 3.7,
+      "gain": -10
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 5.04,
+      "gain": -2
+    },
+    {
+      "sound": "pop.wav",
+      "at": 5.5,
+      "gain": -12
+    },
+    {
+      "sound": "tique.wav",
+      "at": 5.678,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 5.708,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 5.738,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 5.77,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 5.802,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 5.836,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 5.872,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 5.909,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 5.948,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 5.988,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.032,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.078,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.127,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.18,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.237,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.3,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.371,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.452,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.548,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.668,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 6.84,
+      "gain": -16
+    },
+    {
+      "sound": "tique.wav",
+      "at": 7.5,
+      "gain": -16
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 7.53,
+      "gain": -4
+    },
+    {
+      "sound": "notificacao.wav",
+      "at": 7.57,
+      "gain": -7
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 8.54,
+      "gain": -3
+    },
+    {
+      "sound": "pop.wav",
+      "at": 9.1,
+      "gain": -8
+    },
+    {
+      "sound": "pop.wav",
+      "at": 9.8,
+      "gain": -12
+    },
+    {
+      "sound": "pop.wav",
+      "at": 10.15,
+      "gain": -12
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 11.54,
+      "gain": -2
+    },
+    {
+      "sound": "impacto-suave.wav",
+      "at": 12.1,
+      "gain": -8
+    },
+    {
+      "sound": "pop.wav",
+      "at": 12.4,
+      "gain": -12
+    }
+  ],
+  "captions": []
+}
