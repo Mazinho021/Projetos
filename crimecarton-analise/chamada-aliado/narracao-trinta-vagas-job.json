@@ -1,0 +1,25 @@
+{
+  "jobId": "mcp_media_d56003eb59397a40d7d4181c809bde5fb1cb6963d928f2df8aaa8beb2aa47441",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_d56003eb59397a40d7d4181c809bde5fb1cb6963d928f2df8aaa8beb2aa47441/0.wav?hdnts=FullPath~Expires=1793390823~Signature=hV5w-F-FDIF06Q2BFYUeYQPrByfxWWxzDJLbUuUAhtd0Fi_KK8kPSwyyUdcXgJonWw-YOm76NQsFdn4hdP4LDQ",
+      "expiresAt": "2026-10-30T20:07:03.280Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 6.52
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-chamada-aliado-trinta-vagas-charon-v1-20261029",
+    "voice": "Charon",
+    "style": "Português brasileiro. A mesma voz adulta masculina do narrador da série, num convite animado e próximo, como quem conta um segredo bom. Natural, sem tom de propaganda e sem gritar. Ritmo de 145 a 155 palavras por minuto. Cada parágrafo é uma fala separada, com pausa curta entre eles. É o fim de uma narração mais longa: a primeira fala continua o que veio antes, e a segunda fecha, com “trinta” bem claro e a voz descendo em “noite”.",
+    "text": "E vai na legenda do post, com o seu número de aliado.\n\nSão até trinta vagas, até sexta, às nove da noite.",
+    "sourceFile": "crimecarton-analise/chamada-aliado/pedido-narracao-trinta-vagas.json"
+  }
+}
