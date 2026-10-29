@@ -1,5 +1,7 @@
 # Agradecimento — 100 seguidores
 
+> Em 29/10/2026, o vídeo foi refeito do zero, com outras animações e “mais de 100 seguidores”: ver [`mais-de-100/`](mais-de-100/). Este aqui fica como a primeira versão.
+
 Vídeo vertical de 14,4 s para agradecer os 100 primeiros seguidores do perfil, no estilo da série e **sem narração**, então não gasta crédito: o som são os efeitos que já existem (Kenney, CC0, e os sintetizados por `gerar_efeitos.py`), sem trilha, como nos episódios. O texto fica entre y = 190 e y = 1010 e as linhas têm até 570 px, longe das barras e dos botões que Stories, Reels e TikTok desenham por cima.
 
 | Tempo | Imagem | Na tela | Som |
