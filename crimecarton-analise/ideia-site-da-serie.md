@@ -129,6 +129,11 @@ O site é o projeto `golpecartoon` no Netlify do criador. Fica aberto ao públic
 
 Para publicar de novo, pedir ao Claude, que chama a operação `deploy-site` do Netlify para o projeto e roda o comando que ela devolve dentro de `crimecarton-analise/site/`. A prévia no Claude usa o mesmo `index.html`, mas nela o pagamento e a lista não funcionam, porque não há funções.
 
+Em 29/10/2026, o criador tomou duas decisões sobre o endereço e o selo:
+
+- **Selo da Netlify:** ele desligou o selo “Powered by Netlify” no painel, em Project configuration > General > Powered by Netlify badge. A Netlify põe esse selo nos projetos novos do plano grátis.
+- **Endereço:** ele decidiu manter o endereço grátis `golpecartoon.netlify.app`, sem domínio próprio nem encurtador. Nesse dia, `golpecartoon.com.br` estava livre no Registro.br, por uns R$ 40 por ano. Para usar esse domínio, é preciso registrá-lo e depois, na Netlify, ir em Domain management > Add a domain e usar o Netlify DNS. Depois disso, publicar de novo, para a prévia de link pegar o endereço novo.
+
 ## Cuidados
 
 - Dizer com clareza o que a pessoa compra, em que parte o @ entra e até quando.
