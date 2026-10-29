@@ -1,0 +1,25 @@
+{
+  "jobId": "mcp_media_198dfb4550becd41eac140530731e6f9510cabd98f65985f1578caef7d076eaa",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_198dfb4550becd41eac140530731e6f9510cabd98f65985f1578caef7d076eaa/0.wav?hdnts=FullPath~Expires=1793378801~Signature=hnOleDnhm1OfG5_o37fC6RUHpPdDFz2LH9viQajgHWJi1gGExWaTveMN6xpPoyUuaaXNLKOd21Q2-Zf7UOHtDA",
+      "expiresAt": "2026-10-30T16:46:41.278Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 18.44
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-chamada-aliado-narrador-charon-v1-20261029",
+    "voice": "Charon",
+    "style": "Português brasileiro. A mesma voz adulta masculina do narrador da série, agora num convite: um leve mistério na primeira fala e depois animado e próximo, como quem conta um segredo bom. Natural, sem tom de propaganda e sem gritar. Ritmo de 145 a 155 palavras por minuto. Cada parágrafo é uma fala separada, com pausa curta entre eles. Na lista “no celular dele, num muro, na TV ou nos créditos”, uma pausa mínima entre os itens. Pronunciar Zinho com z inicial e nh palatal.",
+    "text": "Quer aparecer na parte três?\n\nVire aliado do Zinho.\n\nO seu arroba entra no episódio: no celular dele, num muro, na TV ou nos créditos.\n\nE vai na legenda do post, com o seu número de aliado.\n\nSão só dez vagas, até sexta, às nove da noite.\n\nNove e noventa no Pix, direto no site.\n\nO link tá na bio.",
+    "sourceFile": "crimecarton-analise/chamada-aliado/pedido-narracao-chamada.json"
+  }
+}
