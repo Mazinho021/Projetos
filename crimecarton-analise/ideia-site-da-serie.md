@@ -9,7 +9,7 @@ Na terceira versão, também de 28/10/2026, o site segue de perto o crimecartoon
 - o azul da jaqueta na faixa de avisos, no relógio, nos créditos e nos ícones;
 - o caramelo do abajur nos detalhes.
 
-A faixa de avisos leva as duas listras brancas da manga da jaqueta. Na quinta versão, o passe passou a ser pago pelo Mercado Pago, com Pix ou cartão de crédito, também a pedido do criador. A lista de aliados se monta sozinha com os pagamentos aprovados. A página tem as seções abaixo, nesta ordem:
+A faixa de avisos leva as duas listras brancas da manga da jaqueta. Na quinta versão, o passe passou a ser pago pelo Mercado Pago, com Pix ou cartão de crédito, também a pedido do criador. Na sexta, de 29/10/2026, o pagamento passou para dentro do próprio site, porque o criador não queria que a pessoa saísse para a página do Mercado Pago. O Pix abre numa janela com o QR Code e o copia e cola, como no site de referência. A lista de aliados se monta sozinha com os pagamentos aprovados. A página tem as seções abaixo, nesta ordem:
 
 - **Topo e faixa azul:** a marca, o botão “Quero ser aliado” e uma faixa azul que roda com as vagas, o prazo, a votação aberta e o preço.
 - **Abertura:** “O assalto deu certo. A sua parte, não.”, com o fim da Parte 2 num celular e o aviso das vagas com contagem regressiva.
@@ -18,14 +18,15 @@ A faixa de avisos leva as duas listras brancas da manga da jaqueta. Na quinta ve
   - uma cena com “@seuperfil” na tela do celular, para mostrar onde o @ aparece;
   - a legenda do post;
   - a lista dos 10 aliados da Parte 3, com o número de cada um;
-  - o formulário que leva ao pagamento.
+  - o formulário, com um botão para o Pix e outro para o cartão, que abrem a janela de pagamento.
 - **Assista do começo:** as capas das partes, com o carimbo da escolha de cada votação, que levam aos vídeos.
 - **Final:** as perguntas, os termos e a privacidade, e o rodapé.
 
 Por decisão do criador, o site não cita o @crimecarton.
 
-O Mercado Pago está ligado desde 28/10/2026, direto com o token de produção. No mesmo dia, o criador fez a primeira compra de verdade, um Pix de R$ 9,90 com o @ `teste.golpe`. O pagamento foi aprovado e o @ ficou fora da lista, como devia. Faltam duas coisas do criador:
+O Mercado Pago está ligado desde 28/10/2026, direto com o token de produção. No mesmo dia, o criador fez a primeira compra de verdade, um Pix de R$ 9,90 com o @ `teste.golpe`. O pagamento foi aprovado e o @ ficou fora da lista, como devia. Faltam três coisas do criador:
 
+- a Public Key do Mercado Pago, para o cartão também ser pago dentro do site (ver “Ligar o Mercado Pago”);
 - a confirmação do prazo e das vagas;
 - os links dos Reels.
 
@@ -46,14 +47,21 @@ Os lugares do @ são feitos por código, como os textos de tela e o calendário 
 
 ## Pagamento
 
-O pagamento usa o Checkout Pro do Mercado Pago, com Pix e cartão de crédito. O boleto fica de fora, porque pode levar dias e passar do prazo da lista. O cartão de débito também, a pedido do criador, em 28/10/2026, porque o Pix já faz o papel dele. O caminho de uma compra é este:
+O pagamento acontece no próprio site, processado pelo Mercado Pago, com Pix e cartão de crédito. O boleto fica de fora, porque pode levar dias e passar do prazo da lista. O cartão de débito também, a pedido do criador, em 28/10/2026, porque o Pix já faz o papel dele. O caminho de uma compra é este:
 
-1. A pessoa preenche o @, o e-mail e a autorização, e toca em “Pagar R$ 9,90 com Mercado Pago”. O total aparece logo acima do botão.
+1. A pessoa preenche o @, o e-mail e a autorização, e toca em “Pagar R$ 9,90 no Pix” ou em “Pagar com cartão de crédito”. O total aparece logo acima dos botões.
 2. A função `/api/checkout` confere os dados e vê em que parte o passe vai entrar. Ela recusa um @ que já está na lista daquela parte.
-3. A função cria o pagamento no Mercado Pago com a referência `aliado|<parte>|<@>` e manda a pessoa para a página de pagamento. Lá, ela escolhe Pix ou cartão.
-4. Depois de pagar, o Mercado Pago devolve a pessoa ao site. A função `/api/pagamento` confere o pagamento no Mercado Pago, em vez de confiar no endereço da volta, e o site mostra “Pagamento aprovado”, “Pagamento em andamento” (Pix ainda não pago) ou “O pagamento não foi concluído”.
+3. **No Pix,** a função cria o pagamento no Mercado Pago com a referência `aliado|<parte>|<@>` e devolve o código copia e cola e o QR Code. A página mostra os dois numa janela, com o tempo para pagar.
+   - O Pix vence em 30 minutos, e um Pix sem pagamento não segura vaga.
+   - A janela pergunta a `/api/pagamento` se o Pix foi pago a cada 4 segundos, e na hora em que a pessoa volta do app do banco.
+   - Quando o pagamento é aprovado, a janela mostra “Pagamento aprovado” e o número de aliado, e a lista da página se atualiza na hora.
+4. **No cartão,** a janela mostra o formulário de cartão do próprio Mercado Pago (o Card Payment Brick), nas cores do site. Os dados do cartão vão direto ao Mercado Pago, que devolve um código de uso único. A função cobra esse código, com o valor e uma parcela definidos no servidor, e a janela mostra a aprovação ou o motivo da recusa.
 
-Sem JavaScript, o formulário vai direto para `/api/checkout`, que leva ao Mercado Pago ou volta ao formulário com o erro. O `auto_return` só vai na preferência quando o site está num endereço `https` público, porque o Mercado Pago recusa a preferência com endereço local.
+O formulário de cartão só aparece com a chave pública ligada (ver “Ligar o Mercado Pago”). Sem ela, ou se o formulário não carregar, o cartão abre a página do Mercado Pago, o Checkout Pro, como antes.
+
+O Pix aberto fica guardado no aparelho até ser pago ou vencer. Se o navegador do Instagram recarregar a página na volta do app do banco, a janela abre de novo e confirma o pagamento. O mesmo @ com o mesmo e-mail reabre o mesmo Pix, em vez de criar outro.
+
+Sem JavaScript, o formulário vai direto para `/api/checkout`, que leva à página do Mercado Pago ou volta ao formulário com o erro. Quem paga na página do Mercado Pago volta ao site, e a função `/api/pagamento` confere o pagamento, em vez de confiar no endereço da volta. O `auto_return` só vai na preferência quando o site está num endereço `https` público, porque o Mercado Pago recusa a preferência com endereço local.
 
 A lista vem dos próprios pagamentos, sem banco de dados.
 
@@ -62,7 +70,15 @@ A lista vem dos próprios pagamentos, sem banco de dados.
 - **Vagas:** quando uma parte enche, os passes seguintes vão para a próxima.
 - **Correções:** um @ digitado errado se corrige em `correcoes`, no arquivo `site/netlify/lib/serie.mjs`, com `{ errado: 'certo' }`. Um @ ofensivo sai da lista com `{ ofensivo: '' }`, e o valor deve ser devolvido. O @ `teste.golpe` já está fora da lista: é o @ das compras de teste do criador, que não ocupam vaga nem número.
 
-A integração segue o guia do plugin oficial do Mercado Pago para o Claude, instalado em 28/10/2026. O Checkout Pro foi escolhido por ser o certo para uma venda avulsa de valor baixo, com Pix e cartão e sem dados de cartão no site. As checagens do plugin passam, com o comando `node <plugin>/scripts/validate-checkout-cta.mjs checkout-pro index.html /api/checkout` e o `validate-checkout-pro-server.mjs` em `netlify/functions/checkout.mjs`. Os testes ficam em `site/testes/`:
+A integração segue os guias do plugin oficial do Mercado Pago para o Claude, instalado em 28/10/2026. O Pix e o formulário de cartão usam a API de pagamentos (`/v1/payments`), como o guia pede para o Card Payment Brick, e assim todos os passes aparecem na mesma busca de pagamentos que monta a lista.
+
+O plugin tem três checagens:
+
+- A checagem do servidor do Checkout Pro (`validate-checkout-pro-server.mjs`) passa.
+- A do botão do Checkout Pro (`validate-checkout-cta.mjs`) deixou de valer, porque os botões abrem a janela.
+- A do formulário de cartão (`validate-bricks-integration.mjs`) pede uma página separada para o formulário, e o site usa a janela, a pedido do criador. Os outros avisos dela procuram nomes e trechos de código que o site escreve de outro jeito, sem apontar falha.
+
+Os testes ficam em `site/testes/`:
 
 ```bash
 node --test crimecarton-analise/site/testes/*.test.mjs
@@ -74,7 +90,8 @@ node --test crimecarton-analise/site/testes/*.test.mjs
 2. Em “Credenciais de produção”, ativar as credenciais, informando o ramo e o site `https://golpecartoon.netlify.app`, e copiar o **Access Token**, que começa com `APP_USR-`.
 3. Cadastrar uma chave Pix na mesma conta, no app do Mercado Pago. Sem chave, a página de pagamento não mostra o Pix.
 4. No Netlify, no projeto `golpecartoon`, ir em **Project configuration → Environment variables** e criar `MP_ACCESS_TOKEN` com o token, marcado como secreto e com escopo **Functions**.
-5. Publicar de novo, como em “Publicar” abaixo, porque as variáveis só valem a partir da publicação seguinte. Depois disso, o botão volta a dizer “Pagar R$ 9,90 com Mercado Pago”.
+5. Para o cartão também ser pago dentro do site, copiar a **Public Key** da mesma página de credenciais de produção e criar no Netlify a variável `MP_PUBLIC_KEY` com ela. A Public Key também começa com `APP_USR-`, mas é mais curta que o token e não é secreta. A função só entrega à página um valor com o formato de chave pública, então um token posto ali por engano não chega à página.
+6. Publicar de novo, como em “Publicar” abaixo, porque as variáveis só valem a partir da publicação seguinte. Depois disso, os botões de pagamento voltam a funcionar.
 
 Para testar antes de vender, usar primeiro o token da aba **Teste**:
 
@@ -86,7 +103,7 @@ Enquanto o token de teste estiver no site, ninguém consegue pagar de verdade, e
 
 O token dá acesso à conta, então não vai no código nem no GitHub.
 
-Para uma compra de teste com o token de produção, abrir o site numa aba anônima, sem entrar na conta do Mercado Pago que recebe, porque ela não pode pagar a si mesma. Usar o @ `teste.golpe` e pagar o Pix pelo app do banco. No teste de 28/10, o Itaú mostrou “Instabilidade no banco de destino” na primeira tentativa, e o mesmo Pix foi aprovado depois.
+Para uma compra de teste com o token de produção, usar o @ `teste.golpe` e um e-mail que não seja o da conta do Mercado Pago que recebe, porque ela não pode pagar a si mesma. Na página do Mercado Pago, isso também quer dizer não entrar nessa conta: o melhor é uma aba anônima. No teste de 28/10, o Itaú mostrou “Instabilidade no banco de destino” na primeira tentativa, e o mesmo Pix foi aprovado depois.
 
 ## Atualizar a cada parte
 
@@ -109,7 +126,7 @@ As imagens do site vêm do próprio material da série:
 O site é o projeto `golpecartoon` no Netlify do criador. Fica aberto ao público em produção, e as prévias de publicação pedem o login da equipe. A pasta `site/` é publicada inteira:
 
 - **Construção:** o Netlify roda `node montar.mjs`, que embrulha `index.html` num documento completo em `dist/`. O embrulho leva as tags de prévia de link e os ícones, e as imagens vão junto.
-- **Funções:** as funções de `netlify/functions/` viram `/api/checkout` e `/api/aliados`.
+- **Funções:** as funções de `netlify/functions/` viram `/api/checkout`, `/api/aliados` e `/api/pagamento`.
 
 Para publicar de novo, pedir ao Claude, que chama a operação `deploy-site` do Netlify para o projeto e roda o comando que ela devolve dentro de `crimecarton-analise/site/`. A prévia no Claude usa o mesmo `index.html`, mas nela o pagamento e a lista não funcionam, porque não há funções.
 

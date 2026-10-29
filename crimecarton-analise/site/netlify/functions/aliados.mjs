@@ -1,7 +1,8 @@
 // GET /api/aliados: the open part's list of allies and the next ally number, for the page.
-// It only ever returns handles and numbers, never e-mails or payment details.
+// It only ever returns handles and numbers, never e-mails or payment details, plus the public
+// key that turns on the card form inside the page.
 import { SERIE } from '../lib/serie.mjs';
-import { pagamentos, token } from '../lib/mercadopago.mjs';
+import { chavePublica, pagamentos, token } from '../lib/mercadopago.mjs';
 import { montarLista } from '../lib/aliados.mjs';
 
 // The CDN keeps the answer for a minute, so busy hours don't search the payments on every visit.
@@ -18,7 +19,8 @@ export default async () => {
   try {
     const { numeros, partes } = montarLista(await pagamentos(SERIE.inicio), SERIE.vagas, SERIE.correcoes);
     const aliados = (partes.get(SERIE.parte) || []).map(a => ({ arroba: `@${a}`, numero: numeros.get(a) }));
-    return Response.json({ ...base, ligado: true, aliados, proximoNumero: numeros.size + 1 }, { headers: CACHE });
+    const chave = chavePublica();
+    return Response.json({ ...base, ligado: true, ...(chave && { chave }), aliados, proximoNumero: numeros.size + 1 }, { headers: CACHE });
   } catch (e) {
     console.error(e);
     return Response.json({ ...base, erro: 'Não deu para ler a lista agora.' }, { status: 502, headers: { 'Cache-Control': 'no-store' } });

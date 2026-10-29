@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,alternate_email,arrow_outward,check,confirmation_number,error,lock,movie,schedule&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,alternate_email,arrow_outward,check,close,confirmation_number,content_copy,credit_card,error,lock,movie,schedule&display=block">
 <style>
 /* Layout: Zinho's own colors. The brown of his room at night is the ground, the red of his
    hoodie marks what you act on, the blue of his track jacket carries the facts and the clock,
@@ -318,6 +318,52 @@ h1 span { display: block; }
 .retorno p { font-size: var(--t-s); color: var(--areia); }
 .retorno[data-tipo="falhou"] { border-color: var(--vermelho); }
 .retorno[data-tipo="falhou"] h3 .ico { background: var(--vermelho); }
+.passe .botao .ico { font-size: 20px; }
+.ico-pix { flex: none; }
+.passe .botao + .botao { margin-top: -8px; }
+
+/* The payment window, over the page: the Pix with its QR Code and copy-and-paste code, or the
+   card form, so the buyer never leaves the site. */
+html:has(.janela[open]) { overflow: hidden; }
+.janela {
+  width: min(calc(100% - 24px), 420px); max-height: calc(100dvh - 24px); margin: auto; padding: 0;
+  border: 1px solid var(--linha); border-top: 4px solid var(--vermelho); border-radius: 22px;
+  background: var(--painel); color: var(--creme); box-shadow: 0 30px 80px var(--sombra);
+  overflow: auto; overscroll-behavior: contain;
+}
+.janela::backdrop { background: color-mix(in srgb, var(--poco) 80%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.janela-int { position: relative; display: grid; gap: 16px; padding: 26px 22px 22px; text-align: center; }
+.janela-fechar {
+  position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; display: grid; place-items: center;
+  border: 0; border-radius: 50%; background: transparent; color: var(--areia); cursor: pointer;
+}
+.janela-fechar:hover { background: color-mix(in srgb, var(--creme) 8%, transparent); color: var(--creme); }
+.janela-topo { padding-inline: 40px; font: 700 .75rem/1.4 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--areia); overflow-wrap: anywhere; }
+.janela-preco { margin-top: -8px; font: 900 2.75rem/1 var(--display); letter-spacing: -.02em; color: var(--vermelho-texto); }
+.janela-parte { margin-top: -8px; font-size: var(--t-s); color: var(--areia); }
+.janela-parte b { color: var(--creme); white-space: nowrap; }
+.janela[data-vista="fim"] .janela-preco, .janela[data-vista="fim"] .janela-parte { display: none; }
+.janela-vista { display: grid; gap: 16px; }
+.qr { width: min(100%, 216px); aspect-ratio: 1; margin-inline: auto; padding: 10px; border-radius: 16px; background: #fff; }
+.qr img { width: 100%; height: 100%; }
+.copia { display: grid; gap: 8px; text-align: left; }
+.copia label { font: 600 var(--t-s)/1.2 var(--display); }
+.copia input { text-overflow: ellipsis; font: 500 .9375rem/1.2 var(--mono); }
+.janela .botao { width: 100%; padding-inline: 16px; white-space: normal; line-height: 1.25; }
+.janela .botao .ico { font-size: 20px; }
+.aguardando { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 12px; font: 600 var(--t-xs)/1.3 var(--display); color: var(--areia); }
+.aguardando span { white-space: nowrap; }
+.aguardando b { font-variant-numeric: tabular-nums; color: var(--creme); }
+.janela-dica { font-size: var(--t-xs); line-height: 1.5; color: var(--areia-2); }
+.cartao-carregando { padding-block: 24px; font-size: var(--t-s); color: var(--areia); }
+#cartao-brick { text-align: left; }
+.janela-fim { justify-items: center; padding-top: 8px; }
+.janela-fim > .ico { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%; background: var(--azul); color: var(--creme); font-size: 34px; }
+.janela-fim[data-tipo="falhou"] > .ico { background: var(--vermelho); }
+.janela-fim h3 { font: 800 1.5rem/1.2 var(--display); }
+.janela-fim h3:focus { outline: none; }
+.janela-fim p { max-width: 34ch; font-size: var(--t-s); color: var(--areia); }
+.janela-fim .numero { font: 800 .875rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--caramelo); }
 
 /* Chapters: the covers in a row you swipe, as on the profile grid */
 .capitulos {
@@ -405,6 +451,8 @@ a.capitulo:hover { transform: translateY(-4px); }
   .vagas { animation-delay: .26s; }
   .celular { animation: entrar-celular .9s cubic-bezier(.16, 1, .3, 1) .12s both; }
   .ponto { animation: pulsar 1.8s ease-in-out infinite; }
+  .janela[open] { animation: entrar .4s cubic-bezier(.16, 1, .3, 1) both; }
+  .janela[open]::backdrop { animation: aparecer .3s ease both; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -413,6 +461,7 @@ a.capitulo:hover { transform: translateY(-4px); }
 @keyframes entrar { from { transform: translateY(14px); opacity: .35; } }
 @keyframes entrar-celular { from { transform: translateY(28px) rotate(0deg); opacity: .35; } to { transform: rotate(2.5deg); opacity: 1; } }
 @keyframes pulsar { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--vermelho-texto) 0%, transparent); } }
+@keyframes aparecer { from { opacity: 0; } }
 </style>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -591,8 +640,9 @@ a.capitulo:hover { transform: translateY(-4px); }
             </label>
             <p class="erro" id="erro" role="alert" hidden></p>
             <p class="total">Total <strong>R$ 9,90</strong></p>
-            <button class="botao botao-cheio" type="submit" data-mp-checkout-cta="checkout-pro">Pagar R$ 9,90 com Mercado Pago</button>
-            <p class="meios"><span class="ico" aria-hidden="true">lock</span>Pix ou cartão de crédito, na página segura do Mercado Pago</p>
+            <button class="botao botao-cheio" type="submit" data-meio="pix"><svg class="ico-pix" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M5.283 18.36a3.505 3.505 0 0 0 2.493-1.032l3.6-3.6a.684.684 0 0 1 .946 0l3.613 3.613a3.504 3.504 0 0 0 2.493 1.032h.71l-4.56 4.56a3.647 3.647 0 0 1-5.156 0L4.85 18.36ZM18.428 5.627a3.505 3.505 0 0 0-2.493 1.032l-3.613 3.614a.67.67 0 0 1-.946 0l-3.6-3.6A3.505 3.505 0 0 0 5.283 5.64h-.434l4.573-4.572a3.646 3.646 0 0 1 5.156 0l4.559 4.559ZM1.068 9.422 3.79 6.699h1.492a2.483 2.483 0 0 1 1.744.722l3.6 3.6a1.73 1.73 0 0 0 2.443 0l3.614-3.613a2.482 2.482 0 0 1 1.744-.723h1.767l2.737 2.737a3.646 3.646 0 0 1 0 5.156l-2.736 2.736h-1.768a2.482 2.482 0 0 1-1.744-.722l-3.613-3.613a1.77 1.77 0 0 0-2.444 0l-3.6 3.6a2.483 2.483 0 0 1-1.744.722H3.791l-2.723-2.723a3.646 3.646 0 0 1 0-5.156"/></svg><span data-rotulo>Pagar R$ 9,90 no Pix</span></button>
+            <button class="botao botao-vazado" type="submit" name="meio" value="cartao" data-meio="cartao"><span class="ico" aria-hidden="true">credit_card</span><span data-rotulo>Pagar com cartão de crédito</span></button>
+            <p class="meios"><span class="ico" aria-hidden="true">lock</span>Pagamento seguro, processado pelo Mercado Pago</p>
             <div class="miudo">
               <p><b>Aliado nº <span data-proximo>001</span></b> é o próximo número. Pagamentos depois das 21h de sexta, ou com as vagas esgotadas, entram na parte seguinte.</p>
               <p>O passe não muda a votação: nos comentários, o voto de todo mundo vale igual.</p>
@@ -654,7 +704,7 @@ a.capitulo:hover { transform: translateY(-4px); }
         <details><summary>Errei meu @. E agora?<span class="ico" aria-hidden="true">add</span></summary>
           <p>Manda uma mensagem no direct do @golpecartoon antes de as vagas fecharem, que a gente corrige.</p></details>
         <details><summary>Como funciona o pagamento?<span class="ico" aria-hidden="true">add</span></summary>
-          <p>Pelo Mercado Pago, com Pix ou cartão de crédito. Quando o pagamento é aprovado, o seu @ entra sozinho na lista desta página, em alguns minutos.</p></details>
+          <p>Pelo Mercado Pago, com Pix ou cartão de crédito. No Pix, o QR Code e o código copia e cola aparecem aqui mesmo no site e valem por 30 minutos. Quando o pagamento é aprovado, o seu @ entra sozinho na lista desta página.</p></details>
         <details><summary>E se eu desistir, ou a parte não sair?<span class="ico" aria-hidden="true">add</span></summary>
           <p>Você pode desistir em até 7 dias depois do pagamento, e o valor volta inteiro pelo Mercado Pago, no mesmo meio que você usou. Se a parte com o seu @ não sair, devolvemos também.</p></details>
       </div>
@@ -696,6 +746,41 @@ a.capitulo:hover { transform: translateY(-4px); }
 
 <p class="recado" id="recado" role="status" hidden></p>
 
+<dialog class="janela" id="janela" aria-labelledby="janela-titulo">
+  <div class="janela-int">
+    <button class="janela-fechar" type="button" data-fechar aria-label="Fechar"><span class="ico" aria-hidden="true">close</span></button>
+    <p class="janela-topo" id="janela-titulo">Passe de aliado · <span data-janela-arroba></span></p>
+    <p class="janela-preco">R$ 9,90</p>
+    <p class="janela-parte">Se pagar agora, o seu @ entra na <b>Parte <span data-janela-parte>3</span></b>.</p>
+
+    <div class="janela-vista" data-vista="pix" hidden>
+      <div class="qr" data-pix-qr-caixa><img data-pix-qr width="196" height="196" alt="QR Code do Pix de R$ 9,90"></div>
+      <div class="copia">
+        <label for="pix-codigo">Pix copia e cola</label>
+        <div class="entrada"><input type="text" id="pix-codigo" readonly data-pix-codigo></div>
+      </div>
+      <button class="botao botao-cheio" type="button" data-copiar-pix><span class="ico" aria-hidden="true">content_copy</span><span data-copiar-rotulo>Copiar código Pix</span></button>
+      <p class="aguardando"><span class="ponto" aria-hidden="true"></span><span>Aguardando pagamento</span><span>expira em <b data-pix-tempo>30:00</b></span></p>
+      <p class="janela-dica">No app do banco, escolha Pix copia e cola e cole o código, ou leia o QR Code com outro celular. Esta janela confirma sozinha quando o pagamento cair.</p>
+    </div>
+
+    <div class="janela-vista" data-vista="cartao" hidden>
+      <p class="cartao-carregando" data-cartao-carregando>Carregando o formulário do cartão…</p>
+      <div id="cartao-brick"></div>
+      <p class="erro" data-cartao-erro role="alert" hidden></p>
+      <button class="botao botao-vazado" type="button" data-cartao-pagina hidden>Pagar na página do Mercado Pago</button>
+    </div>
+
+    <div class="janela-vista janela-fim" data-vista="fim" hidden>
+      <span class="ico" aria-hidden="true" data-fim-ico>check</span>
+      <p class="numero" data-fim-numero hidden></p>
+      <h3 tabindex="-1" data-fim-titulo>Pagamento aprovado</h3>
+      <p data-fim-texto></p>
+      <button class="botao botao-cheio" type="button" data-fim-acao>Ver a lista de aliados</button>
+    </div>
+  </div>
+</dialog>
+
 <script>
 (function () {
   // Valores de reserva. O site publicado pega os de verdade em /api/aliados.
@@ -703,6 +788,7 @@ a.capitulo:hover { transform: translateY(-4px); }
     parte: 3,
     fecha: '2026-10-30T21:00:00-03:00',  // fim das vagas e da votação
     vagas: 10,
+    preco: 9.9,                           // R$ do passe, para o formulário do cartão
     proximoNumero: 1                      // o número do próximo aliado novo
   };
 
@@ -748,12 +834,34 @@ a.capitulo:hover { transform: translateY(-4px); }
     if (aliados.length) $('[data-legenda]').textContent = aliados.map(function (a) { return a.arroba; }).join(', ') + '.';
   }
 
-  // Formulário do passe: abre o pagamento no Mercado Pago
-  var form = $('#passe'), erro = $('#erro'), botao = form.querySelector('[type="submit"]');
-  var rotulo = botao.textContent;
+  // Formulário do passe. O Pix abre numa janela do próprio site, com o QR Code e o copia e cola.
+  // O cartão também, com o formulário de cartão do Mercado Pago, quando a chave pública está
+  // ligada; sem ela, o cartão é pago na página do Mercado Pago.
+  var form = $('#passe'), erro = $('#erro');
+  var botoes = $$('#passe [type="submit"]');
+  var botaoPix = form.querySelector('[data-meio="pix"]'), botaoCartao = form.querySelector('[data-meio="cartao"]');
+  var desligado = false, escolha = 'pix';
+  botoes.forEach(function (b) {
+    b.setAttribute('data-texto', b.querySelector('[data-rotulo]').textContent);
+    b.addEventListener('click', function () { escolha = b.getAttribute('data-meio'); });
+  });
+  function ocupar(botao, texto) {
+    botoes.forEach(function (b) { b.disabled = true; });
+    botao.querySelector('[data-rotulo]').textContent = texto;
+  }
+  function liberar() {
+    botoes.forEach(function (b) {
+      b.disabled = desligado;
+      b.querySelector('[data-rotulo]').textContent = b.getAttribute('data-texto');
+    });
+  }
   function falhar(msg) {
     erro.textContent = msg; erro.hidden = false;
-    botao.disabled = false; botao.textContent = rotulo;
+    liberar();
+  }
+  function pedir(corpo) {
+    return fetch('/api/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); });
   }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
@@ -766,31 +874,294 @@ a.capitulo:hover { transform: translateY(-4px); }
     erro.textContent = msg;
     erro.hidden = !msg;
     if (msg) return;
-    botao.disabled = true;
-    botao.textContent = 'Abrindo o pagamento…';
-    fetch('/api/checkout', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ arroba: arroba, email: email, autorizo: true })
-    })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
-      .then(function (res) {
-        if (res.ok && res.d.init_point) { location.href = res.d.init_point; return; }
-        falhar(res.d.erro || 'Não deu para abrir o pagamento agora. Tenta de novo em alguns minutos.');
-      })
-      .catch(function () { falhar('Não deu para abrir o pagamento agora. Confira a sua internet e tente de novo.'); });
+    var dados = { arroba: arroba.toLowerCase(), email: email, autorizo: true };
+    var meio = (ev.submitter && ev.submitter.getAttribute('data-meio')) || escolha;
+    if (meio !== 'cartao') pagarPix(dados);
+    else if (chave) abrirCartao(dados);
+    else paginaDoMercadoPago(dados);
   });
+  function paginaDoMercadoPago(dados) {
+    ocupar(botaoCartao, 'Abrindo o pagamento…');
+    pedir(dados).then(function (res) {
+      if (res.ok && res.d.init_point) { location.href = res.d.init_point; return; }
+      falhar(res.d.erro || 'Não deu para abrir o pagamento agora. Tenta de novo em alguns minutos.');
+    }).catch(function () { falhar('Não deu para abrir o pagamento agora. Confira a sua internet e tente de novo.'); });
+  }
   // Quem volta do Mercado Pago pelo botão de voltar encontra o formulário pronto de novo.
-  window.addEventListener('pageshow', function (ev) {
-    if (ev.persisted && botao.textContent !== rotulo) { botao.disabled = false; botao.textContent = rotulo; }
-  });
+  window.addEventListener('pageshow', function (ev) { if (ev.persisted) liberar(); });
 
-  fetch('/api/aliados').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-    if (!d || !Array.isArray(d.aliados)) return;
-    CONFIG.vagas = d.vagas; CONFIG.proximoNumero = d.proximoNumero;
-    if (d.fecha) fim = Date.parse(d.fecha);
-    mostrarLista(d.aliados);
-    if (d.ligado === false) { botao.disabled = true; botao.textContent = rotulo = 'Pagamento abre em breve'; }
-  }).catch(function () {});
+  // A lista vem de /api/aliados, que a CDN guarda por um minuto. Depois de um pagamento
+  // aprovado, a página pede a lista fresca, para o @ novo aparecer na hora.
+  var chave = '', aliadosAgora = [];
+  function desligar() {
+    desligado = true;
+    botaoPix.setAttribute('data-texto', 'Pagamento abre em breve');
+    botaoCartao.hidden = true;
+    liberar();
+  }
+  function carregarLista(fresca) {
+    return fetch('/api/aliados' + (fresca ? '?agora=' + Date.now() : ''), { cache: fresca ? 'no-store' : 'default' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || !Array.isArray(d.aliados)) return null;
+        CONFIG.parte = d.parte; CONFIG.vagas = d.vagas; CONFIG.proximoNumero = d.proximoNumero;
+        if (d.fecha) fim = Date.parse(d.fecha);
+        chave = d.chave || '';
+        aliadosAgora = d.aliados;
+        mostrarLista(d.aliados);
+        if (d.ligado === false) desligar();
+        return d;
+      })
+      .catch(function () { return null; });
+  }
+  carregarLista(false);
+
+  // A janela de pagamento
+  var janela = $('#janela');
+  var pix = null, relogioPix = null, vigia = null, acaoFim = null;
+  function mostrarVista(nome) {
+    janela.setAttribute('data-vista', nome);
+    $$('#janela [data-vista]').forEach(function (v) { v.hidden = v.getAttribute('data-vista') !== nome; });
+  }
+  function abrirJanela(arroba, parte, vista) {
+    $('[data-janela-arroba]').textContent = '@' + arroba;
+    $('[data-janela-parte]').textContent = parte;
+    mostrarVista(vista);
+    if (janela.open) return;
+    if (janela.showModal) janela.showModal(); else janela.setAttribute('open', '');
+  }
+  function fecharJanela() {
+    if (janela.close) { if (janela.open) janela.close(); return; }
+    janela.removeAttribute('open');
+    janela.dispatchEvent(new Event('close'));
+  }
+  janela.addEventListener('close', function () {
+    pararPix();
+    if (pix) { pix.aberto = false; guardarPix(pix); pix = null; }
+    if (brick) { brick.unmount(); brick = null; }
+  });
+  $('[data-fechar]').addEventListener('click', fecharJanela);
+
+  // O fim da janela: aprovado, em análise ou expirado, com um botão para o passo seguinte.
+  function mostrarFim(tipo, titulo, texto, rotulo, acao) {
+    $('#janela [data-vista="fim"]').setAttribute('data-tipo', tipo);
+    $('[data-fim-ico]').textContent = { aprovado: 'check', pendente: 'schedule', falhou: 'error' }[tipo];
+    $('[data-fim-numero]').hidden = true;
+    $('[data-fim-titulo]').textContent = titulo;
+    $('[data-fim-texto]').textContent = texto;
+    $('[data-fim-acao]').textContent = rotulo;
+    acaoFim = acao || null;
+    mostrarVista('fim');
+    $('[data-fim-titulo]').focus();
+  }
+  $('[data-fim-acao]').addEventListener('click', function () {
+    var acao = acaoFim;
+    fecharJanela();
+    if (acao) acao();
+  });
+  function aprovar(arroba, parte) {
+    pararPix(); pix = null; guardarPix(null);
+    abrirJanela(arroba, parte, 'fim');
+    mostrarFim('aprovado', 'Pagamento aprovado',
+      'Você é aliado da Parte ' + parte + '! O seu @ aparece no episódio e na legenda do post, e o comprovante vai para o seu e-mail.',
+      'Ver a lista de aliados', function () { $('#t-creditos').scrollIntoView({ block: 'center' }); });
+    acharNumero('@' + arroba, 3);
+  }
+  // O número aparece quando a lista fresca já traz o @: a busca do Mercado Pago pode levar uns segundos.
+  function acharNumero(arroba, tentativas) {
+    carregarLista(true).then(function (d) {
+      var eu = d && d.aliados.filter(function (a) { return a.arroba === arroba; })[0];
+      var numero = $('[data-fim-numero]');
+      if (eu) { numero.textContent = 'Aliado nº ' + tres(eu.numero); numero.hidden = false; }
+      else if (tentativas > 1) setTimeout(function () { acharNumero(arroba, tentativas - 1); }, 4000);
+    });
+  }
+
+  // Pix. Ele fica guardado no aparelho até ser pago ou expirar: se o navegador do Instagram
+  // recarregar a página na volta do app do banco, a janela abre de novo e confirma o pagamento.
+  var GUARDA = 'golpecartoon:pix';
+  function lerPix() {
+    try {
+      var p = JSON.parse(localStorage.getItem(GUARDA) || 'null');
+      if (p && p.id && Date.parse(p.expira) > Date.now()) return p;
+      localStorage.removeItem(GUARDA);
+    } catch (e) {}
+    return null;
+  }
+  function guardarPix(p) {
+    try { if (p) localStorage.setItem(GUARDA, JSON.stringify(p)); else localStorage.removeItem(GUARDA); } catch (e) {}
+  }
+  function pararPix() { clearTimeout(relogioPix); clearInterval(vigia); }
+  function pagarPix(dados) {
+    // O mesmo @ e o mesmo e-mail com um Pix ainda valendo: abre esse, em vez de criar outro.
+    var guardado = lerPix();
+    if (guardado && guardado.arroba === dados.arroba && guardado.email === dados.email &&
+        Date.parse(guardado.expira) - Date.now() > 3 * 60 * 1000) {
+      mostrarPix(guardado);
+      conferirPix();
+      return;
+    }
+    ocupar(botaoPix, 'Gerando o Pix…');
+    pedir({ arroba: dados.arroba, email: dados.email, autorizo: true, meio: 'pix' }).then(function (res) {
+      if (!res.ok || !res.d.codigo) { falhar(res.d.erro || 'Não deu para gerar o Pix agora. Tenta de novo em alguns minutos.'); return; }
+      liberar();
+      mostrarPix({ id: res.d.id, parte: res.d.parte, codigo: res.d.codigo, qr: res.d.qr, expira: res.d.expira, arroba: dados.arroba, email: dados.email });
+    }).catch(function () { falhar('Não deu para gerar o Pix agora. Confira a sua internet e tente de novo.'); });
+  }
+  function mostrarPix(p) {
+    pix = p; p.aberto = true; guardarPix(p);
+    $('[data-pix-qr]').src = p.qr ? 'data:image/png;base64,' + p.qr : '';
+    $('[data-pix-qr-caixa]').hidden = !p.qr;
+    $('[data-pix-codigo]').value = p.codigo;
+    $('[data-copiar-rotulo]').textContent = 'Copiar código Pix';
+    abrirJanela(p.arroba, p.parte, 'pix');
+    contarPix();
+    clearInterval(vigia);
+    vigia = setInterval(function () { if (!document.hidden) conferirPix(); }, 4000);
+  }
+  function contarPix() {
+    clearTimeout(relogioPix);
+    if (!pix) return;
+    var falta = Math.max(0, Math.floor((Date.parse(pix.expira) - Date.now()) / 1000));
+    $('[data-pix-tempo]').textContent = dois(Math.floor(falta / 60)) + ':' + dois(falta % 60);
+    if (falta === 0) { conferirPix(true); return; }
+    relogioPix = setTimeout(contarPix, 1000 - Date.now() % 1000);
+  }
+  // Pergunta ao servidor como está o Pix. Na última vez, um Pix ainda sem pagamento expirou.
+  function conferirPix(ultima) {
+    var aberto = pix;
+    if (!aberto) return;
+    fetch('/api/pagamento?id=' + aberto.id, { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (pix !== aberto) return;
+        if (d && d.status === 'aprovado') aprovar(aberto.arroba, d.parte || aberto.parte);
+        else if (ultima || (d && d.status === 'falhou')) expirar();
+      })
+      .catch(function () { if (ultima && pix === aberto) expirar(); });
+  }
+  function expirar() {
+    pararPix(); pix = null; guardarPix(null);
+    mostrarFim('falhou', 'O Pix expirou',
+      'O código valia por 30 minutos e não foi pago, então nada foi cobrado. Gere outro para pagar.',
+      'Gerar outro Pix', function () { botaoPix.click(); });
+  }
+  // Na volta do app do banco, confere na hora, sem esperar a próxima rodada.
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden && pix && janela.open) { conferirPix(); contarPix(); }
+  });
+  $('[data-copiar-pix]').addEventListener('click', function () {
+    if (!pix) return;
+    var rotulo = $('[data-copiar-rotulo]'), campo = $('[data-pix-codigo]');
+    copiar(pix.codigo, campo).then(function () {
+      rotulo.textContent = 'Copiado! Agora cole no app do banco';
+    }, function () {
+      campo.focus(); campo.select();
+      rotulo.textContent = 'Toque e segure o código para copiar';
+    });
+  });
+  var guardado = lerPix();
+  if (guardado && guardado.aberto) { mostrarPix(guardado); conferirPix(); }
+
+  // Cartão: o formulário do Mercado Pago (Card Payment Brick) dentro da janela. Os dados do
+  // cartão vão direto para o Mercado Pago, que devolve um token de uso único para a cobrança.
+  var sdk = null, brick = null, montando = null, dadosCartao = null;
+  var cor = function (nome) { return getComputedStyle(document.documentElement).getPropertyValue(nome).trim(); };
+  function carregarSdk() {
+    if (!sdk) {
+      sdk = new Promise(function (ok, falha) {
+        var s = document.createElement('script');
+        s.src = 'https://sdk.mercadopago.com/js/v2';
+        s.onload = ok;
+        s.onerror = function () { sdk = null; falha(new Error('O SDK do Mercado Pago não carregou.')); };
+        document.head.appendChild(s);
+      });
+    }
+    return sdk;
+  }
+  // A parte em que o passe entra, como o servidor decide: a seguinte depois do prazo ou com a lista cheia.
+  function parteAgora() {
+    return Date.now() > fim || aliadosAgora.length >= CONFIG.vagas ? CONFIG.parte + 1 : CONFIG.parte;
+  }
+  function abrirCartao(dados) {
+    dadosCartao = dados;
+    var carregando = $('[data-cartao-carregando]');
+    carregando.hidden = !!brick;
+    $('[data-cartao-erro]').hidden = true;
+    $('[data-cartao-pagina]').hidden = true;
+    abrirJanela(dados.arroba, parteAgora(), 'cartao');
+    if (brick || montando) return;
+    montando = carregarSdk().then(function () {
+      var mp = new window.MercadoPago(chave, { locale: 'pt-BR' });
+      return mp.bricks().create('cardPayment', 'cartao-brick', {
+        initialization: { amount: CONFIG.preco, payer: { email: dados.email } },
+        customization: {
+          paymentMethods: { maxInstallments: 1, types: { excluded: ['debit_card'] } },
+          visual: {
+            hideFormTitle: true,
+            style: {
+              theme: 'dark',
+              customVariables: {
+                formBackgroundColor: cor('--painel'), inputBackgroundColor: cor('--poco'),
+                baseColor: cor('--vermelho'), errorColor: cor('--vermelho-texto'),
+                textPrimaryColor: cor('--creme'), textSecondaryColor: cor('--areia'), buttonTextColor: cor('--creme'),
+                outlinePrimaryColor: cor('--linha'), outlineSecondaryColor: cor('--linha'),
+                borderRadiusMedium: '12px', borderRadiusLarge: '12px', formPadding: '0px'
+              }
+            }
+          }
+        },
+        callbacks: {
+          onReady: function () { carregando.hidden = true; },
+          onSubmit: function (cartao) { return cobrarCartao(dadosCartao, cartao); },
+          onError: function (e) { if (e && e.type === 'critical') semFormulario(); }
+        }
+      });
+    }).then(function (controle) {
+      montando = null;
+      // O SDK responde sem formulário quando não consegue montá-lo (uma chave que não vale, por exemplo).
+      if (!controle) { semFormulario(); return; }
+      // Se a janela fechou enquanto o formulário carregava, ele sai.
+      if (janela.open && janela.getAttribute('data-vista') === 'cartao') brick = controle; else controle.unmount();
+    }).catch(function () { montando = null; semFormulario(); });
+  }
+  function cobrarCartao(dados, cartao) {
+    var erroCartao = $('[data-cartao-erro]');
+    erroCartao.hidden = true;
+    return pedir({
+      arroba: dados.arroba, email: dados.email, autorizo: true, meio: 'cartao',
+      cartao: {
+        token: cartao.token, payment_method_id: cartao.payment_method_id, issuer_id: cartao.issuer_id,
+        identification: cartao.payer && cartao.payer.identification
+      }
+    }).then(function (res) {
+      if (res.ok && res.d.status === 'aprovado') { aprovar(dados.arroba, res.d.parte); return; }
+      if (res.ok && res.d.status === 'pendente') {
+        mostrarFim('pendente', 'Pagamento em análise',
+          'O Mercado Pago está analisando o pagamento, o que pode levar alguns minutos. Se for aprovado, o seu @ entra na lista sozinho e o comprovante vai para o seu e-mail.',
+          'Fechar');
+        return;
+      }
+      erroCartao.textContent = res.d.motivo || res.d.erro || 'O cartão foi recusado, e nada foi cobrado. Tente outro cartão ou pague com Pix.';
+      erroCartao.hidden = false;
+    }).catch(function () {
+      erroCartao.textContent = 'Não deu para concluir o pagamento. Confira a sua internet e tente de novo.';
+      erroCartao.hidden = false;
+    });
+  }
+  // Se o formulário do cartão não carregar (rede ou bloqueador), sobra a página do Mercado Pago.
+  function semFormulario() {
+    $('[data-cartao-carregando]').hidden = true;
+    var erroCartao = $('[data-cartao-erro]');
+    erroCartao.textContent = 'Não deu para carregar o formulário do cartão aqui. Você pode pagar na página do Mercado Pago.';
+    erroCartao.hidden = false;
+    $('[data-cartao-pagina]').hidden = false;
+  }
+  $('[data-cartao-pagina]').addEventListener('click', function () {
+    var dados = dadosCartao;
+    fecharJanela();
+    paginaDoMercadoPago(dados);
+  });
 
   // A volta do Mercado Pago: o resultado é conferido no servidor, não lido do endereço.
   var busca = new URLSearchParams(location.search);
@@ -852,8 +1223,19 @@ a.capitulo:hover { transform: translateY(-4px); }
     recado.textContent = texto; recado.hidden = false;
     clearTimeout(apagar); apagar = setTimeout(function () { recado.hidden = true; }, 3200);
   }
-  function copiar(texto) {
-    try { return navigator.clipboard.writeText(texto); } catch (e) { return Promise.reject(e); }
+  // Copia com a área de transferência; onde ela falta, como em navegadores dentro de apps,
+  // seleciona o texto e usa o copiar antigo.
+  function copiar(texto, campo) {
+    function antigo() {
+      var area = campo || document.createElement('textarea');
+      if (!campo) { area.value = texto; area.setAttribute('readonly', ''); area.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(area); }
+      area.select(); area.setSelectionRange(0, texto.length);
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      if (!campo) document.body.removeChild(area);
+      return ok ? Promise.resolve() : Promise.reject(new Error('A cópia foi recusada.'));
+    }
+    try { return navigator.clipboard.writeText(texto).catch(antigo); } catch (e) { return antigo(); }
   }
 
   // Votar: copia a palavra e deixa o link abrir o Reel

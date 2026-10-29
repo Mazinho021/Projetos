@@ -47,11 +47,13 @@ test('after the deadline, or with the list full, a pass counts for the next part
 });
 
 // The functions, with Mercado Pago answered by a fake fetch.
-let chamadas, busca;
+let chamadas, busca, cartaoResponde;
 beforeEach(() => {
   process.env.MP_ACCESS_TOKEN = 'TESTE';
+  delete process.env.MP_PUBLIC_KEY;
   chamadas = [];
   busca = [];
+  cartaoResponde = { status: 'approved', status_detail: 'accredited' };
   globalThis.fetch = async (url, opcoes = {}) => {
     chamadas.push({ url: String(url), opcoes });
     if (String(url).includes('/v1/payments/search')) {
@@ -59,6 +61,16 @@ beforeEach(() => {
     }
     if (String(url).endsWith('/checkout/preferences')) {
       return Response.json({ id: 'pref-1', init_point: 'https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=pref-1' });
+    }
+    if (String(url).endsWith('/v1/payments') && opcoes.method === 'POST') {
+      const corpo = JSON.parse(opcoes.body);
+      if (corpo.payment_method_id === 'pix') {
+        return Response.json({
+          id: 444, status: 'pending', status_detail: 'pending_waiting_transfer', date_of_expiration: corpo.date_of_expiration,
+          point_of_interaction: { transaction_data: { qr_code: '00020126580014br.gov.bcb.pix', qr_code_base64: 'iVBORw0KGgo=' } },
+        }, { status: 201 });
+      }
+      return Response.json({ id: 555, ...cartaoResponde }, { status: 201 });
     }
     const umPagamento = String(url).match(/\/v1\/payments\/(\d+)$/);
     if (umPagamento && pagamentosPorId[umPagamento[1]]) return Response.json(pagamentosPorId[umPagamento[1]]);
@@ -146,4 +158,67 @@ test('the list shows handles and numbers only', async () => {
   assert.deepEqual(lista.aliados, [{ arroba: '@ana', numero: 1 }]);
   assert.equal(lista.proximoNumero, 3);
   assert.ok(!JSON.stringify(lista).includes('email'));
+});
+
+test('a Pix for the site itself comes with its QR Code and copy-and-paste code, for about half an hour', async () => {
+  const antes = Date.now();
+  const res = await checkout(pedido({ arroba: '@Ana', email: 'ana@email.com', autorizo: true, meio: 'pix' }));
+  const criar = chamadas.find(c => c.url.endsWith('/v1/payments'));
+  const corpo = JSON.parse(criar.opcoes.body);
+  assert.equal(corpo.payment_method_id, 'pix');
+  assert.equal(corpo.transaction_amount, 9.9);
+  assert.equal(corpo.external_reference, 'aliado|3|ana');
+  assert.equal(corpo.payer.email, 'ana@email.com');
+  assert.match(criar.opcoes.headers['X-Idempotency-Key'], /^[0-9a-f-]{36}$/);
+  assert.match(corpo.date_of_expiration, /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}-03:00$/);
+  const minutos = (Date.parse(corpo.date_of_expiration) - antes) / 60000;
+  assert.ok(minutos > 30 && minutos < 32, `o Pix vale ${minutos} minutos`);
+  assert.deepEqual(await res.json(), {
+    meio: 'pix', id: 444, parte: 3, codigo: '00020126580014br.gov.bcb.pix', qr: 'iVBORw0KGgo=', expira: corpo.date_of_expiration,
+  });
+});
+
+test('a card from the card form is charged with the amount and installments of the server', async () => {
+  const pedidoCartao = () => pedido({
+    arroba: 'ana', email: 'ana@email.com', autorizo: true, meio: 'cartao', transaction_amount: 0.01, installments: 12,
+    cartao: {
+      token: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4', payment_method_id: 'visa', issuer_id: '25', installments: 12,
+      identification: { type: 'CPF', number: '123.456.789-09' },
+    },
+  });
+  assert.deepEqual(await (await checkout(pedidoCartao())).json(), { meio: 'cartao', id: 555, parte: 3, status: 'aprovado' });
+  const criar = chamadas.find(c => c.url.endsWith('/v1/payments'));
+  const corpo = JSON.parse(criar.opcoes.body);
+  assert.equal(corpo.transaction_amount, 9.9);
+  assert.equal(corpo.installments, 1);
+  assert.equal(corpo.token, 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4');
+  assert.equal(corpo.payment_method_id, 'visa');
+  assert.equal(corpo.issuer_id, '25');
+  assert.deepEqual(corpo.payer, { email: 'ana@email.com', identification: { type: 'CPF', number: '12345678909' } });
+  assert.equal(corpo.external_reference, 'aliado|3|ana');
+  assert.ok(criar.opcoes.headers['X-Idempotency-Key']);
+
+  cartaoResponde = { status: 'rejected', status_detail: 'cc_rejected_insufficient_amount' };
+  const recusado = await (await checkout(pedidoCartao())).json();
+  assert.equal(recusado.status, 'falhou');
+  assert.equal(recusado.motivo, 'O cartão não tem limite para esse valor.');
+  cartaoResponde = { status: 'in_process', status_detail: 'pending_review_manual' };
+  assert.equal((await (await checkout(pedidoCartao())).json()).status, 'pendente');
+});
+
+test('a card without its token is refused, and the form without JavaScript still goes to Mercado Pago', async () => {
+  const semToken = await checkout(pedido({ arroba: 'ana', email: 'ana@email.com', autorizo: true, meio: 'cartao', cartao: { payment_method_id: 'visa' } }));
+  assert.equal(semToken.status, 400);
+  assert.equal(chamadas.length, 0);
+  const semJs = await checkout(formulario({ arroba: 'ana', email: 'ana@email.com', autorizo: 'sim', meio: 'cartao' }));
+  assert.equal(semJs.status, 303);
+  assert.equal(semJs.headers.get('Location'), 'https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=pref-1');
+});
+
+test('the page gets the public key only when the variable holds one', async () => {
+  const chave = ['APP_USR', '8f2c1a9e', '1b2c', '4d3e', '9f4a', '0123456789ab'].join('-');
+  process.env.MP_PUBLIC_KEY = chave;
+  assert.equal((await (await aliados()).json()).chave, chave);
+  process.env.MP_PUBLIC_KEY = ['APP_USR', '1234567890123456', '102812', '0123456789abcdef0123456789abcdef', '123456789'].join('-');
+  assert.equal((await (await aliados()).json()).chave, undefined);
 });
