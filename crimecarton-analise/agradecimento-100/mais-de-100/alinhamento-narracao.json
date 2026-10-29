@@ -1,0 +1,331 @@
+{
+ "audio": "narracao-mais-de-100.wav",
+ "script": "narracao-mais-de-100.txt",
+ "model": "medium",
+ "words_in_script": 46,
+ "words_matched_exactly": 43,
+ "pauses": [
+  [
+   1.073,
+   1.702
+  ],
+  [
+   4.158,
+   4.881
+  ],
+  [
+   5.722,
+   6.164
+  ],
+  [
+   6.834,
+   7.569
+  ],
+  [
+   9.285,
+   9.654
+  ],
+  [
+   10.533,
+   11.181
+  ],
+  [
+   12.187,
+   12.59
+  ],
+  [
+   14.968,
+   15.289
+  ],
+  [
+   15.373,
+   15.665
+  ],
+  [
+   17.277,
+   17.898
+  ],
+  [
+   19.061,
+   19.32
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Lembra",
+   "start": 0.0,
+   "end": 0.52
+  },
+  {
+   "i": 1,
+   "text": "da",
+   "start": 0.52,
+   "end": 0.66
+  },
+  {
+   "i": 2,
+   "text": "mochila?",
+   "start": 0.66,
+   "end": 1.073
+  },
+  {
+   "i": 3,
+   "text": "Na",
+   "start": 1.702,
+   "end": 1.92
+  },
+  {
+   "i": 4,
+   "text": "primeira",
+   "start": 1.92,
+   "end": 2.18
+  },
+  {
+   "i": 5,
+   "text": "vez,",
+   "start": 2.18,
+   "end": 2.52
+  },
+  {
+   "i": 6,
+   "text": "ela",
+   "start": 2.6,
+   "end": 2.72
+  },
+  {
+   "i": 7,
+   "text": "veio",
+   "start": 2.72,
+   "end": 2.98
+  },
+  {
+   "i": 8,
+   "text": "só",
+   "start": 2.98,
+   "end": 3.42
+  },
+  {
+   "i": 9,
+   "text": "com",
+   "start": 3.42,
+   "end": 3.58
+  },
+  {
+   "i": 10,
+   "text": "roupa",
+   "start": 3.58,
+   "end": 3.9
+  },
+  {
+   "i": 11,
+   "text": "velha.",
+   "start": 3.9,
+   "end": 4.158
+  },
+  {
+   "i": 12,
+   "text": "Dessa",
+   "start": 4.881,
+   "end": 5.3
+  },
+  {
+   "i": 13,
+   "text": "vez…",
+   "start": 5.3,
+   "end": 5.722
+  },
+  {
+   "i": 14,
+   "text": "veio",
+   "start": 6.164,
+   "end": 6.4
+  },
+  {
+   "i": 15,
+   "text": "cheia.",
+   "start": 6.4,
+   "end": 6.834
+  },
+  {
+   "i": 16,
+   "text": "Mais",
+   "start": 7.569,
+   "end": 7.96
+  },
+  {
+   "i": 17,
+   "text": "de",
+   "start": 7.96,
+   "end": 8.38
+  },
+  {
+   "i": 18,
+   "text": "cem",
+   "start": 8.38,
+   "end": 8.58
+  },
+  {
+   "i": 19,
+   "text": "seguidores.",
+   "start": 8.58,
+   "end": 9.285
+  },
+  {
+   "i": 20,
+   "text": "O",
+   "start": 9.654,
+   "end": 9.773
+  },
+  {
+   "i": 21,
+   "text": "Zinho",
+   "start": 9.773,
+   "end": 10.04
+  },
+  {
+   "i": 22,
+   "text": "aprovou.",
+   "start": 10.04,
+   "end": 10.533
+  },
+  {
+   "i": 23,
+   "text": "Obrigado,",
+   "start": 11.181,
+   "end": 11.72
+  },
+  {
+   "i": 24,
+   "text": "aliados.",
+   "start": 11.78,
+   "end": 12.187
+  },
+  {
+   "i": 25,
+   "text": "Cada",
+   "start": 12.59,
+   "end": 12.92
+  },
+  {
+   "i": 26,
+   "text": "um",
+   "start": 12.92,
+   "end": 13.08
+  },
+  {
+   "i": 27,
+   "text": "de",
+   "start": 13.08,
+   "end": 13.3
+  },
+  {
+   "i": 28,
+   "text": "vocês",
+   "start": 13.3,
+   "end": 13.58
+  },
+  {
+   "i": 29,
+   "text": "faz",
+   "start": 13.58,
+   "end": 13.94
+  },
+  {
+   "i": 30,
+   "text": "parte",
+   "start": 13.94,
+   "end": 14.28
+  },
+  {
+   "i": 31,
+   "text": "dessa",
+   "start": 14.28,
+   "end": 14.52
+  },
+  {
+   "i": 32,
+   "text": "história.",
+   "start": 14.52,
+   "end": 15.373
+  },
+  {
+   "i": 33,
+   "text": "E",
+   "start": 15.665,
+   "end": 15.86
+  },
+  {
+   "i": 34,
+   "text": "a",
+   "start": 15.86,
+   "end": 16.02
+  },
+  {
+   "i": 35,
+   "text": "parte",
+   "start": 16.02,
+   "end": 16.2
+  },
+  {
+   "i": 36,
+   "text": "três",
+   "start": 16.2,
+   "end": 16.56
+  },
+  {
+   "i": 37,
+   "text": "já",
+   "start": 16.56,
+   "end": 16.78
+  },
+  {
+   "i": 38,
+   "text": "tá",
+   "start": 16.78,
+   "end": 16.96
+  },
+  {
+   "i": 39,
+   "text": "chegando.",
+   "start": 16.96,
+   "end": 17.277
+  },
+  {
+   "i": 40,
+   "text": "Segue",
+   "start": 17.898,
+   "end": 18.14
+  },
+  {
+   "i": 41,
+   "text": "o",
+   "start": 18.14,
+   "end": 18.28
+  },
+  {
+   "i": 42,
+   "text": "perfil",
+   "start": 18.28,
+   "end": 18.52
+  },
+  {
+   "i": 43,
+   "text": "pra",
+   "start": 18.52,
+   "end": 18.7
+  },
+  {
+   "i": 44,
+   "text": "não",
+   "start": 18.7,
+   "end": 18.84
+  },
+  {
+   "i": 45,
+   "text": "perder.",
+   "start": 18.84,
+   "end": 19.061
+  }
+ ]
+}

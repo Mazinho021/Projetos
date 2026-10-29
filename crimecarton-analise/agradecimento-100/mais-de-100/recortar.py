@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cut Zinho out of his character sheet, for the animation of the "mais de 100" video.
+"""Cut Zinho out of his drawings, for the animation of the "mais de 100" video.
 
 Uses isnet-anime, the cartoon-character model that rembg ships, run with onnxruntime:
 https://github.com/danielgatis/rembg/releases/download/v0.0.0/isnet-anime.onnx
@@ -7,8 +7,9 @@ The model is not in the repository (176 MB); its path is the first argument.
 
     python recortar.py /caminho/isnet-anime.onnx
 
-Writes recortes/zinho-corpo.png (the front pose with the backpack) and
-recortes/zinho-surpreso.png (the surprised face), cropped to the drawing.
+Writes, cropped to the drawing: recortes/zinho-corpo.png (the front pose with the backpack),
+from the character sheet, and recortes/zinho-joia.png (Zinho happy, thumbs up), from
+Codex's zinho-joia-b.png.
 """
 from __future__ import annotations
 
@@ -21,10 +22,10 @@ from PIL import Image, ImageFilter
 
 HERE = Path(__file__).resolve().parent
 SHEET = HERE.parents[1] / 'zinho-referencia-v3.png'
-# Boxes on the 1536 × 1024 sheet: left, top, right, bottom.
+# The drawing each cut-out comes from and the box on it (left, top, right, bottom), or None for all of it.
 PARTS = {
-    'zinho-corpo': (0, 8, 500, 1000),
-    'zinho-surpreso': (965, 495, 1262, 912),
+    'zinho-corpo': (SHEET, (0, 8, 500, 1000)),
+    'zinho-joia': (HERE / 'zinho-joia-b.png', None),
 }
 
 
@@ -40,10 +41,10 @@ def mask_of(session, im):
 
 def main():
     session = ort.InferenceSession(sys.argv[1], providers=['CPUExecutionProvider'])
-    sheet = Image.open(SHEET).convert('RGB')
     (HERE / 'recortes').mkdir(exist_ok=True)
-    for name, box in PARTS.items():
-        part = sheet.crop(box)
+    for name, (source, box) in PARTS.items():
+        part = Image.open(source).convert('RGB')
+        part = part.crop(box) if box else part
         # Pad with the sheet's paper colour, so a drawing touching the crop's edge is not cut flat.
         pad = 24
         canvas = Image.new('RGB', (part.width + 2*pad, part.height + 2*pad), part.getpixel((4, 4)))

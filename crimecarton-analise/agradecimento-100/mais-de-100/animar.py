@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 """The "mais de 100 seguidores" thank-you, animated frame by frame.
 
-A new take on the 100-followers video, with its own animation: 1080 × 1920 at 30 fps,
-15.6 s, no narration (the sound is the series' effects, plus applause and a riser made here).
-It plays with Part 1's backpack, which came back with clothes instead of the money:
+A new take on the 100-followers video, with its own animation: 1080 × 1920 at 30 fps, told by
+the series' narrator (narracao-mais-de-100.wav, Charon, made by Codex in the OpusClip) over the
+series' effects, plus applause, a riser and a sparkle made here. Everything is timed to the
+narration's words (alinhamento-narracao.json), so the scenes follow the voice:
 
-  0.0–2.8   "LEMBRA DA MOCHILA?"     Zinho slides in under a spotlight; a red marker rings the bag.
-  2.8–6.0   "DESSA VEZ VEIO CHEIA!"  the bag shakes and bursts with followers; a counter rolls to 100.
-  6.0–9.2   "MAIS DE 100 SEGUIDORES" the 100 takes the screen over turning rays, confetti cannons fire
-                                     and Zinho's surprised face peeks in.
-  8.9–12.4  "OBRIGADO, ALIADOS!"     a polaroid of Zinho smiling drops in, hearts rise.
-  12.1–15.6 "A PARTE 3 TÁ CHEGANDO." the covers of Parts 1 and 2 fan out, the third card flips to
-                                     "em breve" and the follow button closes it.
+  "Lembra da mochila?"                    Zinho slides in under a spotlight; a red marker rings the bag.
+  "Na primeira vez, … roupa velha."       Part 1's photo of the bag of old clothes spins in, stamped.
+  "Dessa vez… veio cheia."                the bag shakes and bursts with followers; a counter rolls to 100.
+  "Mais de cem seguidores. O Zinho aprovou." the 100 takes the screen over turning rays, confetti cannons
+                                          fire and Zinho rises from below with a thumbs up.
+  "Obrigado, aliados. Cada um de vocês…"  a polaroid of Zinho smiling drops in, hearts rise.
+  "E a parte três já tá chegando. Segue…" the covers of Parts 1 and 2 fan out, the third card flips to
+                                          "em breve" and the follow button closes it.
 
 Every element is a function of time, so frames render in any order, in parallel. The cut-outs
-come from recortar.py; the covers from capas/; the polaroid from episodio-01/retrato-zinho.png.
+come from recortar.py; the covers from capas/; the polaroids from episodio-01/retrato-zinho.png
+and perfil/ilustracao-perfil.png.
 
     python animar.py                          # the video, next to this script
     python animar.py --quadros 1.2 6.5 13.9   # stills for a look, in work/
@@ -39,9 +42,35 @@ SERIE = HERE.parents[1]
 FONTES = SERIE / 'fontes'
 EFEITOS = [SERIE / 'episodio-01' / 'montagem' / 'efeitos', SERIE / 'episodio-02' / 'montagem' / 'efeitos']
 SAIDA = HERE / 'agradecimento-mais-de-100-seguidores.mp4'
+NARRACAO = HERE / 'narracao-mais-de-100.wav'
+ALINHAMENTO = HERE / 'alinhamento-narracao.json'
 W, H, FPS = 1080, 1920, 30
-DURACAO = 15.6
 SR = 48000
+# The voice starts once Zinho is on stage. The pause before "Mais de cem" is stretched, so the
+# counter has time to roll after the bag bursts: (index of "Mais", seconds added before it).
+ATRASO = .35
+ESTICA = (16, .7)
+
+
+def palavras_no_video():
+    """Start and end of each narrated word, in the video's time."""
+    palavras = json.loads(ALINHAMENTO.read_text(encoding='utf-8'))['words']
+    desloca = lambda w: ATRASO + (ESTICA[1] if w['i'] >= ESTICA[0] else 0)
+    return [(w['start'] + desloca(w), w['end'] + desloca(w)) for w in palavras]
+
+
+_P = palavras_no_video()
+# The words the picture follows, by their place in narracao-mais-de-100.txt.
+T = {nome: _P[i][0] for nome, i in (
+    ('lembra', 0), ('mochila', 2), ('na', 3), ('roupa', 10), ('dessa', 12), ('veio', 14), ('cheia', 15),
+    ('mais', 16), ('seguidores', 19), ('zinho', 20), ('aprovou', 22), ('obrigado', 23), ('aliados', 24),
+    ('cada', 25), ('dessa_historia', 31), ('e', 33), ('parte', 35), ('chegando', 39), ('segue', 40))}
+T.update(mochila_fim=_P[2][1], velha_fim=_P[11][1], vez_fim=_P[13][1], voz_fim=_P[-1][1])
+CORTE = T['mais'] - .18        # the cut to the 100, its bang just ahead of "Mais"
+PASSA1 = T['obrigado'] - .36   # the red band into the thank-you
+PASSA2 = T['e'] - .32          # the blue band into Part 3
+CONTA = (T['cheia'] + .45, CORTE - .1)  # the counter rolls from 0 to 100
+DURACAO = round((T['voz_fim'] + 1.1)*FPS)/FPS
 
 # Zinho's colours, as on the site: the room at night, the hoodie, the jacket and its stripes, the lamp.
 FUNDO = (20, 14, 11)
@@ -65,7 +94,10 @@ ZINHO_ESCALA = 1.12
 BOCA_DA_MOCHILA = (75, 640)   # the bag's opening, in the cut-out's pixels
 MOCHILA = (2, 570, 150, 860)  # the bag, in the cut-out's pixels
 CONTADOR_Y = 430
-CEM_Y = 830
+CEM_Y = 760
+JOIA_ESCALA = .62
+JOIA_BASE = (540, 1950)       # bottom centre of the thumbs-up Zinho once he is up: his waist stays below the frame
+POLEGAR = (290, 610)          # the tip of his thumb, in the cut-out's pixels
 
 
 # ---------------------------------------------------------------- easing
@@ -183,12 +215,7 @@ def carregar_assets():
     if A:
         return
     A['corpo'] = Image.open(HERE / 'recortes' / 'zinho-corpo.png').convert('RGBA')
-    cabeca = Image.open(HERE / 'recortes' / 'zinho-surpreso.png').convert('RGBA')
-    # The sheet's paint strokes around the shoulders go: the face fades out above them.
-    alfa = np.asarray(cabeca.getchannel('A'), dtype=np.float32)
-    rampa = np.clip((cabeca.height*.93 - np.arange(cabeca.height)) / (cabeca.height*.16), 0, 1)[:, None]
-    cabeca.putalpha(Image.fromarray((alfa*rampa).astype(np.uint8)))
-    A['cabeca'] = cabeca
+    A['joia'] = Image.open(HERE / 'recortes' / 'zinho-joia.png').convert('RGBA')
 
     # Scene 1–2 ground: the jacket's navy at night under a spotlight.
     y = np.linspace(0, 1, H)[:, None]
@@ -226,20 +253,15 @@ def carregar_assets():
     grao[..., 3] = (rng.random((H, W)) < .5) * rng.integers(0, 14, (H, W))
     A['grao'] = Image.fromarray(grao)
 
-    # The polaroid: Zinho smiling, from Part 1's portrait.
+    # The thank-you polaroid: Zinho smiling, from Part 1's portrait.
     retrato = Image.open(SERIE / 'episodio-01' / 'retrato-zinho.png').convert('RGB').crop((214, 0, 1234, 1060))
-    foto = retrato.resize((560, 582), Image.Resampling.LANCZOS)
-    pol = Image.new('RGBA', (620, 760), (0, 0, 0, 0))
-    ImageDraw.Draw(pol).rounded_rectangle((0, 0, 619, 759), 10, fill=(252, 248, 239, 255))
-    pol.paste(foto, (30, 30))
-    ImageDraw.Draw(pol).rectangle((30, 30, 589, 611), outline=(0, 0, 0, 40), width=2)
-    legenda = texto('valeu demais!', 50, TINTA, 'Bold', sombra=False)
-    pol.alpha_composite(legenda, ((620 - legenda.width)//2, 665 - legenda.height//2))
-    fita = Image.new('RGBA', (170, 52), (236, 222, 190, 190))
-    pol.alpha_composite(fita.rotate(18, expand=True, resample=Image.Resampling.BICUBIC), (-40, -32))
-    pol.alpha_composite(fita.rotate(-18, expand=True, resample=Image.Resampling.BICUBIC), (470, -32))
-    A['polaroide'] = pol
-    A['polaroide_sombra'] = sombra_de(pol, 22, 120)
+    A['polaroide'] = polaroide(retrato, 'valeu demais!')
+    A['polaroide_sombra'] = sombra_de(A['polaroide'], 22, 120)
+    # The memory of Part 1: the bag that came back with old clothes, and its stamp.
+    mochila = Image.open(SERIE / 'perfil' / 'ilustracao-perfil.png').convert('RGB')
+    A['lembranca'] = polaroide(mochila, 'Parte 1')
+    A['lembranca_sombra'] = sombra_de(A['lembranca'], 22, 140)
+    A['carimbo_roupa'] = carimbo('SÓ ROUPA VELHA', 46)
 
     # Scene 5 cards: the covers of Parts 1 and 2, and Part 3's back and face.
     for n in (1, 2):
@@ -285,8 +307,26 @@ def carta(imagem, lado=None, tamanho=(330, 586)):
     return im
 
 
-def carimbo(valor):
-    s = texto(valor, 38, VERMELHO, 'ExtraBold', sombra=False)
+def polaroide(imagem, legenda):
+    """A polaroid with `imagem` in it and `legenda` written on the margin, taped at the corners."""
+    w, h = imagem.size
+    lado = min(w, h*560/582)
+    corte = imagem.crop(((w - lado)/2, 0, (w + lado)/2, lado*582/560))
+    pol = Image.new('RGBA', (620, 760), (0, 0, 0, 0))
+    ImageDraw.Draw(pol).rounded_rectangle((0, 0, 619, 759), 10, fill=(252, 248, 239, 255))
+    pol.paste(corte.resize((560, 582), Image.Resampling.LANCZOS), (30, 30))
+    ImageDraw.Draw(pol).rectangle((30, 30, 589, 611), outline=(0, 0, 0, 40), width=2)
+    s = texto(legenda, 50, TINTA, 'Bold', sombra=False)
+    pol.alpha_composite(s, ((620 - s.width)//2, 665 - s.height//2))
+    fita = Image.new('RGBA', (170, 52), (236, 222, 190, 190))
+    for angulo, x in ((18, -40), (-18, 470)):
+        tira = fita.rotate(angulo, expand=True, resample=Image.Resampling.BICUBIC)
+        colar(pol, tira, x + tira.width/2, -32 + tira.height/2)
+    return pol
+
+
+def carimbo(valor, tamanho=38):
+    s = texto(valor, tamanho, VERMELHO, 'ExtraBold', sombra=False)
     w, h = s.width + 56, s.height + 34
     im = Image.new('RGBA', (w, h), (0, 0, 0, 0))
     ImageDraw.Draw(im).rounded_rectangle((3, 3, w - 4, h - 4), 12, fill=(247, 236, 219, 245), outline=VERMELHO + (255,), width=7)
@@ -370,12 +410,13 @@ def zinho_pose(t):
         sx, sy = 1 + .05*k, 1 - .06*k
     # Breathing while he waits.
     y += 3*math.sin(t*2*math.pi*.8)
-    # The bag starts to rumble, then the burst throws him up a little.
-    if 3.0 <= t < 3.6:
-        a = prog(t, 3.0, 3.6)
+    # The bag rumbles in the narrator's pause, "Dessa vez…", and bursts on "cheia", throwing him up a little.
+    tremida = T['vez_fim'] - .1
+    if tremida <= t < T['cheia']:
+        a = prog(t, tremida, T['cheia'])
         x += 9*a*math.sin(t*78)
         angulo += 1.2*a*math.sin(t*53)
-    pulo = t - 3.6
+    pulo = t - T['cheia']
     if 0 <= pulo < .5:
         y -= 46*math.sin(pulo/.5*math.pi)
         k = max(0.0, 1 - pulo/.18)
@@ -405,11 +446,11 @@ def poeira(tela, t):
 
 
 def marcador(tela, t):
-    """A red marker ring drawn around the bag, by hand."""
-    p = prog(t, 1.70, 2.15)
+    """A red marker ring drawn around the bag, by hand, right after "mochila?"."""
+    p = prog(t, T['mochila_fim'] + .02, T['mochila_fim'] + .47)
     if p <= 0:
         return
-    alfa = 1 - prog(t, 2.80, 3.05)
+    alfa = 1 - prog(t, T['na'] - .1, T['na'] + .15)
     if alfa <= 0:
         return
     l, tp, r, b = MOCHILA
@@ -430,7 +471,7 @@ def marcador(tela, t):
 
 def seguidores_da_mochila(tela, t):
     """Followers bursting out of the bag: discs with a person in them and '+1' tags."""
-    if t < 3.6:
+    if t < T['cheia']:
         return
     bx, by = onde_no_mundo(*BOCA_DA_MOCHILA, t)
     rnd = random.Random(11)
@@ -439,14 +480,14 @@ def seguidores_da_mochila(tela, t):
     for i in range(170):
         # Births speed up from 30 to 90 a second as the counter climbs.
         nascidos += 1/(30 + 60*min(1.0, i/120))
-        nasce = 3.6 + nascidos
+        nasce = T['cheia'] + nascidos
         # Up and to the left, away from his face.
         angulo = math.radians(rnd.uniform(-142, -84))
         vel, g = rnd.uniform(1100, 1900), rnd.uniform(1100, 1500)
         giro, tam = rnd.uniform(-260, 260), rnd.choice((54, 62, 70, 80, 90))
         tipo, cor = rnd.random(), cores[i % len(cores)]
         idade = t - nasce
-        if idade < 0 or nasce > 6.0:
+        if idade < 0 or nasce > CORTE:
             continue
         x = bx + vel*math.cos(angulo)*idade
         y = by + vel*math.sin(angulo)*idade + .5*g*idade*idade
@@ -458,7 +499,7 @@ def seguidores_da_mochila(tela, t):
 
 def estouro(tela, t):
     """The ring of the burst at the bag's mouth."""
-    idade = t - 3.6
+    idade = t - T['cheia']
     if not 0 <= idade < .45:
         return
     x, y = onde_no_mundo(*BOCA_DA_MOCHILA, t)
@@ -470,17 +511,18 @@ def estouro(tela, t):
 
 def contador(tela, t):
     """The followers counter, rolling like an odometer from 0 to 100."""
-    if t < 4.35:
+    chega = CONTA[0] - .1
+    if t < chega:
         return
-    entra = prog(t, 4.35, 4.62)
-    valor = 100*sai_cubica(prog(t, 4.45, 5.92))
+    entra = prog(t, chega, chega + .27)
+    valor = 100*sai_cubica(prog(t, *CONTA))
     escala = .6 + .4*sai_volta(entra)
     painel = painel_do_contador()
     camada = Image.new('RGBA', (painel.width, painel.height), (0, 0, 0, 0))
     camada.alpha_composite(painel)
     rotulo = texto('SEGUIDORES', 38, CARAMELO, 'Bold', sombra=False, espaco=9)
     camada.alpha_composite(rotulo, ((painel.width - rotulo.width)//2, 34))
-    velocidade = 100*3*(1 - prog(t, 4.45, 5.92))**2/1.47
+    velocidade = 100*3*(1 - prog(t, *CONTA))**2/(CONTA[1] - CONTA[0])
     for coluna, casa in enumerate((100, 10, 1)):
         rolo = valor/casa
         if casa > 1:
@@ -495,7 +537,7 @@ def contador(tela, t):
         if borrao > .6:
             janela = janela.filter(ImageFilter.BoxBlur(borrao))
         camada.alpha_composite(janela, (60 + coluna*170, 92))
-    colar(tela, camada, W/2, CONTADOR_Y, escala, alfa=prog(t, 4.35, 4.45))
+    colar(tela, camada, W/2, CONTADOR_Y, escala, alfa=prog(t, chega, chega + .1))
 
 
 @lru_cache(maxsize=1)
@@ -518,7 +560,7 @@ def raios(tela, t):
     tela.alpha_composite(A['vinheta'])
 
 
-def confete(tela, t, inicio=6.0):
+def confete(tela, t, inicio=CORTE):
     """Two cannons of confetti, from the bottom corners."""
     idade = t - inicio
     if idade < 0:
@@ -553,11 +595,12 @@ def confete(tela, t, inicio=6.0):
 
 
 def coracoes(tela, t):
-    if t < 9.9:
+    comeca = T['cada'] - .3
+    if t < comeca:
         return
     rnd = random.Random(5)
     for i in range(26):
-        nasce = 9.9 + i*.11
+        nasce = comeca + i*.11
         idade = t - nasce
         lado = -1 if i % 2 else 1
         x0 = W/2 + lado*rnd.uniform(240, 420)
@@ -617,55 +660,99 @@ def cena_mochila(t):
     marcador(mundo, t)
     estouro(mundo, t)
     seguidores_da_mochila(mundo, t)
-    # The camera leans into the bag once it starts to move.
-    zoom = 1 + .16*suave(prog(t, 2.8, 3.5))
+    # The camera leans into the bag on "Dessa vez".
+    zoom = 1 + .16*suave(prog(t, T['dessa'], T['dessa'] + .7))
     if zoom > 1.001:
         # A fixed point near the bag, rather than the bag itself, so the frame does not shake with it.
         ax, ay = ZINHO_PES[0] - 190, ZINHO_PES[1] - 370
         w, h = W/zoom, H/zoom
         l, tp = ax - (ax/W)*w, ay - (ay/H)*h
         mundo = mundo.resize((W, H), Image.Resampling.BICUBIC, box=(l, tp, l + w, tp + h))
-    tx, ty = tremor(t, .92, .35, 10)
-    bx, by = tremor(t, 3.6, .5, 18)
+    tx, ty = tremor(t, T['mochila'], .35, 10)
+    bx, by = tremor(t, T['cheia'], .5, 18)
     tela = Image.new('RGBA', (W, H), FUNDO + (255,))
     tela.alpha_composite(mundo, (round(tx + bx), round(ty + by)) if (tx or bx or ty or by) else (0, 0))
-    aparece(tela, texto('LEMBRA DA', 84, CREME, contorno=0), W/2, 330, .62, t, sai=2.80)
-    aparece(tela, texto('MOCHILA?', 150, VERMELHO_TEXTO, contorno=8), W/2, 470, .92, t, sai=2.82, tipo='pancada')
-    aparece(tela, texto('DESSA VEZ', 84, CREME), W/2, 330, 2.95, t, sai=4.30)
-    aparece(tela, texto('VEIO CHEIA!', 140, OURO, contorno=8), W/2, 470, 3.15, t, sai=4.32, tipo='pancada')
+    # The stage goes dark while the narrator remembers Part 1.
+    sai = T['velha_fim'] + .12
+    escuro = .6*min(prog(t, T['na'] - .05, T['na'] + .15), 1 - prog(t, sai, sai + .25))
+    if escuro > 0:
+        tela.alpha_composite(Image.new('RGBA', (W, H), (4, 6, 16, round(255*escuro))))
+    lembranca(tela, t)
+    aparece(tela, texto('LEMBRA DA', 84, CREME), W/2, 330, T['lembra'] + .05, t, sai=T['na'] - .12)
+    aparece(tela, texto('MOCHILA?', 150, VERMELHO_TEXTO, contorno=8), W/2, 470, T['mochila'], t, sai=T['na'] - .1, tipo='pancada')
+    aparece(tela, texto('DESSA VEZ', 84, CREME), W/2, 330, T['dessa'], t, sai=T['cheia'] + .25)
+    aparece(tela, texto('VEIO CHEIA!', 140, OURO, contorno=8), W/2, 470, T['veio'], t, sai=T['cheia'] + .27, tipo='pancada')
     contador(tela, t)
     return tela
+
+
+def lembranca(tela, t):
+    """Part 1's photo of the bag of old clothes spins in as the narrator remembers it, and is
+    stamped on "roupa velha"."""
+    entra, sai = T['na'] - .05, T['velha_fim'] + .12
+    if t < entra or t > sai + .32:
+        return
+    p = prog(t, entra, entra + .45)
+    x, y = W/2, 880
+    escala, angulo = .25 + .75*sai_volta(p, 1.3), -30 + 24*sai_cubica(p)
+    if t > sai:
+        k = prog(t, sai, sai + .3)**2
+        x, y, angulo = x + 900*k, y - 700*k, angulo + 35*k
+    colar(tela, A['lembranca_sombra'], x + 14, y + 26, escala, angulo, .85)
+    colar(tela, A['lembranca'], x, y, escala, angulo)
+    if t >= T['roupa']:
+        k = sai_cubica(prog(t, T['roupa'], T['roupa'] + .16))
+        colar(tela, A['carimbo_roupa'], x, y + 40, escala*(1 + 1.1*(1 - k)), angulo + 10, prog(t, T['roupa'], T['roupa'] + .05))
 
 
 def cena_cem(t):
     tela = Image.new('RGBA', (W, H), (0, 0, 0, 255))
     raios(tela, t)
     confete(tela, t)
-    # Zinho's surprised face peeks in from the bottom left and wobbles.
-    entra = prog(t, 6.85, 7.22)
-    if entra > 0:
-        y = 2380 - 390*sai_volta(entra, 1.3)
-        balanco = 4*math.sin((t - 7.22)*9)*math.exp(-max(0.0, t - 7.22)*1.6) if t > 7.22 else 0
-        colar(tela, A['cabeca'], 250, y, 1.9, -11 + balanco, ancora=(.5, 1))
+    zinho_joia(tela, t)
     # The 100 comes from the counter and takes the middle of the screen.
-    k = sai_volta(prog(t, 6.0, 6.32), 1.4)
-    pulso = 1 + .025*math.sin((t - 6.32)*2*math.pi*1.6) if t > 6.32 else 1
+    k = sai_volta(prog(t, CORTE, CORTE + .32), 1.4)
+    pulso = 1 + .025*math.sin((t - CORTE - .32)*2*math.pi*1.6) if t > CORTE + .32 else 1
     cem = texto('100', 400, CREME, contorno=16)
     y = CONTADOR_Y + 40 + (CEM_Y - CONTADOR_Y - 40)*k
     colar(tela, cem, W/2, y, (.62 + .38*k)*pulso)
-    aparece(tela, texto('MAIS DE', 118, CREME, contorno=9), W/2, 535, 6.14, t, tipo='pancada')
-    etiqueta = etiqueta_seguidores()
-    aparece(tela, etiqueta, W/2, 1110, 6.36, t, tipo='sobe', angulo=3)
+    aparece(tela, texto('MAIS DE', 118, CREME, contorno=9), W/2, CEM_Y - 295, T['mais'] + .02, t, tipo='pancada')
+    aparece(tela, etiqueta_seguidores(), W/2, CEM_Y + 280, T['seguidores'], t, tipo='sobe', angulo=3)
     # The white flash of the cut.
-    flash = 1 - prog(t, 6.0, 6.25)
+    flash = 1 - prog(t, CORTE, CORTE + .25)
     if flash > 0:
         tela.alpha_composite(Image.new('RGBA', (W, H), (255, 250, 240, round(200*flash))))
-    tx, ty = tremor(t, 6.0, .5, 24)
+    tx, ty = tremor(t, CORTE, .5, 24)
     if tx or ty:
         movida = Image.new('RGBA', (W, H), VERMELHO_ESCURO + (255,))
         movida.alpha_composite(tela, (round(tx), round(ty)))
         tela = movida
     return tela
+
+
+def zinho_joia(tela, t):
+    """Zinho rises from the bottom, in front of the confetti, with a thumbs up on "O Zinho aprovou";
+    on "aprovou" the thumb pumps and sparkles."""
+    entra = prog(t, T['zinho'] - .1, T['zinho'] + .32)
+    if entra <= 0:
+        return
+    x, y = JOIA_BASE
+    y += 900*(1 - sai_volta(entra, 1.25))
+    depois = t - (T['zinho'] + .32)
+    angulo = -4*(1 - entra) + (2.5*math.sin(depois*7)*math.exp(-depois*2.2) if depois > 0 else 0)
+    bomba = t - T['aprovou']
+    escala = JOIA_ESCALA*(1 + (.035*math.sin(bomba/.3*math.pi) if 0 <= bomba < .3 else 0))
+    joia = A['joia']
+    colar(tela, joia, x, y, escala, angulo, ancora=(.5, 1))
+    if bomba < 0:
+        return
+    px = x + (POLEGAR[0] - joia.width/2)*JOIA_ESCALA
+    py = y - (joia.height - POLEGAR[1])*JOIA_ESCALA
+    for i, (dx, dy, tam) in enumerate(((-75, -40, .9), (55, -85, .6), (-25, -140, .5), (-120, 30, .45))):
+        idade = bomba - i*.06
+        k = math.sin(limite(idade/.55)*math.pi) if idade >= 0 else 0
+        if k > 0:
+            colar(tela, estrela(), px + dx, py + dy, tam*(.3 + .9*k), idade*120, k)
 
 
 @lru_cache(maxsize=1)
@@ -683,30 +770,35 @@ def etiqueta_seguidores():
 def cena_obrigado(t):
     tela = A['papel'].copy()
     coracoes(tela, t)
-    queda = prog(t, 9.20, 9.62)
+    # The polaroid falls while the band is still passing, so the page is never empty.
+    pouso = PASSA1 + .54
+    queda = prog(t, PASSA1 + .12, pouso)
     x, y = W/2, -520 + (965 + 520)*sai_volta(queda, 1.05)
-    angulo = 14 - 18*sai_cubica(queda) + (1.2*math.sin((t - 9.62)*2.2) if t > 9.62 else 0)
+    angulo = 14 - 18*sai_cubica(queda) + (1.2*math.sin((t - pouso)*2.2) if t > pouso else 0)
     if queda > 0:
         colar(tela, A['polaroide_sombra'], x + 14, y + 26, 1, angulo, .9)
         colar(tela, A['polaroide'], x, y, 1, angulo)
-    tx, ty = tremor(t, 9.62, .3, 9)
+    tx, ty = tremor(t, pouso, .3, 9)
     if tx or ty:
         movida = A['papel'].copy()
         movida.alpha_composite(tela, (round(tx), round(ty)))
         tela = movida
-    aparece(tela, texto('OBRIGADO,', 116, TINTA, sombra=False), W/2, 318, 9.15, t)
-    aparece(tela, texto('ALIADOS!', 150, VERMELHO, sombra=False), W/2, 458, 9.36, t, tipo='pancada')
-    aparece(tela, texto('Cada um de vocês faz parte', 46, (107, 90, 74), 'SemiBold', sombra=False), W/2, 1418, 10.15, t, tipo='sobe')
-    aparece(tela, texto('dessa história.', 46, (107, 90, 74), 'SemiBold', sombra=False), W/2, 1478, 10.28, t, tipo='sobe')
+    aparece(tela, texto('OBRIGADO,', 116, TINTA, sombra=False), W/2, 318, T['obrigado'], t)
+    aparece(tela, texto('ALIADOS!', 150, VERMELHO, sombra=False), W/2, 458, T['aliados'], t, tipo='pancada')
+    aparece(tela, texto('Cada um de vocês faz parte', 46, (107, 90, 74), 'SemiBold', sombra=False), W/2, 1418, T['cada'], t, tipo='sobe')
+    aparece(tela, texto('dessa história.', 46, (107, 90, 74), 'SemiBold', sombra=False), W/2, 1478, T['dessa_historia'], t, tipo='sobe')
     return tela
 
 
 def cena_parte3(t):
     tela = Image.new('RGBA', (W, H), (0, 0, 0, 255))
     faixas_da_jaqueta(tela, t)
-    cartas = (('carta1', 12.40, (300, 1000, 11), (330, 2350, 34)),
-              ('carta2', 12.55, (780, 1000, -11), (750, 2350, -34)),
-              ('meio', 12.70, (540, 960, 0), (540, 2450, 0)))
+    # The cards fly in while the band is still passing.
+    base = PASSA2 + .3
+    cartas = (('carta1', base - .1, (300, 1000, 11), (330, 2350, 34)),
+              ('carta2', base + .05, (780, 1000, -11), (750, 2350, -34)),
+              ('meio', base + .2, (540, 960, 0), (540, 2450, 0)))
+    virada, carimbada = T['parte'] + .5, T['chegando'] + .4
     for nome, inicio, (xf, yf, af), (xi, yi, ai) in cartas:
         p = prog(t, inicio, inicio + .42)
         if p <= 0:
@@ -718,32 +810,32 @@ def cena_parte3(t):
         if nome != 'meio':
             colar(tela, A[nome], x, y, escala, a)
             continue
-        vira = prog(t, 13.35, 13.75)
+        vira = prog(t, virada, virada + .4)
         largura = abs(math.cos(math.pi*vira))
         face = A['frente'] if vira >= .5 else A['verso']
         colar(tela, face, x, y - 30*math.sin(math.pi*vira), escala, a, escala_x=max(.02, largura))
-        if t >= 13.95:
-            pk = prog(t, 13.95, 14.12)
-            colar(tela, A['carimbo'], x + 4, y + 170, 1 + 1.1*(1 - sai_cubica(pk)), 9, prog(t, 13.95, 14.0))
-    brilho(tela, t)
-    tx, ty = tremor(t, 13.95, .3, 12)
+        if t >= carimbada:
+            pk = prog(t, carimbada, carimbada + .17)
+            colar(tela, A['carimbo'], x + 4, y + 170, 1 + 1.1*(1 - sai_cubica(pk)), 9, prog(t, carimbada, carimbada + .05))
+    brilho(tela, t, virada + .4)
+    tx, ty = tremor(t, carimbada, .3, 12)
     if tx or ty:
         movida = Image.new('RGBA', (W, H), AZUL_ESCURO + (255,))
         movida.alpha_composite(tela, (round(tx), round(ty)))
         tela = movida
-    aparece(tela, texto('A PARTE 3', 118, CREME), W/2, 318, 12.36, t)
-    aparece(tela, texto('TÁ CHEGANDO.', 112, VERMELHO_TEXTO, contorno=8), W/2, 452, 12.56, t, tipo='pancada')
-    aparece(tela, botao_seguir(), W/2, 1440, 14.35, t)
+    aparece(tela, texto('A PARTE 3', 118, CREME), W/2, 318, T['parte'] - .1, t)
+    aparece(tela, texto('TÁ CHEGANDO.', 112, VERMELHO_TEXTO, contorno=8), W/2, 452, T['chegando'], t, tipo='pancada')
+    aparece(tela, botao_seguir(), W/2, 1440, T['segue'], t)
     return tela
 
 
-def brilho(tela, t):
+def brilho(tela, t, inicio):
     """Sparkles around Part 3's card once it turns."""
-    if t < 13.75:
+    if t < inicio:
         return
     for i, (dx, dy) in enumerate(((-205, -250), (210, -205), (-220, 120), (225, 230), (0, -355))):
-        idade = (t - 13.75 - i*.12) % 1.1
-        if t - 13.75 - i*.12 < 0:
+        idade = (t - inicio - i*.12) % 1.1
+        if t - inicio - i*.12 < 0:
             continue
         k = math.sin(limite(idade/.7)*math.pi)
         if k > 0:
@@ -801,16 +893,16 @@ def passagem(t, t0, dur, antes, depois, cor, para_direita=True):
 
 def quadro(t):
     carregar_assets()
-    if t < 6.0:
+    if t < CORTE:
         tela = cena_mochila(t)
-    elif t < 8.86:
+    elif t < PASSA1:
         tela = cena_cem(t)
-    elif t < 9.16:
-        tela = passagem(t, 8.86, .30, cena_cem, cena_obrigado, VERMELHO)
-    elif t < 12.06:
+    elif t < PASSA1 + .3:
+        tela = passagem(t, PASSA1, .3, cena_cem, cena_obrigado, VERMELHO)
+    elif t < PASSA2:
         tela = cena_obrigado(t)
-    elif t < 12.36:
-        tela = passagem(t, 12.06, .30, cena_obrigado, cena_parte3, AZUL_ESCURO, para_direita=False)
+    elif t < PASSA2 + .3:
+        tela = passagem(t, PASSA2, .3, cena_obrigado, cena_parte3, AZUL_ESCURO, para_direita=False)
     else:
         tela = cena_parte3(t)
     tela.alpha_composite(A['grao'])
@@ -891,7 +983,7 @@ def tiques():
     tempos, ultimo = [], -1.0
     for n in range(1, 101):
         p = 1 - (1 - n/100)**(1/3)
-        t = 4.45 + 1.47*p
+        t = CONTA[0] + (CONTA[1] - CONTA[0])*p
         if t - ultimo >= .055:
             tempos.append(t)
             ultimo = t
@@ -899,27 +991,71 @@ def tiques():
 
 
 def eventos():
-    ev = [  # time, effect, gain in dB, pan (-1 left … 1 right), speed
-        (.02, 'whoosh', -4, -.4, 1), (.53, 'impacto-suave', -9, 0, 1), (.62, 'pop', -6, 0, 1), (.92, 'impacto', -3, 0, 1),
-        (1.68, 'whoosh', -13, -.3, 1.5), (2.78, 'whoosh', -9, 0, 1), (2.95, 'pop', -6, 0, 1.1), (3.15, 'impacto-suave', -3, 0, 1),
-        (3.0, 'vibracao', -7, -.3, 1), (3.6, 'impacto', -2, -.3, 1), (3.6, 'pop', -4, -.3, .8),
-        (3.75, 'notificacao', -11, .2, 1), (4.05, 'notificacao', -13, -.2, 1.12), (4.32, 'whoosh', -11, 0, 1.2),
-        (6.0, 'impacto', 0, 0, 1), (6.0, 'pop', -3, -.85, .7), (6.02, 'pop', -3, .85, .75), (6.05, 'notificacao', -7, 0, 1),
-        (6.14, 'impacto-suave', -6, 0, 1), (6.36, 'pop', -5, 0, 1), (6.85, 'whoosh', -10, -.5, 1.1), (7.2, 'pop', -8, -.5, 1.3),
-        (8.84, 'whoosh', -4, -.6, .9), (9.15, 'pop', -6, 0, 1), (9.2, 'whoosh', -11, 0, .8), (9.36, 'impacto-suave', -4, 0, 1),
-        (9.62, 'impacto-suave', -1, 0, .85), (10.15, 'pop', -14, 0, 1.4), (12.04, 'whoosh', -4, .6, .9), (12.36, 'pop', -6, 0, 1),
-        (12.40, 'whoosh', -11, -.4, 1.2), (12.55, 'whoosh', -11, .4, 1.25), (12.56, 'impacto-suave', -4, 0, 1),
-        (12.70, 'whoosh', -10, 0, 1.15), (13.35, 'whoosh', -13, 0, 1.7), (13.95, 'impacto', -3, 0, 1),
-        (14.35, 'pop', -4, 0, 1), (14.40, 'notificacao', -8, 0, 1),
+    """Every effect, tied to the narrator's words: time, effect, gain in dB, pan (-1 left … 1 right), speed."""
+    cheia, pouso, base = T['cheia'], PASSA1 + .54, PASSA2 + .1
+    virada, carimbada = T['parte'] + .5, T['chegando'] + .4
+    ev = [
+        # Effects that land on a word stay low, so the narrator is always heard.
+        # Zinho on the stage, "Lembra da mochila?"
+        (.02, 'whoosh', -8, -.4, 1), (.53, 'impacto-suave', -12, 0, 1), (T['lembra'] + .05, 'pop', -13, 0, 1),
+        (T['mochila'], 'impacto', -9, 0, 1), (T['mochila_fim'], 'whoosh', -14, -.3, 1.5),
+        # Part 1's photo, "… só com roupa velha."
+        (T['na'] - .07, 'whoosh', -9, 0, .8), (T['na'] + .35, 'impacto-suave', -12, 0, 1),
+        (T['roupa'], 'impacto', -10, 0, 1.05), (T['velha_fim'] + .12, 'whoosh', -10, .5, 1.1),
+        # "Dessa vez… veio cheia."
+        (T['dessa'], 'pop', -11, 0, 1.1), (T['vez_fim'] - .1, 'vibracao', -12, -.3, 1), (T['veio'], 'impacto-suave', -14, 0, 1),
+        (cheia, 'impacto', -9, -.3, 1), (cheia, 'pop', -11, -.3, .8), (cheia + .15, 'notificacao', -15, .2, 1),
+        (cheia + .45, 'notificacao', -14, -.2, 1.12), (CONTA[0] - .12, 'whoosh', -12, 0, 1.2),
+        # "Mais de cem seguidores. O Zinho aprovou."
+        (CORTE, 'impacto', -3, 0, 1), (CORTE, 'pop', -6, -.85, .7), (CORTE + .02, 'pop', -6, .85, .75),
+        (CORTE + .05, 'notificacao', -13, 0, 1), (T['mais'] + .02, 'impacto-suave', -15, 0, 1), (T['seguidores'], 'pop', -11, 0, 1),
+        (T['zinho'] - .1, 'whoosh', -11, 0, 1.05), (T['zinho'] + .3, 'pop', -11, 0, 1.2),
+        # "Obrigado, aliados. Cada um de vocês faz parte dessa história."
+        (PASSA1 - .02, 'whoosh', -6, -.6, .9), (T['obrigado'], 'pop', -12, 0, 1), (PASSA1 + .12, 'whoosh', -14, 0, .8),
+        (pouso, 'impacto-suave', -6, 0, .85), (T['aliados'], 'impacto-suave', -11, 0, 1), (T['cada'], 'pop', -16, 0, 1.4),
+        # "E a parte três já tá chegando. Segue o perfil pra não perder."
+        (PASSA2 - .02, 'whoosh', -9, .6, .9), (T['parte'] - .1, 'pop', -13, 0, 1), (base + .1, 'whoosh', -15, -.4, 1.2),
+        (base + .25, 'whoosh', -15, .4, 1.25), (base + .4, 'whoosh', -14, 0, 1.15), (virada, 'whoosh', -14, 0, 1.7),
+        (T['chegando'], 'impacto-suave', -11, 0, 1), (carimbada, 'impacto', -7, 0, 1),
+        (T['segue'], 'pop', -10, 0, 1), (T['segue'] + .05, 'notificacao', -13, 0, 1),
     ]
     rnd = random.Random(2)
-    for i in range(12):
-        ev.append((3.68 + i*.19 + rnd.uniform(-.05, .05), 'pop', -15, rnd.uniform(-.7, .3), rnd.uniform(.9, 1.5)))
+    # Pops as the followers fly out of the bag, until the cut.
+    for i in range(int((CORTE - cheia - .1)/.19)):
+        ev.append((cheia + .08 + i*.19 + rnd.uniform(-.05, .05), 'pop', -16, rnd.uniform(-.7, .3), rnd.uniform(.9, 1.5)))
     # Little pops for the hearts as they rise.
     for i in range(8):
-        ev.append((9.95 + i*.22, 'pop', -20, (-1)**i*.5, rnd.uniform(1.6, 1.95)))
-    ev += [(t, 'tique', -9, 0, 1) for t in tiques()]
+        ev.append((T['cada'] - .25 + i*.22, 'pop', -21, (-1)**i*.5, rnd.uniform(1.6, 1.95)))
+    ev += [(t, 'tique', -10, 0, 1) for t in tiques()]
     return ev
+
+
+def voz():
+    """The narration at 48 kHz, with the pause before "Mais de cem" stretched by ESTICA."""
+    pcm = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(NARRACAO), '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'],
+                         capture_output=True, check=True).stdout
+    som = np.frombuffer(pcm, np.float32)
+    palavras = json.loads(ALINHAMENTO.read_text(encoding='utf-8'))['words']
+    i = ESTICA[0]
+    corte = int((palavras[i - 1]['end'] + palavras[i]['start'])/2*SR)
+    som = np.concatenate([som[:corte], np.zeros(int(ESTICA[1]*SR), np.float32), som[corte:]])
+    return som/np.abs(som).max()*10**(-3/20)
+
+
+def abaixar_sob_a_voz(fala, n):
+    """A gain for the effects that steps them back about 7 dB while the narrator speaks."""
+    passo = int(.01*SR)
+    blocos = np.abs(fala[:len(fala)//passo*passo]).reshape(-1, passo).max(axis=1)
+    # Held 250 ms after each word and 150 ms before it, so the effects do not pump between syllables
+    # and a bang that starts just ahead of a word is already down when the word comes.
+    segura = np.array([blocos[max(0, j - 25):j + 15].max() for j in range(len(blocos))])
+    ganho = 1 - .55*np.clip(segura/(.3*segura.max()), 0, 1)
+    ganho = np.convolve(ganho, np.ones(8)/8, mode='same')
+    curva = np.ones(n, np.float32)
+    i = int(ATRASO*SR)
+    trecho = np.repeat(ganho, passo)[:n - i]
+    curva[i:i + len(trecho)] = trecho
+    return curva
 
 
 def mixar(caminho):
@@ -927,12 +1063,12 @@ def mixar(caminho):
     som = np.zeros((n, 2), np.float32)
     cache = {}
 
-    def por(inicio, mono, ganho_db, pan):
+    def por(inicio, mono, ganho_db, pan, destino=som):
         i = int(inicio*SR)
         mono = mono[:n - i]*10**(ganho_db/20)
         a = (pan + 1)*math.pi/4
-        som[i:i + len(mono), 0] += mono*math.cos(a)
-        som[i:i + len(mono), 1] += mono*math.sin(a)
+        destino[i:i + len(mono), 0] += mono*math.cos(a)
+        destino[i:i + len(mono), 1] += mono*math.sin(a)
 
     for inicio, nome, ganho, pan, velocidade in eventos():
         base = cache.setdefault(nome, ler_efeito(nome))
@@ -940,14 +1076,19 @@ def mixar(caminho):
             base = np.interp(np.arange(0, len(base) - 1, velocidade), np.arange(len(base)), base).astype(np.float32)
         por(inicio, base, ganho, pan)
     rng = np.random.default_rng(9)
-    por(5.05, subida(.95, rng), -13, 0)
+    por(CORTE - .95, subida(.95, rng), -13, 0)
     palmas = aplausos(2.9, rng)
-    por(6.05, palmas, -15, -.25)
-    por(6.09, np.roll(palmas, 4100), -15, .25)
+    por(CORTE + .05, palmas, -18, -.25)
+    por(CORTE + .09, np.roll(palmas, 4100), -18, .25)
     brilho = brilho_sonoro()
-    por(10.12, brilho, -14, .15)
-    por(13.72, brilho, -13, 0)
-    por(14.38, brilho, -16, -.15)
+    por(T['aprovou'], brilho, -12, -.2)
+    por(T['cada'], brilho, -17, .15)
+    por(T['parte'] + .9, brilho, -14, 0)
+    por(T['segue'] + .05, brilho, -16, -.15)
+    # The narrator on top: the effects step back while he speaks.
+    fala = voz()
+    som *= abaixar_sob_a_voz(fala, n)[:, None]
+    por(ATRASO, fala, 0, 0)
     # Soft limit, then 16-bit.
     som = np.tanh(som*1.1)/np.tanh(1.1)
     with wave.open(str(caminho), 'wb') as w:
