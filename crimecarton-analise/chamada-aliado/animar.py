@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """The "Vire aliado" call, animated frame by frame and told by the series' narrator.
 
-It invites the audience to buy Part 3's ally pass (R$ 9,90 on the site), in the look of the
-"mais de 100 seguidores" thank-you, whose drawing and sound tools it borrows
-(../agradecimento-100/mais-de-100/animar.py). 1080 × 1920 at 30 fps, about 27 s:
+It invites the audience to become allies of Part 3, in the look of the "mais de 100 seguidores"
+thank-you, whose drawing and sound tools it borrows (../agradecimento-100/mais-de-100/animar.py).
+1080 × 1920 at 30 fps, about 22 s:
 
   "Quer aparecer na parte três?"            Part 3's card spins in and turns to "em breve".
   "Vire aliado do Zinho."                   Zinho points at you over turning caramel rays.
@@ -11,8 +11,10 @@ It invites the audience to buy Part 3's ally pass (R$ 9,90 on the site), in the 
   "no celular dele, num muro, na TV ou nos créditos."   four quick shots, each with the @.
   "E vai na legenda do post, com o seu número de aliado."   the post's caption, then the ally badge.
   "São só dez vagas, até sexta, às nove da noite."   ten open places light up; the deadline.
-  "Nove e noventa no Pix, direto no site."  the site's Pix window, in a phone.
-  "O link tá na bio."                       an arrow up to the bio and the site's address.
+  (no voice)                                Zinho calls you in: "Faça parte da história".
+
+The creator asked for no price, Pix or link on screen: the narration's last two lines ("Nove e
+noventa no Pix…" and "O link tá na bio.") are cut, and the video ends on Zinho calling.
 
 The picture follows the narration's words (alinhamento-narracao.json). Until Codex delivers
 narracao-chamada.wav, the timing is estimated from narracao-chamada.txt, the video has effects
@@ -88,10 +90,10 @@ _P = [(w['start'] + ATRASO, w['end'] + ATRASO) for w in _PALAVRAS]
 T = {nome: _P[i][0] for nome, i in (
     ('quer', 0), ('parte', 3), ('vire', 5), ('aliado', 6), ('zinho', 8), ('o_seu', 9), ('arroba', 11),
     ('entra', 12), ('celular', 15), ('muro', 18), ('tv', 20), ('creditos', 23), ('e', 25), ('legenda', 28),
-    ('numero', 34), ('sao', 37), ('dez', 39), ('ate', 41), ('nove', 44), ('preco', 47), ('pix', 51),
-    ('site', 54), ('o_link', 55), ('bio', 59))}
-VOZ_FIM = _P[-1][1]
-DURACAO = round((VOZ_FIM + 1.6)*FPS)/FPS
+    ('numero', 34), ('sao', 37), ('dez', 39), ('ate', 41), ('nove', 44))}
+# The voice stops after "às nove da noite."; the rest of the narration stays out.
+ULTIMA = 46
+VOZ_FIM = _P[ULTIMA][1]
 
 # Cuts, each just ahead of the word that brings the next picture.
 C_VIRE = T['vire'] - .15
@@ -102,8 +104,8 @@ C_TV = T['tv'] - .06
 C_CREDITOS = T['creditos'] - .06
 C_LEGENDA = T['e'] - .3
 C_VAGAS = T['sao'] - .14
-C_PIX = T['preco'] - .3
-C_BIO = T['o_link'] - .14
+C_FINAL = VOZ_FIM + .35        # Zinho calling, once the deadline has been said
+DURACAO = round((C_FINAL + 2.6)*FPS)/FPS
 EMPURRA = .14
 
 PHONE_QUAD = [[0.4666, 0.4137], [0.7031, 0.4344], [0.5938, 0.6811], [0.2791, 0.6466]]  # Part 2's phone, scene 6
@@ -129,10 +131,12 @@ def carregar():
         return
     base.carregar_assets()
     A['joia'] = base.A['joia']
-    apontando = HERE / 'recortes' / 'zinho-apontando.png'
-    A['apontando'] = Image.open(apontando).convert('RGBA') if apontando.exists() else base.A['joia']
+    # Zinho pointing at you, cut from Codex's drawings: one for "Vire aliado", one for the close.
+    for nome in ('apontando', 'chamando'):
+        recorte = HERE / 'recortes' / f'zinho-{nome}.png'
+        A[nome] = Image.open(recorte).convert('RGBA') if recorte.exists() else A.get('apontando', base.A['joia'])
 
-    # Caramel rays for "Vire aliado" and the bio: the lamp's colour, dark at the edges.
+    # Caramel rays for "Vire aliado": the lamp's colour, dark at the edges.
     yy, xx = np.mgrid[0:H, 0:W]
     r = np.hypot((xx - W/2)/W, (yy - 1150)/H)
     v = np.clip((r - .15)/.6, 0, 1)**1.3
@@ -159,8 +163,6 @@ def carregar():
     A['tv'], A['tv_quad'] = tv()
 
     A['avatar'] = avatar_redondo(Image.open(SERIE / 'site' / 'img' / 'perfil.jpg'), 104)
-    A['janela_pix'] = celular_com(Image.open(HERE / 'janela-pix-site.png').convert('RGB'))
-    A['pix'] = Image.open(HERE / 'pix.png').convert('RGBA')
 
 
 def muro_provisorio():
@@ -208,34 +210,17 @@ def avatar_redondo(im, d):
     return anel
 
 
-def celular_com(tela, largura=520):
-    """A phone with `tela` on its screen."""
-    altura = round(largura*tela.height/tela.width)
-    borda = 22
-    im = Image.new('RGBA', (largura + 2*borda, altura + 2*borda), (0, 0, 0, 0))
-    ImageDraw.Draw(im).rounded_rectangle((0, 0, im.width - 1, im.height - 1), 70, fill=(14, 14, 18, 255),
-                                         outline=(70, 70, 80, 255), width=3)
-    foto = tela.resize((largura, altura), Image.Resampling.LANCZOS).convert('RGBA')
-    m = Image.new('L', foto.size, 0)
-    ImageDraw.Draw(m).rounded_rectangle((0, 0, largura - 1, altura - 1), 52, fill=255)
-    foto.putalpha(m)
-    im.alpha_composite(foto, (borda, borda))
-    ImageDraw.Draw(im).rounded_rectangle((im.width/2 - 70, borda + 14, im.width/2 + 70, borda + 46), 16, fill=(0, 0, 0, 255))
-    return im
-
-
 # ---------------------------------------------------------------- pieces
 
-@lru_cache(maxsize=32)
-def pilula(valor, tamanho, fundo=VERMELHO, tinta=CREME, labio=VERMELHO_ESCURO, peso='ExtraBold'):
-    """A pill with a lip under it, like the site's buttons."""
-    s = texto(valor, tamanho, tinta, peso, sombra=False)
+@lru_cache(maxsize=8)
+def pilula(valor, tamanho):
+    """A red pill with a lip under it, like the site's buttons."""
+    s = texto(valor, tamanho, sombra=False)
     w, h = s.width + round(tamanho*1.6), s.height + round(tamanho*.9)
     im = Image.new('RGBA', (w, h + 10), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    if labio:
-        d.rounded_rectangle((0, 10, w - 1, h + 9), h//2, fill=labio + (255,))
-    d.rounded_rectangle((0, 0, w - 1, h - 1), h//2, fill=fundo + (255,))
+    d.rounded_rectangle((0, 10, w - 1, h + 9), h//2, fill=VERMELHO_ESCURO + (255,))
+    d.rounded_rectangle((0, 0, w - 1, h - 1), h//2, fill=VERMELHO + (255,))
     im.alpha_composite(s, ((w - s.width)//2, (h - s.height)//2))
     return im
 
@@ -256,11 +241,11 @@ def lugar(tela, t, inicio, valor):
     aparece(tela, pilula(valor, 54), W/2, 300, inicio, t)
 
 
-def raios_caramelo(tela, t, centro=(W/2, 1150)):
+def raios_caramelo(tela, t):
     d = ImageDraw.Draw(tela)
     d.rectangle((0, 0, W, H), fill=CARAMELO + (255,))
     giro = math.radians(t*14)
-    cx, cy = centro
+    cx, cy = W/2, 1150
     for i in range(20):
         a0 = giro + i*2*math.pi/20
         a1 = a0 + math.pi/20
@@ -566,61 +551,28 @@ def relogio(t):
     return painel
 
 
-def cena_pix(t):
-    """"Nove e noventa no Pix, direto no site.": the site's Pix window, in a phone."""
+def cena_final(t):
+    """The close, with no voice: Zinho calls you in, "Faça parte da história"."""
     tela = Image.new('RGBA', (W, H), (0, 0, 0, 255))
     base.raios(tela, t)
-    p = prog(t, C_PIX + .25, C_PIX + .7)
-    if p > 0:
-        y = 1130 + 1100*(1 - sai_volta(p, 1.15))
-        angulo = -4*(1 - p) + 1.2*math.sin((t - C_PIX)*1.8)
-        colar(tela, sombra_de(A['janela_pix'], 22, 140), W/2 + 16, y + 30, .9, angulo, .9)
-        colar(tela, A['janela_pix'], W/2, y, .9, angulo)
-    aparece(tela, texto('R$ 9,90', 150, CREME, contorno=10), W/2, 330, T['preco'], t, tipo='pancada')
-    if t >= T['pix'] - .08:
-        k = prog(t, T['pix'] - .08, T['pix'] + .2)
-        colar(tela, selo_pix(), W/2, 490, .5 + .5*sai_volta(k), alfa=min(1.0, k*3))
-    return sacudir(tela, t, T['preco'], 14, cor=VERMELHO_ESCURO)
+    zinho_sobe(tela, t, C_FINAL + .05, 'chamando', .74, 1990)
+    aparece(tela, texto('FAÇA PARTE', 120, CREME, contorno=9), W/2, 330, C_FINAL + .3, t, tipo='pancada')
+    aparece(tela, texto('DA HISTÓRIA', 104, OURO, contorno=8), W/2, 470, C_FINAL + .55, t, tipo='pancada')
+    aparece(tela, etiqueta('VIRE ALIADO', 76), W/2, 640, C_FINAL + .95, t, angulo=4)
+    cintilar(tela, t, C_FINAL + 1.0, ((115, 255), (965, 330), (145, 505), (935, 545), (860, 735)))
+    return sacudir(tela, t, C_FINAL + .3, 14, cor=VERMELHO_ESCURO)
 
 
-@lru_cache(maxsize=1)
-def selo_pix():
-    """'Pix ou cartão, direto no site', with the Pix symbol at the front."""
-    s = texto('PIX OU CARTÃO, DIRETO NO SITE', 40, CREME, sombra=False)
-    icone = A['pix'].resize((58, 58), Image.Resampling.LANCZOS)
-    w, h = s.width + icone.width + 100, max(s.height, icone.height) + 36
-    im = Image.new('RGBA', (w, h + 10), (0, 0, 0, 0))
-    d = ImageDraw.Draw(im)
-    d.rounded_rectangle((0, 10, w - 1, h + 9), h//2, fill=(6, 10, 30, 255))
-    d.rounded_rectangle((0, 0, w - 1, h - 1), h//2, fill=AZUL_ESCURO + (255,))
-    im.alpha_composite(icone, (36, (h - icone.height)//2))
-    im.alpha_composite(s, (36 + icone.width + 22, (h - s.height)//2))
-    return im
-
-
-def cena_bio(t):
-    """"O link tá na bio.": an arrow up to the bio, the site's address and Zinho pointing."""
-    tela = Image.new('RGBA', (W, H), (0, 0, 0, 255))
-    raios_caramelo(tela, t, (W/2, 1300))
-    zinho_sobe(tela, t, C_BIO + .1, 'apontando', .68, 2000)
-    if t >= T['o_link'] - .05:
-        pulo = 18*abs(math.sin((t - T['o_link'])*5))
-        colar(tela, seta(), W/2, 250 - pulo, sai_volta(prog(t, T['o_link'] - .05, T['o_link'] + .25)))
-    aparece(tela, texto('LINK NA BIO', 140, CREME, contorno=10), W/2, 480, T['o_link'] + .05, t, tipo='pancada')
-    aparece(tela, pilula('golpecartoon.netlify.app', 46, CREME, TINTA, (194, 173, 152), 'Bold'), W/2, 640, T['bio'], t)
-    if t >= VOZ_FIM - .1:
-        k = prog(t, VOZ_FIM - .1, VOZ_FIM + .2)
-        pulsa = 1 + .04*math.sin((t - VOZ_FIM)*7)
-        colar(tela, pilula('VIRE ALIADO', 60), W/2, 800, (.5 + .5*sai_volta(k))*pulsa, alfa=min(1.0, k*3))
-    return sacudir(tela, t, T['o_link'] + .05, 12, cor=(92, 44, 16))
-
-
-@lru_cache(maxsize=1)
-def seta():
-    im = Image.new('RGBA', (200, 170), (0, 0, 0, 0))
-    ImageDraw.Draw(im).polygon([(100, 6), (194, 100), (138, 100), (138, 164), (62, 164), (62, 100), (6, 100)],
-                               fill=CREME + (255,), outline=TINTA + (255,), width=7)
-    return im
+def cintilar(tela, t, inicio, pontos):
+    """Sparkles that come and go one after another at `pontos`, like the thank-you's around Part 3's card."""
+    for i, (x, y) in enumerate(pontos):
+        desde = t - inicio - i*.12
+        if desde < 0:
+            continue
+        idade = desde % 1.1
+        k = math.sin(limite(idade/.7)*math.pi)
+        if k > 0:
+            colar(tela, estrela(), x, y, .3 + .8*k, idade*90, k)
 
 
 def empurra(t, t0, dur, antes, depois, vertical=False):
@@ -647,8 +599,7 @@ ROTEIRO = [
     (C_CREDITOS, cena_creditos, ('empurra', False)),
     (C_LEGENDA, cena_legenda, ('faixa', AZUL_ESCURO, False)),
     (C_VAGAS, cena_vagas, ('empurra', False)),
-    (C_PIX, cena_pix, ('faixa', VERMELHO, True)),
-    (C_BIO, cena_bio, ('empurra', True)),
+    (C_FINAL, cena_final, ('faixa', VERMELHO, True)),
 ]
 
 
@@ -696,10 +647,9 @@ def eventos():
         (C_LEGENDA - .02, 'whoosh', -8, .6, .9), (C_LEGENDA + .2, 'whoosh', -14, 0, 1.1), (T['legenda'], 'pop', -15, 0, 1.3),
         (T['numero'] - .06, 'impacto', -8, 0, 1),
         (C_VAGAS, 'whoosh', -13, .4, 1.4), (T['dez'], 'impacto-suave', -10, 0, 1),
-        (C_PIX - .02, 'whoosh', -8, -.6, .9), (C_PIX + .25, 'whoosh', -13, 0, 1.1), (T['preco'], 'impacto', -8, 0, 1),
-        (T['pix'] - .08, 'pop', -12, 0, 1), (T['pix'], 'notificacao', -13, 0, 1),
-        (C_BIO, 'whoosh', -13, 0, 1.3), (C_BIO + .1, 'whoosh', -12, 0, 1.05), (T['o_link'] + .05, 'impacto-suave', -10, 0, 1),
-        (T['bio'], 'pop', -12, 0, 1), (VOZ_FIM - .1, 'pop', -10, 0, 1), (VOZ_FIM, 'notificacao', -12, 0, 1),
+        # The close, with no voice: the effects can be fuller.
+        (C_FINAL - .02, 'whoosh', -6, -.6, .9), (C_FINAL + .05, 'whoosh', -9, 0, 1.05), (C_FINAL + .3, 'impacto', -4, 0, 1),
+        (C_FINAL + .55, 'impacto-suave', -6, 0, 1), (C_FINAL + .95, 'pop', -7, 0, 1), (C_FINAL + 1.0, 'notificacao', -10, 0, 1),
     ]
     # The @ typing itself, one tick a letter.
     letras = len(ARROBA) - 1
@@ -714,9 +664,14 @@ def eventos():
 
 
 def voz():
+    """The narration up to "às nove da noite.", faded out right after it."""
     pcm = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(NARRACAO), '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'],
                          capture_output=True, check=True).stdout
     som = np.frombuffer(pcm, np.float32)
+    fim = int((_PALAVRAS[ULTIMA]['end'] + .12)*SR)
+    som = som[:fim].copy()
+    queda = int(.06*SR)
+    som[-queda:] *= np.linspace(1, 0, queda, dtype=np.float32)
     return som/np.abs(som).max()*10**(-3/20)
 
 
@@ -754,7 +709,7 @@ def mixar(caminho):
     brilho = base.brilho_sonoro()
     por(T['parte'] + .45, brilho, -16, 0)
     por(C_CREDITOS + .15, brilho, -18, 0)
-    por(VOZ_FIM + .05, brilho, -14, 0)
+    por(C_FINAL + 1.0, brilho, -12, 0)
     if COM_VOZ:
         fala = voz()
         som *= abaixar_sob_a_voz(fala, n)[:, None]
