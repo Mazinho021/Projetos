@@ -17,16 +17,16 @@ A faixa de avisos leva as duas listras brancas da manga da jaqueta. Na quinta ve
 - **Passe de aliado:** R$ 9,90 por parte, no Pix ou no cartão, com o que o passe dá. Mostra também:
   - uma cena com “@seuperfil” na tela do celular, para mostrar onde o @ aparece;
   - a legenda do post;
-  - a lista dos 10 aliados da Parte 3, com o número de cada um;
+  - a lista dos 30 aliados da Parte 3, com o número de cada um;
   - o formulário, com um botão para o Pix e outro para o cartão, que abrem a janela de pagamento.
 - **Assista do começo:** as capas das partes, com o carimbo da escolha de cada votação, que levam aos vídeos.
 - **Final:** as perguntas, os termos e a privacidade, e o rodapé.
 
 Por decisão do criador, o site não cita o @crimecarton.
 
-O Mercado Pago está ligado desde 28/10/2026, direto com o token de produção. No mesmo dia, o criador fez a primeira compra de verdade, um Pix de R$ 9,90 com o @ `teste.golpe`. O pagamento foi aprovado e o @ ficou fora da lista, como devia. Faltam duas coisas do criador:
+O Mercado Pago está ligado desde 28/10/2026, direto com o token de produção. No mesmo dia, o criador fez a primeira compra de verdade, um Pix de R$ 9,90 com o @ `teste.golpe`. O pagamento foi aprovado e o @ ficou fora da lista, como devia. Em 29/10/2026, o criador aumentou as vagas da Parte 3 de 10 para 30, no site e no vídeo que chama aliados ([`chamada-aliado/`](chamada-aliado/)). Faltam duas coisas do criador:
 
-- a confirmação do prazo e das vagas;
+- a confirmação do prazo;
 - os links dos Reels.
 
 ## Como funciona
@@ -141,7 +141,7 @@ Para publicar de novo, pedir ao Claude, que chama a operação `deploy-site` do 
 
 ## Teste
 
-Começar com a Parte 3: 10 vagas a R$ 9,90 até 30 de outubro, às 21h. Medir três coisas:
+Começar com a Parte 3: 30 vagas a R$ 9,90 até 30 de outubro, às 21h. Medir três coisas:
 
 - os cliques no link da bio, nos insights do Instagram;
 - as visitas ao site;

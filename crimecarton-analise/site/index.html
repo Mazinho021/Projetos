@@ -276,13 +276,14 @@ h1 span { display: block; }
 .creditos-parte { margin-top: 10px; font: 900 2.9rem/1 var(--display); letter-spacing: -.01em; text-transform: uppercase; color: var(--vermelho-texto); }
 .creditos-sub { margin-top: 6px; font: 600 .875rem/1.3 var(--display); }
 .creditos-lista {
-  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(5, auto); grid-auto-flow: column;
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(15, auto); grid-auto-flow: column;
   gap: 10px 18px; margin: 22px 0 0; padding: 0; list-style: none; text-align: left;
 }
 .creditos-lista li { display: flex; gap: 10px; min-width: 0; font-size: var(--t-s); color: var(--areia-2); }
 .creditos-lista li span { min-width: 1.7em; font-weight: 700; color: var(--areia); }
-.creditos-lista li.tem { color: var(--creme); font-weight: 600; overflow-wrap: anywhere; }
-.creditos-lista li.tem small { margin-left: 2px; font-size: .75rem; font-weight: 600; color: var(--areia); }
+/* An ally's handle wraps inside its own column, with the ally number under it. */
+.creditos-lista li.tem { display: grid; grid-template-columns: 1.7em minmax(0, 1fr); gap: 2px 10px; color: var(--creme); font-weight: 600; overflow-wrap: anywhere; }
+.creditos-lista li.tem small { grid-column: 2; font-size: .75rem; font-weight: 600; color: var(--areia); }
 
 .quadros { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .quadros div { display: grid; gap: 6px; align-content: start; padding: 16px; border-radius: 16px; background: var(--painel); border: 1px solid var(--linha); }
@@ -482,14 +483,14 @@ a.capitulo:hover { transform: translateY(-4px); }
 <div class="aviso-faixa" aria-label="Avisos">
   <div class="aviso-trilho">
     <ul>
-      <li>Parte 3: <span data-vagas>10</span> vagas de aliado</li>
+      <li>Parte 3: <span data-vagas>30</span> vagas de aliado</li>
       <li>Fecham sexta, às 21h</li>
       <li>Votação aberta: fugir ou ficar?</li>
       <li>A Parte 2 já tá no perfil</li>
       <li>Passe de aliado: R$ 9,90 no Pix ou no cartão</li>
     </ul>
     <ul aria-hidden="true">
-      <li>Parte 3: <span data-vagas>10</span> vagas de aliado</li>
+      <li>Parte 3: <span data-vagas>30</span> vagas de aliado</li>
       <li>Fecham sexta, às 21h</li>
       <li>Votação aberta: fugir ou ficar?</li>
       <li>A Parte 2 já tá no perfil</li>
@@ -513,7 +514,7 @@ a.capitulo:hover { transform: translateY(-4px); }
 
       <aside class="vagas" aria-label="Vagas de aliado na Parte 3">
         <div>
-          <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>Parte 3: <span data-vagas>10</span> vagas de aliado abertas</span></p>
+          <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>Parte 3: <span data-vagas>30</span> vagas de aliado abertas</span></p>
           <p class="vagas-prazo">Fecham na sexta, 30 de outubro, às 21h.</p>
         </div>
         <div class="contagem" data-contagem aria-hidden="true">
@@ -611,11 +612,31 @@ a.capitulo:hover { transform: translateY(-4px); }
               <li><span>08</span>vaga aberta</li>
               <li><span>09</span>vaga aberta</li>
               <li><span>10</span>vaga aberta</li>
+              <li><span>11</span>vaga aberta</li>
+              <li><span>12</span>vaga aberta</li>
+              <li><span>13</span>vaga aberta</li>
+              <li><span>14</span>vaga aberta</li>
+              <li><span>15</span>vaga aberta</li>
+              <li><span>16</span>vaga aberta</li>
+              <li><span>17</span>vaga aberta</li>
+              <li><span>18</span>vaga aberta</li>
+              <li><span>19</span>vaga aberta</li>
+              <li><span>20</span>vaga aberta</li>
+              <li><span>21</span>vaga aberta</li>
+              <li><span>22</span>vaga aberta</li>
+              <li><span>23</span>vaga aberta</li>
+              <li><span>24</span>vaga aberta</li>
+              <li><span>25</span>vaga aberta</li>
+              <li><span>26</span>vaga aberta</li>
+              <li><span>27</span>vaga aberta</li>
+              <li><span>28</span>vaga aberta</li>
+              <li><span>29</span>vaga aberta</li>
+              <li><span>30</span>vaga aberta</li>
             </ol>
           </div>
 
           <div class="quadros">
-            <div><b data-vagas>10</b><span>vagas na Parte 3</span></div>
+            <div><b data-vagas>30</b><span>vagas na Parte 3</span></div>
             <div><b class="alerta" data-relogio>2d 00h</b><span>para a lista fechar, sexta às 21h</span></div>
           </div>
 
@@ -698,7 +719,7 @@ a.capitulo:hover { transform: translateY(-4px); }
         <details><summary>Onde o meu @ vai aparecer?<span class="ico" aria-hidden="true">add</span></summary>
           <p>Num lugar da cena escolhido pela produção, como os contatos de um celular, um muro, uma tela de TV ou os créditos do fim, e na legenda do post no Instagram.</p></details>
         <details><summary>Até quando posso virar aliado de uma parte?<span class="ico" aria-hidden="true">add</span></summary>
-          <p>Até as 21h do dia em que a votação fecha, ou até acabarem as 10 vagas. Depois disso, o passe vale para a parte seguinte.</p></details>
+          <p>Até as 21h do dia em que a votação fecha, ou até acabarem as 30 vagas. Depois disso, o passe vale para a parte seguinte.</p></details>
         <details><summary>Preciso comprar de novo em cada parte?<span class="ico" aria-hidden="true">add</span></summary>
           <p>Sim. Cada passe vale para uma parte. Entrou de novo, aparece de novo, e o seu número de aliado continua o mesmo.</p></details>
         <details><summary>Errei meu @. E agora?<span class="ico" aria-hidden="true">add</span></summary>
@@ -787,7 +808,7 @@ a.capitulo:hover { transform: translateY(-4px); }
   var CONFIG = {
     parte: 3,
     fecha: '2026-10-30T21:00:00-03:00',  // fim das vagas e da votação
-    vagas: 10,
+    vagas: 30,
     preco: 9.9,                           // R$ do passe, para o formulário do cartão
     proximoNumero: 1                      // o número do próximo aliado novo
   };
@@ -818,10 +839,13 @@ a.capitulo:hover { transform: translateY(-4px); }
   function mostrarLista(aliados) {
     $$('[data-vagas]').forEach(function (el) { el.textContent = Math.max(0, CONFIG.vagas - aliados.length); });
     $$('[data-proximo]').forEach(function (el) { el.textContent = tres(CONFIG.proximoNumero); });
-    $$('[data-lista] li').forEach(function (li, k) {
-      var aliado = aliados[k], vaga = document.createElement('span');
+    // Uma linha por vaga, em duas colunas: as que /api/aliados disser, mesmo que mudem.
+    var lista = $('[data-lista]');
+    lista.textContent = '';
+    lista.style.gridTemplateRows = 'repeat(' + Math.ceil(CONFIG.vagas / 2) + ', auto)';
+    for (var k = 0; k < CONFIG.vagas; k++) {
+      var aliado = aliados[k], li = document.createElement('li'), vaga = document.createElement('span');
       li.className = aliado ? 'tem' : '';
-      li.textContent = '';
       vaga.textContent = dois(k + 1);
       li.appendChild(vaga);
       li.appendChild(document.createTextNode(aliado ? aliado.arroba : 'vaga aberta'));
@@ -830,7 +854,8 @@ a.capitulo:hover { transform: translateY(-4px); }
         numero.textContent = 'nº ' + tres(aliado.numero);
         li.appendChild(numero);
       }
-    });
+      lista.appendChild(li);
+    }
     if (aliados.length) $('[data-legenda]').textContent = aliados.map(function (a) { return a.arroba; }).join(', ') + '.';
   }
 
