@@ -1,0 +1,25 @@
+{
+  "jobId": "mcp_media_a50cbc218a18416461bc45e3bcbdb1424045cb8253d166dc42dc5c80564770c6",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_a50cbc218a18416461bc45e3bcbdb1424045cb8253d166dc42dc5c80564770c6/0.wav?hdnts=FullPath~Expires=1793467338~Signature=BXPXMeYCf_IQDywFiatlzFzPqQmizE6OTPFSehcXDWmW-AJqMDx2C63PcXnBIhayJdSt70mUhRiTK7aiwRJ0Dg",
+      "expiresAt": "2026-10-31T17:22:18.535Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 16.4
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep03-renato-charon-v1-20261030",
+    "voice": "Charon",
+    "style": "Português brasileiro. A mesma voz do narrador, mas interpretando Renato, o amigo de infância de Zinho, que o traiu para pagar uma dívida e agora foge com ele à noite: fala em pessoa, ofegante, baixo e urgente, com medo; em “Não sei.”, responde rápido demais, como quem esconde algo. Natural, sem caricatura e sem gritar. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+    "text": "Pelos fundos. Agora.\n\nEles não vieram conversar.\n\nNão se mexe.\n\nNão sei.\n\nTem dois lugares. O ferro-velho da foto: o vigia me deve um favor. Ou a casa da minha mãe.",
+    "sourceFile": "crimecarton-analise/episodio-03/pedido-narracao-renato-ep03.json"
+  }
+}
