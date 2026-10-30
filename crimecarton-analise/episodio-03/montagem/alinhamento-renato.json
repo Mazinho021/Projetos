@@ -1,0 +1,233 @@
+{
+ "audio": "narracao-ep03-renato.wav",
+ "script": "narracao-ep03-renato.txt",
+ "model": "medium",
+ "words_in_script": 31,
+ "words_matched_exactly": 30,
+ "pauses": [
+  [
+   0.914,
+   1.218
+  ],
+  [
+   1.711,
+   2.037
+  ],
+  [
+   2.037,
+   2.616
+  ],
+  [
+   4.235,
+   5.387
+  ],
+  [
+   6.211,
+   7.493
+  ],
+  [
+   8.452,
+   9.094
+  ],
+  [
+   9.179,
+   9.694
+  ],
+  [
+   14.302,
+   14.608
+  ],
+  [
+   15.623,
+   16.4
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Pelos",
+   "start": 0.0,
+   "end": 0.56
+  },
+  {
+   "i": 1,
+   "text": "fundos.",
+   "start": 0.56,
+   "end": 0.914
+  },
+  {
+   "i": 2,
+   "text": "Agora.",
+   "start": 1.218,
+   "end": 2.037
+  },
+  {
+   "i": 3,
+   "text": "Eles",
+   "start": 2.616,
+   "end": 3.1
+  },
+  {
+   "i": 4,
+   "text": "não",
+   "start": 3.1,
+   "end": 3.36
+  },
+  {
+   "i": 5,
+   "text": "vieram",
+   "start": 3.36,
+   "end": 3.68
+  },
+  {
+   "i": 6,
+   "text": "conversar.",
+   "start": 3.68,
+   "end": 4.235
+  },
+  {
+   "i": 7,
+   "text": "Não",
+   "start": 5.387,
+   "end": 5.78
+  },
+  {
+   "i": 8,
+   "text": "se",
+   "start": 5.78,
+   "end": 6.0
+  },
+  {
+   "i": 9,
+   "text": "mexe.",
+   "start": 6.0,
+   "end": 6.211
+  },
+  {
+   "i": 10,
+   "text": "Não",
+   "start": 7.493,
+   "end": 8.0
+  },
+  {
+   "i": 11,
+   "text": "sei.",
+   "start": 8.0,
+   "end": 9.179
+  },
+  {
+   "i": 12,
+   "text": "Tem",
+   "start": 9.694,
+   "end": 9.86
+  },
+  {
+   "i": 13,
+   "text": "dois",
+   "start": 9.86,
+   "end": 10.04
+  },
+  {
+   "i": 14,
+   "text": "lugares.",
+   "start": 10.04,
+   "end": 10.4
+  },
+  {
+   "i": 15,
+   "text": "O",
+   "start": 11.1,
+   "end": 11.24
+  },
+  {
+   "i": 16,
+   "text": "ferro-velho",
+   "start": 11.24,
+   "end": 11.6
+  },
+  {
+   "i": 17,
+   "text": "da",
+   "start": 11.6,
+   "end": 11.74
+  },
+  {
+   "i": 18,
+   "text": "foto:",
+   "start": 11.74,
+   "end": 12.08
+  },
+  {
+   "i": 19,
+   "text": "o",
+   "start": 12.48,
+   "end": 12.6
+  },
+  {
+   "i": 20,
+   "text": "vigia",
+   "start": 12.6,
+   "end": 12.86
+  },
+  {
+   "i": 21,
+   "text": "me",
+   "start": 12.86,
+   "end": 12.94
+  },
+  {
+   "i": 22,
+   "text": "deve",
+   "start": 12.94,
+   "end": 13.1
+  },
+  {
+   "i": 23,
+   "text": "um",
+   "start": 13.1,
+   "end": 13.22
+  },
+  {
+   "i": 24,
+   "text": "favor.",
+   "start": 13.22,
+   "end": 13.58
+  },
+  {
+   "i": 25,
+   "text": "Ou",
+   "start": 14.02,
+   "end": 14.302
+  },
+  {
+   "i": 26,
+   "text": "a",
+   "start": 14.608,
+   "end": 14.98
+  },
+  {
+   "i": 27,
+   "text": "casa",
+   "start": 14.98,
+   "end": 15.18
+  },
+  {
+   "i": 28,
+   "text": "da",
+   "start": 15.18,
+   "end": 15.36
+  },
+  {
+   "i": 29,
+   "text": "minha",
+   "start": 15.36,
+   "end": 15.46
+  },
+  {
+   "i": 30,
+   "text": "mãe.",
+   "start": 15.46,
+   "end": 15.623
+  }
+ ]
+}
