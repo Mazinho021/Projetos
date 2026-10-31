@@ -1,9 +1,0 @@
-{
- "reference": "narracao-ep03-narrador.wav",
- "reference_pitch_hz": 108.6,
- "vinheta.wav": {
-  "source": "narracao-original.wav",
-  "pitch_before_hz": 89.8,
-  "pitch_after_hz": 109.4
- }
-}

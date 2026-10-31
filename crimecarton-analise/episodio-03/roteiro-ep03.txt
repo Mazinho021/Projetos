@@ -2,27 +2,25 @@ VINHETA: O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou c
 NARRADOR: Chegou agora? As partes um e dois estão no perfil.
 NARRADOR: Vocês decidiram: fugir.
 NARRADOR: E deram um nome a ele: Renato.
-NARRADOR: Agora você foge ao lado do homem que vendeu o seu nome.
-NARRADOR: Lá fora, a porta do carro abre devagar.
-RENATO: Pelos fundos. Agora.
-NARRADOR: Ele conhece a sua casa melhor do que deveria. A cozinha, o quintal, o muro. Atrás de vocês, alguém sacode o portão.
-NARRADOR: Do outro lado do muro, o beco. Vocês só param de correr quando o cachorro para de latir.
-NARRADOR: Então o celular dele acende. É a “Cobrança”: “Cadê vocês?”
-NARRADOR: Você arranca o celular da mão dele e sobe a conversa.
-NARRADOR: Onze e meia da noite, antes de bater na sua porta, Renato escreveu: “Tô chegando na casa dele.”
-RENATO: Eu mandei antes de entrar. Antes de ver a tua cara.
-NARRADOR: Você não sabe se acredita. Mas sabe o que fazer: manda ele tirar o chip. O chip vai para o bueiro, e o celular fica com você.
-NARRADOR: No bar da esquina, a TV está no plantão. O seu rosto. E, do lado, pela primeira vez, o dele.
-NARRADOR: Agora os dois são procurados.
-NARRADOR: Embaixo, os comentários de quem assiste. No balcão, um homem olha da tela para vocês. E pega o celular.
-NARRADOR: Na rua, é o seu celular que não para. O seu número vazou junto com o seu rosto. Uns te chamam de bandido. Outros escrevem: “Tô contigo, Zinho.”
-NARRADOR: Na avenida, o carro de farol apagado vem devagar. Vocês colam no escuro de uma porta.
-RENATO: Não se mexe.
-NARRADOR: Na janela do carona, uma mão. No dedo, um anel grosso de ouro.
-NARRADOR: É o anel da foto da divisão. A mão que contava o dinheiro.
-RENATO: É ele. O homem que me cobra.
-NARRADOR: Pela primeira vez, você vê um deles. Pelo menos a mão.
-NARRADOR: O carro some na esquina. Vocês precisam de um lugar até amanhecer.
-RENATO: Tem dois. O ferro-velho da foto: o vigia me deve um favor. Ou a casa da minha mãe.
-NARRADOR: O ferro-velho é deles. A casa da mãe, eles sabem onde fica.
-NARRADOR: Ferro-velho ou mãe? Comenta uma palavra só. O que a maioria escolher vira a parte quatro.
+NARRADOR: Mas fugir tem um preço. E esta noite, quem paga é ele.
+NARRADOR: Lá fora, dois homens descem do carro. Um deles acende uma lanterna.
+RENATO: Pelos fundos. Vai!
+NARRADOR: Vocês atravessam a cozinha no escuro. No quintal, o muro é mais alto do que você lembrava.
+NARRADOR: Renato junta as mãos e te dá pé.
+RENATO: Sobe. Eu vou atrás.
+NARRADOR: Você sobe, pula e cai do outro lado.
+NARRADOR: Quando ele agarra o muro, uma mão puxa a jaqueta dele por trás. No dedo, um anel grosso de ouro. O mesmo anel da foto da divisão.
+RENATO: Corre, Zinho! Corre!
+NARRADOR: Você corre. E cada passo pesa mais que o outro.
+NARRADOR: Só para quando o ar acaba. No fim da linha, um ônibus abandonado. Você se esconde lá dentro, no escuro.
+NARRADOR: No bolso, o celular e a chave de uma casa para onde você não pode voltar.
+NARRADOR: Pela primeira vez na noite, você está sozinho.
+NARRADOR: Então o celular vibra. É o número do Renato. Mas não é ele.
+NARRADOR: Primeiro, uma foto. Renato numa cadeira, com o lábio cortado. Atrás dele, montes de sucata. No ombro dele, a mão com o anel.
+NARRADOR: Depois, um áudio.
+COBRANCA: Você correu. Ele não. Vamos trocar: você por ele. Três da manhã, no ferro-velho. Sozinho. Se chamar a polícia, a mãe dele é a próxima.
+NARRADOR: Você escuta outra vez. A voz é calma. Calma demais.
+NARRADOR: A mãe dele. A mesma que te dava almoço quando vocês eram moleques.
+NARRADOR: Você olha a hora: uma e doze. Faltam menos de duas horas.
+NARRADOR: O homem que vendeu o seu nome agora paga por ele. Mas foi esse mesmo homem que te deu pé no muro.
+NARRADOR: Trocar ou deixar? Comenta uma palavra só. O que a maioria escolher vira a parte quatro.

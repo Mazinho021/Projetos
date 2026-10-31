@@ -1,7 +1,7 @@
 {
-  "idempotencyKey": "zinho-ep03-renato-charon-v2-20261031",
+  "idempotencyKey": "zinho-ep03-renato-charon-v3-20261031",
   "voice": "Charon",
-  "style": "Português brasileiro. A mesma voz do narrador, mas interpretando Renato, o amigo de infância de Zinho, que o traiu para pagar uma dívida e agora foge com ele à noite: fala em pessoa, ofegante, baixo e urgente, com medo. Em “Eu mandei antes de entrar…”, se defende com culpa; em “É ele.”, sussurra, apavorado. Natural, sem caricatura e sem gritar. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
-  "text": "Pelos fundos. Agora.\n\nEu mandei antes de entrar. Antes de ver a tua cara. Depois eu mudei de lado.\n\nNão se mexe.\n\nÉ ele. O homem que me cobra.\n\nTem dois. O ferro-velho da foto: o vigia me deve um favor. Ou a casa da minha mãe.",
-  "observacao": "Falas de Renato na Parte 3, no roteiro novo de 31/10/2026, com a voz Charon. O Claude Code passa a gravação pela mesma transformação de voz das Partes 1 e 2 (voz_renato.py), para Renato ter a mesma voz. Uns 20 s. Geração paga, pedida pelo criador; mostrar o custo antes de executar."
+  "style": "Português brasileiro. A mesma voz do narrador, mas interpretando Renato, o amigo de infância de Zinho, que o traiu e agora foge com ele à noite: fala em pessoa, ofegante e urgente. “Pelos fundos. Vai!” e “Sobe. Eu vou atrás.” saem baixos e rápidos. “Corre, Zinho! Corre!” é um grito desesperado, de quem está sendo puxado para trás. Natural, sem caricatura. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+  "text": "Pelos fundos. Vai!\n\nSobe. Eu vou atrás.\n\nCorre, Zinho! Corre!",
+  "observacao": "Falas de Renato na Parte 3, com a voz Charon. O Claude Code passa a gravação pela transformação de voz das Partes 1 e 2, para Renato ter a mesma voz. Uns 6 s. Geração paga, pedida pelo criador; mostrar o custo antes de executar."
 }
