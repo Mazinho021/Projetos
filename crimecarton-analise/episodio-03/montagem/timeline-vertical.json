@@ -65,21 +65,21 @@
   },
   {
    "start": 20.84,
-   "end": 25.58,
+   "end": 25.7,
    "kind": "art",
    "asset": "cena-01-portao.png",
    "zoom": 0.06
   },
   {
-   "start": 25.58,
-   "end": 27.64,
+   "start": 25.7,
+   "end": 27.46,
    "kind": "art",
    "asset": "cena-16-renato-puxa.png",
    "zoom": 0.06
   },
   {
-   "start": 27.64,
-   "end": 30.08,
+   "start": 27.46,
+   "end": 29.9,
    "kind": "art",
    "asset": "cena-02-cozinha.png",
    "zoom": 0.04,
@@ -92,51 +92,51 @@
    "direction": "out"
   },
   {
-   "start": 30.08,
-   "end": 33.18,
+   "start": 29.9,
+   "end": 33.0,
    "kind": "art",
    "asset": "cena-17-muro-alto.png",
    "zoom": 0.04,
    "direction": "out"
   },
   {
-   "start": 33.18,
-   "end": 35.41,
+   "start": 33.0,
+   "end": 35.24,
    "kind": "art",
    "asset": "cena-03-pe-no-muro.png",
    "zoom": 0.04
   },
   {
-   "start": 35.41,
-   "end": 37.94,
+   "start": 35.24,
+   "end": 37.31,
    "kind": "art",
    "asset": "cena-18-sobe.png",
    "zoom": 0.05
   },
   {
-   "start": 37.94,
-   "end": 41.63,
+   "start": 37.31,
+   "end": 40.99,
    "kind": "art",
    "asset": "cena-19-do-outro-lado.png",
    "zoom": 0.05
   },
   {
-   "start": 41.63,
-   "end": 45.69,
+   "start": 40.99,
+   "end": 45.05,
    "kind": "art",
    "asset": "cena-04-mao-anel.png",
    "zoom": 0.05
   },
   {
-   "start": 45.69,
-   "end": 47.9,
+   "start": 45.05,
+   "end": 47.27,
    "kind": "art",
    "asset": "cena-20-anel-gola.png",
    "zoom": 0.06
   },
   {
-   "start": 47.9,
-   "end": 50.68,
+   "start": 47.27,
+   "end": 50.05,
    "kind": "art",
    "asset": "../episodio-02/cena-04-foto-divisao.png",
    "zoom": 0.06,
@@ -148,8 +148,8 @@
    ]
   },
   {
-   "start": 50.68,
-   "end": 53.55,
+   "start": 50.05,
+   "end": 51.8,
    "kind": "art",
    "asset": "cena-05-renato-grita.png",
    "zoom": 0.08,
@@ -161,66 +161,66 @@
    ]
   },
   {
-   "start": 53.55,
-   "end": 57.08,
+   "start": 51.8,
+   "end": 55.33,
    "kind": "art",
    "asset": "cena-06-zinho-corre.png",
    "zoom": 0.05
   },
   {
-   "start": 57.08,
-   "end": 58.75,
+   "start": 55.33,
+   "end": 57.0,
    "kind": "art",
    "asset": "cena-21-sem-folego.png",
    "zoom": 0.05
   },
   {
-   "start": 58.75,
-   "end": 61.1,
+   "start": 57.0,
+   "end": 59.35,
    "kind": "art",
    "asset": "cena-22-onibus-fora.png",
    "zoom": 0.04,
    "direction": "out"
   },
   {
-   "start": 61.1,
-   "end": 63.73,
+   "start": 59.35,
+   "end": 61.97,
    "kind": "art",
    "asset": "cena-07-onibus.png",
    "zoom": 0.05
   },
   {
-   "start": 63.73,
-   "end": 68.3,
+   "start": 61.97,
+   "end": 66.55,
    "kind": "art",
    "asset": "cena-23-celular-chave.png",
    "zoom": 0.05
   },
   {
-   "start": 68.3,
-   "end": 72.22,
+   "start": 66.55,
+   "end": 70.47,
    "kind": "art",
    "asset": "cena-24-sozinho.png",
    "zoom": 0.04,
    "direction": "out"
   },
   {
-   "start": 72.22,
-   "end": 76.98,
+   "start": 70.47,
+   "end": 75.23,
    "kind": "art",
    "asset": "montagem/arte/tela-notificacao.png",
    "zoom": 0.05
   },
   {
-   "start": 76.98,
-   "end": 78.97,
+   "start": 75.23,
+   "end": 77.22,
    "kind": "art",
    "asset": "montagem/arte/tela-foto.png",
    "zoom": 0.05
   },
   {
-   "start": 78.97,
-   "end": 81.86,
+   "start": 77.22,
+   "end": 80.11,
    "kind": "art",
    "asset": "cena-09-foto-refem.png",
    "zoom": 0.05,
@@ -232,44 +232,44 @@
    ]
   },
   {
-   "start": 81.86,
-   "end": 84.57,
+   "start": 80.11,
+   "end": 82.82,
    "kind": "art",
    "asset": "cena-26-sucata.png",
    "zoom": 0.04,
    "direction": "out"
   },
   {
-   "start": 84.57,
-   "end": 87.37,
+   "start": 82.82,
+   "end": 85.61,
    "kind": "art",
    "asset": "cena-27-mao-no-ombro.png",
    "zoom": 0.06
   },
   {
-   "start": 87.37,
-   "end": 89.53,
+   "start": 85.61,
+   "end": 87.78,
    "kind": "art",
    "asset": "montagem/arte/tela-audio.png",
    "zoom": 0.05
   },
   {
-   "start": 89.53,
-   "end": 92.51,
+   "start": 87.78,
+   "end": 90.75,
    "kind": "art",
    "asset": "cena-10-zinho-escuta.png",
    "zoom": 0.05
   },
   {
-   "start": 92.51,
-   "end": 95.69,
+   "start": 90.75,
+   "end": 93.93,
    "kind": "art",
    "asset": "cena-29-cobrador-grava.png",
    "zoom": 0.05
   },
   {
-   "start": 95.69,
-   "end": 99.54,
+   "start": 93.93,
+   "end": 97.79,
    "kind": "art",
    "asset": "cena-12-ferro-velho.png",
    "zoom": 0.05,
@@ -301,52 +301,52 @@
    ]
   },
   {
-   "start": 99.54,
-   "end": 103.69,
+   "start": 97.79,
+   "end": 101.93,
    "kind": "art",
    "asset": "cena-30-casa-da-mae.png",
    "zoom": 0.05
   },
   {
-   "start": 103.69,
-   "end": 107.91,
+   "start": 101.93,
+   "end": 106.15,
    "kind": "art",
    "asset": "cena-31-olhos.png",
    "zoom": 0.04
   },
   {
-   "start": 107.91,
-   "end": 110.76,
+   "start": 106.15,
+   "end": 109.0,
    "kind": "art",
    "asset": "cena-35-calma.png",
    "zoom": 0.05
   },
   {
-   "start": 110.76,
-   "end": 115.65,
+   "start": 109.0,
+   "end": 113.89,
    "kind": "art",
    "asset": "montagem/arte/lembranca-vertical.png",
    "zoom": 0.04,
    "direction": "out"
   },
   {
-   "start": 115.65,
-   "end": 120.49,
+   "start": 113.89,
+   "end": 118.73,
    "kind": "art",
    "asset": "montagem/arte/tela-hora.png",
    "zoom": 0.06
   },
   {
-   "start": 120.49,
-   "end": 124.11,
+   "start": 118.73,
+   "end": 122.35,
    "kind": "art",
    "asset": "cena-33-renato-sozinho.png",
    "zoom": 0.04,
    "direction": "out"
   },
   {
-   "start": 124.11,
-   "end": 127.32,
+   "start": 122.35,
+   "end": 125.56,
    "kind": "art",
    "asset": "cena-34-maos-degrau.png",
    "zoom": 0.04,
@@ -358,8 +358,8 @@
    ]
   },
   {
-   "start": 127.32,
-   "end": 135.2,
+   "start": 125.56,
+   "end": 133.45,
    "kind": "art",
    "asset": "cena-13-decisao.png",
    "zoom": 0.03,
@@ -543,7 +543,7 @@
   {
    "type": "hud",
    "start": 16.69,
-   "end": 127.32,
+   "end": 125.56,
    "label": "A SUA PARTE",
    "dy": 67,
    "values": [
@@ -564,35 +564,35 @@
   {
    "type": "tag",
    "start": 16.69,
-   "end": 58.75,
+   "end": 57.0,
    "text": "A FUGA · O MURO",
    "y": 297
   },
   {
    "type": "tag",
-   "start": 58.75,
-   "end": 72.22,
+   "start": 57.0,
+   "end": 70.47,
    "text": "SOZINHO · O ÔNIBUS",
    "y": 297
   },
   {
    "type": "tag",
-   "start": 72.22,
-   "end": 89.53,
+   "start": 70.47,
+   "end": 87.78,
    "text": "PISTA · A FOTO",
    "y": 297
   },
   {
    "type": "tag",
-   "start": 89.53,
-   "end": 110.76,
+   "start": 87.78,
+   "end": 109.0,
    "text": "PISTA · O ÁUDIO",
    "y": 297
   },
   {
    "type": "tag",
-   "start": 110.76,
-   "end": 127.32,
+   "start": 109.0,
+   "end": 125.56,
    "text": "O PREÇO",
    "y": 297
   },
@@ -631,22 +631,22 @@
   },
   {
    "type": "vignette",
-   "start": 41.63,
-   "end": 53.55,
+   "start": 40.99,
+   "end": 51.8,
    "color": "alert",
    "strength": 0.8
   },
   {
    "type": "vignette",
-   "start": 89.53,
-   "end": 103.69,
+   "start": 87.78,
+   "end": 101.93,
    "color": "alert",
    "strength": 0.7
   },
   {
    "type": "vignette",
-   "start": 120.49,
-   "end": 124.11,
+   "start": 118.73,
+   "end": 122.35,
    "color": "alert",
    "strength": 0.6
   },
@@ -694,7 +694,7 @@
   {
    "type": "phrase",
    "start": 21.5,
-   "end": 25.58,
+   "end": 25.7,
    "y": 900,
    "size": 54,
    "lines": [
@@ -713,19 +713,19 @@
   },
   {
    "type": "phrase",
-   "start": 25.63,
-   "end": 27.64,
+   "start": 25.75,
+   "end": 27.46,
    "y": 900,
    "size": 58,
    "lines": [
     {
      "text": "“PELOS FUNDOS.",
-     "at": 25.7,
+     "at": 25.82,
      "color": "white"
     },
     {
      "text": "VAI!”",
-     "at": 26.94,
+     "at": 26.79,
      "color": "yellow",
      "shake": true
     }
@@ -734,19 +734,19 @@
   },
   {
    "type": "phrase",
-   "start": 31.38,
-   "end": 33.18,
+   "start": 31.21,
+   "end": 33.0,
    "y": 900,
    "size": 49,
    "lines": [
     {
      "text": "MAIS ALTO DO QUE",
-     "at": 31.43,
+     "at": 31.26,
      "color": "white"
     },
     {
      "text": "VOCÊ LEMBRAVA.",
-     "at": 32.13,
+     "at": 31.95,
      "color": "yellow"
     }
    ],
@@ -754,14 +754,14 @@
   },
   {
    "type": "phrase",
-   "start": 34.52,
-   "end": 35.41,
+   "start": 34.35,
+   "end": 35.24,
    "y": 900,
    "size": 56,
    "lines": [
     {
      "text": "ELE TE DÁ PÉ.",
-     "at": 34.57,
+     "at": 34.4,
      "color": "yellow"
     }
    ],
@@ -769,19 +769,19 @@
   },
   {
    "type": "phrase",
-   "start": 35.46,
-   "end": 37.94,
+   "start": 35.29,
+   "end": 37.31,
    "y": 900,
    "size": 56,
    "lines": [
     {
      "text": "“SOBE.",
-     "at": 35.53,
+     "at": 35.36,
      "color": "white"
     },
     {
      "text": "EU VOU ATRÁS.”",
-     "at": 36.77,
+     "at": 36.22,
      "color": "yellow"
     }
    ],
@@ -789,19 +789,19 @@
   },
   {
    "type": "phrase",
-   "start": 43.26,
-   "end": 45.69,
+   "start": 42.63,
+   "end": 45.05,
    "y": 900,
    "size": 69,
    "lines": [
     {
      "text": "UMA MÃO",
-     "at": 43.31,
+     "at": 42.68,
      "color": "white"
     },
     {
      "text": "POR TRÁS.",
-     "at": 44.59,
+     "at": 43.96,
      "color": "red",
      "shake": true
     }
@@ -810,19 +810,19 @@
   },
   {
    "type": "phrase",
-   "start": 46.45,
-   "end": 47.9,
+   "start": 45.82,
+   "end": 47.27,
    "y": 900,
    "size": 69,
    "lines": [
     {
      "text": "UM ANEL",
-     "at": 46.5,
+     "at": 45.87,
      "color": "white"
     },
     {
      "text": "DE OURO.",
-     "at": 47.32,
+     "at": 46.69,
      "color": "yellow"
     }
    ],
@@ -830,8 +830,8 @@
   },
   {
    "type": "stamp",
-   "start": 48.0,
-   "end": 50.68,
+   "start": 47.37,
+   "end": 50.05,
    "text": "O MESMO ANEL",
    "y": 940,
    "x": 330,
@@ -839,20 +839,20 @@
   },
   {
    "type": "phrase",
-   "start": 50.73,
-   "end": 53.55,
+   "start": 50.1,
+   "end": 51.8,
    "y": 900,
    "size": 63,
    "lines": [
     {
      "text": "“CORRE, ZINHO!",
-     "at": 50.8,
+     "at": 50.16,
      "color": "red",
      "shake": true
     },
     {
      "text": "CORRE!”",
-     "at": 52.92,
+     "at": 50.98,
      "color": "red",
      "shake": true
     }
@@ -861,19 +861,19 @@
   },
   {
    "type": "phrase",
-   "start": 55.02,
-   "end": 57.08,
+   "start": 53.26,
+   "end": 55.33,
    "y": 900,
    "size": 65,
    "lines": [
     {
      "text": "CADA PASSO",
-     "at": 55.06,
+     "at": 53.31,
      "color": "white"
     },
     {
      "text": "PESA MAIS.",
-     "at": 55.55,
+     "at": 53.79,
      "color": "yellow"
     }
    ],
@@ -881,19 +881,19 @@
   },
   {
    "type": "phrase",
-   "start": 57.73,
-   "end": 58.75,
+   "start": 55.98,
+   "end": 57.0,
    "y": 900,
    "size": 65,
    "lines": [
     {
      "text": "ATÉ O AR",
-     "at": 57.78,
+     "at": 56.03,
      "color": "white"
     },
     {
      "text": "ACABAR.",
-     "at": 57.97,
+     "at": 56.21,
      "color": "yellow"
     }
    ],
@@ -901,19 +901,19 @@
   },
   {
    "type": "phrase",
-   "start": 59.44,
-   "end": 61.1,
+   "start": 57.69,
+   "end": 59.35,
    "y": 900,
    "size": 60,
    "lines": [
     {
      "text": "UM ÔNIBUS",
-     "at": 59.49,
+     "at": 57.74,
      "color": "white"
     },
     {
      "text": "ABANDONADO.",
-     "at": 59.99,
+     "at": 58.24,
      "color": "yellow"
     }
    ],
@@ -921,19 +921,19 @@
   },
   {
    "type": "phrase",
-   "start": 65.78,
-   "end": 68.3,
+   "start": 64.03,
+   "end": 66.55,
    "y": 900,
    "size": 65,
    "lines": [
     {
      "text": "UMA CASA",
-     "at": 65.83,
+     "at": 64.08,
      "color": "white"
     },
     {
      "text": "SEM VOLTA.",
-     "at": 66.85,
+     "at": 65.1,
      "color": "yellow"
     }
    ],
@@ -941,19 +941,19 @@
   },
   {
    "type": "phrase",
-   "start": 68.35,
-   "end": 72.22,
+   "start": 66.6,
+   "end": 70.47,
    "y": 900,
    "size": 69,
    "lines": [
     {
      "text": "VOCÊ ESTÁ",
-     "at": 70.41,
+     "at": 68.65,
      "color": "white"
     },
     {
      "text": "SOZINHO.",
-     "at": 70.87,
+     "at": 69.12,
      "color": "yellow"
     }
    ],
@@ -961,19 +961,19 @@
   },
   {
    "type": "phrase",
-   "start": 74.03,
-   "end": 75.52,
+   "start": 72.28,
+   "end": 73.77,
    "y": 900,
    "size": 63,
    "lines": [
     {
      "text": "É O NÚMERO",
-     "at": 74.08,
+     "at": 72.33,
      "color": "white"
     },
     {
      "text": "DO RENATO.",
-     "at": 74.51,
+     "at": 72.76,
      "color": "yellow"
     }
    ],
@@ -981,14 +981,14 @@
   },
   {
    "type": "phrase",
-   "start": 75.52,
-   "end": 76.98,
+   "start": 73.77,
+   "end": 75.23,
    "y": 900,
    "size": 58,
    "lines": [
     {
      "text": "MAS NÃO É ELE.",
-     "at": 75.57,
+     "at": 73.82,
      "color": "red",
      "shake": true
     }
@@ -997,19 +997,19 @@
   },
   {
    "type": "phrase",
-   "start": 80.56,
-   "end": 81.86,
+   "start": 78.8,
+   "end": 80.11,
    "y": 900,
    "size": 63,
    "lines": [
     {
      "text": "COM O LÁBIO",
-     "at": 80.61,
+     "at": 78.85,
      "color": "white"
     },
     {
      "text": "CORTADO.",
-     "at": 80.83,
+     "at": 79.07,
      "color": "red"
     }
    ],
@@ -1017,19 +1017,19 @@
   },
   {
    "type": "phrase",
-   "start": 81.91,
-   "end": 84.57,
+   "start": 80.16,
+   "end": 82.82,
    "y": 900,
    "size": 65,
    "lines": [
     {
      "text": "MONTES DE",
-     "at": 83.01,
+     "at": 81.26,
      "color": "white"
     },
     {
      "text": "SUCATA.",
-     "at": 83.61,
+     "at": 81.85,
      "color": "yellow"
     }
    ],
@@ -1037,19 +1037,19 @@
   },
   {
    "type": "phrase",
-   "start": 85.67,
-   "end": 87.37,
+   "start": 83.91,
+   "end": 85.61,
    "y": 900,
    "size": 65,
    "lines": [
     {
      "text": "A MÃO",
-     "at": 85.72,
+     "at": 83.96,
      "color": "white"
     },
     {
      "text": "COM O ANEL.",
-     "at": 86.37,
+     "at": 84.61,
      "color": "yellow"
     }
    ],
@@ -1057,19 +1057,19 @@
   },
   {
    "type": "phrase",
-   "start": 87.42,
-   "end": 89.53,
+   "start": 85.66,
+   "end": 87.78,
    "y": 900,
    "size": 65,
    "lines": [
     {
      "text": "DEPOIS,",
-     "at": 87.49,
+     "at": 85.73,
      "color": "white"
     },
     {
      "text": "UM ÁUDIO.",
-     "at": 88.03,
+     "at": 86.27,
      "color": "yellow"
     }
    ],
@@ -1077,19 +1077,19 @@
   },
   {
    "type": "phrase",
-   "start": 89.58,
-   "end": 92.51,
+   "start": 87.83,
+   "end": 90.75,
    "y": 900,
    "size": 58,
    "lines": [
     {
      "text": "“VOCÊ CORREU.",
-     "at": 89.65,
+     "at": 87.9,
      "color": "white"
     },
     {
      "text": "ELE NÃO.”",
-     "at": 91.43,
+     "at": 89.67,
      "color": "red"
     }
    ],
@@ -1097,19 +1097,19 @@
   },
   {
    "type": "phrase",
-   "start": 92.56,
-   "end": 95.69,
+   "start": 90.8,
+   "end": 93.93,
    "y": 900,
    "size": 56,
    "lines": [
     {
      "text": "“VAMOS TROCAR:",
-     "at": 92.63,
+     "at": 90.87,
      "color": "white"
     },
     {
      "text": "VOCÊ POR ELE.”",
-     "at": 93.94,
+     "at": 92.19,
      "color": "yellow",
      "shake": true
     }
@@ -1118,19 +1118,19 @@
   },
   {
    "type": "phrase",
-   "start": 95.74,
-   "end": 99.54,
+   "start": 93.98,
+   "end": 97.79,
    "y": 900,
    "size": 63,
    "lines": [
     {
      "text": "“3 DA MANHÃ.",
-     "at": 95.81,
+     "at": 94.05,
      "color": "white"
     },
     {
      "text": "SOZINHO.”",
-     "at": 98.32,
+     "at": 96.56,
      "color": "red"
     }
    ],
@@ -1138,25 +1138,25 @@
   },
   {
    "type": "phrase",
-   "start": 99.59,
-   "end": 103.69,
+   "start": 97.84,
+   "end": 101.93,
    "y": 920,
    "size": 60,
    "lines": [
     {
      "text": "“SE CHAMAR A POLÍCIA,",
-     "at": 99.66,
+     "at": 97.91,
      "color": "white",
      "size": 36
     },
     {
      "text": "A MÃE DELE",
-     "at": 101.49,
+     "at": 99.73,
      "color": "white"
     },
     {
      "text": "É A PRÓXIMA.”",
-     "at": 102.12,
+     "at": 100.36,
      "color": "red",
      "shake": true
     }
@@ -1165,19 +1165,19 @@
   },
   {
    "type": "phrase",
-   "start": 109.39,
-   "end": 110.76,
+   "start": 107.64,
+   "end": 109.0,
    "y": 900,
    "size": 72,
    "lines": [
     {
      "text": "CALMA",
-     "at": 109.44,
+     "at": 107.69,
      "color": "white"
     },
     {
      "text": "DEMAIS.",
-     "at": 109.78,
+     "at": 108.02,
      "color": "red"
     }
    ],
@@ -1185,19 +1185,19 @@
   },
   {
    "type": "phrase",
-   "start": 112.62,
-   "end": 115.65,
+   "start": 110.86,
+   "end": 113.89,
    "y": 900,
    "size": 56,
    "lines": [
     {
      "text": "A MESMA QUE TE",
-     "at": 112.67,
+     "at": 110.91,
      "color": "white"
     },
     {
      "text": "DAVA ALMOÇO.",
-     "at": 113.4,
+     "at": 111.65,
      "color": "yellow"
     }
    ],
@@ -1205,19 +1205,19 @@
   },
   {
    "type": "phrase",
-   "start": 118.35,
-   "end": 120.49,
+   "start": 116.6,
+   "end": 118.73,
    "y": 900,
    "size": 56,
    "lines": [
     {
      "text": "FALTAM MENOS",
-     "at": 118.4,
+     "at": 116.65,
      "color": "white"
     },
     {
      "text": "DE DUAS HORAS.",
-     "at": 119.28,
+     "at": 117.52,
      "color": "red"
     }
    ],
@@ -1225,25 +1225,25 @@
   },
   {
    "type": "phrase",
-   "start": 120.54,
-   "end": 124.11,
+   "start": 118.78,
+   "end": 122.35,
    "y": 920,
    "size": 60,
    "lines": [
     {
      "text": "ELE VENDEU O SEU NOME.",
-     "at": 121.14,
+     "at": 119.39,
      "color": "white",
      "size": 36
     },
     {
      "text": "AGORA PAGA",
-     "at": 122.29,
+     "at": 120.54,
      "color": "yellow"
     },
     {
      "text": "POR ELE.",
-     "at": 123.26,
+     "at": 121.51,
      "color": "yellow"
     }
    ],
@@ -1251,19 +1251,19 @@
   },
   {
    "type": "phrase",
-   "start": 125.71,
-   "end": 127.32,
+   "start": 123.96,
+   "end": 125.56,
    "y": 900,
    "size": 69,
    "lines": [
     {
      "text": "MAS ELE",
-     "at": 124.23,
+     "at": 122.47,
      "color": "white"
     },
     {
      "text": "TE DEU PÉ.",
-     "at": 125.76,
+     "at": 124.01,
      "color": "yellow"
     }
    ],
@@ -1271,19 +1271,19 @@
   },
   {
    "type": "phrase",
-   "start": 127.32,
-   "end": 135.7,
+   "start": 125.56,
+   "end": 133.95,
    "y": 600,
    "size": 69,
    "lines": [
     {
      "text": "TROCAR",
-     "at": 127.44,
+     "at": 125.68,
      "color": "white"
     },
     {
      "text": "OU DEIXAR?",
-     "at": 128.28,
+     "at": 126.53,
      "color": "yellow"
     }
    ],
@@ -1291,29 +1291,29 @@
   },
   {
    "type": "buttons",
-   "start": 129.29,
-   "end": 135.7,
+   "start": 127.53,
+   "end": 133.95,
    "y": 790,
    "x": 330,
    "prompt": "COMENTA UMA PALAVRA",
-   "prompt_at": 129.34,
+   "prompt_at": 127.58,
    "items": [
     {
      "text": "TROCAR",
-     "at": 129.78,
+     "at": 128.03,
      "style": "yellow"
     },
     {
      "text": "DEIXAR",
-     "at": 130.1,
+     "at": 128.35,
      "style": "white"
     }
    ]
   },
   {
    "type": "box",
-   "start": 130.81,
-   "end": 135.7,
+   "start": 129.06,
+   "end": 133.95,
    "y": 930,
    "x": 330,
    "title": "PARTE 4",
@@ -1503,47 +1503,47 @@
   },
   {
    "sound": "whoosh.wav",
-   "at": 29.72,
+   "at": 29.54,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 41.27,
+   "at": 40.63,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 53.19,
+   "at": 51.44,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 58.39,
+   "at": 56.64,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 71.86,
+   "at": 70.11,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 89.17,
+   "at": 87.42,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 110.4,
+   "at": 108.64,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 115.29,
+   "at": 113.53,
    "gain": -2
   },
   {
    "sound": "whoosh.wav",
-   "at": 126.96,
+   "at": 125.2,
    "gain": -2
   },
   {
@@ -1568,152 +1568,152 @@
   },
   {
    "sound": "passos.wav",
-   "at": 26.001,
+   "at": 26.121,
    "gain": -12
   },
   {
    "sound": "passos.wav",
-   "at": 27.959,
+   "at": 27.781,
    "gain": -13
   },
   {
    "sound": "impacto-suave.wav",
-   "at": 40.877,
+   "at": 40.244,
    "gain": -5
   },
   {
    "sound": "impacto.wav",
-   "at": 43.274,
+   "at": 42.641,
    "gain": -5
   },
   {
    "sound": "impacto-suave.wav",
-   "at": 46.462,
+   "at": 45.829,
    "gain": -8
   },
   {
    "sound": "impacto.wav",
-   "at": 47.98,
+   "at": 47.347,
    "gain": -5
   },
   {
    "sound": "passos.wav",
-   "at": 53.77,
+   "at": 52.015,
    "gain": -11
   },
   {
    "sound": "passos.wav",
-   "at": 54.22,
+   "at": 52.465,
    "gain": -12
   },
   {
    "sound": "passos.wav",
-   "at": 54.67,
+   "at": 52.915,
    "gain": -13
   },
   {
    "sound": "vibracao.wav",
-   "at": 72.933,
+   "at": 71.178,
    "gain": -8
   },
   {
    "sound": "impacto.wav",
-   "at": 75.532,
+   "at": 73.777,
    "gain": -6
   },
   {
    "sound": "notificacao.wav",
-   "at": 77.205,
+   "at": 75.45,
    "gain": -10
   },
   {
    "sound": "impacto-suave.wav",
-   "at": 80.566,
+   "at": 78.811,
    "gain": -9
   },
   {
    "sound": "notificacao.wav",
-   "at": 87.59,
+   "at": 85.835,
    "gain": -10
   },
   {
    "sound": "impacto-suave.wav",
-   "at": 93.902,
+   "at": 92.147,
    "gain": -7
   },
   {
    "sound": "impacto.wav",
-   "at": 102.076,
+   "at": 100.321,
    "gain": -6
   },
   {
    "sound": "cobranca-eco.wav",
-   "at": 104.938,
+   "at": 103.183,
    "gain": 10.3
   },
   {
    "sound": "impacto-suave.wav",
-   "at": 109.738,
+   "at": 107.983,
    "gain": -9
   },
   {
    "sound": "tique.wav",
-   "at": 115.77,
+   "at": 114.015,
    "gain": -15
   },
   {
    "sound": "tique.wav",
-   "at": 116.27,
+   "at": 114.515,
    "gain": -15
   },
   {
    "sound": "tique.wav",
-   "at": 116.77,
+   "at": 115.015,
    "gain": -15
   },
   {
    "sound": "tique.wav",
-   "at": 117.27,
+   "at": 115.515,
    "gain": -15
   },
   {
    "sound": "tique.wav",
-   "at": 117.77,
+   "at": 116.015,
    "gain": -15
   },
   {
    "sound": "tique.wav",
-   "at": 118.27,
+   "at": 116.515,
    "gain": -15
   },
   {
    "sound": "tique.wav",
-   "at": 118.77,
+   "at": 117.015,
    "gain": -15
   },
   {
    "sound": "tique.wav",
-   "at": 119.27,
+   "at": 117.515,
    "gain": -15
   },
   {
    "sound": "impacto-suave.wav",
-   "at": 122.254,
+   "at": 120.499,
    "gain": -8
   },
   {
    "sound": "pop.wav",
-   "at": 129.782,
+   "at": 128.027,
    "gain": -10
   },
   {
    "sound": "pop.wav",
-   "at": 130.102,
+   "at": 128.347,
    "gain": -10
   },
   {
    "sound": "pop.wav",
-   "at": 130.81,
+   "at": 129.055,
    "gain": -10
   }
  ],
