@@ -71,8 +71,13 @@ Inspirado nas histórias do @crimecarton no Instagram
   - **Geração:** o criador mandou o terceiro roteiro ao Codex. O Codex entregou as 13 cenas e as 3 vozes em 31/10/2026, por 4 créditos: 2 da narração, 1 do Renato e 1 do cobrador.
   - **Imagens:** as cenas vieram de novo com 941 × 1672, o máximo do gerador, e foram ampliadas para 1440 × 2560.
   - **Voz do Renato:** o “Zinho” de “Corre, Zinho!” saiu parecido com “senhor”, e a fala ficou “Corre! Corre!”.
-  - **Vídeos:** as duas versões têm 2 min 15 s e estão em [`episodio-03/`](crimecarton-analise/episodio-03/plano-ep03.md), com a capa “O PREÇO / VOCÊ POR ELE?”. Os quadros de cada plano foram conferidos nas duas versões.
-  - **Mudanças pedidas pelo criador:** depois de ver os vídeos, ele pediu três coisas. A cena 4 vai ser refeita, porque o corpo do Renato saiu cortado. O Renato vai ter uma voz normal de homem adulto. E cada coisa que a narração conta vai ter uma imagem própria, sem repetir desenho com zoom. O novo pedido ao Codex, com 23 imagens e 3 vozes de teste, está em [`pedido-codex-ep03-cenas-novas.md`](crimecarton-analise/episodio-03/pedido-codex-ep03-cenas-novas.md). Ele espera o ok do criador.
+  - **Vídeos:** as duas versões estão em [`episodio-03/`](crimecarton-analise/episodio-03/plano-ep03.md), com a capa “O PREÇO / VOCÊ POR ELE?”. Os quadros de cada plano foram conferidos nas duas versões.
+  - **Mudanças pedidas pelo criador:** depois de ver os vídeos, ele pediu três coisas, que viraram regra no [`CLAUDE.md`](CLAUDE.md):
+    - a cena 4 refeita, porque o corpo do Renato saiu cortado;
+    - uma voz normal de homem adulto para o Renato;
+    - uma imagem própria para cada coisa que a narração conta.
+  - **Segunda entrega do Codex:** 23 imagens e 3 vozes de teste, por 3 créditos, a partir de [`pedido-codex-ep03-cenas-novas.md`](crimecarton-analise/episodio-03/pedido-codex-ep03-cenas-novas.md). O criador escolheu a voz **Algenib**.
+  - **Montagem nova:** 35 desenhos diferentes em 41 planos, com 2 min 13 s. Ela substitui a primeira nos dois vídeos.
   - **Texto do post:** “Parte 3 – O preço 🎒”, “Trocar ou deixar? Comenta 👇”, “Inspirado em @crimecarton” e “#apartequefaltou”.
   - **TikTok e Shorts:** o crédito é “Inspirado no @crimecarton (Insta)”, e o título no Shorts é “Parte 3 – O preço 😨”.
   - **Comentário para fixar:** “Trocar ou deixar? Comenta uma palavra 👇”.

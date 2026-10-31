@@ -4,10 +4,10 @@ Roteiro em [`roteiro-ep03.txt`](roteiro-ep03.txt), com a voz de cada fala. Na Pa
 
 Este é o terceiro roteiro da Parte 3, de 31/10/2026. O criador recusou os dois primeiros, “A noite”, que seguiam uma fuga pelo bairro, um bar e uma avenida. Ele pediu outro caminho para a história e imagens novas, de mais qualidade. As imagens e as vozes estão pedidas ao Codex em [`pedido-codex-ep03.md`](pedido-codex-ep03.md), com a regra de composição que evita rostos atrás do painel do topo (ver [`../../CLAUDE.md`](../../CLAUDE.md)).
 
-O vídeo tem **2 min 15 s**:
+O vídeo tem **2 min 13 s**:
 - a vinheta da Parte 1, com 12 s;
 - 101 s do narrador, com 254 palavras mais as 16 do pedido do fim;
-- 7,5 s do Renato;
+- 7,2 s do Renato, na voz Algenib;
 - 13,7 s do cobrador;
 - as pausas de montagem.
 
@@ -25,39 +25,38 @@ O que muda em relação às versões recusadas:
 - **Uma escolha moral para o público:** trocar a própria liberdade pelo homem que o traiu, ou deixá-lo.
 - **As pistas fazem a história andar:** o anel tem dono e está perto, o ferro-velho da foto vira o lugar da troca, e a mãe vira refém da ameaça.
 
-## Estrutura
-
-Os desenhos do Codex chegaram com 941 × 1672 e foram ampliados para 1440 × 2560 por [`montagem/ampliar_cenas.py`](montagem/ampliar_cenas.py). Os originais estão em [`originais/`](originais/).
-
-| Trecho | Voz | Imagem | Na tela |
-|---|---|---|---|
-| Abertura | Vinheta da Parte 1, aviso e votação | `../episodio-01/cena-01-base.png` e fundo escuro | O bloco de sempre, com FUGIR 77% e FICAR 23% |
-| O nome | “E deram um nome a ele: Renato.” | `../episodio-02/cena-08-retrato-amigo.png` | “E O NOME DELE” e o carimbo “RENATO” |
-| O preço | Narrador | `cena-01-portao` e um relance de `cena-05-renato-grita`, escuro | “FUGIR TEM / UM PREÇO.” e “QUEM PAGA / É ELE.” |
-| Os homens | Narrador | `cena-01-portao`, nos dois homens e na lanterna | “DOIS HOMENS. / UMA LANTERNA.” |
-| A fuga | Narrador e Renato (“Pelos fundos. Vai!”, “Sobe. Eu vou atrás.”) | `cena-02-cozinha` e `cena-03-pe-no-muro`, com as mãos dele e o Zinho no alto do muro | “MAIS ALTO DO QUE / VOCÊ LEMBRAVA.” e “ELE TE DÁ PÉ.” |
-| A queda | Narrador | Tela preta, com o baque | — |
-| A mão | Narrador e Renato (“Corre! Corre!”) | `cena-04-mao-anel`, o anel de perto, o anel da foto da Parte 2 e `cena-05-renato-grita` | “UMA MÃO / POR TRÁS.”, “UM ANEL / DE OURO.” e o carimbo “O MESMO ANEL” |
-| Sozinho | Narrador | `cena-06-zinho-corre` e `cena-07-onibus` | “CADA PASSO / PESA MAIS.”, “UM ÔNIBUS / ABANDONADO.” e “VOCÊ ESTÁ / SOZINHO.” |
-| A foto | Narrador | `cena-08-celular` com a notificação do número do Renato, a conversa com a foto e `cena-09-foto-refem` | “MAS NÃO É ELE.”, “COM O LÁBIO / CORTADO.” e “A MÃO / COM O ANEL.” |
-| O áudio | O cobrador, com voz grave e som de celular | A conversa com o áudio, `cena-10-zinho-escuta` e `cena-12-ferro-velho` com a placa “FERRO-VELHO SÃO JORGE” | “VAMOS TROCAR: / VOCÊ POR ELE.”, “3 DA MANHÃ. / SOZINHO.” e “A MÃE DELE / É A PRÓXIMA.” |
-| Outra vez | Narrador e o começo do áudio repetido | `cena-10-zinho-escuta`, escura | “CALMA / DEMAIS.” |
-| A mãe | Narrador | `cena-11-almoco` como lembrança, num cartão de foto | “A MESMA QUE TE / DAVA ALMOÇO.” |
-| A hora | Narrador | `cena-08-celular` com 01:12 na tela de bloqueio | “FALTAM MENOS / DE DUAS HORAS.” |
-| O preço | Narrador | `cena-09-foto-refem`, escura, e as mãos do Renato no muro | “AGORA PAGA / POR ELE.” e “MAS ELE / TE DEU PÉ.” |
-| Votação | “Trocar ou deixar? Comenta uma palavra só. O que a maioria escolher vira a parte quatro.” | `cena-13-decisao`, escurecida | “TROCAR / OU DEIXAR?”, os botões e a caixa “PARTE 4” |
-
-Até a votação, o painel do topo mostra “A SUA PARTE R$ 0 · SUSPEITA ★★★★★”. Cada enquadramento deixa rostos, mãos, o celular e o anel fora do quarto de cima e da faixa de baixo. Os quadros de cada plano foram conferidos nas duas versões.
-
 ## Mudanças pedidas pelo criador em 31/10/2026
 
 O criador viu a primeira montagem de “O preço” e pediu três mudanças. Elas viraram regra para todas as partes, no [`CLAUDE.md`](../../CLAUDE.md):
 
-1. **A cena 4:** o corpo do Renato saiu cortado pelo muro, então ela vai ser refeita.
-2. **A voz do Renato:** a voz do narrador transformada ficou feia. Ele vai ter uma voz própria, de homem adulto, escolhida entre três testes (Orus, Achird e Algenib).
-3. **Uma imagem para cada coisa que a narração conta:** na primeira montagem, 13 desenhos se repetiam com zoom em 37 planos. A nova usa 35 desenhos diferentes, cada um uma vez só.
+1. **A cena 4:** o corpo do Renato saiu cortado pelo muro. O Codex refez a cena, com o Renato inteiro pendurado no muro.
+2. **A voz do Renato:** a voz do narrador transformada ficou feia. O Codex gravou as falas em três vozes de teste, e o criador escolheu a **Algenib**, a mais grave.
+3. **Uma imagem para cada coisa que a narração conta:** na primeira montagem, 13 desenhos se repetiam com zoom em 37 planos. A nova usa **35 desenhos diferentes em 41 planos**, cada um uma vez só.
 
-O pedido ao Codex está em [`pedido-codex-ep03-cenas-novas.md`](pedido-codex-ep03-cenas-novas.md), com a tabela de qual imagem entra em cada trecho. A tabela de estrutura acima é a da primeira montagem; a montagem nova sai quando as imagens e as vozes chegarem.
+O pedido ao Codex está em [`pedido-codex-ep03-cenas-novas.md`](pedido-codex-ep03-cenas-novas.md). Os desenhos chegaram com 941 × 1672 e foram ampliados para 1440 × 2560 por [`montagem/ampliar_cenas.py`](montagem/ampliar_cenas.py). Os originais estão em [`originais/`](originais/).
+
+## Estrutura
+
+| Trecho | Voz | Imagens, em ordem | Na tela |
+|---|---|---|---|
+| Abertura | Vinheta da Parte 1, aviso e votação | `../episodio-01/cena-01-base.png`, as capas das Partes 1 e 2 lado a lado e fundo escuro | O bloco de sempre, com FUGIR 77% e FICAR 23% |
+| O nome | “E deram um nome a ele: Renato.” | `../episodio-02/cena-08-retrato-amigo.png` | “E O NOME DELE” e o carimbo “RENATO” |
+| O preço | Narrador | 14, a mochila; 15, a mão no escuro | “FUGIR TEM / UM PREÇO.” e “QUEM PAGA / É ELE.” |
+| Os homens | Narrador | 1, o portão | “DOIS HOMENS. / UMA LANTERNA.” |
+| Pelos fundos | Renato | 16, Renato puxa o Zinho | “PELOS FUNDOS. / VAI!” |
+| O muro | Narrador e Renato | 2, a cozinha; 17, o muro alto; 3, o pé no muro; 18, “Sobe” | “MAIS ALTO DO QUE / VOCÊ LEMBRAVA.”, “ELE TE DÁ PÉ.” e “SOBE. / EU VOU ATRÁS.” |
+| O outro lado | Narrador | 19, o beco | — |
+| A mão | Narrador e Renato | 4, a mão no muro; 20, o anel na gola; a foto da divisão da Parte 2; 5, Renato grita | “UMA MÃO / POR TRÁS.”, “UM ANEL / DE OURO.”, o carimbo “O MESMO ANEL” e “CORRE, ZINHO! / CORRE!” |
+| Sozinho | Narrador | 6, a corrida; 21, sem fôlego; 22, o ônibus de fora; 7, dentro dele; 23, o celular e a chave; 24, o corredor | “CADA PASSO / PESA MAIS.”, “ATÉ O AR / ACABAR.”, “UM ÔNIBUS / ABANDONADO.”, “UMA CASA / SEM VOLTA.” e “VOCÊ ESTÁ / SOZINHO.” |
+| A foto | Narrador | 8, a notificação às 01:04; 25, a conversa com a foto; 9, a foto; 26, a sucata; 27, a mão no ombro | “É O NÚMERO / DO RENATO.”, “MAS NÃO É ELE.”, “COM O LÁBIO / CORTADO.”, “MONTES DE / SUCATA.” e “A MÃO / COM O ANEL.” |
+| O áudio | Narrador e o cobrador, com voz grave e som de celular | 28, a conversa com o áudio; 10, o Zinho escuta; 29, o cobrador grava; 12, o ferro-velho com a placa; 30, a casa da mãe | “DEPOIS, / UM ÁUDIO.”, “VOCÊ CORREU. / ELE NÃO.”, “VAMOS TROCAR: / VOCÊ POR ELE.”, “3 DA MANHÃ. / SOZINHO.” e “A MÃE DELE / É A PRÓXIMA.” |
+| Outra vez | Narrador e o começo do áudio repetido | 31, os olhos do Zinho; 35, o cobrador tranquilo | “CALMA / DEMAIS.” |
+| A mãe | Narrador | 11, o almoço, num cartão de foto | “A MESMA QUE TE / DAVA ALMOÇO.” |
+| A hora | Narrador | 32, o relógio em 01:12 | “FALTAM MENOS / DE DUAS HORAS.” |
+| O preço | Narrador | 33, Renato sozinho no ferro-velho; 34, a lembrança das mãos dele | “AGORA PAGA / POR ELE.” e “MAS ELE / TE DEU PÉ.” |
+| Votação | “Trocar ou deixar? Comenta uma palavra só. O que a maioria escolher vira a parte quatro.” | 13, a porta do ônibus, escurecida | “TROCAR / OU DEIXAR?”, os botões e a caixa “PARTE 4” |
+
+Até a votação, o painel do topo mostra “A SUA PARTE R$ 0 · SUSPEITA ★★★★★”. Os quadros de cada plano foram conferidos nas duas versões: nenhum rosto, mão, celular ou anel fica atrás do painel, da etiqueta ou dos botões do TikTok.
 
 ## Votação
 
