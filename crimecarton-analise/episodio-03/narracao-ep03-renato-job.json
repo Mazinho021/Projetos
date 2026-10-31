@@ -1,0 +1,57 @@
+{
+  "jobId": "mcp_media_e7161234b80c89995606a99be2bf004b240a6057610fbded764b5b95bda0251f",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "file": "narracao-ep03-renato.wav",
+      "mimeType": "audio/wav",
+      "durationSeconds": 7.49,
+      "bytes": 359564,
+      "sha256": "b89af3af5d65a28e988b14fc198016d453203909e2399e4e4caef1b9aab0c426",
+      "sampleRate": 24000,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "clippedSamples": 0
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep03-renato-charon-v3-20261031",
+    "voice": "Charon",
+    "style": "Português brasileiro. A mesma voz do narrador, mas interpretando Renato, o amigo de infância de Zinho, que o traiu e agora foge com ele à noite: fala em pessoa, ofegante e urgente. “Pelos fundos. Vai!” e “Sobe. Eu vou atrás.” saem baixos e rápidos. “Corre, Zinho! Corre!” é um grito desesperado, de quem está sendo puxado para trás. Natural, sem caricatura. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+    "text": "Pelos fundos. Vai!\n\nSobe. Eu vou atrás.\n\nCorre, Zinho! Corre!",
+    "sourceFile": "crimecarton-analise/episodio-03/pedido-narracao-renato-ep03.json"
+  },
+  "sourceCommit": "6c97219413950dc0df531832c43e8ce63ee903fa",
+  "postProcessing": {
+    "reason": "O ASR sem dica reconheceu o vocativo como senhor. A fala final foi montada como Corre! Corre! reutilizando a última palavra Corre, conforme orientação de CLAUDE.md para cortar fala incorreta.",
+    "preservedOriginalSeconds": [
+      0,
+      5.95
+    ],
+    "lastWordOriginalSeconds": [
+      6.76,
+      7.4
+    ],
+    "lastWordRepetitions": 2,
+    "pauseBetweenWordsSeconds": 0.16,
+    "edgeFadeSeconds": 0.005,
+    "originalDurationSeconds": 7.48,
+    "originalSha256": "720dad155547242b1719eb27d0ef854deb182bbef1110cc0a2cea3c6077ae792",
+    "finalLine": "Corre! Corre!",
+    "additionalCredits": 0
+  },
+  "validation": {
+    "audioDecode": "passed",
+    "model": "faster-whisper-medium",
+    "language": "pt",
+    "initialPrompt": null,
+    "transcription": "Pelos fundos! Vai! Sobe! Eu vou atrás! Corre! Corre!",
+    "clippedSamples": 0
+  }
+}

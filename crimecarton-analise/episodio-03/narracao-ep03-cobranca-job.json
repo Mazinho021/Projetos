@@ -1,0 +1,39 @@
+{
+  "jobId": "mcp_media_23ec122ade074e6015a60eb4f38d8ee4b7d7ebd3057a29eaf05e83e69a6f6d65",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "file": "narracao-ep03-cobranca.wav",
+      "mimeType": "audio/wav",
+      "durationSeconds": 13.68,
+      "bytes": 662756,
+      "sha256": "70f226de8fa49fb2b5011fff0b9c5ac2ce9ba97db263597656a13b500e491607",
+      "sampleRate": 24000,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "clippedSamples": 0
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep03-cobranca-charon-v1-20261031",
+    "voice": "Charon",
+    "style": "Português brasileiro. A mesma voz do narrador, mas interpretando outro homem: o cobrador de uma dívida, que manda um áudio de ameaça. Fala devagar, baixo e calmo, calmo demais, sem gritar e sem pressa, com pausas curtas entre as frases. Frio e seguro de si, como quem tem o controle. Natural, sem caricatura de vilão.",
+    "text": "Você correu. Ele não. Vamos trocar: você por ele. Três da manhã, no ferro-velho. Sozinho. Se chamar a polícia, a mãe dele é a próxima.",
+    "sourceFile": "crimecarton-analise/episodio-03/pedido-narracao-cobranca-ep03.json"
+  },
+  "sourceCommit": "6c97219413950dc0df531832c43e8ce63ee903fa",
+  "validation": {
+    "audioDecode": "passed",
+    "model": "faster-whisper-medium",
+    "language": "pt",
+    "initialPrompt": null,
+    "transcription": "Você correu. Ele não. Vamos trocar. Você por ele. Três da manhã, no ferro velho. Sozinho. Se chamar polícia, a mãe dele é a próxima.",
+    "clippedSamples": 0
+  }
+}
