@@ -55,7 +55,7 @@ O criador viu a primeira montagem de “O preço” e pediu três mudanças. Ela
 
 1. **A cena 4:** o corpo do Renato saiu cortado pelo muro, então ela vai ser refeita.
 2. **A voz do Renato:** a voz do narrador transformada ficou feia. Ele vai ter uma voz própria, de homem adulto, escolhida entre três testes (Orus, Achird e Algenib).
-3. **Uma imagem para cada coisa que a narração conta:** na primeira montagem, 13 desenhos se repetiam com zoom em 37 planos. A nova usa 34 desenhos diferentes, cada um uma vez só.
+3. **Uma imagem para cada coisa que a narração conta:** na primeira montagem, 13 desenhos se repetiam com zoom em 37 planos. A nova usa 35 desenhos diferentes, cada um uma vez só.
 
 O pedido ao Codex está em [`pedido-codex-ep03-cenas-novas.md`](pedido-codex-ep03-cenas-novas.md), com a tabela de qual imagem entra em cada trecho. A tabela de estrutura acima é a da primeira montagem; a montagem nova sai quando as imagens e as vozes chegarem.
 

@@ -40,11 +40,15 @@ sys.path.insert(0, str(TOOLS))
 import graficos  # noqa: E402
 
 SCRIPT = EPISODE / 'roteiro-ep03.txt'
+# Since Part 3, Renato has his own voice, a natural adult man's, and no longer the narrator's
+# changed by voz_amigo.py, which the creator found ugly. Codex recorded his lines in three test
+# voices (pedido-codex-ep03-cenas-novas.md); this is the one the creator chose.
+RENATO_VOZ = 'orus'
 # The opening comes matched to this narrator by igualar_vozes.py.
 VOICES = {'VINHETA': (HERE / 'vozes' / 'vinheta.wav', TOOLS / 'alinhamento-narracao.json'),
           'NARRADOR': (EPISODE / 'narracao-ep03-narrador.wav', HERE / 'alinhamento-narrador.json'),
-          # Renato in the voice of his message in Part 1, made by voz_renato.py.
-          'RENATO': (HERE / 'vozes' / 'renato.wav', HERE / 'alinhamento-renato.json'),
+          # Renato's own voice, a natural adult man's, as recorded (see RENATO_VOZ).
+          'RENATO': (EPISODE / f'narracao-ep03-renato-{RENATO_VOZ}.wav', HERE / f'alinhamento-renato-{RENATO_VOZ}.json'),
           # The cobrador's audio message, made by voz_cobranca.py.
           'COBRANCA': (HERE / 'vozes' / 'cobranca.wav', HERE / 'alinhamento-cobranca.json')}
 AUDIO = EPISODE / 'narracao-ep03.wav'
@@ -330,7 +334,8 @@ def abertura(ed, part, vote, pointer, profile, decided, winner_word, story):
     scenes = [
         ('opening', 0, dict(kind='art', asset=art, zoom=.06)),
         ('black', black, dict(kind='black')),
-        ('pointer', point, dict(kind='art', asset=art, brightness=.5, zoom=.05, direction='out')),
+        # The covers of the earlier parts, as the profile shows them (compor_cenas.py).
+        ('pointer', point, dict(kind='art', asset=f"montagem/arte/perfil{L['art']}.png", zoom=.03, direction='out')),
         ('vote', result, dict(kind='black')),
     ]
     graphics = [
@@ -345,13 +350,13 @@ def abertura(ed, part, vote, pointer, profile, decided, winner_word, story):
         phrase(black + .05, point, 560, [line('VOCÊ FICOU COM', s(V(10))), line('O ROSTO', s(V(14)), 'yellow'),
                                          line('NO JORNAL.', s(V(15)), 'yellow')], 64, x),
         {'type': 'stars', 'start': black + .05, 'end': point, 'y': 790, 'x': x, 'at': s(V(14)), 'step': .12},
-        phrase(point + .05, result, 590, [line('CHEGOU AGORA?', s(pointer), 'yellow', size=64),
+        phrase(point + .05, result, 790, [line('CHEGOU AGORA?', s(pointer), 'yellow', size=64),
                                           line(f'A PARTE {part - 1} TÁ' if part == 2 else
                                                f"AS PARTES {', '.join(str(n) for n in range(1, part - 1))} E {part - 1}",
                                                s(profile), size=52),
                                           line('NO PERFIL' if part == 2 else 'TÃO NO PERFIL', s(profile) + .45, size=52)],
                72, x),
-        {'type': 'pointer', 'start': round(s(profile) + .45, 2), 'end': result, 'y': 800, 'x': x, 'text': HANDLE},
+        {'type': 'pointer', 'start': round(s(profile) + .45, 2), 'end': result, 'y': 940, 'x': x, 'text': HANDLE},
         {'type': 'bars', 'start': result + .05, 'end': story, 'y': 500, 'x': x, 'width': L['bars'],
          'title': f'PARTE {part - 1} · VOCÊS VOTARAM', 'title_at': round(s(decided), 2),
          'items': [{'label': name, 'pct': pct, 'at': round(s(decided) + .1 + .15*k, 2), 'winner': name == winner}
@@ -372,40 +377,21 @@ def abertura(ed, part, vote, pointer, profile, decided, winner_word, story):
 
 
 # Framings inside the illustrations: left, top, right, bottom as fractions. Equal width and
-# height keep the 9:16 shape. Each one is chosen so that, after its zoom, no face, hand,
-# phone or ring sits in the top quarter (the panel and the tag) or in the bottom fifth.
-MEN01 = [0.05, 0.12, 0.75, 0.82]         # the two men and the torch, through the window
-RENATO02 = [0.30, 0.06, 1.0, 0.76]       # Renato in front, at the back door
+# height keep the 9:16 shape. Each drawing appears once, whole or nearly whole: a framing only
+# moves faces below the tag or things left of TikTok's buttons.
 KITCHEN02 = [0.06, 0.0, 0.94, 0.88]      # the two running, their heads below the tag
-BOOST03 = [0.15, 0.15, 0.85, 0.85]       # Renato's hands under Zinho's foot
-TOP03 = [0.16, 0.17, 0.76, 0.77]         # Zinho reaching the top of the wall
-RING04 = [0.45, 0.19, 1.0, 0.74]         # the ring on the hand at Renato's collar
 SCREAM05 = [0.05, 0.0, 0.95, 0.9]        # Renato shouting, his head below the panel
-FACE06 = [0.25, 0.195, 0.75, 0.695]      # Zinho running, out of breath
-ZINHO07 = [0.14, 0.19, 0.74, 0.79]       # Zinho on the bus floor
-POCKET07 = [0.21, 0.255, 0.71, 0.755]    # his hands and the dark phone
-PHONE_WIDE = [0.125, 0.13, 0.875, 0.88]  # the phone in his hand, the screen from 29% to 66%
-PHONE_CLOSE = [0.20, 0.165, 0.80, 0.765]  # closer: the screen from 30% to 76%, below the tag
-SHOULDER09 = [0.30, 0.05, 1.0, 0.75]     # the hand with the ring on Renato's shoulder
-FACE10 = [0.15, 0.07, 0.85, 0.77]        # Zinho's face as he listens: hair below the tag, chin above the phrase
 PHOTO09 = [0.2, 0.04, 1.0, 0.84]         # the photo: the ring left of TikTok's buttons
 JUNK12 = [0.16, 0.08, 1.0, 0.92]         # the gate, with the sign left of TikTok's buttons
 DOOR13 = [0.05, 0.0, 0.95, 0.9]          # Zinho at the bus door
 RING_PHOTO = [0.513, 0.27, 0.953, 0.71]  # the ring in Part 2's photo, the other hand below the tag
-# The lit, blank screen of the phone in scene 8 (compor_cenas.TELA08), a little larger so
-# the lock screen covers its bright edge. The night of the escape is past midnight of the
-# 28th, Part 2's "23:47".
-_TELA08 = [(.3889, .3481), (.6153, .3481), (.6132, .6220), (.3868, .6220)]
-_MID08 = (sum(x for x, _ in _TELA08)/4, sum(y for _, y in _TELA08)/4)
-SCREEN08 = [[round(_MID08[0] + (x - _MID08[0])*1.035, 4), round(_MID08[1] + (y - _MID08[1])*1.035, 4)] for x, y in _TELA08]
-NIGHT = 'quinta-feira, 29 de outubro'
-LOCK_PHOTO = {'quad': SCREEN08, 'state': 'lock', 'date': NIGHT, 'time': '01:04',
-              'app': 'MENSAGENS', 'sender': 'Renato', 'message': 'Foto', 'when': 'agora'}
-LOCK_HOUR = {'quad': SCREEN08, 'state': 'lock', 'date': NIGHT, 'time': '01:12',
-             'app': 'MENSAGENS', 'sender': 'Renato', 'message': 'Áudio (0:14)', 'when': '7 min'}
 # The junkyard's blank sign in scene 12, with the name from Part 2's calendar.
 SIGN12 = [{'box': [0.5824, 0.4755, 0.8183, 0.5413], 'text': 'FERRO-VELHO\nSÃO JORGE', 'color': [74, 36, 22],
            'opacity': .86, 'weight': 'ExtraBold', 'pad': 6, 'blur': .6}]
+
+
+def art(asset, zoom=.05, **kw):
+    return dict(kind='art', asset=asset, zoom=zoom, **kw)
 
 
 def build(ed):
@@ -418,69 +404,59 @@ def build(ed):
     p2 = '../episodio-02/'
     allies = json.loads(ALLIES.read_text(encoding='utf-8')) if ALLIES.exists() else []
     VOICE_END = ed.at[('NARRADOR', len(TEXT['NARRADOR']) - 1)][1]
+    # One drawing for each thing the narration tells (../../../CLAUDE.md), in the order of the
+    # script. The phone's screens come from compor_cenas.py.
     plan = opening + [
-        # The name the audience gave him, over his portrait from Part 2.
-        ('name', cut(N('E deram um')), dict(kind='art', asset=p2 + 'cena-08-retrato-amigo.png', zoom=.05)),
-        ('hook', story, dict(kind='art', asset='cena-01-portao.png', zoom=.05)),
-        # A flash of what is coming: Renato caught.
-        ('flash', cut(N('E esta noite,')), dict(kind='art', asset='cena-05-renato-grita.png', crop=SCREAM05, zoom=.06,
-                                                brightness=.6)),
-        ('men', cut(N('Lá fora, dois')), dict(kind='art', asset='cena-01-portao.png', crop=MEN01, zoom=.06)),
-        ('back', cut(R('Pelos fundos.')), dict(kind='art', asset='cena-02-cozinha.png', crop=RENATO02, zoom=.06)),
-        ('kitchen', cut(N('Vocês atravessam a')), dict(kind='art', asset='cena-02-cozinha.png', crop=KITCHEN02, zoom=.04,
-                                                       direction='out')),
-        ('wall', cut(N('No quintal, o')), dict(kind='art', asset='cena-03-pe-no-muro.png', zoom=.05)),
-        ('boost', cut(N('Renato junta as')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=BOOST03, zoom=.04)),
-        ('jump', cut(N('Você sobe, pula')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=TOP03, zoom=.06)),
-        ('fall', round(e(N('cai do outro lado.', 3)) - .02, 2), dict(kind='black')),
-        ('grab', cut(N('Quando ele agarra')), dict(kind='art', asset='cena-04-mao-anel.png', zoom=.05)),
-        ('ring', cut(N('No dedo, um')), dict(kind='art', asset='cena-04-mao-anel.png', crop=RING04, zoom=.08)),
-        ('photo-ring', cut(N('O mesmo anel')), dict(kind='art', asset=p2 + 'cena-04-foto-divisao.png', crop=RING_PHOTO,
-                                                    zoom=.06)),
-        ('scream', cut(R('Corre! Corre!')), dict(kind='art', asset='cena-05-renato-grita.png', crop=SCREAM05, zoom=.08)),
-        ('run', cut(N('Você corre. E')), dict(kind='art', asset='cena-06-zinho-corre.png', zoom=.05)),
-        ('breath', cut(N('Só para quando')), dict(kind='art', asset='cena-06-zinho-corre.png', crop=FACE06, zoom=.05)),
-        ('bus', cut(N('No fim da')), dict(kind='art', asset='cena-07-onibus.png', zoom=.05, direction='out')),
-        ('hide', cut(N('Você se esconde')), dict(kind='art', asset='cena-07-onibus.png', crop=ZINHO07, zoom=.05)),
-        ('pocket', cut(N('No bolso, o')), dict(kind='art', asset='cena-07-onibus.png', crop=POCKET07, zoom=.05)),
-        ('alone', cut(N('Pela primeira vez')), dict(kind='art', asset='cena-07-onibus.png', zoom=.04, direction='out',
-                                                    brightness=.75)),
-        # Renato's number, but not Renato: the photo, then the message.
-        ('buzz', cut(N('Então o celular')), dict(kind='art', asset='cena-08-celular.png', crop=PHONE_WIDE, zoom=.05,
-                                                 screen=LOCK_PHOTO)),
-        ('chat-photo', cut(N('Primeiro, uma foto.')), dict(kind='art', asset='montagem/arte/celular-foto.png',
-                                                           crop=PHONE_CLOSE, zoom=.05)),
-        ('photo', cut(N('Renato numa cadeira,')), dict(kind='art', asset='cena-09-foto-refem.png', crop=PHOTO09, zoom=.05)),
-        ('scrap', cut(N('Atrás dele, montes')), dict(kind='art', asset='cena-09-foto-refem.png', crop=PHOTO09, zoom=.04,
-                                                     direction='out', brightness=.9)),
-        ('shoulder', cut(N('No ombro dele,')), dict(kind='art', asset='cena-09-foto-refem.png', crop=SHOULDER09, zoom=.06)),
-        ('chat-audio', cut(N('Depois, um áudio.')), dict(kind='art', asset='montagem/arte/celular-audio.png',
-                                                         crop=PHONE_CLOSE, zoom=.05)),
-        ('listen', cut(C('Você correu.')), dict(kind='art', asset='cena-10-zinho-escuta.png', zoom=.05)),
-        ('trade', cut(C('Vamos trocar:')), dict(kind='art', asset='cena-10-zinho-escuta.png', crop=FACE10, zoom=.06)),
-        ('junkyard', cut(C('Três da manhã,')), dict(kind='art', asset='cena-12-ferro-velho.png', crop=JUNK12, zoom=.05,
-                                                    paint=SIGN12)),
-        ('threat', cut(C('Se chamar a')), dict(kind='art', asset='cena-10-zinho-escuta.png', crop=FACE10, zoom=.04,
-                                               direction='out', brightness=.85)),
-        ('again', cut(N('Você escuta outra')), dict(kind='art', asset='cena-10-zinho-escuta.png', zoom=.04,
-                                                    direction='out', brightness=.8)),
+        ('name', cut(N('E deram um')), art(p2 + 'cena-08-retrato-amigo.png')),
+        ('hook', story, art('cena-14-mochila.png')),
+        ('flash', cut(N('E esta noite,')), art('cena-15-mao-no-escuro.png', .06)),
+        ('men', cut(N('Lá fora, dois')), art('cena-01-portao.png', .06)),
+        ('back', cut(R('Pelos fundos.')), art('cena-16-renato-puxa.png', .06)),
+        ('kitchen', cut(N('Vocês atravessam a')), art('cena-02-cozinha.png', .04, crop=KITCHEN02, direction='out')),
+        ('wall', cut(N('No quintal, o')), art('cena-17-muro-alto.png', .04, direction='out')),
+        ('boost', cut(N('Renato junta as')), art('cena-03-pe-no-muro.png', .04)),
+        ('climb', cut(R('Sobe.')), art('cena-18-sobe.png')),
+        ('jump', cut(N('Você sobe, pula')), art('cena-19-do-outro-lado.png')),
+        ('grab', cut(N('Quando ele agarra')), art('cena-04-mao-anel.png')),
+        ('ring', cut(N('No dedo, um')), art('cena-20-anel-gola.png', .06)),
+        ('photo-ring', cut(N('O mesmo anel')), art(p2 + 'cena-04-foto-divisao.png', .06, crop=RING_PHOTO)),
+        ('scream', cut(R('Corre, Zinho!')), art('cena-05-renato-grita.png', .08, crop=SCREAM05)),
+        ('run', cut(N('Você corre. E')), art('cena-06-zinho-corre.png')),
+        ('breath', cut(N('Só para quando')), art('cena-21-sem-folego.png')),
+        ('bus', cut(N('No fim da')), art('cena-22-onibus-fora.png', .04, direction='out')),
+        ('hide', cut(N('Você se esconde')), art('cena-07-onibus.png')),
+        ('pocket', cut(N('No bolso, o')), art('cena-23-celular-chave.png')),
+        ('alone', cut(N('Pela primeira vez')), art('cena-24-sozinho.png', .04, direction='out')),
+        # Renato's number, but not Renato: the notification, the photo, then the message.
+        ('buzz', cut(N('Então o celular')), art('montagem/arte/tela-notificacao.png')),
+        ('chat-photo', cut(N('Primeiro, uma foto.')), art('montagem/arte/tela-foto.png')),
+        ('photo', cut(N('Renato numa cadeira,')), art('cena-09-foto-refem.png', crop=PHOTO09)),
+        ('scrap', cut(N('Atrás dele, montes')), art('cena-26-sucata.png', .04, direction='out')),
+        ('shoulder', cut(N('No ombro dele,')), art('cena-27-mao-no-ombro.png', .06)),
+        ('chat-audio', cut(N('Depois, um áudio.')), art('montagem/arte/tela-audio.png')),
+        ('listen', cut(C('Você correu.')), art('cena-10-zinho-escuta.png')),
+        ('trade', cut(C('Vamos trocar:')), art('cena-29-cobrador-grava.png')),
+        ('junkyard', cut(C('Três da manhã,')), art('cena-12-ferro-velho.png', crop=JUNK12, paint=SIGN12)),
+        ('threat', cut(C('Se chamar a')), art('cena-30-casa-da-mae.png')),
+        ('again', cut(N('Você escuta outra')), art('cena-31-olhos.png', .04)),
+        ('calm', cut(N('A voz é')), art('cena-35-calma.png')),
         # The lunch as a memory: the drawing on a card, so Renato as a boy stays left of
         # TikTok's buttons (compor_cenas.py, one card per layout).
-        ('mother', cut(N('A mãe dele.')), dict(kind='art', asset=f"montagem/arte/lembranca{L['art']}.png", zoom=.04,
-                                               direction='out')),
-        ('clock', cut(N('Você olha a')), dict(kind='art', asset='cena-08-celular.png', crop=PHONE_CLOSE, zoom=.06,
-                                              screen=LOCK_HOUR)),
-        ('price', cut(N('O homem que')), dict(kind='art', asset='cena-09-foto-refem.png', crop=PHOTO09, zoom=.04,
-                                              direction='out', brightness=.7)),
-        ('help', cut(N('Mas foi esse')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=BOOST03, zoom=.04,
-                                              brightness=.85)),
+        ('mother', cut(N('A mãe dele.')), art(f"montagem/arte/lembranca{L['art']}.png", .04, direction='out')),
+        ('clock', cut(N('Você olha a')), art('montagem/arte/tela-hora.png', .06)),
+        ('price', cut(N('O homem que')), art('cena-33-renato-sozinho.png', .04, direction='out')),
+        ('help', cut(N('Mas foi esse')), art('cena-34-maos-degrau.png', .04)),
         # The vote: Zinho at the bus door, dark under the question and the buttons.
-        ('choice', cut(N('Trocar ou deixar?')), dict(kind='art', asset='cena-13-decisao.png', crop=DOOR13, zoom=.03,
-                                                     direction='out', brightness=.45)),
+        ('choice', cut(N('Trocar ou deixar?')), art('cena-13-decisao.png', .03, crop=DOOR13, direction='out',
+                                                    brightness=.45)),
     ]
     if allies:
-        plan.append(('credits', round(VOICE_END + .6, 2), dict(kind='art', asset='montagem/arte/creditos.png', zoom=.03)))
+        plan.append(('credits', round(VOICE_END + .6, 2), art('montagem/arte/creditos.png', .03)))
     plan.sort(key=lambda item: item[1])
+    used = [f['asset'] for _, _, f in plan if f.get('asset') and 'episodio-01' not in f['asset']]
+    repeated = sorted({a for a in used if used.count(a) > 1})
+    if repeated:
+        raise ValueError(f'drawings used more than once: {repeated}')
     AT = {name: t for name, t, _ in plan}
     scenes = [{'start': t, 'end': plan[k+1][1] if k + 1 < len(plan) else END, **fields}
               for k, (_, t, fields) in enumerate(plan)]
@@ -502,7 +478,7 @@ def build(ed):
         {'type': 'vignette', 'start': AT['flash'], 'end': AT['men'], 'color': 'alert', 'strength': .8},
         {'type': 'vignette', 'start': AT['grab'], 'end': AT['run'], 'color': 'alert', 'strength': .8},
         {'type': 'vignette', 'start': AT['listen'], 'end': AT['again'], 'color': 'alert', 'strength': .7},
-        {'type': 'vignette', 'start': AT['price'], 'end': AT['choice'], 'color': 'alert', 'strength': .6},
+        {'type': 'vignette', 'start': AT['price'], 'end': AT['help'], 'color': 'alert', 'strength': .6},
         phrase(AT['hook'] + .05, AT['flash'], 900, [line('FUGIR TEM', s(N('Mas fugir tem'))),
                                                     line('UM PREÇO.', s(N('um preço.')), 'yellow')], 72, x),
         phrase(AT['flash'] + .05, AT['men'], 900, [line('QUEM PAGA', s(N('quem paga é'))),
@@ -513,19 +489,21 @@ def build(ed):
                                                       line('VAI!”', s(R('Vai!')), 'yellow', shake=True)], 64, x),
         phrase(s(N('mais alto do')) - .05, AT['boost'], 900, [line('MAIS ALTO DO QUE', s(N('mais alto do'))),
                                                               line('VOCÊ LEMBRAVA.', s(N('você lembrava.')), 'yellow')], 54, x),
-        phrase(s(N('te dá pé.')) - .05, s(R('Sobe.')) - .1, 900, [line('ELE TE DÁ PÉ.', s(N('te dá pé.')), 'yellow')], 62, x),
-        phrase(s(R('Sobe.')) - .1, AT['jump'], 900, [line('“SOBE.', s(R('Sobe.'))),
-                                                     line('EU VOU ATRÁS.”', s(R('Eu vou atrás.')), 'yellow')], 62, x),
+        phrase(s(N('te dá pé.')) - .05, AT['climb'], 900, [line('ELE TE DÁ PÉ.', s(N('te dá pé.')), 'yellow')], 62, x),
+        phrase(AT['climb'] + .05, AT['jump'], 900, [line('“SOBE.', s(R('Sobe.'))),
+                                                    line('EU VOU ATRÁS.”', s(R('Eu vou atrás.')), 'yellow')], 62, x),
         phrase(s(N('uma mão puxa')) - .05, AT['ring'], 900, [line('UMA MÃO', s(N('uma mão puxa'))),
                                                              line('POR TRÁS.', s(N('por trás.')), 'red', shake=True)], 76, x),
         phrase(s(N('um anel grosso')) - .05, AT['photo-ring'], 900, [line('UM ANEL', s(N('um anel grosso'))),
                                                                      line('DE OURO.', s(N('de ouro.')), 'yellow')], 76, x),
         {'type': 'stamp', 'start': round(s(N('O mesmo anel')) - .02, 2), 'end': AT['scream'], 'text': 'O MESMO ANEL',
          'y': 940, 'x': x, 'angle': -7},
-        phrase(AT['scream'] + .05, AT['run'], 900, [line('“CORRE!', s(R('Corre! Corre!')), 'red', shake=True),
-                                                    line('CORRE!”', s(R('Corre! Corre!', 1)), 'red', shake=True)], 80, x),
+        phrase(AT['scream'] + .05, AT['run'], 900, [line('“CORRE, ZINHO!', s(R('Corre, Zinho!')), 'red', shake=True),
+                                                    line('CORRE!”', s(R('Corre, Zinho! Corre!', 2)), 'red', shake=True)], 70, x),
         phrase(s(N('cada passo pesa')) - .05, AT['breath'], 900, [line('CADA PASSO', s(N('cada passo pesa'))),
                                                                   line('PESA MAIS.', s(N('pesa mais que')), 'yellow')], 72, x),
+        phrase(s(N('o ar acaba.')) - .05, AT['bus'], 900, [line('ATÉ O AR', s(N('o ar acaba.'))),
+                                                           line('ACABAR.', s(N('o ar acaba.', 2)), 'yellow')], 72, x),
         phrase(s(N('um ônibus abandonado.')) - .05, AT['hide'], 900, [
             line('UM ÔNIBUS', s(N('um ônibus abandonado.'))),
             line('ABANDONADO.', s(N('um ônibus abandonado.', 2)), 'yellow')], 66, x),

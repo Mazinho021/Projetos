@@ -6,7 +6,7 @@ Criado em 31/10/2026 no Claude Code, que não tem gerador de imagens nem a gera�
 2. Dar ao Renato uma voz normal de homem adulto, no lugar da voz do narrador transformada.
 3. Usar uma imagem diferente para cada coisa que a narração conta, sem repetir a mesma imagem só com zoom.
 
-São **22 ilustrações**: 21 novas e a cena 4 refeita. Também são **3 gravações curtas do Renato**, uma em cada voz de teste, para o criador escolher. O roteiro não muda: está em [`roteiro-ep03.txt`](roteiro-ep03.txt). Não alterar nenhum outro arquivo do projeto. Fazer tudo numa tarefa só, sem abrir agentes em paralelo.
+São **23 ilustrações**: 22 novas e a cena 4 refeita. Também são **3 gravações curtas do Renato**, uma em cada voz de teste, para o criador escolher. O roteiro não muda: está em [`roteiro-ep03.txt`](roteiro-ep03.txt). Não alterar nenhum outro arquivo do projeto. Fazer tudo numa tarefa só, sem abrir agentes em paralelo.
 
 ## Ilustrações
 
@@ -49,7 +49,7 @@ São **22 ilustrações**: 21 novas e a cena 4 refeita. Também são **3 gravaç
   - **Rosto:** Renato vira o rosto por cima do ombro, com medo e dor.
   - **Posição:** o topo do muro fica perto de 30% da altura, a cabeça do Renato entre 32% e 45%, e os pés perto de 75%.
 
-### As 21 cenas novas
+### As 22 cenas novas
 
 Cada cena vem com a frase do roteiro que ela ilustra.
 
@@ -74,6 +74,7 @@ Cada cena vem com a frase do roteiro que ela ilustra.
 19. **`cena-32-hora.png`** — “Você olha a hora: uma e doze.” O celular na mão do Zinho, visto de cima, com a tela acesa, lisa e em branco, de frente, e o chão do ônibus ao fundo.
 20. **`cena-33-renato-sozinho.png`** — “O homem que vendeu o seu nome agora paga por ele.” Plano aberto do ferro-velho à noite. Renato está amarrado numa cadeira de metal, sozinho e pequeno no meio dos montes de sucata, sob a única lâmpada, de cabeça baixa.
 21. **`cena-34-maos-degrau.png`** — “Mas foi esse mesmo homem que te deu pé no muro.” Uma lembrança, com as cores desbotadas e um leve brilho: close das mãos do Renato juntas como um degrau, com o tênis do Zinho pisando nelas e o muro ao fundo.
+22. **`cena-35-calma.png`** — “A voz é calma. Calma demais.” O cobrador, sentado tranquilo num caixote no ferro-velho, gira o anel de ouro no dedo, com o rosto todo na sombra. Ao lado dele, sobre o caixote, está o celular do Renato, com a tela apagada.
 
 ### Onde cada imagem entra
 
@@ -95,7 +96,7 @@ As cenas 1 a 13 que já existem continuam, cada uma uma vez só. A abertura e as
 | “Primeiro, uma foto. Renato numa cadeira (…) Atrás dele, montes de sucata. No ombro dele, a mão com o anel.” | 25, 9, 26 e 27 |
 | “Depois, um áudio.” | 28 |
 | O áudio do cobrador | 10, 29, 12 e 30 |
-| “Você escuta outra vez. A voz é calma. Calma demais.” | 31 |
+| “Você escuta outra vez.” e “A voz é calma. Calma demais.” | 31 e 35 |
 | “A mãe dele. A mesma que te dava almoço (…)” | 11 |
 | “Você olha a hora: uma e doze. Faltam menos de duas horas.” | 32 |
 | “O homem que vendeu o seu nome agora paga por ele. Mas foi esse mesmo homem que te deu pé no muro.” | 33 e 34 |
