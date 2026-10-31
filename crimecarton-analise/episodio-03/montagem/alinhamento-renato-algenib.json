@@ -1,0 +1,83 @@
+{
+ "audio": "narracao-ep03-renato-algenib.wav",
+ "script": "narracao-ep03-renato.txt",
+ "model": "medium",
+ "words_in_script": 10,
+ "words_matched_exactly": 8,
+ "pauses": [
+  [
+   1.468,
+   2.522
+  ],
+  [
+   4.457,
+   5.078
+  ],
+  [
+   6.922,
+   7.2
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Pelos",
+   "start": 0.0,
+   "end": 0.74
+  },
+  {
+   "i": 1,
+   "text": "fundos.",
+   "start": 0.74,
+   "end": 1.12
+  },
+  {
+   "i": 2,
+   "text": "Vai!",
+   "start": 1.24,
+   "end": 1.468
+  },
+  {
+   "i": 3,
+   "text": "Sobe.",
+   "start": 2.522,
+   "end": 3.26
+  },
+  {
+   "i": 4,
+   "text": "Eu",
+   "start": 3.76,
+   "end": 3.78
+  },
+  {
+   "i": 5,
+   "text": "vou",
+   "start": 3.78,
+   "end": 3.94
+  },
+  {
+   "i": 6,
+   "text": "atrás.",
+   "start": 3.94,
+   "end": 4.457
+  },
+  {
+   "i": 7,
+   "text": "Corre,",
+   "start": 5.078,
+   "end": 6.76
+  },
+  {
+   "i": 8,
+   "text": "Zinho!",
+   "start": 6.76,
+   "end": 6.922
+  },
+  {
+   "i": 9,
+   "text": "Corre!",
+   "start": 7.2,
+   "end": 7.36
+  }
+ ]
+}
