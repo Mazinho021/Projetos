@@ -6,6 +6,10 @@ Writes, in arte/:
 - celular-foto.png and celular-audio.png: Zinho's phone in scene 8, open on the chat with
   Renato's number. First the photo arrives, at 01:04 (Renato on a chair in the junkyard, from
   scene 9), then the cobrador's audio message, 0:14 long, at 01:05;
+- lembranca.png and lembranca-vertical.png: the lunch at Renato's mother's (scene 11) as a memory,
+  the drawing on a printed card over its own blurred copy. In the full drawing, Renato as a
+  boy sits at the right edge, behind TikTok's buttons; on the card he stays left of them. The
+  vertical card sits a little left, under the vertical version's centre (x = 330 of 720);
 - creditos.png: the allies with their numbers, when there are any. The places of Part 3
   closed with none, so aliados-parte-03.json is empty and there are no credits.
 
@@ -170,6 +174,28 @@ def celular():
         out.convert('RGB').save(ARTE / nome, optimize=True)
 
 
+# ---------------------------------------------------------------- the memory
+
+def lembranca(centro_x, nome, largura=.74, borda=18):
+    """Scene 11 on a printed card, centred at `centro_x` (a fraction of the width)."""
+    arte = Image.open(EPISODE / 'cena-11-almoco.png').convert('RGB')
+    w, h = arte.size
+    fundo = arte.filter(ImageFilter.GaussianBlur(30)).point(lambda v: round(v*.42)).convert('RGBA')
+    cw = round(w*largura)
+    ch = round(cw*h/w)
+    foto = arte.resize((cw, ch), Image.Resampling.LANCZOS)
+    x0 = round(centro_x*w - cw/2)
+    y0 = round((h - ch)/2)
+    sombra = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    ImageDraw.Draw(sombra).rounded_rectangle((x0 - borda + 14, y0 - borda + 22, x0 + cw + borda + 14, y0 + ch + borda + 22),
+                                             16, fill=(0, 0, 0, 170))
+    fundo.alpha_composite(sombra.filter(ImageFilter.GaussianBlur(18)))
+    d = ImageDraw.Draw(fundo)
+    d.rounded_rectangle((x0 - borda, y0 - borda, x0 + cw + borda, y0 + ch + borda), 12, fill=(240, 231, 212, 255))
+    fundo.paste(foto, (x0, y0))
+    fundo.convert('RGB').save(ARTE / nome, optimize=True)
+
+
 # ---------------------------------------------------------------- the credits
 
 def aliados():
@@ -199,6 +225,8 @@ def creditos(lista):
 def main():
     ARTE.mkdir(exist_ok=True)
     celular()
+    lembranca(.5, 'lembranca.png')
+    lembranca(330/720, 'lembranca-vertical.png')
     lista = aliados()
     if lista:
         creditos(lista)

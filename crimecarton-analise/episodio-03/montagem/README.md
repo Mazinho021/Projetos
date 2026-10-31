@@ -49,7 +49,9 @@ done
 - [`voz_cobranca.py`](voz_cobranca.py) dá ao cobrador uma voz diferente da do narrador. Ela fica mais grave, perto de 78 Hz contra 94 Hz, mais escura e com menos melodia. Também passa por um alto-falante de celular, porque o Zinho escuta a mensagem com o aparelho no ouvido.
   - O script também corta `efeitos/cobranca-eco.wav`, com “Você correu. Ele não.”. A montagem toca esse trecho de novo na pausa depois de “Você escuta outra vez”.
 - [`igualar_vozes.py`](igualar_vozes.py) leva a vinheta, cortada da narração da Parte 1, ao tom e ao timbre do narrador desta parte.
-- [`compor_cenas.py`](compor_cenas.py) faz em `arte/` o celular da cena 8 aberto na conversa com o número do Renato, no tema escuro. Primeiro chega a foto, às 01:04, e depois o áudio de 0:14, às 01:05.
+- [`compor_cenas.py`](compor_cenas.py) faz em `arte/` duas coisas:
+  - o celular da cena 8 aberto na conversa com o número do Renato, no tema escuro. Primeiro chega a foto, às 01:04, e depois o áudio de 0:14, às 01:05;
+  - o almoço da cena 11 como lembrança, num cartão de foto sobre uma cópia desfocada do desenho. No desenho inteiro, o Renato menino fica na borda direita, atrás dos botões do TikTok. No cartão da versão vertical, que fica um pouco à esquerda, ele aparece.
 - A montagem desenha mais três coisas, a partir do `screen` e do `paint` de `montar_timeline.py`:
   - a tela de bloqueio com a notificação da foto;
   - o relógio em 01:12;

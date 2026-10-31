@@ -66,7 +66,16 @@ Inspirado nas histórias do @crimecarton no Instagram
 
 ## Em andamento e pendências
 
-- **Parte 3, “O preço”:** a votação da Parte 2 deu FUGIR, com 10 votos contra 3, e o nome Renato. O criador recusou dois roteiros, “A noite” v1 e v2, em 30 e 31/10/2026, e pediu outro caminho para a história e imagens novas, de mais qualidade e sem rostos atrás do painel do topo. O terceiro roteiro, o plano e o pedido ao Codex estão em [`episodio-03/`](crimecarton-analise/episodio-03/plano-ep03.md) e esperam o ok do criador antes das gerações pagas. As regras que saíram desses erros estão em [`CLAUDE.md`](CLAUDE.md). A versão recusada continua no histórico do Git, no commit `442918d`.
+- **Parte 3, “O preço”:** a votação da Parte 2 deu FUGIR, com 10 votos contra 3, e o nome Renato.
+  - **Roteiros:** o criador recusou dois roteiros, “A noite” v1 e v2, em 30 e 31/10/2026. Ele pediu outro caminho para a história e imagens novas, de mais qualidade e sem rostos atrás do painel do topo. As regras que saíram desses erros estão em [`CLAUDE.md`](CLAUDE.md). A versão recusada continua no histórico do Git, no commit `442918d`.
+  - **Geração:** o criador mandou o terceiro roteiro ao Codex. O Codex entregou as 13 cenas e as 3 vozes em 31/10/2026, por 4 créditos: 2 da narração, 1 do Renato e 1 do cobrador.
+  - **Imagens:** as cenas vieram de novo com 941 × 1672, o máximo do gerador, e foram ampliadas para 1440 × 2560.
+  - **Voz do Renato:** o “Zinho” de “Corre, Zinho!” saiu parecido com “senhor”, e a fala ficou “Corre! Corre!”.
+  - **Vídeos:** as duas versões têm 2 min 15 s e estão em [`episodio-03/`](crimecarton-analise/episodio-03/plano-ep03.md), com a capa “O PREÇO / VOCÊ POR ELE?”. Os quadros de cada plano foram conferidos nas duas versões.
+  - **Texto do post:** “Parte 3 – O preço 🎒”, “Trocar ou deixar? Comenta 👇”, “Inspirado em @crimecarton” e “#apartequefaltou”.
+  - **TikTok e Shorts:** o crédito é “Inspirado no @crimecarton (Insta)”, e o título no Shorts é “Parte 3 – O preço 😨”.
+  - **Comentário para fixar:** “Trocar ou deixar? Comenta uma palavra 👇”.
+  - **Votação:** vale a maioria dos comentários nas três redes. Marcar o conteúdo de IA, como nas outras partes.
 - **A Parte 1 foi publicada pelo criador em 26/10/2026, no TikTok e no Instagram**, com a v7, a capa e o texto do post acima. A v7 é a v6 aprovada pelo criador, com a voz própria do amigo que ele pediu depois. A bio também foi aprovada.
 - A publicação pode ser feita pelo OpusClip, que tem conectados os TikToks @jotape2117 e @mazinho_edits e o canal CORTESZINHO no YouTube, mas não o Instagram nem o perfil novo da série. O post só sai depois que o criador confirma no app. Subir o vídeo inteiro, sem cortes e sem legendas do OpusClip, custa cerca de 2 créditos e precisa da autorização dele. As contas aparecem no OpusClip como “TikTok Business”, e conta comercial não entra no Programa de Recompensas para Criadores do TikTok. Por isso, não converter o perfil novo em conta comercial para conectá-lo.
 - O final promete, como a referência, que “a maioria decide o próximo passo”. Se a maioria comentar NÃO ABRIR, o episódio 2 precisa seguir esse caminho; o arco em `producao-zinho.md` supõe que o amigo entra.

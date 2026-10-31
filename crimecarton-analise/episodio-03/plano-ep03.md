@@ -42,7 +42,7 @@ Os desenhos do Codex chegaram com 941 × 1672 e foram ampliados para 1440 × 256
 | A foto | Narrador | `cena-08-celular` com a notificação do número do Renato, a conversa com a foto e `cena-09-foto-refem` | “MAS NÃO É ELE.”, “COM O LÁBIO / CORTADO.” e “A MÃO / COM O ANEL.” |
 | O áudio | O cobrador, com voz grave e som de celular | A conversa com o áudio, `cena-10-zinho-escuta` e `cena-12-ferro-velho` com a placa “FERRO-VELHO SÃO JORGE” | “VAMOS TROCAR: / VOCÊ POR ELE.”, “3 DA MANHÃ. / SOZINHO.” e “A MÃE DELE / É A PRÓXIMA.” |
 | Outra vez | Narrador e o começo do áudio repetido | `cena-10-zinho-escuta`, escura | “CALMA / DEMAIS.” |
-| A mãe | Narrador | `cena-11-almoco` | “A MESMA QUE TE / DAVA ALMOÇO.” |
+| A mãe | Narrador | `cena-11-almoco` como lembrança, num cartão de foto | “A MESMA QUE TE / DAVA ALMOÇO.” |
 | A hora | Narrador | `cena-08-celular` com 01:12 na tela de bloqueio | “FALTAM MENOS / DE DUAS HORAS.” |
 | O preço | Narrador | `cena-09-foto-refem`, escura, e as mãos do Renato no muro | “AGORA PAGA / POR ELE.” e “MAS ELE / TE DEU PÉ.” |
 | Votação | “Trocar ou deixar? Comenta uma palavra só. O que a maioria escolher vira a parte quatro.” | `cena-13-decisao`, escurecida | “TROCAR / OU DEIXAR?”, os botões e a caixa “PARTE 4” |

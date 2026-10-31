@@ -57,8 +57,9 @@ TAIL = 3.5 if ALLIES.exists() and json.loads(ALLIES.read_text(encoding='utf-8'))
 # Renato talks beside Zinho, as loud as the narrator; the message plays a little under him,
 # as Part 1's audio message did.
 FRIEND_GAIN, MESSAGE_GAIN = 0, -1
-# The message heard again, under "Você escuta outra vez": this much under the message itself.
-ECHO_GAIN = -5
+# The message heard again, in the pause after "Você escuta outra vez". The renderer mixes
+# effects about 4 dB under the voices, so this leaves it some 5 dB under the message itself.
+ECHO_GAIN = -1
 # Seconds kept before a voice's first word and after its last at a change of voice, and
 # the silence between the two voices.
 LEAD, TRAIL, SWITCH = .12, .22, .25
@@ -67,9 +68,9 @@ WHOOSH_PEAK = .36
 # 146 px: the HUD, the tags and the cards go below it. The like, comment and share column
 # covers the right of the lower half: there, the vertical version centres everything at
 # x = 330 and moves the cards 25 px left, so nothing passes x = 590.
-INSTAGRAM = {'name': 'timeline.json', 'hud_dy': 0, 'tag_y': 230, 'card_top': 300, 'x': 360, 'card_dx': 0,
+INSTAGRAM = {'name': 'timeline.json', 'art': '', 'hud_dy': 0, 'tag_y': 230, 'card_top': 300, 'x': 360, 'card_dx': 0,
              'tv_dx': 0, 'tv_scale': 1, 'width': 570, 'bars': 540, 'input': 600}
-VERTICAL = {'name': 'timeline-vertical.json', 'hud_dy': 67, 'tag_y': 297, 'card_top': 334, 'x': 330, 'card_dx': -25,
+VERTICAL = {'name': 'timeline-vertical.json', 'art': '-vertical', 'hud_dy': 67, 'tag_y': 297, 'card_top': 334, 'x': 330, 'card_dx': -25,
             'tv_dx': -50, 'tv_scale': .88, 'width': 520, 'bars': 500, 'input': 520}
 
 
@@ -333,7 +334,8 @@ def abertura(ed, part, vote, pointer, profile, decided, winner_word, story):
         ('vote', result, dict(kind='black')),
     ]
     graphics = [
-        {'type': 'tag', 'start': .15, 'end': story, 'text': f'PARTE {part}', 'y': L['tag_y'], 'size': 32},
+        # In the corner: centred, the tag sat on Zinho's head in the backpack art.
+        {'type': 'tag', 'start': .15, 'end': story, 'text': f'PARTE {part}', 'y': L['tag_y'], 'x': 112, 'size': 32},
         phrase(.2, s(V(4)) - .07, 700, [line('O ASSALTO', s(V(0))), line('DEU CERTO.', s(V(2)), 'yellow')], x=x),
         phrase(s(V(4)) - .07, black, 700, [
             label('SEU PARCEIRO FICOU COM', s(V(4))),
@@ -374,8 +376,8 @@ def abertura(ed, part, vote, pointer, profile, decided, winner_word, story):
 # phone or ring sits in the top quarter (the panel and the tag) or in the bottom fifth.
 MEN01 = [0.05, 0.12, 0.75, 0.82]         # the two men and the torch, through the window
 RENATO02 = [0.30, 0.06, 1.0, 0.76]       # Renato in front, at the back door
-KITCHEN02 = [0.04, 0.0, 0.96, 0.92]      # the two running, a little lower in the frame
-BOOST03 = [0.15, 0.17, 0.85, 0.87]       # Renato's hands under Zinho's foot
+KITCHEN02 = [0.06, 0.0, 0.94, 0.88]      # the two running, their heads below the tag
+BOOST03 = [0.15, 0.15, 0.85, 0.85]       # Renato's hands under Zinho's foot
 TOP03 = [0.16, 0.17, 0.76, 0.77]         # Zinho reaching the top of the wall
 RING04 = [0.45, 0.19, 1.0, 0.74]         # the ring on the hand at Renato's collar
 SCREAM05 = [0.05, 0.0, 0.95, 0.9]        # Renato shouting, his head below the panel
@@ -383,12 +385,13 @@ FACE06 = [0.25, 0.195, 0.75, 0.695]      # Zinho running, out of breath
 ZINHO07 = [0.14, 0.19, 0.74, 0.79]       # Zinho on the bus floor
 POCKET07 = [0.21, 0.255, 0.71, 0.755]    # his hands and the dark phone
 PHONE_WIDE = [0.125, 0.13, 0.875, 0.88]  # the phone in his hand, the screen from 29% to 66%
-PHONE_CLOSE = [0.20, 0.185, 0.80, 0.785]  # closer: the screen from 27% to 73%
+PHONE_CLOSE = [0.20, 0.165, 0.80, 0.765]  # closer: the screen from 30% to 76%, below the tag
 SHOULDER09 = [0.30, 0.05, 1.0, 0.75]     # the hand with the ring on Renato's shoulder
-FACE10 = [0.2, 0.125, 0.8, 0.725]        # Zinho's face as he listens
-MEMORY11 = [0.06, 0.0, 0.94, 0.88]       # the lunch, the mother's head below the panel
+FACE10 = [0.2, 0.095, 0.8, 0.695]        # Zinho's face as he listens, his hair below the tag
+PHOTO09 = [0.2, 0.04, 1.0, 0.84]         # the photo: the ring left of TikTok's buttons
+JUNK12 = [0.16, 0.08, 1.0, 0.92]         # the gate, with the sign left of TikTok's buttons
 DOOR13 = [0.05, 0.0, 0.95, 0.9]          # Zinho at the bus door
-RING_PHOTO = [0.513, 0.342, 0.953, 0.782]  # the ring in Part 2's photo of the division
+RING_PHOTO = [0.513, 0.30, 0.953, 0.74]  # the ring in Part 2's photo, the other hand below the tag
 # The lit, blank screen of the phone in scene 8 (compor_cenas.TELA08), a little larger so
 # the lock screen covers its bright edge. The night of the escape is past midnight of the
 # 28th, Part 2's "23:47".
@@ -427,7 +430,7 @@ def build(ed):
         ('kitchen', cut(N('Vocês atravessam a')), dict(kind='art', asset='cena-02-cozinha.png', crop=KITCHEN02, zoom=.04,
                                                        direction='out')),
         ('wall', cut(N('No quintal, o')), dict(kind='art', asset='cena-03-pe-no-muro.png', zoom=.05)),
-        ('boost', cut(N('Renato junta as')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=BOOST03, zoom=.06)),
+        ('boost', cut(N('Renato junta as')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=BOOST03, zoom=.04)),
         ('jump', cut(N('Você sobe, pula')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=TOP03, zoom=.06)),
         ('fall', round(e(N('cai do outro lado.', 3)) - .02, 2), dict(kind='black')),
         ('grab', cut(N('Quando ele agarra')), dict(kind='art', asset='cena-04-mao-anel.png', zoom=.05)),
@@ -447,26 +450,29 @@ def build(ed):
                                                  screen=LOCK_PHOTO)),
         ('chat-photo', cut(N('Primeiro, uma foto.')), dict(kind='art', asset='montagem/arte/celular-foto.png',
                                                            crop=PHONE_CLOSE, zoom=.05)),
-        ('photo', cut(N('Renato numa cadeira,')), dict(kind='art', asset='cena-09-foto-refem.png', zoom=.05)),
-        ('scrap', cut(N('Atrás dele, montes')), dict(kind='art', asset='cena-09-foto-refem.png', zoom=.04, direction='out',
-                                                     brightness=.9)),
+        ('photo', cut(N('Renato numa cadeira,')), dict(kind='art', asset='cena-09-foto-refem.png', crop=PHOTO09, zoom=.05)),
+        ('scrap', cut(N('Atrás dele, montes')), dict(kind='art', asset='cena-09-foto-refem.png', crop=PHOTO09, zoom=.04,
+                                                     direction='out', brightness=.9)),
         ('shoulder', cut(N('No ombro dele,')), dict(kind='art', asset='cena-09-foto-refem.png', crop=SHOULDER09, zoom=.06)),
         ('chat-audio', cut(N('Depois, um áudio.')), dict(kind='art', asset='montagem/arte/celular-audio.png',
                                                          crop=PHONE_CLOSE, zoom=.05)),
         ('listen', cut(C('Você correu.')), dict(kind='art', asset='cena-10-zinho-escuta.png', zoom=.05)),
         ('trade', cut(C('Vamos trocar:')), dict(kind='art', asset='cena-10-zinho-escuta.png', crop=FACE10, zoom=.06)),
-        ('junkyard', cut(C('Três da manhã,')), dict(kind='art', asset='cena-12-ferro-velho.png', zoom=.05, paint=SIGN12)),
+        ('junkyard', cut(C('Três da manhã,')), dict(kind='art', asset='cena-12-ferro-velho.png', crop=JUNK12, zoom=.05,
+                                                    paint=SIGN12)),
         ('threat', cut(C('Se chamar a')), dict(kind='art', asset='cena-10-zinho-escuta.png', crop=FACE10, zoom=.04,
                                                direction='out', brightness=.85)),
         ('again', cut(N('Você escuta outra')), dict(kind='art', asset='cena-10-zinho-escuta.png', zoom=.04,
                                                     direction='out', brightness=.8)),
-        ('mother', cut(N('A mãe dele.')), dict(kind='art', asset='cena-11-almoco.png', crop=MEMORY11, zoom=.04,
+        # The lunch as a memory: the drawing on a card, so Renato as a boy stays left of
+        # TikTok's buttons (compor_cenas.py, one card per layout).
+        ('mother', cut(N('A mãe dele.')), dict(kind='art', asset=f"montagem/arte/lembranca{L['art']}.png", zoom=.04,
                                                direction='out')),
         ('clock', cut(N('Você olha a')), dict(kind='art', asset='cena-08-celular.png', crop=PHONE_CLOSE, zoom=.06,
                                               screen=LOCK_HOUR)),
-        ('price', cut(N('O homem que')), dict(kind='art', asset='cena-09-foto-refem.png', zoom=.04, direction='out',
-                                              brightness=.7)),
-        ('help', cut(N('Mas foi esse')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=BOOST03, zoom=.05,
+        ('price', cut(N('O homem que')), dict(kind='art', asset='cena-09-foto-refem.png', crop=PHOTO09, zoom=.04,
+                                              direction='out', brightness=.7)),
+        ('help', cut(N('Mas foi esse')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=BOOST03, zoom=.04,
                                               brightness=.85)),
         # The vote: Zinho at the bus door, dark under the question and the buttons.
         ('choice', cut(N('Trocar ou deixar?')), dict(kind='art', asset='cena-13-decisao.png', crop=DOOR13, zoom=.03,
