@@ -7,6 +7,8 @@ O resultado são dois vídeos:
 - [`parte-03-o-preco.mp4`](../parte-03-o-preco.mp4), a versão do Instagram;
 - [`parte-03-o-preco-vertical.mp4`](../parte-03-o-preco-vertical.mp4), a do TikTok e do Shorts.
 
+As duas têm 2 min 15 s, com -13,9 LUFS e pico de -0,9 dBFS. Cada plano foi conferido nas duas versões: nenhum rosto, mão, celular, anel ou frase fica atrás do painel, da etiqueta ou da coluna de botões do TikTok.
+
 A versão recusada, “A noite”, continua no histórico do Git, no commit `442918d`.
 
 ## Refazer
