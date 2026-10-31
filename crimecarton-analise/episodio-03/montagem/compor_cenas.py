@@ -9,8 +9,7 @@ fingers that cross it. Writes, in arte/:
 - tela-notificacao.png: scene 8, the phone in Zinho's hand, locked, with the notification
   from Renato's number at 01:04 ("Foto");
 - tela-foto.png: scene 25, the phone over Zinho's shoulder, open on the chat with Renato's
-  number: the photo of Renato on a chair in the junkyard (from scene 9). The drawing is
-  mirrored: Codex put the phone at the right edge, behind TikTok's buttons;
+  number: the photo of Renato on a chair in the junkyard (from scene 9);
 - tela-audio.png: scene 28, the phone closer, with the photo and the cobrador's audio
   message, 0:14 long, at 01:05;
 - tela-hora.png: scene 32, the phone from above, locked, at 01:12, with the audio's
@@ -107,17 +106,25 @@ def achar_tela(im, busca=(.12, .15, .88, .85), passo=4):
     ys, xs = np.nonzero(m)
     y_min, y_max, x_min, x_max = ys.min(), ys.max(), xs.min(), xs.max()
 
-    def reta(pontos):
-        # Least squares through the middle 70% of an edge: v = a*u + b.
+    def reta(pontos, fora):
+        # The line v = a*u + b along the outer side of an edge's points. A finger over the
+        # screen only moves points inwards, so after each fit the points well inside the line
+        # are dropped and the rest fitted again; `fora` is -1 when outside means smaller values.
         u, v = np.array(pontos, float).T
+        for _ in range(5):
+            a, b = np.polyfit(u, v, 1)
+            dentro = (v - (a*u + b))*fora < -1.5
+            if dentro.all() or not dentro.any():
+                break
+            u, v = u[~dentro], v[~dentro]
         return np.polyfit(u, v, 1)
 
     linhas = range(round(y_min + .15*(y_max - y_min)), round(y_max - .15*(y_max - y_min)))
     colunas = range(round(x_min + .15*(x_max - x_min)), round(x_max - .15*(x_max - x_min)))
-    esq = reta([(y, np.nonzero(m[y])[0].min()) for y in linhas if m[y].any()])     # x = a*y + b
-    dir_ = reta([(y, np.nonzero(m[y])[0].max()) for y in linhas if m[y].any()])
-    topo = reta([(x, np.nonzero(m[:, x])[0].min()) for x in colunas if m[:, x].any()])   # y = a*x + b
-    base = reta([(x, np.nonzero(m[:, x])[0].max()) for x in colunas if m[:, x].any()])
+    esq = reta([(y, np.nonzero(m[y])[0].min()) for y in linhas if m[y].any()], -1)     # x = a*y + b
+    dir_ = reta([(y, np.nonzero(m[y])[0].max()) for y in linhas if m[y].any()], 1)
+    topo = reta([(x, np.nonzero(m[:, x])[0].min()) for x in colunas if m[:, x].any()], -1)   # y = a*x + b
+    base = reta([(x, np.nonzero(m[:, x])[0].max()) for x in colunas if m[:, x].any()], 1)
 
     def cruzar(vertical, horizontal):
         # x = a1*y + b1 and y = a2*x + b2.
@@ -247,7 +254,7 @@ def telas():
         'tela-notificacao.png': na_tela('cena-08-celular.png',
                                         lock_screen({**bloqueio, 'time': '01:04', 'message': 'Foto', 'when': 'agora'}),
                                         'tela-notificacao.png'),
-        'tela-foto.png': na_tela('cena-25-por-cima-do-ombro.png', conversa(False), 'tela-foto.png', espelhar=True),
+        'tela-foto.png': na_tela('cena-25-por-cima-do-ombro.png', conversa(False), 'tela-foto.png'),
         'tela-audio.png': na_tela('cena-28-play.png', conversa(True), 'tela-audio.png'),
         'tela-hora.png': na_tela('cena-32-hora.png',
                                  lock_screen({**bloqueio, 'time': '01:12', 'message': 'Áudio (0:14)', 'when': '7 min'}),
