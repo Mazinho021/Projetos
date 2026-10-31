@@ -2,2164 +2,2132 @@
  "audio": "narracao-ep03-narrador.wav",
  "script": "narracao-ep03-narrador.txt",
  "model": "medium",
- "words_in_script": 319,
- "words_matched_exactly": 311,
+ "words_in_script": 311,
+ "words_matched_exactly": 299,
  "pauses": [
   [
    0.0,
-   0.258
+   0.271
   ],
   [
-   0.937,
-   1.501
+   0.863,
+   1.42
   ],
   [
-   3.164,
-   4.386
+   3.114,
+   3.998
   ],
   [
-   5.245,
-   5.873
+   4.958,
+   5.736
   ],
   [
-   6.291,
-   7.244
+   6.198,
+   7.104
   ],
   [
-   8.238,
-   8.848
+   8.097,
+   8.866
   ],
   [
-   9.308,
-   10.412
+   9.331,
+   10.156
   ],
   [
-   10.912,
-   11.235
+   13.106,
+   14.12
   ],
   [
-   12.762,
-   13.64
+   14.588,
+   14.906
   ],
   [
-   14.993,
-   15.821
+   16.472,
+   17.347
   ],
   [
-   17.653,
-   18.536
+   19.324,
+   19.906
   ],
   [
-   20.556,
-   21.465
+   20.458,
+   20.845
   ],
   [
-   24.088,
-   25.055
+   21.301,
+   21.918
   ],
   [
-   26.318,
-   27.047
+   22.295,
+   22.972
   ],
   [
-   29.391,
-   30.17
+   25.275,
+   26.403
   ],
   [
-   32.148,
-   32.984
+   28.122,
+   28.564
   ],
   [
-   34.078,
-   35.127
+   31.156,
+   31.904
   ],
   [
-   36.363,
-   37.261
+   33.536,
+   34.012
   ],
   [
-   40.765,
-   41.267
+   34.743,
+   35.451
   ],
   [
-   43.008,
-   44.093
+   36.184,
+   37.009
   ],
   [
-   45.801,
-   46.532
+   39.714,
+   40.194
   ],
   [
-   47.845,
-   48.697
+   41.34,
+   41.657
   ],
   [
-   49.733,
-   50.665
+   43.894,
+   44.776
   ],
   [
-   52.295,
-   52.73
+   46.038,
+   47.115
   ],
   [
-   54.446,
-   55.461
+   48.291,
+   48.954
   ],
   [
-   58.57,
-   59.063
+   49.871,
+   50.555
   ],
   [
-   59.881,
-   60.782
+   51.685,
+   52.384
   ],
   [
-   61.215,
-   61.465
+   53.283,
+   53.671
   ],
   [
-   62.515,
-   63.205
+   54.869,
+   55.778
   ],
   [
-   63.934,
-   64.722
+   56.559,
+   56.822
   ],
   [
-   65.14,
-   65.489
+   57.727,
+   58.354
   ],
   [
-   67.026,
-   68.015
+   59.025,
+   59.717
   ],
   [
-   69.83,
-   70.228
+   60.284,
+   60.621
   ],
   [
-   71.187,
-   71.765
+   61.76,
+   62.15
   ],
   [
-   72.502,
-   73.514
+   62.556,
+   63.601
   ],
   [
-   75.255,
-   76.163
+   65.081,
+   66.016
   ],
   [
-   77.841,
-   78.511
+   67.811,
+   68.466
   ],
   [
-   80.272,
-   81.078
+   70.648,
+   71.256
   ],
   [
-   82.217,
-   82.639
+   72.008,
+   72.955
   ],
   [
-   83.323,
-   83.833
+   73.405,
+   73.71
   ],
   [
-   84.744,
-   85.824
+   74.864,
+   75.398
   ],
   [
-   87.359,
-   87.856
+   77.376,
+   77.998
   ],
   [
-   88.737,
-   89.572
+   79.143,
+   79.556
   ],
   [
-   91.068,
-   92.051
+   80.226,
+   80.801
   ],
   [
-   93.273,
-   94.084
+   81.578,
+   82.651
   ],
   [
-   98.365,
-   99.368
+   84.907,
+   85.469
   ],
   [
-   100.47,
-   101.277
+   87.251,
+   88.072
   ],
   [
-   102.327,
-   102.998
+   88.983,
+   89.305
   ],
   [
-   103.973,
-   105.03
+   89.682,
+   90.445
   ],
   [
-   106.004,
-   106.828
+   92.233,
+   93.219
   ],
   [
-   108.21,
-   109.191
+   94.534,
+   95.309
   ],
   [
-   111.083,
-   111.755
+   96.596,
+   97.496
   ],
   [
-   113.627,
-   114.596
+   98.656,
+   99.054
   ],
   [
-   114.867,
-   115.123
+   99.913,
+   100.844
   ],
   [
-   115.879,
-   116.735
+   101.423,
+   102.364
   ],
   [
-   118.255,
-   119.179
+   103.444,
+   104.235
   ],
   [
-   119.666,
-   120.046
+   105.847,
+   106.554
   ],
   [
-   120.352,
-   121.183
+   107.555,
+   108.058
   ],
   [
-   123.401,
-   123.749
+   108.693,
+   109.055
   ],
   [
-   124.493,
-   124.88
+   109.984,
+   110.704
+  ],
+  [
+   111.532,
+   112.347
+  ],
+  [
+   113.414,
+   114.393
+  ],
+  [
+   115.299,
+   115.701
+  ],
+  [
+   116.621,
+   116.92
   ]
  ],
  "words": [
   {
    "i": 0,
    "text": "Chegou",
-   "start": 0.258,
-   "end": 0.6
+   "start": 0.271,
+   "end": 0.56
   },
   {
    "i": 1,
    "text": "agora?",
-   "start": 0.6,
-   "end": 0.937
+   "start": 0.56,
+   "end": 0.863
   },
   {
    "i": 2,
    "text": "As",
-   "start": 1.501,
-   "end": 1.74
+   "start": 1.42,
+   "end": 1.6
   },
   {
    "i": 3,
    "text": "partes",
-   "start": 1.74,
-   "end": 2.02
+   "start": 1.6,
+   "end": 1.9
   },
   {
    "i": 4,
    "text": "um",
-   "start": 2.02,
-   "end": 2.24
+   "start": 1.9,
+   "end": 2.14
   },
   {
    "i": 5,
    "text": "e",
-   "start": 2.24,
-   "end": 2.36
+   "start": 2.14,
+   "end": 2.22
   },
   {
    "i": 6,
    "text": "dois",
-   "start": 2.36,
-   "end": 2.6
+   "start": 2.22,
+   "end": 2.46
   },
   {
    "i": 7,
    "text": "estão",
-   "start": 2.6,
-   "end": 2.76
+   "start": 2.46,
+   "end": 2.68
   },
   {
    "i": 8,
    "text": "no",
-   "start": 2.76,
-   "end": 2.92
+   "start": 2.68,
+   "end": 2.84
   },
   {
    "i": 9,
    "text": "perfil.",
-   "start": 2.92,
-   "end": 3.164
+   "start": 2.84,
+   "end": 3.114
   },
   {
    "i": 10,
    "text": "Vocês",
-   "start": 4.386,
-   "end": 5.08
+   "start": 3.998,
+   "end": 4.4
   },
   {
    "i": 11,
    "text": "decidiram:",
-   "start": 5.08,
-   "end": 5.245
+   "start": 4.4,
+   "end": 4.958
   },
   {
    "i": 12,
    "text": "fugir.",
-   "start": 5.873,
-   "end": 6.291
+   "start": 5.736,
+   "end": 6.198
   },
   {
    "i": 13,
    "text": "E",
-   "start": 7.244,
-   "end": 7.44
+   "start": 7.104,
+   "end": 7.26
   },
   {
    "i": 14,
    "text": "deram",
-   "start": 7.44,
-   "end": 7.62
+   "start": 7.26,
+   "end": 7.52
   },
   {
    "i": 15,
    "text": "um",
-   "start": 7.62,
-   "end": 7.82
+   "start": 7.52,
+   "end": 7.68
   },
   {
    "i": 16,
    "text": "nome",
-   "start": 7.82,
-   "end": 7.98
+   "start": 7.68,
+   "end": 7.82
   },
   {
    "i": 17,
    "text": "a",
-   "start": 7.98,
-   "end": 8.14
+   "start": 7.82,
+   "end": 8.02
   },
   {
    "i": 18,
    "text": "ele:",
-   "start": 8.14,
-   "end": 8.238
+   "start": 8.02,
+   "end": 8.097
   },
   {
    "i": 19,
    "text": "Renato.",
-   "start": 8.848,
-   "end": 9.308
+   "start": 8.866,
+   "end": 9.331
   },
   {
    "i": 20,
-   "text": "Lá",
-   "start": 10.412,
-   "end": 10.7
+   "text": "Agora",
+   "start": 10.156,
+   "end": 10.44
   },
   {
    "i": 21,
-   "text": "fora,",
-   "start": 10.7,
-   "end": 10.912
+   "text": "você",
+   "start": 10.44,
+   "end": 10.82
   },
   {
    "i": 22,
-   "text": "a",
-   "start": 11.235,
-   "end": 11.4
+   "text": "foge",
+   "start": 10.82,
+   "end": 11.06
   },
   {
    "i": 23,
-   "text": "porta",
-   "start": 11.4,
-   "end": 11.64
+   "text": "ao",
+   "start": 11.06,
+   "end": 11.22
   },
   {
    "i": 24,
-   "text": "do",
-   "start": 11.64,
-   "end": 11.82
+   "text": "lado",
+   "start": 11.22,
+   "end": 11.48
   },
   {
    "i": 25,
-   "text": "carro",
-   "start": 11.82,
-   "end": 12.08
+   "text": "do",
+   "start": 11.48,
+   "end": 11.68
   },
   {
    "i": 26,
-   "text": "abre",
-   "start": 12.08,
-   "end": 12.34
+   "text": "homem",
+   "start": 11.68,
+   "end": 11.92
   },
   {
    "i": 27,
-   "text": "devagar.",
-   "start": 12.34,
-   "end": 12.762
+   "text": "que",
+   "start": 11.92,
+   "end": 12.12
   },
   {
    "i": 28,
-   "text": "Você",
-   "start": 13.64,
-   "end": 13.88
+   "text": "vendeu",
+   "start": 12.12,
+   "end": 12.4
   },
   {
    "i": 29,
-   "text": "não",
-   "start": 13.88,
-   "end": 14.1
+   "text": "o",
+   "start": 12.4,
+   "end": 12.72
   },
   {
    "i": 30,
-   "text": "espera",
-   "start": 14.1,
-   "end": 14.28
+   "text": "seu",
+   "start": 12.72,
+   "end": 12.88
   },
   {
    "i": 31,
-   "text": "ninguém",
-   "start": 14.28,
-   "end": 14.7
+   "text": "nome.",
+   "start": 12.88,
+   "end": 13.106
   },
   {
    "i": 32,
-   "text": "descer.",
-   "start": 14.7,
-   "end": 14.993
+   "text": "Lá",
+   "start": 14.12,
+   "end": 14.4
   },
   {
    "i": 33,
-   "text": "Vocês",
-   "start": 15.821,
-   "end": 16.14
+   "text": "fora,",
+   "start": 14.4,
+   "end": 14.588
   },
   {
    "i": 34,
-   "text": "atravessam",
-   "start": 16.14,
-   "end": 16.74
+   "text": "a",
+   "start": 14.906,
+   "end": 15.06
   },
   {
    "i": 35,
-   "text": "a",
-   "start": 16.74,
-   "end": 16.9
+   "text": "porta",
+   "start": 15.06,
+   "end": 15.34
   },
   {
    "i": 36,
-   "text": "cozinha",
-   "start": 16.9,
-   "end": 17.22
+   "text": "do",
+   "start": 15.34,
+   "end": 15.54
   },
   {
    "i": 37,
-   "text": "no",
-   "start": 17.22,
-   "end": 17.4
+   "text": "carro",
+   "start": 15.54,
+   "end": 15.74
   },
   {
    "i": 38,
-   "text": "escuro.",
-   "start": 17.4,
-   "end": 17.653
+   "text": "abre",
+   "start": 15.74,
+   "end": 16.04
   },
   {
    "i": 39,
-   "text": "Na",
-   "start": 18.536,
-   "end": 18.7
+   "text": "devagar.",
+   "start": 16.04,
+   "end": 16.472
   },
   {
    "i": 40,
-   "text": "frente",
-   "start": 18.7,
-   "end": 18.92
+   "text": "Ele",
+   "start": 17.347,
+   "end": 17.58
   },
   {
    "i": 41,
-   "text": "da",
-   "start": 18.92,
-   "end": 19.14
+   "text": "conhece",
+   "start": 17.58,
+   "end": 17.92
   },
   {
    "i": 42,
-   "text": "casa,",
-   "start": 19.14,
-   "end": 19.44
+   "text": "a",
+   "start": 17.92,
+   "end": 18.04
   },
   {
    "i": 43,
-   "text": "alguém",
-   "start": 19.64,
-   "end": 19.82
+   "text": "sua",
+   "start": 18.04,
+   "end": 18.16
   },
   {
    "i": 44,
-   "text": "sacode",
-   "start": 19.82,
-   "end": 20.22
+   "text": "casa",
+   "start": 18.16,
+   "end": 18.38
   },
   {
    "i": 45,
-   "text": "o",
-   "start": 20.22,
-   "end": 20.4
+   "text": "melhor",
+   "start": 18.38,
+   "end": 18.72
   },
   {
    "i": 46,
-   "text": "portão.",
-   "start": 20.4,
-   "end": 20.556
+   "text": "do",
+   "start": 18.72,
+   "end": 18.84
   },
   {
    "i": 47,
-   "text": "Uma",
-   "start": 21.465,
-   "end": 21.64
+   "text": "que",
+   "start": 18.84,
+   "end": 18.96
   },
   {
    "i": 48,
-   "text": "lanterna",
-   "start": 21.64,
-   "end": 22.18
+   "text": "deveria.",
+   "start": 18.96,
+   "end": 19.324
   },
   {
    "i": 49,
-   "text": "varre",
-   "start": 22.18,
-   "end": 22.42
+   "text": "A",
+   "start": 19.906,
+   "end": 20.08
   },
   {
    "i": 50,
-   "text": "a",
-   "start": 22.42,
-   "end": 22.62
+   "text": "cozinha,",
+   "start": 20.08,
+   "end": 20.458
   },
   {
    "i": 51,
-   "text": "sala",
-   "start": 22.62,
-   "end": 22.78
+   "text": "o",
+   "start": 20.845,
+   "end": 20.98
   },
   {
    "i": 52,
-   "text": "que",
-   "start": 22.78,
-   "end": 22.96
+   "text": "quintal,",
+   "start": 20.98,
+   "end": 21.301
   },
   {
    "i": 53,
-   "text": "vocês",
-   "start": 22.96,
-   "end": 23.24
+   "text": "o",
+   "start": 21.918,
+   "end": 22.08
   },
   {
    "i": 54,
-   "text": "acabaram",
-   "start": 23.24,
-   "end": 23.68
+   "text": "muro.",
+   "start": 22.08,
+   "end": 22.295
   },
   {
    "i": 55,
-   "text": "de",
-   "start": 23.68,
-   "end": 23.94
+   "text": "Atrás",
+   "start": 22.972,
+   "end": 23.34
   },
   {
    "i": 56,
-   "text": "deixar.",
-   "start": 23.94,
-   "end": 24.088
+   "text": "de",
+   "start": 23.34,
+   "end": 23.56
   },
   {
    "i": 57,
-   "text": "O",
-   "start": 25.055,
-   "end": 25.22
+   "text": "vocês,",
+   "start": 23.56,
+   "end": 23.88
   },
   {
    "i": 58,
-   "text": "muro",
-   "start": 25.22,
-   "end": 25.48
+   "text": "alguém",
+   "start": 24.22,
+   "end": 24.42
   },
   {
    "i": 59,
-   "text": "do",
-   "start": 25.48,
-   "end": 25.62
+   "text": "sacode",
+   "start": 24.42,
+   "end": 24.88
   },
   {
    "i": 60,
-   "text": "quintal",
-   "start": 25.62,
-   "end": 25.96
+   "text": "o",
+   "start": 24.88,
+   "end": 25.08
   },
   {
    "i": 61,
-   "text": "é",
-   "start": 25.96,
-   "end": 26.08
+   "text": "portão.",
+   "start": 25.08,
+   "end": 25.275
   },
   {
    "i": 62,
-   "text": "alto.",
-   "start": 26.08,
-   "end": 26.318
+   "text": "Do",
+   "start": 26.403,
+   "end": 26.58
   },
   {
    "i": 63,
-   "text": "Renato",
-   "start": 27.047,
-   "end": 27.46
+   "text": "outro",
+   "start": 26.58,
+   "end": 26.76
   },
   {
    "i": 64,
-   "text": "sobe",
-   "start": 27.46,
-   "end": 27.7
+   "text": "lado",
+   "start": 26.76,
+   "end": 26.94
   },
   {
    "i": 65,
-   "text": "primeiro",
-   "start": 27.7,
-   "end": 28.1
+   "text": "do",
+   "start": 26.94,
+   "end": 27.08
   },
   {
    "i": 66,
-   "text": "e",
-   "start": 28.1,
-   "end": 28.54
+   "text": "muro,",
+   "start": 27.08,
+   "end": 27.36
   },
   {
    "i": 67,
-   "text": "estende",
-   "start": 28.54,
-   "end": 28.78
+   "text": "o",
+   "start": 27.5,
+   "end": 27.66
   },
   {
    "i": 68,
-   "text": "a",
-   "start": 28.78,
-   "end": 28.88
+   "text": "beco.",
+   "start": 27.66,
+   "end": 28.122
   },
   {
    "i": 69,
-   "text": "mão",
-   "start": 28.88,
-   "end": 28.96
+   "text": "Vocês",
+   "start": 28.564,
+   "end": 28.86
   },
   {
    "i": 70,
-   "text": "para",
-   "start": 28.96,
-   "end": 29.18
+   "text": "só",
+   "start": 28.86,
+   "end": 29.22
   },
   {
    "i": 71,
-   "text": "você.",
-   "start": 29.18,
-   "end": 29.391
+   "text": "param",
+   "start": 29.22,
+   "end": 29.34
   },
   {
    "i": 72,
-   "text": "É",
-   "start": 30.17,
-   "end": 30.28
+   "text": "de",
+   "start": 29.34,
+   "end": 29.58
   },
   {
    "i": 73,
-   "text": "a",
-   "start": 30.28,
-   "end": 30.46
+   "text": "correr",
+   "start": 29.58,
+   "end": 29.76
   },
   {
    "i": 74,
-   "text": "mão",
-   "start": 30.46,
-   "end": 30.58
+   "text": "quando",
+   "start": 29.76,
+   "end": 30.0
   },
   {
    "i": 75,
-   "text": "do",
-   "start": 30.58,
-   "end": 30.78
+   "text": "o",
+   "start": 30.0,
+   "end": 30.18
   },
   {
    "i": 76,
-   "text": "homem",
-   "start": 30.78,
-   "end": 31.08
+   "text": "cachorro",
+   "start": 30.18,
+   "end": 30.48
   },
   {
    "i": 77,
-   "text": "que",
-   "start": 31.08,
-   "end": 31.32
+   "text": "para",
+   "start": 30.48,
+   "end": 30.72
   },
   {
    "i": 78,
-   "text": "vendeu",
-   "start": 31.32,
-   "end": 31.64
+   "text": "de",
+   "start": 30.72,
+   "end": 30.92
   },
   {
    "i": 79,
-   "text": "o",
-   "start": 31.64,
-   "end": 31.84
+   "text": "latir.",
+   "start": 30.92,
+   "end": 31.156
   },
   {
    "i": 80,
-   "text": "seu",
-   "start": 31.84,
-   "end": 31.98
+   "text": "Então",
+   "start": 31.904,
+   "end": 32.26
   },
   {
    "i": 81,
-   "text": "nome.",
-   "start": 31.98,
-   "end": 32.148
+   "text": "o",
+   "start": 32.26,
+   "end": 32.58
   },
   {
    "i": 82,
-   "text": "Você",
-   "start": 32.984,
-   "end": 33.24
+   "text": "celular",
+   "start": 32.58,
+   "end": 32.94
   },
   {
    "i": 83,
-   "text": "segura",
-   "start": 33.24,
-   "end": 33.64
+   "text": "dele",
+   "start": 32.94,
+   "end": 33.2
   },
   {
    "i": 84,
-   "text": "assim",
-   "start": 33.86,
-   "end": 33.86
+   "text": "acende.",
+   "start": 33.2,
+   "end": 33.536
   },
   {
    "i": 85,
-   "text": "mesmo.",
-   "start": 33.86,
-   "end": 34.078
+   "text": "É",
+   "start": 34.012,
+   "end": 34.2
   },
   {
    "i": 86,
-   "text": "Do",
-   "start": 35.127,
-   "end": 35.32
+   "text": "a",
+   "start": 34.2,
+   "end": 34.34
   },
   {
    "i": 87,
-   "text": "outro",
-   "start": 35.32,
-   "end": 35.56
+   "text": "“Cobrança”:",
+   "start": 34.34,
+   "end": 34.743
   },
   {
    "i": 88,
-   "text": "lado,",
-   "start": 35.56,
-   "end": 35.82
+   "text": "“Cadê",
+   "start": 35.451,
+   "end": 35.84
   },
   {
    "i": 89,
-   "text": "o",
-   "start": 35.94,
-   "end": 36.12
+   "text": "vocês?”",
+   "start": 35.84,
+   "end": 36.184
   },
   {
    "i": 90,
-   "text": "beco.",
-   "start": 36.12,
-   "end": 36.363
+   "text": "Você",
+   "start": 37.009,
+   "end": 37.34
   },
   {
    "i": 91,
-   "text": "Muro",
-   "start": 37.261,
-   "end": 37.56
+   "text": "arranca",
+   "start": 37.34,
+   "end": 37.62
   },
   {
    "i": 92,
-   "text": "pichado,",
-   "start": 37.56,
-   "end": 38.12
+   "text": "o",
+   "start": 37.62,
+   "end": 37.76
   },
   {
    "i": 93,
-   "text": "cachorro",
-   "start": 38.34,
-   "end": 38.6
+   "text": "celular",
+   "start": 37.76,
+   "end": 38.06
   },
   {
    "i": 94,
-   "text": "latindo,",
-   "start": 38.6,
-   "end": 39.2
+   "text": "da",
+   "start": 38.06,
+   "end": 38.22
   },
   {
    "i": 95,
-   "text": "luz",
-   "start": 39.48,
-   "end": 39.58
+   "text": "mão",
+   "start": 38.22,
+   "end": 38.4
   },
   {
    "i": 96,
-   "text": "acendendo",
-   "start": 39.58,
-   "end": 40.18
+   "text": "dele",
+   "start": 38.4,
+   "end": 38.64
   },
   {
    "i": 97,
-   "text": "nas",
-   "start": 40.18,
-   "end": 40.36
+   "text": "e",
+   "start": 38.64,
+   "end": 38.8
   },
   {
    "i": 98,
-   "text": "janelas.",
-   "start": 40.36,
-   "end": 40.765
+   "text": "sobe",
+   "start": 38.8,
+   "end": 38.98
   },
   {
    "i": 99,
-   "text": "Vocês",
-   "start": 41.267,
-   "end": 41.52
+   "text": "a",
+   "start": 38.98,
+   "end": 39.16
   },
   {
    "i": 100,
-   "text": "correm",
-   "start": 41.52,
-   "end": 42.04
+   "text": "conversa.",
+   "start": 39.16,
+   "end": 39.714
   },
   {
    "i": 101,
-   "text": "sem",
-   "start": 42.04,
-   "end": 42.28
+   "text": "Onze",
+   "start": 40.194,
+   "end": 40.62
   },
   {
    "i": 102,
-   "text": "olhar",
-   "start": 42.28,
-   "end": 42.54
+   "text": "e",
+   "start": 40.62,
+   "end": 40.72
   },
   {
    "i": 103,
-   "text": "para",
-   "start": 42.54,
-   "end": 42.78
+   "text": "meia",
+   "start": 40.72,
+   "end": 40.84
   },
   {
    "i": 104,
-   "text": "trás.",
-   "start": 42.78,
-   "end": 43.008
+   "text": "da",
+   "start": 40.84,
+   "end": 41.06
   },
   {
    "i": 105,
-   "text": "No",
-   "start": 44.093,
-   "end": 44.24
+   "text": "noite,",
+   "start": 41.06,
+   "end": 41.34
   },
   {
    "i": 106,
-   "text": "meio",
-   "start": 44.24,
-   "end": 44.38
+   "text": "antes",
+   "start": 41.657,
+   "end": 41.96
   },
   {
    "i": 107,
-   "text": "do",
-   "start": 44.38,
-   "end": 44.54
+   "text": "de",
+   "start": 41.96,
+   "end": 42.1
   },
   {
    "i": 108,
-   "text": "beco,",
-   "start": 44.54,
-   "end": 44.8
+   "text": "bater",
+   "start": 42.1,
+   "end": 42.26
   },
   {
    "i": 109,
-   "text": "o",
-   "start": 44.96,
-   "end": 45.06
+   "text": "na",
+   "start": 42.26,
+   "end": 42.44
   },
   {
    "i": 110,
-   "text": "celular",
-   "start": 45.06,
-   "end": 45.32
+   "text": "sua",
+   "start": 42.44,
+   "end": 42.6
   },
   {
    "i": 111,
-   "text": "dele",
-   "start": 45.32,
-   "end": 45.56
+   "text": "porta,",
+   "start": 42.6,
+   "end": 42.96
   },
   {
    "i": 112,
-   "text": "vibra.",
-   "start": 45.56,
-   "end": 45.801
+   "text": "Renato",
+   "start": 43.26,
+   "end": 43.5
   },
   {
    "i": 113,
-   "text": "É",
-   "start": 46.532,
-   "end": 46.78
+   "text": "escreveu:",
+   "start": 43.5,
+   "end": 43.894
   },
   {
    "i": 114,
-   "text": "a",
-   "start": 46.78,
-   "end": 46.96
+   "text": "“Tô",
+   "start": 44.776,
+   "end": 44.96
   },
   {
    "i": 115,
-   "text": "“Cobrança”",
-   "start": 46.96,
-   "end": 47.46
+   "text": "chegando",
+   "start": 44.96,
+   "end": 45.4
   },
   {
    "i": 116,
-   "text": "de",
-   "start": 47.46,
-   "end": 47.68
+   "text": "na",
+   "start": 45.4,
+   "end": 45.56
   },
   {
    "i": 117,
-   "text": "novo:",
-   "start": 47.68,
-   "end": 47.845
+   "text": "casa",
+   "start": 45.56,
+   "end": 45.84
   },
   {
    "i": 118,
-   "text": "“Cadê",
-   "start": 48.697,
-   "end": 49.2
+   "text": "dele.”",
+   "start": 45.84,
+   "end": 46.038
   },
   {
    "i": 119,
-   "text": "vocês?”",
-   "start": 49.2,
-   "end": 49.733
+   "text": "Você",
+   "start": 47.115,
+   "end": 47.36
   },
   {
    "i": 120,
-   "text": "Dessa",
-   "start": 50.665,
-   "end": 50.96
+   "text": "não",
+   "start": 47.36,
+   "end": 47.6
   },
   {
    "i": 121,
-   "text": "vez,",
-   "start": 50.96,
-   "end": 51.12
+   "text": "sabe",
+   "start": 47.6,
+   "end": 47.72
   },
   {
    "i": 122,
-   "text": "ele",
-   "start": 51.12,
-   "end": 51.32
+   "text": "se",
+   "start": 47.72,
+   "end": 47.92
   },
   {
    "i": 123,
-   "text": "mostra",
-   "start": 51.32,
-   "end": 51.62
+   "text": "acredita.",
+   "start": 47.92,
+   "end": 48.291
   },
   {
    "i": 124,
-   "text": "a",
-   "start": 51.62,
-   "end": 51.76
+   "text": "Mas",
+   "start": 48.954,
+   "end": 49.18
   },
   {
    "i": 125,
-   "text": "tela",
-   "start": 51.76,
-   "end": 51.86
+   "text": "sabe",
+   "start": 49.18,
+   "end": 49.38
   },
   {
    "i": 126,
-   "text": "para",
-   "start": 51.86,
-   "end": 52.1
+   "text": "o",
+   "start": 49.38,
+   "end": 49.52
   },
   {
    "i": 127,
-   "text": "você.",
-   "start": 52.1,
-   "end": 52.295
+   "text": "que",
+   "start": 49.52,
+   "end": 49.64
   },
   {
    "i": 128,
-   "text": "Depois",
-   "start": 52.73,
-   "end": 53.0
+   "text": "fazer:",
+   "start": 49.64,
+   "end": 49.871
   },
   {
    "i": 129,
-   "text": "tira",
-   "start": 53.0,
-   "end": 53.22
+   "text": "manda",
+   "start": 50.555,
+   "end": 50.8
   },
   {
    "i": 130,
-   "text": "o",
-   "start": 53.22,
-   "end": 53.4
+   "text": "ele",
+   "start": 50.8,
+   "end": 50.98
   },
   {
    "i": 131,
-   "text": "chip",
-   "start": 53.4,
-   "end": 53.6
+   "text": "tirar",
+   "start": 50.98,
+   "end": 51.26
   },
   {
    "i": 132,
-   "text": "e",
-   "start": 53.6,
-   "end": 53.9
+   "text": "o",
+   "start": 51.26,
+   "end": 51.5
   },
   {
    "i": 133,
-   "text": "joga",
-   "start": 53.9,
-   "end": 54.1
+   "text": "chip.",
+   "start": 51.5,
+   "end": 51.685
   },
   {
    "i": 134,
-   "text": "no",
-   "start": 54.1,
-   "end": 54.22
+   "text": "O",
+   "start": 52.384,
+   "end": 52.52
   },
   {
    "i": 135,
-   "text": "bueiro.",
-   "start": 54.22,
-   "end": 54.446
+   "text": "chip",
+   "start": 52.52,
+   "end": 52.68
   },
   {
    "i": 136,
-   "text": "Três",
-   "start": 55.461,
-   "end": 55.76
+   "text": "vai",
+   "start": 52.68,
+   "end": 52.86
   },
   {
    "i": 137,
-   "text": "ruas",
-   "start": 55.76,
-   "end": 56.02
+   "text": "para",
+   "start": 52.86,
+   "end": 52.972
   },
   {
    "i": 138,
-   "text": "depois,",
-   "start": 56.02,
-   "end": 56.4
+   "text": "o",
+   "start": 52.972,
+   "end": 53.0
   },
   {
    "i": 139,
-   "text": "o",
-   "start": 56.62,
-   "end": 56.76
+   "text": "bueiro,",
+   "start": 53.0,
+   "end": 53.283
   },
   {
    "i": 140,
-   "text": "único",
-   "start": 56.76,
-   "end": 56.96
+   "text": "e",
+   "start": 53.671,
+   "end": 53.76
   },
   {
    "i": 141,
-   "text": "lugar",
-   "start": 56.96,
-   "end": 57.2
+   "text": "o",
+   "start": 53.76,
+   "end": 53.92
   },
   {
    "i": 142,
-   "text": "aberto",
-   "start": 57.2,
-   "end": 57.58
+   "text": "celular",
+   "start": 53.92,
+   "end": 54.2
   },
   {
    "i": 143,
-   "text": "é",
-   "start": 57.58,
-   "end": 57.84
+   "text": "fica",
+   "start": 54.2,
+   "end": 54.46
   },
   {
    "i": 144,
-   "text": "o",
-   "start": 57.84,
-   "end": 57.96
+   "text": "com",
+   "start": 54.46,
+   "end": 54.66
   },
   {
    "i": 145,
-   "text": "bar",
-   "start": 57.96,
-   "end": 58.1
+   "text": "você.",
+   "start": 54.66,
+   "end": 54.869
   },
   {
    "i": 146,
-   "text": "da",
-   "start": 58.1,
-   "end": 58.32
+   "text": "No",
+   "start": 55.778,
+   "end": 55.92
   },
   {
    "i": 147,
-   "text": "esquina.",
-   "start": 58.32,
-   "end": 58.57
+   "text": "bar",
+   "start": 55.92,
+   "end": 56.08
   },
   {
    "i": 148,
-   "text": "Você",
-   "start": 59.063,
-   "end": 59.3
+   "text": "da",
+   "start": 56.08,
+   "end": 56.3
   },
   {
    "i": 149,
-   "text": "puxa",
-   "start": 59.3,
-   "end": 59.5
+   "text": "esquina,",
+   "start": 56.3,
+   "end": 56.559
   },
   {
    "i": 150,
-   "text": "o",
-   "start": 59.5,
-   "end": 59.56
+   "text": "a",
+   "start": 56.822,
+   "end": 57.02
   },
   {
    "i": 151,
-   "text": "capuz.",
-   "start": 59.56,
-   "end": 59.881
+   "text": "TV",
+   "start": 57.02,
+   "end": 57.18
   },
   {
    "i": 152,
-   "text": "Na",
-   "start": 60.782,
-   "end": 60.9
+   "text": "está",
+   "start": 57.18,
+   "end": 57.3
   },
   {
    "i": 153,
-   "text": "TV,",
-   "start": 60.9,
-   "end": 61.215
+   "text": "no",
+   "start": 57.3,
+   "end": 57.48
   },
   {
    "i": 154,
-   "text": "o",
-   "start": 61.465,
-   "end": 61.66
+   "text": "plantão.",
+   "start": 57.48,
+   "end": 57.727
   },
   {
    "i": 155,
-   "text": "plantão",
-   "start": 61.66,
-   "end": 62.1
+   "text": "O",
+   "start": 58.354,
+   "end": 58.52
   },
   {
    "i": 156,
-   "text": "de",
-   "start": 62.2,
-   "end": 62.38
+   "text": "seu",
+   "start": 58.52,
+   "end": 58.72
   },
   {
    "i": 157,
-   "text": "novo.",
-   "start": 62.38,
-   "end": 62.515
+   "text": "rosto.",
+   "start": 58.72,
+   "end": 59.025
   },
   {
    "i": 158,
-   "text": "O",
-   "start": 63.205,
-   "end": 63.4
+   "text": "E,",
+   "start": 59.717,
+   "end": 59.9
   },
   {
    "i": 159,
-   "text": "seu",
-   "start": 63.4,
-   "end": 63.6
+   "text": "do",
+   "start": 59.9,
+   "end": 60.08
   },
   {
    "i": 160,
-   "text": "rosto.",
-   "start": 63.6,
-   "end": 63.934
+   "text": "lado,",
+   "start": 60.08,
+   "end": 60.284
   },
   {
    "i": 161,
-   "text": "Embaixo,",
-   "start": 64.722,
-   "end": 65.14
+   "text": "pela",
+   "start": 60.621,
+   "end": 60.92
   },
   {
    "i": 162,
-   "text": "os",
-   "start": 65.489,
-   "end": 65.72
+   "text": "primeira",
+   "start": 60.92,
+   "end": 61.38
   },
   {
    "i": 163,
-   "text": "comentários",
-   "start": 65.72,
-   "end": 66.16
+   "text": "vez,",
+   "start": 61.38,
+   "end": 61.76
   },
   {
    "i": 164,
-   "text": "de",
-   "start": 66.16,
-   "end": 66.36
+   "text": "o",
+   "start": 62.15,
+   "end": 62.36
   },
   {
    "i": 165,
-   "text": "quem",
-   "start": 66.36,
-   "end": 66.46
+   "text": "dele.",
+   "start": 62.36,
+   "end": 62.556
   },
   {
    "i": 166,
-   "text": "está",
-   "start": 66.46,
-   "end": 66.64
+   "text": "Agora",
+   "start": 63.601,
+   "end": 63.9
   },
   {
    "i": 167,
-   "text": "assistindo.",
-   "start": 66.64,
-   "end": 67.026
+   "text": "os",
+   "start": 63.9,
+   "end": 64.16
   },
   {
    "i": 168,
-   "text": "Um",
-   "start": 68.015,
-   "end": 68.12
+   "text": "dois",
+   "start": 64.16,
+   "end": 64.38
   },
   {
    "i": 169,
-   "text": "homem",
-   "start": 68.12,
-   "end": 68.32
+   "text": "são",
+   "start": 64.38,
+   "end": 64.64
   },
   {
    "i": 170,
-   "text": "no",
-   "start": 68.32,
-   "end": 68.46
+   "text": "procurados.",
+   "start": 64.64,
+   "end": 65.081
   },
   {
    "i": 171,
-   "text": "balcão",
-   "start": 68.46,
-   "end": 68.8
+   "text": "Embaixo,",
+   "start": 66.016,
+   "end": 66.5
   },
   {
    "i": 172,
-   "text": "olha",
-   "start": 68.8,
-   "end": 68.94
+   "text": "os",
+   "start": 66.66,
+   "end": 66.8
   },
   {
    "i": 173,
-   "text": "da",
-   "start": 68.94,
-   "end": 69.2
+   "text": "comentários",
+   "start": 66.8,
+   "end": 67.14
   },
   {
    "i": 174,
-   "text": "tela",
-   "start": 69.2,
-   "end": 69.4
+   "text": "de",
+   "start": 67.14,
+   "end": 67.3
   },
   {
    "i": 175,
-   "text": "para",
-   "start": 69.4,
-   "end": 69.64
+   "text": "quem",
+   "start": 67.3,
+   "end": 67.48
   },
   {
    "i": 176,
-   "text": "você.",
-   "start": 69.64,
-   "end": 69.83
+   "text": "assiste.",
+   "start": 67.48,
+   "end": 67.811
   },
   {
    "i": 177,
-   "text": "Da",
-   "start": 70.228,
-   "end": 70.44
+   "text": "No",
+   "start": 68.466,
+   "end": 68.6
   },
   {
    "i": 178,
-   "text": "tela",
-   "start": 70.44,
-   "end": 70.7
+   "text": "balcão,",
+   "start": 68.6,
+   "end": 69.0
   },
   {
    "i": 179,
-   "text": "para",
-   "start": 70.7,
-   "end": 70.88
+   "text": "um",
+   "start": 69.24,
+   "end": 69.3
   },
   {
    "i": 180,
-   "text": "você.",
-   "start": 70.88,
-   "end": 71.187
+   "text": "homem",
+   "start": 69.3,
+   "end": 69.52
   },
   {
    "i": 181,
-   "text": "E",
-   "start": 71.765,
-   "end": 71.92
+   "text": "olha",
+   "start": 69.52,
+   "end": 69.72
   },
   {
    "i": 182,
-   "text": "pega",
-   "start": 71.92,
-   "end": 72.08
+   "text": "da",
+   "start": 69.72,
+   "end": 69.94
   },
   {
    "i": 183,
-   "text": "o",
-   "start": 72.08,
-   "end": 72.24
+   "text": "tela",
+   "start": 69.94,
+   "end": 70.12
   },
   {
    "i": 184,
-   "text": "celular.",
-   "start": 72.24,
-   "end": 72.502
+   "text": "para",
+   "start": 70.12,
+   "end": 70.36
   },
   {
    "i": 185,
-   "text": "Vocês",
-   "start": 73.514,
-   "end": 73.8
+   "text": "vocês.",
+   "start": 70.36,
+   "end": 70.648
   },
   {
    "i": 186,
-   "text": "saem",
-   "start": 73.8,
-   "end": 74.12
+   "text": "E",
+   "start": 71.256,
+   "end": 71.38
   },
   {
    "i": 187,
-   "text": "antes",
-   "start": 74.12,
-   "end": 74.46
+   "text": "pega",
+   "start": 71.38,
+   "end": 71.56
   },
   {
    "i": 188,
-   "text": "da",
-   "start": 74.46,
-   "end": 74.66
+   "text": "o",
+   "start": 71.56,
+   "end": 71.7
   },
   {
    "i": 189,
-   "text": "terceira",
-   "start": 74.66,
-   "end": 74.98
+   "text": "celular.",
+   "start": 71.7,
+   "end": 72.008
   },
   {
    "i": 190,
-   "text": "olhada.",
-   "start": 74.98,
-   "end": 75.255
+   "text": "Na",
+   "start": 72.955,
+   "end": 73.16
   },
   {
    "i": 191,
-   "text": "No",
-   "start": 76.163,
-   "end": 76.28
+   "text": "rua,",
+   "start": 73.16,
+   "end": 73.405
   },
   {
    "i": 192,
-   "text": "seu",
-   "start": 76.28,
-   "end": 76.48
+   "text": "é",
+   "start": 73.71,
+   "end": 73.86
   },
   {
    "i": 193,
-   "text": "bolso,",
-   "start": 76.48,
-   "end": 76.86
+   "text": "o",
+   "start": 73.86,
+   "end": 73.98
   },
   {
    "i": 194,
-   "text": "o",
-   "start": 76.94,
-   "end": 77.08
+   "text": "seu",
+   "start": 73.98,
+   "end": 74.1
   },
   {
    "i": 195,
    "text": "celular",
-   "start": 77.08,
-   "end": 77.34
+   "start": 74.1,
+   "end": 74.4
   },
   {
    "i": 196,
-   "text": "não",
-   "start": 77.34,
-   "end": 77.66
+   "text": "que",
+   "start": 74.4,
+   "end": 74.58
   },
   {
    "i": 197,
-   "text": "para.",
-   "start": 77.66,
-   "end": 77.841
+   "text": "não",
+   "start": 74.58,
+   "end": 74.74
   },
   {
    "i": 198,
-   "text": "O",
-   "start": 78.511,
-   "end": 78.68
+   "text": "para.",
+   "start": 74.74,
+   "end": 74.864
   },
   {
    "i": 199,
-   "text": "seu",
-   "start": 78.68,
-   "end": 78.82
+   "text": "O",
+   "start": 75.398,
+   "end": 75.6
   },
   {
    "i": 200,
-   "text": "número",
-   "start": 78.82,
-   "end": 79.06
+   "text": "seu",
+   "start": 75.6,
+   "end": 75.72
   },
   {
    "i": 201,
-   "text": "vazou",
-   "start": 79.06,
-   "end": 79.48
+   "text": "número",
+   "start": 75.72,
+   "end": 75.98
   },
   {
    "i": 202,
-   "text": "junto",
-   "start": 79.48,
-   "end": 79.7
+   "text": "vazou",
+   "start": 75.98,
+   "end": 76.5
   },
   {
    "i": 203,
-   "text": "com",
-   "start": 79.7,
-   "end": 79.88
+   "text": "junto",
+   "start": 76.5,
+   "end": 76.76
   },
   {
    "i": 204,
-   "text": "o",
-   "start": 79.88,
-   "end": 79.96
+   "text": "com",
+   "start": 76.76,
+   "end": 76.96
   },
   {
    "i": 205,
-   "text": "seu",
-   "start": 79.96,
-   "end": 80.04
+   "text": "o",
+   "start": 76.96,
+   "end": 77.06
   },
   {
    "i": 206,
-   "text": "rosto.",
-   "start": 80.04,
-   "end": 80.272
+   "text": "seu",
+   "start": 77.06,
+   "end": 77.12
   },
   {
    "i": 207,
-   "text": "Uns",
-   "start": 81.078,
-   "end": 81.3
+   "text": "rosto.",
+   "start": 77.12,
+   "end": 77.376
   },
   {
    "i": 208,
-   "text": "te",
-   "start": 81.3,
-   "end": 81.54
+   "text": "Uns",
+   "start": 77.998,
+   "end": 78.2
   },
   {
    "i": 209,
-   "text": "chamam",
-   "start": 81.54,
-   "end": 81.66
+   "text": "te",
+   "start": 78.2,
+   "end": 78.46
   },
   {
    "i": 210,
-   "text": "de",
-   "start": 81.66,
-   "end": 81.86
+   "text": "chamam",
+   "start": 78.46,
+   "end": 78.58
   },
   {
    "i": 211,
-   "text": "bandido.",
-   "start": 81.86,
-   "end": 82.217
+   "text": "de",
+   "start": 78.58,
+   "end": 78.78
   },
   {
    "i": 212,
-   "text": "Outros",
-   "start": 82.639,
-   "end": 82.94
+   "text": "bandido.",
+   "start": 78.78,
+   "end": 79.143
   },
   {
    "i": 213,
-   "text": "escrevem:",
-   "start": 82.94,
-   "end": 83.323
+   "text": "Outros",
+   "start": 79.556,
+   "end": 79.82
   },
   {
    "i": 214,
-   "text": "“Tô",
-   "start": 83.833,
-   "end": 83.96
+   "text": "escrevem:",
+   "start": 79.82,
+   "end": 80.226
   },
   {
    "i": 215,
-   "text": "contigo,",
-   "start": 83.96,
-   "end": 84.5
+   "text": "“Tô",
+   "start": 80.801,
+   "end": 80.94
   },
   {
    "i": 216,
-   "text": "Zinho.”",
-   "start": 84.62,
-   "end": 84.744
+   "text": "contigo,",
+   "start": 80.94,
+   "end": 81.29
   },
   {
    "i": 217,
-   "text": "Na",
-   "start": 85.824,
-   "end": 85.94
+   "text": "Zinho.”",
+   "start": 81.29,
+   "end": 81.578
   },
   {
    "i": 218,
-   "text": "avenida,",
-   "start": 85.94,
-   "end": 86.44
+   "text": "Na",
+   "start": 82.651,
+   "end": 82.76
   },
   {
    "i": 219,
-   "text": "um",
-   "start": 86.56,
-   "end": 86.66
+   "text": "avenida,",
+   "start": 82.76,
+   "end": 83.24
   },
   {
    "i": 220,
-   "text": "carro",
-   "start": 86.66,
-   "end": 86.82
+   "text": "o",
+   "start": 83.4,
+   "end": 83.5
   },
   {
    "i": 221,
-   "text": "vem",
-   "start": 86.82,
-   "end": 87.0
+   "text": "carro",
+   "start": 83.5,
+   "end": 83.64
   },
   {
    "i": 222,
-   "text": "devagar.",
-   "start": 87.0,
-   "end": 87.359
+   "text": "de",
+   "start": 83.64,
+   "end": 83.82
   },
   {
    "i": 223,
-   "text": "De",
-   "start": 87.856,
-   "end": 88.12
+   "text": "farol",
+   "start": 83.82,
+   "end": 84.0
   },
   {
    "i": 224,
-   "text": "farol",
-   "start": 88.12,
-   "end": 88.28
+   "text": "apagado",
+   "start": 84.0,
+   "end": 84.38
   },
   {
    "i": 225,
-   "text": "apagado.",
-   "start": 88.28,
-   "end": 88.737
+   "text": "vem",
+   "start": 84.38,
+   "end": 84.5
   },
   {
    "i": 226,
-   "text": "Vocês",
-   "start": 89.572,
-   "end": 89.86
+   "text": "devagar.",
+   "start": 84.5,
+   "end": 84.907
   },
   {
    "i": 227,
-   "text": "colam",
-   "start": 89.86,
-   "end": 90.1
+   "text": "Vocês",
+   "start": 85.469,
+   "end": 85.88
   },
   {
    "i": 228,
-   "text": "no",
-   "start": 90.1,
-   "end": 90.34
+   "text": "colam",
+   "start": 85.88,
+   "end": 86.22
   },
   {
    "i": 229,
-   "text": "escuro",
-   "start": 90.34,
-   "end": 90.54
+   "text": "no",
+   "start": 86.22,
+   "end": 86.4
   },
   {
    "i": 230,
-   "text": "de",
-   "start": 90.54,
-   "end": 90.68
+   "text": "escuro",
+   "start": 86.4,
+   "end": 86.72
   },
   {
    "i": 231,
-   "text": "uma",
-   "start": 90.68,
-   "end": 90.86
+   "text": "de",
+   "start": 86.72,
+   "end": 86.86
   },
   {
    "i": 232,
-   "text": "porta.",
-   "start": 90.86,
-   "end": 91.068
+   "text": "uma",
+   "start": 86.86,
+   "end": 87.02
   },
   {
    "i": 233,
-   "text": "O",
-   "start": 92.051,
-   "end": 92.2
+   "text": "porta.",
+   "start": 87.02,
+   "end": 87.251
   },
   {
    "i": 234,
-   "text": "carro",
-   "start": 92.2,
-   "end": 92.36
+   "text": "Na",
+   "start": 88.072,
+   "end": 88.22
   },
   {
    "i": 235,
-   "text": "passa",
-   "start": 92.36,
-   "end": 92.7
+   "text": "janela",
+   "start": 88.22,
+   "end": 88.52
   },
   {
    "i": 236,
-   "text": "a",
-   "start": 92.7,
-   "end": 92.82
+   "text": "do",
+   "start": 88.52,
+   "end": 88.7
   },
   {
    "i": 237,
-   "text": "um",
-   "start": 92.82,
-   "end": 93.04
+   "text": "carona,",
+   "start": 88.7,
+   "end": 88.983
   },
   {
    "i": 238,
-   "text": "palmo.",
-   "start": 93.04,
-   "end": 93.273
+   "text": "uma",
+   "start": 89.305,
+   "end": 89.52
   },
   {
    "i": 239,
-   "text": "Na",
-   "start": 94.084,
-   "end": 94.24
+   "text": "mão.",
+   "start": 89.52,
+   "end": 89.682
   },
   {
    "i": 240,
-   "text": "janela",
-   "start": 94.24,
-   "end": 94.56
+   "text": "No",
+   "start": 90.445,
+   "end": 90.64
   },
   {
    "i": 241,
-   "text": "do",
-   "start": 94.56,
-   "end": 94.76
+   "text": "dedo,",
+   "start": 90.64,
+   "end": 91.08
   },
   {
    "i": 242,
-   "text": "carona,",
-   "start": 94.76,
-   "end": 95.08
+   "text": "um",
+   "start": 91.2,
+   "end": 91.34
   },
   {
    "i": 243,
-   "text": "uma",
-   "start": 95.3,
-   "end": 95.42
+   "text": "anel",
+   "start": 91.34,
+   "end": 91.6
   },
   {
    "i": 244,
-   "text": "mão",
-   "start": 95.42,
-   "end": 95.54
+   "text": "grosso",
+   "start": 91.6,
+   "end": 91.96
   },
   {
    "i": 245,
-   "text": "apoiada",
-   "start": 95.54,
-   "end": 96.02
+   "text": "de",
+   "start": 91.96,
+   "end": 92.12
   },
   {
    "i": 246,
-   "text": "na",
-   "start": 96.02,
-   "end": 96.18
+   "text": "ouro.",
+   "start": 92.12,
+   "end": 92.233
   },
   {
    "i": 247,
-   "text": "porta.",
-   "start": 96.18,
-   "end": 96.48
+   "text": "É",
+   "start": 93.219,
+   "end": 93.36
   },
   {
    "i": 248,
-   "text": "No",
-   "start": 96.76,
-   "end": 96.88
+   "text": "o",
+   "start": 93.36,
+   "end": 93.52
   },
   {
    "i": 249,
-   "text": "dedo,",
-   "start": 96.88,
-   "end": 97.3
+   "text": "anel",
+   "start": 93.52,
+   "end": 93.7
   },
   {
    "i": 250,
-   "text": "um",
-   "start": 97.38,
-   "end": 97.48
+   "text": "da",
+   "start": 93.7,
+   "end": 93.86
   },
   {
    "i": 251,
-   "text": "anel",
-   "start": 97.48,
-   "end": 97.72
+   "text": "foto",
+   "start": 93.86,
+   "end": 94.08
   },
   {
    "i": 252,
-   "text": "grosso",
-   "start": 97.72,
-   "end": 98.12
+   "text": "da",
+   "start": 94.08,
+   "end": 94.26
   },
   {
    "i": 253,
-   "text": "de",
-   "start": 98.12,
-   "end": 98.24
+   "text": "divisão.",
+   "start": 94.26,
+   "end": 94.534
   },
   {
    "i": 254,
-   "text": "ouro.",
-   "start": 98.24,
-   "end": 98.365
+   "text": "A",
+   "start": 95.309,
+   "end": 95.52
   },
   {
    "i": 255,
-   "text": "Você",
-   "start": 99.368,
-   "end": 99.62
+   "text": "mão",
+   "start": 95.52,
+   "end": 95.62
   },
   {
    "i": 256,
-   "text": "já",
-   "start": 99.62,
-   "end": 99.9
+   "text": "que",
+   "start": 95.62,
+   "end": 95.98
   },
   {
    "i": 257,
-   "text": "viu",
-   "start": 99.9,
-   "end": 100.02
+   "text": "contava",
+   "start": 95.98,
+   "end": 96.22
   },
   {
    "i": 258,
-   "text": "esse",
-   "start": 100.02,
-   "end": 100.24
+   "text": "o",
+   "start": 96.22,
+   "end": 96.36
   },
   {
    "i": 259,
-   "text": "anel.",
-   "start": 100.24,
-   "end": 100.47
+   "text": "dinheiro.",
+   "start": 96.36,
+   "end": 96.596
   },
   {
    "i": 260,
-   "text": "Na",
-   "start": 101.277,
-   "end": 101.48
+   "text": "Pela",
+   "start": 97.496,
+   "end": 97.9
   },
   {
    "i": 261,
-   "text": "foto",
-   "start": 101.48,
-   "end": 101.8
+   "text": "primeira",
+   "start": 97.9,
+   "end": 98.2
   },
   {
    "i": 262,
-   "text": "da",
-   "start": 101.8,
-   "end": 101.98
+   "text": "vez,",
+   "start": 98.2,
+   "end": 98.656
   },
   {
    "i": 263,
-   "text": "divisão,",
-   "start": 101.98,
-   "end": 102.327
+   "text": "você",
+   "start": 99.054,
+   "end": 99.38
   },
   {
    "i": 264,
-   "text": "contando",
-   "start": 102.998,
-   "end": 103.56
+   "text": "vê",
+   "start": 99.38,
+   "end": 99.5
   },
   {
    "i": 265,
-   "text": "o",
-   "start": 103.56,
-   "end": 103.76
+   "text": "um",
+   "start": 99.5,
+   "end": 99.66
   },
   {
    "i": 266,
-   "text": "dinheiro.",
-   "start": 103.76,
-   "end": 103.973
+   "text": "deles.",
+   "start": 99.66,
+   "end": 99.913
   },
   {
    "i": 267,
-   "text": "Você",
-   "start": 105.03,
-   "end": 105.28
+   "text": "Pelo",
+   "start": 100.844,
+   "end": 101.04
   },
   {
    "i": 268,
-   "text": "pergunta",
-   "start": 105.28,
-   "end": 105.58
+   "text": "menos",
+   "start": 101.04,
+   "end": 101.22
   },
   {
    "i": 269,
-   "text": "de",
-   "start": 105.58,
-   "end": 105.76
+   "text": "a",
+   "start": 101.22,
+   "end": 101.4
   },
   {
    "i": 270,
-   "text": "quem",
-   "start": 105.76,
-   "end": 105.9
+   "text": "mão.",
+   "start": 101.4,
+   "end": 101.423
   },
   {
    "i": 271,
-   "text": "é.",
-   "start": 105.9,
-   "end": 106.004
+   "text": "O",
+   "start": 102.364,
+   "end": 102.54
   },
   {
    "i": 272,
-   "text": "Ele",
-   "start": 106.828,
-   "end": 107.02
+   "text": "carro",
+   "start": 102.54,
+   "end": 102.78
   },
   {
    "i": 273,
-   "text": "respondeu",
-   "start": 107.02,
-   "end": 107.46
+   "text": "some",
+   "start": 102.78,
+   "end": 103.02
   },
   {
    "i": 274,
-   "text": "rápido",
-   "start": 107.46,
-   "end": 107.84
+   "text": "na",
+   "start": 103.02,
+   "end": 103.18
   },
   {
    "i": 275,
-   "text": "demais.",
-   "start": 107.84,
-   "end": 108.21
+   "text": "esquina.",
+   "start": 103.18,
+   "end": 103.444
   },
   {
    "i": 276,
-   "text": "O",
-   "start": 109.191,
-   "end": 109.4
+   "text": "Vocês",
+   "start": 104.235,
+   "end": 104.54
   },
   {
    "i": 277,
-   "text": "carro",
-   "start": 109.4,
-   "end": 109.72
+   "text": "precisam",
+   "start": 104.54,
+   "end": 104.86
   },
   {
    "i": 278,
-   "text": "some",
-   "start": 109.72,
-   "end": 110.04
+   "text": "de",
+   "start": 104.86,
+   "end": 104.96
   },
   {
    "i": 279,
-   "text": "na",
-   "start": 110.04,
-   "end": 110.22
+   "text": "um",
+   "start": 104.96,
+   "end": 105.1
   },
   {
    "i": 280,
-   "text": "esquina.",
-   "start": 110.22,
-   "end": 111.083
+   "text": "lugar",
+   "start": 105.1,
+   "end": 105.32
   },
   {
    "i": 281,
-   "text": "Vocês",
-   "start": 111.755,
-   "end": 112.1
+   "text": "até",
+   "start": 105.32,
+   "end": 105.48
   },
   {
    "i": 282,
-   "text": "precisam",
-   "start": 112.1,
-   "end": 112.46
+   "text": "amanhecer.",
+   "start": 105.48,
+   "end": 105.847
   },
   {
    "i": 283,
-   "text": "de",
-   "start": 112.46,
-   "end": 112.58
+   "text": "O",
+   "start": 106.554,
+   "end": 106.74
   },
   {
    "i": 284,
-   "text": "um",
-   "start": 112.58,
-   "end": 112.68
+   "text": "ferro-velho",
+   "start": 106.74,
+   "end": 107.1
   },
   {
    "i": 285,
-   "text": "lugar",
-   "start": 112.68,
-   "end": 112.88
+   "text": "é",
+   "start": 107.1,
+   "end": 107.26
   },
   {
    "i": 286,
-   "text": "para",
-   "start": 112.88,
-   "end": 113.1
+   "text": "deles.",
+   "start": 107.26,
+   "end": 107.555
   },
   {
    "i": 287,
-   "text": "passar",
-   "start": 113.1,
-   "end": 113.3
+   "text": "A",
+   "start": 108.058,
+   "end": 108.24
   },
   {
    "i": 288,
-   "text": "a",
-   "start": 113.3,
-   "end": 113.38
+   "text": "casa",
+   "start": 108.24,
+   "end": 108.42
   },
   {
    "i": 289,
-   "text": "noite.",
-   "start": 113.38,
-   "end": 113.627
+   "text": "da",
+   "start": 108.42,
+   "end": 108.6
   },
   {
    "i": 290,
-   "text": "A",
-   "start": 114.596,
-   "end": 114.7
+   "text": "mãe,",
+   "start": 108.6,
+   "end": 108.693
   },
   {
    "i": 291,
-   "text": "mãe",
-   "start": 114.7,
-   "end": 114.867
+   "text": "eles",
+   "start": 109.055,
+   "end": 109.36
   },
   {
    "i": 292,
-   "text": "que",
-   "start": 115.123,
-   "end": 115.26
+   "text": "sabem",
+   "start": 109.36,
+   "end": 109.54
   },
   {
    "i": 293,
-   "text": "te",
-   "start": 115.26,
-   "end": 115.42
+   "text": "onde",
+   "start": 109.54,
+   "end": 109.78
   },
   {
    "i": 294,
-   "text": "dava",
-   "start": 115.42,
-   "end": 115.58
+   "text": "fica.",
+   "start": 109.78,
+   "end": 109.984
   },
   {
    "i": 295,
-   "text": "almoço.",
-   "start": 115.68,
-   "end": 115.879
+   "text": "Ferro-velho",
+   "start": 110.704,
+   "end": 111.157
   },
   {
    "i": 296,
-   "text": "Na",
-   "start": 116.735,
-   "end": 116.86
+   "text": "ou",
+   "start": 111.157,
+   "end": 111.38
   },
   {
    "i": 297,
-   "text": "casa",
-   "start": 116.86,
-   "end": 117.08
+   "text": "mãe?",
+   "start": 111.38,
+   "end": 111.532
   },
   {
    "i": 298,
-   "text": "que",
-   "start": 117.08,
-   "end": 117.24
+   "text": "Comenta",
+   "start": 112.347,
+   "end": 112.72
   },
   {
    "i": 299,
-   "text": "eles",
-   "start": 117.24,
-   "end": 117.48
+   "text": "uma",
+   "start": 112.72,
+   "end": 112.88
   },
   {
    "i": 300,
-   "text": "sabem",
-   "start": 117.48,
-   "end": 117.7
+   "text": "palavra",
+   "start": 112.88,
+   "end": 113.22
   },
   {
    "i": 301,
-   "text": "onde",
-   "start": 117.7,
-   "end": 118.02
+   "text": "só.",
+   "start": 113.22,
+   "end": 113.414
   },
   {
    "i": 302,
-   "text": "fica.",
-   "start": 118.02,
-   "end": 118.255
+   "text": "O",
+   "start": 114.393,
+   "end": 114.52
   },
   {
    "i": 303,
-   "text": "Ferro-velho",
-   "start": 119.179,
-   "end": 119.666
+   "text": "que",
+   "start": 114.52,
+   "end": 114.64
   },
   {
    "i": 304,
-   "text": "ou",
-   "start": 120.046,
-   "end": 120.22
+   "text": "a",
+   "start": 114.64,
+   "end": 114.74
   },
   {
    "i": 305,
-   "text": "mãe?",
-   "start": 120.22,
-   "end": 120.352
+   "text": "maioria",
+   "start": 114.74,
+   "end": 114.96
   },
   {
    "i": 306,
-   "text": "Comenta",
-   "start": 121.183,
-   "end": 121.52
+   "text": "escolher",
+   "start": 114.96,
+   "end": 115.299
   },
   {
    "i": 307,
-   "text": "uma",
-   "start": 121.52,
-   "end": 121.7
+   "text": "vira",
+   "start": 115.701,
+   "end": 116.04
   },
   {
    "i": 308,
-   "text": "palavra",
-   "start": 121.7,
-   "end": 122.04
+   "text": "a",
+   "start": 116.04,
+   "end": 116.04
   },
   {
    "i": 309,
-   "text": "só.",
-   "start": 122.04,
-   "end": 122.38
+   "text": "parte",
+   "start": 116.04,
+   "end": 116.28
   },
   {
    "i": 310,
-   "text": "O",
-   "start": 122.38,
-   "end": 122.64
-  },
-  {
-   "i": 311,
-   "text": "que",
-   "start": 122.64,
-   "end": 122.74
-  },
-  {
-   "i": 312,
-   "text": "a",
-   "start": 122.74,
-   "end": 122.82
-  },
-  {
-   "i": 313,
-   "text": "maioria",
-   "start": 122.82,
-   "end": 123.04
-  },
-  {
-   "i": 314,
-   "text": "escolher",
-   "start": 123.04,
-   "end": 123.401
-  },
-  {
-   "i": 315,
-   "text": "vira",
-   "start": 123.749,
-   "end": 124.04
-  },
-  {
-   "i": 316,
-   "text": "a",
-   "start": 124.04,
-   "end": 124.04
-  },
-  {
-   "i": 317,
-   "text": "parte",
-   "start": 124.04,
-   "end": 124.2
-  },
-  {
-   "i": 318,
    "text": "quatro.",
-   "start": 124.2,
-   "end": 124.493
+   "start": 116.28,
+   "end": 116.621
   }
  ]
 }

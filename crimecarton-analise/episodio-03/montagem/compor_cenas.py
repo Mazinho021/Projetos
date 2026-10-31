@@ -7,7 +7,10 @@ them there. Writes, in arte/:
 - beco-pichado.png: the alley of scene 4 with the @ sprayed on its wall, in the wall's
   perspective and light, behind the two men (arte/beco-pessoas.png, their cut-out mask);
 - tv-bar-plantao.png and bar-plantao.png: the news on the bar's TV, close (scene 7) and in the
-  wide shot (scene 6): Zinho's portrait, "PROCURADO" and the viewers' comments, with the @;
+  wide shot (scene 6): the portraits of Zinho and, for the first time, Renato, "PROCURADOS" and
+  the viewers' comments, with the @;
+- conversa.png: Renato's chat with "Cobrança" on his phone, from "Tô chegando na casa dele." at
+  23:31 to "Cadê vocês?";
 - celular-notificacoes.png: Zinho's phone (scene 8) full of messages, from the allies and from
   numbers he does not know;
 - escolha.png: the junkyard and the mother's house side by side, for the vote;
@@ -187,8 +190,19 @@ def beco(lista):
 
 # ---------------------------------------------------------------- the TV
 
+def retrato(caminho, tamanho, caixa=None):
+    """A portrait cut to `tamanho`, from the box of `caminho` (fractions) when given."""
+    im = Image.open(caminho).convert('RGB')
+    if caixa:
+        im = im.crop(tuple(round(v*(im.width if k % 2 == 0 else im.height)) for k, v in enumerate(caixa)))
+    w, h = tamanho
+    k = max(w/im.width, h/im.height)
+    im = im.resize((math.ceil(im.width*k), math.ceil(im.height*k)), Image.Resampling.LANCZOS)
+    return im.crop(((im.width - w)//2, 0, (im.width - w)//2 + w, h))
+
+
 def plantao(lista, w=1280, h=720):
-    """The news report, flat: Zinho's portrait, his name, "PROCURADO" and the viewers' comments."""
+    """The news report, flat: the portraits of Zinho and Renato, "PROCURADOS" and the viewers' comments."""
     im = Image.new('RGBA', (w, h), (0, 0, 0, 255))
     d = ImageDraw.Draw(im)
     for k in range(h):
@@ -198,22 +212,24 @@ def plantao(lista, w=1280, h=720):
     for x in range(-h, w, 90):
         ImageDraw.Draw(listras).line((x, h, x + h, 0), fill=(255, 255, 255, 10), width=30)
     im.alpha_composite(listras)
-    retrato = Image.open(SERIE / 'episodio-01' / 'retrato-zinho.png').convert('RGB')
-    rw, rh = 420, 470
-    k = max(rw/retrato.width, rh/retrato.height)
-    retrato = retrato.resize((math.ceil(retrato.width*k), math.ceil(retrato.height*k)), Image.Resampling.LANCZOS)
-    retrato = retrato.crop(((retrato.width - rw)//2, 0, (retrato.width - rw)//2 + rw, rh))
-    d.rectangle((70, 70, 70 + rw + 12, 70 + rh + 12), fill=(246, 240, 226, 255))
-    im.paste(retrato, (76, 76))
-    d.rounded_rectangle((560, 80, 830, 140), 8, fill=(196, 40, 32, 255))
-    d.text((695, 110), 'PLANTÃO', font=font(40), fill=(246, 240, 226), anchor='mm')
-    d.ellipse((860, 98, 884, 122), fill=(232, 60, 50))
-    d.text((896, 110), 'AO VIVO', font=font(30, 'Bold'), fill=(246, 240, 226), anchor='lm')
-    d.text((562, 200), 'ZINHO', font=font(118), fill=(246, 240, 226), anchor='lt')
-    d.rounded_rectangle((562, 350, 1010, 410), 6, fill=(253, 184, 34, 255))
-    d.text((786, 380), 'PROCURADO', font=font(42), fill=(20, 18, 16), anchor='mm')
-    d.text((564, 440), 'Suspeito do assalto', font=font(34, 'SemiBold'), fill=(214, 220, 236), anchor='lt')
-    d.text((564, 482), 'de R$ 10 milhões', font=font(34, 'SemiBold'), fill=(214, 220, 236), anchor='lt')
+    # Zinho, from Part 1's news, and Renato, his face on the news for the first time.
+    rw, rh = 290, 380
+    for k, (caminho, caixa, nome) in enumerate(((SERIE / 'episodio-01' / 'retrato-zinho.png', None, 'ZINHO'),
+                                               (SERIE / 'episodio-02' / 'cena-08-retrato-amigo.png', (.14, .07, .86, .52), 'RENATO'))):
+        x = 60 + k*(rw + 30)
+        d.rectangle((x, 110, x + rw + 12, 110 + rh + 12), fill=(246, 240, 226, 255))
+        im.paste(retrato(caminho, (rw, rh), caixa), (x + 6, 116))
+        d.rectangle((x + 6, 116 + rh - 50, x + 6 + rw, 116 + rh), fill=(20, 18, 16, 255))
+        d.text((x + 6 + rw/2, 116 + rh - 25), nome, font=font(32), fill=(246, 240, 226), anchor='mm')
+    d.rounded_rectangle((60, 34, 330, 94), 8, fill=(196, 40, 32, 255))
+    d.text((195, 64), 'PLANTÃO', font=font(40), fill=(246, 240, 226), anchor='mm')
+    d.ellipse((350, 52, 374, 76), fill=(232, 60, 50))
+    d.text((386, 64), 'AO VIVO', font=font(30, 'Bold'), fill=(246, 240, 226), anchor='lm')
+    d.rounded_rectangle((740, 200, 1220, 266), 6, fill=(253, 184, 34, 255))
+    d.text((980, 233), 'PROCURADOS', font=font(46), fill=(20, 18, 16), anchor='mm')
+    d.text((742, 300), 'Suspeitos do assalto', font=font(36, 'SemiBold'), fill=(214, 220, 236), anchor='lt')
+    d.text((742, 346), 'de R$ 10 milhões', font=font(36, 'SemiBold'), fill=(214, 220, 236), anchor='lt')
+    d.text((742, 420), 'Novas imagens', font=font(30, 'SemiBold'), fill=(253, 184, 34), anchor='lt')
     # The viewers' comments, along the bottom.
     d.rectangle((0, h - 150, w, h), fill=(246, 240, 226, 255))
     d.rectangle((0, h - 150, 360, h), fill=(196, 40, 32, 255))
@@ -240,6 +256,45 @@ def depois_do_muro(lista, no_muro, n):
     # The allies who are not on the wall come first, so each one shows somewhere besides the credits.
     fora = [a for a in lista if a['arroba'] not in no_muro]
     return (fora + [a for a in lista if a not in fora])[:n]
+
+
+def conversa():
+    """Renato's phone open on his chat with "Cobrança", over the alley of scene 5, blurred and dark."""
+    fundo = Image.open(EPISODE / 'cena-05-chip.png').convert('RGB')
+    out = fundo.filter(ImageFilter.GaussianBlur(14)).point(lambda v: round(v*.4)).convert('RGBA')
+    w, h = fundo.size
+    pw, ph = 640, 1180
+    x0, y0 = (w - pw)//2, (h - ph)//2 - 30
+    d = ImageDraw.Draw(out)
+    d.rounded_rectangle((x0 - 18, y0 - 18, x0 + pw + 18, y0 + ph + 18), 70, fill=(14, 14, 18, 255), outline=(70, 70, 80, 255), width=3)
+    d.rounded_rectangle((x0, y0, x0 + pw, y0 + ph), 54, fill=(236, 229, 218, 255))
+    d.rounded_rectangle((x0, y0, x0 + pw, y0 + 150), 54, fill=(32, 44, 52, 255))
+    d.rectangle((x0, y0 + 100, x0 + pw, y0 + 150), fill=(32, 44, 52, 255))
+    d.ellipse((x0 + 36, y0 + 52, x0 + 116, y0 + 132), fill=(110, 120, 128))
+    d.text((x0 + 140, y0 + 74), 'Cobrança', font=font(40, 'Bold'), fill=(246, 246, 250), anchor='lm')
+    d.text((x0 + 140, y0 + 114), 'visto agora', font=font(26, 'Medium'), fill=(180, 190, 196), anchor='lm')
+    d.text((x0 + pw/2, y0 + 200), 'HOJE', font=font(24, 'SemiBold'), fill=(120, 112, 100), anchor='mm')
+
+    def balao(y, texto, hora, enviado):
+        f = font(36, 'Medium')
+        largura = round(f.getlength(texto)) + 60
+        alto = 104
+        x = x0 + pw - 30 - largura if enviado else x0 + 30
+        d.rounded_rectangle((x, y, x + largura, y + alto), 26, fill=(214, 246, 196) if enviado else (255, 255, 255))
+        d.text((x + 30, y + 40), texto, font=f, fill=(24, 24, 26), anchor='lm')
+        fim = x + largura - (64 if enviado else 22)
+        d.text((fim, y + alto - 22), hora, font=font(22, 'Medium'), fill=(130, 130, 136), anchor='rm')
+        if enviado:
+            # Read: two blue ticks, as the messaging apps draw them.
+            for dx in (0, 11):
+                cx, cy = fim + 12 + dx, y + alto - 22
+                d.line((cx, cy, cx + 6, cy + 6, cx + 18, cy - 8), fill=(52, 140, 210), width=3)
+        return y + alto + 36
+
+    y = balao(y0 + 250, 'Tô chegando na casa dele.', '23:31', True)
+    y = balao(y, 'Já tá com ele?', '23:47', False)
+    balao(y, 'Cadê vocês?', '00:03', False)
+    out.convert('RGB').save(ARTE / 'conversa.png', optimize=True)
 
 
 def tv(lista):
@@ -343,6 +398,7 @@ def main():
     na_tv = depois_do_muro(lista, no_muro, 4)
     tv(na_tv)
     celular(depois_do_muro([a for a in lista if a not in na_tv] + na_tv, no_muro, 3))
+    conversa()
     escolha()
     if lista:
         creditos(lista)

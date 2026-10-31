@@ -8,10 +8,10 @@ O primeiro roteiro, de 30/10/2026, foi gravado e montado, mas o criador não gos
 - **Um Zinho parado:** ele só seguia Renato.
 - **Pouca reviravolta:** a única era o anel, e terminava num “Não sei.” fraco.
 
-São uns **2 min 35 s**:
+O vídeo tem **2 min 25 s**:
 - a vinheta da Parte 1;
-- uns 125 s do narrador, com 295 palavras mais as 16 do pedido do fim;
-- uns 20 s do Renato;
+- 117 s do narrador, com 295 palavras mais as 16 do pedido do fim;
+- uns 17 s do Renato;
 - as pausas de montagem.
 
 Fica dentro da regra de 2 a 3 minutos.
@@ -20,7 +20,7 @@ Fica dentro da regra de 2 a 3 minutos.
 
 Zinho foge ao lado do homem que vendeu o nome dele. Renato conhece a casa melhor do que deveria e os leva pelos fundos, pelo muro e pelo beco. No beco, a “Cobrança” escreve “Cadê vocês?”. Zinho arranca o celular de Renato e sobe a conversa.
 
-**A primeira virada** vem daí. Às 23h30, antes de bater na porta, Renato tinha escrito para a “Cobrança”: “Tô chegando na casa dele.” Isso amarra o “Já tá com ele?” da Parte 2: Renato tinha ido buscar Zinho para eles. Ele diz que mudou de lado depois de entrar. Zinho não sabe se acredita, mas decide: manda Renato jogar o chip no bueiro e fica com o celular dele.
+**A primeira virada** vem daí. Às 23h30, antes de bater na porta, Renato tinha escrito para a “Cobrança”: “Tô chegando na casa dele.” Isso amarra o “Já tá com ele?” da Parte 2: Renato tinha ido buscar Zinho para eles. Ele diz que mandou a mensagem antes de entrar, antes de ver a cara dele. Zinho não sabe se acredita, mas decide: manda Renato jogar o chip no bueiro e fica com o celular dele.
 
 **A segunda virada** é no bar. O plantão mostra o rosto de Zinho e, pela primeira vez, o de Renato: agora os dois são procurados. Um homem no balcão pega o celular. Na rua, o celular de Zinho não para, porque o número dele vazou.
 
@@ -29,6 +29,8 @@ Zinho foge ao lado do homem que vendeu o nome dele. Renato conhece a casa melhor
 Eles precisam de um lugar até amanhecer, e a votação decide qual.
 
 O anel paga a pista plantada na [foto da divisão](../episodio-02/cena-04-foto-divisao.png) da Parte 2. A mensagem de Renato mantém a dúvida sobre ele, que o arco resolve na Parte 9. O celular dele fica com Zinho, o que serve para a Parte 8, “A prova”.
+
+Na gravação, Renato diz “depois eu **mandei** de lado” em vez de “mudei”, e o reconhecimento de fala ouve “mandei” com o modelo `medium`. A frase foi cortada: ele termina em “Antes de ver a tua cara.”, que já diz que ele mudou depois de ver Zinho.
 
 ## Estrutura
 
@@ -40,7 +42,7 @@ O anel paga a pista plantada na [foto da divisão](../episodio-02/cena-04-foto-d
 | O nome | “E deram um nome a ele: Renato.” | `../episodio-02/cena-08-retrato-amigo.png` | “E O NOME DELE” e o carimbo “RENATO” |
 | FUGA 1 · OS FUNDOS | Narrador e Renato (“Pelos fundos. Agora.”) | `cena-01-porta-do-carro`, `cena-02-cozinha`, `cena-03-muro-quintal` e `cena-01` no portão | “AO LADO DE QUEM / VENDEU O SEU NOME.”, “PELOS FUNDOS.” e “MELHOR DO QUE / DEVERIA.” |
 | O beco | Narrador | O beco com os @ pichados no muro (`montagem/arte/beco-pichado.png`) | — |
-| PISTA · A CONVERSA | Narrador e Renato (“Eu mandei antes de entrar…”) | `cena-05-chip` com “Cobrança · Cadê vocês?” na tela, e um cartão de conversa: “Tô chegando na casa dele.” às 23:31, “Já tá com ele?” às 23:47 e “Cadê vocês?” às 00:03 | ““TÔ CHEGANDO / NA CASA DELE.””, e o chip no bueiro com a lista “O CHIP → NO BUEIRO / O CELULAR → COM VOCÊ” |
+| PISTA · A CONVERSA | Narrador e Renato (“Eu mandei antes de entrar. Antes de ver a tua cara.”) | `cena-05-chip` com “Cobrança · Cadê vocês?” na tela, e um cartão de conversa: “Tô chegando na casa dele.” às 23:31, “Já tá com ele?” às 23:47 e “Cadê vocês?” às 00:03 | ““TÔ CHEGANDO / NA CASA DELE.””, e o chip no bueiro com a lista “O CHIP → NO BUEIRO / O CELULAR → COM VOCÊ” |
 | FUGA 2 · O BAR | Narrador | `cena-06-bar` e `cena-07-tv-bar`, com o plantão mostrando os dois rostos, “PROCURADOS” e os comentários do público | “PELA PRIMEIRA VEZ, / O DELE.” e “OS DOIS SÃO / PROCURADOS.” |
 | O celular | Narrador | `cena-08-celular-zinho` com as notificações | “O SEU NÚMERO / VAZOU.” e “TÔ CONTIGO, ZINHO.” |
 | FUGA 3 · A AVENIDA | Narrador e Renato (“Não se mexe.”) | `cena-09-porta-escura` | “DE FAROL / APAGADO.” |

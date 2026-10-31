@@ -2,44 +2,52 @@
  "audio": "narracao-ep03-renato.wav",
  "script": "narracao-ep03-renato.txt",
  "model": "medium",
- "words_in_script": 31,
- "words_matched_exactly": 30,
+ "words_in_script": 47,
+ "words_matched_exactly": 44,
  "pauses": [
   [
-   0.914,
-   1.218
+   1.625,
+   2.964
   ],
   [
-   1.711,
-   2.037
+   6.576,
+   6.913
   ],
   [
-   2.037,
-   2.616
+   8.012,
+   9.321
   ],
   [
-   4.235,
-   5.387
+   10.11,
+   11.123
   ],
   [
-   6.211,
-   7.493
+   11.671,
+   12.442
   ],
   [
-   8.452,
-   9.094
+   13.447,
+   14.532
   ],
   [
-   9.179,
-   9.694
+   14.533,
+   15.276
   ],
   [
-   14.302,
-   14.608
+   16.005,
+   16.982
   ],
   [
-   15.623,
-   16.4
+   18.213,
+   18.697
+  ],
+  [
+   20.021,
+   20.939
+  ],
+  [
+   22.156,
+   22.56
   ]
  ],
  "words": [
@@ -47,187 +55,283 @@
    "i": 0,
    "text": "Pelos",
    "start": 0.0,
-   "end": 0.56
+   "end": 0.54
   },
   {
    "i": 1,
    "text": "fundos.",
-   "start": 0.56,
-   "end": 0.914
+   "start": 0.54,
+   "end": 1.02
   },
   {
    "i": 2,
    "text": "Agora.",
-   "start": 1.218,
-   "end": 2.037
+   "start": 1.2,
+   "end": 1.625
   },
   {
    "i": 3,
-   "text": "Eles",
-   "start": 2.616,
-   "end": 3.1
+   "text": "Eu",
+   "start": 2.964,
+   "end": 3.46
   },
   {
    "i": 4,
-   "text": "não",
-   "start": 3.1,
-   "end": 3.36
+   "text": "mandei",
+   "start": 3.46,
+   "end": 3.8
   },
   {
    "i": 5,
-   "text": "vieram",
-   "start": 3.36,
-   "end": 3.68
+   "text": "antes",
+   "start": 3.8,
+   "end": 4.12
   },
   {
    "i": 6,
-   "text": "conversar.",
-   "start": 3.68,
-   "end": 4.235
+   "text": "de",
+   "start": 4.12,
+   "end": 4.34
   },
   {
    "i": 7,
-   "text": "Não",
-   "start": 5.387,
-   "end": 5.78
+   "text": "entrar.",
+   "start": 4.34,
+   "end": 4.86
   },
   {
    "i": 8,
-   "text": "se",
-   "start": 5.78,
-   "end": 6.0
+   "text": "Antes",
+   "start": 5.32,
+   "end": 5.52
   },
   {
    "i": 9,
-   "text": "mexe.",
-   "start": 6.0,
-   "end": 6.211
+   "text": "de",
+   "start": 5.52,
+   "end": 5.72
   },
   {
    "i": 10,
-   "text": "Não",
-   "start": 7.493,
-   "end": 8.0
+   "text": "ver",
+   "start": 5.72,
+   "end": 5.82
   },
   {
    "i": 11,
-   "text": "sei.",
-   "start": 8.0,
-   "end": 9.179
+   "text": "a",
+   "start": 5.82,
+   "end": 5.82
   },
   {
    "i": 12,
-   "text": "Tem",
-   "start": 9.694,
-   "end": 9.86
+   "text": "tua",
+   "start": 5.82,
+   "end": 5.96
   },
   {
    "i": 13,
-   "text": "dois",
-   "start": 9.86,
-   "end": 10.04
+   "text": "cara.",
+   "start": 5.96,
+   "end": 6.576
   },
   {
    "i": 14,
-   "text": "lugares.",
-   "start": 10.04,
-   "end": 10.4
+   "text": "Depois",
+   "start": 6.913,
+   "end": 7.28
   },
   {
    "i": 15,
-   "text": "O",
-   "start": 11.1,
-   "end": 11.24
+   "text": "eu",
+   "start": 7.28,
+   "end": 7.4
   },
   {
    "i": 16,
-   "text": "ferro-velho",
-   "start": 11.24,
-   "end": 11.6
+   "text": "mudei",
+   "start": 7.4,
+   "end": 7.56
   },
   {
    "i": 17,
-   "text": "da",
-   "start": 11.6,
-   "end": 11.74
+   "text": "de",
+   "start": 7.56,
+   "end": 7.76
   },
   {
    "i": 18,
-   "text": "foto:",
-   "start": 11.74,
-   "end": 12.08
+   "text": "lado.",
+   "start": 7.76,
+   "end": 8.012
   },
   {
    "i": 19,
-   "text": "o",
-   "start": 12.48,
-   "end": 12.6
+   "text": "Não",
+   "start": 9.321,
+   "end": 9.52
   },
   {
    "i": 20,
-   "text": "vigia",
-   "start": 12.6,
-   "end": 12.86
+   "text": "se",
+   "start": 9.52,
+   "end": 9.68
   },
   {
    "i": 21,
-   "text": "me",
-   "start": 12.86,
-   "end": 12.94
+   "text": "mexe.",
+   "start": 9.68,
+   "end": 10.11
   },
   {
    "i": 22,
-   "text": "deve",
-   "start": 12.94,
-   "end": 13.1
+   "text": "É",
+   "start": 11.123,
+   "end": 11.54
   },
   {
    "i": 23,
-   "text": "um",
-   "start": 13.1,
-   "end": 13.22
+   "text": "ele.",
+   "start": 11.54,
+   "end": 11.671
   },
   {
    "i": 24,
-   "text": "favor.",
-   "start": 13.22,
-   "end": 13.58
+   "text": "O",
+   "start": 12.442,
+   "end": 12.6
   },
   {
    "i": 25,
-   "text": "Ou",
-   "start": 14.02,
-   "end": 14.302
+   "text": "homem",
+   "start": 12.6,
+   "end": 12.78
   },
   {
    "i": 26,
-   "text": "a",
-   "start": 14.608,
-   "end": 14.98
+   "text": "que",
+   "start": 12.78,
+   "end": 12.9
   },
   {
    "i": 27,
-   "text": "casa",
-   "start": 14.98,
-   "end": 15.18
+   "text": "me",
+   "start": 12.9,
+   "end": 14.08
   },
   {
    "i": 28,
-   "text": "da",
-   "start": 15.18,
-   "end": 15.36
+   "text": "cobra.",
+   "start": 14.08,
+   "end": 14.533
   },
   {
    "i": 29,
-   "text": "minha",
-   "start": 15.36,
-   "end": 15.46
+   "text": "Tem",
+   "start": 15.276,
+   "end": 15.88
   },
   {
    "i": 30,
+   "text": "dois.",
+   "start": 15.88,
+   "end": 16.005
+  },
+  {
+   "i": 31,
+   "text": "O",
+   "start": 16.982,
+   "end": 17.24
+  },
+  {
+   "i": 32,
+   "text": "ferro-velho",
+   "start": 17.24,
+   "end": 17.72
+  },
+  {
+   "i": 33,
+   "text": "da",
+   "start": 17.72,
+   "end": 17.84
+  },
+  {
+   "i": 34,
+   "text": "foto:",
+   "start": 17.84,
+   "end": 18.213
+  },
+  {
+   "i": 35,
+   "text": "o",
+   "start": 18.697,
+   "end": 18.9
+  },
+  {
+   "i": 36,
+   "text": "vigia",
+   "start": 18.9,
+   "end": 19.12
+  },
+  {
+   "i": 37,
+   "text": "me",
+   "start": 19.12,
+   "end": 19.26
+  },
+  {
+   "i": 38,
+   "text": "deve",
+   "start": 19.26,
+   "end": 19.36
+  },
+  {
+   "i": 39,
+   "text": "um",
+   "start": 19.36,
+   "end": 19.5
+  },
+  {
+   "i": 40,
+   "text": "favor.",
+   "start": 19.5,
+   "end": 20.021
+  },
+  {
+   "i": 41,
+   "text": "Ou",
+   "start": 20.939,
+   "end": 21.22
+  },
+  {
+   "i": 42,
+   "text": "a",
+   "start": 21.22,
+   "end": 21.44
+  },
+  {
+   "i": 43,
+   "text": "casa",
+   "start": 21.44,
+   "end": 21.64
+  },
+  {
+   "i": 44,
+   "text": "da",
+   "start": 21.64,
+   "end": 21.82
+  },
+  {
+   "i": 45,
+   "text": "minha",
+   "start": 21.82,
+   "end": 21.94
+  },
+  {
+   "i": 46,
    "text": "mãe.",
-   "start": 15.46,
-   "end": 15.623
+   "start": 21.94,
+   "end": 22.156
   }
  ]
 }

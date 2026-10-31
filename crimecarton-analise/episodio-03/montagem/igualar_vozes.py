@@ -3,9 +3,9 @@
 
 The same as Part 2's ../../episodio-02/montagem/igualar_vozes.py, whose functions it uses:
 the median pitch moves to the narrator's with Praat's "Change gender", formants and length
-untouched, and the long-term spectrum is evened out against his. The Part 3 narrator came out
-lower than Part 2's (about 91 Hz against 104 Hz), so Part 2's vozes/vinheta.wav would not
-match him. Writes vozes/vinheta.wav and vozes/igualar-vozes.json.
+untouched, and the long-term spectrum is evened out against his. Each take comes out with its
+own pitch (Part 2's narrator at 104 Hz; Part 3's first take at 90 Hz and its second at 109 Hz),
+so the opening is matched to the take in use. Writes vozes/vinheta.wav and vozes/igualar-vozes.json.
 
 Needs praat-parselmouth, NumPy and FFmpeg.
 """
