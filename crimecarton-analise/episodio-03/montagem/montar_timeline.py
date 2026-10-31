@@ -387,11 +387,11 @@ POCKET07 = [0.21, 0.255, 0.71, 0.755]    # his hands and the dark phone
 PHONE_WIDE = [0.125, 0.13, 0.875, 0.88]  # the phone in his hand, the screen from 29% to 66%
 PHONE_CLOSE = [0.20, 0.165, 0.80, 0.765]  # closer: the screen from 30% to 76%, below the tag
 SHOULDER09 = [0.30, 0.05, 1.0, 0.75]     # the hand with the ring on Renato's shoulder
-FACE10 = [0.2, 0.095, 0.8, 0.695]        # Zinho's face as he listens, his hair below the tag
+FACE10 = [0.15, 0.07, 0.85, 0.77]        # Zinho's face as he listens: hair below the tag, chin above the phrase
 PHOTO09 = [0.2, 0.04, 1.0, 0.84]         # the photo: the ring left of TikTok's buttons
 JUNK12 = [0.16, 0.08, 1.0, 0.92]         # the gate, with the sign left of TikTok's buttons
 DOOR13 = [0.05, 0.0, 0.95, 0.9]          # Zinho at the bus door
-RING_PHOTO = [0.513, 0.30, 0.953, 0.74]  # the ring in Part 2's photo, the other hand below the tag
+RING_PHOTO = [0.513, 0.27, 0.953, 0.71]  # the ring in Part 2's photo, the other hand below the tag
 # The lit, blank screen of the phone in scene 8 (compor_cenas.TELA08), a little larger so
 # the lock screen covers its bright edge. The night of the escape is past midnight of the
 # 28th, Part 2's "23:47".
@@ -436,7 +436,7 @@ def build(ed):
         ('grab', cut(N('Quando ele agarra')), dict(kind='art', asset='cena-04-mao-anel.png', zoom=.05)),
         ('ring', cut(N('No dedo, um')), dict(kind='art', asset='cena-04-mao-anel.png', crop=RING04, zoom=.08)),
         ('photo-ring', cut(N('O mesmo anel')), dict(kind='art', asset=p2 + 'cena-04-foto-divisao.png', crop=RING_PHOTO,
-                                                    zoom=.1)),
+                                                    zoom=.06)),
         ('scream', cut(R('Corre! Corre!')), dict(kind='art', asset='cena-05-renato-grita.png', crop=SCREAM05, zoom=.08)),
         ('run', cut(N('Você corre. E')), dict(kind='art', asset='cena-06-zinho-corre.png', zoom=.05)),
         ('breath', cut(N('Só para quando')), dict(kind='art', asset='cena-06-zinho-corre.png', crop=FACE06, zoom=.05)),
@@ -521,7 +521,7 @@ def build(ed):
         phrase(s(N('um anel grosso')) - .05, AT['photo-ring'], 900, [line('UM ANEL', s(N('um anel grosso'))),
                                                                      line('DE OURO.', s(N('de ouro.')), 'yellow')], 76, x),
         {'type': 'stamp', 'start': round(s(N('O mesmo anel')) - .02, 2), 'end': AT['scream'], 'text': 'O MESMO ANEL',
-         'y': 900, 'x': x, 'angle': -7},
+         'y': 940, 'x': x, 'angle': -7},
         phrase(AT['scream'] + .05, AT['run'], 900, [line('“CORRE!', s(R('Corre! Corre!')), 'red', shake=True),
                                                     line('CORRE!”', s(R('Corre! Corre!', 1)), 'red', shake=True)], 80, x),
         phrase(s(N('cada passo pesa')) - .05, AT['breath'], 900, [line('CADA PASSO', s(N('cada passo pesa'))),

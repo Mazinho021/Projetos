@@ -170,11 +170,11 @@
    "asset": "../episodio-02/cena-04-foto-divisao.png",
    "crop": [
     0.513,
-    0.3,
+    0.27,
     0.953,
-    0.74
+    0.71
    ],
-   "zoom": 0.1
+   "zoom": 0.06
   },
   {
    "start": 51.4,
@@ -372,10 +372,10 @@
    "kind": "art",
    "asset": "cena-10-zinho-escuta.png",
    "crop": [
-    0.2,
-    0.095,
-    0.8,
-    0.695
+    0.15,
+    0.07,
+    0.85,
+    0.77
    ],
    "zoom": 0.06
   },
@@ -418,10 +418,10 @@
    "kind": "art",
    "asset": "cena-10-zinho-escuta.png",
    "crop": [
-    0.2,
-    0.095,
-    0.8,
-    0.695
+    0.15,
+    0.07,
+    0.85,
+    0.77
    ],
    "zoom": 0.04,
    "direction": "out",
@@ -989,7 +989,7 @@
    "start": 48.72,
    "end": 51.4,
    "text": "O MESMO ANEL",
-   "y": 900,
+   "y": 940,
    "x": 330,
    "angle": -7
   },
