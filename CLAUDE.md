@@ -55,7 +55,8 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
 - O narrador, a vinheta e o cobrador usam a voz Charon, gerada no OpusClip pelo Codex.
 - **Renato** tem voz própria, de homem adulto e natural, desde a Parte 3. Até ali, ele era a voz do narrador transformada por `voz_amigo.py`, e o criador achou essa voz feia (31/10/2026).
   - O Codex gera as falas dele com outra voz do TTS, sem transformação.
-  - Na Parte 3, o criador escolhe entre três vozes de teste: Orus, Achird e Algenib. A escolhida fica anotada aqui e vale para as próximas partes.
+  - **A voz do Renato é a Algenib**, escolhida pelo criador em 31/10/2026 entre três testes (Orus, Achird e Algenib). É a mais grave das três, um pouco rouca. Vale para todas as próximas partes.
+  - O pedido de voz do Renato ao Codex usa `"voice": "Algenib"` e o estilo de [`episodio-03/pedido-narracao-renato-ep03-algenib.json`](crimecarton-analise/episodio-03/pedido-narracao-renato-ep03-algenib.json).
 - **A vinheta** é igualada ao narrador de cada parte por `igualar_vozes.py`.
 - **Conferir cada gravação com o faster-whisper `medium` sem dar o texto como dica.** O TTS troca palavras: na Parte 3, “depois eu mudei de lado” saiu como “mandei de lado”. Se uma palavra sair errada, cortar a frase ou gerar a fala de novo.
 

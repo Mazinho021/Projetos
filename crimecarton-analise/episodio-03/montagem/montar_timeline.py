@@ -43,7 +43,7 @@ SCRIPT = EPISODE / 'roteiro-ep03.txt'
 # Since Part 3, Renato has his own voice, a natural adult man's, and no longer the narrator's
 # changed by voz_amigo.py, which the creator found ugly. Codex recorded his lines in three test
 # voices (pedido-codex-ep03-cenas-novas.md); this is the one the creator chose.
-RENATO_VOZ = 'orus'
+RENATO_VOZ = 'algenib'
 # The opening comes matched to this narrator by igualar_vozes.py.
 VOICES = {'VINHETA': (HERE / 'vozes' / 'vinheta.wav', TOOLS / 'alinhamento-narracao.json'),
           'NARRADOR': (EPISODE / 'narracao-ep03-narrador.wav', HERE / 'alinhamento-narrador.json'),
