@@ -72,6 +72,7 @@ Inspirado nas histórias do @crimecarton no Instagram
   - **Imagens:** as cenas vieram de novo com 941 × 1672, o máximo do gerador, e foram ampliadas para 1440 × 2560.
   - **Voz do Renato:** o “Zinho” de “Corre, Zinho!” saiu parecido com “senhor”, e a fala ficou “Corre! Corre!”.
   - **Vídeos:** as duas versões têm 2 min 15 s e estão em [`episodio-03/`](crimecarton-analise/episodio-03/plano-ep03.md), com a capa “O PREÇO / VOCÊ POR ELE?”. Os quadros de cada plano foram conferidos nas duas versões.
+  - **Mudanças pedidas pelo criador:** depois de ver os vídeos, ele pediu três coisas. A cena 4 vai ser refeita, porque o corpo do Renato saiu cortado. O Renato vai ter uma voz normal de homem adulto. E cada coisa que a narração conta vai ter uma imagem própria, sem repetir desenho com zoom. O novo pedido ao Codex, com 22 imagens e 3 vozes de teste, está em [`pedido-codex-ep03-cenas-novas.md`](crimecarton-analise/episodio-03/pedido-codex-ep03-cenas-novas.md). Ele espera o ok do criador.
   - **Texto do post:** “Parte 3 – O preço 🎒”, “Trocar ou deixar? Comenta 👇”, “Inspirado em @crimecarton” e “#apartequefaltou”.
   - **TikTok e Shorts:** o crédito é “Inspirado no @crimecarton (Insta)”, e o título no Shorts é “Parte 3 – O preço 😨”.
   - **Comentário para fixar:** “Trocar ou deixar? Comenta uma palavra 👇”.

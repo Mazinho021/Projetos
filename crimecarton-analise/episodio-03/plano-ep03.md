@@ -49,6 +49,16 @@ Os desenhos do Codex chegaram com 941 × 1672 e foram ampliados para 1440 × 256
 
 Até a votação, o painel do topo mostra “A SUA PARTE R$ 0 · SUSPEITA ★★★★★”. Cada enquadramento deixa rostos, mãos, o celular e o anel fora do quarto de cima e da faixa de baixo. Os quadros de cada plano foram conferidos nas duas versões.
 
+## Mudanças pedidas pelo criador em 31/10/2026
+
+O criador viu a primeira montagem de “O preço” e pediu três mudanças. Elas viraram regra para todas as partes, no [`CLAUDE.md`](../../CLAUDE.md):
+
+1. **A cena 4:** o corpo do Renato saiu cortado pelo muro, então ela vai ser refeita.
+2. **A voz do Renato:** a voz do narrador transformada ficou feia. Ele vai ter uma voz própria, de homem adulto, escolhida entre três testes (Orus, Achird e Algenib).
+3. **Uma imagem para cada coisa que a narração conta:** na primeira montagem, 13 desenhos se repetiam com zoom em 37 planos. A nova usa 34 desenhos diferentes, cada um uma vez só.
+
+O pedido ao Codex está em [`pedido-codex-ep03-cenas-novas.md`](pedido-codex-ep03-cenas-novas.md), com a tabela de qual imagem entra em cada trecho. A tabela de estrutura acima é a da primeira montagem; a montagem nova sai quando as imagens e as vozes chegarem.
+
 ## Votação
 
 - **TROCAR:** Zinho vai ao ferro-velho às três da manhã para se entregar no lugar de Renato. É o caminho do confronto: ele fica frente a frente com o homem do anel.

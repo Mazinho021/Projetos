@@ -30,6 +30,18 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
 - **Abertura:** a etiqueta “PARTE N” fica no canto esquerdo (x = 112). No centro, ela cobria a cabeça do Zinho na arte da mochila.
 - **Personagem na borda direita do desenho:** na vertical, ele fica atrás dos botões do TikTok. Nesse caso, mostrar o desenho num cartão menor, deslocado para a esquerda, como a lembrança do almoço na Parte 3 (`compor_cenas.py`).
 
+## Cenas (pedido do criador em 31/10/2026, vale para todas as partes)
+
+- **Cada coisa que a narração conta tem uma imagem própria.** Não repetir a mesma imagem só com zoom ou recorte em planos seguidos: o criador achou a Parte 3 repetitiva assim.
+- **Variar os planos:** plano aberto, close, detalhe, outro ângulo e outro lugar.
+- **Movimento de câmera:** dentro de cada plano, só um zoom leve.
+- **Exceções:** a abertura padrão e imagens de partes anteriores usadas uma vez como lembrança, como a foto da divisão.
+- **No pedido ao Codex:**
+  - listar uma imagem por trecho do roteiro;
+  - deixar nada importante na borda direita, entre 45% e 80% da altura, onde ficam os botões do TikTok;
+  - descrever o corpo inteiro dos personagens e como ele se relaciona com o cenário. Na Parte 3, o corpo do Renato saiu cortado pelo muro.
+- **Antes de entregar:** conferir também se o desenho tem corpo cortado ou fundido ao cenário.
+
 ## Roteiros (o criador recusou dois roteiros da Parte 3 em 30 e 31/10/2026)
 
 - Cada parte precisa de pelo menos uma **reviravolta de verdade** e terminar numa **escolha difícil**, com consequência para a parte seguinte. Tem que ser uma escolha moral ou de risco, não só “para onde ir”.
@@ -40,8 +52,10 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
 
 ## Vozes
 
-- Todas as vozes são geradas com a voz Charon, no OpusClip, pelo Codex.
-- **Renato** passa pela transformação de `voz_amigo.py`, com tom médio de cerca de 112 Hz.
+- O narrador, a vinheta e o cobrador usam a voz Charon, gerada no OpusClip pelo Codex.
+- **Renato** tem voz própria, de homem adulto e natural, desde a Parte 3. Até ali, ele era a voz do narrador transformada por `voz_amigo.py`, e o criador achou essa voz feia (31/10/2026).
+  - O Codex gera as falas dele com outra voz do TTS, sem transformação.
+  - Na Parte 3, o criador escolhe entre três vozes de teste: Orus, Achird e Algenib. A escolhida fica anotada aqui e vale para as próximas partes.
 - **A vinheta** é igualada ao narrador de cada parte por `igualar_vozes.py`.
 - **Conferir cada gravação com o faster-whisper `medium` sem dar o texto como dica.** O TTS troca palavras: na Parte 3, “depois eu mudei de lado” saiu como “mandei de lado”. Se uma palavra sair errada, cortar a frase ou gerar a fala de novo.
 
