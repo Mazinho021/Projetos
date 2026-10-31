@@ -1,0 +1,115 @@
+{
+  "jobId": "mcp_media_7957acb4324cb766c52e173ed96a726b448756f49350e80c2b88bd69148335ec",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "file": "narracao-ep03-renato-algenib.wav",
+      "mimeType": "audio/wav",
+      "durationSeconds": 7.2,
+      "bytes": 351716,
+      "sha256": "d36179a3eb612cd84b28b70435f3cb6dc53c05a9c1fe612984c759868a26022d",
+      "sampleRate": 24000,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "clippedSamples": 0
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep03-renato-algenib-v1-20261031",
+    "voice": "Algenib",
+    "style": "Português brasileiro. Renato, homem adulto de uns 30 anos, de bairro, amigo de infância de Zinho, que o traiu e agora foge com ele à noite. Voz natural de homem adulto, sem caricatura. Fala em pessoa, ofegante e urgente: “Pelos fundos. Vai!” e “Sobe. Eu vou atrás.” saem baixos e rápidos; “Corre, Zinho! Corre!” é um grito desesperado, de quem está sendo puxado para trás. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+    "text": "Pelos fundos. Vai!\n\nSobe. Eu vou atrás.\n\nCorre, Zinho! Corre!",
+    "sourceFile": "crimecarton-analise/episodio-03/pedido-narracao-renato-ep03-algenib.json"
+  },
+  "sourceCommit": "cf20004c55dcd96e095e87b91d67e5dd0521f31d",
+  "audioEdited": false,
+  "transcription": {
+    "model": "faster-whisper-medium",
+    "language": "pt",
+    "initialPrompt": null,
+    "segments": [
+      {
+        "start": 0.05,
+        "end": 1.77,
+        "text": " Pelos fundos, vai!",
+        "words": [
+          {
+            "word": " Pelos",
+            "start": 0.05,
+            "end": 0.73,
+            "probability": 0.7600043714046478
+          },
+          {
+            "word": " fundos,",
+            "start": 0.73,
+            "end": 1.13,
+            "probability": 0.9905028939247131
+          },
+          {
+            "word": " vai!",
+            "start": 1.77,
+            "end": 1.77,
+            "probability": 0.9792136549949646
+          }
+        ]
+      },
+      {
+        "start": 2.97,
+        "end": 4.41,
+        "text": " Sobe! Eu vou atrás!",
+        "words": [
+          {
+            "word": " Sobe!",
+            "start": 2.97,
+            "end": 3.27,
+            "probability": 0.9953347742557526
+          },
+          {
+            "word": " Eu",
+            "start": 3.77,
+            "end": 3.79,
+            "probability": 0.9659588932991028
+          },
+          {
+            "word": " vou",
+            "start": 3.79,
+            "end": 3.95,
+            "probability": 0.9947329759597778
+          },
+          {
+            "word": " atrás!",
+            "start": 3.95,
+            "end": 4.41,
+            "probability": 0.9923392534255981
+          }
+        ]
+      },
+      {
+        "start": 5.85,
+        "end": 6.83,
+        "text": " Correzinho! Corre!",
+        "words": [
+          {
+            "word": " Correzinho!",
+            "start": 5.85,
+            "end": 6.31,
+            "probability": 0.8936826388041178
+          },
+          {
+            "word": " Corre!",
+            "start": 6.65,
+            "end": 6.83,
+            "probability": 0.9802766740322113
+          }
+        ]
+      }
+    ],
+    "text": "Pelos fundos, vai! Sobe! Eu vou atrás! Correzinho! Corre!"
+  }
+}
