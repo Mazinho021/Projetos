@@ -1,0 +1,201 @@
+{
+ "audio": "narracao-ep03-cobranca.wav",
+ "script": "narracao-ep03-cobranca.txt",
+ "model": "medium",
+ "words_in_script": 25,
+ "words_matched_exactly": 23,
+ "pauses": [
+  [
+   0.0,
+   0.338
+  ],
+  [
+   1.347,
+   2.11
+  ],
+  [
+   2.638,
+   3.31
+  ],
+  [
+   3.915,
+   4.626
+  ],
+  [
+   5.686,
+   6.492
+  ],
+  [
+   7.21,
+   7.513
+  ],
+  [
+   8.253,
+   9.002
+  ],
+  [
+   9.569,
+   10.348
+  ],
+  [
+   11.358,
+   12.172
+  ],
+  [
+   13.351,
+   13.68
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Você",
+   "start": 0.338,
+   "end": 0.92
+  },
+  {
+   "i": 1,
+   "text": "correu.",
+   "start": 0.92,
+   "end": 1.347
+  },
+  {
+   "i": 2,
+   "text": "Ele",
+   "start": 2.11,
+   "end": 2.44
+  },
+  {
+   "i": 3,
+   "text": "não.",
+   "start": 2.44,
+   "end": 2.638
+  },
+  {
+   "i": 4,
+   "text": "Vamos",
+   "start": 3.31,
+   "end": 3.56
+  },
+  {
+   "i": 5,
+   "text": "trocar:",
+   "start": 3.56,
+   "end": 3.915
+  },
+  {
+   "i": 6,
+   "text": "você",
+   "start": 4.626,
+   "end": 5.26
+  },
+  {
+   "i": 7,
+   "text": "por",
+   "start": 5.26,
+   "end": 5.52
+  },
+  {
+   "i": 8,
+   "text": "ele.",
+   "start": 5.52,
+   "end": 5.686
+  },
+  {
+   "i": 9,
+   "text": "Três",
+   "start": 6.492,
+   "end": 6.76
+  },
+  {
+   "i": 10,
+   "text": "da",
+   "start": 6.76,
+   "end": 6.94
+  },
+  {
+   "i": 11,
+   "text": "manhã,",
+   "start": 6.94,
+   "end": 7.21
+  },
+  {
+   "i": 12,
+   "text": "no",
+   "start": 7.513,
+   "end": 7.74
+  },
+  {
+   "i": 13,
+   "text": "ferro-velho.",
+   "start": 7.74,
+   "end": 8.253
+  },
+  {
+   "i": 14,
+   "text": "Sozinho.",
+   "start": 9.002,
+   "end": 9.569
+  },
+  {
+   "i": 15,
+   "text": "Se",
+   "start": 10.348,
+   "end": 10.6
+  },
+  {
+   "i": 16,
+   "text": "chamar",
+   "start": 10.6,
+   "end": 10.92
+  },
+  {
+   "i": 17,
+   "text": "a",
+   "start": 10.92,
+   "end": 10.92
+  },
+  {
+   "i": 18,
+   "text": "polícia,",
+   "start": 10.92,
+   "end": 11.358
+  },
+  {
+   "i": 19,
+   "text": "a",
+   "start": 12.172,
+   "end": 12.38
+  },
+  {
+   "i": 20,
+   "text": "mãe",
+   "start": 12.38,
+   "end": 12.54
+  },
+  {
+   "i": 21,
+   "text": "dele",
+   "start": 12.54,
+   "end": 12.8
+  },
+  {
+   "i": 22,
+   "text": "é",
+   "start": 12.8,
+   "end": 13.04
+  },
+  {
+   "i": 23,
+   "text": "a",
+   "start": 13.04,
+   "end": 13.06
+  },
+  {
+   "i": 24,
+   "text": "próxima.",
+   "start": 13.06,
+   "end": 13.351
+  }
+ ]
+}

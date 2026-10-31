@@ -28,6 +28,8 @@ COVERS = [
          scale=1.10, focus=(.5, .40), at=(540, 640)),
     dict(part=2, title='A DÍVIDA', line='QUANTO ELE DEVIA?', art='../episodio-02/cena-08-retrato-amigo.png',
          scale=1.10, focus=(.5, .30), at=(540, 660)),
+    dict(part=3, title='O PREÇO', line='VOCÊ POR ELE?', art='../episodio-03/cena-09-foto-refem.png',
+         scale=1.15, focus=(.58, .38), at=(540, 720)),
 ]
 
 

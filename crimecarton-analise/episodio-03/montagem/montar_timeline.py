@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 """Build Part 3's narration track and its two timelines from the word alignments.
 
-The track joins, in the order of roteiro-ep03.txt: the series' opening, cut from Part 1's
-narration (its first 17 words, the same art and audio in every part); the narrator's
-lines from narracao-ep03-narrador.wav, closing request included; Renato's from
-narracao-ep03-renato.wav, in his own voice; and the pauses the edit opens for sounds, such
-as the car door and the gate. Each line is found in its recording by its words.
-Every cut, graphic and effect is anchored to a word of the script, so the edit follows
-the voices again if they are re-aligned. The allies' @ come in the images compor_cenas.py
-makes, in arte/, and in the credits at the end when there are any.
+Part 3 is "O preço" (roteiro-ep03.txt). The track joins, in the script's order: the series'
+opening, cut from Part 1's narration (its first 17 words, the same art and audio in every
+part); the narrator's lines from narracao-ep03-narrador.wav, closing request included;
+Renato's from narracao-ep03-renato.wav, in his own voice (voz_renato.py); the cobrador's
+audio message from narracao-ep03-cobranca.wav, lower and through a phone speaker
+(voz_cobranca.py); and the pauses the edit opens for sounds, such as the car door and the
+replay of the message. Each line is found in its recording by its words. Every cut, graphic
+and effect is anchored to a word of the script, so the edit follows the voices again if they
+are re-aligned.
+
+Every framing keeps faces, hands, the phone and the ring out of the top quarter, where the
+panel "A SUA PARTE · SUSPEITA" and the part's tag sit, and the phrases between 65% and 80%
+of the height (see ../../../CLAUDE.md).
 
 timeline.json is the Instagram version. timeline-vertical.json, for TikTok and Shorts,
 moves the top elements below TikTok's search bar and keeps the rest left of the buttons.
@@ -39,16 +44,21 @@ SCRIPT = EPISODE / 'roteiro-ep03.txt'
 VOICES = {'VINHETA': (HERE / 'vozes' / 'vinheta.wav', TOOLS / 'alinhamento-narracao.json'),
           'NARRADOR': (EPISODE / 'narracao-ep03-narrador.wav', HERE / 'alinhamento-narrador.json'),
           # Renato in the voice of his message in Part 1, made by voz_renato.py.
-          'RENATO': (HERE / 'vozes' / 'renato.wav', HERE / 'alinhamento-renato.json')}
+          'RENATO': (HERE / 'vozes' / 'renato.wav', HERE / 'alinhamento-renato.json'),
+          # The cobrador's audio message, made by voz_cobranca.py.
+          'COBRANCA': (HERE / 'vozes' / 'cobranca.wav', HERE / 'alinhamento-cobranca.json')}
 AUDIO = EPISODE / 'narracao-ep03.wav'
-PART, VOTE = 3, [('FUGIR', 77), ('FICAR', 23)]   # Part 2's vote: 10 FUGIR, 3 FICAR at 9h40 of 30/10
+PART, VOTE = 3, [('FUGIR', 77), ('FICAR', 23)]   # Part 2's vote: 10 FUGIR, 3 FICAR
 NAME = 'RENATO'                                  # the friend's name, the most liked comment
 HANDLE = '@golpecartoon'
 ALLIES = HERE / 'aliados-parte-03.json'
 # Without allies the video ends 2 s after the voice; with them, the credits take 3.5 s.
 TAIL = 3.5 if ALLIES.exists() and json.loads(ALLIES.read_text(encoding='utf-8')) else 2.0
-# Renato talks beside Zinho, as loud as the narrator.
-FRIEND_GAIN = 0
+# Renato talks beside Zinho, as loud as the narrator; the message plays a little under him,
+# as Part 1's audio message did.
+FRIEND_GAIN, MESSAGE_GAIN = 0, -1
+# The message heard again, under "Você escuta outra vez": this much under the message itself.
+ECHO_GAIN = -5
 # Seconds kept before a voice's first word and after its last at a change of voice, and
 # the silence between the two voices.
 LEAD, TRAIL, SWITCH = .12, .22, .25
@@ -81,7 +91,7 @@ def loudness(path):
 
 # The text each recording was made from, numbered word by word as the aligner does.
 SOURCES = {'VINHETA': EPISODE.parent / 'narracao-ep01-zinho.txt', 'NARRADOR': EPISODE / 'narracao-ep03-narrador.txt',
-           'RENATO': EPISODE / 'narracao-ep03-renato.txt'}
+           'RENATO': EPISODE / 'narracao-ep03-renato.txt', 'COBRANCA': EPISODE / 'narracao-ep03-cobranca.txt'}
 TEXT = {v: [w for w in path.read_text(encoding='utf-8').split() if norm(w)] for v, path in SOURCES.items()}
 
 
@@ -117,33 +127,36 @@ def R(phrase, k=0):
     return 'RENATO', find('RENATO', phrase) + k
 
 
+def C(phrase, k=0):
+    return 'COBRANCA', find('COBRANCA', phrase) + k
+
+
 def V(i):
     return 'VINHETA', i
 
 
 # Silence the edit opens after a word, in seconds, for the sounds of the story. Phrases
 # point at their first word; the offset picks the word the pause follows. The pause
-# replaces the voice's own silence there, except for LEAD and TRAIL around the cut.
+# replaces the voice's own silence there, except for LEAD and TRAIL around the cut. At a
+# voice's last word before another voice, it is the silence between the two.
 PAUSES = {
     N('decidiram: fugir.', 1): .3,          # the vote's stamp lands
     N('a ele: Renato.', 2): .6,             # the name's stamp lands
-    N('carro abre devagar.', 2): .5,        # the car door opens outside
-    N('sacode o portão.', 2): .7,           # the gate rattles
-    N('de latir.', 1): .4,
-    N('"Cadê vocês?"', 1): .7,              # the message lights up his phone
-    N('sobe a conversa.', 2): .5,
-    N('casa dele."', 1): .9,                # the message he sent before knocking sinks in
-    N('fica com você.', 2): .45,            # the chip drops through the grate
-    N('o dele.', 1): .5,                    # his face on the news
-    N('são procurados.', 1): .4,
-    N('pega o celular.', 2): .45,
-    N('contigo, Zinho."', 1): .6,           # Zinho's phone keeps buzzing
-    N('de uma porta.', 2): .3,
-    N('de ouro.', 1): .5,
-    N('o dinheiro.', 1): .4,
-    N('a mão.', 1): .6,
-    N('até amanhecer.', 1): .3,
-    N('onde fica.', 1): .5,
+    N('quem paga é ele.', 3): .45,          # the flash of Renato, caught
+    N('do carro.', 1): .45,                 # the car door shuts outside
+    N('cai do outro lado.', 3): .55,        # black: the fall on the other side
+    N('por trás.', 1): .3,                  # the hand on his collar
+    N('foto da divisão.', 2): .5,           # the stamp, before Renato's shout
+    N('o ar acaba.', 2): .3,
+    N('está sozinho.', 1): .7,              # silence, then the phone buzzes
+    N('não é ele.', 2): .4,
+    N('um áudio.', 1): .7,                  # the message starts playing
+    C('é a próxima.', 2): .8,               # the threat sinks in
+    N('outra vez.', 1): 2.9,                # the message again: "Você correu. Ele não."
+    N('Calma demais.', 1): .4,
+    N('eram moleques.', 1): .4,
+    N('duas horas.', 1): .5,                # the clock ticks
+    N('pé no muro.', 2): .6,                # before the question
 }
 # Silences at changes of voice other than SWITCH: a breath after the opening.
 SWITCHES = {V(16): .35}
@@ -239,6 +252,7 @@ def join(words, pieces, output, stand_ins=()):
     ref = loudness(files['NARRADOR'])
     gains = {v: 0 if v in stand_ins or v == 'NARRADOR' else ref - loudness(files[v]) for v in VOICES}
     gains['RENATO'] += FRIEND_GAIN
+    gains['COBRANCA'] += MESSAGE_GAIN
     order = list(VOICES)
     # The voices' own rate; the renderer resamples the mix to 48 kHz.
     rate = int(probe(files['NARRADOR'], 'stream=sample_rate'))
@@ -263,8 +277,8 @@ def join(words, pieces, output, stand_ins=()):
 class Edit:
     """The scenes, graphics and sound effects of one layout, on the joined track's clock."""
 
-    def __init__(self, at, end, layout):
-        self.at, self.END, self.L = at, end, layout
+    def __init__(self, at, end, layout, gains):
+        self.at, self.END, self.L, self.gains = at, end, layout, gains
 
     def s(self, ref):
         return self.at[ref][0]
@@ -292,7 +306,7 @@ def label(text, at, **kw):
 
 
 def sfx(sound, at, gain):
-    return {'sound': sound, 'at': round(at, 3), 'gain': gain}
+    return {'sound': sound, 'at': round(at, 3), 'gain': round(gain, 1)}
 
 
 def ticking(start, end, n=14, gain=-18):
@@ -355,38 +369,46 @@ def abertura(ed, part, vote, pointer, profile, decided, winner_word, story):
     return scenes, graphics, effects
 
 
-
-
-# Framings inside the illustrations, left, top, right, bottom as fractions. Equal width and
-# height keep the 9:16 shape.
-GATE01 = [0.26, 0.25, 0.86, 0.85]        # the car and the gate, from the window
-RENATO02 = [0.40, 0.12, 0.95, 0.67]      # Renato at the back door
-TORCH02 = [0.0, 0.12, 0.55, 0.67]        # the torch's beam in the doorway, Zinho looking back
-HANDS03 = [0.335, 0.292, 0.735, 0.692]   # the two hands over the wall
-RENATO04 = [0.426, 0.179, 0.786, 0.539]  # Renato's face, running
-DRAIN05 = [0.36, 0.52, 0.80, 0.96]       # the chip falling through the grate
-MAN06 = [0.60, 0.38, 1.0, 0.78]          # the man at the counter with his phone
-FACES09 = [0.08, 0.10, 0.58, 0.60]       # the two of them pressed into the doorway
-RING10 = [0.25, 0.40, 0.65, 0.80]        # the ring on the hand at the car window
-FACE11 = [0.15, 0.12, 0.75, 0.72]        # Renato looking away
-WINDOW13 = [0.0, 0.15, 0.50, 0.65]       # the mother's lit window
-CAR13 = [0.60, 0.30, 1.0, 0.70]          # the car waiting down her street
+# Framings inside the illustrations: left, top, right, bottom as fractions. Equal width and
+# height keep the 9:16 shape. Each one is chosen so that, after its zoom, no face, hand,
+# phone or ring sits in the top quarter (the panel and the tag) or in the bottom fifth.
+MEN01 = [0.05, 0.12, 0.75, 0.82]         # the two men and the torch, through the window
+RENATO02 = [0.30, 0.06, 1.0, 0.76]       # Renato in front, at the back door
+KITCHEN02 = [0.04, 0.0, 0.96, 0.92]      # the two running, a little lower in the frame
+BOOST03 = [0.15, 0.17, 0.85, 0.87]       # Renato's hands under Zinho's foot
+TOP03 = [0.16, 0.17, 0.76, 0.77]         # Zinho reaching the top of the wall
+RING04 = [0.45, 0.19, 1.0, 0.74]         # the ring on the hand at Renato's collar
+SCREAM05 = [0.05, 0.0, 0.95, 0.9]        # Renato shouting, his head below the panel
+FACE06 = [0.25, 0.195, 0.75, 0.695]      # Zinho running, out of breath
+ZINHO07 = [0.14, 0.19, 0.74, 0.79]       # Zinho on the bus floor
+POCKET07 = [0.21, 0.255, 0.71, 0.755]    # his hands and the dark phone
+PHONE_WIDE = [0.125, 0.13, 0.875, 0.88]  # the phone in his hand, the screen from 29% to 66%
+PHONE_CLOSE = [0.20, 0.185, 0.80, 0.785]  # closer: the screen from 27% to 73%
+SHOULDER09 = [0.30, 0.05, 1.0, 0.75]     # the hand with the ring on Renato's shoulder
+FACE10 = [0.2, 0.125, 0.8, 0.725]        # Zinho's face as he listens
+MEMORY11 = [0.06, 0.0, 0.94, 0.88]       # the lunch, the mother's head below the panel
+DOOR13 = [0.05, 0.0, 0.95, 0.9]          # Zinho at the bus door
 RING_PHOTO = [0.513, 0.342, 0.953, 0.782]  # the ring in Part 2's photo of the division
-FIRST_MSG = [0.20, 0.10, 0.80, 0.70]     # Renato's chat: the message he sent at 23:31, close
-TV_FACES = [0.02, 0.19, 0.62, 0.79]      # the news: the two faces, Zinho's and, for the first time, Renato's
-# Renato's phone in scene 5: the corners of its screen, a little outside the lit area, and
-# the message from "Cobrança" on the lock screen, minutes after Part 2's 23:47.
-_CORNERS5 = [(.2380, .2362), (.4400, .2500), (.4421, .5161), (.2115, .5048)]
-_MIDDLE5 = (sum(x for x, _ in _CORNERS5)/4, sum(y for _, y in _CORNERS5)/4)
-SCREEN05 = [[round(_MIDDLE5[0] + (x - _MIDDLE5[0])*1.05, 4), round(_MIDDLE5[1] + (y - _MIDDLE5[1])*1.05, 4)] for x, y in _CORNERS5]
-COBRANCA = {'quad': SCREEN05, 'state': 'lock', 'date': 'quarta-feira, 28 de outubro', 'time': '00:03',
-            'app': 'MENSAGENS', 'sender': 'Cobrança', 'message': 'Cadê vocês?', 'when': 'agora'}
+# The lit, blank screen of the phone in scene 8 (compor_cenas.TELA08), a little larger so
+# the lock screen covers its bright edge. The night of the escape is past midnight of the
+# 28th, Part 2's "23:47".
+_TELA08 = [(.3889, .3481), (.6153, .3481), (.6132, .6220), (.3868, .6220)]
+_MID08 = (sum(x for x, _ in _TELA08)/4, sum(y for _, y in _TELA08)/4)
+SCREEN08 = [[round(_MID08[0] + (x - _MID08[0])*1.035, 4), round(_MID08[1] + (y - _MID08[1])*1.035, 4)] for x, y in _TELA08]
+NIGHT = 'quinta-feira, 29 de outubro'
+LOCK_PHOTO = {'quad': SCREEN08, 'state': 'lock', 'date': NIGHT, 'time': '01:04',
+              'app': 'MENSAGENS', 'sender': 'Renato', 'message': 'Foto', 'when': 'agora'}
+LOCK_HOUR = {'quad': SCREEN08, 'state': 'lock', 'date': NIGHT, 'time': '01:12',
+             'app': 'MENSAGENS', 'sender': 'Renato', 'message': 'Áudio (0:14)', 'when': '7 min'}
+# The junkyard's blank sign in scene 12, with the name from Part 2's calendar.
+SIGN12 = [{'box': [0.5824, 0.4755, 0.8183, 0.5413], 'text': 'FERRO-VELHO\nSÃO JORGE', 'color': [74, 36, 22],
+           'opacity': .86, 'weight': 'ExtraBold', 'pad': 6, 'blur': .6}]
 
 
 def build(ed):
     s, e, cut, L = ed.s, ed.e, ed.cut, ed.L
     END, x = ed.END, L['x']
-    story = cut(N('Agora você foge'))
+    story = cut(N('Mas fugir tem'))
     # The opening's vote gives way to the name the audience chose, then the story starts.
     opening, og, oe = abertura(ed, PART, VOTE, N('Chegou agora?'), N('As partes um'), N('Vocês decidiram:'),
                                N('decidiram: fugir.', 1), cut(N('E deram um')))
@@ -396,50 +418,59 @@ def build(ed):
     plan = opening + [
         # The name the audience gave him, over his portrait from Part 2.
         ('name', cut(N('E deram um')), dict(kind='art', asset=p2 + 'cena-08-retrato-amigo.png', zoom=.05)),
-        ('hook', story, dict(kind='art', asset='cena-02-cozinha.png', zoom=.05)),
-        ('car', cut(N('Lá fora, a')), dict(kind='art', asset='cena-01-porta-do-carro.png', zoom=.05)),
+        ('hook', story, dict(kind='art', asset='cena-01-portao.png', zoom=.05)),
+        # A flash of what is coming: Renato caught.
+        ('flash', cut(N('E esta noite,')), dict(kind='art', asset='cena-05-renato-grita.png', crop=SCREAM05, zoom=.06,
+                                                brightness=.6)),
+        ('men', cut(N('Lá fora, dois')), dict(kind='art', asset='cena-01-portao.png', crop=MEN01, zoom=.06)),
         ('back', cut(R('Pelos fundos.')), dict(kind='art', asset='cena-02-cozinha.png', crop=RENATO02, zoom=.06)),
-        ('knows', cut(N('Ele conhece a')), dict(kind='art', asset='cena-02-cozinha.png', crop=TORCH02, zoom=.05)),
-        ('wall', cut(N('A cozinha, o')), dict(kind='art', asset='cena-03-muro-quintal.png', zoom=.05)),
-        ('gate', cut(N('Atrás de vocês,')), dict(kind='art', asset='cena-01-porta-do-carro.png', crop=GATE01, zoom=.08,
-                                                  brightness=.75)),
-        ('alley', cut(N('Do outro lado')), dict(kind='art', asset='montagem/arte/beco-pichado.png', zoom=.06)),
-        ('debt', cut(N('Então o celular')), dict(kind='art', asset='cena-05-chip.png', zoom=.05, screen=COBRANCA)),
-        # Zinho takes the phone and scrolls up: the message Renato sent before he knocked.
-        ('chat', cut(N('Você arranca o')), dict(kind='art', asset='montagem/arte/conversa.png', zoom=.04)),
-        ('sent', cut(N('Onze e meia')), dict(kind='art', asset='montagem/arte/conversa.png', crop=FIRST_MSG, zoom=.08)),
-        ('excuse', cut(R('Eu mandei antes')), dict(kind='art', asset='cena-11-renato.png', crop=FACE11, zoom=.06)),
-        ('doubt', cut(N('Você não sabe')), dict(kind='art', asset='cena-05-chip.png', zoom=.04, screen=COBRANCA)),
-        ('chip', cut(N('O chip vai')), dict(kind='art', asset='cena-05-chip.png', crop=DRAIN05, zoom=.08)),
-        ('bar', cut(N('No bar da')), dict(kind='art', asset='montagem/arte/bar-plantao.png', zoom=.05)),
-        ('tv', cut(N('O seu rosto.')), dict(kind='art', asset='montagem/arte/tv-bar-plantao.png', zoom=.06)),
-        ('wanted', cut(N('Agora os dois')), dict(kind='art', asset='montagem/arte/tv-bar-plantao.png', crop=TV_FACES, zoom=.06)),
-        ('comments', cut(N('Embaixo, os comentários')), dict(kind='art', asset='montagem/arte/tv-bar-plantao.png', zoom=.03,
-                                                             direction='out')),
-        ('man', cut(N('No balcão, um')), dict(kind='art', asset='montagem/arte/bar-plantao.png', crop=MAN06, zoom=.08)),
-        ('phone', cut(N('Na rua, é')), dict(kind='art', asset='montagem/arte/celular-notificacoes.png', zoom=.07)),
-        ('avenue', cut(N('Na avenida, o')), dict(kind='art', asset='cena-09-porta-escura.png', zoom=.04)),
-        ('still', cut(R('Não se mexe.')), dict(kind='art', asset='cena-09-porta-escura.png', crop=FACES09, zoom=.06)),
-        ('window', cut(N('Na janela do')), dict(kind='art', asset='cena-10-anel.png', zoom=.05)),
-        ('ring', cut(N('No dedo, um')), dict(kind='art', asset='cena-10-anel.png', crop=RING10, zoom=.1)),
-        ('photo', cut(N('É o anel')), dict(kind='art', asset=p2 + 'cena-04-foto-divisao.png', zoom=.05)),
-        ('photo-ring', cut(N('A mão que')), dict(kind='art', asset=p2 + 'cena-04-foto-divisao.png', crop=RING_PHOTO,
-                                                 zoom=.12)),
-        ('him', cut(R('É ele.')), dict(kind='art', asset='cena-11-renato.png', crop=FACE11, zoom=.08)),
-        ('one-of-them', cut(N('Pela primeira vez, você')), dict(kind='art', asset='cena-10-anel.png', crop=RING10, zoom=.05,
-                                                                direction='out', brightness=.8)),
-        ('gone', cut(N('O carro some')), dict(kind='art', asset='cena-09-porta-escura.png', zoom=.04, direction='out',
+        ('kitchen', cut(N('Vocês atravessam a')), dict(kind='art', asset='cena-02-cozinha.png', crop=KITCHEN02, zoom=.04,
+                                                       direction='out')),
+        ('wall', cut(N('No quintal, o')), dict(kind='art', asset='cena-03-pe-no-muro.png', zoom=.05)),
+        ('boost', cut(N('Renato junta as')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=BOOST03, zoom=.06)),
+        ('jump', cut(N('Você sobe, pula')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=TOP03, zoom=.06)),
+        ('fall', round(e(N('cai do outro lado.', 3)) - .02, 2), dict(kind='black')),
+        ('grab', cut(N('Quando ele agarra')), dict(kind='art', asset='cena-04-mao-anel.png', zoom=.05)),
+        ('ring', cut(N('No dedo, um')), dict(kind='art', asset='cena-04-mao-anel.png', crop=RING04, zoom=.08)),
+        ('photo-ring', cut(N('O mesmo anel')), dict(kind='art', asset=p2 + 'cena-04-foto-divisao.png', crop=RING_PHOTO,
+                                                    zoom=.1)),
+        ('scream', cut(R('Corre! Corre!')), dict(kind='art', asset='cena-05-renato-grita.png', crop=SCREAM05, zoom=.08)),
+        ('run', cut(N('Você corre. E')), dict(kind='art', asset='cena-06-zinho-corre.png', zoom=.05)),
+        ('breath', cut(N('Só para quando')), dict(kind='art', asset='cena-06-zinho-corre.png', crop=FACE06, zoom=.05)),
+        ('bus', cut(N('No fim da')), dict(kind='art', asset='cena-07-onibus.png', zoom=.05, direction='out')),
+        ('hide', cut(N('Você se esconde')), dict(kind='art', asset='cena-07-onibus.png', crop=ZINHO07, zoom=.05)),
+        ('pocket', cut(N('No bolso, o')), dict(kind='art', asset='cena-07-onibus.png', crop=POCKET07, zoom=.05)),
+        ('alone', cut(N('Pela primeira vez')), dict(kind='art', asset='cena-07-onibus.png', zoom=.04, direction='out',
+                                                    brightness=.75)),
+        # Renato's number, but not Renato: the photo, then the message.
+        ('buzz', cut(N('Então o celular')), dict(kind='art', asset='cena-08-celular.png', crop=PHONE_WIDE, zoom=.05,
+                                                 screen=LOCK_PHOTO)),
+        ('chat-photo', cut(N('Primeiro, uma foto.')), dict(kind='art', asset='montagem/arte/celular-foto.png',
+                                                           crop=PHONE_CLOSE, zoom=.05)),
+        ('photo', cut(N('Renato numa cadeira,')), dict(kind='art', asset='cena-09-foto-refem.png', zoom=.05)),
+        ('scrap', cut(N('Atrás dele, montes')), dict(kind='art', asset='cena-09-foto-refem.png', zoom=.04, direction='out',
+                                                     brightness=.9)),
+        ('shoulder', cut(N('No ombro dele,')), dict(kind='art', asset='cena-09-foto-refem.png', crop=SHOULDER09, zoom=.06)),
+        ('chat-audio', cut(N('Depois, um áudio.')), dict(kind='art', asset='montagem/arte/celular-audio.png',
+                                                         crop=PHONE_CLOSE, zoom=.05)),
+        ('listen', cut(C('Você correu.')), dict(kind='art', asset='cena-10-zinho-escuta.png', zoom=.05)),
+        ('trade', cut(C('Vamos trocar:')), dict(kind='art', asset='cena-10-zinho-escuta.png', crop=FACE10, zoom=.06)),
+        ('junkyard', cut(C('Três da manhã,')), dict(kind='art', asset='cena-12-ferro-velho.png', zoom=.05, paint=SIGN12)),
+        ('threat', cut(C('Se chamar a')), dict(kind='art', asset='cena-10-zinho-escuta.png', crop=FACE10, zoom=.04,
+                                               direction='out', brightness=.85)),
+        ('again', cut(N('Você escuta outra')), dict(kind='art', asset='cena-10-zinho-escuta.png', zoom=.04,
+                                                    direction='out', brightness=.8)),
+        ('mother', cut(N('A mãe dele.')), dict(kind='art', asset='cena-11-almoco.png', crop=MEMORY11, zoom=.04,
+                                               direction='out')),
+        ('clock', cut(N('Você olha a')), dict(kind='art', asset='cena-08-celular.png', crop=PHONE_CLOSE, zoom=.06,
+                                              screen=LOCK_HOUR)),
+        ('price', cut(N('O homem que')), dict(kind='art', asset='cena-09-foto-refem.png', zoom=.04, direction='out',
                                               brightness=.7)),
-        ('places', cut(R('Tem dois.')), dict(kind='art', asset='cena-11-renato.png', zoom=.03)),
-        ('junkyard', cut(R('O ferro-velho da')), dict(kind='art', asset='cena-12-ferro-velho.png', zoom=.05)),
-        ('mother', cut(R('Ou a casa')), dict(kind='art', asset='cena-13-casa-mae.png', zoom=.05)),
-        ('theirs', cut(N('O ferro-velho é')), dict(kind='art', asset='cena-12-ferro-velho.png', zoom=.04, direction='out',
-                                                   brightness=.8)),
-        ('they-know', cut(N('A casa da mãe,')), dict(kind='art', asset='cena-13-casa-mae.png', crop=CAR13, zoom=.08,
-                                                     brightness=.85)),
-        # The vote: the two places side by side, dark under the buttons.
-        ('choice', cut(N('Ferro-velho ou mãe?')), dict(kind='art', asset='montagem/arte/escolha.png', zoom=.03,
-                                                       direction='out', brightness=.45)),
+        ('help', cut(N('Mas foi esse')), dict(kind='art', asset='cena-03-pe-no-muro.png', crop=BOOST03, zoom=.05,
+                                              brightness=.85)),
+        # The vote: Zinho at the bus door, dark under the question and the buttons.
+        ('choice', cut(N('Trocar ou deixar?')), dict(kind='art', asset='cena-13-decisao.png', crop=DOOR13, zoom=.03,
+                                                     direction='out', brightness=.45)),
     ]
     if allies:
         plan.append(('credits', round(VOICE_END + .6, 2), dict(kind='art', asset='montagem/arte/creditos.png', zoom=.03)))
@@ -447,117 +478,127 @@ def build(ed):
     AT = {name: t for name, t, _ in plan}
     scenes = [{'start': t, 'end': plan[k+1][1] if k + 1 < len(plan) else END, **fields}
               for k, (_, t, fields) in enumerate(plan)]
-    for sc in scenes:
-        for key in ('card_dx', 'card_scale'):
-            if sc.get(key) in (0, 1):
-                sc.pop(key)
     vote_end = AT.get('credits', END + .5)
     graphics = og + [
         {'type': 'hud', 'start': story, 'end': AT['choice'], 'label': 'A SUA PARTE', 'dy': L['hud_dy'],
          'values': [{'at': story, 'text': 'R$ 0', 'color': 'red'}],
          'stars': [{'at': story, 'count': 5, 'step': 0}]},
-        {'type': 'tag', 'start': story, 'end': AT['debt'], 'text': 'FUGA 1 · OS FUNDOS', 'y': L['tag_y']},
-        {'type': 'tag', 'start': AT['debt'], 'end': AT['bar'], 'text': 'PISTA · A CONVERSA', 'y': L['tag_y']},
-        {'type': 'tag', 'start': AT['bar'], 'end': AT['avenue'], 'text': 'FUGA 2 · O BAR', 'y': L['tag_y']},
-        {'type': 'tag', 'start': AT['avenue'], 'end': AT['window'], 'text': 'FUGA 3 · A AVENIDA', 'y': L['tag_y']},
-        {'type': 'tag', 'start': AT['window'], 'end': AT['choice'], 'text': 'PISTA · O ANEL', 'y': L['tag_y']},
+        {'type': 'tag', 'start': story, 'end': AT['bus'], 'text': 'A FUGA · O MURO', 'y': L['tag_y']},
+        {'type': 'tag', 'start': AT['bus'], 'end': AT['buzz'], 'text': 'SOZINHO · O ÔNIBUS', 'y': L['tag_y']},
+        {'type': 'tag', 'start': AT['buzz'], 'end': AT['listen'], 'text': 'PISTA · A FOTO', 'y': L['tag_y']},
+        {'type': 'tag', 'start': AT['listen'], 'end': AT['mother'], 'text': 'PISTA · O ÁUDIO', 'y': L['tag_y']},
+        {'type': 'tag', 'start': AT['mother'], 'end': AT['choice'], 'text': 'O PREÇO', 'y': L['tag_y']},
         # The name, stamped over his face.
         phrase(AT['name'] + .05, story, 760, [line('E O NOME DELE', s(N('E deram um')))], 64, x),
         {'type': 'stamp', 'start': round(s(N('ele: Renato.', 1)) - .02, 2), 'end': story, 'text': NAME, 'y': 900, 'x': x,
          'angle': -7, 'color': 'yellow', 'filled': True},
-        # Red alarm on the old message, while the car goes by and at the mother's street.
-        {'type': 'vignette', 'start': AT['sent'], 'end': AT['doubt'], 'color': 'alert', 'strength': .8},
-        {'type': 'vignette', 'start': AT['avenue'], 'end': AT['photo'], 'color': 'alert', 'strength': .85},
-        {'type': 'vignette', 'start': AT['they-know'], 'end': AT['choice'], 'color': 'alert', 'strength': .8},
-        phrase(s(N('ao lado do')) - .05, AT['car'], 900, [line('AO LADO DE QUEM', s(N('ao lado do'))),
-                                                         line('VENDEU O SEU NOME.', s(N('vendeu o seu')), 'yellow')], 52, x),
-        phrase(AT['back'] + .05, AT['knows'], 900, [line('“PELOS FUNDOS.', s(R('Pelos fundos.'))),
-                                                    line('AGORA.”', s(R('Agora.')), 'yellow', shake=True)], 66, x),
-        phrase(s(N('melhor do que')) - .05, AT['wall'], 900, [line('MELHOR DO QUE', s(N('melhor do que'))),
-                                                             line('DEVERIA.', s(N('deveria.')), 'yellow')], 62, x),
-        phrase(s(N('alguém sacode')) - .05, AT['alley'], 900, [line('ALGUÉM SACODE', s(N('alguém sacode'))),
-                                                               line('O PORTÃO.', s(N('o portão.')), 'red', shake=True)], 64, x),
-        phrase(s(N('"Cadê vocês?"')) - .05, AT['chat'], 1000, [line('“CADÊ VOCÊS?”', s(N('"Cadê vocês?"')), 'red',
-                                                                    shake=True)], 70, x),
-        phrase(s(N('"Tô chegando')) - .05, AT['excuse'], 1010, [line('23:31, ANTES DA PORTA', s(N('Onze e meia')), size=40),
-                                                                line('“TÔ CHEGANDO', s(N('"Tô chegando'))),
-                                                                line('NA CASA DELE.”', s(N('casa dele."')), 'red', shake=True)],
-               62, x),
-        phrase(s(R('Antes de ver')) - .05, AT['doubt'], 900, [line('“ANTES DE VER', s(R('Antes de ver'))),
-                                                              line('A TUA CARA.”', s(R('tua cara.')), 'yellow')], 64, x),
-        phrase(AT['doubt'] + .05, AT['chip'], 900, [line('VOCÊ NÃO SABE', s(N('Você não sabe'))),
-                                                    line('SE ACREDITA.', s(N('se acredita.')), 'yellow')], 64, x),
-        {'type': 'list', 'start': round(AT['chip'] + .05, 2), 'end': AT['bar'], 'y': 560, 'x': x,
-         'items': [{'at': round(s(N('O chip vai')), 2), 'left': 'O CHIP', 'right': 'NO BUEIRO'},
-                   {'at': round(s(N('e o celular')), 2), 'left': 'O CELULAR', 'right': 'COM VOCÊ'}]},
-        phrase(s(N('pela primeira vez, o')) - .05, AT['wanted'], 1010, [line('PELA PRIMEIRA VEZ,', s(N('pela primeira vez, o'))),
-                                                                       line('O DELE.', s(N('o dele.')), 'yellow')], 58, x),
-        phrase(AT['wanted'] + .05, AT['comments'], 1000, [line('OS DOIS SÃO', s(N('Agora os dois'))),
-                                                          line('PROCURADOS.', s(N('são procurados.')), 'red', shake=True)], 66, x),
-        phrase(s(N('E pega o')) - .05, AT['phone'], 900, [line('E PEGA', s(N('E pega o'))),
-                                                          line('O CELULAR.', s(N('o celular.', 0)), 'red')], 76, x),
-        phrase(s(N('O seu número')) - .05, s(N('Uns te chamam')) - .02, 980,
-               [line('O SEU NÚMERO', s(N('O seu número'))), line('VAZOU.', s(N('vazou junto')), 'yellow')], 66, x),
-        phrase(s(N('Uns te chamam')) - .02, AT['avenue'], 980, [line('“TÔ CONTIGO,', s(N('"Tô contigo,'))),
-                                                                line('ZINHO.”', s(N('contigo, Zinho."', 1)), 'yellow')], 66, x),
-        phrase(s(N('farol apagado')) - .05, AT['still'], 900, [line('DE FAROL', s(N('farol apagado'))),
-                                                               line('APAGADO.', s(N('apagado vem')), 'red', shake=True)], 80, x),
-        phrase(AT['still'] + .05, AT['window'], 900, [line('“NÃO SE MEXE.”', s(R('Não se mexe.')), 'yellow')], 70, x),
-        phrase(s(N('anel grosso')) - .05, AT['photo'], 900, [line('UM ANEL', s(N('um anel grosso'))),
-                                                             line('DE OURO.', s(N('de ouro.')), 'yellow')], 80, x),
-        {'type': 'stamp', 'start': round(s(N('A mão que')) - .02, 2), 'end': AT['him'], 'text': 'O MESMO ANEL', 'y': 900,
-         'x': x, 'angle': -7},
-        phrase(AT['him'] + .05, AT['one-of-them'], 900, [line('“É ELE.', s(R('É ele.'))),
-                                                         line('O HOMEM QUE', s(R('O homem que')), 'yellow'),
-                                                         line('ME COBRA.”', s(R('me cobra.')), 'yellow')], 70, x),
-        phrase(AT['one-of-them'] + .05, AT['gone'], 900, [line('VOCÊ VÊ UM DELES.', s(N('você vê um'))),
-                                                          line('PELO MENOS A MÃO.', s(N('Pelo menos a')), 'red')], 52, x),
-        phrase(s(N('um lugar até')) - .05, AT['places'], 900, [line('UM LUGAR', s(N('um lugar até'))),
-                                                               line('ATÉ AMANHECER.', s(N('até amanhecer.')), 'yellow')], 64, x),
-        phrase(AT['junkyard'] + .05, AT['mother'], 900, [line('O FERRO-VELHO', s(R('O ferro-velho da'))),
-                                                         line('DA FOTO', s(R('da foto:')), 'yellow')], 68, x),
-        phrase(AT['mother'] + .05, AT['theirs'], 900, [line('A CASA', s(R('Ou a casa'))),
-                                                       line('DA MÃE DELE', s(R('minha mãe.')), 'yellow')], 72, x),
-        phrase(AT['theirs'] + .05, AT['they-know'], 900, [line('O FERRO-VELHO', s(N('O ferro-velho é'))),
-                                                          line('É DELES.', s(N('é deles.')), 'red', shake=True)], 68, x),
-        phrase(AT['they-know'] + .05, AT['choice'], 900, [line('ELES SABEM', s(N('eles sabem'))),
-                                                          line('ONDE FICA.', s(N('onde fica.')), 'red', shake=True)], 76, x),
-        # The vote, with its two buttons, as the other parts ask.
-        phrase(AT['choice'], vote_end, 420, [line('FERRO-VELHO', s(N('Ferro-velho ou mãe?'))),
-                                             line('OU MÃE?', s(N('ou mãe?')), 'yellow')], 80, x),
-        {'type': 'buttons', 'start': round(s(N('Comenta uma palavra')) - .05, 2), 'end': vote_end, 'y': 660, 'x': x,
+        # Red alarm: the flash, the capture, the threat and the price.
+        {'type': 'vignette', 'start': AT['flash'], 'end': AT['men'], 'color': 'alert', 'strength': .8},
+        {'type': 'vignette', 'start': AT['grab'], 'end': AT['run'], 'color': 'alert', 'strength': .8},
+        {'type': 'vignette', 'start': AT['listen'], 'end': AT['again'], 'color': 'alert', 'strength': .7},
+        {'type': 'vignette', 'start': AT['price'], 'end': AT['choice'], 'color': 'alert', 'strength': .6},
+        phrase(AT['hook'] + .05, AT['flash'], 900, [line('FUGIR TEM', s(N('Mas fugir tem'))),
+                                                    line('UM PREÇO.', s(N('um preço.')), 'yellow')], 72, x),
+        phrase(AT['flash'] + .05, AT['men'], 900, [line('QUEM PAGA', s(N('quem paga é'))),
+                                                   line('É ELE.', s(N('quem paga é ele.', 2)), 'red', shake=True)], 72, x),
+        phrase(s(N('dois homens')) - .05, AT['back'], 900, [line('DOIS HOMENS.', s(N('dois homens'))),
+                                                            line('UMA LANTERNA.', s(N('uma lanterna.')), 'yellow')], 60, x),
+        phrase(AT['back'] + .05, AT['kitchen'], 900, [line('“PELOS FUNDOS.', s(R('Pelos fundos.'))),
+                                                      line('VAI!”', s(R('Vai!')), 'yellow', shake=True)], 64, x),
+        phrase(s(N('mais alto do')) - .05, AT['boost'], 900, [line('MAIS ALTO DO QUE', s(N('mais alto do'))),
+                                                              line('VOCÊ LEMBRAVA.', s(N('você lembrava.')), 'yellow')], 54, x),
+        phrase(s(N('te dá pé.')) - .05, s(R('Sobe.')) - .1, 900, [line('ELE TE DÁ PÉ.', s(N('te dá pé.')), 'yellow')], 62, x),
+        phrase(s(R('Sobe.')) - .1, AT['jump'], 900, [line('“SOBE.', s(R('Sobe.'))),
+                                                     line('EU VOU ATRÁS.”', s(R('Eu vou atrás.')), 'yellow')], 62, x),
+        phrase(s(N('uma mão puxa')) - .05, AT['ring'], 900, [line('UMA MÃO', s(N('uma mão puxa'))),
+                                                             line('POR TRÁS.', s(N('por trás.')), 'red', shake=True)], 76, x),
+        phrase(s(N('um anel grosso')) - .05, AT['photo-ring'], 900, [line('UM ANEL', s(N('um anel grosso'))),
+                                                                     line('DE OURO.', s(N('de ouro.')), 'yellow')], 76, x),
+        {'type': 'stamp', 'start': round(s(N('O mesmo anel')) - .02, 2), 'end': AT['scream'], 'text': 'O MESMO ANEL',
+         'y': 900, 'x': x, 'angle': -7},
+        phrase(AT['scream'] + .05, AT['run'], 900, [line('“CORRE!', s(R('Corre! Corre!')), 'red', shake=True),
+                                                    line('CORRE!”', s(R('Corre! Corre!', 1)), 'red', shake=True)], 80, x),
+        phrase(s(N('cada passo pesa')) - .05, AT['breath'], 900, [line('CADA PASSO', s(N('cada passo pesa'))),
+                                                                  line('PESA MAIS.', s(N('pesa mais que')), 'yellow')], 72, x),
+        phrase(s(N('um ônibus abandonado.')) - .05, AT['hide'], 900, [
+            line('UM ÔNIBUS', s(N('um ônibus abandonado.'))),
+            line('ABANDONADO.', s(N('um ônibus abandonado.', 2)), 'yellow')], 66, x),
+        phrase(s(N('uma casa para')) - .05, AT['alone'], 900, [line('UMA CASA', s(N('uma casa para'))),
+                                                               line('SEM VOLTA.', s(N('não pode voltar.')), 'yellow')], 72, x),
+        phrase(AT['alone'] + .05, AT['buzz'], 900, [line('VOCÊ ESTÁ', s(N('você está sozinho.'))),
+                                                    line('SOZINHO.', s(N('está sozinho.', 1)), 'yellow')], 76, x),
+        phrase(s(N('É o número')) - .05, s(N('Mas não é')) - .05, 900, [line('É O NÚMERO', s(N('É o número'))),
+                                                                       line('DO RENATO.', s(N('do Renato.')), 'yellow')],
+               70, x),
+        phrase(s(N('Mas não é')) - .05, AT['chat-photo'], 900, [line('MAS NÃO É ELE.', s(N('Mas não é')), 'red',
+                                                                     shake=True)], 64, x),
+        phrase(s(N('o lábio cortado.')) - .05, AT['scrap'], 900, [line('COM O LÁBIO', s(N('o lábio cortado.'))),
+                                                                  line('CORTADO.', s(N('lábio cortado.', 1)), 'red')], 70, x),
+        phrase(AT['scrap'] + .05, AT['shoulder'], 900, [line('MONTES DE', s(N('montes de sucata.'))),
+                                                        line('SUCATA.', s(N('montes de sucata.', 2)), 'yellow')], 72, x),
+        phrase(s(N('a mão com')) - .05, AT['chat-audio'], 900, [line('A MÃO', s(N('a mão com'))),
+                                                                line('COM O ANEL.', s(N('com o anel.', 2)), 'yellow')], 72, x),
+        phrase(AT['chat-audio'] + .05, AT['listen'], 900, [line('DEPOIS,', s(N('Depois, um áudio.'))),
+                                                           line('UM ÁUDIO.', s(N('um áudio.')), 'yellow')], 72, x),
+        phrase(AT['listen'] + .05, AT['trade'], 900, [line('“VOCÊ CORREU.', s(C('Você correu.'))),
+                                                      line('ELE NÃO.”', s(C('Ele não.')), 'red')], 64, x),
+        phrase(AT['trade'] + .05, AT['junkyard'], 900, [line('“VAMOS TROCAR:', s(C('Vamos trocar:'))),
+                                                        line('VOCÊ POR ELE.”', s(C('você por ele.')), 'yellow',
+                                                             shake=True)], 62, x),
+        phrase(AT['junkyard'] + .05, AT['threat'], 900, [line('“3 DA MANHÃ.', s(C('Três da manhã,'))),
+                                                         line('SOZINHO.”', s(C('Sozinho.')), 'red')], 70, x),
+        phrase(AT['threat'] + .05, AT['again'], 920, [line('“SE CHAMAR A POLÍCIA,', s(C('Se chamar a')), size=40),
+                                                      line('A MÃE DELE', s(C('a mãe dele'))),
+                                                      line('É A PRÓXIMA.”', s(C('é a próxima.')), 'red', shake=True)], 66, x),
+        phrase(s(N('Calma demais.')) - .05, AT['mother'], 900, [line('CALMA', s(N('Calma demais.'))),
+                                                                line('DEMAIS.', s(N('Calma demais.', 1)), 'red')], 80, x),
+        phrase(s(N('A mesma que')) - .05, AT['clock'], 900, [line('A MESMA QUE TE', s(N('A mesma que'))),
+                                                             line('DAVA ALMOÇO.', s(N('dava almoço')), 'yellow')], 62, x),
+        phrase(s(N('Faltam menos')) - .05, AT['price'], 900, [line('FALTAM MENOS', s(N('Faltam menos'))),
+                                                              line('DE DUAS HORAS.', s(N('duas horas.')), 'red')], 62, x),
+        phrase(AT['price'] + .05, AT['help'], 920, [line('ELE VENDEU O SEU NOME.', s(N('vendeu o seu')), size=40),
+                                                    line('AGORA PAGA', s(N('agora paga por')), 'yellow'),
+                                                    line('POR ELE.', s(N('paga por ele.', 2)), 'yellow')], 66, x),
+        phrase(s(N('te deu pé')) - .05, AT['choice'], 900, [line('MAS ELE', s(N('Mas foi esse'))),
+                                                            line('TE DEU PÉ.', s(N('te deu pé')), 'yellow')], 76, x),
+        # The vote, with its two buttons, as the other parts ask. The panel is gone by
+        # now; the question sits below Zinho's face.
+        phrase(AT['choice'], vote_end, 600, [line('TROCAR', s(N('Trocar ou deixar?'))),
+                                             line('OU DEIXAR?', s(N('ou deixar?', 1)), 'yellow')], 76, x),
+        {'type': 'buttons', 'start': round(s(N('Comenta uma palavra')) - .05, 2), 'end': vote_end, 'y': 790, 'x': x,
          'prompt': 'COMENTA UMA PALAVRA', 'prompt_at': round(s(N('Comenta uma palavra')), 2),
-         'items': [{'text': 'FERRO-VELHO', 'at': round(s(N('uma palavra só.', 1)), 2), 'style': 'yellow'},
-                   {'text': 'MÃE', 'at': round(s(N('uma palavra só.', 2)), 2), 'style': 'white'}]},
-        {'type': 'box', 'start': round(s(N('O que a maioria')), 2), 'end': vote_end, 'y': 830, 'x': x,
+         'items': [{'text': 'TROCAR', 'at': round(s(N('uma palavra só.', 1)), 2), 'style': 'yellow'},
+                   {'text': 'DEIXAR', 'at': round(s(N('uma palavra só.', 2)), 2), 'style': 'white'}]},
+        {'type': 'box', 'start': round(s(N('O que a maioria')), 2), 'end': vote_end, 'y': 930, 'x': x,
          'title': f'PARTE {PART + 1}', 'sub': 'a maioria decide o próximo passo'},
     ]
+    clock = s(N('Você olha a'))
     effects = oe + [
-        *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('name', 'hook', 'alley', 'chat', 'bar', 'phone', 'avenue',
-                                                               'window', 'photo', 'junkyard', 'choice')],
+        *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('name', 'hook', 'men', 'wall', 'grab', 'run', 'bus', 'buzz',
+                                                               'listen', 'mother', 'clock', 'choice')],
         sfx('impacto.wav', s(N('ele: Renato.', 1)) - .04, -5),
-        sfx('porta-fecha.wav', e(N('carro abre devagar.', 2)) + .05, -12),
+        sfx('impacto-suave.wav', s(N('quem paga é ele.', 3)) - .04, -7),
+        sfx('porta-fecha.wav', e(N('do carro.', 1)) + .05, -12),
+        sfx('interruptor.wav', s(N('acende uma lanterna.')) + .05, -10),
         sfx('passos.wav', s(R('Pelos fundos.')) + .3, -12),
-        *[sfx('tranca.wav', e(N('sacode o portão.', 2)) + .05 + .22*k, -8 - 2*k) for k in range(3)],
-        sfx('impacto-suave.wav', s(N('o portão.')) - .04, -9),
-        *[sfx('passos.wav', s(N('Do outro lado')) + .2 + .33*k, -12) for k in range(3)],
-        sfx('vibracao.wav', s(N('o celular dele')) + .05, -8),
-        sfx('notificacao.wav', s(N('"Cadê vocês?"')) - .05, -8),
-        sfx('impacto-suave.wav', s(N('"Cadê vocês?"')) - .05, -9),
-        sfx('impacto.wav', s(N('"Tô chegando')) - .05, -4),
-        sfx('pop.wav', e(N('fica com você.', 2)) + .05, -10),
-        sfx('impacto-suave.wav', s(N('o dele.')) - .04, -7),
-        sfx('impacto.wav', s(N('são procurados.')) - .04, -6),
-        sfx('impacto-suave.wav', s(N('E pega o')) - .04, -8),
-        *[sfx('notificacao.wav', s(N('Na rua, é')) + .4 + .55*k, -12 - k) for k in range(4)],
-        sfx('vibracao.wav', s(N('celular que não')), -10),
-        sfx('carro.wav', s(N('farol apagado')) - .5, -8),
-        sfx('impacto.wav', s(N('farol apagado')) - .04, -6),
+        sfx('passos.wav', s(N('Vocês atravessam a')) + .2, -13),
+        sfx('impacto-suave.wav', e(N('cai do outro lado.', 3)) + .02, -5),
+        sfx('impacto.wav', s(N('uma mão puxa')) - .04, -5),
         sfx('impacto-suave.wav', s(N('um anel grosso')) - .04, -8),
-        sfx('impacto.wav', s(N('A mão que')) - .04, -5),
-        sfx('impacto-suave.wav', s(R('É ele.')) - .04, -7),
-        sfx('impacto-suave.wav', s(N('é deles.')) - .04, -8),
-        sfx('impacto-suave.wav', s(N('eles sabem')) - .04, -8),
+        sfx('impacto.wav', s(N('O mesmo anel')) - .04, -5),
+        *[sfx('passos.wav', s(N('Você corre. E')) + .1 + .45*k, -11 - k) for k in range(3)],
+        sfx('vibracao.wav', s(N('celular vibra.', 1)) - .1, -8),
+        sfx('impacto.wav', s(N('Mas não é')) - .04, -6),
+        sfx('notificacao.wav', s(N('Primeiro, uma foto.')) + .1, -10),
+        sfx('impacto-suave.wav', s(N('o lábio cortado.')) - .04, -9),
+        sfx('notificacao.wav', s(N('Depois, um áudio.')) + .1, -10),
+        sfx('impacto-suave.wav', s(C('você por ele.')) - .04, -7),
+        sfx('impacto.wav', s(C('é a próxima.')) - .04, -6),
+        # The message again, in the pause after "Você escuta outra vez".
+        sfx('cobranca-eco.wav', e(N('outra vez.', 1)) + .15, ed.gains['COBRANCA'] + ECHO_GAIN),
+        sfx('impacto-suave.wav', s(N('Calma demais.', 1)) - .04, -9),
+        *[sfx('tique.wav', clock + .5*k, -15) for k in range(int((e(N('duas horas.', 1)) + .4 - clock)/.5))],
+        sfx('impacto-suave.wav', s(N('agora paga por')) - .04, -8),
         *[sfx('pop.wav', t, -10) for t in (s(N('uma palavra só.', 1)), s(N('uma palavra só.', 2)), s(N('O que a maioria')))],
     ]
     if allies:
@@ -602,7 +643,7 @@ def main():
     audio = out / AUDIO.name if args.estimar else AUDIO
     gains = join(words, pieces, audio, stand_ins)
     for layout in (INSTAGRAM, VERTICAL):
-        scenes, graphics, effects = build(Edit(at, end, layout))
+        scenes, graphics, effects = build(Edit(at, end, layout, gains))
         wide = too_wide(graphics, layout['width'])
         if wide:
             raise ValueError(f'Lines wider than the {layout["name"]} layout allows: {wide}')
@@ -612,16 +653,15 @@ def main():
                     'alignment': [str(VOICES[v][1].relative_to(EPISODE.parent)) for v in VOICES],
                     'audio': str(audio) if args.estimar else audio.name, 'tail': TAIL,
                     'scenes': scenes, 'graphics': graphics, 'sfx': effects, 'captions': [],
-                    # Part 2's sounds: the car, the steps, the doors and the phone buzzing.
-                    'effects': ['../../episodio-02/montagem/efeitos']}
+                    # Part 2's sounds (the car door, the steps, the switch, the phone buzzing)
+                    # and this part's: the cobrador's message heard again.
+                    'effects': ['../../episodio-02/montagem/efeitos', 'efeitos']}
         if args.estimar:
             # Out of place, the timeline names its assets and effects by absolute path.
             for sc in scenes:
                 if 'asset' in sc:
                     sc['asset'] = str((EPISODE / sc['asset']).resolve())
-                if 'photo' in sc:
-                    sc['photo'] = str((EPISODE / sc['photo']).resolve())
-            timeline['effects'] = [str(HERE / 'efeitos')]
+            timeline['effects'] = [str((HERE / d).resolve()) for d in timeline['effects']]
         (out / layout['name']).write_text(json.dumps(timeline, ensure_ascii=False, indent=1), encoding='utf-8')
         print(f"{layout['name']}: {len(scenes)} scenes, {len(graphics)} graphics, {len(effects)} sound effects, ends at {end}s")
     print(f'{audio.name}: {length}s of voice; gains ' + ', '.join(f'{v} {g:+.1f} dB' for v, g in gains.items()))

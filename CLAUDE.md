@@ -21,7 +21,9 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
   - os **25% de cima** ficam só com fundo calmo (céu, teto, parede, escuro), sem rosto, mão, celular ou objeto importante;
   - **rostos e a ação principal ficam entre 30% e 60% da altura**, no meio da largura;
   - os 20% de baixo ficam com chão ou fundo, porque ali entram as legendas e os botões dos apps.
-- **Resolução:** imagens verticais 9:16 com **1080 × 1920 ou mais**. As da Parte 3 vieram com 941 × 1672, abaixo do quadro do vídeo.
+- **Resolução:** imagens verticais 9:16 com **1080 × 1920 ou mais**.
+  - O gerador do Codex entrega no máximo 941 × 1672, mesmo quando o pedido diz outra coisa. Isso aconteceu duas vezes na Parte 3.
+  - Por isso, os desenhos são ampliados para 1440 × 2560 com `episodio-03/montagem/ampliar_cenas.py` (Real-ESRGAN anime). Os originais ficam em `originais/`.
 - **Na montagem:** os recortes (`crop`) e os zooms também seguem a regra. Um recorte da metade de baixo de uma imagem sobe o conteúdo dela, então é preciso conferir.
 - **Antes de entregar:** tirar um quadro de cada plano **nas duas versões** e conferir que nenhum rosto, mão, celular, anel ou frase fica atrás do painel, da etiqueta ou da coluna de botões (à direita de x = 590 na vertical).
 - **Frases na tela:** ficam entre 65% e 80% da altura (y ≈ 830–1020 de 1280), longe dos rostos.

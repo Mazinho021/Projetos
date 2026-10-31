@@ -1,0 +1,1842 @@
+{
+ "timing_status": "aligned_to_voice",
+ "style": "guia-de-estilo-referencia.md",
+ "script": "roteiro-ep03.txt",
+ "alignment": [
+  "episodio-01/montagem/alinhamento-narracao.json",
+  "episodio-03/montagem/alinhamento-narrador.json",
+  "episodio-03/montagem/alinhamento-renato.json",
+  "episodio-03/montagem/alinhamento-cobranca.json"
+ ],
+ "audio": "narracao-ep03.wav",
+ "tail": 2.0,
+ "scenes": [
+  {
+   "start": 0,
+   "end": 4.74,
+   "kind": "art",
+   "asset": "../episodio-01/cena-01-base.png",
+   "zoom": 0.06
+  },
+  {
+   "start": 4.74,
+   "end": 7.74,
+   "kind": "black"
+  },
+  {
+   "start": 7.74,
+   "end": 11.37,
+   "kind": "art",
+   "asset": "../episodio-01/cena-01-base.png",
+   "brightness": 0.5,
+   "zoom": 0.05,
+   "direction": "out"
+  },
+  {
+   "start": 11.37,
+   "end": 13.86,
+   "kind": "black"
+  },
+  {
+   "start": 13.86,
+   "end": 16.69,
+   "kind": "art",
+   "asset": "../episodio-02/cena-08-retrato-amigo.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 16.69,
+   "end": 18.05,
+   "kind": "art",
+   "asset": "cena-01-portao.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 18.05,
+   "end": 20.84,
+   "kind": "art",
+   "asset": "cena-05-renato-grita.png",
+   "crop": [
+    0.05,
+    0.0,
+    0.95,
+    0.9
+   ],
+   "zoom": 0.06,
+   "brightness": 0.6
+  },
+  {
+   "start": 20.84,
+   "end": 25.7,
+   "kind": "art",
+   "asset": "cena-01-portao.png",
+   "crop": [
+    0.05,
+    0.12,
+    0.75,
+    0.82
+   ],
+   "zoom": 0.06
+  },
+  {
+   "start": 25.7,
+   "end": 29.1,
+   "kind": "art",
+   "asset": "cena-02-cozinha.png",
+   "crop": [
+    0.3,
+    0.06,
+    1.0,
+    0.76
+   ],
+   "zoom": 0.06
+  },
+  {
+   "start": 29.1,
+   "end": 31.53,
+   "kind": "art",
+   "asset": "cena-02-cozinha.png",
+   "crop": [
+    0.04,
+    0.0,
+    0.96,
+    0.92
+   ],
+   "zoom": 0.04,
+   "direction": "out"
+  },
+  {
+   "start": 31.53,
+   "end": 34.64,
+   "kind": "art",
+   "asset": "cena-03-pe-no-muro.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 34.64,
+   "end": 38.66,
+   "kind": "art",
+   "asset": "cena-03-pe-no-muro.png",
+   "crop": [
+    0.15,
+    0.17,
+    0.85,
+    0.87
+   ],
+   "zoom": 0.06
+  },
+  {
+   "start": 38.66,
+   "end": 41.56,
+   "kind": "art",
+   "asset": "cena-03-pe-no-muro.png",
+   "crop": [
+    0.16,
+    0.17,
+    0.76,
+    0.77
+   ],
+   "zoom": 0.06
+  },
+  {
+   "start": 41.56,
+   "end": 42.35,
+   "kind": "black"
+  },
+  {
+   "start": 42.35,
+   "end": 46.41,
+   "kind": "art",
+   "asset": "cena-04-mao-anel.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 46.41,
+   "end": 48.62,
+   "kind": "art",
+   "asset": "cena-04-mao-anel.png",
+   "crop": [
+    0.45,
+    0.19,
+    1.0,
+    0.74
+   ],
+   "zoom": 0.08
+  },
+  {
+   "start": 48.62,
+   "end": 51.4,
+   "kind": "art",
+   "asset": "../episodio-02/cena-04-foto-divisao.png",
+   "crop": [
+    0.513,
+    0.342,
+    0.953,
+    0.782
+   ],
+   "zoom": 0.1
+  },
+  {
+   "start": 51.4,
+   "end": 53.41,
+   "kind": "art",
+   "asset": "cena-05-renato-grita.png",
+   "crop": [
+    0.05,
+    0.0,
+    0.95,
+    0.9
+   ],
+   "zoom": 0.08
+  },
+  {
+   "start": 53.41,
+   "end": 56.94,
+   "kind": "art",
+   "asset": "cena-06-zinho-corre.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 56.94,
+   "end": 58.61,
+   "kind": "art",
+   "asset": "cena-06-zinho-corre.png",
+   "crop": [
+    0.25,
+    0.195,
+    0.75,
+    0.695
+   ],
+   "zoom": 0.05
+  },
+  {
+   "start": 58.61,
+   "end": 60.96,
+   "kind": "art",
+   "asset": "cena-07-onibus.png",
+   "zoom": 0.05,
+   "direction": "out"
+  },
+  {
+   "start": 60.96,
+   "end": 63.59,
+   "kind": "art",
+   "asset": "cena-07-onibus.png",
+   "crop": [
+    0.14,
+    0.19,
+    0.74,
+    0.79
+   ],
+   "zoom": 0.05
+  },
+  {
+   "start": 63.59,
+   "end": 68.16,
+   "kind": "art",
+   "asset": "cena-07-onibus.png",
+   "crop": [
+    0.21,
+    0.255,
+    0.71,
+    0.755
+   ],
+   "zoom": 0.05
+  },
+  {
+   "start": 68.16,
+   "end": 72.08,
+   "kind": "art",
+   "asset": "cena-07-onibus.png",
+   "zoom": 0.04,
+   "direction": "out",
+   "brightness": 0.75
+  },
+  {
+   "start": 72.08,
+   "end": 76.84,
+   "kind": "art",
+   "asset": "cena-08-celular.png",
+   "crop": [
+    0.125,
+    0.13,
+    0.875,
+    0.88
+   ],
+   "zoom": 0.05,
+   "screen": {
+    "quad": [
+     [
+      0.385,
+      0.3433
+     ],
+     [
+      0.6193,
+      0.3433
+     ],
+     [
+      0.6171,
+      0.6268
+     ],
+     [
+      0.3828,
+      0.6268
+     ]
+    ],
+    "state": "lock",
+    "date": "quinta-feira, 29 de outubro",
+    "time": "01:04",
+    "app": "MENSAGENS",
+    "sender": "Renato",
+    "message": "Foto",
+    "when": "agora"
+   }
+  },
+  {
+   "start": 76.84,
+   "end": 78.83,
+   "kind": "art",
+   "asset": "montagem/arte/celular-foto.png",
+   "crop": [
+    0.2,
+    0.185,
+    0.8,
+    0.785
+   ],
+   "zoom": 0.05
+  },
+  {
+   "start": 78.83,
+   "end": 81.72,
+   "kind": "art",
+   "asset": "cena-09-foto-refem.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 81.72,
+   "end": 84.43,
+   "kind": "art",
+   "asset": "cena-09-foto-refem.png",
+   "zoom": 0.04,
+   "direction": "out",
+   "brightness": 0.9
+  },
+  {
+   "start": 84.43,
+   "end": 87.23,
+   "kind": "art",
+   "asset": "cena-09-foto-refem.png",
+   "crop": [
+    0.3,
+    0.05,
+    1.0,
+    0.75
+   ],
+   "zoom": 0.06
+  },
+  {
+   "start": 87.23,
+   "end": 89.39,
+   "kind": "art",
+   "asset": "montagem/arte/celular-audio.png",
+   "crop": [
+    0.2,
+    0.185,
+    0.8,
+    0.785
+   ],
+   "zoom": 0.05
+  },
+  {
+   "start": 89.39,
+   "end": 92.37,
+   "kind": "art",
+   "asset": "cena-10-zinho-escuta.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 92.37,
+   "end": 95.55,
+   "kind": "art",
+   "asset": "cena-10-zinho-escuta.png",
+   "crop": [
+    0.2,
+    0.125,
+    0.8,
+    0.725
+   ],
+   "zoom": 0.06
+  },
+  {
+   "start": 95.55,
+   "end": 99.4,
+   "kind": "art",
+   "asset": "cena-12-ferro-velho.png",
+   "zoom": 0.05,
+   "paint": [
+    {
+     "box": [
+      0.5824,
+      0.4755,
+      0.8183,
+      0.5413
+     ],
+     "text": "FERRO-VELHO\nSÃO JORGE",
+     "color": [
+      74,
+      36,
+      22
+     ],
+     "opacity": 0.86,
+     "weight": "ExtraBold",
+     "pad": 6,
+     "blur": 0.6
+    }
+   ]
+  },
+  {
+   "start": 99.4,
+   "end": 103.55,
+   "kind": "art",
+   "asset": "cena-10-zinho-escuta.png",
+   "crop": [
+    0.2,
+    0.125,
+    0.8,
+    0.725
+   ],
+   "zoom": 0.04,
+   "direction": "out",
+   "brightness": 0.85
+  },
+  {
+   "start": 103.55,
+   "end": 110.62,
+   "kind": "art",
+   "asset": "cena-10-zinho-escuta.png",
+   "zoom": 0.04,
+   "direction": "out",
+   "brightness": 0.8
+  },
+  {
+   "start": 110.62,
+   "end": 115.51,
+   "kind": "art",
+   "asset": "cena-11-almoco.png",
+   "crop": [
+    0.06,
+    0.0,
+    0.94,
+    0.88
+   ],
+   "zoom": 0.04,
+   "direction": "out"
+  },
+  {
+   "start": 115.51,
+   "end": 120.35,
+   "kind": "art",
+   "asset": "cena-08-celular.png",
+   "crop": [
+    0.2,
+    0.185,
+    0.8,
+    0.785
+   ],
+   "zoom": 0.06,
+   "screen": {
+    "quad": [
+     [
+      0.385,
+      0.3433
+     ],
+     [
+      0.6193,
+      0.3433
+     ],
+     [
+      0.6171,
+      0.6268
+     ],
+     [
+      0.3828,
+      0.6268
+     ]
+    ],
+    "state": "lock",
+    "date": "quinta-feira, 29 de outubro",
+    "time": "01:12",
+    "app": "MENSAGENS",
+    "sender": "Renato",
+    "message": "Áudio (0:14)",
+    "when": "7 min"
+   }
+  },
+  {
+   "start": 120.35,
+   "end": 123.97,
+   "kind": "art",
+   "asset": "cena-09-foto-refem.png",
+   "zoom": 0.04,
+   "direction": "out",
+   "brightness": 0.7
+  },
+  {
+   "start": 123.97,
+   "end": 127.18,
+   "kind": "art",
+   "asset": "cena-03-pe-no-muro.png",
+   "crop": [
+    0.15,
+    0.17,
+    0.85,
+    0.87
+   ],
+   "zoom": 0.05,
+   "brightness": 0.85
+  },
+  {
+   "start": 127.18,
+   "end": 135.06,
+   "kind": "art",
+   "asset": "cena-13-decisao.png",
+   "crop": [
+    0.05,
+    0.0,
+    0.95,
+    0.9
+   ],
+   "zoom": 0.03,
+   "direction": "out",
+   "brightness": 0.45
+  }
+ ],
+ "graphics": [
+  {
+   "type": "tag",
+   "start": 0.15,
+   "end": 13.86,
+   "text": "PARTE 3",
+   "y": 230,
+   "size": 32
+  },
+  {
+   "type": "phrase",
+   "start": 0.2,
+   "end": 2.26,
+   "y": 700,
+   "size": 78,
+   "lines": [
+    {
+     "text": "O ASSALTO",
+     "at": 0.12,
+     "color": "white"
+    },
+    {
+     "text": "DEU CERTO.",
+     "at": 0.94,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 2.26,
+   "end": 4.74,
+   "y": 700,
+   "size": 78,
+   "lines": [
+    {
+     "style": "label",
+     "text": "SEU PARCEIRO FICOU COM",
+     "at": 2.33
+    },
+    {
+     "text": "R$ 10.000.000",
+     "at": 2.41,
+     "color": "green",
+     "size": 74,
+     "count": {
+      "from": 0,
+      "to": 10000000,
+      "start": 2.722,
+      "end": 4.264
+     }
+    },
+    {
+     "style": "label",
+     "text": "EM DINHEIRO VIVO",
+     "at": 3.74
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 4.79,
+   "end": 7.74,
+   "y": 560,
+   "size": 64,
+   "lines": [
+    {
+     "text": "VOCÊ FICOU COM",
+     "at": 4.86,
+     "color": "white"
+    },
+    {
+     "text": "O ROSTO",
+     "at": 6.48,
+     "color": "yellow"
+    },
+    {
+     "text": "NO JORNAL.",
+     "at": 6.76,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "stars",
+   "start": 4.79,
+   "end": 7.74,
+   "y": 790,
+   "x": 360,
+   "at": 6.482,
+   "step": 0.12
+  },
+  {
+   "type": "phrase",
+   "start": 7.79,
+   "end": 11.37,
+   "y": 590,
+   "size": 72,
+   "lines": [
+    {
+     "text": "CHEGOU AGORA?",
+     "at": 7.86,
+     "color": "yellow",
+     "size": 64
+    },
+    {
+     "text": "AS PARTES 1 E 2",
+     "at": 9.11,
+     "color": "white",
+     "size": 52
+    },
+    {
+     "text": "TÃO NO PERFIL",
+     "at": 9.55,
+     "color": "white",
+     "size": 52
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "pointer",
+   "start": 9.55,
+   "end": 11.37,
+   "y": 800,
+   "x": 360,
+   "text": "@golpecartoon"
+  },
+  {
+   "type": "bars",
+   "start": 11.42,
+   "end": 13.86,
+   "y": 500,
+   "x": 360,
+   "width": 540,
+   "title": "PARTE 2 · VOCÊS VOTARAM",
+   "title_at": 11.49,
+   "items": [
+    {
+     "label": "FUGIR",
+     "pct": 77,
+     "at": 11.59,
+     "winner": true
+    },
+    {
+     "label": "FICAR",
+     "pct": 23,
+     "at": 11.74,
+     "winner": false
+    }
+   ]
+  },
+  {
+   "type": "stamp",
+   "start": 12.88,
+   "end": 13.86,
+   "text": "FUGIR",
+   "y": 860,
+   "x": 360,
+   "angle": -7,
+   "color": "yellow",
+   "filled": true
+  },
+  {
+   "type": "hud",
+   "start": 16.69,
+   "end": 127.18,
+   "label": "A SUA PARTE",
+   "dy": 0,
+   "values": [
+    {
+     "at": 16.69,
+     "text": "R$ 0",
+     "color": "red"
+    }
+   ],
+   "stars": [
+    {
+     "at": 16.69,
+     "count": 5,
+     "step": 0
+    }
+   ]
+  },
+  {
+   "type": "tag",
+   "start": 16.69,
+   "end": 58.61,
+   "text": "A FUGA · O MURO",
+   "y": 230
+  },
+  {
+   "type": "tag",
+   "start": 58.61,
+   "end": 72.08,
+   "text": "SOZINHO · O ÔNIBUS",
+   "y": 230
+  },
+  {
+   "type": "tag",
+   "start": 72.08,
+   "end": 89.39,
+   "text": "PISTA · A FOTO",
+   "y": 230
+  },
+  {
+   "type": "tag",
+   "start": 89.39,
+   "end": 110.62,
+   "text": "PISTA · O ÁUDIO",
+   "y": 230
+  },
+  {
+   "type": "tag",
+   "start": 110.62,
+   "end": 127.18,
+   "text": "O PREÇO",
+   "y": 230
+  },
+  {
+   "type": "phrase",
+   "start": 13.91,
+   "end": 16.69,
+   "y": 760,
+   "size": 64,
+   "lines": [
+    {
+     "text": "E O NOME DELE",
+     "at": 13.98,
+     "color": "white"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "stamp",
+   "start": 15.27,
+   "end": 16.69,
+   "text": "RENATO",
+   "y": 900,
+   "x": 360,
+   "angle": -7,
+   "color": "yellow",
+   "filled": true
+  },
+  {
+   "type": "vignette",
+   "start": 18.05,
+   "end": 20.84,
+   "color": "alert",
+   "strength": 0.8
+  },
+  {
+   "type": "vignette",
+   "start": 42.35,
+   "end": 53.41,
+   "color": "alert",
+   "strength": 0.8
+  },
+  {
+   "type": "vignette",
+   "start": 89.39,
+   "end": 103.55,
+   "color": "alert",
+   "strength": 0.7
+  },
+  {
+   "type": "vignette",
+   "start": 120.35,
+   "end": 127.18,
+   "color": "alert",
+   "strength": 0.6
+  },
+  {
+   "type": "phrase",
+   "start": 16.74,
+   "end": 18.05,
+   "y": 900,
+   "size": 72,
+   "lines": [
+    {
+     "text": "FUGIR TEM",
+     "at": 16.81,
+     "color": "white"
+    },
+    {
+     "text": "UM PREÇO.",
+     "at": 17.43,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 18.1,
+   "end": 20.84,
+   "y": 900,
+   "size": 72,
+   "lines": [
+    {
+     "text": "QUEM PAGA",
+     "at": 18.93,
+     "color": "white"
+    },
+    {
+     "text": "É ELE.",
+     "at": 19.73,
+     "color": "red",
+     "shake": true
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 21.5,
+   "end": 25.7,
+   "y": 900,
+   "size": 60,
+   "lines": [
+    {
+     "text": "DOIS HOMENS.",
+     "at": 21.55,
+     "color": "white"
+    },
+    {
+     "text": "UMA LANTERNA.",
+     "at": 24.72,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 25.75,
+   "end": 29.1,
+   "y": 900,
+   "size": 64,
+   "lines": [
+    {
+     "text": "“PELOS FUNDOS.",
+     "at": 25.82,
+     "color": "white"
+    },
+    {
+     "text": "VAI!”",
+     "at": 27.05,
+     "color": "yellow",
+     "shake": true
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 32.84,
+   "end": 34.64,
+   "y": 900,
+   "size": 54,
+   "lines": [
+    {
+     "text": "MAIS ALTO DO QUE",
+     "at": 32.89,
+     "color": "white"
+    },
+    {
+     "text": "VOCÊ LEMBRAVA.",
+     "at": 33.59,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 35.98,
+   "end": 36.89,
+   "y": 900,
+   "size": 62,
+   "lines": [
+    {
+     "text": "ELE TE DÁ PÉ.",
+     "at": 36.03,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 36.89,
+   "end": 38.66,
+   "y": 900,
+   "size": 62,
+   "lines": [
+    {
+     "text": "“SOBE.",
+     "at": 36.99,
+     "color": "white"
+    },
+    {
+     "text": "EU VOU ATRÁS.”",
+     "at": 37.68,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 43.98,
+   "end": 46.41,
+   "y": 900,
+   "size": 76,
+   "lines": [
+    {
+     "text": "UMA MÃO",
+     "at": 44.03,
+     "color": "white"
+    },
+    {
+     "text": "POR TRÁS.",
+     "at": 45.31,
+     "color": "red",
+     "shake": true
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 47.17,
+   "end": 48.62,
+   "y": 900,
+   "size": 76,
+   "lines": [
+    {
+     "text": "UM ANEL",
+     "at": 47.22,
+     "color": "white"
+    },
+    {
+     "text": "DE OURO.",
+     "at": 48.04,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "stamp",
+   "start": 48.72,
+   "end": 51.4,
+   "text": "O MESMO ANEL",
+   "y": 900,
+   "x": 360,
+   "angle": -7
+  },
+  {
+   "type": "phrase",
+   "start": 51.45,
+   "end": 53.41,
+   "y": 900,
+   "size": 80,
+   "lines": [
+    {
+     "text": "“CORRE!",
+     "at": 51.52,
+     "color": "red",
+     "shake": true
+    },
+    {
+     "text": "CORRE!”",
+     "at": 52.59,
+     "color": "red",
+     "shake": true
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 54.88,
+   "end": 56.94,
+   "y": 900,
+   "size": 72,
+   "lines": [
+    {
+     "text": "CADA PASSO",
+     "at": 54.92,
+     "color": "white"
+    },
+    {
+     "text": "PESA MAIS.",
+     "at": 55.41,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 59.3,
+   "end": 60.96,
+   "y": 900,
+   "size": 66,
+   "lines": [
+    {
+     "text": "UM ÔNIBUS",
+     "at": 59.35,
+     "color": "white"
+    },
+    {
+     "text": "ABANDONADO.",
+     "at": 59.85,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 65.64,
+   "end": 68.16,
+   "y": 900,
+   "size": 72,
+   "lines": [
+    {
+     "text": "UMA CASA",
+     "at": 65.69,
+     "color": "white"
+    },
+    {
+     "text": "SEM VOLTA.",
+     "at": 66.71,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 68.21,
+   "end": 72.08,
+   "y": 900,
+   "size": 76,
+   "lines": [
+    {
+     "text": "VOCÊ ESTÁ",
+     "at": 70.27,
+     "color": "white"
+    },
+    {
+     "text": "SOZINHO.",
+     "at": 70.73,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 73.89,
+   "end": 75.38,
+   "y": 900,
+   "size": 70,
+   "lines": [
+    {
+     "text": "É O NÚMERO",
+     "at": 73.94,
+     "color": "white"
+    },
+    {
+     "text": "DO RENATO.",
+     "at": 74.37,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 75.38,
+   "end": 76.84,
+   "y": 900,
+   "size": 64,
+   "lines": [
+    {
+     "text": "MAS NÃO É ELE.",
+     "at": 75.43,
+     "color": "red",
+     "shake": true
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 80.42,
+   "end": 81.72,
+   "y": 900,
+   "size": 70,
+   "lines": [
+    {
+     "text": "COM O LÁBIO",
+     "at": 80.47,
+     "color": "white"
+    },
+    {
+     "text": "CORTADO.",
+     "at": 80.69,
+     "color": "red"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 81.77,
+   "end": 84.43,
+   "y": 900,
+   "size": 72,
+   "lines": [
+    {
+     "text": "MONTES DE",
+     "at": 82.87,
+     "color": "white"
+    },
+    {
+     "text": "SUCATA.",
+     "at": 83.47,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 85.53,
+   "end": 87.23,
+   "y": 900,
+   "size": 72,
+   "lines": [
+    {
+     "text": "A MÃO",
+     "at": 85.58,
+     "color": "white"
+    },
+    {
+     "text": "COM O ANEL.",
+     "at": 86.23,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 87.28,
+   "end": 89.39,
+   "y": 900,
+   "size": 72,
+   "lines": [
+    {
+     "text": "DEPOIS,",
+     "at": 87.35,
+     "color": "white"
+    },
+    {
+     "text": "UM ÁUDIO.",
+     "at": 87.89,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 89.44,
+   "end": 92.37,
+   "y": 900,
+   "size": 64,
+   "lines": [
+    {
+     "text": "“VOCÊ CORREU.",
+     "at": 89.51,
+     "color": "white"
+    },
+    {
+     "text": "ELE NÃO.”",
+     "at": 91.29,
+     "color": "red"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 92.42,
+   "end": 95.55,
+   "y": 900,
+   "size": 62,
+   "lines": [
+    {
+     "text": "“VAMOS TROCAR:",
+     "at": 92.49,
+     "color": "white"
+    },
+    {
+     "text": "VOCÊ POR ELE.”",
+     "at": 93.8,
+     "color": "yellow",
+     "shake": true
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 95.6,
+   "end": 99.4,
+   "y": 900,
+   "size": 70,
+   "lines": [
+    {
+     "text": "“3 DA MANHÃ.",
+     "at": 95.67,
+     "color": "white"
+    },
+    {
+     "text": "SOZINHO.”",
+     "at": 98.18,
+     "color": "red"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 99.45,
+   "end": 103.55,
+   "y": 920,
+   "size": 66,
+   "lines": [
+    {
+     "text": "“SE CHAMAR A POLÍCIA,",
+     "at": 99.52,
+     "color": "white",
+     "size": 40
+    },
+    {
+     "text": "A MÃE DELE",
+     "at": 101.35,
+     "color": "white"
+    },
+    {
+     "text": "É A PRÓXIMA.”",
+     "at": 101.98,
+     "color": "red",
+     "shake": true
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 109.25,
+   "end": 110.62,
+   "y": 900,
+   "size": 80,
+   "lines": [
+    {
+     "text": "CALMA",
+     "at": 109.3,
+     "color": "white"
+    },
+    {
+     "text": "DEMAIS.",
+     "at": 109.64,
+     "color": "red"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 112.48,
+   "end": 115.51,
+   "y": 900,
+   "size": 62,
+   "lines": [
+    {
+     "text": "A MESMA QUE TE",
+     "at": 112.53,
+     "color": "white"
+    },
+    {
+     "text": "DAVA ALMOÇO.",
+     "at": 113.26,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 118.21,
+   "end": 120.35,
+   "y": 900,
+   "size": 62,
+   "lines": [
+    {
+     "text": "FALTAM MENOS",
+     "at": 118.26,
+     "color": "white"
+    },
+    {
+     "text": "DE DUAS HORAS.",
+     "at": 119.14,
+     "color": "red"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 120.4,
+   "end": 123.97,
+   "y": 920,
+   "size": 66,
+   "lines": [
+    {
+     "text": "ELE VENDEU O SEU NOME.",
+     "at": 121.0,
+     "color": "white",
+     "size": 40
+    },
+    {
+     "text": "AGORA PAGA",
+     "at": 122.15,
+     "color": "yellow"
+    },
+    {
+     "text": "POR ELE.",
+     "at": 123.12,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 125.57,
+   "end": 127.18,
+   "y": 900,
+   "size": 76,
+   "lines": [
+    {
+     "text": "MAS ELE",
+     "at": 124.09,
+     "color": "white"
+    },
+    {
+     "text": "TE DEU PÉ.",
+     "at": 125.62,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "phrase",
+   "start": 127.18,
+   "end": 135.56,
+   "y": 600,
+   "size": 76,
+   "lines": [
+    {
+     "text": "TROCAR",
+     "at": 127.3,
+     "color": "white"
+    },
+    {
+     "text": "OU DEIXAR?",
+     "at": 128.14,
+     "color": "yellow"
+    }
+   ],
+   "x": 360
+  },
+  {
+   "type": "buttons",
+   "start": 129.15,
+   "end": 135.56,
+   "y": 790,
+   "x": 360,
+   "prompt": "COMENTA UMA PALAVRA",
+   "prompt_at": 129.2,
+   "items": [
+    {
+     "text": "TROCAR",
+     "at": 129.64,
+     "style": "yellow"
+    },
+    {
+     "text": "DEIXAR",
+     "at": 129.96,
+     "style": "white"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "start": 130.67,
+   "end": 135.56,
+   "y": 930,
+   "x": 360,
+   "title": "PARTE 4",
+   "sub": "a maioria decide o próximo passo"
+  }
+ ],
+ "sfx": [
+  {
+   "sound": "whoosh.wav",
+   "at": 4.38,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 7.38,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 11.01,
+   "gain": -2
+  },
+  {
+   "sound": "tique.wav",
+   "at": 2.76,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 2.799,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 2.841,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 2.886,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 2.933,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 2.984,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.04,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.101,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.17,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.248,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.341,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.458,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.624,
+   "gain": -18
+  },
+  {
+   "sound": "tique.wav",
+   "at": 4.264,
+   "gain": -18
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 6.852,
+   "gain": -5
+  },
+  {
+   "sound": "pop.wav",
+   "at": 6.482,
+   "gain": -16
+  },
+  {
+   "sound": "pop.wav",
+   "at": 6.602,
+   "gain": -16
+  },
+  {
+   "sound": "pop.wav",
+   "at": 6.722,
+   "gain": -16
+  },
+  {
+   "sound": "pop.wav",
+   "at": 6.842,
+   "gain": -16
+  },
+  {
+   "sound": "pop.wav",
+   "at": 6.962,
+   "gain": -16
+  },
+  {
+   "sound": "pop.wav",
+   "at": 9.555,
+   "gain": -10
+  },
+  {
+   "sound": "tique.wav",
+   "at": 11.628,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 11.666,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 11.709,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 11.758,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 11.816,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 11.889,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 11.993,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 12.393,
+   "gain": -20
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 12.857,
+   "gain": -5
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 13.5,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 16.33,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 20.48,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 31.17,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 41.99,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 53.05,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 58.25,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 71.72,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 89.03,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 110.26,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 115.15,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 126.82,
+   "gain": -2
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 15.248,
+   "gain": -5
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 19.951,
+   "gain": -7
+  },
+  {
+   "sound": "porta-fecha.wav",
+   "at": 22.965,
+   "gain": -12
+  },
+  {
+   "sound": "interruptor.wav",
+   "at": 24.25,
+   "gain": -10
+  },
+  {
+   "sound": "passos.wav",
+   "at": 26.121,
+   "gain": -12
+  },
+  {
+   "sound": "passos.wav",
+   "at": 29.416,
+   "gain": -13
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 41.596,
+   "gain": -5
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 43.992,
+   "gain": -5
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 47.18,
+   "gain": -8
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 48.698,
+   "gain": -5
+  },
+  {
+   "sound": "passos.wav",
+   "at": 53.63,
+   "gain": -11
+  },
+  {
+   "sound": "passos.wav",
+   "at": 54.08,
+   "gain": -12
+  },
+  {
+   "sound": "passos.wav",
+   "at": 54.53,
+   "gain": -13
+  },
+  {
+   "sound": "vibracao.wav",
+   "at": 72.793,
+   "gain": -8
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 75.392,
+   "gain": -6
+  },
+  {
+   "sound": "notificacao.wav",
+   "at": 77.065,
+   "gain": -10
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 80.426,
+   "gain": -9
+  },
+  {
+   "sound": "notificacao.wav",
+   "at": 87.45,
+   "gain": -10
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 93.762,
+   "gain": -7
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 101.936,
+   "gain": -6
+  },
+  {
+   "sound": "cobranca-eco.wav",
+   "at": 104.798,
+   "gain": 6.3
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 109.598,
+   "gain": -9
+  },
+  {
+   "sound": "tique.wav",
+   "at": 115.63,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 116.13,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 116.63,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 117.13,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 117.63,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 118.13,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 118.63,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 119.13,
+   "gain": -15
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 122.114,
+   "gain": -8
+  },
+  {
+   "sound": "pop.wav",
+   "at": 129.642,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 129.962,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 130.671,
+   "gain": -10
+  }
+ ],
+ "captions": [],
+ "effects": [
+  "../../episodio-02/montagem/efeitos",
+  "efeitos"
+ ]
+}
