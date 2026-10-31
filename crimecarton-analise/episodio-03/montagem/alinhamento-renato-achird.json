@@ -1,0 +1,87 @@
+{
+ "audio": "narracao-ep03-renato-achird.wav",
+ "script": "narracao-ep03-renato.txt",
+ "model": "medium",
+ "words_in_script": 10,
+ "words_matched_exactly": 8,
+ "pauses": [
+  [
+   1.681,
+   3.253
+  ],
+  [
+   3.739,
+   3.996
+  ],
+  [
+   4.805,
+   5.998
+  ],
+  [
+   7.47,
+   7.92
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Pelos",
+   "start": 0.0,
+   "end": 0.52
+  },
+  {
+   "i": 1,
+   "text": "fundos.",
+   "start": 0.52,
+   "end": 1.4
+  },
+  {
+   "i": 2,
+   "text": "Vai!",
+   "start": 1.56,
+   "end": 1.681
+  },
+  {
+   "i": 3,
+   "text": "Sobe.",
+   "start": 3.253,
+   "end": 3.739
+  },
+  {
+   "i": 4,
+   "text": "Eu",
+   "start": 3.996,
+   "end": 4.28
+  },
+  {
+   "i": 5,
+   "text": "vou",
+   "start": 4.28,
+   "end": 4.44
+  },
+  {
+   "i": 6,
+   "text": "atrás.",
+   "start": 4.44,
+   "end": 4.805
+  },
+  {
+   "i": 7,
+   "text": "Corre,",
+   "start": 5.998,
+   "end": 7.34
+  },
+  {
+   "i": 8,
+   "text": "Zinho!",
+   "start": 7.34,
+   "end": 7.47
+  },
+  {
+   "i": 9,
+   "text": "Corre!",
+   "start": 7.92,
+   "end": 7.94
+  }
+ ]
+}

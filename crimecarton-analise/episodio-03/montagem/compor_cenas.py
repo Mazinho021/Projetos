@@ -9,7 +9,8 @@ fingers that cross it. Writes, in arte/:
 - tela-notificacao.png: scene 8, the phone in Zinho's hand, locked, with the notification
   from Renato's number at 01:04 ("Foto");
 - tela-foto.png: scene 25, the phone over Zinho's shoulder, open on the chat with Renato's
-  number: the photo of Renato on a chair in the junkyard (from scene 9);
+  number: the photo of Renato on a chair in the junkyard (from scene 9). The drawing is
+  mirrored: Codex put the phone at the right edge, behind TikTok's buttons;
 - tela-audio.png: scene 28, the phone closer, with the photo and the cobrador's audio
   message, 0:14 long, at 01:05;
 - tela-hora.png: scene 32, the phone from above, locked, at 01:12, with the audio's
@@ -37,7 +38,7 @@ import random
 import sys
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
 HERE = Path(__file__).resolve().parent
 EPISODE = HERE.parent
@@ -147,9 +148,12 @@ def encaixar(fundo, plano, quad, mascara=None, crescer=1.0):
     return out
 
 
-def na_tela(cena, plano, nome):
-    """Scene `cena`'s blank screen replaced by `plano`; returns the screen's corners."""
+def na_tela(cena, plano, nome, espelhar=False):
+    """Scene `cena`'s blank screen replaced by `plano`, the drawing mirrored first when asked;
+    returns the screen's corners."""
     fundo = Image.open(EPISODE / cena).convert('RGB')
+    if espelhar:
+        fundo = ImageOps.mirror(fundo)
     quad, mascara = achar_tela(fundo)
     encaixar(fundo, plano, quad, mascara, crescer=1.035).convert('RGB').save(ARTE / nome, optimize=True)
     return quad
@@ -243,7 +247,7 @@ def telas():
         'tela-notificacao.png': na_tela('cena-08-celular.png',
                                         lock_screen({**bloqueio, 'time': '01:04', 'message': 'Foto', 'when': 'agora'}),
                                         'tela-notificacao.png'),
-        'tela-foto.png': na_tela('cena-25-por-cima-do-ombro.png', conversa(False), 'tela-foto.png'),
+        'tela-foto.png': na_tela('cena-25-por-cima-do-ombro.png', conversa(False), 'tela-foto.png', espelhar=True),
         'tela-audio.png': na_tela('cena-28-play.png', conversa(True), 'tela-audio.png'),
         'tela-hora.png': na_tela('cena-32-hora.png',
                                  lock_screen({**bloqueio, 'time': '01:12', 'message': 'Áudio (0:14)', 'when': '7 min'}),

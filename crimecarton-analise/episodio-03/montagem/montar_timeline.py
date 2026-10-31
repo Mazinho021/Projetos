@@ -384,6 +384,7 @@ SCREAM05 = [0.05, 0.0, 0.95, 0.9]        # Renato shouting, his head below the p
 PHOTO09 = [0.2, 0.04, 1.0, 0.84]         # the photo: the ring left of TikTok's buttons
 JUNK12 = [0.16, 0.08, 1.0, 0.92]         # the gate, with the sign left of TikTok's buttons
 DOOR13 = [0.05, 0.0, 0.95, 0.9]          # Zinho at the bus door
+LOWER = [0.05, 0.0, 0.95, 0.9]           # the whole drawing a little lower: what reaches 26% goes below the tag
 RING_PHOTO = [0.513, 0.27, 0.953, 0.71]  # the ring in Part 2's photo, the other hand below the tag
 # The junkyard's blank sign in scene 12, with the name from Part 2's calendar.
 SIGN12 = [{'box': [0.5824, 0.4755, 0.8183, 0.5413], 'text': 'FERRO-VELHO\nSÃO JORGE', 'color': [74, 36, 22],
@@ -409,7 +410,7 @@ def build(ed):
     plan = opening + [
         ('name', cut(N('E deram um')), art(p2 + 'cena-08-retrato-amigo.png')),
         ('hook', story, art('cena-14-mochila.png')),
-        ('flash', cut(N('E esta noite,')), art('cena-15-mao-no-escuro.png', .06)),
+        ('flash', cut(N('E esta noite,')), art('cena-15-mao-no-escuro.png', .06, crop=LOWER)),
         ('men', cut(N('Lá fora, dois')), art('cena-01-portao.png', .06)),
         ('back', cut(R('Pelos fundos.')), art('cena-16-renato-puxa.png', .06)),
         ('kitchen', cut(N('Vocês atravessam a')), art('cena-02-cozinha.png', .04, crop=KITCHEN02, direction='out')),
@@ -445,7 +446,7 @@ def build(ed):
         ('mother', cut(N('A mãe dele.')), art(f"montagem/arte/lembranca{L['art']}.png", .04, direction='out')),
         ('clock', cut(N('Você olha a')), art('montagem/arte/tela-hora.png', .06)),
         ('price', cut(N('O homem que')), art('cena-33-renato-sozinho.png', .04, direction='out')),
-        ('help', cut(N('Mas foi esse')), art('cena-34-maos-degrau.png', .04)),
+        ('help', cut(N('Mas foi esse')), art('cena-34-maos-degrau.png', .04, crop=LOWER)),
         # The vote: Zinho at the bus door, dark under the question and the buttons.
         ('choice', cut(N('Trocar ou deixar?')), art('cena-13-decisao.png', .03, crop=DOOR13, direction='out',
                                                     brightness=.45)),
