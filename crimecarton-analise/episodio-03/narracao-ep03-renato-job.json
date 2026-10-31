@@ -1,5 +1,5 @@
 {
-  "jobId": "mcp_media_a50cbc218a18416461bc45e3bcbdb1424045cb8253d166dc42dc5c80564770c6",
+  "jobId": "mcp_media_889ee0ff6dde7e884313dba0335d50b0807801794cfb23592f69d04b4a2d0f5e",
   "kind": "speech",
   "model": "gemini-3.8-flash-tts",
   "status": "succeeded",
@@ -9,17 +9,23 @@
   "priceVersion": "prd-2026-10-12-list-x75",
   "outputs": [
     {
-      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_a50cbc218a18416461bc45e3bcbdb1424045cb8253d166dc42dc5c80564770c6/0.wav?hdnts=FullPath~Expires=1793467338~Signature=BXPXMeYCf_IQDywFiatlzFzPqQmizE6OTPFSehcXDWmW-AJqMDx2C63PcXnBIhayJdSt70mUhRiTK7aiwRJ0Dg",
-      "expiresAt": "2026-10-31T17:22:18.535Z",
+      "file": "narracao-ep03-renato.wav",
       "mimeType": "audio/wav",
-      "durationSeconds": 16.4
+      "durationSeconds": 22.56,
+      "bytes": 1088996,
+      "sha256": "5d6f7a5b02229124f5bce971fb1927a12a0d0a562e4ab2ee1f94e5ba6cdff65d",
+      "sampleRate": 24000,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "clippedSamples": 0
     }
   ],
   "request": {
-    "idempotencyKey": "zinho-ep03-renato-charon-v1-20261030",
+    "idempotencyKey": "zinho-ep03-renato-charon-v2-20261031",
     "voice": "Charon",
-    "style": "Português brasileiro. A mesma voz do narrador, mas interpretando Renato, o amigo de infância de Zinho, que o traiu para pagar uma dívida e agora foge com ele à noite: fala em pessoa, ofegante, baixo e urgente, com medo; em “Não sei.”, responde rápido demais, como quem esconde algo. Natural, sem caricatura e sem gritar. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
-    "text": "Pelos fundos. Agora.\n\nEles não vieram conversar.\n\nNão se mexe.\n\nNão sei.\n\nTem dois lugares. O ferro-velho da foto: o vigia me deve um favor. Ou a casa da minha mãe.",
+    "style": "Português brasileiro. A mesma voz do narrador, mas interpretando Renato, o amigo de infância de Zinho, que o traiu para pagar uma dívida e agora foge com ele à noite: fala em pessoa, ofegante, baixo e urgente, com medo. Em “Eu mandei antes de entrar…”, se defende com culpa; em “É ele.”, sussurra, apavorado. Natural, sem caricatura e sem gritar. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+    "text": "Pelos fundos. Agora.\n\nEu mandei antes de entrar. Antes de ver a tua cara. Depois eu mudei de lado.\n\nNão se mexe.\n\nÉ ele. O homem que me cobra.\n\nTem dois. O ferro-velho da foto: o vigia me deve um favor. Ou a casa da minha mãe.",
     "sourceFile": "crimecarton-analise/episodio-03/pedido-narracao-renato-ep03.json"
-  }
+  },
+  "sourceCommit": "9207be8ec88cde75eb925914882c4302c94f9818"
 }
