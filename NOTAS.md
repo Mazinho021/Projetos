@@ -88,7 +88,7 @@ Inspirado nas histórias do @crimecarton no Instagram
   - **Lições para a Parte 4:**
     - Abrir com o momento mais forte da parte, imagem e frase, antes de qualquer resumo. Quem não seguia o perfil (91,5%) vê “PARTE 3” e o resumo da mochila e passa.
     - Encurtar a abertura de 17 s para uns 6 a 8 s.
-    - Mirar em 1 min 30 s a 1 min 45 s no total.
+    - O criador decidiu, em 01/11/2026, que a nova abertura vira regra (ver [`CLAUDE.md`](CLAUDE.md)). O tamanho total das partes continua o mesmo.
     - Manter o ritmo de uma imagem por trecho.
     - No perfil, fixar as três partes em ordem e dizer na bio para começar pela Parte 1, para as visitas virarem seguidores.
   - **Texto do post:** “Parte 3 – O preço 🎒”, “Trocar ou deixar? Comenta 👇”, “Inspirado em @crimecarton” e “#apartequefaltou”.

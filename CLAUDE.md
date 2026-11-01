@@ -42,6 +42,15 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
   - descrever o corpo inteiro dos personagens e como ele se relaciona com o cenário. Na Parte 3, o corpo do Renato saiu cortado pelo muro.
 - **Antes de entregar:** conferir também se o desenho tem corpo cortado ou fundido ao cenário.
 
+## Abertura (decisão do criador em 01/11/2026, vale da Parte 4 em diante)
+
+- **Os 2 primeiros segundos mostram o momento mais forte da própria parte**, com imagem e frase na tela, antes de qualquer resumo. O roteiro já começa por essa frase.
+  - Na Parte 3, 39,5% passaram o vídeo no começo; na Parte 1, foram 26%.
+  - Mais de 90% do público não seguia o perfil: quem via “PARTE 3” e o resumo da mochila achava que tinha perdido o começo.
+  - A história nova só começava aos 17 s.
+- **Depois vem o resumo, com no máximo 6 a 8 s:** o que aconteceu antes, o aviso de que as outras partes estão no perfil e o resultado da votação. A vinheta de 12 s da Parte 1 não cabe inteira nesse tempo.
+- **O tamanho total das partes continua o mesmo.** O criador não quer encurtar.
+
 ## Roteiros (o criador recusou dois roteiros da Parte 3 em 30 e 31/10/2026)
 
 - Cada parte precisa de pelo menos uma **reviravolta de verdade** e terminar numa **escolha difícil**, com consequência para a parte seguinte. Tem que ser uma escolha moral ou de risco, não só “para onde ir”.
