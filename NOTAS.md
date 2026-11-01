@@ -78,6 +78,19 @@ Inspirado nas histórias do @crimecarton no Instagram
     - uma imagem própria para cada coisa que a narração conta.
   - **Segunda entrega do Codex:** 23 imagens e 3 vozes de teste, por 3 créditos, a partir de [`pedido-codex-ep03-cenas-novas.md`](crimecarton-analise/episodio-03/pedido-codex-ep03-cenas-novas.md). O criador escolheu a voz **Algenib**.
   - **Montagem nova:** 35 desenhos diferentes em 41 planos, com 2 min 13 s. Ela substitui a primeira nos dois vídeos.
+  - **Resultados no Instagram em 01/11/2026, às 13:43**, uns 16 h depois da postagem. Os números vêm da gravação de tela dos insights do reel, enviada pelo criador, e são da montagem nova (2 min 13 s):
+    - **Alcance:** 1.506 visualizações e 1.161 contas, quase o mesmo que a Parte 1 nas duas primeiras horas (1.517). A curva sobe nas primeiras 2 a 3 horas e depois fica parada. Do público, 91,5% não seguiam o perfil, e 83,6% das visualizações vieram da aba Reels.
+    - **Começo:** 39,5% pularam o reel no começo, o que o Instagram marca como “mais alto”. Na Parte 1 foram 26%.
+    - **Retenção:** o tempo médio foi de 31 s, 23% do vídeo; na Parte 1 foram 38 s, 45%. A maior perda vem nos primeiros 15 s, onde ainda está a abertura (a história só começa aos 17 s). Depois disso, a curva cai devagar até o fim.
+    - **Interações:** 48 curtidas (4,1%, “mais baixo”), 9 comentários (0,8%), 3 compartilhamentos (0,3%, “mais alto”), 1 salvamento e 1 repost.
+    - **Perfil:** 46 visitas ao perfil viraram só 2 seguidores, e houve 1 clique no link da bio.
+    - **Idade:** 13 a 17 anos, 19,7%; 18 a 24, 35,3%; 25 a 34, 31,4%; 35 a 44, 7,7%; 45 ou mais, 6%.
+  - **Lições para a Parte 4:**
+    - Abrir com o momento mais forte da parte, imagem e frase, antes de qualquer resumo. Quem não seguia o perfil (91,5%) vê “PARTE 3” e o resumo da mochila e passa.
+    - Encurtar a abertura de 17 s para uns 6 a 8 s.
+    - Mirar em 1 min 30 s a 1 min 45 s no total.
+    - Manter o ritmo de uma imagem por trecho.
+    - No perfil, fixar as três partes em ordem e dizer na bio para começar pela Parte 1, para as visitas virarem seguidores.
   - **Texto do post:** “Parte 3 – O preço 🎒”, “Trocar ou deixar? Comenta 👇”, “Inspirado em @crimecarton” e “#apartequefaltou”.
   - **TikTok e Shorts:** o crédito é “Inspirado no @crimecarton (Insta)”, e o título no Shorts é “Parte 3 – O preço 😨”.
   - **Comentário para fixar:** “Trocar ou deixar? Comenta uma palavra 👇”.
