@@ -32,7 +32,9 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
 
 ## Cenas (pedido do criador em 31/10/2026, vale para todas as partes)
 
-- **Cada coisa que a narração conta tem uma imagem própria.** Não repetir a mesma imagem só com zoom ou recorte em planos seguidos: o criador achou a Parte 3 repetitiva assim.
+- **Cada coisa que a narração conta muda a tela**, com uma imagem nova ou com um elemento novo por cima dela: balão, etiqueta, círculo, carimbo ou zoom de investigação. Ver a seção “Edição no estilo do @crimecarton”.
+- **Nunca repetir a mesma imagem só com zoom ou recorte** em planos seguidos: o criador achou a primeira montagem da Parte 3 repetitiva assim.
+- **Trocar de imagem** quando muda o lugar, o momento ou o enquadramento.
 - **Variar os planos:** plano aberto, close, detalhe, outro ângulo e outro lugar.
 - **Movimento de câmera:** dentro de cada plano, só um zoom leve.
 - **Exceções:** a abertura padrão e imagens de partes anteriores usadas uma vez como lembrança, como a foto da divisão.
@@ -41,6 +43,22 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
   - deixar nada importante na borda direita, entre 45% e 80% da altura, onde ficam os botões do TikTok;
   - descrever o corpo inteiro dos personagens e como ele se relaciona com o cenário. Na Parte 3, o corpo do Renato saiu cortado pelo muro.
 - **Antes de entregar:** conferir também se o desenho tem corpo cortado ou fundido ao cenário.
+
+## Edição no estilo do @crimecarton (decisão do criador em 01/11/2026)
+
+O criador mandou a Parte 17 do @crimecarton e pediu para fazer os vídeos do mesmo jeito: “se lá está funcionando, não tem por que o da gente não funcionar”. A análise está em [`crimecarton-analise/analise-crimecarton-parte-17.md`](crimecarton-analise/analise-crimecarton-parte-17.md). Os elementos estão em `episodio-01/montagem/graficos.py`.
+
+- **A tela muda a cada 1 ou 2 s.** As imagens podem ficar mais tempo, desde que entre algo novo por cima a cada fala.
+- **Comentários do público:** logo depois do resultado da votação, aparecem 2 ou 3 comentários reais da parte anterior (`comments`), com o nome escondido atrás de uma barra cinza.
+- **Balões de fala:** a fala de cada personagem aparece num balão perto da cabeça de quem fala (`balloon`), além da voz. O vídeo tem que se entender sem som.
+- **Pistas:** etiqueta com linha (`callout`), círculo (`ring`) e zoom de investigação com moldura de câmera e “ZOOM 220%” (`viewfinder`). O zoom só entra para revelar uma pista nova.
+- **Painel que muda com a história:** as estrelas de suspeita sobem e descem, valores mudam, e etiquetas como “SUSPEITA SUBIU” aparecem quando algo muda.
+- **Etiqueta de nome** na primeira aparição de cada personagem (`nametag`), com o nome e quem é.
+- **Polaroide de lembrança** de partes anteriores (`polaroid`), como “PARTE 2 · a foto da divisão”.
+- **Carimbos e onomatopeias** (`stamp`, `pop`) nos momentos fortes: “TOC TOC”, “AMANHÃ NO POSTO”.
+- **Votação ilustrada:** cada opção com a sua cena, o nome em etiqueta (“OPÇÃO 1 · TROCAR”) e prós e contras em verde e vermelho. Depois vêm as duas lado a lado, os botões e a caixa da próxima parte.
+- **Um momento leve por parte**, antes da virada, para a tensão pesar mais.
+- **Vozes:** o @crimecarton usa uma voz só, e nós mantemos as vozes próprias dos personagens, como o Renato na Algenib, com os balões por cima.
 
 ## Abertura (decisão do criador em 01/11/2026, vale da Parte 4 em diante)
 

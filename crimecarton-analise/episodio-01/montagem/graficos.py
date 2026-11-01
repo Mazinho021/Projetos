@@ -21,6 +21,11 @@ COLORS = {'white': (246, 240, 226), 'yellow': (253, 184, 34), 'green': (52, 192,
           'red': (235, 88, 76), 'gray': (177, 179, 174), 'ink': (24, 22, 18), 'alert': (182, 52, 36),
           'softred': (233, 137, 136)}
 PANEL = (16, 15, 12, 216)
+# Fill and ink of the tags. 'yellow' and 'alert' are the first two; the others came with the
+# reference's Part 17: green and red for pros and cons, white, dark and pink for names.
+TAGS = {'yellow': ('yellow', 'ink'), 'alert': ('alert', 'white'), 'green': ((34, 128, 70), 'white'),
+        'white': ('white', 'ink'), 'dark': ((18, 18, 20), 'white'), 'pink': ((232, 90, 146), 'white')}
+SERIE = FONTS.parent   # crimecarton-analise/: the images of polaroids are named from here
 
 
 @lru_cache(maxsize=None)
@@ -206,7 +211,8 @@ def draw_hud(canvas, el, t):
 
 @lru_cache(maxsize=32)
 def tag_sprite(value, kind, size=21):
-    fill, ink = (rgb('yellow'), 'ink') if kind == 'yellow' else (rgb('alert'), 'white')
+    fill, ink = TAGS.get(kind, TAGS['alert'])
+    fill = rgb(fill)
     sprite, ay = text_sprite(value, size, 'Bold', ink, 1.5*size/21, shadow=False)
     w, h = sprite.width + round(30*size/21), round(42*size/21)
     tag = panel((w, h), round(9*size/21), fill + (255,))
@@ -437,9 +443,242 @@ def draw_input(canvas, el, t):
         place(canvas, cursor, x - box.width/2 + 40, y, 2, 23, 1, out)
 
 
+# ---------------------------------------------------------------------------------------
+# Elements from the reference's Part 17 (../../analise-crimecarton-parte-17.md, 01/11/2026):
+# speech balloons, callouts with a leader line, highlight rings, the investigation zoom's
+# viewfinder, name tags, the audience's comments, polaroids from earlier parts and
+# onomatopoeias. Positions are frame pixels.
+
+def wrap(value, size, weight, width):
+    f, lines, cur = font(size, weight), [], ''
+    for word in value.split():
+        test = f'{cur} {word}'.strip()
+        if f.getlength(test) <= width or not cur:
+            cur = test
+        else:
+            lines.append(cur)
+            cur = word
+    return lines + ([cur] if cur else [])
+
+
+def sprite_layer():
+    return Image.new('RGBA', (W, H), (0, 0, 0, 0))
+
+
+@lru_cache(maxsize=64)
+def balloon_sprite(value, style, dx, dy, width=440, size=28):
+    """A speech balloon: the text in a rounded box and a tail towards (dx, dy), the speaker,
+    measured from the box's centre. The tail stops 70 px from the box when the speaker is
+    farther; it only has to show who speaks."""
+    lines = [ln for part in value.split('\n') for ln in wrap(part, size, 'Bold', width - 48)]
+    f, lh = font(size, 'Bold'), round(size*1.25)
+    w = round(max(f.getlength(ln) for ln in lines)) + 48
+    h = lh*len(lines) + 30
+    fill, ink = ((22, 22, 24, 238), 'white') if style == 'dark' else ((250, 247, 240, 248), 'ink')
+    pad = 80
+    k = 3
+    big = Image.new('RGBA', ((w + 2*pad)*k, (h + 2*pad)*k), (0, 0, 0, 0))
+    d = ImageDraw.Draw(big)
+    x0, y0 = pad*k, pad*k
+    d.rounded_rectangle((x0, y0, x0 + w*k, y0 + h*k), 22*k, fill=fill)
+    if dx or dy:
+        below = dy > 0
+        edge = (y0 + h*k) if below else y0
+        bx = x0 + min(max(w/2 + dx, 34), w - 34)*k
+        length = min(max(abs(dy) - h/2, 18), 70)
+        tip = (bx + max(-40, min(40, dx/4))*k, edge + (length if below else -length)*k)
+        d.polygon([(bx - 15*k, edge), (bx + 15*k, edge), tip], fill=fill)
+    for i, ln in enumerate(lines):
+        d.text((x0 + w*k/2, y0 + (15 + lh*i + lh/2)*k), ln, font=font(size*k, 'Bold'), fill=rgb(ink) + (255,), anchor='mm')
+    return big.resize((w + 2*pad, h + 2*pad), Image.Resampling.LANCZOS)
+
+
+def draw_balloon(canvas, el, t):
+    # Dialogue in a balloon near the speaker's head, so the video reads without sound.
+    x, y = el.get('x', W/2), el.get('y', 360)
+    tail = el.get('tail')
+    dx, dy = (round(tail['x'] - x), round(tail['y'] - y)) if tail else (0, 0)
+    sprite = balloon_sprite(el['text'], el.get('style', 'dark'), dx, dy, el.get('width', 440), el.get('size', 28))
+    scale, alpha = popped(t - el['start'], origin=.7)
+    place(canvas, sprite, x, y, sprite.width/2, sprite.height/2, scale, alpha*fading(t, el['end'], .15))
+
+
+def draw_callout(canvas, el, t):
+    # A label with a line to the detail it names; the line grows from the label first.
+    age = t - el['start']
+    if age < 0:
+        return
+    out = fading(t, el['end'], .2)
+    x, y, tx, ty = el['x'], el['y'], el['target']['x'], el['target']['y']
+    color = el.get('color', 'yellow')
+    p = min(1, age/.25)
+    layer = sprite_layer()
+    d = ImageDraw.Draw(layer)
+    fill = rgb(TAGS[color][0]) + (round(255*out),)
+    d.line((x, y, x + (tx - x)*p, y + (ty - y)*p), fill=fill, width=3)
+    if p >= 1:
+        d.ellipse((tx - 6, ty - 6, tx + 6, ty + 6), fill=fill)
+    canvas.alpha_composite(layer)
+    tag = tag_sprite(el['text'], color, el.get('size', 19))
+    scale, alpha = popped(age, origin=.7)
+    place(canvas, tag, x, y, tag.width/2, tag.height/2, scale, alpha*out)
+
+
+def draw_ring(canvas, el, t):
+    # A circle drawn around a clue, clockwise from the top.
+    age = t - el['start']
+    if age < 0:
+        return
+    out = fading(t, el['end'], .2)
+    r, k = el.get('r', 60), 3
+    big = Image.new('RGBA', ((2*r + 24)*k, (2*r + 24)*k), (0, 0, 0, 0))
+    c = (r + 12)*k
+    ImageDraw.Draw(big).arc((c - r*k, c - r*k, c + r*k, c + r*k), -90, -90 + 360*min(1, age/.3),
+                            fill=rgb(el.get('color', 'red')) + (255,), width=el.get('width', 6)*k)
+    sprite = big.resize((2*r + 24, 2*r + 24), Image.Resampling.LANCZOS)
+    place(canvas, sprite, el['x'], el['y'], r + 12, r + 12, 1, out)
+
+
+def draw_viewfinder(canvas, el, t):
+    # The investigation zoom: a camera's corner brackets and the zoom level, over a scene
+    # that is a tighter crop of the drawing before it.
+    age = t - el['start']
+    if age < 0:
+        return
+    alpha = min(1, age/.15)*fading(t, el['end'], .2)
+    x0, y0, x1, y1 = el.get('box', (80, 330, 640, 990))
+    layer = sprite_layer()
+    d = ImageDraw.Draw(layer)
+    col, n = (246, 240, 226, round(235*alpha)), 46
+    for cx, cy, sx, sy in ((x0, y0, 1, 1), (x1, y0, -1, 1), (x1, y1, -1, -1), (x0, y1, 1, -1)):
+        d.line((cx, cy, cx + sx*n, cy), fill=col, width=5)
+        d.line((cx, cy, cx, cy + sy*n), fill=col, width=5)
+    canvas.alpha_composite(layer)
+    if el.get('zoom'):
+        tag = tag_sprite(el['zoom'], 'dark', 16)
+        place(canvas, tag, (x0 + x1)/2, y1 - 34, tag.width/2, tag.height/2, 1, alpha)
+    if el.get('label'):
+        tag = tag_sprite(el['label'], el.get('color', 'dark'), 19)
+        scale, a = popped(age - .15, origin=.7)
+        place(canvas, tag, (x0 + x1)/2, y1 + 34, tag.width/2, tag.height/2, scale, a*alpha)
+
+
+@lru_cache(maxsize=32)
+def nametag_sprite(name, sub, color):
+    # A dark card with a coloured bar on the left: the name in bold and, under it, who it is.
+    f1, f2 = font(30, 'ExtraBold'), font(19, 'Medium')
+    w = round(max(f1.getlength(name), f2.getlength(sub) if sub else 0)) + 58
+    h = 92 if sub else 62
+    card = panel((w, h), 10, (14, 14, 16, 234))
+    d = ImageDraw.Draw(card)
+    d.rounded_rectangle((0, 0, 9, h - 1), 4, fill=rgb(TAGS[color][0]) + (255,))
+    d.text((28, 31), name, font=f1, fill=rgb('white') + (255,), anchor='lm')
+    if sub:
+        d.text((28, 66), sub, font=f2, fill=(204, 200, 190, 255), anchor='lm')
+    return card
+
+
+def draw_nametag(canvas, el, t):
+    # A character's name the first time they appear; it slides in from the left.
+    age = t - el['start']
+    if age < 0:
+        return
+    sprite = nametag_sprite(el['name'], el.get('sub', ''), el.get('color', 'yellow'))
+    dx = -36*(1 - min(1, age/.25))**2
+    place(canvas, sprite, el['x'] + dx, el['y'], sprite.width/2, sprite.height/2, 1,
+          min(1, age/.15)*fading(t, el['end'], .2))
+
+
+@lru_cache(maxsize=64)
+def comment_sprite(text, seed, width=560):
+    """A comment as the apps show it. The author's name stays hidden behind a grey bar, as
+    the reference does: avatar, name bar and age, the text, and a heart on the right."""
+    lines = wrap(text, 24, 'Bold', width - 150)
+    lh = 31
+    h = 62 + lh*len(lines) + 12
+    k = 2
+    big = panel((width*k, h*k), 18*k, (20, 20, 22, 238))
+    d = ImageDraw.Draw(big)
+    avatar = [(232, 124, 84), (84, 140, 232), (150, 110, 220), (60, 170, 120), (230, 180, 60)][seed % 5]
+    d.ellipse((18*k, 18*k, 60*k, 60*k), fill=avatar + (255,))
+    bar = 110 + 34*(seed % 3)
+    d.rounded_rectangle((74*k, 28*k, (74 + bar)*k, 40*k), 6*k, fill=(104, 104, 110, 255))
+    d.text(((74 + bar + 12)*k, 34*k), '· 1 d', font=font(17*k, 'Medium'), fill=(150, 150, 156, 255), anchor='lm')
+    for i, ln in enumerate(lines):
+        d.text((74*k, (62 + lh*i + lh/2 - 4)*k), ln, font=font(24*k, 'Bold'), fill=rgb('white') + (255,), anchor='lm')
+    hx, hy, r = (width - 38)*k, 40*k, 9*k        # the heart
+    d.ellipse((hx - 2*r, hy - r, hx, hy + r), fill=(235, 72, 88, 255))
+    d.ellipse((hx, hy - r, hx + 2*r, hy + r), fill=(235, 72, 88, 255))
+    d.polygon([(hx - 2*r + 1, hy + 2), (hx + 2*r - 1, hy + 2), (hx, hy + 2.6*r)], fill=(235, 72, 88, 255))
+    return big.resize((width, h), Image.Resampling.LANCZOS)
+
+
+def draw_comments(canvas, el, t):
+    # The audience's comments on the last part, stacked, each popping in on its time.
+    out, x, y, width = fading(t, el['end'], .2), el.get('x', W/2), el.get('y', 330), el.get('width', 560)
+    if el.get('title'):
+        title, ay = text_sprite(el['title'], 22, 'Bold', 'yellow', 3)
+        place(canvas, title, x, y, title.width/2, ay, 1, min(1, max(0, t - el['start'])/.15)*out)
+        y += 40
+    for k, item in enumerate(el['items']):
+        card = comment_sprite(item['text'], k, width)
+        scale, alpha = popped(t - item.get('at', el['start']), origin=.85)
+        if alpha > 0:
+            place(canvas, card, x, y, card.width/2, 0, scale, alpha*out)
+        y += card.height + 12
+
+
+@lru_cache(maxsize=16)
+def polaroid_sprite(image, focus, caption, sub, size=230, angle=-6):
+    # A photo from an earlier part, square, in a white frame with a caption, a little turned.
+    img = Image.open(SERIE / image).convert('RGB')
+    l, t, r, b = focus
+    img = img.crop((round(l*img.width), round(t*img.height), round(r*img.width), round(b*img.height)))
+    img = img.resize((size, size), Image.Resampling.LANCZOS)
+    frame = Image.new('RGBA', (size + 24, size + 92), (250, 248, 242, 255))
+    frame.paste(img, (12, 12))
+    d = ImageDraw.Draw(frame)
+    d.text(((size + 24)/2, size + 38), caption, font=font(22, 'ExtraBold'), fill=rgb('ink') + (255,), anchor='mm')
+    if sub:
+        d.text(((size + 24)/2, size + 66), sub, font=font(18, 'Medium'), fill=rgb('alert') + (255,), anchor='mm')
+    shadow = Image.new('RGBA', (frame.width + 40, frame.height + 40), (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).rectangle((26, 30, frame.width + 14, frame.height + 18), fill=(0, 0, 0, 120))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(10))
+    shadow.alpha_composite(frame, (20, 20))
+    return shadow.rotate(angle, resample=Image.Resampling.BICUBIC, expand=True)
+
+
+def draw_polaroid(canvas, el, t):
+    sprite = polaroid_sprite(el['image'], tuple(el.get('focus', (0, 0, 1, 1))), el.get('caption', ''),
+                             el.get('sub', ''), el.get('size', 230), el.get('angle', -6))
+    scale, alpha = popped(t - el['start'], dur=.25, origin=1.25)
+    place(canvas, sprite, el['x'], el['y'], sprite.width/2, sprite.height/2, scale, alpha*fading(t, el['end'], .2))
+
+
+@lru_cache(maxsize=32)
+def pop_sprite(value, size, color, angle):
+    # An onomatopoeia: bold text with a thick dark outline, a little turned.
+    f, stroke = font(size, 'ExtraBold'), max(4, size//9)
+    w, h = round(f.getlength(value)) + 4*stroke, round(size*1.5) + 4*stroke
+    sprite = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    ImageDraw.Draw(sprite).text((w/2, h/2), value, font=f, fill=rgb(color) + (255,), anchor='mm',
+                                stroke_width=stroke, stroke_fill=(18, 16, 14, 255))
+    return sprite.rotate(angle, resample=Image.Resampling.BICUBIC, expand=True)
+
+
+def draw_pop(canvas, el, t):
+    sprite = pop_sprite(el['text'], el.get('size', 64), el.get('color', 'yellow'), el.get('angle', -8))
+    age = t - el['start']
+    scale, alpha = popped(age, dur=.2, origin=.4)
+    dx = shake(age, .35, 6) if el.get('shake') else 0
+    place(canvas, sprite, el['x'] + dx, el['y'], sprite.width/2, sprite.height/2, scale, alpha*fading(t, el['end'], .15))
+
+
 DRAW = {'phrase': draw_phrase, 'hud': draw_hud, 'tag': draw_tag, 'list': draw_list, 'stamp': draw_stamp,
         'buttons': draw_buttons, 'box': draw_box, 'vignette': draw_vignette, 'stars': draw_stars,
-        'pointer': draw_pointer, 'bars': draw_bars, 'input': draw_input}
+        'pointer': draw_pointer, 'bars': draw_bars, 'input': draw_input,
+        'balloon': draw_balloon, 'callout': draw_callout, 'ring': draw_ring, 'viewfinder': draw_viewfinder,
+        'nametag': draw_nametag, 'comments': draw_comments, 'polaroid': draw_polaroid, 'pop': draw_pop}
 
 
 def check(elements):
