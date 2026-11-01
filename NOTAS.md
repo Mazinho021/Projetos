@@ -85,6 +85,7 @@ Inspirado nas histórias do @crimecarton no Instagram
     - **Interações:** 48 curtidas (4,1%, “mais baixo”), 9 comentários (0,8%), 3 compartilhamentos (0,3%, “mais alto”), 1 salvamento e 1 repost.
     - **Perfil:** 46 visitas ao perfil viraram só 2 seguidores, e houve 1 clique no link da bio.
     - **Idade:** 13 a 17 anos, 19,7%; 18 a 24, 35,3%; 25 a 34, 31,4%; 35 a 44, 7,7%; 45 ou mais, 6%.
+  - **Votação no Instagram em 01/11/2026, às 14:24**, pela gravação de tela dos comentários: **TROCAR 4 × DEIXAR 4**, empate. Os votos são “Troca” ou “Trocar” e “Deixar”. Um dos votos em DEIXAR vem com o motivo: Renato meteu Zinho na encrenca, ajudar depois de arrependido não apaga isso, e o certo é proteger a família dele. O comentário fixado do perfil pergunta “vocês voltariam ou meteriam o pé??”. Faltam os votos do TikTok e do Shorts, que entram na soma.
   - **Lições para a Parte 4:**
     - Abrir com o momento mais forte da parte, imagem e frase, antes de qualquer resumo. Quem não seguia o perfil (91,5%) vê “PARTE 3” e o resumo da mochila e passa.
     - Encurtar a abertura de 17 s para uns 6 a 8 s.
