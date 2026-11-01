@@ -674,11 +674,98 @@ def draw_pop(canvas, el, t):
     place(canvas, sprite, el['x'] + dx, el['y'], sprite.width/2, sprite.height/2, scale, alpha*fading(t, el['end'], .15))
 
 
+@lru_cache(maxsize=None)
+def serif(size, weight='Regular'):
+    # Liberation Serif (fontes/, SIL OFL), the newspaper's type.
+    return ImageFont.truetype(str(FONTS / f'LiberationSerif-{weight}.ttf'), size)
+
+
+@lru_cache(maxsize=16)
+def jornal_parts(title, sub, texts, width):
+    """The clipping's paper and, for each comment, its text as a separate layer at its place."""
+    pad, ink = 30, (30, 26, 22, 255)
+    blocks, y = [], 132
+    for text in texts:
+        lines = []
+        for part in [f'“{text}”']:
+            f = serif(27, 'Bold' if len(text) < 30 else 'Regular')
+            words, cur = part.split(), ''
+            for wd in words:
+                test = f'{cur} {wd}'.strip()
+                if f.getlength(test) <= width - 2*pad or not cur:
+                    cur = test
+                else:
+                    lines.append(cur)
+                    cur = wd
+            lines.append(cur)
+        h = 34*len(lines) + 34
+        blocks.append((y, lines, f, h))
+        y += h + 18
+    height = y + 16
+    k = 2
+    paper = Image.new('RGBA', (width*k, height*k), (242, 235, 220, 255))
+    d = ImageDraw.Draw(paper)
+    # Old newsprint: a few faint fibres and a darker edge.
+    import random as _r
+    rnd = _r.Random(7)
+    for _ in range(260):
+        x0, y0 = rnd.randrange(width*k), rnd.randrange(height*k)
+        d.line((x0, y0, x0 + rnd.randrange(-14, 14), y0 + rnd.randrange(-3, 3)), fill=(210, 200, 182, 255), width=1)
+    d.rectangle((0, 0, width*k - 1, height*k - 1), outline=(206, 196, 176, 255), width=3*k)
+    d.text((width*k/2, 52*k), title, font=serif(44*k, 'Bold'), fill=ink, anchor='mm')
+    d.line((pad*k, 84*k, (width - pad)*k, 84*k), fill=ink, width=2*k)
+    d.line((pad*k, 89*k, (width - pad)*k, 89*k), fill=ink, width=1*k)
+    d.text((width*k/2, 108*k), sub, font=serif(19*k, 'Italic'), fill=(90, 82, 72, 255), anchor='mm')
+    layers = []
+    for i, (by, lines, f, h) in enumerate(blocks):
+        layer = Image.new('RGBA', paper.size, (0, 0, 0, 0))
+        ld = ImageDraw.Draw(layer)
+        for j, ln in enumerate(lines):
+            ld.text((pad*k, (by + 4 + 34*j)*k), ln, font=ImageFont.truetype(f.path, f.size*k), fill=ink, anchor='lt')
+        ld.text(((width - pad)*k, (by + 34*len(lines) + 12)*k), '— leitor', font=serif(18*k, 'Italic'),
+                fill=(110, 100, 88, 255), anchor='rt')
+        if i < len(blocks) - 1:
+            ld.line((pad*k, (by + h + 9)*k, (width - pad)*k, (by + h + 9)*k), fill=(150, 140, 126, 255), width=1*k)
+        layers.append(layer.resize((width, height), Image.Resampling.LANCZOS))
+    return paper.resize((width, height), Image.Resampling.LANCZOS), tuple(layers)
+
+
+def draw_jornal(canvas, el, t):
+    """The audience's comments on the last part, as readers' letters in a newspaper clipping,
+    “A VOZ DO BAIRRO”: the paper where Zinho's face came out now prints what the audience
+    said. The authors stay anonymous; each comment is printed on its time."""
+    age = t - el['start']
+    if age < 0:
+        return
+    items = el['items']
+    paper, layers = jornal_parts(el.get('title', 'A VOZ DO BAIRRO'), el.get('sub', ''),
+                                 tuple(i['text'] for i in items), el.get('width', 560))
+    sheet = paper.copy()
+    for item, layer in zip(items, layers):
+        a = min(1, max(0, t - item.get('at', el['start']))/.25)
+        if a > 0:
+            if a < 1:
+                layer = layer.copy()
+                layer.putalpha(layer.getchannel('A').point(lambda v: round(v*a)))
+            sheet.alpha_composite(layer)
+    angle = el.get('angle', -2)
+    shadow = Image.new('RGBA', (sheet.width + 60, sheet.height + 60), (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).rectangle((34, 40, sheet.width + 26, sheet.height + 30), fill=(0, 0, 0, 130))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(12))
+    shadow.alpha_composite(sheet, (30, 30))
+    sprite = shadow.rotate(angle, resample=Image.Resampling.BICUBIC, expand=True)
+    # It slides in from below, like a paper put on the table.
+    dy = 60*(1 - min(1, age/.3))**2
+    place(canvas, sprite, el.get('x', W/2), el.get('y', 300) + dy, sprite.width/2, 0, 1,
+          min(1, age/.15)*fading(t, el['end'], .2))
+
+
 DRAW = {'phrase': draw_phrase, 'hud': draw_hud, 'tag': draw_tag, 'list': draw_list, 'stamp': draw_stamp,
         'buttons': draw_buttons, 'box': draw_box, 'vignette': draw_vignette, 'stars': draw_stars,
         'pointer': draw_pointer, 'bars': draw_bars, 'input': draw_input,
         'balloon': draw_balloon, 'callout': draw_callout, 'ring': draw_ring, 'viewfinder': draw_viewfinder,
-        'nametag': draw_nametag, 'comments': draw_comments, 'polaroid': draw_polaroid, 'pop': draw_pop}
+        'nametag': draw_nametag, 'comments': draw_comments, 'polaroid': draw_polaroid, 'pop': draw_pop,
+        'jornal': draw_jornal}
 
 
 def check(elements):

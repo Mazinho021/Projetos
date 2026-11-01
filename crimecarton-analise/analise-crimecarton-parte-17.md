@@ -35,16 +35,15 @@ O criador enviou o vídeo da Parte 17 do @crimecarton, a referência da série, 
 
 ## O que serve para a nossa série
 
-1. **Mostrar 2 ou 3 comentários reais** da parte anterior logo depois do resultado da votação. Isso premia quem comenta e pede mais comentários.
-2. **Balões de fala** perto de quem fala, além da voz, para o vídeo funcionar sem som.
-3. **Etiquetas, círculos e zoom de investigação**, mas só quando revelam uma pista: o anel, a placa, o pen drive. Isso é diferente de repetir uma imagem só com zoom, que o criador recusou.
-4. **Painel que muda com a história:**
-   - a suspeita sobe ou desce;
-   - entra uma linha como “DÍVIDA DO RENATO R$ 80.000”;
-   - quando algo muda, aparecem etiquetas como “SUSPEITA SUBIU”.
-5. **Etiqueta de nome** na primeira aparição de cada personagem: “ADEMIR · dono do São Jorge”, “DONA CÉLIA · mãe do Renato”, “TONINHO · motorista do assalto”.
-6. **Polaroides de lembrança** de partes anteriores, como “PARTE 2 · a foto da divisão”.
-7. **A votação ilustrada:** cada opção com a sua cena e prós e contras em verde e vermelho, e depois as duas lado a lado.
-8. **Um momento leve por parte**, antes da virada, para a tensão pesar mais.
+O criador decidiu, em 01/11/2026, trazer o que faz sentido na nossa história, do nosso jeito, sem copiar o vídeo. As regras ficaram no [`CLAUDE.md`](../CLAUDE.md):
+
+1. **Comentários da parte anterior**, logo depois do resultado da votação, num formato nosso: o recorte de jornal “A VOZ DO BAIRRO”, e não os balões de comentário dele.
+2. **Balões de fala** perto de quem fala, além da voz.
+3. **Etiquetas com linha e círculos** nas pistas, com **zoom normal** para chegar perto. O zoom com moldura de câmera e “ZOOM 222%” ficou de fora: o criador achou que não fazia sentido, porque não é uma gravação.
+4. **Painel que muda com a história**, com a suspeita subindo ou descendo.
+5. **Etiqueta de nome** na primeira aparição de cada personagem.
+6. **Polaroides de lembrança** de partes anteriores.
+7. **Votação ilustrada**, com prós e contras de cada opção.
+8. **Um momento leve por parte**, antes da virada.
 
 O @crimecarton está na Parte 17 e ainda abre pelo resumo, em 7 s. A nossa regra nova, de abrir pelo momento mais forte, vem dos números da nossa Parte 3. Ela continua, e o resumo de 6 a 8 s fica igual ao dele.

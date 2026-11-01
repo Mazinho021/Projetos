@@ -32,7 +32,7 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
 
 ## Cenas (pedido do criador em 31/10/2026, vale para todas as partes)
 
-- **Cada coisa que a narração conta muda a tela**, com uma imagem nova ou com um elemento novo por cima dela: balão, etiqueta, círculo, carimbo ou zoom de investigação. Ver a seção “Edição no estilo do @crimecarton”.
+- **Cada coisa que a narração conta muda a tela**, com uma imagem nova ou com um elemento novo por cima dela: balão, etiqueta, círculo, carimbo ou zoom de investigação. Ver a seção “Ideias do @crimecarton adaptadas à nossa história”.
 - **Nunca repetir a mesma imagem só com zoom ou recorte** em planos seguidos: o criador achou a primeira montagem da Parte 3 repetitiva assim.
 - **Trocar de imagem** quando muda o lugar, o momento ou o enquadramento.
 - **Variar os planos:** plano aberto, close, detalhe, outro ângulo e outro lugar.
@@ -44,19 +44,25 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
   - descrever o corpo inteiro dos personagens e como ele se relaciona com o cenário. Na Parte 3, o corpo do Renato saiu cortado pelo muro.
 - **Antes de entregar:** conferir também se o desenho tem corpo cortado ou fundido ao cenário.
 
-## Edição no estilo do @crimecarton (decisão do criador em 01/11/2026)
+## Ideias do @crimecarton adaptadas à nossa história (decisão do criador em 01/11/2026)
 
-O criador mandou a Parte 17 do @crimecarton e pediu para fazer os vídeos do mesmo jeito: “se lá está funcionando, não tem por que o da gente não funcionar”. A análise está em [`crimecarton-analise/analise-crimecarton-parte-17.md`](crimecarton-analise/analise-crimecarton-parte-17.md). Os elementos estão em `episodio-01/montagem/graficos.py`.
+O criador mandou a Parte 17 do @crimecarton para ver como ele monta as histórias. A ideia não é copiar o vídeo dele: é **trazer o que faz sentido na nossa história, do nosso jeito**. A análise está em [`crimecarton-analise/analise-crimecarton-parte-17.md`](crimecarton-analise/analise-crimecarton-parte-17.md). Os elementos estão em `episodio-01/montagem/graficos.py`, e um teste com os nossos desenhos está em [`crimecarton-analise/estilo/demo-elementos-novos.mp4`](crimecarton-analise/estilo/demo-elementos-novos.mp4).
 
 - **A tela muda a cada 1 ou 2 s.** As imagens podem ficar mais tempo, desde que entre algo novo por cima a cada fala.
-- **Comentários do público:** logo depois do resultado da votação, aparecem 2 ou 3 comentários reais da parte anterior (`comments`), com o nome escondido atrás de uma barra cinza.
+- **Comentários do público, num formato nosso: o recorte de jornal “A VOZ DO BAIRRO”** (`jornal`).
+  - Entra logo depois do resultado da votação, com 2 ou 3 comentários reais da parte anterior, impressos como cartas de leitor e assinados só “— leitor”.
+  - O jornal é onde o rosto do Zinho saiu, então o bairro opinando no jornal combina com a série.
+  - Não usar os balões de comentário do @crimecarton, para não ficar igual.
 - **Balões de fala:** a fala de cada personagem aparece num balão perto da cabeça de quem fala (`balloon`), além da voz. O vídeo tem que se entender sem som.
-- **Pistas:** etiqueta com linha (`callout`), círculo (`ring`) e zoom de investigação com moldura de câmera e “ZOOM 220%” (`viewfinder`). O zoom só entra para revelar uma pista nova.
+- **Pistas:**
+  - etiqueta com linha (`callout`) e círculo (`ring`) apontando para o detalhe;
+  - para chegar perto da pista, **um zoom normal**, com um recorte mais fechado.
+  - **Nada de moldura de câmera nem “ZOOM 220%”**: o criador achou que não fazia sentido, porque não é uma gravação. Ela só caberia se a imagem fosse mesmo uma gravação ou uma foto vista numa tela.
 - **Painel que muda com a história:** as estrelas de suspeita sobem e descem, valores mudam, e etiquetas como “SUSPEITA SUBIU” aparecem quando algo muda.
 - **Etiqueta de nome** na primeira aparição de cada personagem (`nametag`), com o nome e quem é.
 - **Polaroide de lembrança** de partes anteriores (`polaroid`), como “PARTE 2 · a foto da divisão”.
-- **Carimbos e onomatopeias** (`stamp`, `pop`) nos momentos fortes: “TOC TOC”, “AMANHÃ NO POSTO”.
-- **Votação ilustrada:** cada opção com a sua cena, o nome em etiqueta (“OPÇÃO 1 · TROCAR”) e prós e contras em verde e vermelho. Depois vêm as duas lado a lado, os botões e a caixa da próxima parte.
+- **Carimbos e onomatopeias** (`stamp`, `pop`) nos momentos fortes, como “TOC TOC”.
+- **Votação ilustrada:** cada opção com a sua cena, o nome em etiqueta (“OPÇÃO 1 · TROCAR”) e prós e contras em verde e vermelho. Depois vêm os botões e a caixa da próxima parte.
 - **Um momento leve por parte**, antes da virada, para a tensão pesar mais.
 - **Vozes:** o @crimecarton usa uma voz só, e nós mantemos as vozes próprias dos personagens, como o Renato na Algenib, com os balões por cima.
 
