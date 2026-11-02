@@ -9,10 +9,10 @@ A votação da Parte 3 era **TROCAR ou DEIXAR**. Em 01/11/2026, às 14:24, o Ins
 
 **Falta conferir o TikTok e o Shorts.**
 
-- Se o TROCAR tiver a maioria somando as três redes, o resumo diz “Vocês decidiram: trocar.” no lugar de “Deu empate. No desempate: trocar.”
+- Se o TROCAR tiver a maioria somando as três redes, o resumo diz “Vocês decidiram: trocar.” no lugar de “Deu empate. No desempate: trocar.” A narração grava as duas versões, para não pagar outra gravação.
 - Se o DEIXAR tiver a maioria na soma, a maioria manda, e volta o roteiro “A casa da mãe”, guardado no fim deste plano.
 
-O roteiro está em [`roteiro-ep04-trocar.txt`](roteiro-ep04-trocar.txt). Ele espera o ok do criador antes das gerações pagas, como pede o [`CLAUDE.md`](../../CLAUDE.md).
+O roteiro está em [`roteiro-ep04-trocar.txt`](roteiro-ep04-trocar.txt). **Em 02/11/2026, o criador aprovou o roteiro e o plano** (“Aceito”). O pedido ao Codex está em [`pedido-codex-ep04.md`](pedido-codex-ep04.md).
 
 ## O que mudou da primeira versão
 
@@ -123,16 +123,16 @@ Se chegarem comentários do TikTok e do Shorts, dá para trocar algum.
 | **1 · CANCELAR** | O Ademir te ajuda a achar o parceiro. Chance de pegar a sua parte. | Vira sócio de um sequestrador. Continua sendo a isca. |
 | **2 · ENVIAR** | O rosto do Ademir vai para o jornal. A foto vira prova. | A polícia te acha com eles. A suspeita sobe. |
 
-## Próximo passo
+## Pedido ao Codex
 
-Com o ok do criador, vem o pedido ao Codex, com o custo mostrado antes:
+O pedido está em [`pedido-codex-ep04.md`](pedido-codex-ep04.md), e o Codex mostra o custo antes de executar.
 
-- **22 desenhos.** Eles chegam com no máximo 941 × 1672 e são ampliados por `ampliar_cenas.py`.
-- **Três gravações:**
-  - o narrador, em Charon;
-  - o Renato, em Algenib;
-  - o Ademir, em Charon no estilo do cobrador.
-- A segunda entrega da Parte 3, com 23 desenhos e 3 vozes, custou 3 créditos.
+- **22 desenhos.** Eles chegam com no máximo 941 × 1672 e são ampliados por `ampliar_cenas.py`. Na Parte 3, os desenhos não cobraram crédito.
+- **Três gravações, uns 4 créditos:**
+  - o narrador, em Charon, com uns 95 s: 2 créditos, como as narrações das Partes 2 e 3;
+  - o Ademir, em Charon no estilo do cobrador, com uns 30 s: 1 crédito;
+  - o Renato, em Algenib, com uns 5 s: 1 crédito.
+- Os textos de cada voz estão em `narracao-ep04-*.txt`, e os parâmetros em `pedido-narracao-*-ep04.json` e `pedido-narracao-ep04.json`.
 
 ## O outro caminho, guardado: DEIXAR — “A casa da mãe”
 

@@ -105,7 +105,8 @@ Inspirado nas histórias do @crimecarton no Instagram
     - o café do Ademir como momento leve;
     - votação com prós e contras.
 
-    São 300 palavras, uns 2 min 15 s, e 22 desenhos novos. **Espera o ok do criador** antes do pedido ao Codex.
+    São 300 palavras, uns 2 min 15 s, e 22 desenhos novos. **O criador aprovou o roteiro e o plano em 02/11/2026** (“Aceito”).
+  - **O pedido ao Codex** está em [`pedido-codex-ep04.md`](crimecarton-analise/episodio-04/pedido-codex-ep04.md): 22 desenhos e 3 gravações (narrador, Ademir e Renato), por uns 4 créditos. A narração grava as duas versões do resultado da votação.
   - **Falta conferir o TikTok e o Shorts:**
     - se o TROCAR ganhar na soma, o resumo diz “Vocês decidiram: trocar.”;
     - se o DEIXAR ganhar, volta “A casa da mãe”.
