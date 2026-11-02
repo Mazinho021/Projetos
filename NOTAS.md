@@ -96,6 +96,20 @@ Inspirado nas histórias do @crimecarton no Instagram
   - **TikTok e Shorts:** o crédito é “Inspirado no @crimecarton (Insta)”, e o título no Shorts é “Parte 3 – O preço 😨”.
   - **Comentário para fixar:** “Trocar ou deixar? Comenta uma palavra 👇”.
   - **Votação:** vale a maioria dos comentários nas três redes. Marcar o conteúdo de IA, como nas outras partes.
+- **Parte 4, “O dono do anel”**, em [`episodio-04/`](crimecarton-analise/episodio-04/plano-ep04.md):
+  - Em 02/11/2026, o criador mandou seguir pelo TROCAR. Ele prende mais: promete o rosto do homem do anel no começo, tem o relógio da foto correndo o vídeo inteiro e uma reviravolta que muda a série. Também só usa vozes que já existem.
+  - **O roteiro foi reescrito no estilo novo:**
+    - abertura clara para quem nunca viu;
+    - resumo de uns 8 s, com o empate e o jornal “A VOZ DO BAIRRO”;
+    - ônibus mais curto;
+    - o café do Ademir como momento leve;
+    - votação com prós e contras.
+
+    São 300 palavras, uns 2 min 15 s, e 22 desenhos novos. **Espera o ok do criador** antes do pedido ao Codex.
+  - **Falta conferir o TikTok e o Shorts:**
+    - se o TROCAR ganhar na soma, o resumo diz “Vocês decidiram: trocar.”;
+    - se o DEIXAR ganhar, volta “A casa da mãe”.
+  - **O Ademir fala com a voz do cobrador, sem o som de celular.** Um teste grátis, feito com a gravação da Parte 3, foi mandado ao criador para ele aprovar antes.
 - **A Parte 1 foi publicada pelo criador em 26/10/2026, no TikTok e no Instagram**, com a v7, a capa e o texto do post acima. A v7 é a v6 aprovada pelo criador, com a voz própria do amigo que ele pediu depois. A bio também foi aprovada.
 - A publicação pode ser feita pelo OpusClip, que tem conectados os TikToks @jotape2117 e @mazinho_edits e o canal CORTESZINHO no YouTube, mas não o Instagram nem o perfil novo da série. O post só sai depois que o criador confirma no app. Subir o vídeo inteiro, sem cortes e sem legendas do OpusClip, custa cerca de 2 créditos e precisa da autorização dele. As contas aparecem no OpusClip como “TikTok Business”, e conta comercial não entra no Programa de Recompensas para Criadores do TikTok. Por isso, não converter o perfil novo em conta comercial para conectá-lo.
 - O final promete, como a referência, que “a maioria decide o próximo passo”. Se a maioria comentar NÃO ABRIR, o episódio 2 precisa seguir esse caminho; o arco em `producao-zinho.md` supõe que o amigo entra.

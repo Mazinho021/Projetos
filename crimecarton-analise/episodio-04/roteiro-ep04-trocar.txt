@@ -1,13 +1,16 @@
-NARRADOR: Três da manhã. O homem do anel finalmente mostra o rosto.
-NARRADOR: Chegou agora? As partes um, dois e três estão no perfil. O Renato foi pego no seu lugar, e vocês decidiram: trocar.
-NARRADOR: Mas você não vai de mãos vazias. Antes de sair do ônibus, você agenda uma mensagem para o jornal que publicou o seu rosto. Às três e quinze, se você não cancelar, ela sai com a foto da divisão: a mesa, o dinheiro e a mão com o anel.
-NARRADOR: Duas e cinquenta e nove. O portão do Ferro-Velho São Jorge está aberto. Lá dentro, uma lâmpada só. E o Renato, amarrado na cadeira.
+NARRADOR: Quem sequestrou o seu amigo vai mostrar o rosto.
+NARRADOR: Chegou agora? As outras partes estão no perfil. O Renato foi pego no seu lugar. Deu empate. No desempate: trocar.
+NARRADOR: Mas você não vai de mãos vazias. No ônibus, você agenda uma mensagem para o jornal que publicou o seu rosto. Às três e quinze, ela sai com a foto da divisão. Só você pode cancelar.
+NARRADOR: Duas e cinquenta e nove. O portão do Ferro-Velho São Jorge está aberto. Lá dentro, uma lâmpada só. E o Renato, amarrado numa cadeira.
 RENATO: Você veio? Por que você veio?
-NARRADOR: Da sombra sai um homem de uns sessenta anos, cabelo branco, jaqueta de couro. A mesma voz calma do áudio.
+NARRADOR: Da sombra sai um homem de uns sessenta anos, cabelo branco, jaqueta de couro. No dedo, o anel da foto.
 ADEMIR: Pode me chamar de Ademir. O São Jorge é meu. E aquela mesa da foto também.
 NARRADOR: Ele corta a corda do Renato com um canivete, sem pressa.
 ADEMIR: Combinado é combinado. Ele sai, você fica.
-NARRADOR: O Renato fica parado. No fundo do terreno, encostado num carro, um homem acende um cigarro. Você conhece aquele rosto. Foi ele que dirigiu o carro do assalto.
+ADEMIR: Aceita um café? Acabei de passar.
+NARRADOR: Você não aceita. O Renato aceita.
+RENATO: Com açúcar, se tiver.
+NARRADOR: No fundo do terreno, um homem acende um cigarro. Você conhece aquele rosto. Foi ele que dirigiu o carro do assalto.
 NARRADOR: E aí o Ademir diz a última coisa que você esperava ouvir.
 ADEMIR: Eu não quero você preso. O seu parceiro sumiu com os dez milhões. Com a minha parte também. E você vai me levar até ele.
 NARRADOR: Você nunca foi o culpado. Foi a isca. E continua sendo.
