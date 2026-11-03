@@ -1,0 +1,33 @@
+{
+  "jobId": "mcp_media_e0198473661ddb920d310334cb03b0070c63717d28d84f4ecfd2562a07a33137",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 2,
+  "reservedCredits": 0,
+  "chargedCredits": 2,
+  "newCreditsChargedOnRecovery": 0,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "file": "narracao-ep04-narrador.wav",
+      "mimeType": "audio/wav",
+      "durationSeconds": 86.2,
+      "persistedOnGitHub": false
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep04-narrador-charon-v1-20261102",
+    "voice": "Charon",
+    "sourceFile": "crimecarton-analise/episodio-04/pedido-narracao-ep04.json"
+  },
+  "retrieval": {
+    "date": "2026-11-03",
+    "method": "opusclip_get_media_generation_job",
+    "newlyChargedCredits": 0,
+    "downloadUrl": "temporária, renovar por jobId",
+    "transcription": "pendente",
+    "audioSaved": "não; download do arquivo WAV indisponível neste ambiente"
+  },
+  "note": "Recuperado o job previamente pago. Não realizar nova geração deste áudio. Checar transcrição com faster-whisper medium após baixar."
+}
