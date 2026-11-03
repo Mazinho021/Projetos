@@ -122,6 +122,7 @@ Inspirado nas histórias do @crimecarton no Instagram
     - **As vozes:** no Google AI Studio, que tem as mesmas vozes (Charon e Algenib) e o mesmo modelo, o Gemini 3.8 Flash TTS, com uso gratuito.
     - **O kit:** [`kit_sem_codex.py`](crimecarton-analise/episodio-04/montagem/kit_sem_codex.py) faz duas folhas de referência e uma página com a mensagem inicial, as 22 cenas e as 3 vozes, cada uma com botão de copiar. A página foi publicada como artefato privado do criador.
     - **O que o criador manda de volta:** as imagens e os áudios, aqui na conversa. O Claude salva em `episodio-04/originais/` e na pasta da parte, confere e monta.
+    - **O criador recusou esse caminho no mesmo dia:** gerar, salvar e mandar tudo pelo celular dá trabalho demais e ocupa espaço. O plano voltou a ser o Codex na quinta, 05/11/2026, depois da 0h48, na mesma conversa “Verificar pendências”.
   - **Falta conferir o TikTok e o Shorts:**
     - se o TROCAR ganhar na soma, o resumo diz “Vocês decidiram: trocar.”;
     - se o DEIXAR ganhar, volta “A casa da mãe”.
