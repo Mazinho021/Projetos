@@ -107,6 +107,7 @@ Inspirado nas histórias do @crimecarton no Instagram
 
     São 300 palavras, uns 2 min 15 s, e 22 desenhos novos. **O criador aprovou o roteiro e o plano em 02/11/2026** (“Aceito”).
   - **O pedido ao Codex** está em [`pedido-codex-ep04.md`](crimecarton-analise/episodio-04/pedido-codex-ep04.md): 22 desenhos e 3 gravações (narrador, Ademir e Renato), por uns 4 créditos. A narração grava as duas versões do resultado da votação.
+  - **Situação em 03/11/2026:** a primeira conversa do Codex travou no limite diário sem fazer push, e nada foi entregue. A branch `codex/crimecarton` continua na entrega da Parte 3. O pedido recomeça numa conversa nova, com commit e push aos poucos.
   - **Falta conferir o TikTok e o Shorts:**
     - se o TROCAR ganhar na soma, o resumo diz “Vocês decidiram: trocar.”;
     - se o DEIXAR ganhar, volta “A casa da mãe”.

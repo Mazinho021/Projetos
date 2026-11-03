@@ -9,6 +9,8 @@ O pedido tem duas partes:
 
 Não alterar nenhum outro arquivo do projeto. Fazer tudo numa tarefa só, sem abrir agentes em paralelo.
 
+**Situação em 03/11/2026:** a primeira conversa do Codex com este pedido travou no limite diário sem fazer push. Nada foi entregue, então o pedido começa do zero numa conversa nova.
+
 ## Ilustrações
 
 ### Regras para todas
@@ -235,11 +237,14 @@ Gerar as três gravações abaixo e salvar tudo em `crimecarton-analise/episodio
 - **Não editar os áudios.**
 - **Conferir cada gravação:** registrar no job a transcrição do faster-whisper `medium`, sem dar o texto como dica.
 - **Se uma palavra sair trocada:** avisar na resposta, sem gerar de novo. O Claude Code confere e decide.
+- **Se o serviço de voz disser que já existe um job com a mesma `idempotencyKey`,** usar esse resultado em vez de pagar de novo. A conversa que travou pode ter gerado alguma voz.
 
 ## Entrega
 
 1. Atualizar a branch `codex/crimecarton` com a `claude/ecstatic-brown-xb2qxd`, que já contém este pedido.
 2. Fazer commit e push de todos os arquivos gerados na `codex/crimecarton` do repositório `Mazinho021/Projetos`, **nesta mesma conversa em que eles forem gerados**.
+   - Fazer aos poucos: depois das vozes, a cada 5 cenas prontas e de novo no fim.
+   - Assim nada se perde se o limite diário acabar no meio, como aconteceu na primeira tentativa.
 3. Responder com o link do commit e os créditos cobrados.
 
 Depois, o Claude Code amplia as imagens e confere as vozes. Também passa a voz do Ademir pela voz do cobrador, sem o som de celular, e monta a Parte 4 nas duas versões.

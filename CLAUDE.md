@@ -97,4 +97,6 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 
 - Pedidos em `.md` com os parâmetros em `.json`. Mostrar o custo antes de executar.
 - **O commit e o push têm que ser feitos na mesma conversa do Codex que gerou os arquivos.** Uma conversa nova não enxerga os arquivos da outra, como aconteceu em 30/10/2026.
+- **Pedir commit e push aos poucos**, por exemplo a cada 5 cenas prontas. Em 02/11/2026, a conversa da Parte 4 travou no limite diário antes de fazer push, e nada foi entregue.
+- **As instruções para o Codex ficam no [`AGENTS.md`](AGENTS.md)**, que ele lê sozinho. Elas mandam ler este arquivo e o `NOTAS.md` antes de cada tarefa.
 - Depois, `git fetch origin codex/crimecarton` e `git merge --ff-only origin/codex/crimecarton`.
