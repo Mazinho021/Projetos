@@ -9,6 +9,10 @@ para ../, com o mesmo nome, e é o que a montagem usa.
 
     python crimecarton-analise/episodio-03/montagem/ampliar_cenas.py [cena-01-portao.png ...]
 
+Serve também às outras partes, com a pasta delas:
+
+    python crimecarton-analise/episodio-03/montagem/ampliar_cenas.py --episodio crimecarton-analise/episodio-04
+
 O modelo (18 MB) é baixado na primeira vez para work/modelos/.
 """
 import argparse
@@ -69,14 +73,16 @@ def ampliar(caminho, sess):
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument('nomes', nargs='*', help='só estas cenas (padrão: todas em originais/)')
+    ap.add_argument('--episodio', type=Path, default=EPISODE, help='a pasta da parte (padrão: a Parte 3)')
     args = ap.parse_args()
     baixar_modelo()
     opts = ort.SessionOptions()
     sess = ort.InferenceSession(str(MODELO), opts, providers=['CPUExecutionProvider'])
-    nomes = args.nomes or sorted(p.name for p in ORIGINAIS.glob('cena-*.png'))
+    originais = args.episodio / 'originais'
+    nomes = args.nomes or sorted(p.name for p in originais.glob('cena-*.png'))
     for nome in nomes:
         t = time.time()
-        ampliar(ORIGINAIS / nome, sess).save(EPISODE / nome)
+        ampliar(originais / nome, sess).save(args.episodio / nome)
         print(f'{nome}: {SAIDA[0]}×{SAIDA[1]} em {time.time() - t:.0f} s', flush=True)
 
 
