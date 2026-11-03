@@ -129,6 +129,7 @@ Inspirado nas histórias do @crimecarton no Instagram
     - **conferência sem dica:** todas as palavras certas. A hora “duas e cinquenta e nove” sai “12h59” na transcrição, mas, pontuada pelo Whisper, a gravação combina com “duas”, não com “doze”. O TTS falou “pro” e “pra” no lugar de “para o” e “para a”;
     - as três estão alinhadas, e a voz do Ademir já passou por `voz_ademir.py`. Os tempos do Renato foram acertados à mão pelo volume da gravação, porque o alinhador os adiantava quase 1 s. Com as vozes, a parte dá 2 min 8,8 s.
   - **Teste de arquivo binário:** a mesma conversa salvou um PNG no GitHub sem estragar, então ela pode entregar os 22 desenhos, com push a cada 5.
+  - **Os desenhos ficam com o Codex.** A mesma conversa tentou gerar as cenas 1 a 5 e errou: fez um storyboard único, tratou os nomes das vozes como personagens e chegou a inventar outra história. Ela descartou tudo e deixou o lote 1 descrito em [`LOTE-01-CENAS-01-A-05.md`](crimecarton-analise/episodio-04/LOTE-01-CENAS-01-A-05.md). As imagens voltam para o Codex depois da 0h48 de 05/11/2026, em lotes: 1 a 5, a conferência do Claude, 6 a 15 e 16 a 22.
   - **Falta conferir o TikTok e o Shorts:**
     - se o TROCAR ganhar na soma, o resumo diz “Vocês decidiram: trocar.”;
     - se o DEIXAR ganhar, volta “A casa da mãe”.

@@ -9,7 +9,11 @@ O pedido tem duas partes:
 
 Não alterar nenhum outro arquivo do projeto. Fazer tudo numa tarefa só, sem abrir agentes em paralelo.
 
-**Situação em 03/11/2026:** a primeira conversa do Codex com este pedido travou no limite diário sem fazer push. Nada foi entregue, então o pedido começa do zero numa conversa nova.
+**Situação em 03/11/2026, à noite:**
+
+- **As três vozes já estão salvas e conferidas** em `narracao-ep04-narrador.wav`, `narracao-ep04-ademir.wav` e `narracao-ep04-renato.wav`, com os registros `-job.json`. Não gerar de novo.
+- **Faltam só as 22 ilustrações,** em lotes de até 10 imagens, com commit e push a cada 5. O primeiro lote, das cenas 1 a 5, está em [`LOTE-01-CENAS-01-A-05.md`](LOTE-01-CENAS-01-A-05.md). Depois dele, esperar o ok do Claude.
+- **Uma conversa sem o gerador do Codex errou as imagens:** fez um storyboard único e tratou os nomes das vozes como personagens. Cada cena é um PNG separado, e os personagens são só os deste pedido.
 
 ## Ilustrações
 
