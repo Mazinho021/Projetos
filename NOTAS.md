@@ -127,7 +127,7 @@ Inspirado nas histórias do @crimecarton no Instagram
     - ela recuperou a narração já paga, com 0 crédito novo, e gerou o Ademir e o Renato, com 1 crédito cada;
     - ela não consegue baixar arquivos, então gravou os links temporários na `codex/crimecarton`, e o Claude baixou os três WAV: 86,2 s, 25,2 s e 10,2 s;
     - **conferência sem dica:** todas as palavras certas. A hora “duas e cinquenta e nove” sai “12h59” na transcrição, mas, pontuada pelo Whisper, a gravação combina com “duas”, não com “doze”. O TTS falou “pro” e “pra” no lugar de “para o” e “para a”;
-    - as três estão alinhadas, e a voz do Ademir já passou por `voz_ademir.py`. Com as vozes, a parte dá 2 min 10,6 s.
+    - as três estão alinhadas, e a voz do Ademir já passou por `voz_ademir.py`. Os tempos do Renato foram acertados à mão pelo volume da gravação, porque o alinhador os adiantava quase 1 s. Com as vozes, a parte dá 2 min 8,8 s.
   - **Teste de arquivo binário:** a mesma conversa salvou um PNG no GitHub sem estragar, então ela pode entregar os 22 desenhos, com push a cada 5.
   - **Falta conferir o TikTok e o Shorts:**
     - se o TROCAR ganhar na soma, o resumo diz “Vocês decidiram: trocar.”;
