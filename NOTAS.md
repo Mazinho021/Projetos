@@ -117,6 +117,11 @@ Inspirado nas histórias do @crimecarton no Instagram
     - a timeline, com todos os elementos novos.
 
     Um rascunho de 2 min 17 s, com tempos estimados, sem voz e com um cartão no lugar de cada desenho, foi mandado ao criador em 03/11/2026.
+  - **Sem o Codex, em 03/11/2026:** para não esperar o limite, o criador vai gerar o material à mão, sem custo extra.
+    - **Os desenhos:** no chat do ChatGPT, que tem o mesmo gerador de imagens do Codex.
+    - **As vozes:** no Google AI Studio, que tem as mesmas vozes (Charon e Algenib) e o mesmo modelo, o Gemini 3.8 Flash TTS, com uso gratuito.
+    - **O kit:** [`kit_sem_codex.py`](crimecarton-analise/episodio-04/montagem/kit_sem_codex.py) faz duas folhas de referência e uma página com a mensagem inicial, as 22 cenas e as 3 vozes, cada uma com botão de copiar. A página foi publicada como artefato privado do criador.
+    - **O que o criador manda de volta:** as imagens e os áudios, aqui na conversa. O Claude salva em `episodio-04/originais/` e na pasta da parte, confere e monta.
   - **Falta conferir o TikTok e o Shorts:**
     - se o TROCAR ganhar na soma, o resumo diz “Vocês decidiram: trocar.”;
     - se o DEIXAR ganhar, volta “A casa da mãe”.
