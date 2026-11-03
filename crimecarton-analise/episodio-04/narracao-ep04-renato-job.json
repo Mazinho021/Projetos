@@ -1,0 +1,33 @@
+{
+  "jobId": "mcp_media_018de364a17318f77357dfa00e541717020883c9fddf47a857b7035ae42773c7",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "chargedCredits": 1,
+  "outputs": [
+    {
+      "file": "narracao-ep04-renato.wav",
+      "mimeType": "audio/wav",
+      "durationSeconds": 10.24,
+      "bytes": 497636,
+      "sha256": "06cafbe5e8f89be282246d8d181605e6d13e3387129e49ed4d0111e1dbfb20bb",
+      "sampleRate": 24000,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "persistedOnGitHub": true
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep04-renato-algenib-v1-20261102",
+    "voice": "Algenib",
+    "sourceFile": "crimecarton-analise/episodio-04/pedido-narracao-renato-ep04.json"
+  },
+  "delivery": "Gerado no OpusClip por uma conversa nova do agente em 03/11/2026, que gravou só o link temporário; o Claude Code baixou o WAV e o salvou.",
+  "validation": {
+    "model": "faster-whisper-medium",
+    "language": "pt",
+    "initialPrompt": null,
+    "transcription": "Você veio? Por que você veio? Com açúcar, se tiver.",
+    "note": "Todas as palavras do texto."
+  }
+}

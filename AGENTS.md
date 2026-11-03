@@ -11,4 +11,5 @@ Este repositório guarda a série “A parte que faltou”, do perfil Golpe Cart
 5. **Commit e push:**
    - fazer na mesma conversa que gerou os arquivos, porque uma conversa nova não enxerga os arquivos de outra;
    - fazer aos poucos, por exemplo a cada 5 cenas prontas, e de novo no fim. Assim nada se perde se o limite diário acabar no meio.
-6. **Escopo:** não alterar arquivos fora do que o pedido manda.
+6. **Arquivos que você não consegue baixar,** como os WAV do OpusClip: grave o nome e o link temporário de cada um em `links-temporarios.json`, na pasta da parte, faça commit e push e avise. O Claude baixa e salva os arquivos.
+7. **Escopo:** não alterar arquivos fora do que o pedido manda.

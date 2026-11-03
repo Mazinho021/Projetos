@@ -3,17 +3,18 @@
   "kind": "speech",
   "model": "gemini-3.8-flash-tts",
   "status": "succeeded",
-  "estimatedCredits": 2,
-  "reservedCredits": 0,
   "chargedCredits": 2,
-  "newCreditsChargedOnRecovery": 0,
-  "priceVersion": "prd-2026-10-12-list-x75",
   "outputs": [
     {
       "file": "narracao-ep04-narrador.wav",
       "mimeType": "audio/wav",
       "durationSeconds": 86.2,
-      "persistedOnGitHub": false
+      "bytes": 4143716,
+      "sha256": "089cce9cd170166d3dea68208f83572614ba46e36a411837ca93edd41240e2a4",
+      "sampleRate": 24000,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "persistedOnGitHub": true
     }
   ],
   "request": {
@@ -21,13 +22,18 @@
     "voice": "Charon",
     "sourceFile": "crimecarton-analise/episodio-04/pedido-narracao-ep04.json"
   },
-  "retrieval": {
+  "delivery": "Gerado na primeira conversa do Codex, em 02/11/2026, que travou antes de salvar. Uma conversa nova recuperou o job sem pagar de novo em 03/11/2026, e o Claude Code baixou o WAV e o salvou.",
+  "validation": {
+    "model": "faster-whisper-medium",
+    "language": "pt",
+    "initialPrompt": null,
+    "transcription": "Quem sequestrou o seu amigo vai mostrar o rosto. Chegou agora? As outras partes estão no perfil. O Renato foi pego no seu lugar. Deu empate. No desempate, trocar. Mas você não vai de mãos vazias. No ônibus, você agenda uma mensagem pro jornal que publicou o seu rosto. Às 3h15, ela sai com a foto da divisão. Só você pode cancelar. 12h59. O portão do Ferro Velho São Jorge está aberto. Lá dentro, uma lâmpada só. E o Renato, amarrado numa cadeira. Da sombra sai um homem de uns 60 anos, cabelo branco, jaqueta de couro. No dedo, o anel da foto. Ele corta a corda do Renato com um canivete, sem pressa. Você não aceita. O Renato aceita. No fundo do terreno, um homem acende um cigarro. Você conhece aquele rosto. Foi ele que dirigiu o carro do assalto. E aí o Ademir diz a última coisa que você esperava ouvir. Você nunca foi o culpado. Foi a isca. E continua sendo. O celular vibra no seu bolso. 3h13. Faltam dois minutos pra foto sair. Se você cancelar, vira sócio do homem que sequestrou o Renato. Contra o parceiro que ficou com o tudo. Se deixar sair, a foto chega ao jornal e a polícia chega aqui. Com você dentro. Cancelar ou enviar? Comenta uma palavra só. O que a maioria escolher virá parte 5. Vocês decidiram. Trocar.",
+    "note": "A transcrição livre escreve a hora “duas e cinquenta e nove” como “12h59”. Pontuada pelo próprio Whisper, a gravação combina mais com “Duas e cinquenta e nove” do que com “Doze”, nos modelos medium e small; o segundo pedaço da palavra tem probabilidade 0,999 contra 0,018. “Ficou com o tudo”, transcrito sozinho, sai “ficou com tudo”. O TTS contraiu “para o” e “para a” em “pro” e “pra”, e “vira a parte” soa “virá parte”, sem mudar o sentido."
+  },
+  "generatedOn": "2026-11-02",
+  "recovery": {
     "date": "2026-11-03",
     "method": "opusclip_get_media_generation_job",
-    "newlyChargedCredits": 0,
-    "downloadUrl": "temporária, renovar por jobId",
-    "transcription": "pendente",
-    "audioSaved": "não; download do arquivo WAV indisponível neste ambiente"
-  },
-  "note": "Recuperado o job previamente pago. Não realizar nova geração deste áudio. Checar transcrição com faster-whisper medium após baixar."
+    "newlyChargedCredits": 0
+  }
 }

@@ -195,29 +195,30 @@ def A(p, k=0):
 
 
 # Silence the edit opens after a word, in seconds. At a voice's last word before another voice,
-# it is the silence between the two.
+# it is the silence between the two. With the real voices, the beats and the reading time of
+# the newspaper and the options bring the part to about Part 3's length (2 min 13 s).
 PAUSES = {
-    N('o rosto.', 1): .5,                    # the cold open lands
+    N('o rosto.', 1): .8,                    # the cold open lands
     N('no perfil.', 1): .15,
-    N(VOTO, len(VOTO.split()) - 1): 3.0,     # the newspaper, to read the comments
-    N('pode cancelar.', 1): .35,
+    N(VOTO, len(VOTO.split()) - 1): 3.5,     # the newspaper, to read the comments
+    N('pode cancelar.', 1): .6,              # the panel turns into the photo's clock
     N('numa cadeira.', 1): .3,
     R('Por que você veio?', 3): .4,
-    N('anel da foto.', 2): .5,
+    N('anel da foto.', 2): .8,
     A('mesa da foto também.', 3): .3,
     N('sem pressa.', 1): .3,
     A('você fica.', 1): .7,                  # a beat, and then the coffee
     A('Acabei de passar.', 2): .6,           # nobody answers
     N('O Renato aceita.', 2): .25,
-    R('se tiver.', 1): .7,
-    N('carro do assalto.', 2): .5,
+    R('se tiver.', 1): .9,
+    N('carro do assalto.', 2): .8,
     N('esperava ouvir.', 1): .35,
-    A('você preso.', 1): .6,
+    A('você preso.', 1): .9,
     A('até ele.', 1): .6,
-    N('continua sendo.', 1): .7,
-    N('a foto sair.', 2): .6,                # the clock ticks
-    N('ficou com tudo.', 2): 2.0,            # option 1's pros and cons
-    N('Com você dentro.', 2): 2.0,           # option 2's
+    N('continua sendo.', 1): 1.0,
+    N('a foto sair.', 2): 1.2,               # the clock ticks
+    N('ficou com tudo.', 2): 3.0,            # option 1's pros and cons, time to read them
+    N('Com você dentro.', 2): 3.0,           # option 2's
 }
 SWITCHES = {}
 

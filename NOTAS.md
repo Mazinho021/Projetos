@@ -123,6 +123,12 @@ Inspirado nas histórias do @crimecarton no Instagram
     - **O kit:** [`kit_sem_codex.py`](crimecarton-analise/episodio-04/montagem/kit_sem_codex.py) faz duas folhas de referência e uma página com a mensagem inicial, as 22 cenas e as 3 vozes, cada uma com botão de copiar. A página foi publicada como artefato privado do criador.
     - **O que o criador manda de volta:** as imagens e os áudios, aqui na conversa. O Claude salva em `episodio-04/originais/` e na pasta da parte, confere e monta.
     - **O criador recusou esse caminho no mesmo dia:** gerar, salvar e mandar tudo pelo celular dá trabalho demais e ocupa espaço. O plano voltou a ser o Codex na quinta, 05/11/2026, depois da 0h48, na mesma conversa “Verificar pendências”.
+  - **As três vozes chegaram em 03/11/2026** por uma conversa nova do agente, ligada ao OpusClip e ao GitHub:
+    - ela recuperou a narração já paga, com 0 crédito novo, e gerou o Ademir e o Renato, com 1 crédito cada;
+    - ela não consegue baixar arquivos, então gravou os links temporários na `codex/crimecarton`, e o Claude baixou os três WAV: 86,2 s, 25,2 s e 10,2 s;
+    - **conferência sem dica:** todas as palavras certas. A hora “duas e cinquenta e nove” sai “12h59” na transcrição, mas, pontuada pelo Whisper, a gravação combina com “duas”, não com “doze”. O TTS falou “pro” e “pra” no lugar de “para o” e “para a”;
+    - as três estão alinhadas, e a voz do Ademir já passou por `voz_ademir.py`. Com as vozes, a parte dá 2 min 10,6 s.
+  - **Teste de arquivo binário:** a mesma conversa salvou um PNG no GitHub sem estragar, então ela pode entregar os 22 desenhos, com push a cada 5.
   - **Falta conferir o TikTok e o Shorts:**
     - se o TROCAR ganhar na soma, o resumo diz “Vocês decidiram: trocar.”;
     - se o DEIXAR ganhar, volta “A casa da mãe”.

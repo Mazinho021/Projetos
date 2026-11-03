@@ -1,0 +1,33 @@
+{
+  "jobId": "mcp_media_cdf514c9e0dca059dea5a6cd403e92a36534f4a163a7f29ffd4ff03003d2e9ff",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "chargedCredits": 1,
+  "outputs": [
+    {
+      "file": "narracao-ep04-ademir.wav",
+      "mimeType": "audio/wav",
+      "durationSeconds": 25.24,
+      "bytes": 1217636,
+      "sha256": "b41154747c93db19a65e84e9e2848541766c11cd3e9469f050133fc2dd537801",
+      "sampleRate": 24000,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "persistedOnGitHub": true
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep04-ademir-charon-v1-20261102",
+    "voice": "Charon",
+    "sourceFile": "crimecarton-analise/episodio-04/pedido-narracao-ademir-ep04.json"
+  },
+  "delivery": "Gerado no OpusClip por uma conversa nova do agente em 03/11/2026, que gravou só o link temporário; o Claude Code baixou o WAV e o salvou.",
+  "validation": {
+    "model": "faster-whisper-medium",
+    "language": "pt",
+    "initialPrompt": null,
+    "transcription": "Pode me chamar de Ademir. O São Jorge é meu. E aquela mesa da foto também. Combinado é combinado. Ele sai, você fica. Aceita um café? Acabei de passar. Eu não quero você preso. O seu parceiro sumiu com os 10 milhões. Com a minha parte também. E você vai me levar até ele.",
+    "note": "Todas as palavras do texto; “dez milhões” sai em algarismos."
+  }
+}

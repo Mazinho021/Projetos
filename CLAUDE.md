@@ -100,4 +100,5 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 - **Pedir commit e push aos poucos**, por exemplo a cada 5 cenas prontas. Em 02/11/2026, a conversa da Parte 4 travou no limite diário antes de fazer push, e nada foi entregue.
 - **As instruções para o Codex ficam no [`AGENTS.md`](AGENTS.md)**, que ele lê sozinho. Elas mandam ler este arquivo e o `NOTAS.md` antes de cada tarefa.
 - **Não propor que o criador gere imagens ou vozes à mão no celular.** Em 03/11/2026, ele achou complicado demais gerar, salvar e mandar tudo, e disse que ocupa muito espaço. Para esse material, o caminho é o Codex, que salva direto no GitHub, ou uma chave de API guardada no ambiente, se o criador quiser.
+- **Se o agente não conseguir baixar os áudios do OpusClip,** ele grava os links temporários em `links-temporarios.json`, na pasta da parte, na `codex/crimecarton`. O Claude baixa, confere e salva os WAV antes de os links expirarem, e apaga o arquivo de links. Foi assim com as vozes da Parte 4, em 03/11/2026.
 - Depois, `git fetch origin codex/crimecarton` e `git merge --ff-only origin/codex/crimecarton`.
