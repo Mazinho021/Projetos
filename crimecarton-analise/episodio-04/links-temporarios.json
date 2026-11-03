@@ -11,6 +11,26 @@
       "creditosJaCobrados": 2,
       "creditosAdicionaisNestaRecuperacao": 0,
       "duracaoSegundos": 86.2
+    },
+    "ademir": {
+      "nome": "narracao-ep04-ademir.wav",
+      "jobId": "mcp_media_cdf514c9e0dca059dea5a6cd403e92a36534f4a163a7f29ffd4ff03003d2e9ff",
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_cdf514c9e0dca059dea5a6cd403e92a36534f4a163a7f29ffd4ff03003d2e9ff/0.wav?hdnts=FullPath~Expires=1793831221~Signature=78eaB3zJVfFlQZIhucuDvF_pnRx6IfJ1VYOwt8iQu2n_QDx5XsKdJvoDg2u-D60aROMVFCz5C63JuvnaKNyzAA",
+      "expiraEm": "2026-11-04T22:27:01.227Z",
+      "status": "succeeded",
+      "creditosCobrados": 1,
+      "duracaoSegundos": 25.24,
+      "voice": "Charon"
+    },
+    "renato": {
+      "nome": "narracao-ep04-renato.wav",
+      "jobId": "mcp_media_018de364a17318f77357dfa00e541717020883c9fddf47a857b7035ae42773c7",
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_018de364a17318f77357dfa00e541717020883c9fddf47a857b7035ae42773c7/0.wav?hdnts=FullPath~Expires=1793831219~Signature=N09NoN8umTf_7nRHxw29Us4J31LEgo0-J6oqAsDMYpynGFpoxKPxQlCzbvWcJXyHm7VmD7h1dy-0QlrN6BqNAg",
+      "expiraEm": "2026-11-04T22:26:59.603Z",
+      "status": "succeeded",
+      "creditosCobrados": 1,
+      "duracaoSegundos": 10.24,
+      "voice": "Algenib"
     }
   }
 }
