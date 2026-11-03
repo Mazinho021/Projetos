@@ -200,14 +200,14 @@ def A(p, k=0):
 PAUSES = {
     N('o rosto.', 1): .8,                    # the cold open lands
     N('no perfil.', 1): .15,
-    N(VOTO, len(VOTO.split()) - 1): 3.5,     # the newspaper, to read the comments
+    N(VOTO, len(VOTO.split()) - 1): 4.0,     # the newspaper, to read the comments
     N('pode cancelar.', 1): .6,              # the panel turns into the photo's clock
     N('numa cadeira.', 1): .3,
-    R('Por que você veio?', 3): .4,
+    R('Por que você veio?', 3): .6,
     N('anel da foto.', 2): .8,
     A('mesa da foto também.', 3): .3,
     N('sem pressa.', 1): .3,
-    A('você fica.', 1): .7,                  # a beat, and then the coffee
+    A('você fica.', 1): .9,                  # a beat, and then the coffee
     A('Acabei de passar.', 2): .6,           # nobody answers
     N('O Renato aceita.', 2): .25,
     R('se tiver.', 1): .9,
@@ -217,8 +217,8 @@ PAUSES = {
     A('até ele.', 1): .6,
     N('continua sendo.', 1): 1.0,
     N('a foto sair.', 2): 1.2,               # the clock ticks
-    N('ficou com tudo.', 2): 3.0,            # option 1's pros and cons, time to read them
-    N('Com você dentro.', 2): 3.0,           # option 2's
+    N('ficou com tudo.', 2): 3.8,            # option 1's pros and cons, time to read them
+    N('Com você dentro.', 2): 3.8,           # option 2's
 }
 SWITCHES = {}
 

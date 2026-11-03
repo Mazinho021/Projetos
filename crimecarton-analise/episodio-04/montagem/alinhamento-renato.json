@@ -42,62 +42,63 @@
   {
    "i": 0,
    "text": "Você",
-   "start": 0.916,
-   "end": 1.393
+   "start": 1.88,
+   "end": 2.08
   },
   {
    "i": 1,
    "text": "veio?",
-   "start": 1.886,
-   "end": 3.309
+   "start": 2.1,
+   "end": 2.42
   },
   {
    "i": 2,
    "text": "Por",
-   "start": 3.708,
-   "end": 4.02
+   "start": 3.8,
+   "end": 3.92
   },
   {
    "i": 3,
    "text": "que",
-   "start": 4.02,
-   "end": 4.12
+   "start": 3.94,
+   "end": 4.06
   },
   {
    "i": 4,
    "text": "você",
-   "start": 4.12,
-   "end": 4.28
+   "start": 4.06,
+   "end": 4.24
   },
   {
    "i": 5,
    "text": "veio?",
-   "start": 4.28,
-   "end": 6.213
+   "start": 4.26,
+   "end": 4.54
   },
   {
    "i": 6,
    "text": "Com",
-   "start": 6.81,
-   "end": 7.687
+   "start": 8.42,
+   "end": 8.58
   },
   {
    "i": 7,
    "text": "açúcar,",
-   "start": 8.191,
-   "end": 9.06
+   "start": 8.58,
+   "end": 9.02
   },
   {
    "i": 8,
    "text": "se",
-   "start": 9.24,
-   "end": 9.28
+   "start": 9.1,
+   "end": 9.24
   },
   {
    "i": 9,
    "text": "tiver.",
-   "start": 9.28,
-   "end": 9.614
+   "start": 9.26,
+   "end": 9.54
   }
- ]
+ ],
+ "correcao_manual": "Tempos acertados à mão pelo volume da gravação, em 03/11/2026. O alinhador punha o primeiro “Você” e o “Com” quase 1 s antes da voz, e o segundo “veio?” terminando 1,7 s depois dela: o Renato fala baixo, com pausas longas. Entre as duas falas há só respiração."
 }
