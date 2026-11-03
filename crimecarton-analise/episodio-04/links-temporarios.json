@@ -1,0 +1,16 @@
+{
+  "aviso": "Links assinados pelo OpusClip, temporários. Claude deve baixar, conferir e salvar os WAV antes de expirarem. Arquivo pode ser público conforme visibilidade do repositório.",
+  "episodio": 4,
+  "arquivos": {
+    "narrador": {
+      "nome": "narracao-ep04-narrador.wav",
+      "jobId": "mcp_media_e0198473661ddb920d310334cb03b0070c63717d28d84f4ecfd2562a07a33137",
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_e0198473661ddb920d310334cb03b0070c63717d28d84f4ecfd2562a07a33137/0.wav?hdnts=FullPath~Expires=1793831155~Signature=tDv-9RwOSsPsUu8QQZ7qH-RMtOMDjrcvkJmmu_O_SrsvgIIbR4dbSDyOM1AG703BL3OeUOQ4Cn24hjL_mMvqBQ",
+      "expiraEm": "2026-11-04T22:25:55.015Z",
+      "status": "succeeded",
+      "creditosJaCobrados": 2,
+      "creditosAdicionaisNestaRecuperacao": 0,
+      "duracaoSegundos": 86.2
+    }
+  }
+}
