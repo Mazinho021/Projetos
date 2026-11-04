@@ -1,0 +1,202 @@
+{
+ "timing_status": "aligned_to_voice",
+ "style": "guia-de-estilo-referencia.md",
+ "audio": "montagem/vozes/aviso.wav",
+ "tail": 1.4,
+ "scenes": [
+  {
+   "start": 0,
+   "end": 3.5,
+   "kind": "art",
+   "asset": "../episodio-03/cena-35-calma.png",
+   "zoom": 0.06
+  },
+  {
+   "start": 3.5,
+   "end": 11.0,
+   "kind": "black"
+  }
+ ],
+ "graphics": [
+  {
+   "type": "tag",
+   "start": 0.15,
+   "end": 11.0,
+   "text": "PARTE 4",
+   "y": 297,
+   "x": 112,
+   "size": 32
+  },
+  {
+   "type": "vignette",
+   "start": 0,
+   "end": 3.5,
+   "color": "alert",
+   "strength": 0.55
+  },
+  {
+   "type": "phrase",
+   "start": 0,
+   "end": 3.5,
+   "y": 900,
+   "size": 70,
+   "x": 330,
+   "lines": [
+    {
+     "style": "label",
+     "text": "QUEM SEQUESTROU O SEU AMIGO",
+     "at": 0
+    },
+    {
+     "text": "VAI MOSTRAR",
+     "at": 1.6,
+     "color": "white"
+    },
+    {
+     "text": "O ROSTO.",
+     "at": 2.3,
+     "color": "yellow",
+     "shake": true
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 3.6,
+   "end": 11.0,
+   "y": 560,
+   "size": 64,
+   "x": 330,
+   "lines": [
+    {
+     "style": "label",
+     "text": "POR PROBLEMAS TÉCNICOS,",
+     "at": 3.8
+    },
+    {
+     "text": "A HISTÓRIA",
+     "at": 4.3,
+     "color": "white"
+    },
+    {
+     "text": "VOLTA AMANHÃ.",
+     "at": 4.8,
+     "color": "yellow",
+     "size": 60,
+     "shake": true
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "start": 5.9,
+   "end": 11.0,
+   "y": 800,
+   "x": 330,
+   "title": "O DONO DO ANEL",
+   "sub": "parte 4 · as outras estão no perfil"
+  },
+  {
+   "type": "pointer",
+   "start": 6.7,
+   "end": 11.0,
+   "y": 960,
+   "x": 330,
+   "text": "@golpecartoon"
+  }
+ ],
+ "sfx": [
+  {
+   "sound": "impacto.wav",
+   "at": 2.26,
+   "gain": -5
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 3.14,
+   "gain": -2
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 4.76,
+   "gain": -6
+  },
+  {
+   "sound": "pop.wav",
+   "at": 5.9,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 6.7,
+   "gain": -10
+  },
+  {
+   "sound": "tique.wav",
+   "at": 3.8,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 4.3,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 4.8,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 5.3,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 5.8,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 6.3,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 6.8,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 7.3,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 7.8,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 8.3,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 8.8,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.3,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.8,
+   "gain": -16
+  }
+ ],
+ "captions": [],
+ "effects": []
+}
