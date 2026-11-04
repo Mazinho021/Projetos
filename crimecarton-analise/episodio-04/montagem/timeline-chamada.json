@@ -1,0 +1,436 @@
+{
+ "timing_status": "aligned_to_voice",
+ "style": "guia-de-estilo-referencia.md",
+ "audio": "montagem/vozes/chamada.wav",
+ "tail": 1.4,
+ "scenes": [
+  {
+   "start": 0,
+   "end": 3.34,
+   "kind": "art",
+   "asset": "../episodio-03/cena-35-calma.png",
+   "zoom": 0.06
+  },
+  {
+   "start": 3.34,
+   "end": 6.93,
+   "kind": "art",
+   "asset": "montagem/chamada/perfil-vertical.png",
+   "zoom": 0.03,
+   "direction": "out"
+  },
+  {
+   "start": 6.93,
+   "end": 9.06,
+   "kind": "art",
+   "asset": "montagem/chamada/lembranca-parte3.png",
+   "zoom": 0.02
+  },
+  {
+   "start": 9.06,
+   "end": 16.77,
+   "kind": "art",
+   "asset": "../episodio-03/cena-13-decisao.png",
+   "zoom": 0.03,
+   "crop": [
+    0.05,
+    0.0,
+    0.95,
+    0.9
+   ],
+   "direction": "out",
+   "brightness": 0.35
+  },
+  {
+   "start": 16.77,
+   "end": 22.37,
+   "kind": "black"
+  }
+ ],
+ "graphics": [
+  {
+   "type": "tag",
+   "start": 0.15,
+   "end": 22.37,
+   "text": "PARTE 4",
+   "y": 297,
+   "x": 112,
+   "size": 32
+  },
+  {
+   "type": "vignette",
+   "start": 0,
+   "end": 3.34,
+   "color": "alert",
+   "strength": 0.55
+  },
+  {
+   "type": "phrase",
+   "start": 0,
+   "end": 3.34,
+   "y": 900,
+   "size": 64,
+   "x": 330,
+   "lines": [
+    {
+     "style": "label",
+     "text": "QUEM SEQUESTROU O SEU AMIGO",
+     "at": 0
+    },
+    {
+     "text": "VAI MOSTRAR",
+     "at": 1.6,
+     "color": "white"
+    },
+    {
+     "text": "O ROSTO.",
+     "at": 2.12,
+     "color": "yellow",
+     "shake": true
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 3.3899999999999997,
+   "end": 6.93,
+   "y": 790,
+   "size": 64,
+   "x": 330,
+   "lines": [
+    {
+     "text": "CHEGOU AGORA?",
+     "at": 3.46,
+     "color": "yellow",
+     "size": 58
+    },
+    {
+     "text": "AS PARTES 1, 2 E 3",
+     "at": 4.75,
+     "color": "white",
+     "size": 47
+    },
+    {
+     "text": "TÃO NO PERFIL",
+     "at": 5.64,
+     "color": "white",
+     "size": 47
+    }
+   ]
+  },
+  {
+   "type": "pointer",
+   "start": 5.64,
+   "end": 6.93,
+   "y": 940,
+   "x": 330,
+   "text": "@golpecartoon"
+  },
+  {
+   "type": "polaroid",
+   "start": 6.9799999999999995,
+   "end": 9.06,
+   "image": "episodio-03/cena-04-mao-anel.png",
+   "focus": [
+    0.0,
+    0.18,
+    1.0,
+    0.62
+   ],
+   "caption": "PARTE 3",
+   "sub": "o muro",
+   "x": 330,
+   "y": 560,
+   "size": 300,
+   "angle": -5
+  },
+  {
+   "type": "phrase",
+   "start": 6.9799999999999995,
+   "end": 9.06,
+   "y": 900,
+   "size": 60,
+   "x": 330,
+   "lines": [
+    {
+     "text": "O RENATO FOI PEGO",
+     "at": 7.05,
+     "color": "white",
+     "size": 47
+    },
+    {
+     "text": "NO SEU LUGAR.",
+     "at": 7.88,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "bars",
+   "start": 9.110000000000001,
+   "end": 12.57,
+   "y": 500,
+   "x": 330,
+   "width": 500,
+   "title": "PARTE 3 · VOCÊS VOTARAM",
+   "title_at": 9.18,
+   "items": [
+    {
+     "label": "TROCAR",
+     "pct": 50,
+     "at": 9.28,
+     "winner": false
+    },
+    {
+     "label": "DEIXAR",
+     "pct": 50,
+     "at": 9.43,
+     "winner": false
+    }
+   ]
+  },
+  {
+   "type": "stamp",
+   "start": 9.42,
+   "end": 10.57,
+   "text": "EMPATE",
+   "y": 860,
+   "x": 330,
+   "angle": -7,
+   "color": "white"
+  },
+  {
+   "type": "phrase",
+   "start": 10.55,
+   "end": 12.57,
+   "y": 770,
+   "size": 40,
+   "x": 330,
+   "lines": [
+    {
+     "style": "label",
+     "text": "NO DESEMPATE",
+     "at": 10.57
+    }
+   ]
+  },
+  {
+   "type": "stamp",
+   "start": 11.99,
+   "end": 12.57,
+   "text": "TROCAR",
+   "y": 860,
+   "x": 330,
+   "angle": -7,
+   "color": "yellow",
+   "filled": true
+  },
+  {
+   "type": "jornal",
+   "start": 12.57,
+   "end": 16.77,
+   "y": 340,
+   "x": 330,
+   "width": 500,
+   "title": "A VOZ DO BAIRRO",
+   "sub": "o que vocês comentaram na parte 3",
+   "items": [
+    {
+     "text": "Trocar.",
+     "at": 12.87
+    },
+    {
+     "text": "Deixar.",
+     "at": 13.37
+    },
+    {
+     "text": "(…) só porque ajudou depois de arrependido faz diferença? Tem que deixar se lascar e ir proteger a família do cara.",
+     "at": 13.87
+    }
+   ]
+  },
+  {
+   "type": "phrase",
+   "start": 16.87,
+   "end": 22.37,
+   "y": 560,
+   "size": 64,
+   "x": 330,
+   "lines": [
+    {
+     "style": "label",
+     "text": "A PARTE 4",
+     "at": 17.07
+    },
+    {
+     "text": "SAI AMANHÃ.",
+     "at": 17.57,
+     "color": "yellow",
+     "size": 64,
+     "shake": true
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "start": 18.57,
+   "end": 22.37,
+   "y": 800,
+   "x": 330,
+   "title": "O DONO DO ANEL",
+   "sub": "as partes 1, 2 e 3 estão no perfil"
+  },
+  {
+   "type": "pointer",
+   "start": 19.37,
+   "end": 22.37,
+   "y": 960,
+   "x": 330,
+   "text": "@golpecartoon"
+  }
+ ],
+ "sfx": [
+  {
+   "sound": "impacto.wav",
+   "at": 2.08,
+   "gain": -5
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 2.98,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 6.57,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 8.7,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 16.41,
+   "gain": -2
+  },
+  {
+   "sound": "pop.wav",
+   "at": 5.64,
+   "gain": -10
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.28,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.38,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.48,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.58,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.68,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.78,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.88,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.98,
+   "gain": -20
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 11.97,
+   "gain": -5
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 17.53,
+   "gain": -6
+  },
+  {
+   "sound": "pop.wav",
+   "at": 18.57,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 19.37,
+   "gain": -10
+  },
+  {
+   "sound": "tique.wav",
+   "at": 17.07,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 17.57,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 18.07,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 18.57,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 19.07,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 19.57,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 20.07,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 20.57,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 21.07,
+   "gain": -16
+  },
+  {
+   "sound": "tique.wav",
+   "at": 21.57,
+   "gain": -16
+  }
+ ],
+ "captions": [],
+ "effects": []
+}
