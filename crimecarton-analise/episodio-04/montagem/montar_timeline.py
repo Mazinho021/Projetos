@@ -347,6 +347,15 @@ def desenho(nome):
     raise FileNotFoundError(f'{nome}: o desenho do Codex ainda não chegou (use --estimar para um rascunho)')
 
 
+def real(nome):
+    return (EPISODE / nome).exists()
+
+
+# The blank sign on the gate in Codex's scene 4, with the name from Part 2's calendar, as in Part 3.
+PLACA04 = [{'box': [0.165, 0.485, 0.38, 0.548], 'text': 'FERRO-VELHO\nSÃO JORGE', 'color': [74, 36, 22],
+            'opacity': .86, 'weight': 'ExtraBold', 'pad': 6, 'blur': .6}]
+
+
 def arte(nome):
     """An image compor_cenas.py made: a draft's, from the stand-ins, in a draft."""
     if ESTIMATE and (HERE / 'rascunho' / 'arte' / nome).exists():
@@ -393,9 +402,9 @@ def ring(start, end, x, y, r=56, color='red'):
     return {'type': 'ring', 'start': round(start, 2), 'end': round(end, 2), 'x': x, 'y': y, 'r': r, 'color': color}
 
 
-def nametag(name, sub, start, end, x, color='yellow'):
+def nametag(name, sub, start, end, x, color='yellow', y=CARD_Y):
     return {'type': 'nametag', 'start': round(start, 2), 'end': round(end, 2), 'name': name, 'sub': sub,
-            'x': x, 'y': CARD_Y, 'color': color}
+            'x': x, 'y': y, 'color': color}
 
 
 def pop(text, start, end, x, y, size=56, color='yellow', angle=-8, shake=False):
@@ -432,7 +441,8 @@ def build(ed):
         ('onibus', story, art(desenho('cena-02-onibus-decidido.png'))),
         ('agendar', cut(N('No ônibus, você')), art(arte('tela-agendar.png'), .04)),
         # The junkyard.
-        ('portao', cut(N('Duas e cinquenta')), art(desenho('cena-04-portao-aberto.png'), .04)),
+        ('portao', cut(N('Duas e cinquenta')), art(desenho('cena-04-portao-aberto.png'), .04,
+                                                   **({'paint': PLACA04} if real('cena-04-portao-aberto.png') else {}))),
         ('chegada', cut(N('Lá dentro, uma')), art(desenho('cena-05-chegada.png'), .04, direction='out')),
         ('renato', cut(R('Você veio?')), art(desenho('cena-06-renato-amarrado.png'))),
         ('ademir', cut(N('Da sombra sai')), art(desenho('cena-07-ademir-sai-da-sombra.png'), .04, direction='out')),
@@ -518,54 +528,60 @@ def build(ed):
         # ---- the bus
         phrase(story + .05, AT['agendar'], 900, [line('VOCÊ NÃO VAI', s(N('Mas você não'))),
                                                  line('DE MÃOS VAZIAS.', s(N('de mãos vazias.')), 'yellow')], 62, x),
-        callout('PARA O JORNAL', s(N('para o jornal')), clock, 470 if v else 520, 340 if v else 330, (390, 425), 'white'),
-        callout('A FOTO DA DIVISÃO', s(N('a foto da divisão.')), clock, 190, 960, (381, 560)),
-        callout('SÓ VOCÊ CANCELA', clock, AT['portao'], right, 980, (360, 823), 'alert'),
+        callout('PARA O JORNAL', s(N('para o jornal')), clock, 470 if v else 520, 340 if v else 330, (348, 416), 'white'),
+        callout('A FOTO DA DIVISÃO', s(N('a foto da divisão.')), clock, 190, 960, (381, 588)),
+        callout('SÓ VOCÊ CANCELA', clock, AT['portao'], 470 if v else 520, 340 if v else 330, (432, 472), 'alert'),
         # ---- the junkyard
         phrase(AT['portao'] + .05, AT['chegada'], 900, [line('02:59', s(N('Duas e cinquenta')), 'yellow', size=90),
                                                         line('O PORTÃO ESTÁ ABERTO.', s(N('O portão do')), size=44)], 70, x),
         phrase(AT['chegada'] + .05, AT['renato'], 900, [line('UMA LÂMPADA SÓ.', s(N('uma lâmpada só.')), size=48),
                                                         line('E O RENATO,', s(N('E o Renato,')), 'yellow'),
                                                         line('AMARRADO.', s(N('amarrado numa cadeira.')), 'red')], 62, x),
-        ring(s(N('E o Renato,')), AT['renato'], 380, 560, 56),
-        balloon('Você veio? Por que você veio?', s(R('Você veio?')), AT['ademir'], 330, (360, HEAD - 20), L=L),
+        ring(s(N('E o Renato,')), AT['renato'], 440, 690, 100),
+        balloon('Você veio? Por que você veio?', s(R('Você veio?')), AT['ademir'], 330, (345, 465), L=L),
         nametag('RENATO', 'seu amigo de infância · pego no seu lugar', s(R('Você veio?')) + .4, AT['ademir'], x),
         # ---- the man with the ring
         phrase(AT['ademir'] + .05, s(N('cabelo branco,')) - .05, 900, [line('DA SOMBRA,', s(N('Da sombra sai'))),
                                                                        line('UM HOMEM.', s(N('um homem de')), 'yellow')],
                70, x),
-        callout('CABELO BRANCO', s(N('cabelo branco,')), AT['anel'], 200, 340 if v else 330, (360, HEAD - 10)),
-        callout('JAQUETA DE COURO', s(N('jaqueta de couro.')), AT['anel'], 200, 900, (370, 650), 'white'),
-        ring(s(N('o anel da')), AT['mesa'], 400, 640, 50),
-        callout('O ANEL DA FOTO', s(N('anel da foto.')), AT['mesa'], 200, 900, (395, 650)),
+        callout('CABELO BRANCO', s(N('cabelo branco,')), AT['anel'], 200, 340 if v else 330, (360, 385)),
+        callout('JAQUETA DE COURO', s(N('jaqueta de couro.')), AT['anel'], 200, 900, (330, 600), 'white'),
+        ring(s(N('o anel da')), AT['mesa'], 356, 672, 55),
+        callout('O ANEL DA FOTO', s(N('anel da foto.')), AT['mesa'], 200, 900, (356, 690)),
         balloon('Pode me chamar de Ademir. O São Jorge é meu.', s(A('Pode me chamar')), s(A('E aquela mesa')),
-                330, (290, HEAD - 20), L=L),
-        balloon('E aquela mesa da foto também.', s(A('E aquela mesa')), AT['corda'], 330, (290, HEAD - 20), L=L),
+                300, (190, 470), width=400, L=L),
+        balloon('E aquela mesa da foto também.', s(A('E aquela mesa')), AT['corda'], 300, (190, 470), width=400, L=L),
         nametag('ADEMIR', 'dono do Ferro-Velho São Jorge', s(A('de Ademir.', 1)) + .2, AT['corda'], x, 'alert'),
-        callout('A MESA DA FOTO', s(A('aquela mesa da')), AT['corda'], 470, 990, (470, 740)),
-        pop('ZÁS', s(N('com um canivete,')), AT['fica'], 480, 560, 64, 'white', 8),
-        phrase(s(N('sem pressa.')) - .05, AT['fica'], 900, [line('SEM PRESSA.', s(N('sem pressa.')), 'yellow')], 72, x),
-        balloon('Combinado é combinado. Ele sai, você fica.', s(A('Combinado é combinado.')), AT['cafe'], 360,
-                (360, HEAD - 20), L=L),
-        tag('ELE SAI', s(A('Ele sai,')), AT['cafe'], 700, 'green', 190, 24),
-        tag('VOCÊ FICA', s(A('você fica.')), AT['cafe'], 700, 'alert', right, 24),
+        callout('A MESA DA FOTO', s(A('aquela mesa da')), AT['corda'], 470, 990, (545, 760)),
+        pop('ZÁS', s(N('com um canivete,')), AT['fica'], 480, 520, 64, 'white', 8),
+        # The tied hands fill the lower half of scene 10: the phrase goes above them.
+        phrase(s(N('sem pressa.')) - .05, AT['fica'], 420 if v else 430, [line('SEM PRESSA.', s(N('sem pressa.')),
+                                                                              'yellow')], 72, x),
+        balloon('Combinado é combinado. Ele sai, você fica.', s(A('Combinado é combinado.')), AT['cafe'], 300,
+                (296, 470), L=L),
+        tag('ELE SAI', s(A('Ele sai,')), AT['cafe'], 690, 'green', 164, 24),
+        tag('VOCÊ FICA', s(A('você fica.')), AT['cafe'], 690, 'alert', 472, 24),
         # ---- the coffee
-        balloon('Aceita um café? Acabei de passar.', s(A('Aceita um café?')), AT['aceita'], 330, (330, HEAD - 20), L=L),
-        tag('NÃO', s(N('não aceita.')), AT['isqueiro'], 660, 'alert', 210, 26),
-        tag('SIM', s(N('O Renato aceita.', 2)), AT['isqueiro'], 660, 'green', 470, 26),
-        balloon('Com açúcar, se tiver.', s(R('Com açúcar,')), AT['isqueiro'], 400, (465, HEAD - 20), width=300, L=L),
-        pop('SLURP', s(R('se tiver.')) + .3, AT['isqueiro'], 500, 600, 44, 'white', 6),
+        # Ademir's head is high in scene 12: the balloon goes beside it, over the dark door.
+        balloon('Aceita um café? Acabei de passar.', s(A('Aceita um café?')), AT['aceita'], 170, (330, 470), y=470,
+                width=300, L=L),
+        tag('NÃO', s(N('não aceita.')), AT['isqueiro'], 640, 'alert', 200, 26),
+        tag('SIM', s(N('O Renato aceita.', 2)), AT['isqueiro'], 640, 'green', 430, 26),
+        balloon('Com açúcar, se tiver.', s(R('Com açúcar,')), AT['isqueiro'], 430 if v else 440, (440, 400),
+                y=360 if v else 330, width=300, L=L),
+        pop('SLURP', s(R('se tiver.')) + .3, AT['isqueiro'], 500, 560, 44, 'white', 6),
         # ---- the driver
-        ring(s(N('um homem acende')), AT['motorista'], 360, 560, 70),
-        pop('CLIC', s(N('acende um cigarro.')), AT['motorista'], 380, 470, 50, 'yellow', -6),
+        ring(s(N('um homem acende')), AT['motorista'], 370, 650, 90),
+        pop('CLIC', s(N('acende um cigarro.')), AT['motorista'], 470, 540, 50, 'yellow', -6),
         phrase(s(N('um homem acende')) - .05, AT['motorista'], 900, [line('UM HOMEM', s(N('um homem acende'))),
                                                                      line('ACENDE UM CIGARRO.', s(N('acende um cigarro.')),
                                                                           'yellow', size=48)], 60, x),
         {'type': 'vignette', 'start': AT['motorista'], 'end': AT['inclina'], 'color': 'alert', 'strength': .6},
-        phrase(AT['motorista'] + .05, s(N('Foi ele que')) - .05, 900, [line('VOCÊ CONHECE', s(N('Você conhece aquele'))),
+        # The driver's face fills scene 15 down to the chin: the phrase and his tag go below it.
+        phrase(AT['motorista'] + .05, s(N('Foi ele que')) - .05, 990, [line('VOCÊ CONHECE', s(N('Você conhece aquele'))),
                                                                        line('ESSE ROSTO.', s(N('aquele rosto.')), 'yellow')],
                70, x),
-        nametag('O MOTORISTA', 'dirigiu o carro do assalto', s(N('Foi ele que')), AT['inclina'], x, 'alert'),
+        nametag('O MOTORISTA', 'dirigiu o carro do assalto', s(N('Foi ele que')), AT['inclina'], x, 'alert', y=990),
         # ---- the turn
         phrase(AT['inclina'] + .05, s(A('Eu não quero')) - .05, 900, [
             label('A ÚLTIMA COISA QUE', s(N('a última coisa'))),

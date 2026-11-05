@@ -126,22 +126,30 @@ def relogio(d, cx, cy, r, cor):
 
 
 def agendar(w=600, h=1290):
-    """The chat with the newsroom: Zinho's message with the photo, not sent yet, for 03:15."""
+    """The chat with the newsroom: Zinho's message with the photo, not sent yet, for 03:15. The
+    scheduled send is pinned at the top, under the contact, where the thumbs do not cover it."""
     im = Image.new('RGBA', (w, h), FUNDO + (255,))
     d = ImageDraw.Draw(im)
     barra_de_status(d, w, '02:41')
     cabecalho(d, w)
+    # The scheduled send, with the button that stops it.
+    y = 192
+    d.rounded_rectangle((16, y, w - 16, y + 132), 22, fill=BALAO)
+    relogio(d, 54, y + 46, 17, TEXTO)
+    d.text((86, y + 46), 'Envio agendado', font=font(28, 'Bold'), fill=TEXTO, anchor='lm')
+    d.text((86, y + 90), 'hoje, às 03:15', font=font(24, 'Regular'), fill=CINZA, anchor='lm')
+    d.rounded_rectangle((w - 210, y + 40, w - 36, y + 96), 28, outline=(232, 88, 76), width=3)
+    d.text((w - 123, y + 68), 'CANCELAR', font=font(24, 'Bold'), fill=(232, 88, 76), anchor='mm')
     # His own message, on the right, with the photo and the scheduled time.
     foto = Image.open(SERIE / 'episodio-02' / 'cena-04-foto-divisao.png').convert('RGB')
     l, t, r, b = MINIATURA_DIVISAO
     foto = foto.crop((round(l*foto.width), round(t*foto.height), round(r*foto.width), round(b*foto.height)))
     pw, ph = 404, 404
     foto = foto.resize((pw, round(pw*foto.height/foto.width)), Image.Resampling.LANCZOS).crop((0, 0, pw, ph))
-    x0, y0 = w - pw - 46, 236
+    x0, y0 = w - pw - 46, 356
     linhas = textwrap.wrap(MENSAGEM, 24)
     alto = ph + 24 + 44*len(linhas) + 64
-    VERDE_ESCURO = (0, 92, 75)
-    d.rounded_rectangle((x0 - 8, y0 - 8, w - 22, y0 + alto), 26, fill=VERDE_ESCURO)
+    d.rounded_rectangle((x0 - 8, y0 - 8, w - 22, y0 + alto), 26, fill=(0, 92, 75))
     mask = Image.new('L', (pw, ph), 0)
     ImageDraw.Draw(mask).rounded_rectangle((0, 0, pw - 1, ph - 1), 20, fill=255)
     im.paste(foto, (x0, y0), mask)
@@ -149,14 +157,6 @@ def agendar(w=600, h=1290):
         d.text((x0 + 4, y0 + ph + 22 + 44*k), linha, font=font(30, 'Regular'), fill=TEXTO, anchor='la')
     relogio(d, w - 158, y0 + alto - 30, 11, (190, 214, 206))
     d.text((w - 40, y0 + alto - 30), 'às 03:15', font=font(22, 'Medium'), fill=(190, 214, 206), anchor='rm')
-    # The scheduled send, with the button that stops it.
-    y = h - 330
-    d.rounded_rectangle((22, y, w - 22, y + 190), 26, fill=BALAO)
-    relogio(d, 70, y + 52, 18, TEXTO)
-    d.text((104, y + 52), 'Envio agendado', font=font(30, 'Bold'), fill=TEXTO, anchor='lm')
-    d.text((104, y + 92), 'hoje, às 03:15', font=font(26, 'Regular'), fill=CINZA, anchor='lm')
-    d.rounded_rectangle((44, y + 122, w - 44, y + 172), 25, outline=(232, 88, 76), width=3)
-    d.text((w/2, y + 147), 'CANCELAR ENVIO', font=font(26, 'Bold'), fill=(232, 88, 76), anchor='mm')
     d.rounded_rectangle((16, h - 104, w - 104, h - 30), 37, fill=BARRA)
     d.text((54, h - 67), 'Mensagem', font=font(28, 'Regular'), fill=CINZA, anchor='lm')
     d.ellipse((w - 90, h - 104, w - 16, h - 30), fill=VERDE)
