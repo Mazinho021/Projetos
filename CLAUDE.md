@@ -26,6 +26,9 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
   - Por isso, os desenhos são ampliados para 1440 × 2560 com `episodio-03/montagem/ampliar_cenas.py` (Real-ESRGAN anime). Os originais ficam em `originais/`.
 - **Na montagem:** os recortes (`crop`) e os zooms também seguem a regra. Um recorte da metade de baixo de uma imagem sobe o conteúdo dela, então é preciso conferir.
 - **Antes de entregar:** tirar um quadro de cada plano **nas duas versões** e conferir que nenhum rosto, mão, celular, anel ou frase fica atrás do painel, da etiqueta ou da coluna de botões (à direita de x = 590 na vertical).
+- **Telas de celular com dedos por cima** (erro que o criador apontou em 06/11/2026): na Parte 4, os dedões da cena 3 saíram pixelados, porque a máscara antiga comia o contorno preto dos dedos e cortava a borda em degraus.
+  - Encaixar a tela nova com `encaixar_limpo` (`episodio-04/montagem/compor_cenas.py`), que mantém o contorno e a borda suave de quem está na frente;
+  - antes de entregar, conferir os dedos de perto, em tamanho grande.
 - **Frases na tela:** ficam entre 65% e 80% da altura (y ≈ 830–1020 de 1280), longe dos rostos.
 - **Abertura:** a etiqueta “PARTE N” fica no canto esquerdo (x = 112). No centro, ela cobria a cabeça do Zinho na arte da mochila.
 - **Personagem na borda direita do desenho:** na vertical, ele fica atrás dos botões do TikTok. Nesse caso, mostrar o desenho num cartão menor, deslocado para a esquerda, como a lembrança do almoço na Parte 3 (`compor_cenas.py`).

@@ -50,7 +50,8 @@ python $A/montagem/montar_timeline.py --estimar /tmp/rascunho-ep04
   - **a lembrança da Parte 3:** a cena da mão com o anel no muro, desfocada, atrás da polaroide dela;
   - **as duas telas de celular:**
     - na cena 3, a conversa com o jornal, com a foto da divisão agendada para 03:15 e o botão de cancelar;
-    - na cena 20, a tela bloqueada às 03:13, com o aviso do envio. Ali os dedos do Zinho cobrem a direita da tela, e `achar_tela` errava os cantos; eles foram medidos à mão em `TELA20`, e a máscara só deixa os dedos na frente;
+    - na cena 20, a tela bloqueada às 03:13, com o aviso do envio. Ali os dedos do Zinho cobrem a direita da tela, e `achar_tela` errava os cantos; eles foram medidos à mão em `TELA20`;
+  - **o encaixe das telas,** `encaixar_limpo`: em 06/11/2026, o criador viu os dedões da cena 3 pixelados, porque a máscara antiga comia o contorno preto dos dedos. Agora cada ponto sobre a tela é tratado como uma mistura da tela em branco com o que está na frente dela, e a tela nova entra só na parte que era tela. Os contornos e a borda suave dos dedos ficam como no desenho. Uma tela muito maior que a do desenho é reduzida antes, para o texto pequeno não sair em degraus;
   - **as duas opções lado a lado,** para a pergunta final.
 
   Com `--rascunho`, ele desenha antes, em `rascunho/`, um cartão para cada desenho que falta. Cada cartão tem o número, o nome e a fala do roteiro. Os das cenas de celular têm a tela em branco no lugar certo, para as telas já se encaixarem. As imagens montadas com os cartões ficam em `rascunho/arte/`, fora do Git, e só o rascunho as usa.

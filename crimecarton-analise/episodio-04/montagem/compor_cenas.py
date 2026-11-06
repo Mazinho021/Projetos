@@ -14,7 +14,8 @@ Writes, in arte/:
 - opcoes.png and opcoes-vertical.png: scenes 21 and 22 side by side, for the last question.
 
 Codex leaves each phone's screen lit and blank; achar_tela, from Part 3's compor_cenas.py,
-finds it and the screen is fitted to it in perspective.
+finds it, and encaixar_limpo fits the new screen to it in perspective, behind the fingers, whose
+outlines and soft edges stay as drawn.
 
 --rascunho first draws, in rascunho/, a stand-in card for each drawing Codex has not
 delivered yet: its number, its name and the line of the script it shows. The stand-ins of
@@ -41,9 +42,8 @@ SERIE = EPISODE.parent
 sys.path.insert(0, str(SERIE / 'episodio-01' / 'montagem'))
 sys.path.insert(0, str(SERIE / 'episodio-03' / 'montagem'))
 import graficos  # noqa: E402
-from render_animatic import lock_screen  # noqa: E402
-from compor_cenas import (BALAO, BARRA, CINZA, FUNDO, TEXTO, VERDE, achar_tela, barra_de_status,  # noqa: E402
-                          encaixar)
+from render_animatic import lock_screen, perspective  # noqa: E402
+from compor_cenas import BALAO, BARRA, CINZA, FUNDO, TEXTO, VERDE, achar_tela, barra_de_status  # noqa: E402
 
 ARTE = HERE / 'arte'
 RASCUNHO = HERE / 'rascunho'
@@ -171,27 +171,85 @@ def agendar(w=600, h=1290):
     return im
 
 
-def mascara_da_tela(fundo, quad):
-    """The lit pixels inside a screen whose corners are known. The fingers over it are darker
-    and redder, so they stay in front; the mask is closed and grown a little, as achar_tela's.
-    Scene 20's screen glows warmer at the top, so the test allows a warm white."""
-    a = np.asarray(fundo.convert('RGB')).astype(int)
-    clara = (a.mean(axis=2) > 200) & (a.max(axis=2) - a.min(axis=2) < 100) & (a[..., 1] >= .85*a[..., 0])
-    dentro = Image.new('L', fundo.size, 0)
-    ImageDraw.Draw(dentro).polygon([(x*fundo.width, y*fundo.height) for x, y in quad], fill=255)
-    m = clara & (np.asarray(dentro.filter(ImageFilter.MaxFilter(9))) > 0)
-    mascara = Image.fromarray((m*255).astype(np.uint8))
-    mascara = mascara.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.MinFilter(5)).filter(ImageFilter.MaxFilter(7))
-    return mascara.filter(ImageFilter.GaussianBlur(1.2))
+def borrar(x, r):
+    """A box blur of radius `r`, three times over: about a Gaussian, in floating point."""
+    for _ in range(3):
+        for eixo in (0, 1):
+            pad = [(r + 1, r) if k == eixo else (0, 0) for k in range(x.ndim)]
+            c = np.cumsum(np.pad(x, pad, mode='edge'), axis=eixo)
+            n = c.shape[eixo]
+            x = (np.take(c, np.arange(2*r + 1, n), axis=eixo) - np.take(c, np.arange(0, n - 2*r - 1), axis=eixo))/(2*r + 1)
+    return x
+
+
+def encaixar_limpo(fundo, plano, quad, crescer=1.035):
+    """`plano` on the lit, blank screen of `fundo` whose corners are `quad` (fractions), with the
+    fingers in front and their black outlines and soft edges kept.
+
+    On 06/11/2026 the creator saw the thumbs of scene 3 pixelated: the old mask, grown over the
+    fingers so no light rim would show, ate their outlines and cut them in steps. Now each pixel
+    over the screen is taken as a mix of the blank screen's own colour S and what is in front of
+    it (a finger, its outline, the phone's edge). The screen's share comes from how light the
+    pixel is between an outline's black and S, and the new pixel adds to the old one, in that
+    share, the difference between the new screen and S. No rim is left, and nothing in front
+    changes."""
+    a = np.asarray(fundo.convert('RGB')).astype(np.float32)
+    h, w, _ = a.shape
+    lum, sat = a.mean(axis=2), a.max(axis=2) - a.min(axis=2)
+    px = [(x*w, y*h) for x, y in quad]
+    cx, cy = sum(x for x, _ in px)/4, sum(y for _, y in px)/4
+    px = [(cx + (x - cx)*crescer, cy + (y - cy)*crescer) for x, y in px]
+    dentro = Image.new('L', (w, h), 0)
+    ImageDraw.Draw(dentro).polygon(px, fill=255)
+    dentro = np.asarray(dentro) > 0
+    # Light, greyish pixels: the screen, the fingers' soft shadows on it and the light half of
+    # their edges. The skin is redder, and the outlines and the phone's edge darker.
+    parecida = dentro & (lum > 90) & (sat < 100)
+    # The screen is the part of them joined to its lightest middle: the nails' highlights,
+    # inside the fingers' outlines, stay out.
+    ys, xs = np.nonzero(parecida & (lum > 200))
+    k = int(np.argmin((xs - cx)**2 + (ys - cy)**2))
+    # A copy: floodfill does not change an image that still shares the array's memory.
+    marca = Image.fromarray(parecida.astype(np.uint8)*255).copy()
+    ImageDraw.floodfill(marca, (int(xs[k]), int(ys[k])), 128)
+    regiao = np.asarray(marca) == 128
+    if not regiao.any():
+        raise ValueError('a tela clara não foi encontrada dentro dos cantos')
+    # The pure screen, away from every edge, and the screen's colour under each pixel.
+    pura = np.asarray(Image.fromarray((regiao & (lum > 200)).astype(np.uint8)*255).filter(ImageFilter.MinFilter(5))) > 0
+    peso = borrar(pura.astype(np.float32), 8)
+    tela = np.stack([borrar(a[..., c]*pura, 8) for c in range(3)], axis=-1)
+    tela = np.where(peso[..., None] > .02, tela/np.maximum(peso, 1e-6)[..., None], a[pura].mean(axis=0))
+    # The screen's share of each pixel: 1 on the pure screen, down to 0 at an outline's black,
+    # in the screen's region and the two pixels around it.
+    perto = np.asarray(Image.fromarray(regiao.astype(np.uint8)*255).filter(ImageFilter.MaxFilter(5))) > 0
+    preto = 25.0
+    parte = np.clip((lum - preto)/np.maximum(tela.mean(axis=2) - preto, 1), 0, 1)*(perto & dentro)
+    parte[pura] = 1
+    # A screen much bigger than the drawing's is first reduced with a good filter: the
+    # perspective's own resampling would leave the small text in steps.
+    lado = lambda p, q: ((p[0] - q[0])**2 + (p[1] - q[1])**2)**.5
+    tw, th = max(lado(px[0], px[1]), lado(px[3], px[2])), max(lado(px[0], px[3]), lado(px[1], px[2]))
+    plano = plano.convert('RGBA')
+    if plano.width > 1.3*tw:
+        plano = plano.resize((round(tw), round(th)), Image.Resampling.LANCZOS)
+    pw, ph = plano.size
+    camada = np.asarray(plano.transform((w, h), Image.Transform.PERSPECTIVE,
+                                                         perspective([(0, 0), (pw, 0), (pw, ph), (0, ph)], px),
+                                                         Image.Resampling.BICUBIC)).astype(np.float32)
+    parte = parte[..., None]*camada[..., 3:]/255
+    novo = a + parte*(camada[..., :3] - tela)
+    # Where only screen shows, the new screen as it is, without the drawing's grain.
+    so_tela = pura[..., None] & (camada[..., 3:] > 254)
+    novo = np.where(so_tela, camada[..., :3], novo)
+    return Image.fromarray((np.clip(novo, 0, 255) + .5).astype(np.uint8))
 
 
 def na_tela(cena, plano, nome, quad=None):
     fundo = Image.open(desenho(cena)).convert('RGB')
-    if quad and (EPISODE / cena).exists():
-        mascara = mascara_da_tela(fundo, quad)
-    else:
-        quad, mascara = achar_tela(fundo)
-    encaixar(fundo, plano, quad, mascara, crescer=1.035).convert('RGB').save(ARTE / nome, optimize=True)
+    if not (quad and (EPISODE / cena).exists()):
+        quad, _ = achar_tela(fundo)
+    encaixar_limpo(fundo, plano, quad).save(ARTE / nome, optimize=True)
     return quad
 
 
