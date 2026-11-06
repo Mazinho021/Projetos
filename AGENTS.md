@@ -10,6 +10,6 @@ Este repositório guarda a série “A parte que faltou”, do perfil Golpe Cart
 4. **Gerações pagas:** mostrar o custo e esperar o ok do criador antes de gerar imagens ou vozes.
 5. **Commit e push:**
    - fazer na mesma conversa que gerou os arquivos, porque uma conversa nova não enxerga os arquivos de outra;
-   - fazer aos poucos, por exemplo a cada 5 cenas prontas, e de novo no fim. Assim nada se perde se o limite diário acabar no meio.
+   - fazer logo depois de cada cena pronta, uma por vez, e de novo no fim. Assim nada se perde se o limite acabar no meio, como aconteceu com a cena 16 da Parte 4 em 05/11/2026.
 6. **Arquivos que você não consegue baixar,** como os WAV do OpusClip: grave o nome e o link temporário de cada um em `links-temporarios.json`, na pasta da parte, faça commit e push e avise. O Claude baixa e salva os arquivos.
 7. **Escopo:** não alterar arquivos fora do que o pedido manda.

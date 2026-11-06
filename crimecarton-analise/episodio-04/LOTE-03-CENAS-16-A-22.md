@@ -4,6 +4,8 @@
 
 **Situação em 05/11/2026:** o Claude conferiu os lotes 01 e 02 e aprovou as quinze cenas. Este lote fecha a parte e segue igual. As vozes já estão prontas: não gerar de novo.
 
+**Primeira tentativa, em 05/11/2026:** o close do Ademir, a cena 16, ficou pronto, mas o limite de 5 horas parou a conversa antes do push, e ele não chegou ao GitHub. Se a cena 16 não estiver na `codex/crimecarton`, fazer de novo.
+
 ## Instruções
 
 - Ler antes `AGENTS.md`, `CLAUDE.md`, `NOTAS.md` e `episodio-04/pedido-codex-ep04.md`.
@@ -14,7 +16,7 @@
 - Entregar **sete arquivos PNG separados**, um por cena, nunca uma folha com várias cenas.
 - Vertical 9:16, no maior tamanho que o gerador permitir, sem nenhum texto, número, logotipo ou marca d'água, nem na viatura. Os 25% de cima só com fundo calmo; rostos e ação entre 30% e 60% da altura; os 20% de baixo só com chão; nada importante na borda direita, entre 45% e 80% da altura.
 - Salvar em `crimecarton-analise/episodio-04/originais/`, com os nomes abaixo.
-- **Commit e push na `codex/crimecarton` depois da cena 20 e de novo no fim.**
+- **Commit e push na `codex/crimecarton` logo depois de cada cena pronta,** uma por vez, sem esperar juntar.
 
 ## Cena 16 — `cena-16-ademir-inclina.png`
 

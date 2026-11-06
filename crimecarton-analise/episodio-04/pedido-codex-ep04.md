@@ -247,7 +247,7 @@ Gerar as três gravações abaixo e salvar tudo em `crimecarton-analise/episodio
 
 1. Atualizar a branch `codex/crimecarton` com a `claude/ecstatic-brown-xb2qxd`, que já contém este pedido.
 2. Fazer commit e push de todos os arquivos gerados na `codex/crimecarton` do repositório `Mazinho021/Projetos`, **nesta mesma conversa em que eles forem gerados**.
-   - Fazer aos poucos: depois das vozes, a cada 5 cenas prontas e de novo no fim.
+   - Fazer aos poucos: depois das vozes, logo depois de cada cena pronta e de novo no fim.
    - Assim nada se perde se o limite diário acabar no meio, como aconteceu na primeira tentativa.
 3. Responder com o link do commit e os créditos cobrados.
 
