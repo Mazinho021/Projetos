@@ -11,9 +11,10 @@ script, so the edit follows the voices again if they are re-aligned.
 
 From Part 4 on, the part opens with its strongest moment and a recap of 6 to 8 s, not with the
 12 s opening of Part 1 (../../../CLAUDE.md). On 06/11/2026 the creator asked for the usual opening
-back in a short version: right after the first line come the three fixed lines in Part 1's
-voice (VINHETA, matched to this narrator by igualar_vozes.py), over the backpack art, with the
-R$ 10.000.000 counter and the suspicion stars, without the black card. The edit also uses the ideas taken from
+back in a short version, and first: the part opens with the three fixed lines in Part 1's voice
+(VINHETA, matched to this narrator by igualar_vozes.py), over the backpack art, with the
+R$ 10.000.000 counter and the suspicion stars, without the black card. The part's strongest
+moment comes right after it. The edit also uses the ideas taken from
 @crimecarton for our story: the screen changes every 1 or 2 s, the lines show in balloons, each
 new character gets a name tag, the clues get callouts and rings, the panel changes with the
 story, the audience's comments come printed in the newspaper "A VOZ DO BAIRRO", there is one
@@ -206,8 +207,8 @@ def A(p, k=0):
 # it is the silence between the two. With the real voices, the beats and the reading time of
 # the newspaper and the options bring the part to about Part 3's length (2 min 13 s).
 PAUSES = {
+    V(16): .4,                               # the stars, before the cold open
     N('o rosto.', 1): .6,                    # the cold open lands
-    V(16): .4,                               # the stars, before the recap
     N('no perfil.', 1): .15,
     N(VOTO, len(VOTO.split()) - 1): 4.0,     # the newspaper, to read the comments
     N('pode cancelar.', 1): .6,              # the panel turns into the photo's clock
@@ -440,10 +441,10 @@ def build(ed):
     story = cut(N('Mas você não'))
     p3 = '../episodio-03/'
     plan = [
-        # The cold open: the part's strongest moment, with the phrase from the first frame.
-        ('frio', 0, art(desenho('cena-01-passo-na-luz.png'), .05)),
-        # The usual opening, short: the three lines of Part 1 over its backpack art.
-        ('vinheta', cut(V(0)), art('../episodio-01/cena-01-base.png', .06)),
+        # The usual opening, short and first: the three lines of Part 1 over its backpack art.
+        ('vinheta', 0, art('../episodio-01/cena-01-base.png', .06)),
+        # Then the part's strongest moment, with its phrase from the plan's first frame.
+        ('frio', cut(N('Quem sequestrou')), art(desenho('cena-01-passo-na-luz.png'), .05)),
         # The recap, in about 8 s: the profile, Renato caught, the vote and the newspaper.
         ('perfil', cut(N('Chegou agora?')), art(arte(f"perfil{L['art']}.png"), .03, direction='out')),
         ('pego', cut(N('O Renato foi')), art(arte('lembranca-parte3.png'), .02)),
@@ -489,25 +490,25 @@ def build(ed):
     winner = max(VOTE, key=lambda o: o[1])[0]
     clock = s(N('Só você pode'))
     graphics = [
-        # ---- the cold open
-        {'type': 'tag', 'start': .15, 'end': story, 'text': f'PARTE {PART}', 'y': L['tag_y'], 'x': 112, 'size': 32},
-        {'type': 'vignette', 'start': 0, 'end': AT['vinheta'], 'color': 'alert', 'strength': .5},
-        phrase(0, AT['vinheta'], 900, [label('QUEM SEQUESTROU O SEU AMIGO', 0), line('VAI MOSTRAR', 0),
-                                       line('O ROSTO.', s(N('o rosto.')), 'yellow', shake=True)], 76, x),
         # ---- the usual opening, as in Parts 2 and 3, over the chest, below Zinho's face
-        phrase(AT['vinheta'] + .05, s(V(4)) - .07, 700, [line('O ASSALTO', s(V(0))),
-                                                         line('DEU CERTO.', s(V(2)), 'yellow')], x=x),
+        {'type': 'tag', 'start': .15, 'end': story, 'text': f'PARTE {PART}', 'y': L['tag_y'], 'x': 112, 'size': 32},
+        phrase(.05, s(V(4)) - .07, 700, [line('O ASSALTO', s(V(0))), line('DEU CERTO.', s(V(2)), 'yellow')], x=x),
         phrase(s(V(4)) - .07, s(V(10)) - .07, 700, [
             label('SEU PARCEIRO FICOU COM', s(V(4))),
             line('R$ 10.000.000', s(V(4)) + .08, 'green', size=74,
                  count={'from': 0, 'to': 10000000, 'start': s(V(5)), 'end': e(V(9)) - .3}),
             label('EM DINHEIRO VIVO', s(V(8)))], x=x),
         # Without the black card: the scene darkens and the stars fill between his face and the line.
-        {'type': 'vignette', 'start': round(s(V(10)) - .1, 2), 'end': AT['perfil'], 'color': 'alert', 'strength': .6},
-        phrase(s(V(10)) - .07, AT['perfil'], 700, [line('VOCÊ FICOU COM', s(V(10))), line('O ROSTO', s(V(14)), 'yellow'),
-                                                   line('NO JORNAL.', s(V(15)), 'yellow')], 64, x),
-        {'type': 'stars', 'start': round(s(V(10)) - .05, 2), 'end': AT['perfil'], 'y': 540, 'x': x, 'r': 30, 'at': s(V(14)),
+        {'type': 'vignette', 'start': round(s(V(10)) - .1, 2), 'end': AT['frio'], 'color': 'alert', 'strength': .6},
+        phrase(s(V(10)) - .07, AT['frio'], 700, [line('VOCÊ FICOU COM', s(V(10))), line('O ROSTO', s(V(14)), 'yellow'),
+                                                 line('NO JORNAL.', s(V(15)), 'yellow')], 64, x),
+        {'type': 'stars', 'start': round(s(V(10)) - .05, 2), 'end': AT['frio'], 'y': 540, 'x': x, 'r': 30, 'at': s(V(14)),
          'step': .12},
+        # ---- the cold open: the part's strongest moment
+        {'type': 'vignette', 'start': AT['frio'], 'end': AT['perfil'], 'color': 'alert', 'strength': .5},
+        phrase(AT['frio'] + .05, AT['perfil'], 900, [label('QUEM SEQUESTROU O SEU AMIGO', AT['frio'] + .05),
+                                                     line('VAI MOSTRAR', AT['frio'] + .05),
+                                                     line('O ROSTO.', s(N('o rosto.')), 'yellow', shake=True)], 76, x),
         # ---- the recap
         phrase(AT['perfil'] + .05, AT['pego'], 790, [line('CHEGOU AGORA?', s(N('Chegou agora?')), 'yellow', size=64),
                                                      line('AS PARTES 1, 2 E 3', s(N('As outras partes')), size=52),
@@ -660,7 +661,7 @@ def build(ed):
          'title': f'PARTE {PART + 1}', 'sub': 'a maioria decide o próximo passo'},
     ]
     effects = [
-        *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('vinheta', 'perfil', 'votos', 'onibus', 'portao', 'ademir', 'cafe',
+        *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('frio', 'perfil', 'votos', 'onibus', 'portao', 'ademir', 'cafe',
                                                                'isqueiro', 'inclina', 'isca', 'celular', 'cancelar',
                                                                'escolha')],
         sfx('impacto.wav', s(N('o rosto.')) - .04, -5),

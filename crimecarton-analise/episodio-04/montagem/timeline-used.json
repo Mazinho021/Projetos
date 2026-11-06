@@ -13,17 +13,17 @@
   "scenes": [
     {
       "start": 0,
-      "end": 3.38,
-      "kind": "art",
-      "asset": "cena-01-passo-na-luz.png",
-      "zoom": 0.05
-    },
-    {
-      "start": 3.38,
-      "end": 11.3,
+      "end": 7.79,
       "kind": "art",
       "asset": "../episodio-01/cena-01-base.png",
       "zoom": 0.06
+    },
+    {
+      "start": 7.79,
+      "end": 11.3,
+      "kind": "art",
+      "asset": "cena-01-passo-na-luz.png",
+      "zoom": 0.05
     },
     {
       "start": 11.3,
@@ -252,53 +252,20 @@
       "size": 32
     },
     {
-      "type": "vignette",
-      "start": 0,
-      "end": 3.38,
-      "color": "alert",
-      "strength": 0.5
-    },
-    {
       "type": "phrase",
-      "start": 0,
-      "end": 3.38,
-      "y": 900,
-      "size": 76,
-      "lines": [
-        {
-          "style": "label",
-          "text": "QUEM SEQUESTROU O SEU AMIGO",
-          "at": 0
-        },
-        {
-          "text": "VAI MOSTRAR",
-          "at": 0,
-          "color": "white"
-        },
-        {
-          "text": "O ROSTO.",
-          "at": 2.12,
-          "color": "yellow",
-          "shake": true
-        }
-      ],
-      "x": 360
-    },
-    {
-      "type": "phrase",
-      "start": 3.43,
-      "end": 5.64,
+      "start": 0.05,
+      "end": 2.26,
       "y": 700,
       "size": 78,
       "lines": [
         {
           "text": "O ASSALTO",
-          "at": 3.5,
+          "at": 0.12,
           "color": "white"
         },
         {
           "text": "DEU CERTO.",
-          "at": 4.33,
+          "at": 0.94,
           "color": "yellow"
         }
       ],
@@ -306,63 +273,63 @@
     },
     {
       "type": "phrase",
-      "start": 5.64,
-      "end": 8.17,
+      "start": 2.26,
+      "end": 4.79,
       "y": 700,
       "size": 78,
       "lines": [
         {
           "style": "label",
           "text": "SEU PARCEIRO FICOU COM",
-          "at": 5.71
+          "at": 2.33
         },
         {
           "text": "R$ 10.000.000",
-          "at": 5.79,
+          "at": 2.41,
           "color": "green",
           "size": 74,
           "count": {
             "from": 0,
             "to": 10000000,
-            "start": 6.106,
-            "end": 7.648000000000001
+            "start": 2.722,
+            "end": 4.264
           }
         },
         {
           "style": "label",
           "text": "EM DINHEIRO VIVO",
-          "at": 7.13
+          "at": 3.74
         }
       ],
       "x": 360
     },
     {
       "type": "vignette",
-      "start": 8.14,
-      "end": 11.3,
+      "start": 4.76,
+      "end": 7.79,
       "color": "alert",
       "strength": 0.6
     },
     {
       "type": "phrase",
-      "start": 8.17,
-      "end": 11.3,
+      "start": 4.79,
+      "end": 7.79,
       "y": 700,
       "size": 64,
       "lines": [
         {
           "text": "VOCÊ FICOU COM",
-          "at": 8.24,
+          "at": 4.86,
           "color": "white"
         },
         {
           "text": "O ROSTO",
-          "at": 9.87,
+          "at": 6.48,
           "color": "yellow"
         },
         {
           "text": "NO JORNAL.",
-          "at": 10.15,
+          "at": 6.76,
           "color": "yellow"
         }
       ],
@@ -370,13 +337,46 @@
     },
     {
       "type": "stars",
-      "start": 8.19,
-      "end": 11.3,
+      "start": 4.81,
+      "end": 7.79,
       "y": 540,
       "x": 360,
       "r": 30,
-      "at": 9.866,
+      "at": 6.482,
       "step": 0.12
+    },
+    {
+      "type": "vignette",
+      "start": 7.79,
+      "end": 11.3,
+      "color": "alert",
+      "strength": 0.5
+    },
+    {
+      "type": "phrase",
+      "start": 7.84,
+      "end": 11.3,
+      "y": 900,
+      "size": 76,
+      "lines": [
+        {
+          "style": "label",
+          "text": "QUEM SEQUESTROU O SEU AMIGO",
+          "at": 7.84
+        },
+        {
+          "text": "VAI MOSTRAR",
+          "at": 7.84,
+          "color": "white"
+        },
+        {
+          "text": "O ROSTO.",
+          "at": 10.03,
+          "color": "yellow",
+          "shake": true
+        }
+      ],
+      "x": 360
     },
     {
       "type": "phrase",
@@ -1500,7 +1500,7 @@
   "sfx": [
     {
       "sound": "whoosh.wav",
-      "at": 3.02,
+      "at": 7.43,
       "gain": -2
     },
     {
@@ -1565,107 +1565,107 @@
     },
     {
       "sound": "impacto.wav",
-      "at": 2.08,
+      "at": 9.993,
       "gain": -5
     },
     {
       "sound": "tique.wav",
-      "at": 6.144,
+      "at": 2.76,
       "gain": -18
     },
     {
       "sound": "tique.wav",
-      "at": 6.183,
+      "at": 2.799,
       "gain": -18
     },
     {
       "sound": "tique.wav",
-      "at": 6.225,
+      "at": 2.841,
       "gain": -18
     },
     {
       "sound": "tique.wav",
-      "at": 6.27,
+      "at": 2.886,
       "gain": -18
     },
     {
       "sound": "tique.wav",
-      "at": 6.317,
+      "at": 2.933,
       "gain": -18
     },
     {
       "sound": "tique.wav",
-      "at": 6.368,
+      "at": 2.984,
       "gain": -18
     },
     {
       "sound": "tique.wav",
-      "at": 6.424,
+      "at": 3.04,
       "gain": -18
     },
     {
       "sound": "tique.wav",
-      "at": 6.485,
+      "at": 3.101,
       "gain": -18
     },
     {
       "sound": "tique.wav",
-      "at": 6.554,
+      "at": 3.17,
       "gain": -18
     },
     {
       "sound": "tique.wav",
-      "at": 6.632,
+      "at": 3.248,
       "gain": -18
     },
     {
       "sound": "tique.wav",
-      "at": 6.725,
+      "at": 3.341,
       "gain": -18
     },
     {
       "sound": "tique.wav",
+      "at": 3.458,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.624,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 4.264,
+      "gain": -18
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.482,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.602,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.722,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
       "at": 6.842,
-      "gain": -18
-    },
-    {
-      "sound": "tique.wav",
-      "at": 7.008,
-      "gain": -18
-    },
-    {
-      "sound": "tique.wav",
-      "at": 7.648,
-      "gain": -18
-    },
-    {
-      "sound": "pop.wav",
-      "at": 9.866,
       "gain": -16
     },
     {
       "sound": "pop.wav",
-      "at": 9.986,
-      "gain": -16
-    },
-    {
-      "sound": "pop.wav",
-      "at": 10.106,
-      "gain": -16
-    },
-    {
-      "sound": "pop.wav",
-      "at": 10.226,
-      "gain": -16
-    },
-    {
-      "sound": "pop.wav",
-      "at": 10.346,
+      "at": 6.962,
       "gain": -16
     },
     {
       "sound": "impacto.wav",
-      "at": 10.236,
+      "at": 6.852,
       "gain": -5
     },
     {
