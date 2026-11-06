@@ -2,7 +2,7 @@
 
 Esta pasta monta a Parte 4, **“O dono do anel”**, com as ferramentas de [`episodio-01/montagem/`](../../episodio-01/montagem/) e o molde da [montagem da Parte 3](../../episodio-03/montagem/README.md). O roteiro está em [`../roteiro-ep04-trocar.txt`](../roteiro-ep04-trocar.txt), o plano cena por cena em [`../plano-ep04.md`](../plano-ep04.md) e o pedido ao Codex em [`../pedido-codex-ep04.md`](../pedido-codex-ep04.md).
 
-**Situação em 06/11/2026:** a Parte 4 está pronta, nas duas versões: [`../parte-04-o-dono-do-anel.mp4`](../parte-04-o-dono-do-anel.mp4), para o Instagram, e [`../parte-04-o-dono-do-anel-vertical.mp4`](../parte-04-o-dono-do-anel-vertical.mp4), para o TikTok e o Shorts, com 2 min 16,5 s. Os 22 desenhos e as 3 vozes vieram do Codex, e a vinheta vem da Parte 1; os balões, as setas e as etiquetas foram postos em cada desenho, e cada plano foi conferido nas duas versões.
+**Situação em 06/11/2026:** a Parte 4 está pronta, nas duas versões: [`../parte-04-o-dono-do-anel.mp4`](../parte-04-o-dono-do-anel.mp4), para o Instagram, e [`../parte-04-o-dono-do-anel-vertical.mp4`](../parte-04-o-dono-do-anel-vertical.mp4), para o TikTok e o Shorts, com 2 min 16,4 s. Os 22 desenhos e as 3 vozes vieram do Codex, e a vinheta vem da Parte 1; os balões, as setas e as etiquetas foram postos em cada desenho, e cada plano foi conferido nas duas versões.
 
 ## Refazer
 
@@ -55,7 +55,7 @@ python $A/montagem/montar_timeline.py --estimar /tmp/rascunho-ep04
 
   Com `--rascunho`, ele desenha antes, em `rascunho/`, um cartão para cada desenho que falta. Cada cartão tem o número, o nome e a fala do roteiro. Os das cenas de celular têm a tela em branco no lugar certo, para as telas já se encaixarem. As imagens montadas com os cartões ficam em `rascunho/arte/`, fora do Git, e só o rascunho as usa.
 - [`montar_timeline.py`](montar_timeline.py) junta o narrador, o Renato e o Ademir numa faixa, `../narracao-ep04.wav`, com as pausas de `PAUSES`. Ele monta as duas timelines seguindo o plano.
-  - **Abertura:** primeiro vem a vinheta curta, pedida pelo criador em 06/11/2026: as três frases de sempre na voz da Parte 1, sobre a arte da mochila, com o contador de R$ 10.000.000 e as estrelas, sem a tela preta. Logo depois, o Ademir sai para a luz, com “Quem sequestrou o seu amigo vai mostrar o rosto.”. Depois vem o resumo de uns 8 s, com o perfil, o Renato pego, o empate e o jornal “A VOZ DO BAIRRO”. A história nova começa aos 24 s.
+  - **Abertura:** primeiro vem a vinheta, pedida pelo criador em 06/11/2026 igual à da Parte 3: as três frases de sempre na voz da Parte 1, as duas primeiras sobre a arte da mochila, com o contador de R$ 10.000.000, e a terceira na tela preta, com as cinco estrelas. Logo depois, o Ademir sai para a luz, com “Quem sequestrou o seu amigo vai mostrar o rosto.”. Depois vem o resumo de uns 8 s, com o perfil, o Renato pego, o empate e o jornal “A VOZ DO BAIRRO”. A história nova começa aos 24 s.
   - **O resultado da votação:** `RESULTADO` escolhe a frase. Com `'empate'`, entra “Deu empate. No desempate: trocar.”. Com `'maioria'`, entra “Vocês decidiram: trocar.”, e aí `VOTE` recebe os números reais. A narração grava as duas.
   - **Os elementos:** balões das falas, etiquetas de nome, círculos e etiquetas com linha nas pistas, o painel que vira o relógio da foto, o café como momento leve e as opções com prós e contras.
   - **O ritmo do rascunho:** nos tempos estimados, cada voz fala no ritmo das gravações da Parte 3.
