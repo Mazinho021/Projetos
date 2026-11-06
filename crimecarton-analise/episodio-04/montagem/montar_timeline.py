@@ -10,7 +10,10 @@ its recording by its words, and every cut, graphic and effect is anchored to a w
 script, so the edit follows the voices again if they are re-aligned.
 
 From Part 4 on, the part opens with its strongest moment and a recap of 6 to 8 s, not with the
-12 s opening of Part 1 (../../../CLAUDE.md). The edit also uses the ideas taken from
+12 s opening of Part 1 (../../../CLAUDE.md). On 06/11/2026 the creator asked for the usual opening
+back in a short version: right after the first line come the three fixed lines in Part 1's
+voice (VINHETA, matched to this narrator by igualar_vozes.py), over the backpack art, with the
+R$ 10.000.000 counter and the suspicion stars, without the black card. The edit also uses the ideas taken from
 @crimecarton for our story: the screen changes every 1 or 2 s, the lines show in balloons, each
 new character gets a name tag, the clues get callouts and rings, the panel changes with the
 story, the audience's comments come printed in the newspaper "A VOZ DO BAIRRO", there is one
@@ -121,11 +124,12 @@ def too_wide(graphics, limit):
     return wide
 
 SCRIPT = EPISODE / 'roteiro-ep04-trocar.txt'
-VOICES = {'NARRADOR': (EPISODE / 'narracao-ep04-narrador.wav', HERE / 'alinhamento-narrador.json'),
+VOICES = {'VINHETA': (HERE / 'vozes' / 'vinheta.wav', TOOLS / 'alinhamento-narracao.json'),
+          'NARRADOR': (EPISODE / 'narracao-ep04-narrador.wav', HERE / 'alinhamento-narrador.json'),
           'RENATO': (EPISODE / 'narracao-ep04-renato.wav', HERE / 'alinhamento-renato.json'),
           # Ademir in the cobrador's voice, made by voz_ademir.py.
           'ADEMIR': (HERE / 'vozes' / 'ademir.wav', HERE / 'alinhamento-ademir.json')}
-SOURCES = {'NARRADOR': EPISODE / 'narracao-ep04-narrador.txt', 'RENATO': EPISODE / 'narracao-ep04-renato.txt',
+SOURCES = {'VINHETA': SERIE / 'narracao-ep01-zinho.txt', 'NARRADOR': EPISODE / 'narracao-ep04-narrador.txt', 'RENATO': EPISODE / 'narracao-ep04-renato.txt',
            'ADEMIR': EPISODE / 'narracao-ep04-ademir.txt'}
 TEXT = {v: [w for w in path.read_text(encoding='utf-8').split() if norm(w)] for v, path in SOURCES.items()}
 AUDIO = EPISODE / 'narracao-ep04.wav'
@@ -145,7 +149,7 @@ COMENTARIOS = ['Trocar.', 'Deixar.',
                'proteger a família do cara.']
 TAIL = 2.0
 # Renato and Ademir talk beside Zinho, as loud as the narrator.
-GAINS = {'RENATO': 0, 'ADEMIR': 0}
+GAINS = {'VINHETA': 0, 'RENATO': 0, 'ADEMIR': 0}
 LEAD, TRAIL, SWITCH = .12, .22, .25
 WHOOSH_PEAK = .36
 ESTIMATE = False      # set by --estimar: the drawings not delivered yet come from their stand-ins
@@ -181,6 +185,11 @@ LINES = read_script()
 VOTO = EMPATE if RESULTADO == 'empate' else MAIORIA
 
 
+def V(i):
+    # A word of the opening's three lines, by its place in Part 1's narration.
+    return 'VINHETA', i
+
+
 def N(p, k=0):
     return 'NARRADOR', find('NARRADOR', p) + k
 
@@ -197,7 +206,8 @@ def A(p, k=0):
 # it is the silence between the two. With the real voices, the beats and the reading time of
 # the newspaper and the options bring the part to about Part 3's length (2 min 13 s).
 PAUSES = {
-    N('o rosto.', 1): .8,                    # the cold open lands
+    N('o rosto.', 1): .6,                    # the cold open lands
+    V(16): .4,                               # the stars, before the recap
     N('no perfil.', 1): .15,
     N(VOTO, len(VOTO.split()) - 1): 4.0,     # the newspaper, to read the comments
     N('pode cancelar.', 1): .6,              # the panel turns into the photo's clock
@@ -224,7 +234,7 @@ SWITCHES = {}
 
 # Words per second of each voice in Part 3's recordings, pauses included: the narrator, the
 # cobrador (Ademir's voice) and Renato. A draft's estimated timings keep these paces.
-RATE = {'NARRADOR': 2.62, 'ADEMIR': 1.75, 'RENATO': 2.0}
+RATE = {'VINHETA': 2.4, 'NARRADOR': 2.62, 'ADEMIR': 1.75, 'RENATO': 2.0}
 
 
 def estimated_words(voice):
@@ -432,6 +442,8 @@ def build(ed):
     plan = [
         # The cold open: the part's strongest moment, with the phrase from the first frame.
         ('frio', 0, art(desenho('cena-01-passo-na-luz.png'), .05)),
+        # The usual opening, short: the three lines of Part 1 over its backpack art.
+        ('vinheta', cut(V(0)), art('../episodio-01/cena-01-base.png', .06)),
         # The recap, in about 8 s: the profile, Renato caught, the vote and the newspaper.
         ('perfil', cut(N('Chegou agora?')), art(arte(f"perfil{L['art']}.png"), .03, direction='out')),
         ('pego', cut(N('O Renato foi')), art(arte('lembranca-parte3.png'), .02)),
@@ -479,9 +491,23 @@ def build(ed):
     graphics = [
         # ---- the cold open
         {'type': 'tag', 'start': .15, 'end': story, 'text': f'PARTE {PART}', 'y': L['tag_y'], 'x': 112, 'size': 32},
-        {'type': 'vignette', 'start': 0, 'end': AT['perfil'], 'color': 'alert', 'strength': .5},
-        phrase(0, AT['perfil'], 900, [label('QUEM SEQUESTROU O SEU AMIGO', 0), line('VAI MOSTRAR', 0),
-                                      line('O ROSTO.', s(N('o rosto.')), 'yellow', shake=True)], 76, x),
+        {'type': 'vignette', 'start': 0, 'end': AT['vinheta'], 'color': 'alert', 'strength': .5},
+        phrase(0, AT['vinheta'], 900, [label('QUEM SEQUESTROU O SEU AMIGO', 0), line('VAI MOSTRAR', 0),
+                                       line('O ROSTO.', s(N('o rosto.')), 'yellow', shake=True)], 76, x),
+        # ---- the usual opening, as in Parts 2 and 3, over the chest, below Zinho's face
+        phrase(AT['vinheta'] + .05, s(V(4)) - .07, 700, [line('O ASSALTO', s(V(0))),
+                                                         line('DEU CERTO.', s(V(2)), 'yellow')], x=x),
+        phrase(s(V(4)) - .07, s(V(10)) - .07, 700, [
+            label('SEU PARCEIRO FICOU COM', s(V(4))),
+            line('R$ 10.000.000', s(V(4)) + .08, 'green', size=74,
+                 count={'from': 0, 'to': 10000000, 'start': s(V(5)), 'end': e(V(9)) - .3}),
+            label('EM DINHEIRO VIVO', s(V(8)))], x=x),
+        # Without the black card: the scene darkens and the stars fill between his face and the line.
+        {'type': 'vignette', 'start': round(s(V(10)) - .1, 2), 'end': AT['perfil'], 'color': 'alert', 'strength': .6},
+        phrase(s(V(10)) - .07, AT['perfil'], 700, [line('VOCÊ FICOU COM', s(V(10))), line('O ROSTO', s(V(14)), 'yellow'),
+                                                   line('NO JORNAL.', s(V(15)), 'yellow')], 64, x),
+        {'type': 'stars', 'start': round(s(V(10)) - .05, 2), 'end': AT['perfil'], 'y': 540, 'x': x, 'r': 30, 'at': s(V(14)),
+         'step': .12},
         # ---- the recap
         phrase(AT['perfil'] + .05, AT['pego'], 790, [line('CHEGOU AGORA?', s(N('Chegou agora?')), 'yellow', size=64),
                                                      line('AS PARTES 1, 2 E 3', s(N('As outras partes')), size=52),
@@ -634,10 +660,14 @@ def build(ed):
          'title': f'PARTE {PART + 1}', 'sub': 'a maioria decide o próximo passo'},
     ]
     effects = [
-        *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('perfil', 'votos', 'onibus', 'portao', 'ademir', 'cafe',
+        *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('vinheta', 'perfil', 'votos', 'onibus', 'portao', 'ademir', 'cafe',
                                                                'isqueiro', 'inclina', 'isca', 'celular', 'cancelar',
                                                                'escolha')],
         sfx('impacto.wav', s(N('o rosto.')) - .04, -5),
+        # The counter's ticks, denser at first, as in Parts 2 and 3; the stars' pops; "jornal".
+        *[sfx('tique.wav', s(V(5)) + (e(V(9)) - .3 - s(V(5)))*(1 - (1 - k/14)**(1/3)), -18) for k in range(1, 15)],
+        *[sfx('pop.wav', s(V(14)) + .12*k, -16) for k in range(5)],
+        sfx('impacto.wav', s(V(16)) - .05, -5),
         sfx('pop.wav', s(N('no perfil.')), -10),
         *[sfx('tique.wav', s(N(VOTO)) + .1 + .1*k, -20) for k in range(8)],
         sfx('impacto.wav', s(N(VOTO, len(VOTO.split()) - 1)) - .04, -5),

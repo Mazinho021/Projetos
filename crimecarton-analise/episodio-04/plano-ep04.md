@@ -56,6 +56,7 @@ São **22 desenhos novos**. O resto são lembranças de partes anteriores e tela
 | # | Trecho | Imagem | Por cima |
 |---|---|---|---|
 | 1 | “Quem sequestrou o seu amigo vai mostrar o rosto.” | **Nova.** Por cima do ombro do Zinho, o homem da jaqueta de couro preta dá um passo para a luz da lâmpada. A luz pega o queixo, a boca e o cabelo branco, e os olhos ainda ficam na sombra. O anel brilha na mão direita. | Frase “ELE VAI MOSTRAR / O ROSTO”, relógio 03:00 e etiqueta “PARTE 4” |
+| 1b | “O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.” | A arte da mochila da Parte 1: o “início de sempre”, em versão curta, pedido de volta pelo criador em 06/11/2026 | As frases de sempre, o contador de R$ 10.000.000 e as estrelas de suspeita, sem a tela preta |
 | 2 | “Chegou agora? As outras partes estão no perfil.” | Montada: as capas das Partes 1, 2 e 3 lado a lado, como na grade do perfil | Seta “TODAS NO PERFIL” |
 | 3 | “O Renato foi pego no seu lugar.” | Lembrança: a mão com o anel puxando o Renato no muro (Parte 3, cena 4) | Polaroide “PARTE 3 · pego no seu lugar” |
 | 4 | “Deu empate. No desempate: trocar.” | Lembrança escurecida: o Zinho decidindo no ônibus (Parte 3, cena 13) | Resultado “EMPATE” → “DESEMPATE: TROCAR” e o jornal “A VOZ DO BAIRRO”, com 2 s a mais para ler |

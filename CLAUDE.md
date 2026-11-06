@@ -72,7 +72,12 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
   - Na Parte 3, 39,5% passaram o vídeo no começo; na Parte 1, foram 26%.
   - Mais de 90% do público não seguia o perfil: quem via “PARTE 3” e o resumo da mochila achava que tinha perdido o começo.
   - A história nova só começava aos 17 s.
-- **Depois vem o resumo, com no máximo 6 a 8 s:** o que aconteceu antes, o aviso de que as outras partes estão no perfil e o resultado da votação. A vinheta de 12 s da Parte 1 não cabe inteira nesse tempo.
+- **Logo depois vem a vinheta curta, o “nosso início de sempre” (decisão do criador em 06/11/2026):**
+  - as três frases fixas na voz da Parte 1: “O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.”;
+  - sobre a arte da mochila, com o contador de R$ 10.000.000 e as estrelas de suspeita, sem a tela preta, em uns 8 s;
+  - a voz é igualada ao narrador da parte por `igualar_vozes.py`;
+  - o criador sentiu falta dela na primeira montagem da Parte 4 e escolheu essa versão curta, e não a vinheta inteira de 12 s. Com ela, a história nova começa aos 24 s.
+- **Depois vem o resumo, com no máximo 6 a 8 s:** o aviso de que as outras partes estão no perfil, o que aconteceu na parte anterior e o resultado da votação.
 - **O tamanho total das partes continua o mesmo.** O criador não quer encurtar.
 
 ## Roteiros (o criador recusou dois roteiros da Parte 3 em 30 e 31/10/2026)
