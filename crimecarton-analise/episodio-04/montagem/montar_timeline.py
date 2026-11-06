@@ -18,8 +18,7 @@ light moment (Ademir's coffee) and the vote shows each option with its pros and 
 
 Every framing keeps faces, hands, the phone and the ring out of the top quarter, where the panel
 "A SUA PARTE · SUSPEITA" and the part's tag sit, and the phrases between 65% and 80% of the
-height. The positions of balloons, rings and callouts follow the request's composition until
-the drawings arrive, and are then set from each drawing.
+height. The positions of balloons, rings and callouts are set from each of Codex's drawings.
 
 timeline.json is the Instagram version. timeline-vertical.json, for TikTok and Shorts, moves the
 top elements below TikTok's search bar and keeps the rest left of the buttons. Render each with
@@ -373,9 +372,9 @@ def ticking(start, end, step=.5, gain=-15):
 
 # Framings inside the earlier parts' drawings: left, top, right, bottom as fractions.
 DOOR13 = [0.05, 0.0, 0.95, 0.9]          # Part 3's Zinho at the bus door, under the vote
-# Where things are in this part's drawings, in the 720 × 1280 frame. Until the drawings come,
-# they follow the request's composition (faces between 32% and 42% of the height).
-HEAD = 450           # a face's height in the frame
+# Scene 20 without 5% of the floor: Zinho's hair comes down below the vertical version's tag.
+PHONE20 = [0.0, 0.0, 1.0, 0.95]
+# The positions of balloons, rings and callouts are measured in each drawing, in the 720 × 1280 frame.
 CARD_Y = 880         # name tags, below the faces and above the captions
 
 
@@ -460,7 +459,7 @@ def build(ed):
         ('parceiro', cut(A('O seu parceiro')), art(desenho('cena-17-parceiro.png'), .04, direction='out')),
         ('ombro', cut(A('E você vai')), art(desenho('cena-18-mao-no-ombro.png'), .05)),
         ('isca', cut(N('Você nunca foi')), art(desenho('cena-19-isca.png'), .06)),
-        ('celular', cut(N('O celular vibra')), art(arte('tela-0313.png'), .05)),
+        ('celular', cut(N('O celular vibra')), art(arte('tela-0313.png'), .03, crop=PHONE20)),
         # The vote: each option with its scene, then both.
         ('cancelar', cut(N('Se você cancelar,')), art(desenho('cena-21-opcao-cancelar.png'), .03)),
         ('enviar', cut(N('Se deixar sair,')), art(desenho('cena-22-opcao-enviar.png'), .03)),
@@ -587,22 +586,27 @@ def build(ed):
             label('A ÚLTIMA COISA QUE', s(N('a última coisa'))),
             line('VOCÊ ESPERAVA', s(N('você esperava ouvir.'))),
             line('OUVIR.', s(N('esperava ouvir.', 1)), 'yellow')], 66, x),
-        balloon('Eu não quero você preso.', s(A('Eu não quero')), AT['parceiro'], 360, (360, HEAD - 30), L=L),
-        phrase(AT['parceiro'] + .05, s(A('Com a minha')) - .05, 900, [line('“SUMIU COM OS', s(A('O seu parceiro'))),
+        # Ademir's face fills scene 16 from the tag to the chin: his balloon goes under his
+        # mouth, over the collar, and leaves the medal below it in sight.
+        balloon('Eu não quero você preso.', s(A('Eu não quero')), AT['parceiro'], 355, (355, 600), y=760, L=L),
+        # Scene 17's bags reach 870 px: the partner's lines go under them.
+        phrase(AT['parceiro'] + .05, s(A('Com a minha')) - .05, 950, [line('“SUMIU COM OS', s(A('O seu parceiro'))),
                                                                        line('10 MILHÕES.”', s(A('dez milhões.')), 'green')],
                70, x),
-        phrase(s(A('Com a minha')) - .05, AT['ombro'], 900, [line('“COM A MINHA', s(A('Com a minha'))),
+        phrase(s(A('Com a minha')) - .05, AT['ombro'], 950, [line('“COM A MINHA', s(A('Com a minha'))),
                                                              line('PARTE TAMBÉM.”', s(A('parte também.')), 'yellow')], 62, x),
-        callout('AS BOLSAS DA DIVISÃO', s(A('Com a minha')), AT['ombro'], 200, 340 if v else 330, (420, 620), 'white'),
-        balloon('E você vai me levar até ele.', s(A('E você vai')), AT['isca'], 400, (470, HEAD - 20), width=320, L=L),
-        callout('A MESMA MÃO', s(A('me levar até')), AT['isca'], 200, 900, (330, 600)),
+        callout('AS BOLSAS DA DIVISÃO', s(A('Com a minha')), AT['ombro'], 170, 470, (244, 775), 'white'),
+        # One line over both heads in scene 18, between the tag and Ademir's hair.
+        balloon('E você vai me levar até ele.', s(A('E você vai')), AT['isca'], 400, (425, 595), y=365, L=L),
+        callout('A MESMA MÃO', s(A('me levar até')), AT['isca'], 200, 900, (232, 730)),
         {'type': 'vignette', 'start': AT['isca'], 'end': AT['celular'], 'color': 'alert', 'strength': .7},
         phrase(AT['isca'] + .05, AT['celular'], 900, [label('VOCÊ NUNCA FOI O CULPADO.', s(N('Você nunca foi'))),
                                                       line('E CONTINUA SENDO.', s(N('E continua sendo.')), 'red')], 56, x),
         {'type': 'stamp', 'start': round(s(N('Foi a isca.', 2)) - .02, 2), 'end': AT['celular'], 'text': 'ISCA', 'y': 740,
          'x': x, 'angle': -7, 'color': 'red', 'filled': True},
         # ---- the clock
-        pop('VRRR', s(N('celular vibra')), s(N('Três e treze.')), 200, 600, 56, 'white', -6, shake=True),
+        pop('VRRR', s(N('celular vibra')), s(N('Três e treze.')), 200, 790, 56, 'white', -6, shake=True),
+        ring(s(N('Três e treze.')), AT['cancelar'], 346, 796, 96, 'yellow'),
         phrase(s(N('Faltam dois minutos')) - .05, AT['cancelar'], 960, [
             line('FALTAM 2 MINUTOS', s(N('Faltam dois minutos')), 'red', size=52),
             line('PARA A FOTO SAIR.', s(N('para a foto sair.')), size=44)], 60, x),

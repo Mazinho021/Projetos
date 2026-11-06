@@ -2,7 +2,7 @@
 
 Esta pasta monta a Parte 4, **“O dono do anel”**, com as ferramentas de [`episodio-01/montagem/`](../../episodio-01/montagem/) e o molde da [montagem da Parte 3](../../episodio-03/montagem/README.md). O roteiro está em [`../roteiro-ep04-trocar.txt`](../roteiro-ep04-trocar.txt), o plano cena por cena em [`../plano-ep04.md`](../plano-ep04.md) e o pedido ao Codex em [`../pedido-codex-ep04.md`](../pedido-codex-ep04.md).
 
-**Situação em 03/11/2026:** os desenhos e as vozes ainda não chegaram do Codex. A montagem já está pronta para recebê-los. Enquanto isso, ela gera um rascunho, com tempos estimados e um cartão provisório no lugar de cada desenho.
+**Situação em 06/11/2026:** a Parte 4 está pronta, nas duas versões: [`../parte-04-o-dono-do-anel.mp4`](../parte-04-o-dono-do-anel.mp4), para o Instagram, e [`../parte-04-o-dono-do-anel-vertical.mp4`](../parte-04-o-dono-do-anel-vertical.mp4), para o TikTok e o Shorts, com 2 min 8,8 s. Os 22 desenhos e as 3 vozes vieram do Codex; os balões, as setas e as etiquetas foram postos em cada desenho, e cada plano foi conferido nas duas versões.
 
 ## Refazer
 
@@ -48,7 +48,7 @@ python $A/montagem/montar_timeline.py --estimar /tmp/rascunho-ep04
   - **a lembrança da Parte 3:** a cena da mão com o anel no muro, desfocada, atrás da polaroide dela;
   - **as duas telas de celular:**
     - na cena 3, a conversa com o jornal, com a foto da divisão agendada para 03:15 e o botão de cancelar;
-    - na cena 20, a tela bloqueada às 03:13, com o aviso do envio;
+    - na cena 20, a tela bloqueada às 03:13, com o aviso do envio. Ali os dedos do Zinho cobrem a direita da tela, e `achar_tela` errava os cantos; eles foram medidos à mão em `TELA20`, e a máscara só deixa os dedos na frente;
   - **as duas opções lado a lado,** para a pergunta final.
 
   Com `--rascunho`, ele desenha antes, em `rascunho/`, um cartão para cada desenho que falta. Cada cartão tem o número, o nome e a fala do roteiro. Os das cenas de celular têm a tela em branco no lugar certo, para as telas já se encaixarem. As imagens montadas com os cartões ficam em `rascunho/arte/`, fora do Git, e só o rascunho as usa.

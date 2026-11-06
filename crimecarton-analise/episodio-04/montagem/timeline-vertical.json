@@ -1,0 +1,1654 @@
+{
+ "timing_status": "aligned_to_voice",
+ "style": "guia-de-estilo-referencia.md",
+ "script": "roteiro-ep04-trocar.txt",
+ "alignment": [
+  "episodio-04/montagem/alinhamento-narrador.json",
+  "episodio-04/montagem/alinhamento-renato.json",
+  "episodio-04/montagem/alinhamento-ademir.json"
+ ],
+ "audio": "narracao-ep04.wav",
+ "tail": 2.0,
+ "scenes": [
+  {
+   "start": 0,
+   "end": 3.58,
+   "kind": "art",
+   "asset": "cena-01-passo-na-luz.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 3.58,
+   "end": 6.73,
+   "kind": "art",
+   "asset": "montagem/arte/perfil-vertical.png",
+   "zoom": 0.03,
+   "direction": "out"
+  },
+  {
+   "start": 6.73,
+   "end": 8.85,
+   "kind": "art",
+   "asset": "montagem/arte/lembranca-parte3.png",
+   "zoom": 0.02
+  },
+  {
+   "start": 8.85,
+   "end": 16.44,
+   "kind": "art",
+   "asset": "../episodio-03/cena-13-decisao.png",
+   "zoom": 0.03,
+   "crop": [
+    0.05,
+    0.0,
+    0.95,
+    0.9
+   ],
+   "direction": "out",
+   "brightness": 0.35
+  },
+  {
+   "start": 16.44,
+   "end": 18.35,
+   "kind": "art",
+   "asset": "cena-02-onibus-decidido.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 18.35,
+   "end": 27.12,
+   "kind": "art",
+   "asset": "montagem/arte/tela-agendar.png",
+   "zoom": 0.04
+  },
+  {
+   "start": 27.12,
+   "end": 31.16,
+   "kind": "art",
+   "asset": "cena-04-portao-aberto.png",
+   "zoom": 0.04,
+   "paint": [
+    {
+     "box": [
+      0.165,
+      0.485,
+      0.38,
+      0.548
+     ],
+     "text": "FERRO-VELHO\nSÃO JORGE",
+     "color": [
+      74,
+      36,
+      22
+     ],
+     "opacity": 0.86,
+     "weight": "ExtraBold",
+     "pad": 6,
+     "blur": 0.6
+    }
+   ]
+  },
+  {
+   "start": 31.16,
+   "end": 36.01,
+   "kind": "art",
+   "asset": "cena-05-chegada.png",
+   "zoom": 0.04,
+   "direction": "out"
+  },
+  {
+   "start": 36.01,
+   "end": 39.61,
+   "kind": "art",
+   "asset": "cena-06-renato-amarrado.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 39.61,
+   "end": 44.61,
+   "kind": "art",
+   "asset": "cena-07-ademir-sai-da-sombra.png",
+   "zoom": 0.04,
+   "direction": "out"
+  },
+  {
+   "start": 44.61,
+   "end": 47.17,
+   "kind": "art",
+   "asset": "cena-08-anel-canivete.png",
+   "zoom": 0.07
+  },
+  {
+   "start": 47.17,
+   "end": 53.27,
+   "kind": "art",
+   "asset": "cena-09-mesa-da-foto.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 53.27,
+   "end": 56.8,
+   "kind": "art",
+   "asset": "cena-10-corda.png",
+   "zoom": 0.06
+  },
+  {
+   "start": 56.8,
+   "end": 61.74,
+   "kind": "art",
+   "asset": "cena-11-voce-fica.png",
+   "zoom": 0.04,
+   "direction": "out"
+  },
+  {
+   "start": 61.74,
+   "end": 64.76,
+   "kind": "art",
+   "asset": "cena-12-cafe.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 64.76,
+   "end": 69.89,
+   "kind": "art",
+   "asset": "cena-13-renato-aceita.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 69.89,
+   "end": 73.13,
+   "kind": "art",
+   "asset": "cena-14-isqueiro.png",
+   "zoom": 0.04
+  },
+  {
+   "start": 73.13,
+   "end": 77.66,
+   "kind": "art",
+   "asset": "cena-15-motorista.png",
+   "zoom": 0.06
+  },
+  {
+   "start": 77.66,
+   "end": 83.82,
+   "kind": "art",
+   "asset": "cena-16-ademir-inclina.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 83.82,
+   "end": 88.89,
+   "kind": "art",
+   "asset": "cena-17-parceiro.png",
+   "zoom": 0.04,
+   "direction": "out"
+  },
+  {
+   "start": 88.89,
+   "end": 91.61,
+   "kind": "art",
+   "asset": "cena-18-mao-no-ombro.png",
+   "zoom": 0.05
+  },
+  {
+   "start": 91.61,
+   "end": 96.96,
+   "kind": "art",
+   "asset": "cena-19-isca.png",
+   "zoom": 0.06
+  },
+  {
+   "start": 96.96,
+   "end": 103.03,
+   "kind": "art",
+   "asset": "montagem/arte/tela-0313.png",
+   "zoom": 0.03,
+   "crop": [
+    0.0,
+    0.0,
+    1.0,
+    0.95
+   ]
+  },
+  {
+   "start": 103.03,
+   "end": 112.28,
+   "kind": "art",
+   "asset": "cena-21-opcao-cancelar.png",
+   "zoom": 0.03
+  },
+  {
+   "start": 112.28,
+   "end": 121.23,
+   "kind": "art",
+   "asset": "cena-22-opcao-enviar.png",
+   "zoom": 0.03
+  },
+  {
+   "start": 121.23,
+   "end": 128.77,
+   "kind": "art",
+   "asset": "montagem/arte/opcoes-vertical.png",
+   "zoom": 0.02,
+   "direction": "out"
+  }
+ ],
+ "graphics": [
+  {
+   "type": "tag",
+   "start": 0.15,
+   "end": 16.44,
+   "text": "PARTE 4",
+   "y": 297,
+   "x": 112,
+   "size": 32
+  },
+  {
+   "type": "vignette",
+   "start": 0,
+   "end": 3.58,
+   "color": "alert",
+   "strength": 0.5
+  },
+  {
+   "type": "phrase",
+   "start": 0,
+   "end": 3.58,
+   "y": 900,
+   "size": 69,
+   "lines": [
+    {
+     "style": "label",
+     "text": "QUEM SEQUESTROU O SEU AMIGO",
+     "at": 0
+    },
+    {
+     "text": "VAI MOSTRAR",
+     "at": 0,
+     "color": "white"
+    },
+    {
+     "text": "O ROSTO.",
+     "at": 2.12,
+     "color": "yellow",
+     "shake": true
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "phrase",
+   "start": 3.63,
+   "end": 6.73,
+   "y": 790,
+   "size": 65,
+   "lines": [
+    {
+     "text": "CHEGOU AGORA?",
+     "at": 3.7,
+     "color": "yellow",
+     "size": 58
+    },
+    {
+     "text": "AS PARTES 1, 2 E 3",
+     "at": 5.0,
+     "color": "white",
+     "size": 47
+    },
+    {
+     "text": "TÃO NO PERFIL",
+     "at": 5.88,
+     "color": "white",
+     "size": 47
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "pointer",
+   "start": 5.88,
+   "end": 6.73,
+   "y": 940,
+   "x": 330,
+   "text": "@golpecartoon"
+  },
+  {
+   "type": "polaroid",
+   "start": 6.78,
+   "end": 8.85,
+   "image": "episodio-03/cena-04-mao-anel.png",
+   "focus": [
+    0.0,
+    0.18,
+    1.0,
+    0.62
+   ],
+   "caption": "PARTE 3",
+   "sub": "o muro",
+   "x": 330,
+   "y": 560,
+   "size": 300,
+   "angle": -5
+  },
+  {
+   "type": "phrase",
+   "start": 6.78,
+   "end": 8.85,
+   "y": 900,
+   "size": 60,
+   "lines": [
+    {
+     "text": "O RENATO FOI PEGO",
+     "at": 6.85,
+     "color": "white",
+     "size": 47
+    },
+    {
+     "text": "NO SEU LUGAR.",
+     "at": 7.67,
+     "color": "yellow"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "bars",
+   "start": 8.9,
+   "end": 12.37,
+   "y": 500,
+   "x": 330,
+   "width": 500,
+   "title": "PARTE 3 · VOCÊS VOTARAM",
+   "title_at": 8.97,
+   "items": [
+    {
+     "label": "TROCAR",
+     "pct": 50,
+     "at": 9.07,
+     "winner": false
+    },
+    {
+     "label": "DEIXAR",
+     "pct": 50,
+     "at": 9.22,
+     "winner": false
+    }
+   ]
+  },
+  {
+   "type": "stamp",
+   "start": 9.21,
+   "end": 10.36,
+   "text": "EMPATE",
+   "y": 860,
+   "x": 330,
+   "angle": -7,
+   "color": "white"
+  },
+  {
+   "type": "phrase",
+   "start": 10.34,
+   "end": 12.37,
+   "y": 770,
+   "size": 36,
+   "lines": [
+    {
+     "style": "label",
+     "text": "NO DESEMPATE",
+     "at": 10.36
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "stamp",
+   "start": 11.78,
+   "end": 12.37,
+   "text": "TROCAR",
+   "y": 860,
+   "x": 330,
+   "angle": -7,
+   "color": "yellow",
+   "filled": true
+  },
+  {
+   "type": "jornal",
+   "start": 12.37,
+   "end": 16.44,
+   "y": 340,
+   "x": 330,
+   "width": 500,
+   "title": "A VOZ DO BAIRRO",
+   "sub": "o que vocês comentaram na parte 3",
+   "items": [
+    {
+     "text": "Trocar.",
+     "at": 12.67
+    },
+    {
+     "text": "Deixar.",
+     "at": 13.17
+    },
+    {
+     "text": "(…) só porque ajudou depois de arrependido faz diferença? Tem que deixar se lascar e ir proteger a família do cara.",
+     "at": 13.67
+    }
+   ]
+  },
+  {
+   "type": "hud",
+   "start": 16.44,
+   "end": 25.29,
+   "label": "A SUA PARTE",
+   "dy": 67,
+   "values": [
+    {
+     "at": 16.44,
+     "text": "R$ 0",
+     "color": "red"
+    }
+   ],
+   "stars": [
+    {
+     "at": 16.44,
+     "count": 5,
+     "step": 0
+    }
+   ]
+  },
+  {
+   "type": "hud",
+   "start": 25.29,
+   "end": 83.94,
+   "label": "A FOTO SAI ÀS",
+   "dy": 67,
+   "values": [
+    {
+     "at": 25.29,
+     "text": "3:15",
+     "color": "yellow"
+    }
+   ],
+   "stars": [
+    {
+     "at": 25.29,
+     "count": 5,
+     "step": 0
+    }
+   ]
+  },
+  {
+   "type": "hud",
+   "start": 83.94,
+   "end": 91.73,
+   "label": "A SUA PARTE",
+   "dy": 67,
+   "values": [
+    {
+     "at": 83.94,
+     "text": "R$ 0",
+     "color": "red",
+     "shake": true
+    }
+   ],
+   "stars": [
+    {
+     "at": 83.94,
+     "count": 5,
+     "step": 0
+    }
+   ]
+  },
+  {
+   "type": "hud",
+   "start": 91.73,
+   "end": 98.91,
+   "label": "A FOTO SAI ÀS",
+   "dy": 67,
+   "values": [
+    {
+     "at": 91.73,
+     "text": "3:15",
+     "color": "yellow"
+    }
+   ],
+   "stars": [
+    {
+     "at": 91.73,
+     "count": 5,
+     "step": 0
+    }
+   ]
+  },
+  {
+   "type": "hud",
+   "start": 98.91,
+   "end": 103.03,
+   "label": "FALTAM",
+   "dy": 67,
+   "values": [
+    {
+     "at": 98.91,
+     "text": "2 MIN",
+     "color": "red",
+     "shake": true
+    }
+   ],
+   "stars": [
+    {
+     "at": 98.91,
+     "count": 5,
+     "step": 0
+    }
+   ]
+  },
+  {
+   "type": "tag",
+   "start": 16.44,
+   "end": 27.12,
+   "text": "O PLANO · A FOTO",
+   "y": 297,
+   "color": "yellow",
+   "size": 21
+  },
+  {
+   "type": "tag",
+   "start": 27.12,
+   "end": 39.61,
+   "text": "A TROCA · 02:59",
+   "y": 297,
+   "color": "yellow",
+   "size": 21
+  },
+  {
+   "type": "tag",
+   "start": 39.61,
+   "end": 69.89,
+   "text": "O DONO DO ANEL",
+   "y": 297,
+   "color": "yellow",
+   "size": 21
+  },
+  {
+   "type": "tag",
+   "start": 69.89,
+   "end": 77.66,
+   "text": "O MOTORISTA",
+   "y": 297,
+   "color": "yellow",
+   "size": 21
+  },
+  {
+   "type": "tag",
+   "start": 77.66,
+   "end": 96.96,
+   "text": "A VIRADA",
+   "y": 297,
+   "color": "yellow",
+   "size": 21
+  },
+  {
+   "type": "tag",
+   "start": 96.96,
+   "end": 103.03,
+   "text": "O RELÓGIO · 03:13",
+   "y": 297,
+   "color": "alert",
+   "size": 21
+  },
+  {
+   "type": "phrase",
+   "start": 16.49,
+   "end": 18.35,
+   "y": 900,
+   "size": 56,
+   "lines": [
+    {
+     "text": "VOCÊ NÃO VAI",
+     "at": 16.56,
+     "color": "white"
+    },
+    {
+     "text": "DE MÃOS VAZIAS.",
+     "at": 17.2,
+     "color": "yellow"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "callout",
+   "start": 20.23,
+   "end": 25.29,
+   "text": "PARA O JORNAL",
+   "x": 470,
+   "y": 340,
+   "target": {
+    "x": 348,
+    "y": 416
+   },
+   "color": "white"
+  },
+  {
+   "type": "callout",
+   "start": 23.89,
+   "end": 25.29,
+   "text": "A FOTO DA DIVISÃO",
+   "x": 190,
+   "y": 960,
+   "target": {
+    "x": 381,
+    "y": 588
+   },
+   "color": "yellow"
+  },
+  {
+   "type": "callout",
+   "start": 25.29,
+   "end": 27.12,
+   "text": "SÓ VOCÊ CANCELA",
+   "x": 470,
+   "y": 340,
+   "target": {
+    "x": 432,
+    "y": 472
+   },
+   "color": "alert"
+  },
+  {
+   "type": "phrase",
+   "start": 27.17,
+   "end": 31.16,
+   "y": 900,
+   "size": 63,
+   "lines": [
+    {
+     "text": "02:59",
+     "at": 27.24,
+     "color": "yellow",
+     "size": 82
+    },
+    {
+     "text": "O PORTÃO ESTÁ ABERTO.",
+     "at": 28.81,
+     "color": "white",
+     "size": 40
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "phrase",
+   "start": 31.21,
+   "end": 36.01,
+   "y": 900,
+   "size": 56,
+   "lines": [
+    {
+     "text": "UMA LÂMPADA SÓ.",
+     "at": 31.98,
+     "color": "white",
+     "size": 43
+    },
+    {
+     "text": "E O RENATO,",
+     "at": 33.46,
+     "color": "yellow"
+    },
+    {
+     "text": "AMARRADO.",
+     "at": 34.42,
+     "color": "red"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "ring",
+   "start": 33.46,
+   "end": 36.01,
+   "x": 440,
+   "y": 690,
+   "r": 100,
+   "color": "red"
+  },
+  {
+   "type": "balloon",
+   "start": 36.13,
+   "end": 39.61,
+   "text": "Você veio? Por que você veio?",
+   "x": 330,
+   "y": 405,
+   "tail": {
+    "x": 345,
+    "y": 465
+   },
+   "width": 440
+  },
+  {
+   "type": "nametag",
+   "start": 36.53,
+   "end": 39.61,
+   "name": "RENATO",
+   "sub": "seu amigo de infância · pego no seu lugar",
+   "x": 330,
+   "y": 880,
+   "color": "yellow"
+  },
+  {
+   "type": "phrase",
+   "start": 39.66,
+   "end": 42.12,
+   "y": 900,
+   "size": 63,
+   "lines": [
+    {
+     "text": "DA SOMBRA,",
+     "at": 39.73,
+     "color": "white"
+    },
+    {
+     "text": "UM HOMEM.",
+     "at": 40.36,
+     "color": "yellow"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "callout",
+   "start": 42.17,
+   "end": 44.61,
+   "text": "CABELO BRANCO",
+   "x": 200,
+   "y": 340,
+   "target": {
+    "x": 360,
+    "y": 385
+   },
+   "color": "yellow"
+  },
+  {
+   "type": "callout",
+   "start": 43.14,
+   "end": 44.61,
+   "text": "JAQUETA DE COURO",
+   "x": 200,
+   "y": 900,
+   "target": {
+    "x": 330,
+    "y": 600
+   },
+   "color": "white"
+  },
+  {
+   "type": "ring",
+   "start": 45.41,
+   "end": 47.17,
+   "x": 356,
+   "y": 672,
+   "r": 55,
+   "color": "red"
+  },
+  {
+   "type": "callout",
+   "start": 45.56,
+   "end": 47.17,
+   "text": "O ANEL DA FOTO",
+   "x": 200,
+   "y": 900,
+   "target": {
+    "x": 356,
+    "y": 690
+   },
+   "color": "yellow"
+  },
+  {
+   "type": "balloon",
+   "start": 47.29,
+   "end": 50.89,
+   "text": "Pode me chamar de Ademir. O São Jorge é meu.",
+   "x": 300,
+   "y": 405,
+   "tail": {
+    "x": 190,
+    "y": 470
+   },
+   "width": 400
+  },
+  {
+   "type": "balloon",
+   "start": 50.89,
+   "end": 53.27,
+   "text": "E aquela mesa da foto também.",
+   "x": 300,
+   "y": 405,
+   "tail": {
+    "x": 190,
+    "y": 470
+   },
+   "width": 400
+  },
+  {
+   "type": "nametag",
+   "start": 48.34,
+   "end": 53.27,
+   "name": "ADEMIR",
+   "sub": "dono do Ferro-Velho São Jorge",
+   "x": 330,
+   "y": 880,
+   "color": "alert"
+  },
+  {
+   "type": "callout",
+   "start": 51.12,
+   "end": 53.27,
+   "text": "A MESA DA FOTO",
+   "x": 470,
+   "y": 990,
+   "target": {
+    "x": 545,
+    "y": 760
+   },
+   "color": "yellow"
+  },
+  {
+   "type": "pop",
+   "start": 54.69,
+   "end": 56.8,
+   "text": "ZÁS",
+   "x": 480,
+   "y": 520,
+   "size": 64,
+   "color": "white",
+   "angle": 8
+  },
+  {
+   "type": "phrase",
+   "start": 55.74,
+   "end": 56.8,
+   "y": 420,
+   "size": 65,
+   "lines": [
+    {
+     "text": "SEM PRESSA.",
+     "at": 55.79,
+     "color": "yellow"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "balloon",
+   "start": 56.92,
+   "end": 61.74,
+   "text": "Combinado é combinado. Ele sai, você fica.",
+   "x": 300,
+   "y": 405,
+   "tail": {
+    "x": 296,
+    "y": 470
+   },
+   "width": 440
+  },
+  {
+   "type": "tag",
+   "start": 59.01,
+   "end": 61.74,
+   "text": "ELE SAI",
+   "y": 690,
+   "color": "green",
+   "size": 24,
+   "x": 164
+  },
+  {
+   "type": "tag",
+   "start": 59.98,
+   "end": 61.74,
+   "text": "VOCÊ FICA",
+   "y": 690,
+   "color": "alert",
+   "size": 24,
+   "x": 472
+  },
+  {
+   "type": "balloon",
+   "start": 61.86,
+   "end": 64.76,
+   "text": "Aceita um café? Acabei de passar.",
+   "x": 170,
+   "y": 470,
+   "tail": {
+    "x": 330,
+    "y": 470
+   },
+   "width": 300
+  },
+  {
+   "type": "tag",
+   "start": 65.15,
+   "end": 69.89,
+   "text": "NÃO",
+   "y": 640,
+   "color": "alert",
+   "size": 26,
+   "x": 200
+  },
+  {
+   "type": "tag",
+   "start": 66.73,
+   "end": 69.89,
+   "text": "SIM",
+   "y": 640,
+   "color": "green",
+   "size": 26,
+   "x": 430
+  },
+  {
+   "type": "balloon",
+   "start": 67.65,
+   "end": 69.89,
+   "text": "Com açúcar, se tiver.",
+   "x": 430,
+   "y": 360,
+   "tail": {
+    "x": 440,
+    "y": 400
+   },
+   "width": 300
+  },
+  {
+   "type": "pop",
+   "start": 68.63,
+   "end": 69.89,
+   "text": "SLURP",
+   "x": 500,
+   "y": 560,
+   "size": 44,
+   "color": "white",
+   "angle": 6
+  },
+  {
+   "type": "ring",
+   "start": 71.27,
+   "end": 73.13,
+   "x": 370,
+   "y": 650,
+   "r": 90,
+   "color": "red"
+  },
+  {
+   "type": "pop",
+   "start": 71.61,
+   "end": 73.13,
+   "text": "CLIC",
+   "x": 470,
+   "y": 540,
+   "size": 50,
+   "color": "yellow",
+   "angle": -6
+  },
+  {
+   "type": "phrase",
+   "start": 71.22,
+   "end": 73.13,
+   "y": 900,
+   "size": 54,
+   "lines": [
+    {
+     "text": "UM HOMEM",
+     "at": 71.27,
+     "color": "white"
+    },
+    {
+     "text": "ACENDE UM CIGARRO.",
+     "at": 71.61,
+     "color": "yellow",
+     "size": 43
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "vignette",
+   "start": 73.13,
+   "end": 77.66,
+   "color": "alert",
+   "strength": 0.6
+  },
+  {
+   "type": "phrase",
+   "start": 73.18,
+   "end": 75.05,
+   "y": 990,
+   "size": 63,
+   "lines": [
+    {
+     "text": "VOCÊ CONHECE",
+     "at": 73.25,
+     "color": "white"
+    },
+    {
+     "text": "ESSE ROSTO.",
+     "at": 73.85,
+     "color": "yellow"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "nametag",
+   "start": 75.1,
+   "end": 77.66,
+   "name": "O MOTORISTA",
+   "sub": "dirigiu o carro do assalto",
+   "x": 330,
+   "y": 990,
+   "color": "alert"
+  },
+  {
+   "type": "phrase",
+   "start": 77.71,
+   "end": 80.92,
+   "y": 900,
+   "size": 60,
+   "lines": [
+    {
+     "style": "label",
+     "text": "A ÚLTIMA COISA QUE",
+     "at": 78.69
+    },
+    {
+     "text": "VOCÊ ESPERAVA",
+     "at": 79.51,
+     "color": "white"
+    },
+    {
+     "text": "OUVIR.",
+     "at": 80.05,
+     "color": "yellow"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "balloon",
+   "start": 80.97,
+   "end": 83.82,
+   "text": "Eu não quero você preso.",
+   "x": 355,
+   "y": 760,
+   "tail": {
+    "x": 355,
+    "y": 600
+   },
+   "width": 440
+  },
+  {
+   "type": "phrase",
+   "start": 83.87,
+   "end": 86.73,
+   "y": 950,
+   "size": 63,
+   "lines": [
+    {
+     "text": "“SUMIU COM OS",
+     "at": 83.94,
+     "color": "white"
+    },
+    {
+     "text": "10 MILHÕES.”",
+     "at": 85.44,
+     "color": "green"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "phrase",
+   "start": 86.73,
+   "end": 88.89,
+   "y": 950,
+   "size": 56,
+   "lines": [
+    {
+     "text": "“COM A MINHA",
+     "at": 86.78,
+     "color": "white"
+    },
+    {
+     "text": "PARTE TAMBÉM.”",
+     "at": 87.38,
+     "color": "yellow"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "callout",
+   "start": 86.78,
+   "end": 88.89,
+   "text": "AS BOLSAS DA DIVISÃO",
+   "x": 170,
+   "y": 470,
+   "target": {
+    "x": 244,
+    "y": 775
+   },
+   "color": "white"
+  },
+  {
+   "type": "balloon",
+   "start": 89.01,
+   "end": 91.61,
+   "text": "E você vai me levar até ele.",
+   "x": 400,
+   "y": 365,
+   "tail": {
+    "x": 425,
+    "y": 595
+   },
+   "width": 440
+  },
+  {
+   "type": "callout",
+   "start": 90.1,
+   "end": 91.61,
+   "text": "A MESMA MÃO",
+   "x": 200,
+   "y": 900,
+   "target": {
+    "x": 232,
+    "y": 730
+   },
+   "color": "yellow"
+  },
+  {
+   "type": "vignette",
+   "start": 91.61,
+   "end": 96.96,
+   "color": "alert",
+   "strength": 0.7
+  },
+  {
+   "type": "phrase",
+   "start": 91.66,
+   "end": 96.96,
+   "y": 900,
+   "size": 51,
+   "lines": [
+    {
+     "style": "label",
+     "text": "VOCÊ NUNCA FOI O CULPADO.",
+     "at": 91.73
+    },
+    {
+     "text": "E CONTINUA SENDO.",
+     "at": 94.78,
+     "color": "red"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "stamp",
+   "start": 93.92,
+   "end": 96.96,
+   "text": "ISCA",
+   "y": 740,
+   "x": 330,
+   "angle": -7,
+   "color": "red",
+   "filled": true
+  },
+  {
+   "type": "pop",
+   "start": 97.24,
+   "end": 98.91,
+   "text": "VRRR",
+   "x": 200,
+   "y": 790,
+   "size": 56,
+   "color": "white",
+   "angle": -6,
+   "shake": true
+  },
+  {
+   "type": "ring",
+   "start": 98.91,
+   "end": 103.03,
+   "x": 346,
+   "y": 796,
+   "r": 96,
+   "color": "yellow"
+  },
+  {
+   "type": "phrase",
+   "start": 100.1,
+   "end": 103.03,
+   "y": 960,
+   "size": 54,
+   "lines": [
+    {
+     "text": "FALTAM 2 MINUTOS",
+     "at": 100.15,
+     "color": "red",
+     "size": 47
+    },
+    {
+     "text": "PARA A FOTO SAIR.",
+     "at": 100.98,
+     "color": "white",
+     "size": 40
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "tag",
+   "start": 103.08,
+   "end": 112.28,
+   "text": "OPÇÃO 1 · CANCELAR",
+   "y": 360,
+   "color": "white",
+   "size": 24,
+   "x": 330
+  },
+  {
+   "type": "tag",
+   "start": 104.19,
+   "end": 112.28,
+   "text": "− VIRA SÓCIO DE UM SEQUESTRADOR",
+   "y": 920,
+   "color": "alert",
+   "size": 22,
+   "x": 330
+  },
+  {
+   "type": "tag",
+   "start": 106.65,
+   "end": 112.28,
+   "text": "+ ACHA O PARCEIRO COM O ADEMIR",
+   "y": 820,
+   "color": "green",
+   "size": 22,
+   "x": 330
+  },
+  {
+   "type": "tag",
+   "start": 108.56,
+   "end": 112.28,
+   "text": "+ CHANCE DE PEGAR A SUA PARTE",
+   "y": 870,
+   "color": "green",
+   "size": 22,
+   "x": 330
+  },
+  {
+   "type": "tag",
+   "start": 109.17,
+   "end": 112.28,
+   "text": "− CONTINUA SENDO A ISCA",
+   "y": 970,
+   "color": "alert",
+   "size": 22,
+   "x": 330
+  },
+  {
+   "type": "tag",
+   "start": 112.33,
+   "end": 121.23,
+   "text": "OPÇÃO 2 · ENVIAR",
+   "y": 360,
+   "color": "white",
+   "size": 24,
+   "x": 330
+  },
+  {
+   "type": "tag",
+   "start": 113.21,
+   "end": 121.23,
+   "text": "+ O ROSTO DO ADEMIR NO JORNAL",
+   "y": 820,
+   "color": "green",
+   "size": 22,
+   "x": 330
+  },
+  {
+   "type": "tag",
+   "start": 114.95,
+   "end": 121.23,
+   "text": "− A POLÍCIA TE ACHA COM ELES",
+   "y": 920,
+   "color": "alert",
+   "size": 22,
+   "x": 330
+  },
+  {
+   "type": "tag",
+   "start": 117.51,
+   "end": 121.23,
+   "text": "+ A FOTO VIRA PROVA",
+   "y": 870,
+   "color": "green",
+   "size": 22,
+   "x": 330
+  },
+  {
+   "type": "tag",
+   "start": 118.11,
+   "end": 121.23,
+   "text": "− A SUSPEITA SOBE",
+   "y": 970,
+   "color": "alert",
+   "size": 22,
+   "x": 330
+  },
+  {
+   "type": "phrase",
+   "start": 121.23,
+   "end": 128.77,
+   "y": 585,
+   "size": 69,
+   "lines": [
+    {
+     "text": "CANCELAR",
+     "at": 121.35,
+     "color": "white"
+    },
+    {
+     "text": "OU ENVIAR?",
+     "at": 122.25,
+     "color": "yellow"
+    }
+   ],
+   "x": 330
+  },
+  {
+   "type": "buttons",
+   "start": 123.14,
+   "end": 128.77,
+   "y": 800,
+   "x": 310,
+   "prompt": "COMENTA UMA PALAVRA",
+   "prompt_at": 123.19,
+   "items": [
+    {
+     "text": "CANCELAR",
+     "at": 123.75,
+     "style": "yellow"
+    },
+    {
+     "text": "ENVIAR",
+     "at": 124.03,
+     "style": "white"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "start": 124.75,
+   "end": 128.77,
+   "y": 940,
+   "x": 330,
+   "title": "PARTE 5",
+   "sub": "a maioria decide o próximo passo"
+  }
+ ],
+ "sfx": [
+  {
+   "sound": "whoosh.wav",
+   "at": 3.22,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 8.49,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 16.08,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 26.76,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 39.25,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 61.38,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 69.53,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 77.3,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 91.25,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 96.6,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 102.67,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 120.87,
+   "gain": -2
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 2.08,
+   "gain": -5
+  },
+  {
+   "sound": "pop.wav",
+   "at": 5.88,
+   "gain": -10
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.074,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.174,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.274,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.374,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.474,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.574,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.674,
+   "gain": -20
+  },
+  {
+   "sound": "tique.wav",
+   "at": 9.774,
+   "gain": -20
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 11.76,
+   "gain": -5
+  },
+  {
+   "sound": "notificacao.wav",
+   "at": 19.395,
+   "gain": -12
+  },
+  {
+   "sound": "passos.wav",
+   "at": 28.809,
+   "gain": -12
+  },
+  {
+   "sound": "porta-abre.wav",
+   "at": 30.144,
+   "gain": -12
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 39.687,
+   "gain": -6
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 45.523,
+   "gain": -8
+  },
+  {
+   "sound": "pop.wav",
+   "at": 48.336,
+   "gain": -10
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 54.647,
+   "gain": -7
+  },
+  {
+   "sound": "pop.wav",
+   "at": 65.154,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 66.734,
+   "gain": -10
+  },
+  {
+   "sound": "interruptor.wav",
+   "at": 71.611,
+   "gain": -10
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 75.061,
+   "gain": -5
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 80.926,
+   "gain": -6
+  },
+  {
+   "sound": "impacto.wav",
+   "at": 93.895,
+   "gain": -5
+  },
+  {
+   "sound": "vibracao.wav",
+   "at": 97.142,
+   "gain": -8
+  },
+  {
+   "sound": "tique.wav",
+   "at": 98.912,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 99.412,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 99.912,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 100.412,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 100.912,
+   "gain": -15
+  },
+  {
+   "sound": "tique.wav",
+   "at": 101.412,
+   "gain": -15
+  },
+  {
+   "sound": "pop.wav",
+   "at": 104.195,
+   "gain": -14
+  },
+  {
+   "sound": "pop.wav",
+   "at": 106.652,
+   "gain": -14
+  },
+  {
+   "sound": "pop.wav",
+   "at": 113.213,
+   "gain": -14
+  },
+  {
+   "sound": "pop.wav",
+   "at": 114.953,
+   "gain": -14
+  },
+  {
+   "sound": "pop.wav",
+   "at": 123.755,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 124.035,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 124.755,
+   "gain": -10
+  }
+ ],
+ "captions": [],
+ "effects": [
+  "../../episodio-02/montagem/efeitos"
+ ]
+}

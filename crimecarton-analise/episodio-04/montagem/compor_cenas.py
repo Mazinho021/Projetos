@@ -32,6 +32,7 @@ import re
 import sys
 import textwrap
 
+import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 HERE = Path(__file__).resolve().parent
@@ -60,6 +61,10 @@ MINIATURA_DIVISAO = (.08, .1, 1.0, .72)
 # Where the stand-ins draw the phones' blank screens, as the request places them:
 # left, top, right, bottom as fractions.
 TELAS_RASCUNHO = {'cena-03-agendar.png': (.33, .30, .67, .70), 'cena-20-celular-escondido.png': (.44, .50, .58, .65)}
+# In scene 20, Zinho's fingers cover the right of the screen from a third of its height down,
+# and achar_tela fits a skewed screen. Its corners, measured where nothing covers the edges:
+# top left, top right, bottom right, bottom left.
+TELA20 = [(.4344, .5361), (.5302, .5361), (.5302, .6416), (.4323, .6416)]
 
 
 def font(size, weight='ExtraBold'):
@@ -166,9 +171,26 @@ def agendar(w=600, h=1290):
     return im
 
 
-def na_tela(cena, plano, nome):
+def mascara_da_tela(fundo, quad):
+    """The lit pixels inside a screen whose corners are known. The fingers over it are darker
+    and redder, so they stay in front; the mask is closed and grown a little, as achar_tela's.
+    Scene 20's screen glows warmer at the top, so the test allows a warm white."""
+    a = np.asarray(fundo.convert('RGB')).astype(int)
+    clara = (a.mean(axis=2) > 200) & (a.max(axis=2) - a.min(axis=2) < 100) & (a[..., 1] >= .85*a[..., 0])
+    dentro = Image.new('L', fundo.size, 0)
+    ImageDraw.Draw(dentro).polygon([(x*fundo.width, y*fundo.height) for x, y in quad], fill=255)
+    m = clara & (np.asarray(dentro.filter(ImageFilter.MaxFilter(9))) > 0)
+    mascara = Image.fromarray((m*255).astype(np.uint8))
+    mascara = mascara.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.MinFilter(5)).filter(ImageFilter.MaxFilter(7))
+    return mascara.filter(ImageFilter.GaussianBlur(1.2))
+
+
+def na_tela(cena, plano, nome, quad=None):
     fundo = Image.open(desenho(cena)).convert('RGB')
-    quad, mascara = achar_tela(fundo)
+    if quad and (EPISODE / cena).exists():
+        mascara = mascara_da_tela(fundo, quad)
+    else:
+        quad, mascara = achar_tela(fundo)
     encaixar(fundo, plano, quad, mascara, crescer=1.035).convert('RGB').save(ARTE / nome, optimize=True)
     return quad
 
@@ -180,7 +202,7 @@ def telas():
                                  lock_screen({'state': 'lock', 'date': NOITE, 'time': '03:13', 'app': 'MENSAGENS',
                                               'sender': CONTATO, 'message': 'Envio agendado: sai às 03:15',
                                               'when': 'agora'}),
-                                 'tela-0313.png'),
+                                 'tela-0313.png', TELA20),
     }
     for nome, quad in quads.items():
         print(f'{nome}: tela em ' + ', '.join(f'({x:.3f}, {y:.3f})' for x, y in quad))

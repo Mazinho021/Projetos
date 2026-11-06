@@ -30,6 +30,9 @@ COVERS = [
          scale=1.10, focus=(.5, .30), at=(540, 660)),
     dict(part=3, title='O PREÇO', line='VOCÊ POR ELE?', art='../episodio-03/cena-09-foto-refem.png',
          scale=1.15, focus=(.58, .38), at=(540, 720)),
+    # The hand with the ring and the knife, not Ademir's face, which the part itself reveals.
+    dict(part=4, title='O DONO DO ANEL', line='QUEM É ELE?', art='../episodio-04/cena-08-anel-canivete.png',
+         scale=1.35, focus=(.52, .5), at=(540, 800)),
 ]
 
 
