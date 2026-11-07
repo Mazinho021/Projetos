@@ -1,6 +1,6 @@
 # Parte 5 — “A divisão”
 
-**Situação em 07/11/2026:** roteiro escrito, esperando o “ok” do criador. Nada foi pedido ao Codex ainda.
+**Situação em 07/11/2026:** o criador aprovou o roteiro (“Vamos lá”). O pedido ao Codex está em [`pedido-codex-ep05.md`](pedido-codex-ep05.md): as 4 vozes e os 19 desenhos, em três lotes, com push depois de cada cena.
 
 ## A votação da Parte 4
 
@@ -69,13 +69,13 @@ Uma imagem por trecho. Os desenhos novos seguem a composição do `CLAUDE.md`: o
 | 23 | “Se contar pro Ademir… E o Toninho paga por isso.” | **Nova.** No São Jorge, a mão do anel pousa no ombro do Toninho, que está com medo, como fez com o Renato e o Zinho | “OPÇÃO 2 · CONTAR”, prós e contras |
 | 24 | “Topar ou contar?” | Montada: as duas opções lado a lado | Botões TOPAR e CONTAR e a caixa “PARTE 6” |
 
-São **19 desenhos novos**, mais quatro lembranças.
+São **19 desenhos novos**, mais quatro lembranças. Nos lotes, os desenhos novos têm os números 1 a 19, na ordem desta tabela: [`LOTE-01-CENAS-01-A-07.md`](LOTE-01-CENAS-01-A-07.md), [`LOTE-02-CENAS-08-A-13.md`](LOTE-02-CENAS-08-A-13.md) e [`LOTE-03-CENAS-14-A-19.md`](LOTE-03-CENAS-14-A-19.md).
 
 ## Personagens
 
 - **Zinho, Renato e Ademir:** como nas Partes 3 e 4.
 - **Toninho, o motorista:** o da Parte 4, com uns 35 anos, magro, boné escuro, barba rala e jaqueta corta-vento cinza. Agora tem nome.
-- **Dona Célia, a mãe do Renato:** nova. Uns 60 anos, baixinha, cabelo grisalho preso, avental florido, rosto cansado e carinhoso. É a mãe que dava almoço para o Zinho quando eles eram moleques.
+- **Dona Célia, a mãe do Renato:** nova. É a mãe da lembrança do almoço da Parte 3 (`episodio-03/cena-11-almoco.png`), uns 15 anos mais velha: uns 60 anos, baixinha, cabelo cacheado grisalho preso no alto, avental florido, rosto cansado e carinhoso. É a mãe que dava almoço para o Zinho quando eles eram moleques.
 
 ## Painel que muda com a história
 

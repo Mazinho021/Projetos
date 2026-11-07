@@ -1,0 +1,7 @@
+{
+  "idempotencyKey": "zinho-ep05-ademir-charon-v1-20261107",
+  "voice": "Charon",
+  "style": "Português brasileiro. A mesma voz do narrador, mas interpretando outro homem: o Ademir, de uns 60 anos, dono de um ferro-velho, o mesmo das Partes 3 e 4. Fala devagar, baixo e calmo, calmo demais, sem gritar e sem pressa. Frio e seguro de si, como quem tem o controle. “Sócio.” sai satisfeito, quase um sorriso na voz, uma palavra só e curta. “Agora apaga essa foto. Na minha frente.” é uma ordem baixa e firme, sem ameaça aberta. A última fala é tranquila, de quem já decidiu tudo. Natural, sem caricatura de vilão. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+  "text": "Sócio.\n\nAgora apaga essa foto. Na minha frente.\n\nO Toninho te leva. Amanhã a gente começa a caçada.",
+  "observacao": "As falas do Ademir na Parte 5, no mesmo estilo do pedido da Parte 4; o Claude Code passa a gravação pela voz do cobrador com voz_ademir.py, sem o som de celular. Uns 10 s. Geração paga, pedida pelo criador; mostrar o custo antes de executar. Não editar o áudio."
+}
