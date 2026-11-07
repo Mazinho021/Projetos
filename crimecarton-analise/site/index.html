@@ -479,7 +479,7 @@ a.capitulo:hover { transform: translateY(-4px); }
       <a href="#capitulos">Capítulos</a>
       <a href="#perguntas">Perguntas</a>
     </nav>
-    <a class="botao botao-cheio botao-p" href="#capitulos">Assistir do começo</a>
+    <a class="botao botao-cheio botao-p" href="#aliado">Quero ser aliado</a>
   </div>
 </header>
 
@@ -489,15 +489,15 @@ a.capitulo:hover { transform: translateY(-4px); }
       <li>A Parte 4 já tá no perfil</li>
       <li>Vocês decidiram: cancelar</li>
       <li>A Parte 5 vem aí</li>
-      <li>Vagas de aliado: abrem na próxima parte</li>
-      <li>Assistir e votar é de graça</li>
+      <li>Parte 6: <span data-vagas>30</span> vagas de aliado</li>
+      <li>Passe de aliado: R$ 9,90 no Pix ou no cartão</li>
     </ul>
     <ul aria-hidden="true">
       <li>A Parte 4 já tá no perfil</li>
       <li>Vocês decidiram: cancelar</li>
       <li>A Parte 5 vem aí</li>
-      <li>Vagas de aliado: abrem na próxima parte</li>
-      <li>Assistir e votar é de graça</li>
+      <li>Parte 6: <span data-vagas>30</span> vagas de aliado</li>
+      <li>Passe de aliado: R$ 9,90 no Pix ou no cartão</li>
     </ul>
   </div>
 </div>
@@ -510,15 +510,15 @@ a.capitulo:hover { transform: translateY(-4px); }
         <h1 id="titulo"><span>O assalto deu certo.</span> <span class="destaque">A sua parte, não.</span></h1>
         <p class="hero-sub">Série de suspense em desenho. Nos comentários, você decide o próximo passo do Zinho.</p>
         <div class="acoes">
-          <a class="botao botao-cheio" href="#capitulos">Assistir do começo</a>
+          <a class="botao botao-cheio" href="#aliado">Quero ser aliado</a>
           <a class="botao botao-vazado" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener">Assistir no Instagram<span class="ico" aria-hidden="true">arrow_outward</span></a>
         </div>
       </div>
 
-      <aside class="vagas" aria-label="A próxima parte">
+      <aside class="vagas" aria-label="Vagas de aliado na Parte 6">
         <div>
-          <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>A Parte 5 vem aí</span></p>
-          <p class="vagas-prazo">Vocês decidiram: cancelar. A história continua daí, e a Parte 5 sai no @golpecartoon assim que ficar pronta.</p>
+          <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>Parte 6: <span data-vagas>30</span> vagas de aliado abertas</span></p>
+          <p class="vagas-prazo">A Parte 5 vem aí, sem aliados. Quem virar aliado agora aparece na Parte 6.</p>
         </div>
       </aside>
 
@@ -589,24 +589,18 @@ a.capitulo:hover { transform: translateY(-4px); }
 
           <div class="legenda-post" aria-label="Exemplo da legenda do post no Instagram">
             <img src="img/perfil.jpg" width="96" height="96" alt="">
-            <p><span class="quem">golpecartoon</span><span class="onde">legenda do post</span><br>Aliados: <span data-legenda>as vagas abrem na próxima parte. Link na bio.</span></p>
+            <p><span class="quem">golpecartoon</span><span class="onde">legenda do post</span><br>Aliados da Parte 6: <span data-legenda>ainda ninguém. Quer aparecer? Link na bio.</span></p>
           </div>
         </div>
 
         <div class="aliado-compra">
-          <!-- Vendas fechadas desde 07/11/2026, por decisão do criador: a Parte 5 sai sem aliados.
-               Para abrir a lista de uma parte: tirar o hidden dos créditos, dos quadros e do
-               formulário, apagar o aviso abaixo e ligar vendas em netlify/lib/serie.mjs. -->
-          <div class="fechado" role="note">
-            <h3>As vagas estão fechadas agora</h3>
-            <p>A Parte 5 sai sem aliados. As vagas abrem de novo na próxima parte, com o prazo aqui no site e no @golpecartoon.</p>
-            <a class="botao botao-vazado" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener">Seguir no Instagram<span class="ico" aria-hidden="true">arrow_outward</span></a>
-          </div>
-
-          <div class="creditos" aria-labelledby="t-creditos" hidden>
+          <!-- Desde 07/11/2026, por decisão do criador, a Parte 5 sai sem aliados e a lista
+               aberta é a da Parte 6, ainda sem prazo. Para fechar as vendas, ver
+               ../ideia-site-da-serie.md: um aviso .fechado no lugar dos créditos e do formulário. -->
+          <div class="creditos" aria-labelledby="t-creditos">
             <p class="creditos-topo">A parte que faltou · aliados</p>
-            <p class="creditos-parte" id="t-creditos">Próxima parte</p>
-            <p class="creditos-sub">sai depois da votação</p>
+            <p class="creditos-parte" id="t-creditos">Parte 6</p>
+            <p class="creditos-sub">sai depois da votação da Parte 5</p>
             <ol class="creditos-lista" data-lista>
               <li><span>01</span>vaga aberta</li>
               <li><span>02</span>vaga aberta</li>
@@ -641,9 +635,9 @@ a.capitulo:hover { transform: translateY(-4px); }
             </ol>
           </div>
 
-          <div class="quadros" hidden>
-            <div><b data-vagas>30</b><span>vagas na próxima parte</span></div>
-            <div><b class="alerta" data-relogio>—</b><span>para a lista fechar</span></div>
+          <div class="quadros">
+            <div><b data-vagas>30</b><span>vagas na Parte 6</span></div>
+            <div><b class="alerta" data-relogio>em breve</b><span>o prazo sai junto com a Parte 5</span></div>
           </div>
 
           <div class="retorno" id="retorno" role="status" hidden>
@@ -651,7 +645,7 @@ a.capitulo:hover { transform: translateY(-4px); }
             <p data-retorno-texto></p>
           </div>
 
-          <form class="passe" id="passe" action="/api/checkout" method="POST" novalidate hidden>
+          <form class="passe" id="passe" action="/api/checkout" method="POST" novalidate>
             <h3>Garanta a sua vaga</h3>
             <div class="campo">
               <label for="arroba">Seu @ no Instagram</label>
@@ -737,7 +731,7 @@ a.capitulo:hover { transform: translateY(-4px); }
         <details><summary>Onde o meu @ vai aparecer?<span class="ico" aria-hidden="true">add</span></summary>
           <p>Num lugar da cena escolhido pela produção, como os contatos de um celular, um muro, uma tela de TV ou os créditos do fim, e na legenda do post no Instagram.</p></details>
         <details><summary>Até quando posso virar aliado de uma parte?<span class="ico" aria-hidden="true">add</span></summary>
-          <p>Até o prazo que aparece aqui no site, ou até acabarem as 30 vagas. Depois disso, o passe vale para a parte seguinte. Agora as vagas estão fechadas: elas abrem de novo na próxima parte.</p></details>
+          <p>Até o prazo que aparece aqui no site, ou até acabarem as 30 vagas. Depois disso, o passe vale para a parte seguinte. A Parte 5 sai sem aliados, então quem comprar agora aparece na Parte 6.</p></details>
         <details><summary>Preciso comprar de novo em cada parte?<span class="ico" aria-hidden="true">add</span></summary>
           <p>Sim. Cada passe vale para uma parte. Entrou de novo, aparece de novo, e o seu número de aliado continua o mesmo.</p></details>
         <details><summary>Errei meu @. E agora?<span class="ico" aria-hidden="true">add</span></summary>
@@ -825,8 +819,8 @@ a.capitulo:hover { transform: translateY(-4px); }
   // Valores de reserva. O site publicado pega os de verdade em /api/aliados.
   var CONFIG = {
     parte: 6,
-    vendas: false,                       // vendas fechadas: o site não vende passe agora
-    fecha: null,                         // prazo da lista, quando ela abrir
+    vendas: true,
+    fecha: null,                         // prazo da lista: ainda sem prazo
     vagas: 30,
     preco: 9.9,                           // R$ do passe, para o formulário do cartão
     proximoNumero: 1                      // o número do próximo aliado novo
@@ -1127,7 +1121,7 @@ a.capitulo:hover { transform: translateY(-4px); }
   }
   // A parte em que o passe entra, como o servidor decide: a seguinte depois do prazo ou com a lista cheia.
   function parteAgora() {
-    return Date.now() > fim || aliadosAgora.length >= CONFIG.vagas ? CONFIG.parte + 1 : CONFIG.parte;
+    return (fim && Date.now() > fim) || aliadosAgora.length >= CONFIG.vagas ? CONFIG.parte + 1 : CONFIG.parte;
   }
   function abrirCartao(dados) {
     dadosCartao = dados;

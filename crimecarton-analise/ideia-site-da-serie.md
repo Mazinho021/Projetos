@@ -29,11 +29,10 @@ Por decisão do criador, o site não cita o @crimecarton.
 - **o topo** mostra o fim da Parte 4 no celular e “A Parte 5 vem aí”, e os botões levam às partes;
 - **a votação** mostra o resultado da Parte 4: CANCELAR, 5 a 0 no Instagram. O quadro “O caso até aqui” ganhou o Renato e o Ademir;
 - **as capas** vão da Parte 1 à 4, com o carimbo de cada votação, e a Parte 5 aparece como “em breve”;
-- **as vagas de aliado estão fechadas**, por decisão do criador: a Parte 5 sai sem aliados, e as vagas abrem de novo na próxima parte.
+- **as vagas de aliado são da Parte 6**, por decisão do criador: a Parte 5 sai sem aliados, mas a venda continua. Quem comprar agora aparece na Parte 6.
   - Ninguém comprou passe depois de a lista da Parte 3 fechar, em 30/10/2026, então ninguém ficou de fora.
-  - Em `site/netlify/lib/serie.mjs`, `vendas: false` faz o `/api/checkout` recusar qualquer passe, com o aviso de vagas fechadas, sem criar cobrança. O `/api/aliados` avisa a página.
-  - Na página, os créditos, os quadros e o formulário ficam escondidos (`hidden`), e um aviso explica que as vagas abrem na próxima parte.
-  - **Para abrir a lista de uma parte:** pôr `vendas: true`, a parte e o prazo (`fecha`) em `serie.mjs`, tirar o `hidden` dos créditos, dos quadros e do formulário, apagar o aviso e montar o vídeo daquela parte com os @.
+  - A lista da Parte 6 ainda não tem prazo (`fecha: null` em `site/netlify/lib/serie.mjs`). Sem prazo, os passes ficam na Parte 6 até as 30 vagas acabarem, e a página mostra “em breve · o prazo sai junto com a Parte 5”. **Quando a Parte 5 sair, combinar o prazo com o criador** e pôr em `fecha`.
+  - **Para fechar as vendas de vez,** se o criador pedir: `vendas: false` em `serie.mjs` faz o `/api/checkout` recusar qualquer passe, com o aviso de vagas fechadas, sem criar cobrança, e o `/api/aliados` avisa a página. Na página, esconder (`hidden`) os créditos, os quadros e o formulário e pôr no lugar um aviso com a classe `fechado`, que já tem estilo.
 - Os testes não dependem mais da data de hoje: eles abrem uma lista da Parte 3 só para eles. Os 17 passam.
 
 O Mercado Pago está ligado desde 28/10/2026, direto com o token de produção. No mesmo dia, o criador fez a primeira compra de verdade, um Pix de R$ 9,90 com o @ `teste.golpe`. O pagamento foi aprovado e o @ ficou fora da lista, como devia. Em 29/10/2026, o criador aumentou as vagas da Parte 3 de 10 para 30, no site e no vídeo que chama aliados ([`chamada-aliado/`](chamada-aliado/)). Faltam duas coisas do criador:

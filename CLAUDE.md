@@ -95,7 +95,7 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 ## Site da série (lembrete do criador em 07/11/2026)
 
 - **A cada parte publicada, atualizar o site** (`crimecarton-analise/site/`, no ar em golpecartoon.netlify.app): a capa nova em “Assista do começo”, com o carimbo da votação, o resultado na seção de votação, o fim da parte no topo e o quadro “O caso até aqui”. Em 07/11/2026, o site estava parado na Parte 3.
-- **As vagas de aliado estão fechadas** desde 07/11/2026, por decisão do criador. Só abrir quando ele pedir, com o prazo que ele escolher. O passo a passo está em `crimecarton-analise/ideia-site-da-serie.md`.
+- **A Parte 5 sai sem aliados**, por decisão do criador em 07/11/2026, mas a venda continua: quem comprar agora aparece na Parte 6. A lista ainda não tem prazo; quando a Parte 5 sair, combinar o prazo com o criador. O passo a passo está em `crimecarton-analise/ideia-site-da-serie.md`.
 - Publicar com a ferramenta de deploy do Netlify e conferir no ar a página, o `/api/aliados` e os testes (`node --test crimecarton-analise/site/testes/*.test.mjs`).
 
 ## Vozes
