@@ -110,12 +110,12 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
   - Em 02/11/2026, a conversa da Parte 4 travou no limite diário antes de fazer push, e nada foi entregue.
   - Em 05/11/2026, o close do Ademir (cena 16) ficou pronto, mas o limite de 5 horas parou a conversa antes do push, que só viria na cena 20.
 - **Para gastar menos limite (combinado com o criador em 07/11/2026, vale da Parte 6 em diante):**
+  - **tudo numa conversa só**, como até a Parte 5: as vozes e os três lotes de desenhos, em sequência, na mesma aba, com push depois de cada cena;
   - o criador deixa o Codex no **esforço médio**, e não no máximo. As tarefas dele são de seguir o pedido, e o raciocínio já vai pronto nos arquivos;
-  - mandar **uma conversa nova para cada lote**, com uma mensagem curta que diz qual lote executar. Como cada cena tem push na hora, nada se perde, e a conversa não fica pesada;
   - o Codex lê só o `AGENTS.md`, o pedido e o lote, e não o `CLAUDE.md` e o `NOTAS.md` inteiros.
-- **Quatro conversas por parte, que podem rodar ao mesmo tempo** (pergunta do criador em 07/11/2026): uma para as vozes e uma para cada um dos três lotes de desenhos, de 6 a 7 cenas cada. O criador pode abrir as quatro abas de uma vez. Para isso:
-  - **cada conversa faz push numa branch própria**, como `codex/ep06-vozes` e `codex/ep06-lote-01`, para uma não recusar nem apagar o push da outra. O Claude junta as branches na dele;
-  - **os lotes são agrupados por lugar**, como todas as cenas do carro num lote só, para cada cenário sair igual sem depender dos desenhos de outro lote. Os personagens seguem os desenhos das partes anteriores;
+- **Se o limite ainda acabar rápido demais, o plano B é dividir em quatro conversas**, uma para as vozes e uma para cada lote, que podem rodar ao mesmo tempo, em abas separadas:
+  - cada conversa faz push numa branch própria, como `codex/ep06-vozes` e `codex/ep06-lote-01`, para uma não recusar nem apagar o push da outra. O Claude junta as branches na dele;
+  - os lotes são agrupados por lugar, como todas as cenas do carro num lote só, para cada cenário sair igual sem depender dos desenhos de outro lote;
   - as quatro dividem o mesmo limite de 5 horas e da semana. Se ele acabar, todas param juntas, mas o que já teve push fica salvo.
 - **As instruções para o Codex ficam no [`AGENTS.md`](AGENTS.md)**, que ele lê sozinho. Elas mandam ler este arquivo e o `NOTAS.md` antes de cada tarefa.
 - **Não propor que o criador gere imagens ou vozes à mão no celular.** Em 03/11/2026, ele achou complicado demais gerar, salvar e mandar tudo, e disse que ocupa muito espaço. Para esse material, o caminho é o Codex, que salva direto no GitHub, ou uma chave de API guardada no ambiente, se o criador quiser.
