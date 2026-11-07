@@ -85,6 +85,8 @@ Por decisão do criador, em 27/10/2026, a temporada passa de 5 para **pelo menos
    - **DEIXAR, “A casa da mãe”, guardado:** só volta se o DEIXAR tiver a maioria somando as três redes. O Zinho protege a Dona Célia, mãe do Renato, e recebe o pen drive em que o Renato gravou a divisão. Quem vem buscá-la é o motorista do assalto, o Toninho, afilhado dela. A votação é ENTREGAR ou GUARDAR o pen drive.
    - Nos dois caminhos, o Zinho reconhece o motorista do assalto.
 5. **A divisão:** o motorista confirma que a divisão foi armada e conta quem controlava o dinheiro: o parceiro dos dez milhões não agia sozinho.
+   - A votação da Parte 4 deu **CANCELAR**, por 5 a 0 no Instagram, em 07/11/2026. Falta somar o TikTok e o Shorts.
+   - No caminho do CANCELAR, o Zinho vira sócio do Ademir, apaga a foto na frente dele e a guarda na lixeira do celular. No carro, o motorista, o Toninho, conta que foi o Ademir quem montou as mochilas da divisão e que foi ele, o Toninho, quem levou o parceiro com as duas bolsas. O Zinho grava a conversa escondido. A votação é TOPAR ou CONTAR. O plano e o roteiro estão em [`episodio-05/`](episodio-05/plano-ep05.md).
 6. **A recompensa:** sai uma recompensa por informações sobre Zinho, os vizinhos começam a desconfiar e o amigo some por algumas horas. A votação decide se Zinho confia nele.
 7. **A proposta:** uma ligação oferece um acordo: Zinho assume a culpa e recebe uma parte. A votação decide se ele aceita ou recusa.
 8. **A prova:** Zinho junta o que prova a armação: o áudio, a foto e o depoimento do motorista.

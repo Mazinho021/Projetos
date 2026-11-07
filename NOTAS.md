@@ -148,6 +148,10 @@ Inspirado nas histórias do @crimecarton no Instagram
     - se o TROCAR ganhar na soma, o resumo diz “Vocês decidiram: trocar.”;
     - se o DEIXAR ganhar, volta “A casa da mãe”.
   - **O Ademir fala com a voz do cobrador, sem o som de celular.** Um teste grátis, feito com a gravação da Parte 3, foi mandado ao criador para ele aprovar antes.
+- **Parte 5, “A divisão”**, em [`episodio-05/`](crimecarton-analise/episodio-05/plano-ep05.md):
+  - **A votação da Parte 4:** CANCELAR 5 × ENVIAR 0 no Instagram, pela gravação de tela do criador de 07/11/2026, às 16:50. Falta somar o TikTok e o Shorts.
+  - **O roteiro** está em [`roteiro-ep05-cancelar.txt`](crimecarton-analise/episodio-05/roteiro-ep05-cancelar.txt), com 293 palavras mais a vinheta. O Zinho vira sócio do Ademir e guarda a foto na lixeira do celular. No carro, o Toninho, o motorista, conta que foi o Ademir quem montou as mochilas da divisão e que ele mesmo levou o parceiro com as duas bolsas. O Zinho grava tudo escondido. A votação é TOPAR ou CONTAR.
+  - **Esperando o “ok” do criador** antes de pedir ao Codex as vozes (uns 5 créditos, com o Toninho na voz Orus) e os 19 desenhos.
 - **A Parte 1 foi publicada pelo criador em 26/10/2026, no TikTok e no Instagram**, com a v7, a capa e o texto do post acima. A v7 é a v6 aprovada pelo criador, com a voz própria do amigo que ele pediu depois. A bio também foi aprovada.
 - A publicação pode ser feita pelo OpusClip, que tem conectados os TikToks @jotape2117 e @mazinho_edits e o canal CORTESZINHO no YouTube, mas não o Instagram nem o perfil novo da série. O post só sai depois que o criador confirma no app. Subir o vídeo inteiro, sem cortes e sem legendas do OpusClip, custa cerca de 2 créditos e precisa da autorização dele. As contas aparecem no OpusClip como “TikTok Business”, e conta comercial não entra no Programa de Recompensas para Criadores do TikTok. Por isso, não converter o perfil novo em conta comercial para conectá-lo.
 - O final promete, como a referência, que “a maioria decide o próximo passo”. Se a maioria comentar NÃO ABRIR, o episódio 2 precisa seguir esse caminho; o arco em `producao-zinho.md` supõe que o amigo entra.
