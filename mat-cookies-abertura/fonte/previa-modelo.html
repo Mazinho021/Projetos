@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prévia da abertura · Mat Cookies &amp; Coffee</title>
+<style>
+  :root { --creme: #efe0c0; --tinta: #2a1a10; --vermelho: #a3392a; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    box-sizing: border-box;
+    background: var(--creme);
+    color: var(--tinta);
+    text-align: center;
+  }
+  .cartao { max-width: 560px; padding: 44px 28px 40px; border: 2px solid var(--tinta); outline: 1px solid var(--tinta); outline-offset: -9px; }
+  h1 { margin: 0 0 4px; font: 400 clamp(56px, 14vw, 92px)/1 'MatAb Letreiro', cursive; }
+  .sub { margin: 0 0 26px; font: 900 18px/1.2 'MatAb Faixa', serif; letter-spacing: .06em; text-transform: uppercase; }
+  p { margin: 0 0 24px; font: 16px/1.55 'MatAb Maquina', 'Courier New', monospace; }
+  button {
+    padding: 14px 22px 12px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--tinta);
+    color: var(--creme);
+    font: 700 13px/1 'MatAb Anel', sans-serif;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  button:hover, button:focus-visible { background: var(--vermelho); }
+</style>
+</head>
+<body>
+<script>window.MAT_ABERTURA = { umaVezPorSessao: false };</script>
+<!--SCRIPT-->
+<main class="cartao">
+  <h1>Mat</h1>
+  <p class="sub">Cookies &amp; Coffee</p>
+  <p>Aqui entra o seu site.<br>A abertura aparece por cima e some sozinha.</p>
+  <button type="button" onclick="MatAbertura.tocar()">↻ Ver a abertura de novo</button>
+</main>
+</body>
+</html>
