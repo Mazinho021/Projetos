@@ -9,6 +9,7 @@ import { mp, pagamentos, situacao, token } from '../lib/mercadopago.mjs';
 import { montarLista, parteDaCompra, referencia } from '../lib/aliados.mjs';
 
 const ERROS = {
+  fechado: [409, 'As vagas de aliado estão fechadas agora. Elas abrem de novo na próxima parte.'],
   desligado: [503, 'O pagamento ainda não está ligado. Tenta de novo mais tarde ou chama no direct do @golpecartoon.'],
   pedido: [400, 'Não deu para ler o pedido. Recarregue a página e tente de novo.'],
   arroba: [400, 'Escreva o seu @ do Instagram, só com letras, números, ponto ou sublinhado.'],
@@ -50,6 +51,7 @@ export default async (req) => {
   };
   const falhar = (codigo, erro = ERROS[codigo][1]) => responder({ codigo, erro }, ERROS[codigo]?.[0] ?? 409);
 
+  if (!SERIE.vendas) return falhar('fechado');
   if (!token()) return falhar('desligado');
   let dados;
   try {

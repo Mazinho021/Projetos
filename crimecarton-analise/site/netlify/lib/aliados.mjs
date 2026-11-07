@@ -38,7 +38,8 @@ export function montarLista(pagamentos, vagas, correcoes = {}) {
 
 // The part a pass bought now counts for: the open one, or the next after the deadline or when full.
 export function parteDaCompra(serie, agora, partes) {
-  let n = agora > Date.parse(serie.fecha) ? serie.parte + 1 : serie.parte;
+  const prazo = serie.fecha ? Date.parse(serie.fecha) : Infinity;
+  let n = agora > prazo ? serie.parte + 1 : serie.parte;
   while ((partes.get(n) || []).length >= serie.vagas) n += 1;
   return n;
 }

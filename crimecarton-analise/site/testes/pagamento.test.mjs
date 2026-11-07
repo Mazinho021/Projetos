@@ -5,6 +5,7 @@ import { montarLista, parteDaCompra } from '../netlify/lib/aliados.mjs';
 import checkout from '../netlify/functions/checkout.mjs';
 import aliados from '../netlify/functions/aliados.mjs';
 import pagamento from '../netlify/functions/pagamento.mjs';
+import { SERIE as SERIE_SITE } from '../netlify/lib/serie.mjs';
 
 const SERIE = { parte: 3, vagas: 2, fecha: '2026-10-30T21:00:00-03:00' };
 const pago = (arroba, parte, hora, status = 'approved') => ({
@@ -38,6 +39,12 @@ test('fixes rename a mistyped handle and leave an offensive one out', () => {
   assert.deepEqual([...numeros.keys()], ['ana.certa']);
 });
 
+test('a list without a deadline keeps its passes in its own part until it fills', () => {
+  const semPrazo = { parte: 6, vagas: 2, fecha: null };
+  assert.equal(parteDaCompra(semPrazo, Date.parse('2030-01-01T00:00:00-03:00'), new Map()), 6);
+  assert.equal(parteDaCompra(semPrazo, Date.now(), new Map([[6, ['ana', 'beto']]])), 7);
+});
+
 test('after the deadline, or with the list full, a pass counts for the next part', () => {
   const antes = Date.parse('2026-10-30T20:59:00-03:00');
   const depois = Date.parse('2026-10-30T21:01:00-03:00');
@@ -49,6 +56,8 @@ test('after the deadline, or with the list full, a pass counts for the next part
 // The functions, with Mercado Pago answered by a fake fetch.
 let chamadas, busca, cartaoResponde;
 beforeEach(() => {
+  // The functions run with an open list for Part 3, whatever the site's own setting and today's date.
+  Object.assign(SERIE_SITE, { vendas: true, parte: 3, fecha: '2999-12-31T21:00:00-03:00' });
   process.env.MP_ACCESS_TOKEN = 'TESTE';
   delete process.env.MP_PUBLIC_KEY;
   chamadas = [];
@@ -145,6 +154,17 @@ test('without the token the page says the payment is not connected yet', async (
   const lista = await (await aliados()).json();
   assert.equal(lista.ligado, false);
   assert.equal(chamadas.length, 0);
+});
+
+test('with the sales closed, checkout refuses every pass and the page is told', async () => {
+  SERIE_SITE.vendas = false;
+  const res = await checkout(pedido({ arroba: 'ana', email: 'ana@email.com', autorizo: true, meio: 'pix' }));
+  assert.equal(res.status, 409);
+  assert.equal((await res.json()).codigo, 'fechado');
+  const semJs = await checkout(formulario({ arroba: 'ana', email: 'ana@email.com', autorizo: 'sim' }));
+  assert.equal(semJs.headers.get('Location'), 'https://golpecartoon.netlify.app/?erro=fechado#aliado');
+  assert.equal(chamadas.length, 0);
+  assert.equal((await (await aliados()).json()).vendas, false);
 });
 
 test('the list shows handles and numbers only', async () => {
