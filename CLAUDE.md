@@ -92,6 +92,12 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 - Usar as pistas já plantadas (o anel de ouro, o Ferro-Velho São Jorge, a mãe do Renato, a “Cobrança”) para a história avançar.
 - **Mostrar o roteiro ao criador e esperar o “ok” antes de pedir as gerações pagas ao Codex.** Imagens e vozes custam créditos, e um roteiro recusado depois de gerado é crédito perdido.
 
+## Site da série (lembrete do criador em 07/11/2026)
+
+- **A cada parte publicada, atualizar o site** (`crimecarton-analise/site/`, no ar em golpecartoon.netlify.app): a capa nova em “Assista do começo”, com o carimbo da votação, o resultado na seção de votação, o fim da parte no topo e o quadro “O caso até aqui”. Em 07/11/2026, o site estava parado na Parte 3.
+- **As vagas de aliado estão fechadas** desde 07/11/2026, por decisão do criador. Só abrir quando ele pedir, com o prazo que ele escolher. O passo a passo está em `crimecarton-analise/ideia-site-da-serie.md`.
+- Publicar com a ferramenta de deploy do Netlify e conferir no ar a página, o `/api/aliados` e os testes (`node --test crimecarton-analise/site/testes/*.test.mjs`).
+
 ## Vozes
 
 - O narrador, a vinheta e o cobrador usam a voz Charon, gerada no OpusClip pelo Codex.
