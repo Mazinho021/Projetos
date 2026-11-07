@@ -1,0 +1,1252 @@
+{
+  "jobId": "mcp_media_bd4b2afbf84ec941416fdb9efffe5c40aefda8e0b95888d1f4c2fc1cd94e0d84",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 2,
+  "reservedCredits": 0,
+  "chargedCredits": 2,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_bd4b2afbf84ec941416fdb9efffe5c40aefda8e0b95888d1f4c2fc1cd94e0d84/0.wav?hdnts=FullPath~Expires=1794170613~Signature=Uc-IM93xunuR2_E3bdzMaizZUWRC47Alr3aTdpv79xzsZsIr-Emk4ZV1NzNIFFhALbKrw1AEPCJKRuZ3bdKPDw",
+      "expiresAt": "2026-11-08T20:43:33.176Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 63.72
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep05-narrador-charon-v1-20261107-s500",
+    "voice": "Charon",
+    "style": "Português brasileiro. Voz masculina adulta, natural, conversacional, suspense contido, dicção clara; sem publicidade, caricatura ou gritos. 140–150 palavras/min. Pausas curtas nas revelações e entre parágrafos. Zinho: z inicial e nh palatal. Primeira frase com peso, mais lenta. “Pela primeira vez na noite, você quase ri.” leve, quase sorrindo. “O homem que você acabou de livrar da polícia foi o primeiro a te roubar.” baixo, pesado e devagar. Mesmo timbre das Partes 2 a 4.",
+    "text": "Hoje você descobre quem encheu a sua mochila de roupa velha.\n\nChegou agora? As outras partes estão no perfil. O homem do anel quer você de sócio. Vocês decidiram: cancelar.\n\nTrês e catorze. O seu dedo aperta cancelar. A foto da divisão não sai.\n\nEle estende a mão. Você aperta.\n\nVocê apaga. O que ele não sabe: a foto continua na lixeira do celular.\n\nToninho é o motorista. O mesmo que dirigiu o carro do assalto.\n\nNo caminho, o seu celular vibra. Um áudio do Renato.\n\nPela primeira vez na noite, você quase ri.\n\nAí o Toninho desliga o rádio. Para num posto fechado. E fala sem olhar pra você.\n\nDevagar, a sua mão entra no bolso. Você aperta gravar.\n\nO homem que você acabou de livrar da polícia foi o primeiro a te roubar.\n\nSe você topar, trai o Ademir com o homem que levou o seu dinheiro embora. Se contar pro Ademir, ganha a confiança dele. E o Toninho paga por isso.\n\nTopar ou contar? Comenta uma palavra só. O que a maioria escolher vira a parte seis."
+  },
+  "verificacao": {
+    "status": "transcrito",
+    "modelo": "faster-whisper medium",
+    "device": "cpu",
+    "compute_type": "int8",
+    "language": "pt",
+    "initial_prompt": null,
+    "audio_editado": false,
+    "decodificacao": "FFmpeg para PCM em memória, original intacto",
+    "sha256": "da96026f815fe0cd7d57f08cbb78ef494f8f693b2a7365b9017523f54f903a93",
+    "duration_seconds": 63.72,
+    "transcricao": "Hoje você descobre quem encheu a sua mochila de roupa velha. Chegou agora, as outras partes estão no perfil. O homem do anel quer você de sócio. Vocês decidiram cancelar. 3 e 14, o seu dedo aperta cancelar. A foto da divisão não sai. Ele estende a mão, você aperta, você apaga. O que ele não sabe, a foto continua na lixeira do celular. Toninho é o motorista, o mesmo que dirigiu o carro do assalto. No caminho seu celular vibra, um áudio do Renato. Pela primeira vez na noite você quase ri. Aí o Toninho desliga o rádio, para num posto fechado e fala sem olhar pra você. Devagar a sua mão entra no bolso, você aperta gravar. O homem que você acabou de livrar da polícia foi o primeiro a te roubar. Se você topar, trai o Ademir com o homem que levou seu dinheiro embora. Se contar pro Ademir ganha a confiança dele. E o Toninho paga por isso. Topar ou contar? Comenta uma palavra só. O que a maioria escolher virá a parte 6.",
+    "segmentos": [
+      {
+        "start": 0.0,
+        "end": 3.86,
+        "text": " Hoje você descobre quem encheu a sua mochila de roupa velha.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.56,
+            "word": " Hoje",
+            "probability": 0.7551877498626709
+          },
+          {
+            "start": 0.56,
+            "end": 0.9,
+            "word": " você",
+            "probability": 0.8474546670913696
+          },
+          {
+            "start": 0.9,
+            "end": 1.44,
+            "word": " descobre",
+            "probability": 0.9967368245124817
+          },
+          {
+            "start": 1.44,
+            "end": 1.78,
+            "word": " quem",
+            "probability": 0.9926503300666809
+          },
+          {
+            "start": 1.78,
+            "end": 2.12,
+            "word": " encheu",
+            "probability": 0.9894945422808329
+          },
+          {
+            "start": 2.12,
+            "end": 2.22,
+            "word": " a",
+            "probability": 0.8772337436676025
+          },
+          {
+            "start": 2.22,
+            "end": 2.38,
+            "word": " sua",
+            "probability": 0.9948033690452576
+          },
+          {
+            "start": 2.38,
+            "end": 2.84,
+            "word": " mochila",
+            "probability": 0.9938156207402548
+          },
+          {
+            "start": 2.84,
+            "end": 2.96,
+            "word": " de",
+            "probability": 0.995016872882843
+          },
+          {
+            "start": 2.96,
+            "end": 3.22,
+            "word": " roupa",
+            "probability": 0.9973636865615845
+          },
+          {
+            "start": 3.22,
+            "end": 3.86,
+            "word": " velha.",
+            "probability": 0.9987768828868866
+          }
+        ]
+      },
+      {
+        "start": 4.16,
+        "end": 6.34,
+        "text": " Chegou agora, as outras partes estão no perfil.",
+        "words": [
+          {
+            "start": 4.16,
+            "end": 4.32,
+            "word": " Chegou",
+            "probability": 0.943414052327474
+          },
+          {
+            "start": 4.32,
+            "end": 4.68,
+            "word": " agora,",
+            "probability": 0.984269380569458
+          },
+          {
+            "start": 4.88,
+            "end": 5.04,
+            "word": " as",
+            "probability": 0.9700765609741211
+          },
+          {
+            "start": 5.04,
+            "end": 5.28,
+            "word": " outras",
+            "probability": 0.99783855676651
+          },
+          {
+            "start": 5.28,
+            "end": 5.54,
+            "word": " partes",
+            "probability": 0.9904122948646545
+          },
+          {
+            "start": 5.54,
+            "end": 5.72,
+            "word": " estão",
+            "probability": 0.975179135799408
+          },
+          {
+            "start": 5.72,
+            "end": 5.86,
+            "word": " no",
+            "probability": 0.9970232844352722
+          },
+          {
+            "start": 5.86,
+            "end": 6.34,
+            "word": " perfil.",
+            "probability": 0.9980158507823944
+          }
+        ]
+      },
+      {
+        "start": 6.9,
+        "end": 8.72,
+        "text": " O homem do anel quer você de sócio.",
+        "words": [
+          {
+            "start": 6.9,
+            "end": 6.96,
+            "word": " O",
+            "probability": 0.9766359925270081
+          },
+          {
+            "start": 6.96,
+            "end": 7.16,
+            "word": " homem",
+            "probability": 0.6076015830039978
+          },
+          {
+            "start": 7.16,
+            "end": 7.34,
+            "word": " do",
+            "probability": 0.9890516400337219
+          },
+          {
+            "start": 7.34,
+            "end": 7.56,
+            "word": " anel",
+            "probability": 0.9007638990879059
+          },
+          {
+            "start": 7.56,
+            "end": 7.68,
+            "word": " quer",
+            "probability": 0.9958325028419495
+          },
+          {
+            "start": 7.68,
+            "end": 7.96,
+            "word": " você",
+            "probability": 0.9594302773475647
+          },
+          {
+            "start": 7.96,
+            "end": 8.22,
+            "word": " de",
+            "probability": 0.9925058484077454
+          },
+          {
+            "start": 8.22,
+            "end": 8.72,
+            "word": " sócio.",
+            "probability": 0.9854302406311035
+          }
+        ]
+      },
+      {
+        "start": 9.04,
+        "end": 11.0,
+        "text": " Vocês decidiram cancelar.",
+        "words": [
+          {
+            "start": 9.04,
+            "end": 9.24,
+            "word": " Vocês",
+            "probability": 0.9744608402252197
+          },
+          {
+            "start": 9.24,
+            "end": 9.86,
+            "word": " decidiram",
+            "probability": 0.9827320873737335
+          },
+          {
+            "start": 9.86,
+            "end": 11.0,
+            "word": " cancelar.",
+            "probability": 0.8613630533218384
+          }
+        ]
+      },
+      {
+        "start": 11.58,
+        "end": 14.3,
+        "text": " 3 e 14, o seu dedo aperta cancelar.",
+        "words": [
+          {
+            "start": 11.58,
+            "end": 11.9,
+            "word": " 3",
+            "probability": 0.6839482188224792
+          },
+          {
+            "start": 11.9,
+            "end": 11.96,
+            "word": " e",
+            "probability": 0.7926262617111206
+          },
+          {
+            "start": 11.96,
+            "end": 12.44,
+            "word": " 14,",
+            "probability": 0.9972342848777771
+          },
+          {
+            "start": 12.78,
+            "end": 12.92,
+            "word": " o",
+            "probability": 0.8903449773788452
+          },
+          {
+            "start": 12.92,
+            "end": 13.04,
+            "word": " seu",
+            "probability": 0.9973013997077942
+          },
+          {
+            "start": 13.04,
+            "end": 13.34,
+            "word": " dedo",
+            "probability": 0.9991202056407928
+          },
+          {
+            "start": 13.34,
+            "end": 13.7,
+            "word": " aperta",
+            "probability": 0.9957302510738373
+          },
+          {
+            "start": 13.7,
+            "end": 14.3,
+            "word": " cancelar.",
+            "probability": 0.9306982457637787
+          }
+        ]
+      },
+      {
+        "start": 14.5,
+        "end": 15.9,
+        "text": " A foto da divisão não sai.",
+        "words": [
+          {
+            "start": 14.5,
+            "end": 14.6,
+            "word": " A",
+            "probability": 0.9938722848892212
+          },
+          {
+            "start": 14.6,
+            "end": 14.82,
+            "word": " foto",
+            "probability": 0.9986608028411865
+          },
+          {
+            "start": 14.82,
+            "end": 15.02,
+            "word": " da",
+            "probability": 0.9959728121757507
+          },
+          {
+            "start": 15.02,
+            "end": 15.44,
+            "word": " divisão",
+            "probability": 0.9969616234302521
+          },
+          {
+            "start": 15.44,
+            "end": 15.68,
+            "word": " não",
+            "probability": 0.9841666221618652
+          },
+          {
+            "start": 15.68,
+            "end": 15.9,
+            "word": " sai.",
+            "probability": 0.9958641529083252
+          }
+        ]
+      },
+      {
+        "start": 16.58,
+        "end": 19.8,
+        "text": " Ele estende a mão, você aperta, você apaga.",
+        "words": [
+          {
+            "start": 16.58,
+            "end": 16.82,
+            "word": " Ele",
+            "probability": 0.9884699583053589
+          },
+          {
+            "start": 16.82,
+            "end": 17.04,
+            "word": " estende",
+            "probability": 0.9940415918827057
+          },
+          {
+            "start": 17.04,
+            "end": 17.24,
+            "word": " a",
+            "probability": 0.9923708438873291
+          },
+          {
+            "start": 17.24,
+            "end": 17.5,
+            "word": " mão,",
+            "probability": 0.9993672966957092
+          },
+          {
+            "start": 17.68,
+            "end": 18.04,
+            "word": " você",
+            "probability": 0.992228090763092
+          },
+          {
+            "start": 18.04,
+            "end": 18.7,
+            "word": " aperta,",
+            "probability": 0.9984996914863586
+          },
+          {
+            "start": 19.08,
+            "end": 19.4,
+            "word": " você",
+            "probability": 0.985998272895813
+          },
+          {
+            "start": 19.4,
+            "end": 19.8,
+            "word": " apaga.",
+            "probability": 0.9963128566741943
+          }
+        ]
+      },
+      {
+        "start": 20.32,
+        "end": 23.46,
+        "text": " O que ele não sabe, a foto continua na lixeira do celular.",
+        "words": [
+          {
+            "start": 20.32,
+            "end": 20.48,
+            "word": " O",
+            "probability": 0.9966155886650085
+          },
+          {
+            "start": 20.48,
+            "end": 20.58,
+            "word": " que",
+            "probability": 0.9970499277114868
+          },
+          {
+            "start": 20.58,
+            "end": 20.78,
+            "word": " ele",
+            "probability": 0.9940869808197021
+          },
+          {
+            "start": 20.78,
+            "end": 21.12,
+            "word": " não",
+            "probability": 0.9982225298881531
+          },
+          {
+            "start": 21.12,
+            "end": 21.32,
+            "word": " sabe,",
+            "probability": 0.9990633130073547
+          },
+          {
+            "start": 21.66,
+            "end": 21.7,
+            "word": " a",
+            "probability": 0.9975621700286865
+          },
+          {
+            "start": 21.7,
+            "end": 21.96,
+            "word": " foto",
+            "probability": 0.9992974996566772
+          },
+          {
+            "start": 21.96,
+            "end": 22.46,
+            "word": " continua",
+            "probability": 0.9908545017242432
+          },
+          {
+            "start": 22.46,
+            "end": 22.62,
+            "word": " na",
+            "probability": 0.9971123933792114
+          },
+          {
+            "start": 22.62,
+            "end": 22.98,
+            "word": " lixeira",
+            "probability": 0.9710215528806051
+          },
+          {
+            "start": 22.98,
+            "end": 23.2,
+            "word": " do",
+            "probability": 0.9968504309654236
+          },
+          {
+            "start": 23.2,
+            "end": 23.46,
+            "word": " celular.",
+            "probability": 0.9980316758155823
+          }
+        ]
+      },
+      {
+        "start": 24.28,
+        "end": 28.08,
+        "text": " Toninho é o motorista, o mesmo que dirigiu o carro do assalto.",
+        "words": [
+          {
+            "start": 24.28,
+            "end": 24.72,
+            "word": " Toninho",
+            "probability": 0.995008260011673
+          },
+          {
+            "start": 24.72,
+            "end": 24.86,
+            "word": " é",
+            "probability": 0.9920328259468079
+          },
+          {
+            "start": 24.86,
+            "end": 25.08,
+            "word": " o",
+            "probability": 0.990168571472168
+          },
+          {
+            "start": 25.08,
+            "end": 25.62,
+            "word": " motorista,",
+            "probability": 0.998459666967392
+          },
+          {
+            "start": 25.9,
+            "end": 26.02,
+            "word": " o",
+            "probability": 0.9935762286186218
+          },
+          {
+            "start": 26.02,
+            "end": 26.26,
+            "word": " mesmo",
+            "probability": 0.9993107318878174
+          },
+          {
+            "start": 26.26,
+            "end": 26.5,
+            "word": " que",
+            "probability": 0.9985525012016296
+          },
+          {
+            "start": 26.5,
+            "end": 26.8,
+            "word": " dirigiu",
+            "probability": 0.9929879009723663
+          },
+          {
+            "start": 26.8,
+            "end": 26.94,
+            "word": " o",
+            "probability": 0.9893772602081299
+          },
+          {
+            "start": 26.94,
+            "end": 27.08,
+            "word": " carro",
+            "probability": 0.9957211017608643
+          },
+          {
+            "start": 27.08,
+            "end": 27.26,
+            "word": " do",
+            "probability": 0.996403694152832
+          },
+          {
+            "start": 27.26,
+            "end": 28.08,
+            "word": " assalto.",
+            "probability": 0.9941167036692301
+          }
+        ]
+      },
+      {
+        "start": 28.08,
+        "end": 31.52,
+        "text": " No caminho seu celular vibra, um áudio do Renato.",
+        "words": [
+          {
+            "start": 28.08,
+            "end": 28.34,
+            "word": " No",
+            "probability": 0.5839457511901855
+          },
+          {
+            "start": 28.34,
+            "end": 28.7,
+            "word": " caminho",
+            "probability": 0.9956252574920654
+          },
+          {
+            "start": 28.7,
+            "end": 28.94,
+            "word": " seu",
+            "probability": 0.5183278322219849
+          },
+          {
+            "start": 28.94,
+            "end": 29.3,
+            "word": " celular",
+            "probability": 0.9967356324195862
+          },
+          {
+            "start": 29.3,
+            "end": 29.9,
+            "word": " vibra,",
+            "probability": 0.9989156126976013
+          },
+          {
+            "start": 30.08,
+            "end": 30.22,
+            "word": " um",
+            "probability": 0.9018198847770691
+          },
+          {
+            "start": 30.22,
+            "end": 30.46,
+            "word": " áudio",
+            "probability": 0.9820799231529236
+          },
+          {
+            "start": 30.46,
+            "end": 30.64,
+            "word": " do",
+            "probability": 0.9867211580276489
+          },
+          {
+            "start": 30.64,
+            "end": 31.52,
+            "word": " Renato.",
+            "probability": 0.9928692877292633
+          }
+        ]
+      },
+      {
+        "start": 31.82,
+        "end": 34.2,
+        "text": " Pela primeira vez na noite você quase ri.",
+        "words": [
+          {
+            "start": 31.82,
+            "end": 32.04,
+            "word": " Pela",
+            "probability": 0.9621989727020264
+          },
+          {
+            "start": 32.04,
+            "end": 32.4,
+            "word": " primeira",
+            "probability": 0.9885388016700745
+          },
+          {
+            "start": 32.4,
+            "end": 32.62,
+            "word": " vez",
+            "probability": 0.9947242140769958
+          },
+          {
+            "start": 32.62,
+            "end": 32.8,
+            "word": " na",
+            "probability": 0.9426822662353516
+          },
+          {
+            "start": 32.8,
+            "end": 33.06,
+            "word": " noite",
+            "probability": 0.9986421465873718
+          },
+          {
+            "start": 33.06,
+            "end": 33.46,
+            "word": " você",
+            "probability": 0.7522796392440796
+          },
+          {
+            "start": 33.46,
+            "end": 33.94,
+            "word": " quase",
+            "probability": 0.9565155506134033
+          },
+          {
+            "start": 33.94,
+            "end": 34.2,
+            "word": " ri.",
+            "probability": 0.7620442509651184
+          }
+        ]
+      },
+      {
+        "start": 34.76,
+        "end": 39.76,
+        "text": " Aí o Toninho desliga o rádio, para num posto fechado e fala sem olhar pra você.",
+        "words": [
+          {
+            "start": 34.76,
+            "end": 34.96,
+            "word": " Aí",
+            "probability": 0.8985373377799988
+          },
+          {
+            "start": 34.96,
+            "end": 35.18,
+            "word": " o",
+            "probability": 0.9636278748512268
+          },
+          {
+            "start": 35.18,
+            "end": 35.38,
+            "word": " Toninho",
+            "probability": 0.9764457643032074
+          },
+          {
+            "start": 35.38,
+            "end": 35.8,
+            "word": " desliga",
+            "probability": 0.9908237159252167
+          },
+          {
+            "start": 35.8,
+            "end": 35.96,
+            "word": " o",
+            "probability": 0.9979526996612549
+          },
+          {
+            "start": 35.96,
+            "end": 36.46,
+            "word": " rádio,",
+            "probability": 0.9985271294911703
+          },
+          {
+            "start": 36.62,
+            "end": 36.8,
+            "word": " para",
+            "probability": 0.9495394825935364
+          },
+          {
+            "start": 36.8,
+            "end": 37.0,
+            "word": " num",
+            "probability": 0.908818781375885
+          },
+          {
+            "start": 37.0,
+            "end": 37.36,
+            "word": " posto",
+            "probability": 0.9965699017047882
+          },
+          {
+            "start": 37.36,
+            "end": 38.04,
+            "word": " fechado",
+            "probability": 0.9961540102958679
+          },
+          {
+            "start": 38.04,
+            "end": 38.46,
+            "word": " e",
+            "probability": 0.7215595841407776
+          },
+          {
+            "start": 38.46,
+            "end": 38.72,
+            "word": " fala",
+            "probability": 0.9984104633331299
+          },
+          {
+            "start": 38.72,
+            "end": 38.94,
+            "word": " sem",
+            "probability": 0.8922973871231079
+          },
+          {
+            "start": 38.94,
+            "end": 39.18,
+            "word": " olhar",
+            "probability": 0.998706579208374
+          },
+          {
+            "start": 39.18,
+            "end": 39.4,
+            "word": " pra",
+            "probability": 0.589084804058075
+          },
+          {
+            "start": 39.4,
+            "end": 39.76,
+            "word": " você.",
+            "probability": 0.99727863073349
+          }
+        ]
+      },
+      {
+        "start": 40.48,
+        "end": 43.66,
+        "text": " Devagar a sua mão entra no bolso, você aperta gravar.",
+        "words": [
+          {
+            "start": 40.48,
+            "end": 40.96,
+            "word": " Devagar",
+            "probability": 0.8924320936203003
+          },
+          {
+            "start": 40.96,
+            "end": 41.2,
+            "word": " a",
+            "probability": 0.5019861459732056
+          },
+          {
+            "start": 41.2,
+            "end": 41.32,
+            "word": " sua",
+            "probability": 0.9983419179916382
+          },
+          {
+            "start": 41.32,
+            "end": 41.5,
+            "word": " mão",
+            "probability": 0.9973336458206177
+          },
+          {
+            "start": 41.5,
+            "end": 41.7,
+            "word": " entra",
+            "probability": 0.9968475699424744
+          },
+          {
+            "start": 41.7,
+            "end": 41.9,
+            "word": " no",
+            "probability": 0.9972696900367737
+          },
+          {
+            "start": 41.9,
+            "end": 42.34,
+            "word": " bolso,",
+            "probability": 0.9985009729862213
+          },
+          {
+            "start": 42.52,
+            "end": 42.76,
+            "word": " você",
+            "probability": 0.9866943359375
+          },
+          {
+            "start": 42.76,
+            "end": 43.08,
+            "word": " aperta",
+            "probability": 0.9979844093322754
+          },
+          {
+            "start": 43.08,
+            "end": 43.66,
+            "word": " gravar.",
+            "probability": 0.8989457488059998
+          }
+        ]
+      },
+      {
+        "start": 44.12,
+        "end": 47.72,
+        "text": " O homem que você acabou de livrar da polícia foi o primeiro a te roubar.",
+        "words": [
+          {
+            "start": 44.12,
+            "end": 44.2,
+            "word": " O",
+            "probability": 0.842269778251648
+          },
+          {
+            "start": 44.2,
+            "end": 44.44,
+            "word": " homem",
+            "probability": 0.9959596991539001
+          },
+          {
+            "start": 44.44,
+            "end": 44.64,
+            "word": " que",
+            "probability": 0.9958010315895081
+          },
+          {
+            "start": 44.64,
+            "end": 44.92,
+            "word": " você",
+            "probability": 0.9947811961174011
+          },
+          {
+            "start": 44.92,
+            "end": 45.24,
+            "word": " acabou",
+            "probability": 0.9862739443778992
+          },
+          {
+            "start": 45.24,
+            "end": 45.44,
+            "word": " de",
+            "probability": 0.9947581887245178
+          },
+          {
+            "start": 45.44,
+            "end": 45.7,
+            "word": " livrar",
+            "probability": 0.9978256821632385
+          },
+          {
+            "start": 45.7,
+            "end": 45.86,
+            "word": " da",
+            "probability": 0.9978165626525879
+          },
+          {
+            "start": 45.86,
+            "end": 46.3,
+            "word": " polícia",
+            "probability": 0.985757976770401
+          },
+          {
+            "start": 46.3,
+            "end": 46.52,
+            "word": " foi",
+            "probability": 0.9450616240501404
+          },
+          {
+            "start": 46.52,
+            "end": 46.7,
+            "word": " o",
+            "probability": 0.9988316893577576
+          },
+          {
+            "start": 46.7,
+            "end": 47.06,
+            "word": " primeiro",
+            "probability": 0.9879035353660583
+          },
+          {
+            "start": 47.06,
+            "end": 47.2,
+            "word": " a",
+            "probability": 0.9925398230552673
+          },
+          {
+            "start": 47.2,
+            "end": 47.32,
+            "word": " te",
+            "probability": 0.9981960654258728
+          },
+          {
+            "start": 47.32,
+            "end": 47.72,
+            "word": " roubar.",
+            "probability": 0.9887652099132538
+          }
+        ]
+      },
+      {
+        "start": 48.28,
+        "end": 52.34,
+        "text": " Se você topar, trai o Ademir com o homem que levou seu dinheiro embora.",
+        "words": [
+          {
+            "start": 48.28,
+            "end": 48.46,
+            "word": " Se",
+            "probability": 0.9970640540122986
+          },
+          {
+            "start": 48.46,
+            "end": 48.74,
+            "word": " você",
+            "probability": 0.998979389667511
+          },
+          {
+            "start": 48.74,
+            "end": 49.34,
+            "word": " topar,",
+            "probability": 0.9955215752124786
+          },
+          {
+            "start": 49.62,
+            "end": 49.78,
+            "word": " trai",
+            "probability": 0.9184978604316711
+          },
+          {
+            "start": 49.78,
+            "end": 49.94,
+            "word": " o",
+            "probability": 0.9959854483604431
+          },
+          {
+            "start": 49.94,
+            "end": 50.3,
+            "word": " Ademir",
+            "probability": 0.9382376670837402
+          },
+          {
+            "start": 50.3,
+            "end": 50.56,
+            "word": " com",
+            "probability": 0.9922463297843933
+          },
+          {
+            "start": 50.56,
+            "end": 50.68,
+            "word": " o",
+            "probability": 0.9961341619491577
+          },
+          {
+            "start": 50.68,
+            "end": 50.96,
+            "word": " homem",
+            "probability": 0.9972912669181824
+          },
+          {
+            "start": 50.96,
+            "end": 51.2,
+            "word": " que",
+            "probability": 0.9943722486495972
+          },
+          {
+            "start": 51.2,
+            "end": 51.44,
+            "word": " levou",
+            "probability": 0.9971227645874023
+          },
+          {
+            "start": 51.44,
+            "end": 51.58,
+            "word": " seu",
+            "probability": 0.7769801616668701
+          },
+          {
+            "start": 51.58,
+            "end": 51.9,
+            "word": " dinheiro",
+            "probability": 0.9988595247268677
+          },
+          {
+            "start": 51.9,
+            "end": 52.34,
+            "word": " embora.",
+            "probability": 0.9913501739501953
+          }
+        ]
+      },
+      {
+        "start": 52.9,
+        "end": 55.36,
+        "text": " Se contar pro Ademir ganha a confiança dele.",
+        "words": [
+          {
+            "start": 52.9,
+            "end": 53.12,
+            "word": " Se",
+            "probability": 0.9973733425140381
+          },
+          {
+            "start": 53.12,
+            "end": 53.44,
+            "word": " contar",
+            "probability": 0.9924047589302063
+          },
+          {
+            "start": 53.44,
+            "end": 53.6,
+            "word": " pro",
+            "probability": 0.898347795009613
+          },
+          {
+            "start": 53.6,
+            "end": 54.2,
+            "word": " Ademir",
+            "probability": 0.9983703295389811
+          },
+          {
+            "start": 54.2,
+            "end": 54.56,
+            "word": " ganha",
+            "probability": 0.7709803581237793
+          },
+          {
+            "start": 54.56,
+            "end": 54.72,
+            "word": " a",
+            "probability": 0.996060311794281
+          },
+          {
+            "start": 54.72,
+            "end": 55.1,
+            "word": " confiança",
+            "probability": 0.9992634952068329
+          },
+          {
+            "start": 55.1,
+            "end": 55.36,
+            "word": " dele.",
+            "probability": 0.999241828918457
+          }
+        ]
+      },
+      {
+        "start": 55.86,
+        "end": 57.3,
+        "text": " E o Toninho paga por isso.",
+        "words": [
+          {
+            "start": 55.86,
+            "end": 56.0,
+            "word": " E",
+            "probability": 0.9895331263542175
+          },
+          {
+            "start": 56.0,
+            "end": 56.14,
+            "word": " o",
+            "probability": 0.9952288866043091
+          },
+          {
+            "start": 56.14,
+            "end": 56.5,
+            "word": " Toninho",
+            "probability": 0.996943861246109
+          },
+          {
+            "start": 56.5,
+            "end": 56.8,
+            "word": " paga",
+            "probability": 0.9965409636497498
+          },
+          {
+            "start": 56.8,
+            "end": 57.1,
+            "word": " por",
+            "probability": 0.997841477394104
+          },
+          {
+            "start": 57.1,
+            "end": 57.3,
+            "word": " isso.",
+            "probability": 0.9983201622962952
+          }
+        ]
+      },
+      {
+        "start": 58.059999999999995,
+        "end": 59.3,
+        "text": " Topar ou contar?",
+        "words": [
+          {
+            "start": 58.059999999999995,
+            "end": 58.66,
+            "word": " Topar",
+            "probability": 0.8106256425380707
+          },
+          {
+            "start": 58.66,
+            "end": 58.86,
+            "word": " ou",
+            "probability": 0.9844448566436768
+          },
+          {
+            "start": 58.86,
+            "end": 59.3,
+            "word": " contar?",
+            "probability": 0.9727320671081543
+          }
+        ]
+      },
+      {
+        "start": 59.8,
+        "end": 60.82,
+        "text": " Comenta uma palavra só.",
+        "words": [
+          {
+            "start": 59.8,
+            "end": 60.02,
+            "word": " Comenta",
+            "probability": 0.9480679929256439
+          },
+          {
+            "start": 60.02,
+            "end": 60.2,
+            "word": " uma",
+            "probability": 0.9809138178825378
+          },
+          {
+            "start": 60.2,
+            "end": 60.52,
+            "word": " palavra",
+            "probability": 0.99657142162323
+          },
+          {
+            "start": 60.52,
+            "end": 60.82,
+            "word": " só.",
+            "probability": 0.9953649044036865
+          }
+        ]
+      },
+      {
+        "start": 61.22,
+        "end": 63.44,
+        "text": " O que a maioria escolher virá a parte 6.",
+        "words": [
+          {
+            "start": 61.22,
+            "end": 61.32,
+            "word": " O",
+            "probability": 0.9868871569633484
+          },
+          {
+            "start": 61.32,
+            "end": 61.46,
+            "word": " que",
+            "probability": 0.9967736601829529
+          },
+          {
+            "start": 61.46,
+            "end": 61.56,
+            "word": " a",
+            "probability": 0.9929221868515015
+          },
+          {
+            "start": 61.56,
+            "end": 61.86,
+            "word": " maioria",
+            "probability": 0.9992889165878296
+          },
+          {
+            "start": 61.86,
+            "end": 62.5,
+            "word": " escolher",
+            "probability": 0.9931722581386566
+          },
+          {
+            "start": 62.5,
+            "end": 62.86,
+            "word": " virá",
+            "probability": 0.9723679423332214
+          },
+          {
+            "start": 62.86,
+            "end": 63.02,
+            "word": " a",
+            "probability": 0.5314987301826477
+          },
+          {
+            "start": 63.02,
+            "end": 63.14,
+            "word": " parte",
+            "probability": 0.9270330667495728
+          },
+          {
+            "start": 63.14,
+            "end": 63.44,
+            "word": " 6.",
+            "probability": 0.8174286484718323
+          }
+        ]
+      }
+    ],
+    "observacoes": [
+      "Transcrição omite “o” em “No caminho, o seu celular” e em “levou o seu dinheiro”.",
+      "Transcrição termina em “virá a parte 6” versus pedido “vira a parte seis”."
+    ],
+    "ressalva": "Diferenças detectadas pela transcrição automática sem dica; não confirmam por si só erro de pronúncia. Áudio original preservado, sem regeneração."
+  }
+}

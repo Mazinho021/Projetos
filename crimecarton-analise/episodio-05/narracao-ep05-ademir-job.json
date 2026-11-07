@@ -1,0 +1,163 @@
+{
+  "jobId": "mcp_media_5a16ca12a9bc9760df86c4731a8a2e83e39ff6be0c98b14ffb1aba83161bd419",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_5a16ca12a9bc9760df86c4731a8a2e83e39ff6be0c98b14ffb1aba83161bd419/0.wav?hdnts=FullPath~Expires=1794170630~Signature=LeAtYzutFWEXgk82dk9IYCCEfyndLXQw8maJ43J5GHwZVQ0jp1ehBqDvX2QmxUVPAcGHsYNJRbz9WGt3TeINBw",
+      "expiresAt": "2026-11-08T20:43:50.326Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 11.96
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep05-ademir-charon-v1-20261107-s500",
+    "voice": "Charon",
+    "style": "Português brasileiro. Mesma voz do narrador interpretando Ademir, 60 anos, dono do ferro-velho das Partes 3 e 4. Fala devagar, baixo, calmo demais, frio e seguro, no controle; sem gritos ou pressa. “Sócio.” curto, satisfeito, quase sorrindo. “Agora apaga essa foto. Na minha frente.” ordem baixa e firme, sem ameaça aberta. Última fala tranquila, de quem já decidiu tudo. Natural, sem caricatura de vilão. Cada parágrafo é fala separada: pausar entre eles.",
+    "text": "Sócio.\n\nAgora apaga essa foto. Na minha frente.\n\nO Toninho te leva. Amanhã a gente começa a caçada."
+  },
+  "verificacao": {
+    "status": "transcrito",
+    "modelo": "faster-whisper medium",
+    "device": "cpu",
+    "compute_type": "int8",
+    "language": "pt",
+    "initial_prompt": null,
+    "audio_editado": false,
+    "decodificacao": "FFmpeg para PCM em memória, original intacto",
+    "sha256": "b177639854b7d91b3edaa3eca86905eea155e1a3ecd7260d6efa17431738c536",
+    "duration_seconds": 11.96,
+    "transcricao": "Sócio, agora apaga essa foto. Na minha frente. O Toninho te leva. Amanhã a gente começa a caçada.",
+    "segmentos": [
+      {
+        "start": 0.8399999999999994,
+        "end": 6.4,
+        "text": " Sócio, agora apaga essa foto. Na minha frente.",
+        "words": [
+          {
+            "start": 0.8399999999999994,
+            "end": 1.62,
+            "word": " Sócio,",
+            "probability": 0.859520435333252
+          },
+          {
+            "start": 2.92,
+            "end": 3.32,
+            "word": " agora",
+            "probability": 0.9402074813842773
+          },
+          {
+            "start": 3.32,
+            "end": 4.06,
+            "word": " apaga",
+            "probability": 0.6716357171535492
+          },
+          {
+            "start": 4.06,
+            "end": 4.2,
+            "word": " essa",
+            "probability": 0.9213842153549194
+          },
+          {
+            "start": 4.2,
+            "end": 4.64,
+            "word": " foto.",
+            "probability": 0.9942440390586853
+          },
+          {
+            "start": 5.6,
+            "end": 5.74,
+            "word": " Na",
+            "probability": 0.9038227200508118
+          },
+          {
+            "start": 5.74,
+            "end": 6.02,
+            "word": " minha",
+            "probability": 0.9977993369102478
+          },
+          {
+            "start": 6.02,
+            "end": 6.4,
+            "word": " frente.",
+            "probability": 0.9979081153869629
+          }
+        ]
+      },
+      {
+        "start": 7.92,
+        "end": 11.62,
+        "text": " O Toninho te leva. Amanhã a gente começa a caçada.",
+        "words": [
+          {
+            "start": 7.92,
+            "end": 8.04,
+            "word": " O",
+            "probability": 0.8917991518974304
+          },
+          {
+            "start": 8.04,
+            "end": 8.28,
+            "word": " Toninho",
+            "probability": 0.9447278380393982
+          },
+          {
+            "start": 8.28,
+            "end": 8.46,
+            "word": " te",
+            "probability": 0.9697871208190918
+          },
+          {
+            "start": 8.46,
+            "end": 8.76,
+            "word": " leva.",
+            "probability": 0.9965909719467163
+          },
+          {
+            "start": 9.72,
+            "end": 10.18,
+            "word": " Amanhã",
+            "probability": 0.9722508192062378
+          },
+          {
+            "start": 10.18,
+            "end": 10.5,
+            "word": " a",
+            "probability": 0.8164491057395935
+          },
+          {
+            "start": 10.5,
+            "end": 10.5,
+            "word": " gente",
+            "probability": 0.9978567957878113
+          },
+          {
+            "start": 10.5,
+            "end": 11.0,
+            "word": " começa",
+            "probability": 0.99530029296875
+          },
+          {
+            "start": 11.0,
+            "end": 11.18,
+            "word": " a",
+            "probability": 0.9916661381721497
+          },
+          {
+            "start": 11.18,
+            "end": 11.62,
+            "word": " caçada.",
+            "probability": 0.9817680517832438
+          }
+        ]
+      }
+    ],
+    "observacoes": [],
+    "ressalva": "Diferenças detectadas pela transcrição automática sem dica; não confirmam por si só erro de pronúncia. Áudio original preservado, sem regeneração."
+  }
+}
