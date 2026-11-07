@@ -113,6 +113,10 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
   - o criador deixa o Codex no **esforço médio**, e não no máximo. As tarefas dele são de seguir o pedido, e o raciocínio já vai pronto nos arquivos;
   - mandar **uma conversa nova para cada lote**, com uma mensagem curta que diz qual lote executar. Como cada cena tem push na hora, nada se perde, e a conversa não fica pesada;
   - o Codex lê só o `AGENTS.md`, o pedido e o lote, e não o `CLAUDE.md` e o `NOTAS.md` inteiros.
+- **Quatro conversas por parte, que podem rodar ao mesmo tempo** (pergunta do criador em 07/11/2026): uma para as vozes e uma para cada um dos três lotes de desenhos, de 6 a 7 cenas cada. O criador pode abrir as quatro abas de uma vez. Para isso:
+  - **cada conversa faz push numa branch própria**, como `codex/ep06-vozes` e `codex/ep06-lote-01`, para uma não recusar nem apagar o push da outra. O Claude junta as branches na dele;
+  - **os lotes são agrupados por lugar**, como todas as cenas do carro num lote só, para cada cenário sair igual sem depender dos desenhos de outro lote. Os personagens seguem os desenhos das partes anteriores;
+  - as quatro dividem o mesmo limite de 5 horas e da semana. Se ele acabar, todas param juntas, mas o que já teve push fica salvo.
 - **As instruções para o Codex ficam no [`AGENTS.md`](AGENTS.md)**, que ele lê sozinho. Elas mandam ler este arquivo e o `NOTAS.md` antes de cada tarefa.
 - **Não propor que o criador gere imagens ou vozes à mão no celular.** Em 03/11/2026, ele achou complicado demais gerar, salvar e mandar tudo, e disse que ocupa muito espaço. Para esse material, o caminho é o Codex, que salva direto no GitHub, ou uma chave de API guardada no ambiente, se o criador quiser.
 - **Se o agente não conseguir baixar os áudios do OpusClip,** ele grava os links temporários em `links-temporarios.json`, na pasta da parte, na `codex/crimecarton`. O Claude baixa, confere e salva os WAV antes de os links expirarem, e apaga o arquivo de links. Foi assim com as vozes da Parte 4, em 03/11/2026.
