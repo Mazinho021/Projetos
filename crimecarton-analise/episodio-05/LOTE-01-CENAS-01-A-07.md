@@ -4,7 +4,7 @@
 
 ## Instruções
 
-- Ler antes `AGENTS.md`, `CLAUDE.md`, `NOTAS.md` e `crimecarton-analise/episodio-05/pedido-codex-ep05.md`, que tem as regras de composição, os lugares e os personagens.
+- Ler antes só o `AGENTS.md` e o `crimecarton-analise/episodio-05/pedido-codex-ep05.md`, que tem as regras de composição, os lugares e os personagens. Para economizar o limite de uso, não precisa ler o `CLAUDE.md` e o `NOTAS.md`.
 - Entregar **um arquivo PNG por cena**, nunca uma folha com várias cenas.
 - Vertical 9:16, no maior tamanho que o gerador permitir, sem nenhum texto, número, logotipo ou marca d'água. Os 25% de cima só com fundo calmo; rostos e ação entre 30% e 60% da altura; os 20% de baixo só com chão; nada importante na borda direita, entre 45% e 80% da altura.
 - Salvar em `crimecarton-analise/episodio-05/originais/`, com os nomes abaixo.

@@ -4,7 +4,7 @@
 
 ## Instruções
 
-- Ler antes `AGENTS.md`, `CLAUDE.md`, `NOTAS.md` e `crimecarton-analise/episodio-05/pedido-codex-ep05.md`.
+- Ler antes só o `AGENTS.md` e o `crimecarton-analise/episodio-05/pedido-codex-ep05.md`, que tem as regras de composição, os lugares e os personagens. Para economizar o limite de uso, não precisa ler o `CLAUDE.md` e o `NOTAS.md`.
 - **Usar as cenas já entregues como referência,** em `crimecarton-analise/episodio-05/originais/`: o carro por dentro das cenas 8, 11 e 13, o posto da cena 12 e o barracão da cena 1.
 - Entregar **um arquivo PNG por cena**. Vertical 9:16, sem nenhum texto, número ou logotipo. Os 25% de cima só com fundo calmo; rostos e ação entre 30% e 60% da altura; os 20% de baixo sem nada importante; a borda direita livre entre 45% e 80% da altura.
 - Salvar em `crimecarton-analise/episodio-05/originais/`.
