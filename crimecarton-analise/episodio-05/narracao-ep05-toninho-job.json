@@ -1,0 +1,555 @@
+{
+  "jobId": "mcp_media_9bac489d0e085dba893c9a5933b9885908933b4ea285fe5d94e4ba8fb4a6ab24",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_9bac489d0e085dba893c9a5933b9885908933b4ea285fe5d94e4ba8fb4a6ab24/0.wav?hdnts=FullPath~Expires=1794170661~Signature=w41ZuN9gz97SNyLnjWw92CA1tH0aoXAUCx_xZjfPKIn7xPFqKadXTwlGSLRK26_IgZXUycFgIHw-6QNLE7tFBg",
+      "expiresAt": "2026-11-08T20:44:21.619Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 25.2
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep05-toninho-orus-v1-20261107-s500",
+    "voice": "Orus",
+    "style": "Português brasileiro. Toninho, 35 anos, de bairro, motorista do assalto, empregado do Ademir. Voz masculina adulta, natural, sem caricatura, diferente do narrador. Dentro do carro parado de madrugada: baixo, meio rápido, sem olhar o ouvinte, nervoso tentando manter o controle. Primeira fala: revelação seca. Segunda: raiva contida do Ademir. Última: confessa, baixa a voz e propõe acordo, mais urgente e persuasivo no fim. Cada parágrafo é fala separada: pausar entre eles.",
+    "text": "Sabe quem montou as mochilas da divisão? O Ademir. A sua já saiu do São Jorge cheia de roupa velha.\n\nEle precisava de um culpado, e o Renato te levou. Só que o seu parceiro passou a perna nele também.\n\nFui eu que levei o seu parceiro naquela noite. Com as duas bolsas. Eu sei onde ele tá. Sozinho, eu não chego perto. Me ajuda a pegar o dinheiro antes do Ademir, e a gente divide."
+  },
+  "verificacao": {
+    "status": "transcrito",
+    "modelo": "faster-whisper medium",
+    "device": "cpu",
+    "compute_type": "int8",
+    "language": "pt",
+    "initial_prompt": null,
+    "audio_editado": false,
+    "decodificacao": "FFmpeg para PCM em memória, original intacto",
+    "sha256": "7e5a63c3931bf8ccd4ee38be2f30f53c7644ee76deefa58f3d6ff9a91da7cc61",
+    "duration_seconds": 25.2,
+    "transcricao": "Sabe quem montou as mochilas da divisão? O Ademir. A sua já saiu do São Jorge cheia de roupa velha. Ele precisava de um culpado e o Renato te levou. Só que o seu parceiro passou a perna nele também. Fui eu que levei o seu parceiro naquela noite. Com as duas bolsas. Eu sei onde ele está. Sozinho eu não chego perto. Me ajuda a pegar o dinheiro antes do Ademir e a gente divide.",
+    "segmentos": [
+      {
+        "start": 0.0,
+        "end": 3.48,
+        "text": " Sabe quem montou as mochilas da divisão? O Ademir.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.52,
+            "word": " Sabe",
+            "probability": 0.6136281788349152
+          },
+          {
+            "start": 0.52,
+            "end": 0.72,
+            "word": " quem",
+            "probability": 0.9881709814071655
+          },
+          {
+            "start": 0.72,
+            "end": 1.0,
+            "word": " montou",
+            "probability": 0.9361892342567444
+          },
+          {
+            "start": 1.0,
+            "end": 1.2,
+            "word": " as",
+            "probability": 0.9969319105148315
+          },
+          {
+            "start": 1.2,
+            "end": 1.5,
+            "word": " mochilas",
+            "probability": 0.9890659004449844
+          },
+          {
+            "start": 1.5,
+            "end": 1.68,
+            "word": " da",
+            "probability": 0.9945335388183594
+          },
+          {
+            "start": 1.68,
+            "end": 2.14,
+            "word": " divisão?",
+            "probability": 0.9415961802005768
+          },
+          {
+            "start": 2.78,
+            "end": 2.9,
+            "word": " O",
+            "probability": 0.9522125720977783
+          },
+          {
+            "start": 2.9,
+            "end": 3.48,
+            "word": " Ademir.",
+            "probability": 0.9659749070803324
+          }
+        ]
+      },
+      {
+        "start": 4.1,
+        "end": 6.86,
+        "text": " A sua já saiu do São Jorge cheia de roupa velha.",
+        "words": [
+          {
+            "start": 4.1,
+            "end": 4.22,
+            "word": " A",
+            "probability": 0.9784659743309021
+          },
+          {
+            "start": 4.22,
+            "end": 4.36,
+            "word": " sua",
+            "probability": 0.9970989227294922
+          },
+          {
+            "start": 4.36,
+            "end": 4.56,
+            "word": " já",
+            "probability": 0.9679549336433411
+          },
+          {
+            "start": 4.56,
+            "end": 4.82,
+            "word": " saiu",
+            "probability": 0.9972333908081055
+          },
+          {
+            "start": 4.82,
+            "end": 4.96,
+            "word": " do",
+            "probability": 0.9647022485733032
+          },
+          {
+            "start": 4.96,
+            "end": 5.16,
+            "word": " São",
+            "probability": 0.9805280566215515
+          },
+          {
+            "start": 5.16,
+            "end": 5.44,
+            "word": " Jorge",
+            "probability": 0.9805199503898621
+          },
+          {
+            "start": 5.44,
+            "end": 5.82,
+            "word": " cheia",
+            "probability": 0.9602600634098053
+          },
+          {
+            "start": 5.82,
+            "end": 5.96,
+            "word": " de",
+            "probability": 0.9991515874862671
+          },
+          {
+            "start": 5.96,
+            "end": 6.22,
+            "word": " roupa",
+            "probability": 0.9944312274456024
+          },
+          {
+            "start": 6.22,
+            "end": 6.86,
+            "word": " velha.",
+            "probability": 0.9981444776058197
+          }
+        ]
+      },
+      {
+        "start": 7.38,
+        "end": 10.7,
+        "text": " Ele precisava de um culpado e o Renato te levou.",
+        "words": [
+          {
+            "start": 7.38,
+            "end": 7.62,
+            "word": " Ele",
+            "probability": 0.9843632578849792
+          },
+          {
+            "start": 7.62,
+            "end": 8.02,
+            "word": " precisava",
+            "probability": 0.9987488985061646
+          },
+          {
+            "start": 8.02,
+            "end": 8.14,
+            "word": " de",
+            "probability": 0.9981983304023743
+          },
+          {
+            "start": 8.14,
+            "end": 8.32,
+            "word": " um",
+            "probability": 0.9979653358459473
+          },
+          {
+            "start": 8.32,
+            "end": 8.96,
+            "word": " culpado",
+            "probability": 0.9960166811943054
+          },
+          {
+            "start": 8.96,
+            "end": 9.28,
+            "word": " e",
+            "probability": 0.301896333694458
+          },
+          {
+            "start": 9.28,
+            "end": 9.46,
+            "word": " o",
+            "probability": 0.9822081923484802
+          },
+          {
+            "start": 9.46,
+            "end": 9.76,
+            "word": " Renato",
+            "probability": 0.9968197643756866
+          },
+          {
+            "start": 9.76,
+            "end": 10.02,
+            "word": " te",
+            "probability": 0.9164566397666931
+          },
+          {
+            "start": 10.02,
+            "end": 10.7,
+            "word": " levou.",
+            "probability": 0.9967288076877594
+          }
+        ]
+      },
+      {
+        "start": 10.94,
+        "end": 13.34,
+        "text": " Só que o seu parceiro passou a perna nele também.",
+        "words": [
+          {
+            "start": 10.94,
+            "end": 11.04,
+            "word": " Só",
+            "probability": 0.9886306524276733
+          },
+          {
+            "start": 11.04,
+            "end": 11.18,
+            "word": " que",
+            "probability": 0.9985504746437073
+          },
+          {
+            "start": 11.18,
+            "end": 11.26,
+            "word": " o",
+            "probability": 0.8019686937332153
+          },
+          {
+            "start": 11.26,
+            "end": 11.4,
+            "word": " seu",
+            "probability": 0.9982101917266846
+          },
+          {
+            "start": 11.4,
+            "end": 11.82,
+            "word": " parceiro",
+            "probability": 0.9985647201538086
+          },
+          {
+            "start": 11.82,
+            "end": 12.08,
+            "word": " passou",
+            "probability": 0.9674825668334961
+          },
+          {
+            "start": 12.08,
+            "end": 12.32,
+            "word": " a",
+            "probability": 0.9906690120697021
+          },
+          {
+            "start": 12.32,
+            "end": 12.56,
+            "word": " perna",
+            "probability": 0.9866184294223785
+          },
+          {
+            "start": 12.56,
+            "end": 12.78,
+            "word": " nele",
+            "probability": 0.9848609268665314
+          },
+          {
+            "start": 12.78,
+            "end": 13.34,
+            "word": " também.",
+            "probability": 0.9585480690002441
+          }
+        ]
+      },
+      {
+        "start": 14.28,
+        "end": 16.44,
+        "text": " Fui eu que levei o seu parceiro naquela noite.",
+        "words": [
+          {
+            "start": 14.28,
+            "end": 14.5,
+            "word": " Fui",
+            "probability": 0.9369288086891174
+          },
+          {
+            "start": 14.5,
+            "end": 14.68,
+            "word": " eu",
+            "probability": 0.9971699118614197
+          },
+          {
+            "start": 14.68,
+            "end": 14.92,
+            "word": " que",
+            "probability": 0.9771685600280762
+          },
+          {
+            "start": 14.92,
+            "end": 15.18,
+            "word": " levei",
+            "probability": 0.9897542893886566
+          },
+          {
+            "start": 15.18,
+            "end": 15.26,
+            "word": " o",
+            "probability": 0.9347542524337769
+          },
+          {
+            "start": 15.26,
+            "end": 15.4,
+            "word": " seu",
+            "probability": 0.9834566712379456
+          },
+          {
+            "start": 15.4,
+            "end": 15.72,
+            "word": " parceiro",
+            "probability": 0.9988457560539246
+          },
+          {
+            "start": 15.72,
+            "end": 16.02,
+            "word": " naquela",
+            "probability": 0.9887214303016663
+          },
+          {
+            "start": 16.02,
+            "end": 16.44,
+            "word": " noite.",
+            "probability": 0.9984893798828125
+          }
+        ]
+      },
+      {
+        "start": 16.84,
+        "end": 19.64,
+        "text": " Com as duas bolsas. Eu sei onde ele está.",
+        "words": [
+          {
+            "start": 16.84,
+            "end": 17.0,
+            "word": " Com",
+            "probability": 0.9932793974876404
+          },
+          {
+            "start": 17.0,
+            "end": 17.22,
+            "word": " as",
+            "probability": 0.9941688776016235
+          },
+          {
+            "start": 17.22,
+            "end": 17.46,
+            "word": " duas",
+            "probability": 0.9820514917373657
+          },
+          {
+            "start": 17.46,
+            "end": 17.98,
+            "word": " bolsas.",
+            "probability": 0.9912739992141724
+          },
+          {
+            "start": 18.36,
+            "end": 18.6,
+            "word": " Eu",
+            "probability": 0.9899575114250183
+          },
+          {
+            "start": 18.6,
+            "end": 18.8,
+            "word": " sei",
+            "probability": 0.9988314509391785
+          },
+          {
+            "start": 18.8,
+            "end": 18.98,
+            "word": " onde",
+            "probability": 0.9806304574012756
+          },
+          {
+            "start": 18.98,
+            "end": 19.24,
+            "word": " ele",
+            "probability": 0.9816187024116516
+          },
+          {
+            "start": 19.24,
+            "end": 19.64,
+            "word": " está.",
+            "probability": 0.5872378945350647
+          }
+        ]
+      },
+      {
+        "start": 20.28,
+        "end": 21.32,
+        "text": " Sozinho eu não chego perto.",
+        "words": [
+          {
+            "start": 20.28,
+            "end": 20.58,
+            "word": " Sozinho",
+            "probability": 0.9719394743442535
+          },
+          {
+            "start": 20.58,
+            "end": 20.68,
+            "word": " eu",
+            "probability": 0.687586784362793
+          },
+          {
+            "start": 20.68,
+            "end": 20.78,
+            "word": " não",
+            "probability": 0.9966101050376892
+          },
+          {
+            "start": 20.78,
+            "end": 21.02,
+            "word": " chego",
+            "probability": 0.9863099455833435
+          },
+          {
+            "start": 21.02,
+            "end": 21.32,
+            "word": " perto.",
+            "probability": 0.9989117383956909
+          }
+        ]
+      },
+      {
+        "start": 22.0,
+        "end": 24.92,
+        "text": " Me ajuda a pegar o dinheiro antes do Ademir e a gente divide.",
+        "words": [
+          {
+            "start": 22.0,
+            "end": 22.24,
+            "word": " Me",
+            "probability": 0.9942933320999146
+          },
+          {
+            "start": 22.24,
+            "end": 22.44,
+            "word": " ajuda",
+            "probability": 0.9942428469657898
+          },
+          {
+            "start": 22.44,
+            "end": 22.66,
+            "word": " a",
+            "probability": 0.880944013595581
+          },
+          {
+            "start": 22.66,
+            "end": 22.72,
+            "word": " pegar",
+            "probability": 0.9968908429145813
+          },
+          {
+            "start": 22.72,
+            "end": 22.88,
+            "word": " o",
+            "probability": 0.9878571033477783
+          },
+          {
+            "start": 22.88,
+            "end": 23.16,
+            "word": " dinheiro",
+            "probability": 0.9975000023841858
+          },
+          {
+            "start": 23.16,
+            "end": 23.38,
+            "word": " antes",
+            "probability": 0.9941317439079285
+          },
+          {
+            "start": 23.38,
+            "end": 23.54,
+            "word": " do",
+            "probability": 0.9915027618408203
+          },
+          {
+            "start": 23.54,
+            "end": 23.96,
+            "word": " Ademir",
+            "probability": 0.9985677401224772
+          },
+          {
+            "start": 23.96,
+            "end": 24.3,
+            "word": " e",
+            "probability": 0.8868473172187805
+          },
+          {
+            "start": 24.3,
+            "end": 24.4,
+            "word": " a",
+            "probability": 0.9919182658195496
+          },
+          {
+            "start": 24.4,
+            "end": 24.58,
+            "word": " gente",
+            "probability": 0.9985264539718628
+          },
+          {
+            "start": 24.58,
+            "end": 24.92,
+            "word": " divide.",
+            "probability": 0.984504222869873
+          }
+        ]
+      }
+    ],
+    "observacoes": [
+      "Transcrição: “onde ele está” versus pedido “onde ele tá”."
+    ],
+    "ressalva": "Diferenças detectadas pela transcrição automática sem dica; não confirmam por si só erro de pronúncia. Áudio original preservado, sem regeneração."
+  }
+}

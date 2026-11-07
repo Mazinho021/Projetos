@@ -1,0 +1,178 @@
+{
+  "jobId": "mcp_media_6cd93d46e4bb800b8f09c3be1d374f5d4a8a8275e3d87eb50f2ea6932a070579",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_6cd93d46e4bb800b8f09c3be1d374f5d4a8a8275e3d87eb50f2ea6932a070579/0.wav?hdnts=FullPath~Expires=1794170644~Signature=rC00xja-5IWJcW2TxUQ2Kckd-OhNJO09qq8-5gOVP6JrIaJPW8YCUxayYrDZf6y94Uvll1xpKG8B18g37mA5Ag",
+      "expiresAt": "2026-11-08T20:44:04.186Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 7.16
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep05-renato-algenib-v1-20261107",
+    "voice": "Algenib",
+    "style": "Português brasileiro. Renato, homem adulto de uns 30 anos, de bairro, amigo de infância de Zinho, a mesma voz natural das Partes 3 e 4, sem caricatura. É um áudio de celular, gravado na cozinha da mãe dele, às quatro da manhã, logo depois de ser solto: cansado, aliviado e carinhoso, falando baixo para não acordar a rua, quase rindo no fim. Um momento leve.",
+    "text": "Cheguei. A minha mãe tá fazendo bolo de fubá às quatro da manhã. Mandou dizer que metade é sua."
+  },
+  "verificacao": {
+    "status": "transcrito",
+    "modelo": "faster-whisper medium",
+    "device": "cpu",
+    "compute_type": "int8",
+    "language": "pt",
+    "initial_prompt": null,
+    "audio_editado": false,
+    "decodificacao": "FFmpeg para PCM em memória, original intacto",
+    "sha256": "7bb215cd37f5f21f141a62365656aba512be886852c4544c94c62ff4d85f7af2",
+    "duration_seconds": 7.16,
+    "transcricao": "Cheguei. Minha mãe está fazendo o bolo de fubá às 4 da manhã. Mandou dizer que metade é sua.",
+    "segmentos": [
+      {
+        "start": 0.8800000000000003,
+        "end": 1.4,
+        "text": " Cheguei.",
+        "words": [
+          {
+            "start": 0.8800000000000003,
+            "end": 1.4,
+            "word": " Cheguei.",
+            "probability": 0.9695020119349161
+          }
+        ]
+      },
+      {
+        "start": 1.9,
+        "end": 5.34,
+        "text": " Minha mãe está fazendo o bolo de fubá às 4 da manhã.",
+        "words": [
+          {
+            "start": 1.9,
+            "end": 2.14,
+            "word": " Minha",
+            "probability": 0.8504430651664734
+          },
+          {
+            "start": 2.14,
+            "end": 2.26,
+            "word": " mãe",
+            "probability": 0.9962506890296936
+          },
+          {
+            "start": 2.26,
+            "end": 2.52,
+            "word": " está",
+            "probability": 0.42636001110076904
+          },
+          {
+            "start": 2.52,
+            "end": 2.78,
+            "word": " fazendo",
+            "probability": 0.9865427017211914
+          },
+          {
+            "start": 2.78,
+            "end": 2.9,
+            "word": " o",
+            "probability": 0.3761659562587738
+          },
+          {
+            "start": 2.9,
+            "end": 3.04,
+            "word": " bolo",
+            "probability": 0.9757343828678131
+          },
+          {
+            "start": 3.04,
+            "end": 3.22,
+            "word": " de",
+            "probability": 0.9877222180366516
+          },
+          {
+            "start": 3.22,
+            "end": 3.6,
+            "word": " fubá",
+            "probability": 0.9541971484820048
+          },
+          {
+            "start": 3.6,
+            "end": 3.88,
+            "word": " às",
+            "probability": 0.9146108627319336
+          },
+          {
+            "start": 3.88,
+            "end": 4.32,
+            "word": " 4",
+            "probability": 0.690994918346405
+          },
+          {
+            "start": 4.32,
+            "end": 4.6,
+            "word": " da",
+            "probability": 0.7185797095298767
+          },
+          {
+            "start": 4.6,
+            "end": 5.34,
+            "word": " manhã.",
+            "probability": 0.9935590624809265
+          }
+        ]
+      },
+      {
+        "start": 5.62,
+        "end": 6.88,
+        "text": " Mandou dizer que metade é sua.",
+        "words": [
+          {
+            "start": 5.62,
+            "end": 5.84,
+            "word": " Mandou",
+            "probability": 0.9254837036132812
+          },
+          {
+            "start": 5.84,
+            "end": 6.04,
+            "word": " dizer",
+            "probability": 0.8709002733230591
+          },
+          {
+            "start": 6.04,
+            "end": 6.22,
+            "word": " que",
+            "probability": 0.9959977865219116
+          },
+          {
+            "start": 6.22,
+            "end": 6.54,
+            "word": " metade",
+            "probability": 0.9854922890663147
+          },
+          {
+            "start": 6.54,
+            "end": 6.76,
+            "word": " é",
+            "probability": 0.9889236092567444
+          },
+          {
+            "start": 6.76,
+            "end": 6.88,
+            "word": " sua.",
+            "probability": 0.9964641332626343
+          }
+        ]
+      }
+    ],
+    "observacoes": [
+      "Transcrição: “Minha mãe está fazendo o bolo” versus pedido “A minha mãe tá fazendo bolo”."
+    ],
+    "ressalva": "Diferenças detectadas pela transcrição automática sem dica; não confirmam por si só erro de pronúncia. Áudio original preservado, sem regeneração."
+  }
+}
