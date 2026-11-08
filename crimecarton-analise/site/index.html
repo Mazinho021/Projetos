@@ -228,6 +228,9 @@ h1 span { display: block; }
 .voto-nome p { font-size: var(--t-s); color: var(--areia); }
 
 .caso { padding: 24px; border-radius: var(--raio); background: var(--painel); border: 1px solid var(--linha); }
+.fechado { display: grid; gap: 12px; justify-items: start; padding: 24px; border-radius: var(--raio); background: var(--painel); border: 1px solid var(--linha); }
+.fechado h3 { font: 700 var(--t-l)/1.2 var(--display); }
+.fechado p { font-size: var(--t-s); color: var(--areia); }
 .caso h3 { font: 700 var(--t-l)/1.2 var(--display); }
 .caso dl { display: grid; margin: 12px 0 0; }
 .caso dl div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-block: 14px; border-bottom: 1px dashed var(--linha); }
@@ -483,17 +486,17 @@ a.capitulo:hover { transform: translateY(-4px); }
 <div class="aviso-faixa" aria-label="Avisos">
   <div class="aviso-trilho">
     <ul>
-      <li>Parte 3: <span data-vagas>30</span> vagas de aliado</li>
-      <li>Fecham sexta, às 21h</li>
-      <li>Votação aberta: fugir ou ficar?</li>
-      <li>A Parte 2 já tá no perfil</li>
+      <li>A Parte 5 já tá no perfil</li>
+      <li>Topar ou contar? Comenta no vídeo</li>
+      <li>Quem te roubou primeiro: o Ademir</li>
+      <li>Parte 6: <span data-vagas>30</span> vagas de aliado</li>
       <li>Passe de aliado: R$ 9,90 no Pix ou no cartão</li>
     </ul>
     <ul aria-hidden="true">
-      <li>Parte 3: <span data-vagas>30</span> vagas de aliado</li>
-      <li>Fecham sexta, às 21h</li>
-      <li>Votação aberta: fugir ou ficar?</li>
-      <li>A Parte 2 já tá no perfil</li>
+      <li>A Parte 5 já tá no perfil</li>
+      <li>Topar ou contar? Comenta no vídeo</li>
+      <li>Quem te roubou primeiro: o Ademir</li>
+      <li>Parte 6: <span data-vagas>30</span> vagas de aliado</li>
       <li>Passe de aliado: R$ 9,90 no Pix ou no cartão</li>
     </ul>
   </div>
@@ -512,21 +515,15 @@ a.capitulo:hover { transform: translateY(-4px); }
         </div>
       </div>
 
-      <aside class="vagas" aria-label="Vagas de aliado na Parte 3">
+      <aside class="vagas" aria-label="Vagas de aliado na Parte 6">
         <div>
-          <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>Parte 3: <span data-vagas>30</span> vagas de aliado abertas</span></p>
-          <p class="vagas-prazo">Fecham na sexta, 30 de outubro, às 21h.</p>
-        </div>
-        <div class="contagem" data-contagem aria-hidden="true">
-          <span><b data-dias>02</b><small>dias</small></span>
-          <span><b data-horas>00</b><small>horas</small></span>
-          <span><b data-min>00</b><small>min</small></span>
-          <span><b data-seg>00</b><small>seg</small></span>
+          <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>Parte 6: <span data-vagas>30</span> vagas de aliado abertas</span></p>
+          <p class="vagas-prazo">A Parte 5 já saiu, sem aliados. Quem virar aliado agora aparece na Parte 6.</p>
         </div>
       </aside>
 
       <figure class="celular">
-        <img src="img/votacao-parte-02.jpg" width="540" height="960" alt="O fim da Parte 2 na tela do celular: um carro parado no portão, a pergunta FUGIR OU FICAR? e os botões das duas opções.">
+        <img src="img/votacao-parte-05.jpg" width="540" height="960" alt="O fim da Parte 5 na tela do celular: as cenas das duas opções, a pergunta TOPAR OU CONTAR? e os botões.">
       </figure>
     </div>
   </section>
@@ -539,17 +536,16 @@ a.capitulo:hover { transform: translateY(-4px); }
       </header>
       <div class="voto-grade">
         <article class="voto-card" aria-labelledby="t-pergunta">
-          <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>Parte 2 · votação aberta</span></p>
-          <h3 id="t-pergunta">Um carro parou no portão, de farol apagado. Fugir ou ficar?</h3>
+          <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>Parte 5 · votação aberta</span></p>
+          <h3 id="t-pergunta">O Toninho contou que foi o Ademir quem encheu a sua mochila de roupa velha. Agora ele quer a sua ajuda para pegar o dinheiro antes do Ademir. Topar ou contar?</h3>
           <div class="opcoes">
-            <!-- Trocar pelo link do Reel da Parte 2 quando o criador mandar. -->
-            <a class="opcao opcao-1" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" data-palavra="FUGIR"><b>FUGIR</b><small>comentar no Reel</small></a>
-            <a class="opcao opcao-2" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" data-palavra="FICAR"><b>FICAR</b><small>comentar no Reel</small></a>
+            <a class="opcao opcao-1" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener"><b>TOPAR</b><small>comenta no vídeo</small></a>
+            <a class="opcao opcao-2" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener"><b>CONTAR</b><small>comenta no vídeo</small></a>
           </div>
-          <p class="nota">Ao tocar, a palavra é copiada e o Reel abre: é só colar nos comentários. No TikTok e no YouTube, o comentário vale do mesmo jeito.</p>
+          <p class="nota">Para votar, é só comentar uma palavra no vídeo da Parte 5, no Instagram, no TikTok ou no YouTube. A opção mais comentada vira a Parte 6.</p>
           <div class="voto-nome">
-            <h4>E o nome do amigo?</h4>
-            <p>Ele vendeu o seu nome. Agora você escolhe o dele: comenta um nome no vídeo da Parte 2. O mais curtido vira o nome dele na Parte 3.</p>
+            <h4>Na Parte 4, vocês decidiram: cancelar</h4>
+            <p>5 a 0 no Instagram. A foto da divisão não saiu, e o Zinho virou sócio do homem do anel.</p>
           </div>
         </article>
 
@@ -558,7 +554,10 @@ a.capitulo:hover { transform: translateY(-4px); }
           <dl>
             <div><dt>O assalto</dt><dd>R$ 10.000.000</dd></div>
             <div><dt>A sua parte</dt><dd class="alerta">R$ 0</dd></div>
-            <div><dt>A dívida do amigo</dt><dd>R$ 80.000</dd></div>
+            <div><dt>A dívida do Renato</dt><dd>R$ 80.000</dd></div>
+            <div><dt>Quem te roubou primeiro</dt><dd class="alerta">Ademir</dd></div>
+            <div><dt>A foto da divisão</dt><dd>na lixeira</dd></div>
+            <div><dt>A confissão do Toninho</dt><dd>gravada</dd></div>
             <div><dt>Suspeita</dt><dd class="estrelas" aria-label="cinco de cinco estrelas">★★★★★</dd></div>
           </dl>
         </aside>
@@ -592,15 +591,18 @@ a.capitulo:hover { transform: translateY(-4px); }
 
           <div class="legenda-post" aria-label="Exemplo da legenda do post no Instagram">
             <img src="img/perfil.jpg" width="96" height="96" alt="">
-            <p><span class="quem">golpecartoon</span><span class="onde">legenda do post</span><br>Aliados da Parte 3: <span data-legenda>ainda ninguém. Quer aparecer na próxima? Link na bio.</span></p>
+            <p><span class="quem">golpecartoon</span><span class="onde">legenda do post</span><br>Aliados da Parte 6: <span data-legenda>ainda ninguém. Quer aparecer? Link na bio.</span></p>
           </div>
         </div>
 
         <div class="aliado-compra">
+          <!-- Desde 07/11/2026, por decisão do criador, a Parte 5 sai sem aliados e a lista
+               aberta é a da Parte 6, ainda sem prazo. Para fechar as vendas, ver
+               ../ideia-site-da-serie.md: um aviso .fechado no lugar dos créditos e do formulário. -->
           <div class="creditos" aria-labelledby="t-creditos">
             <p class="creditos-topo">A parte que faltou · aliados</p>
-            <p class="creditos-parte" id="t-creditos">Parte 3</p>
-            <p class="creditos-sub">sai depois da votação</p>
+            <p class="creditos-parte" id="t-creditos">Parte 6</p>
+            <p class="creditos-sub">sai depois da votação da Parte 5</p>
             <ol class="creditos-lista" data-lista>
               <li><span>01</span>vaga aberta</li>
               <li><span>02</span>vaga aberta</li>
@@ -636,8 +638,8 @@ a.capitulo:hover { transform: translateY(-4px); }
           </div>
 
           <div class="quadros">
-            <div><b data-vagas>30</b><span>vagas na Parte 3</span></div>
-            <div><b class="alerta" data-relogio>2d 00h</b><span>para a lista fechar, sexta às 21h</span></div>
+            <div><b data-vagas>30</b><span>vagas na Parte 6</span></div>
+            <div><b class="alerta" data-relogio>em breve</b><span>o prazo aparece aqui em breve</span></div>
           </div>
 
           <div class="retorno" id="retorno" role="status" hidden>
@@ -665,7 +667,7 @@ a.capitulo:hover { transform: translateY(-4px); }
             <button class="botao botao-vazado" type="submit" name="meio" value="cartao" data-meio="cartao"><span class="ico" aria-hidden="true">credit_card</span><span data-rotulo>Pagar com cartão de crédito</span></button>
             <p class="meios"><span class="ico" aria-hidden="true">lock</span>Pagamento seguro, processado pelo Mercado Pago</p>
             <div class="miudo">
-              <p><b>Aliado nº <span data-proximo>001</span></b> é o próximo número. Pagamentos depois das 21h de sexta, ou com as vagas esgotadas, entram na parte seguinte.</p>
+              <p><b>Aliado nº <span data-proximo>001</span></b> é o próximo número. Pagamentos depois do prazo, ou com as vagas esgotadas, entram na parte seguinte.</p>
               <p>O passe não muda a votação: nos comentários, o voto de todo mundo vale igual.</p>
             </div>
           </form>
@@ -690,16 +692,34 @@ a.capitulo:hover { transform: translateY(-4px); }
           </a>
         </li>
         <li>
-          <a class="capitulo" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" aria-label="Assistir à Parte 2, A dívida. Em votação: fugir ou ficar.">
+          <a class="capitulo" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" aria-label="Assistir à Parte 2, A dívida. Vocês votaram fugir, com 77% dos votos.">
             <img src="img/parte-02.jpg" width="540" height="960" loading="lazy" alt="">
-            <span class="carimbo carimbo-aberto" aria-hidden="true">Em votação<small>fugir ou ficar?</small></span>
+            <span class="carimbo" aria-hidden="true">Fugir<small>77% dos votos</small></span>
+          </a>
+        </li>
+        <li>
+          <a class="capitulo" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" aria-label="Assistir à Parte 3, O preço. Deu empate, e trocar venceu no desempate.">
+            <img src="img/parte-03.jpg" width="540" height="960" loading="lazy" alt="">
+            <span class="carimbo" aria-hidden="true">Trocar<small>no desempate</small></span>
+          </a>
+        </li>
+        <li>
+          <a class="capitulo" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" aria-label="Assistir à Parte 4, O dono do anel. Vocês votaram cancelar, 5 a 0.">
+            <img src="img/parte-04.jpg" width="540" height="960" loading="lazy" alt="">
+            <span class="carimbo" aria-hidden="true">Cancelar<small>5 a 0</small></span>
+          </a>
+        </li>
+        <li>
+          <a class="capitulo" href="https://www.instagram.com/golpecartoon/" target="_blank" rel="noopener" aria-label="Assistir à Parte 5, A divisão. A votação está aberta: topar ou contar?">
+            <img src="img/parte-05.jpg" width="540" height="960" loading="lazy" alt="">
+            <span class="carimbo carimbo-aberto" aria-hidden="true">Em votação<small>topar ou contar?</small></span>
           </a>
         </li>
         <li>
           <div class="capitulo capitulo-breve">
-            <b>Parte 3</b>
+            <b>Parte 6</b>
             <span>em breve</span>
-            <small>a votação decide</small>
+            <small>a maioria decide</small>
           </div>
         </li>
       </ol>
@@ -719,7 +739,7 @@ a.capitulo:hover { transform: translateY(-4px); }
         <details><summary>Onde o meu @ vai aparecer?<span class="ico" aria-hidden="true">add</span></summary>
           <p>Num lugar da cena escolhido pela produção, como os contatos de um celular, um muro, uma tela de TV ou os créditos do fim, e na legenda do post no Instagram.</p></details>
         <details><summary>Até quando posso virar aliado de uma parte?<span class="ico" aria-hidden="true">add</span></summary>
-          <p>Até as 21h do dia em que a votação fecha, ou até acabarem as 30 vagas. Depois disso, o passe vale para a parte seguinte.</p></details>
+          <p>Até o prazo que aparece aqui no site, ou até acabarem as 30 vagas. Depois disso, o passe vale para a parte seguinte. A Parte 5 saiu sem aliados, então quem comprar agora aparece na Parte 6.</p></details>
         <details><summary>Preciso comprar de novo em cada parte?<span class="ico" aria-hidden="true">add</span></summary>
           <p>Sim. Cada passe vale para uma parte. Entrou de novo, aparece de novo, e o seu número de aliado continua o mesmo.</p></details>
         <details><summary>Errei meu @. E agora?<span class="ico" aria-hidden="true">add</span></summary>
@@ -806,8 +826,9 @@ a.capitulo:hover { transform: translateY(-4px); }
 (function () {
   // Valores de reserva. O site publicado pega os de verdade em /api/aliados.
   var CONFIG = {
-    parte: 3,
-    fecha: '2026-10-30T21:00:00-03:00',  // fim das vagas e da votação
+    parte: 6,
+    vendas: true,
+    fecha: null,                         // prazo da lista: ainda sem prazo
     vagas: 30,
     preco: 9.9,                           // R$ do passe, para o formulário do cartão
     proximoNumero: 1                      // o número do próximo aliado novo
@@ -819,10 +840,11 @@ a.capitulo:hover { transform: translateY(-4px); }
   var tres = function (n) { return ('00' + n).slice(-3); };
 
   // Contagem até as vagas fecharem
-  var fim = Date.parse(CONFIG.fecha);
+  var fim = CONFIG.fecha ? Date.parse(CONFIG.fecha) : 0;
   var partes = { d: $('[data-dias]'), h: $('[data-horas]'), m: $('[data-min]'), s: $('[data-seg]') };
   var relogio = $('[data-relogio]');
   function contar() {
+    if (!fim || !partes.d) return;
     var falta = Math.max(0, Math.floor((fim - Date.now()) / 1000));
     var d = Math.floor(falta / 86400), h = Math.floor(falta % 86400 / 3600), m = Math.floor(falta % 3600 / 60), s = falta % 60;
     partes.d.textContent = dois(d); partes.h.textContent = dois(h); partes.m.textContent = dois(m); partes.s.textContent = dois(s);
@@ -931,6 +953,7 @@ a.capitulo:hover { transform: translateY(-4px); }
         if (!d || !Array.isArray(d.aliados)) return null;
         CONFIG.parte = d.parte; CONFIG.vagas = d.vagas; CONFIG.proximoNumero = d.proximoNumero;
         if (d.fecha) fim = Date.parse(d.fecha);
+        CONFIG.vendas = d.vendas !== false;
         chave = d.chave || '';
         aliadosAgora = d.aliados;
         mostrarLista(d.aliados);
@@ -1106,7 +1129,7 @@ a.capitulo:hover { transform: translateY(-4px); }
   }
   // A parte em que o passe entra, como o servidor decide: a seguinte depois do prazo ou com a lista cheia.
   function parteAgora() {
-    return Date.now() > fim || aliadosAgora.length >= CONFIG.vagas ? CONFIG.parte + 1 : CONFIG.parte;
+    return (fim && Date.now() > fim) || aliadosAgora.length >= CONFIG.vagas ? CONFIG.parte + 1 : CONFIG.parte;
   }
   function abrirCartao(dados) {
     dadosCartao = dados;
@@ -1233,6 +1256,7 @@ a.capitulo:hover { transform: translateY(-4px); }
     email: 'Confira o seu e-mail: ele precisa ter @ e um domínio, como voce@email.com.',
     autorizo: 'Marque a autorização para usarmos o seu @ na história.',
     repetido: 'Esse @ já está na lista desta parte.',
+    fechado: 'As vagas de aliado estão fechadas agora. Elas abrem de novo na próxima parte.',
     falha: 'Não deu para abrir o pagamento agora. Tenta de novo em alguns minutos.'
   };
   if (Object.prototype.hasOwnProperty.call(ERROS, busca.get('erro'))) {

@@ -12,7 +12,7 @@ const CACHE = {
 };
 
 export default async () => {
-  const base = { parte: SERIE.parte, vagas: SERIE.vagas, fecha: SERIE.fecha };
+  const base = { parte: SERIE.parte, vendas: Boolean(SERIE.vendas), vagas: SERIE.vagas, fecha: SERIE.fecha };
   if (!token()) {
     return Response.json({ ...base, ligado: false, aliados: [], proximoNumero: 1 }, { headers: CACHE });
   }

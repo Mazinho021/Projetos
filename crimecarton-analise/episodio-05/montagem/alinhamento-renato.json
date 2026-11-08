@@ -1,0 +1,140 @@
+{
+ "audio": "narracao-ep05-renato.wav",
+ "script": "narracao-ep05-renato.txt",
+ "model": "medium",
+ "words_in_script": 19,
+ "words_matched_exactly": 17,
+ "pauses": [
+  [
+   0.758,
+   1.059
+  ],
+  [
+   1.288,
+   1.651
+  ],
+  [
+   5.251,
+   5.512
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Cheguei.",
+   "start": 0.17,
+   "end": 0.74
+  },
+  {
+   "i": 1,
+   "text": "Minha",
+   "start": 1.651,
+   "end": 2.14
+  },
+  {
+   "i": 2,
+   "text": "mãe",
+   "start": 2.14,
+   "end": 2.26
+  },
+  {
+   "i": 3,
+   "text": "tá",
+   "start": 2.26,
+   "end": 2.52
+  },
+  {
+   "i": 4,
+   "text": "fazendo",
+   "start": 2.52,
+   "end": 2.78
+  },
+  {
+   "i": 5,
+   "text": "o",
+   "start": 2.78,
+   "end": 2.9
+  },
+  {
+   "i": 6,
+   "text": "bolo",
+   "start": 2.9,
+   "end": 3.04
+  },
+  {
+   "i": 7,
+   "text": "de",
+   "start": 3.04,
+   "end": 3.24
+  },
+  {
+   "i": 8,
+   "text": "fubá",
+   "start": 3.24,
+   "end": 3.6
+  },
+  {
+   "i": 9,
+   "text": "às",
+   "start": 3.6,
+   "end": 3.88
+  },
+  {
+   "i": 10,
+   "text": "quatro",
+   "start": 3.88,
+   "end": 4.32
+  },
+  {
+   "i": 11,
+   "text": "da",
+   "start": 4.32,
+   "end": 4.62
+  },
+  {
+   "i": 12,
+   "text": "manhã.",
+   "start": 4.62,
+   "end": 5.251
+  },
+  {
+   "i": 13,
+   "text": "Mandou",
+   "start": 5.512,
+   "end": 5.86
+  },
+  {
+   "i": 14,
+   "text": "dizer",
+   "start": 5.86,
+   "end": 6.04
+  },
+  {
+   "i": 15,
+   "text": "que",
+   "start": 6.04,
+   "end": 6.22
+  },
+  {
+   "i": 16,
+   "text": "metade",
+   "start": 6.22,
+   "end": 6.54
+  },
+  {
+   "i": 17,
+   "text": "é",
+   "start": 6.54,
+   "end": 6.74
+  },
+  {
+   "i": 18,
+   "text": "sua.",
+   "start": 6.74,
+   "end": 6.88
+  }
+ ],
+ "notes": [
+  "08/11/2026: \"Cheguei.\" moved by hand from 1.059–1.288 s (a breath) to 0.17–0.74 s, where the word is."
+ ]
+}

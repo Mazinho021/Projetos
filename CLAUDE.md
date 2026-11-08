@@ -92,6 +92,12 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 - Usar as pistas já plantadas (o anel de ouro, o Ferro-Velho São Jorge, a mãe do Renato, a “Cobrança”) para a história avançar.
 - **Mostrar o roteiro ao criador e esperar o “ok” antes de pedir as gerações pagas ao Codex.** Imagens e vozes custam créditos, e um roteiro recusado depois de gerado é crédito perdido.
 
+## Site da série (lembrete do criador em 07/11/2026)
+
+- **A cada parte publicada, atualizar o site** (`crimecarton-analise/site/`, no ar em golpecartoon.netlify.app): a capa nova em “Assista do começo”, com o carimbo da votação, o resultado na seção de votação, o fim da parte no topo e o quadro “O caso até aqui”. Em 07/11/2026, o site estava parado na Parte 3.
+- **A Parte 5 sai sem aliados**, por decisão do criador em 07/11/2026, mas a venda continua: quem comprar agora aparece na Parte 6. A lista ainda não tem prazo; quando a Parte 5 sair, combinar o prazo com o criador. O passo a passo está em `crimecarton-analise/ideia-site-da-serie.md`.
+- Publicar com a ferramenta de deploy do Netlify e conferir no ar a página, o `/api/aliados` e os testes (`node --test crimecarton-analise/site/testes/*.test.mjs`).
+
 ## Vozes
 
 - O narrador, a vinheta e o cobrador usam a voz Charon, gerada no OpusClip pelo Codex.
@@ -109,6 +115,14 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 - **Pedir commit e push logo depois de cada cena pronta.**
   - Em 02/11/2026, a conversa da Parte 4 travou no limite diário antes de fazer push, e nada foi entregue.
   - Em 05/11/2026, o close do Ademir (cena 16) ficou pronto, mas o limite de 5 horas parou a conversa antes do push, que só viria na cena 20.
+- **Para gastar menos limite (combinado com o criador em 07/11/2026, vale da Parte 6 em diante):**
+  - **tudo numa conversa só**, como até a Parte 5: as vozes e os três lotes de desenhos, em sequência, na mesma aba, com push depois de cada cena;
+  - o criador deixa o Codex no **esforço médio**, e não no máximo. As tarefas dele são de seguir o pedido, e o raciocínio já vai pronto nos arquivos;
+  - o Codex lê só o `AGENTS.md`, o pedido e o lote, e não o `CLAUDE.md` e o `NOTAS.md` inteiros.
+- **Se o limite ainda acabar rápido demais, o plano B é dividir em quatro conversas**, uma para as vozes e uma para cada lote, que podem rodar ao mesmo tempo, em abas separadas:
+  - cada conversa faz push numa branch própria, como `codex/ep06-vozes` e `codex/ep06-lote-01`, para uma não recusar nem apagar o push da outra. O Claude junta as branches na dele;
+  - os lotes são agrupados por lugar, como todas as cenas do carro num lote só, para cada cenário sair igual sem depender dos desenhos de outro lote;
+  - as quatro dividem o mesmo limite de 5 horas e da semana. Se ele acabar, todas param juntas, mas o que já teve push fica salvo.
 - **As instruções para o Codex ficam no [`AGENTS.md`](AGENTS.md)**, que ele lê sozinho. Elas mandam ler este arquivo e o `NOTAS.md` antes de cada tarefa.
 - **Não propor que o criador gere imagens ou vozes à mão no celular.** Em 03/11/2026, ele achou complicado demais gerar, salvar e mandar tudo, e disse que ocupa muito espaço. Para esse material, o caminho é o Codex, que salva direto no GitHub, ou uma chave de API guardada no ambiente, se o criador quiser.
 - **Se o agente não conseguir baixar os áudios do OpusClip,** ele grava os links temporários em `links-temporarios.json`, na pasta da parte, na `codex/crimecarton`. O Claude baixa, confere e salva os WAV antes de os links expirarem, e apaga o arquivo de links. Foi assim com as vozes da Parte 4, em 03/11/2026.

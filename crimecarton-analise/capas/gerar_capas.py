@@ -33,6 +33,9 @@ COVERS = [
     # The hand with the ring and the knife, not Ademir's face, which the part itself reveals.
     dict(part=4, title='O DONO DO ANEL', line='QUEM É ELE?', art='../episodio-04/cena-08-anel-canivete.png',
          scale=1.35, focus=(.52, .5), at=(540, 800)),
+    # The two bags of the division night: the old clothes and the money.
+    dict(part=5, title='A DIVISÃO', line='QUEM TE ROUBOU?', art='../episodio-05/cena-15-noite-da-divisao.png',
+         scale=1.3, focus=(.5, .5), at=(540, 760)),
 ]
 
 
