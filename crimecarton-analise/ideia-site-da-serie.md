@@ -35,6 +35,13 @@ Por decisão do criador, o site não cita o @crimecarton.
   - **Para fechar as vendas de vez,** se o criador pedir: `vendas: false` em `serie.mjs` faz o `/api/checkout` recusar qualquer passe, com o aviso de vagas fechadas, sem criar cobrança, e o `/api/aliados` avisa a página. Na página, esconder (`hidden`) os créditos, os quadros e o formulário e pôr no lugar um aviso com a classe `fechado`, que já tem estilo.
 - Os testes não dependem mais da data de hoje: eles abrem uma lista da Parte 3 só para eles. Os 17 passam.
 
+**Atualização de 08/11/2026, com a Parte 5 no ar:**
+
+- **o topo** mostra o fim da Parte 5 no celular (`votacao-parte-05.jpg`, o quadro de 129,5 s da versão vertical, com TOPAR ou CONTAR), e a faixa azul diz que a Parte 5 já está no perfil;
+- **a votação** está aberta: a pergunta da Parte 5, com TOPAR e CONTAR, e embaixo o resultado da Parte 4 (CANCELAR, 5 a 0). O quadro “O caso até aqui” ganhou quem roubou o Zinho primeiro (o Ademir), a foto na lixeira e a confissão gravada do Toninho;
+- **as capas** vão da Parte 1 à 5. A da Parte 5 (`parte-05.jpg`) tem o carimbo azul “Em votação”, e a Parte 6 aparece como “em breve”;
+- **as vagas continuam na Parte 6, ainda sem prazo**: a página diz “o prazo aparece aqui em breve”. Falta o criador combinar o prazo.
+
 O Mercado Pago está ligado desde 28/10/2026, direto com o token de produção. No mesmo dia, o criador fez a primeira compra de verdade, um Pix de R$ 9,90 com o @ `teste.golpe`. O pagamento foi aprovado e o @ ficou fora da lista, como devia. Em 29/10/2026, o criador aumentou as vagas da Parte 3 de 10 para 30, no site e no vídeo que chama aliados ([`chamada-aliado/`](chamada-aliado/)). Faltam duas coisas do criador:
 
 - a confirmação do prazo;

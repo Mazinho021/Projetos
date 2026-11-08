@@ -1,6 +1,14 @@
 # Parte 5 — “A divisão”
 
-**Situação em 07/11/2026:** o criador aprovou o roteiro (“Vamos lá”). O pedido ao Codex está em [`pedido-codex-ep05.md`](pedido-codex-ep05.md): as 4 vozes e os 19 desenhos, em três lotes, com push depois de cada cena.
+**Situação em 08/11/2026:** a Parte 5 está pronta, nas duas versões ([`parte-05-a-divisao.mp4`](parte-05-a-divisao.mp4) e [`parte-05-a-divisao-vertical.mp4`](parte-05-a-divisao-vertical.mp4)), com 2 min 11,8 s. O Codex entregou as 4 vozes e os 19 desenhos pelo pedido em [`pedido-codex-ep05.md`](pedido-codex-ep05.md), e a montagem está em [`montagem/`](montagem/README.md).
+
+Mudanças na montagem em relação a este plano:
+
+- **“Ele estende a mão.”** fica no desenho do Ademir estendendo a mão (cena 6), com um círculo nela; o close do aperto (cena 7) entra em “Você aperta.”, com o carimbo “SÓCIOS”.
+- **“Você apaga.”** ganha o carimbo “APAGADA” sobre o celular, e a lixeira (cena 9) entra em “O que ele não sabe:”.
+- **“A sua já saiu do São Jorge cheia de roupa velha.”** ganha a polaroide da mochila da Parte 1 (“PARTE 1 · a sua mochila”).
+- **A noite da divisão** (cena 18) fica com as três frases do Toninho entre aspas, porque ele não aparece, e com as etiquetas “A SUA MOCHILA” e “O DINHEIRO”.
+- **As bolsas** (Parte 4, cena 17) entram como as outras lembranças: o desenho desfocado atrás da polaroide.
 
 ## A votação da Parte 4
 
