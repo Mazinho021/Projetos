@@ -213,7 +213,7 @@ PAUSES = {
     A('te leva.', 1): .2,
     A('a caçada.', 1): .5,
     N('carro do assalto.', 2): .6,
-    N('áudio do Renato.', 2): .3,
+    N('áudio do Renato.', 2): .6,            # time to read the close-up of the audio
     R('metade é sua.', 2): .6,
     N('quase ri.', 1): .9,                   # the light moment, before the turn
     N('desliga o rádio.', 2): .3,
@@ -222,7 +222,7 @@ PAUSES = {
     T('da divisão?', 1): .4,
     T('O Ademir.', 1): .7,                   # the turn lands
     T('roupa velha.', 1): .6,
-    N('aperta gravar.', 1): .5,
+    N('aperta gravar.', 1): .8,              # time to read the recorder
     T('te levou.', 1): .3,
     T('nele também.', 1): .5,
     N('te roubar.', 1): 1.0,
@@ -399,11 +399,23 @@ def hud(start, end, label_, value, color, dy, shake=False):
 
 
 # Where the new screens' details land in the 720 × 1280 frame, measured on the composed scenes.
-BOTAO_CANCELAR = (405, 553)      # tela-cancelar: the CANCELAR button, under the thumb
 FOTO_CHAT = (363, 644)           # tela-cancelar: the division photo in the chat
-FOTO_LIXEIRA = (340, 550)        # tela-lixeira: the division photo with its 30 days
-AUDIO_TELA = (412, 735)          # tela-audio: Renato's audio message
-REC = (385, 640)                 # tela-gravando: the red dot and the time
+
+# The close-ups of the screens (compor_cenas.py): a straight phone screen, U × U units, at
+# CARTAO's left, top and side in each version. Their details, in the card's units.
+U = 560
+CARTAO = {'': (80, 270, 560), '-vertical': (75, 332, 510)}
+BOTAO_CANCELAR = (438, 183)      # close-cancelar: the CANCELAR button
+FOTO_LIXEIRA = (160, 316)        # close-lixeira: the division photo with its 30 days
+PLAY_AUDIO = (142, 318)          # close-audio: the play button of Renato's audio
+
+
+def no_cartao(L, ponto, r=None):
+    # A point of a close-up's card in the frame, and a length in the card's units, in px.
+    x, y, lado = CARTAO[L['art']]
+    k = lado/U
+    xy = (round(x + ponto[0]*k), round(y + ponto[1]*k))
+    return xy if r is None else (*xy, round(r*k))
 
 
 def build(ed):
@@ -425,22 +437,28 @@ def build(ed):
         ('votos', cut(N(VOTO)), art('../episodio-04/montagem/arte/tela-0313.png', .03, direction='out',
                                     brightness=.35)),
         # 03:14: the photo does not go out, and the deal.
-        ('cancelar', story, art(arte('tela-cancelar.png'), .04)),
+        # The phone's messages: the drawing, and the screen up close, straight and big, so the
+        # message can be read (the creator, 08/11/2026).
+        ('cancelar-close', story, art(arte(f"close-cancelar{L['art']}.png"), .03)),
+        ('cancelar', cut(N('A foto da')), art(arte('tela-cancelar.png'), .04)),
         ('socio', cut(A('Sócio.')), art(desenho('cena-03-socio.png'), .04, direction='out')),
         ('aperto', cut(N('mão. Você aperta.', 1)), art(desenho('cena-04-aperto.png'), .05)),
         ('apaga', cut(A('Agora apaga')), art(desenho('cena-05-apaga.png'), .04)),
         ('lixeira', cut(N('O que ele')), art(arte('tela-lixeira.png'), .05)),
+        ('lixeira-close', cut(N('a foto continua')), art(arte(f"close-lixeira{L['art']}.png"), .03)),
         # The driver.
         ('portao', cut(A('O Toninho te')), art(desenho('cena-07-portao-carro.png'), .04, direction='out')),
         ('volante', cut(N('Toninho é o')), art(desenho('cena-08-toninho-volante.png'), .05)),
         # The light moment: Renato's audio and his mother's cake.
         ('audio', cut(N('No caminho,')), art(arte('tela-audio.png'), .04)),
+        ('audio-close', cut(N('Um áudio do')), art(arte(f"close-audio{L['art']}.png"), .03)),
         ('bolo', cut(R('Cheguei.')), art(desenho('cena-10-bolo.png'), .04, direction='out')),
         ('quaseri', cut(N('Pela primeira vez')), art(desenho('cena-11-quase-ri.png'), .05)),
         # The closed gas station and the turn.
         ('posto', cut(N('Aí o Toninho')), art(desenho('cena-12-posto.png'), .04, direction='out')),
         ('perfil-toninho', cut(N('E fala sem')), art(desenho('cena-13-toninho-perfil.png'), .05)),
         ('gravar', cut(N('Devagar, a sua')), art(arte('tela-gravando.png'), .05)),
+        ('gravar-close', cut(N('Você aperta gravar.')), art(arte(f"close-gravando{L['art']}.png"), .03)),
         ('divisao', cut(T('Ele precisava')), art(desenho('cena-15-noite-da-divisao.png'), .04, direction='out')),
         ('choque', cut(N('O homem que')), art(desenho('cena-16-choque.png'), .06)),
         ('bolsas', cut(T('Fui eu que')), art(arte('lembranca-bolsas.png'), .02)),
@@ -517,8 +535,8 @@ def build(ed):
         tag('A PROPOSTA', AT['bolsas'], AT['topar'], L['tag_y']),
         # ---- 03:14
         phrase(story + .05, s(N('O seu dedo')) - .05, 960, [line('03:14', s(N('Três e catorze.')), 'yellow', size=90)], 70, x),
-        ring(s(N('dedo aperta')), s(N('A foto da')), *BOTAO_CANCELAR, 50, 'yellow'),
-        pop('TOC', s(N('aperta cancelar.', 1)), s(N('A foto da')), 560 if not v else 520, 520, 52, 'white', 8),
+        ring(s(N('dedo aperta')), AT['cancelar'], *no_cartao(L, BOTAO_CANCELAR, 100), 'yellow'),
+        pop('TOC', s(N('aperta cancelar.', 1)), AT['cancelar'], *no_cartao(L, (470, 92)), 52, 'white', 8),
         ring(s(N('A foto da')), s(N('não sai.')), *FOTO_CHAT, 82, 'red'),
         stamp('NÃO SAI', s(N('não sai.')) - .02, AT['socio'], FOTO_CHAT[1] + 40, FOTO_CHAT[0], 'red'),
         # ---- the deal
@@ -532,7 +550,7 @@ def build(ed):
         phrase(AT['lixeira'] + .05, AT['portao'], 920, [label('O QUE ELE NÃO SABE:', s(N('O que ele'))),
                                                         line('A FOTO CONTINUA', s(N('a foto continua'))),
                                                         line('NA LIXEIRA.', s(N('na lixeira')), 'yellow')], 60, x),
-        ring(lixo, AT['portao'], *FOTO_LIXEIRA, 95, 'yellow'),
+        ring(lixo, AT['portao'], *no_cartao(L, FOTO_LIXEIRA, 150), 'yellow'),
         # ---- the driver
         balloon('O Toninho te leva.', s(A('O Toninho te')), s(A('Amanhã a gente')), 250, (150, 560), y=470, width=400, L=L),
         balloon('Amanhã a gente começa a caçada.', s(A('Amanhã a gente')), AT['volante'], 250, (150, 560), y=470,
@@ -543,8 +561,9 @@ def build(ed):
                                                              line('O CARRO DO ASSALTO.', s(N('carro do assalto.')),
                                                                   'yellow', size=44)], 50, x),
         # ---- Renato's audio
-        pop('VRRR', s(N('celular vibra.')), AT['bolo'], 540 if not v else 500, 545, 56, 'white', -6, shake=True),
-        callout('ÁUDIO DO RENATO', s(N('áudio do Renato.')), AT['bolo'], 200, 1000, AUDIO_TELA, 'green'),
+        pop('VRRR', s(N('celular vibra.')), AT['audio-close'], 540 if not v else 500, 545, 56, 'white', -6, shake=True),
+        callout('ÁUDIO DO RENATO', s(N('áudio do Renato.')), AT['bolo'], *no_cartao(L, (300, 456)),
+                no_cartao(L, PLAY_AUDIO), 'green'),
         balloon('Cheguei. Minha mãe tá fazendo o bolo de fubá às quatro da manhã.', s(R('Cheguei.')),
                 s(R('Mandou dizer')), 370 if v else 380, (370, 500), L=L),
         balloon('Mandou dizer que metade é sua.', s(R('Mandou dizer')), AT['quaseri'], 370 if v else 380, (370, 500), L=L),
@@ -572,7 +591,6 @@ def build(ed):
         phrase(AT['gravar'] + .05, AT['divisao'], 940, [label('A MÃO ENTRA NO BOLSO', s(N('a sua mão'))),
                                                          line('APERTA GRAVAR.', s(N('aperta gravar.')), 'red', size=60)],
                60, x),
-        ring(s(N('aperta gravar.', 1)), AT['divisao'], *REC, 70, 'red'),
         # ---- the night of the division, in Toninho's words
         callout('A SUA MOCHILA', s(T('de um culpado,')), AT['choque'], 200, 420, (205, 640)),
         phrase(AT['divisao'] + .05, s(T('e o Renato')) - .05, 940, [line('“ELE PRECISAVA', s(T('Ele precisava'))),
@@ -629,7 +647,7 @@ def build(ed):
          'title': f'PARTE {PART + 1}', 'sub': 'a maioria decide o próximo passo'},
     ]
     effects = [
-        *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('preto', 'frio', 'perfil', 'votos', 'cancelar', 'portao',
+        *[sfx('whoosh.wav', AT[n] - WHOOSH_PEAK, -2) for n in ('preto', 'frio', 'perfil', 'votos', 'cancelar-close', 'portao',
                                                                'audio', 'posto', 'divisao', 'choque', 'bolsas', 'topar',
                                                                'escolha')],
         sfx('impacto.wav', s(N('a sua mochila')) - .04, -5),

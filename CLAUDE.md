@@ -29,6 +29,11 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
 - **Telas de celular com dedos por cima** (erro que o criador apontou em 06/11/2026): na Parte 4, os dedões da cena 3 saíram pixelados, porque a máscara antiga comia o contorno preto dos dedos e cortava a borda em degraus.
   - Encaixar a tela nova com `encaixar_limpo` (`episodio-04/montagem/compor_cenas.py`), que mantém o contorno e a borda suave de quem está na frente;
   - antes de entregar, conferir os dedos de perto, em tamanho grande.
+- **Mensagens no celular tortas e pouco visíveis** (erro que o criador apontou em 08/11/2026, depois de postar a Parte 5): os celulares dos desenhos são pequenos e inclinados, e a tela encaixada neles fica torta, escura e com letra miúda.
+  - **Toda mensagem de celular ganha um close da tela, reto e grande,** logo depois do desenho da mão com o celular: `close_tela` em `episodio-05/montagem/compor_cenas.py`. A tela fica de frente, com letra grande, sobre o desenho desfocado e escuro, entre a etiqueta e as frases (de y ≈ 270 a 830), e à esquerda de x = 590 na vertical. O desenho pode manter a tela encaixada em perspectiva, como plano de chegada.
+  - Os círculos, as etiquetas e os carimbos da mensagem vão no close, e não na tela pequena do desenho.
+  - **No pedido ao Codex:** o celular de frente para a câmera, reto, com a tela grande, ocupando pelo menos 40% da largura do desenho.
+  - **Antes de entregar:** olhar cada tela num quadro do tamanho de um celular (360 px de largura) e conferir que a mensagem se lê.
 - **Frases na tela:** ficam entre 65% e 80% da altura (y ≈ 830–1020 de 1280), longe dos rostos.
 - **Abertura:** a etiqueta “PARTE N” fica no canto esquerdo (x = 112). No centro, ela cobria a cabeça do Zinho na arte da mochila.
 - **Personagem na borda direita do desenho:** na vertical, ele fica atrás dos botões do TikTok. Nesse caso, mostrar o desenho num cartão menor, deslocado para a esquerda, como a lembrança do almoço na Parte 3 (`compor_cenas.py`).
@@ -95,7 +100,7 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 ## Site da série (lembrete do criador em 07/11/2026)
 
 - **A cada parte publicada, atualizar o site** (`crimecarton-analise/site/`, no ar em golpecartoon.netlify.app): a capa nova em “Assista do começo”, com o carimbo da votação, o resultado na seção de votação, o fim da parte no topo e o quadro “O caso até aqui”. Em 07/11/2026, o site estava parado na Parte 3.
-- **A Parte 5 sai sem aliados**, por decisão do criador em 07/11/2026, mas a venda continua: quem comprar agora aparece na Parte 6. A lista ainda não tem prazo; quando a Parte 5 sair, combinar o prazo com o criador. O passo a passo está em `crimecarton-analise/ideia-site-da-serie.md`.
+- **A Parte 5 saiu sem aliados**, por decisão do criador em 07/11/2026, mas a venda continua: quem comprar agora aparece na Parte 6. Em 08/11/2026, o criador marcou o prazo da lista da Parte 6: **segunda, 09/11, às 12h** (`fecha` em `site/netlify/lib/serie.mjs` e no `CONFIG` da página). Depois dele, o passe vale para a Parte 7. O passo a passo está em `crimecarton-analise/ideia-site-da-serie.md`.
 - Publicar com a ferramenta de deploy do Netlify e conferir no ar a página, o `/api/aliados` e os testes (`node --test crimecarton-analise/site/testes/*.test.mjs`).
 
 ## Vozes

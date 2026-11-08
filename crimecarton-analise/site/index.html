@@ -489,14 +489,14 @@ a.capitulo:hover { transform: translateY(-4px); }
       <li>A Parte 5 já tá no perfil</li>
       <li>Topar ou contar? Comenta no vídeo</li>
       <li>Quem te roubou primeiro: o Ademir</li>
-      <li>Parte 6: <span data-vagas>30</span> vagas de aliado</li>
+      <li>Parte 6: <span data-vagas>30</span> vagas de aliado até segunda, 12h</li>
       <li>Passe de aliado: R$ 9,90 no Pix ou no cartão</li>
     </ul>
     <ul aria-hidden="true">
       <li>A Parte 5 já tá no perfil</li>
       <li>Topar ou contar? Comenta no vídeo</li>
       <li>Quem te roubou primeiro: o Ademir</li>
-      <li>Parte 6: <span data-vagas>30</span> vagas de aliado</li>
+      <li>Parte 6: <span data-vagas>30</span> vagas de aliado até segunda, 12h</li>
       <li>Passe de aliado: R$ 9,90 no Pix ou no cartão</li>
     </ul>
   </div>
@@ -518,7 +518,13 @@ a.capitulo:hover { transform: translateY(-4px); }
       <aside class="vagas" aria-label="Vagas de aliado na Parte 6">
         <div>
           <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span>Parte 6: <span data-vagas>30</span> vagas de aliado abertas</span></p>
-          <p class="vagas-prazo">A Parte 5 já saiu, sem aliados. Quem virar aliado agora aparece na Parte 6.</p>
+          <p class="vagas-prazo">Fecham na segunda, 9 de novembro, às 12h.</p>
+        </div>
+        <div class="contagem" data-contagem aria-hidden="true">
+          <span><b data-dias>00</b><small>dias</small></span>
+          <span><b data-horas>00</b><small>horas</small></span>
+          <span><b data-min>00</b><small>min</small></span>
+          <span><b data-seg>00</b><small>seg</small></span>
         </div>
       </aside>
 
@@ -597,7 +603,8 @@ a.capitulo:hover { transform: translateY(-4px); }
 
         <div class="aliado-compra">
           <!-- Desde 07/11/2026, por decisão do criador, a Parte 5 sai sem aliados e a lista
-               aberta é a da Parte 6, ainda sem prazo. Para fechar as vendas, ver
+               aberta é a da Parte 6. Em 08/11/2026, ele marcou o prazo: segunda, 09/11, às 12h.
+               Para fechar as vendas, ver
                ../ideia-site-da-serie.md: um aviso .fechado no lugar dos créditos e do formulário. -->
           <div class="creditos" aria-labelledby="t-creditos">
             <p class="creditos-topo">A parte que faltou · aliados</p>
@@ -639,7 +646,7 @@ a.capitulo:hover { transform: translateY(-4px); }
 
           <div class="quadros">
             <div><b data-vagas>30</b><span>vagas na Parte 6</span></div>
-            <div><b class="alerta" data-relogio>em breve</b><span>o prazo aparece aqui em breve</span></div>
+            <div><b class="alerta" data-relogio>segunda, 12h</b><span>para a lista fechar, segunda às 12h</span></div>
           </div>
 
           <div class="retorno" id="retorno" role="status" hidden>
@@ -828,7 +835,7 @@ a.capitulo:hover { transform: translateY(-4px); }
   var CONFIG = {
     parte: 6,
     vendas: true,
-    fecha: null,                         // prazo da lista: ainda sem prazo
+    fecha: '2026-11-09T12:00:00-03:00',  // prazo da lista da Parte 6, combinado em 08/11/2026
     vagas: 30,
     preco: 9.9,                           // R$ do passe, para o formulário do cartão
     proximoNumero: 1                      // o número do próximo aliado novo
