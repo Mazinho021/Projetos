@@ -2,7 +2,7 @@
 
 Esta pasta monta a Parte 5, **“A divisão”**, com as ferramentas de [`episodio-01/montagem/`](../../episodio-01/montagem/) e o molde da [montagem da Parte 4](../../episodio-04/montagem/README.md). O roteiro está em [`../roteiro-ep05-cancelar.txt`](../roteiro-ep05-cancelar.txt), o plano cena por cena em [`../plano-ep05.md`](../plano-ep05.md) e o pedido ao Codex em [`../pedido-codex-ep05.md`](../pedido-codex-ep05.md).
 
-**Situação em 08/11/2026:** a Parte 5 está pronta, nas duas versões: [`../parte-05-a-divisao.mp4`](../parte-05-a-divisao.mp4), para o Instagram, e [`../parte-05-a-divisao-vertical.mp4`](../parte-05-a-divisao-vertical.mp4), para o TikTok e o Shorts, com 2 min 12,4 s. Os 19 desenhos e as 4 vozes vieram do Codex, e a vinheta vem da Parte 1. Os balões, as setas e as etiquetas foram postos em cada desenho, e cada plano foi conferido nas duas versões.
+**Situação em 08/11/2026:** a Parte 5 foi postada. A versão postada é a do commit `2cccb2d`, com 2 min 11,8 s, sem os closes das telas de celular. Os vídeos que estão aqui, com 2 min 12,4 s, ganharam esses closes depois de postar e não foram publicados: ficam como exemplo da regra nova do `CLAUDE.md`. Os vídeos estão nas duas versões: [`../parte-05-a-divisao.mp4`](../parte-05-a-divisao.mp4), para o Instagram, e [`../parte-05-a-divisao-vertical.mp4`](../parte-05-a-divisao-vertical.mp4), para o TikTok e o Shorts, com 2 min 12,4 s. Os 19 desenhos e as 4 vozes vieram do Codex, e a vinheta vem da Parte 1. Os balões, as setas e as etiquetas foram postos em cada desenho, e cada plano foi conferido nas duas versões.
 
 ## Refazer
 

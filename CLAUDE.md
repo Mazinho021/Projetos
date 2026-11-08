@@ -112,6 +112,7 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
   - O pedido de voz do Renato ao Codex usa `"voice": "Algenib"` e o estilo de [`episodio-03/pedido-narracao-renato-ep03-algenib.json`](crimecarton-analise/episodio-03/pedido-narracao-renato-ep03-algenib.json).
 - **A vinheta** é igualada ao narrador de cada parte por `igualar_vozes.py`.
 - **Conferir cada gravação com o faster-whisper `medium` sem dar o texto como dica.** O TTS troca palavras: na Parte 3, “depois eu mudei de lado” saiu como “mandei de lado”. Se uma palavra sair errada, cortar a frase ou gerar a fala de novo.
+- **Conferir também a faixa montada,** com o vídeo pronto: na Parte 5, o alinhamento pôs o “Cheguei.” do Renato numa respiração, e a montagem cortava a palavra. A conferência do vídeo pegou o erro antes da entrega.
 
 ## Codex
 
