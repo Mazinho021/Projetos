@@ -1,6 +1,6 @@
 # Parte 5 — “A divisão”
 
-**Situação em 08/11/2026:** a Parte 5 está pronta, nas duas versões ([`parte-05-a-divisao.mp4`](parte-05-a-divisao.mp4) e [`parte-05-a-divisao-vertical.mp4`](parte-05-a-divisao-vertical.mp4)), com 2 min 11,8 s. O Codex entregou as 4 vozes e os 19 desenhos pelo pedido em [`pedido-codex-ep05.md`](pedido-codex-ep05.md), e a montagem está em [`montagem/`](montagem/README.md).
+**Situação em 08/11/2026:** a Parte 5 foi postada. A versão postada é a do commit `2cccb2d`, com 2 min 11,8 s, sem os closes das telas de celular. Os vídeos que estão aqui, com 2 min 12,4 s, ganharam esses closes depois de postar e não foram publicados: ficam como exemplo da regra nova do `CLAUDE.md`. Os vídeos estão nas duas versões ([`parte-05-a-divisao.mp4`](parte-05-a-divisao.mp4) e [`parte-05-a-divisao-vertical.mp4`](parte-05-a-divisao-vertical.mp4)), com 2 min 12,4 s. O Codex entregou as 4 vozes e os 19 desenhos pelo pedido em [`pedido-codex-ep05.md`](pedido-codex-ep05.md), e a montagem está em [`montagem/`](montagem/README.md).
 
 Mudanças na montagem em relação a este plano:
 

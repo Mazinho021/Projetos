@@ -1,0 +1,7 @@
+{
+  "idempotencyKey": "zinho-ep06-toninho-orus-v1-20261109",
+  "voice": "Orus",
+  "style": "Português brasileiro. Toninho, homem de uns 35 anos, de bairro, o motorista do assalto, a mesma voz da Parte 5. Agora está amarrado numa cadeira, machucado, e fala cochichando, mas de forma audível, rápido e urgente, porque o Ademir pode voltar a qualquer momento. A primeira fala é uma revelação, quase um desafio. A segunda tem uma ironia amarga. Natural, sem caricatura. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+  "text": "Quer o seu dinheiro? O seu parceiro tá escondido na casa da Dona Célia.\n\nOu você acha que ela fez bolo às quatro da manhã pra você?",
+  "observacao": "As duas falas novas do Toninho na Parte 6. A outra fala dele na parte (“Me ajuda a pegar o dinheiro antes do Ademir, e a gente divide.”) é a gravação da Parte 5 tocando no celular e não precisa ser gerada. Uns 8 s. Geração paga, pedida pelo criador; mostrar o custo antes de executar. Não editar o áudio."
+}

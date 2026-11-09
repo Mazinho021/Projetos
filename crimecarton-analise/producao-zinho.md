@@ -87,7 +87,9 @@ Por decisão do criador, em 27/10/2026, a temporada passa de 5 para **pelo menos
 5. **A divisão:** o motorista confirma que a divisão foi armada e conta quem controlava o dinheiro: o parceiro dos dez milhões não agia sozinho.
    - A votação da Parte 4 deu **CANCELAR**, por 5 a 0 no Instagram, em 07/11/2026. Falta somar o TikTok e o Shorts.
    - No caminho do CANCELAR, o Zinho vira sócio do Ademir, apaga a foto na frente dele e a guarda na lixeira do celular. No carro, o motorista, o Toninho, conta que foi o Ademir quem montou as mochilas da divisão e que foi ele, o Toninho, quem levou o parceiro com as duas bolsas. O Zinho grava a conversa escondido. A votação é TOPAR ou CONTAR. O plano e o roteiro estão em [`episodio-05/`](episodio-05/plano-ep05.md).
+   - A votação da Parte 5 deu **CONTAR**, por 5 a 2 no Instagram, em 09/11/2026, somando a Parte 5 e o reel curto da votação.
 6. **A recompensa:** sai uma recompensa por informações sobre Zinho, os vizinhos começam a desconfiar e o amigo some por algumas horas. A votação decide se Zinho confia nele.
+   - No caminho do CONTAR (roteiro aprovado pelo criador em 09/11/2026, em [`episodio-06/`](episodio-06/plano-ep06.md)): o Zinho corta da gravação o pedaço em que o Toninho conta quem encheu a mochila e mostra o resto ao Ademir, que o chama de sócio de verdade. O Toninho acaba amarrado na mesma cadeira do Renato. A polícia oferece R$ 50 mil pelo Zinho. Sozinho com ele, o Toninho conta que o parceiro está escondido na casa da Dona Célia: o bolo das quatro da manhã não era para o Zinho. O Renato não atende. A votação é FALAR ou CALAR.
 7. **A proposta:** uma ligação oferece um acordo: Zinho assume a culpa e recebe uma parte. A votação decide se ele aceita ou recusa.
 8. **A prova:** Zinho junta o que prova a armação: o áudio, a foto e o depoimento do motorista.
 9. **O traidor:** a verdade sobre o amigo vem à tona. Conforme as votações, ele vira aliado ou trai de novo.

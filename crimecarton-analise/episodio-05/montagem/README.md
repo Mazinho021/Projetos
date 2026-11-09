@@ -2,7 +2,7 @@
 
 Esta pasta monta a Parte 5, **“A divisão”**, com as ferramentas de [`episodio-01/montagem/`](../../episodio-01/montagem/) e o molde da [montagem da Parte 4](../../episodio-04/montagem/README.md). O roteiro está em [`../roteiro-ep05-cancelar.txt`](../roteiro-ep05-cancelar.txt), o plano cena por cena em [`../plano-ep05.md`](../plano-ep05.md) e o pedido ao Codex em [`../pedido-codex-ep05.md`](../pedido-codex-ep05.md).
 
-**Situação em 08/11/2026:** a Parte 5 está pronta, nas duas versões: [`../parte-05-a-divisao.mp4`](../parte-05-a-divisao.mp4), para o Instagram, e [`../parte-05-a-divisao-vertical.mp4`](../parte-05-a-divisao-vertical.mp4), para o TikTok e o Shorts, com 2 min 11,8 s. Os 19 desenhos e as 4 vozes vieram do Codex, e a vinheta vem da Parte 1. Os balões, as setas e as etiquetas foram postos em cada desenho, e cada plano foi conferido nas duas versões.
+**Situação em 08/11/2026:** a Parte 5 foi postada. A versão postada é a do commit `2cccb2d`, com 2 min 11,8 s, sem os closes das telas de celular. Os vídeos que estão aqui, com 2 min 12,4 s, ganharam esses closes depois de postar e não foram publicados: ficam como exemplo da regra nova do `CLAUDE.md`. Os vídeos estão nas duas versões: [`../parte-05-a-divisao.mp4`](../parte-05-a-divisao.mp4), para o Instagram, e [`../parte-05-a-divisao-vertical.mp4`](../parte-05-a-divisao-vertical.mp4), para o TikTok e o Shorts, com 2 min 12,4 s. Os 19 desenhos e as 4 vozes vieram do Codex, e a vinheta vem da Parte 1. Os balões, as setas e as etiquetas foram postos em cada desenho, e cada plano foi conferido nas duas versões.
 
 ## Refazer
 
@@ -48,9 +48,18 @@ done
     - na cena 6, “Apagados recentemente”, com a foto da divisão e os 30 dias;
     - na cena 9, a conversa com o Renato, com o áudio de 0:07;
     - na cena 14, o gravador ligado no bolso, com 00:03;
-  - **as duas opções lado a lado,** para a pergunta final.
+  - **as duas opções lado a lado,** para a pergunta final;
+  - **os closes das quatro telas** (`close-*.png`, com a versão `-vertical`): a tela reta, grande e com letra grande, sobre o desenho desfocado e escuro. Em 08/11/2026, depois de postar a Parte 5, o criador viu que as mensagens encaixadas nos celulares dos desenhos ficavam tortas e pouco visíveis, porque esses celulares são pequenos e inclinados. Agora cada close entra logo depois do desenho da mão com o celular, e os círculos e a etiqueta vão nele. `CARTAO` diz onde fica a tela em cada versão; `close_tela` pode ser usada nas próximas partes.
+- [`montar_votacao.py`](montar_votacao.py) faz o reel curto da votação, [`../votacao-parte-05.mp4`](../votacao-parte-05.mp4), com 28 s, pedido pelo criador em 08/11/2026: seis horas depois de postar, a Parte 5 tinha 1.602 visualizações e nenhum voto, porque só uns 5% chegavam à pergunta. O reel usa só o que já existe, sem gastar créditos: as vozes da Parte 5, cortadas de `../narracao-ep05.wav`, e os desenhos. Mostra a virada, a proposta do Toninho, as duas opções com prós e contras e a pergunta, com “VOCÊ DECIDE A PARTE 6” no topo desde o primeiro quadro e a caixa “seu comentário pode sair no jornal”. Fica à esquerda dos botões do TikTok e abaixo da barra de busca, então um arquivo serve para todos os apps. A capa é [`../capa-votacao-parte-05.jpg`](../capa-votacao-parte-05.jpg).
+
+  ```bash
+  python $A/montagem/montar_votacao.py
+  python crimecarton-analise/episodio-01/montagem/render_animatic.py \
+    --timeline $A/montagem/timeline-votacao.json --output $A/votacao-parte-05.mp4 --workers 4
+  ```
 - [`montar_timeline.py`](montar_timeline.py) junta o narrador, o Ademir, o Renato e o Toninho numa faixa, `../narracao-ep05.wav`, com as pausas de `PAUSES`, e monta as duas timelines seguindo o plano.
   - **Abertura:** a vinheta, igual à da Parte 3; logo depois, aos 8 s, as mãos enchendo a mochila de roupa velha, com “Hoje você descobre quem encheu a sua mochila de roupa velha.”; depois, o resumo, com o perfil, o acordo com o Ademir, o CANCELAR por 5 a 0 e o jornal “A VOZ DO BAIRRO”. A história nova começa aos 23 s.
   - **O painel muda com a história:** “A SUA PARTE R$ 0”, “A FOTO: NA LIXEIRA”, “QUEM TE ROUBOU: ADEMIR”, em vermelho e tremendo, e “A SUA PARTE: R$ 5 MI?”.
+  - **As telas de celular:** primeiro o desenho, depois o close da tela, reto: às 03:14, com o botão de cancelar; a lixeira, com a foto e os 30 dias; o áudio do Renato; e o gravador ligado.
   - **Os elementos:** balões das falas do Ademir, do Renato e do Toninho; as falas do Toninho sobre a noite da divisão, quando ele não aparece, entre aspas; as etiquetas de nome do Toninho e da Dona Célia; os círculos no botão de cancelar, na foto da lixeira e no gravador; os carimbos “NÃO SAI”, “SÓCIOS” e “APAGADA”; a polaroide da mochila da Parte 1; o áudio do Renato e o bolo de fubá como momento leve; e as opções TOPAR e CONTAR com prós e contras.
   - **As posições** de balões, círculos e etiquetas foram medidas em cada desenho, e as frases ficam entre 830 e 1020 px de altura.

@@ -29,6 +29,11 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
 - **Telas de celular com dedos por cima** (erro que o criador apontou em 06/11/2026): na Parte 4, os dedões da cena 3 saíram pixelados, porque a máscara antiga comia o contorno preto dos dedos e cortava a borda em degraus.
   - Encaixar a tela nova com `encaixar_limpo` (`episodio-04/montagem/compor_cenas.py`), que mantém o contorno e a borda suave de quem está na frente;
   - antes de entregar, conferir os dedos de perto, em tamanho grande.
+- **Mensagens no celular tortas e pouco visíveis** (erro que o criador apontou em 08/11/2026, depois de postar a Parte 5): os celulares dos desenhos são pequenos e inclinados, e a tela encaixada neles fica torta, escura e com letra miúda.
+  - **Toda mensagem de celular ganha um close da tela, reto e grande,** logo depois do desenho da mão com o celular: `close_tela` em `episodio-05/montagem/compor_cenas.py`. A tela fica de frente, com letra grande, sobre o desenho desfocado e escuro, entre a etiqueta e as frases (de y ≈ 270 a 830), e à esquerda de x = 590 na vertical. O desenho pode manter a tela encaixada em perspectiva, como plano de chegada.
+  - Os círculos, as etiquetas e os carimbos da mensagem vão no close, e não na tela pequena do desenho.
+  - **No pedido ao Codex:** o celular de frente para a câmera, reto, com a tela grande, ocupando pelo menos 40% da largura do desenho.
+  - **Antes de entregar:** olhar cada tela num quadro do tamanho de um celular (360 px de largura) e conferir que a mensagem se lê.
 - **Frases na tela:** ficam entre 65% e 80% da altura (y ≈ 830–1020 de 1280), longe dos rostos.
 - **Abertura:** a etiqueta “PARTE N” fica no canto esquerdo (x = 112). No centro, ela cobria a cabeça do Zinho na arte da mochila.
 - **Personagem na borda direita do desenho:** na vertical, ele fica atrás dos botões do TikTok. Nesse caso, mostrar o desenho num cartão menor, deslocado para a esquerda, como a lembrança do almoço na Parte 3 (`compor_cenas.py`).
@@ -53,7 +58,7 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 
 - **A tela muda a cada 1 ou 2 s.** As imagens podem ficar mais tempo, desde que entre algo novo por cima a cada fala.
 - **Comentários do público, num formato nosso: o recorte de jornal “A VOZ DO BAIRRO”** (`jornal`).
-  - Entra logo depois do resultado da votação, com 2 ou 3 comentários reais da parte anterior, impressos como cartas de leitor e assinados só “— leitor”.
+  - Entra logo depois do resultado da votação, com 2 ou 3 comentários reais da parte anterior, impressos como cartas de leitor e assinados só “— leitor”. **Da Parte 6 em diante, os dois vão para o final**, logo antes da pergunta (ver “Abertura”).
   - O jornal é onde o rosto do Zinho saiu, então o bairro opinando no jornal combina com a série.
   - Não usar os balões de comentário do @crimecarton, para não ficar igual.
 - **Balões de fala:** a fala de cada personagem aparece num balão perto da cabeça de quem fala (`balloon`), além da voz. O vídeo tem que se entender sem som.
@@ -82,6 +87,10 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
   - A regra de 01/11 punha esse momento nos 2 primeiros segundos. Na Parte 3, 39,5% passaram o vídeo no começo; na Parte 1, foram 26%. Mais de 90% do público não seguia o perfil, e quem via “PARTE 3” e o resumo da mochila achava que tinha perdido o começo. A história nova só começava aos 17 s.
   - Em 06/11, o criador decidiu que a vinheta vem antes desse momento. Na Parte 4, ele entra aos 8 s, e a história nova começa aos 24 s.
 - **Depois vem o resumo, com no máximo 6 a 8 s:** o aviso de que as outras partes estão no perfil, o que aconteceu na parte anterior e o resultado da votação.
+- **Mudança decidida pelo criador em 08/11/2026, vale da Parte 6 em diante:** na Parte 5, o resumo perdeu um terço do público (de 46% aos 12 s para 13% aos 22 s), e só uns 5% chegaram à pergunta. Nenhum voto chegou nos comentários. Por isso:
+  - **sai a frase falada** “Chegou agora? As outras partes estão no perfil.”; fica só uma etiqueta pequena na tela, como “PARTES 1 A 5 NO PERFIL”;
+  - o começo fica com a vinheta, o momento mais forte e, se precisar, uma frase curta do que aconteceu, e a história nova começa logo;
+  - **o resultado da votação anterior e o jornal “A VOZ DO BAIRRO” vão para o final**, logo antes da pergunta nova, com a frase “o seu comentário pode sair no jornal da próxima parte”, para dar um motivo de comentar.
 - **O tamanho total das partes continua o mesmo.** O criador não quer encurtar.
 
 ## Roteiros (o criador recusou dois roteiros da Parte 3 em 30 e 31/10/2026)
@@ -95,8 +104,16 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 ## Site da série (lembrete do criador em 07/11/2026)
 
 - **A cada parte publicada, atualizar o site** (`crimecarton-analise/site/`, no ar em golpecartoon.netlify.app): a capa nova em “Assista do começo”, com o carimbo da votação, o resultado na seção de votação, o fim da parte no topo e o quadro “O caso até aqui”. Em 07/11/2026, o site estava parado na Parte 3.
-- **A Parte 5 sai sem aliados**, por decisão do criador em 07/11/2026, mas a venda continua: quem comprar agora aparece na Parte 6. A lista ainda não tem prazo; quando a Parte 5 sair, combinar o prazo com o criador. O passo a passo está em `crimecarton-analise/ideia-site-da-serie.md`.
+- **A Parte 5 saiu sem aliados**, por decisão do criador em 07/11/2026, mas a venda continua: quem comprar agora aparece na Parte 6. Em 08/11/2026, o criador marcou o prazo da lista da Parte 6: **segunda, 09/11, às 12h** (`fecha` em `site/netlify/lib/serie.mjs` e no `CONFIG` da página). Depois dele, o passe vale para a Parte 7. O passo a passo está em `crimecarton-analise/ideia-site-da-serie.md`.
 - Publicar com a ferramenta de deploy do Netlify e conferir no ar a página, o `/api/aliados` e os testes (`node --test crimecarton-analise/site/testes/*.test.mjs`).
+
+## Texto dos posts (decisão do criador em 09/11/2026)
+
+- **Sem a linha “Inspirado em @crimecarton”**, em nenhuma rede. Até a Parte 5, ela ia em todos os posts; o criador tirou em 09/11/2026.
+- **Hashtags:** `#apartequefaltou #seurostonojornal`.
+- O resto continua curto: a parte e o título (“Parte N – Título 🎒”), a pergunta da votação (“Topar ou contar? Comenta 👇”) e as hashtags. No Shorts, o título é “Parte N – Título 😨”.
+- Comentário para fixar: a pergunta, com “Comenta uma palavra 👇”.
+- **Marcar o conteúdo de IA** em todos os posts.
 
 ## Vozes
 
@@ -107,6 +124,7 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
   - O pedido de voz do Renato ao Codex usa `"voice": "Algenib"` e o estilo de [`episodio-03/pedido-narracao-renato-ep03-algenib.json`](crimecarton-analise/episodio-03/pedido-narracao-renato-ep03-algenib.json).
 - **A vinheta** é igualada ao narrador de cada parte por `igualar_vozes.py`.
 - **Conferir cada gravação com o faster-whisper `medium` sem dar o texto como dica.** O TTS troca palavras: na Parte 3, “depois eu mudei de lado” saiu como “mandei de lado”. Se uma palavra sair errada, cortar a frase ou gerar a fala de novo.
+- **Conferir também a faixa montada,** com o vídeo pronto: na Parte 5, o alinhamento pôs o “Cheguei.” do Renato numa respiração, e a montagem cortava a palavra. A conferência do vídeo pegou o erro antes da entrega.
 
 ## Codex
 
