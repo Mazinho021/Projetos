@@ -1,0 +1,65 @@
+{
+  "jobId": "mcp_media_e9d23da8ec9fa1cd8119794d2f50f30f09ce97061cf8d9d6b19febf083906ef0",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_e9d23da8ec9fa1cd8119794d2f50f30f09ce97061cf8d9d6b19febf083906ef0/0.wav?hdnts=FullPath~Expires=1794323859~Signature=uMuEUclXp5fNBFsvYCLn5oKT0DlknS3XVLob7-fNeiUguRfBxNS9reQi3KJovgUZXLJa6LpzNyIbBKQNmQAvAw",
+      "expiresAt": "2026-11-10T15:17:39.552Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 8.36
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep06-toninho-orus-v1-20261109",
+    "voice": "Orus",
+    "style": "Português brasileiro. Toninho, homem de uns 35 anos, de bairro, o motorista do assalto, a mesma voz da Parte 5. Agora está amarrado numa cadeira, machucado, e fala cochichando, mas de forma audível, rápido e urgente, porque o Ademir pode voltar a qualquer momento. A primeira fala é uma revelação, quase um desafio. A segunda tem uma ironia amarga. Natural, sem caricatura. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+    "text": "Quer o seu dinheiro? O seu parceiro tá escondido na casa da Dona Célia.\n\nOu você acha que ela fez bolo às quatro da manhã pra você?"
+  },
+  "audioEdited": false,
+  "verification": {
+    "engine": "faster-whisper",
+    "model": "medium",
+    "compute_type": "int8",
+    "initial_prompt": null,
+    "language": "pt",
+    "language_probability": 0.9965023994445801,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.0,
+        "text": " Quer o seu dinheiro?"
+      },
+      {
+        "start": 1.7,
+        "end": 4.0,
+        "text": " O seu parceiro está escondido na casa da Dona Célia."
+      },
+      {
+        "start": 5.5,
+        "end": 8.0,
+        "text": " Ou você acha que ela fez bula às 4 da manhã pra você?"
+      }
+    ],
+    "transcript": "Quer o seu dinheiro? O seu parceiro está escondido na casa da Dona Célia. Ou você acha que ela fez bula às 4 da manhã pra você?",
+    "reviewRequired": true,
+    "differencesToReview": [
+      {
+        "requested": "tá escondido",
+        "transcribed": "está escondido"
+      },
+      {
+        "requested": "fez bolo",
+        "transcribed": "fez bula"
+      }
+    ],
+    "note": "Diferenças identificadas na transcrição automática; podem incluir erros do reconhecedor. Não houve edição nem regeneração. Conferência final a cargo do Claude Code conforme pedido.",
+    "model_sha256": "9b45e1009dcc4ab601eff815b61d80e60ce3fd8c74c1a14f4a282258286b51ae"
+  },
+  "audioSha256": "63452e18af3a0d4d12959802799ec376b8a6337f9f2cd676867a7aec9806b331"
+}

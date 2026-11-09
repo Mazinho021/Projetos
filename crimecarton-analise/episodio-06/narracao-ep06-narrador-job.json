@@ -1,0 +1,190 @@
+{
+  "jobId": "mcp_media_e61846f599cccc0785e4a93bdb5de628399307ac6a23f59576b6fdc3d88d4293",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 2,
+  "reservedCredits": 0,
+  "chargedCredits": 2,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_e61846f599cccc0785e4a93bdb5de628399307ac6a23f59576b6fdc3d88d4293/0.wav?hdnts=FullPath~Expires=1794323868~Signature=PobJLk52tlga4v_dDQ_RjjMb3ait56JcPIsQ8V4_43w37Ci3fjS6ccXBsvv7SILDN95h8oWLY7vx8qfsRJUHAQ",
+      "expiresAt": "2026-11-10T15:17:48.384Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 77.88
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep06-narrador-charon-v1-20261109-style500",
+    "voice": "Charon",
+    "style": "Português brasileiro. Homem adulto, natural e conversacional; suspense, tensão contida, dicção clara, sem publicidade, caricatura ou gritos. 140–150 palavras/min. Pausas curtas nas revelações e entre parágrafos. Zinho: z inicial, nh palatal. Primeira frase pesada e mais lenta. Trecho do café leve, quase sorrindo. “A mãe do Renato.” baixo, em choque. “Os passos voltam.” lento e tenso. Escolha final clara e pausada.",
+    "text": "Hoje, o seu rosto ganha um preço.\n\nVocê foi contar pro Ademir. Mas não contou tudo.\n\nAntes de dar o play, você corta um pedaço da gravação: a parte em que o Toninho diz quem encheu a sua mochila.\n\nSe o Ademir souber que você sabe, você vira um problema.\n\nCinco da manhã, no São Jorge. O Ademir escuta tudo em silêncio.\n\nDessa vez, você aceita. O café é horrível. Você bebe mesmo assim.\n\nÀs seis, o Toninho chega achando que veio trabalhar. O Ademir tranca o portão.\n\nMinutos depois, o Toninho está amarrado na mesma cadeira em que o Renato esteve.\n\nO Toninho não fala. Aí o seu celular vibra.\n\nA polícia oferece cinquenta mil reais por informações sobre você.\n\nQuando os passos somem, o Toninho levanta a cabeça.\n\nA mãe do Renato.\n\nVocê liga pro Renato. Caixa postal. Liga de novo. Nada.\n\nOs passos voltam.\n\nSe você falar, o Ademir vai até a casa da Dona Célia com o alicate. E você chega no seu dinheiro. Se você calar, mente pro homem do anel e vai sozinho atrás do Renato. Se ele descobrir, a próxima cadeira é a sua.\n\nNa parte cinco, vocês escolheram contar. O seu comentário pode sair no jornal da próxima parte.\n\nFalar ou calar? Comenta uma palavra só. O que a maioria escolher vira a parte sete."
+  },
+  "audioEdited": false,
+  "verification": {
+    "engine": "faster-whisper",
+    "model": "medium",
+    "compute_type": "int8",
+    "initial_prompt": null,
+    "language": "pt",
+    "language_probability": 0.9963535070419312,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.32,
+        "text": " Hoje o seu rosto ganhou um preço, você foi contar pro Ademir, mas não contou tudo."
+      },
+      {
+        "start": 6.32,
+        "end": 11.0,
+        "text": " Antes de dar o play, você corta um pedaço da gravação, a parte em que o Toninho diz"
+      },
+      {
+        "start": 11.0,
+        "end": 12.8,
+        "text": " quem encheu a sua mochila."
+      },
+      {
+        "start": 12.8,
+        "end": 16.64,
+        "text": " Se o Ademir souber que você sabe, você vira um problema."
+      },
+      {
+        "start": 16.64,
+        "end": 21.2,
+        "text": " Cinco da manhã, no São Jorge, o Ademir escuta tudo em silêncio."
+      },
+      {
+        "start": 21.2,
+        "end": 25.96,
+        "text": " Dessa vez você aceita, o café é horrível, você bebe mesmo assim."
+      },
+      {
+        "start": 25.96,
+        "end": 28.96,
+        "text": " À seis, o Toninho chega achando que veio trabalhar."
+      },
+      {
+        "start": 28.96,
+        "end": 30.880000000000003,
+        "text": " O Ademir tranca o portão."
+      },
+      {
+        "start": 30.880000000000003,
+        "end": 34.92,
+        "text": " Minutos depois, o Toninho está amarrado na mesma cadeira em que o Renato esteve."
+      },
+      {
+        "start": 34.92,
+        "end": 36.56,
+        "text": " O Toninho não fala."
+      },
+      {
+        "start": 36.56,
+        "end": 38.24,
+        "text": " Aí o seu celular vibra."
+      },
+      {
+        "start": 38.24,
+        "end": 42.040000000000006,
+        "text": " A polícia oferece cinquenta mil reais por informações sobre você."
+      },
+      {
+        "start": 42.040000000000006,
+        "end": 45.56,
+        "text": " Quando os passos somem, o Toninho levanta a cabeça."
+      },
+      {
+        "start": 45.56,
+        "end": 47.8,
+        "text": " A mãe do Renato."
+      },
+      {
+        "start": 47.8,
+        "end": 49.16,
+        "text": " Você liga pro Renato."
+      },
+      {
+        "start": 49.16,
+        "end": 50.400000000000006,
+        "text": " Caixa postal."
+      },
+      {
+        "start": 50.400000000000006,
+        "end": 51.760000000000005,
+        "text": " Liga de novo."
+      },
+      {
+        "start": 51.760000000000005,
+        "end": 53.040000000000006,
+        "text": " Nada."
+      },
+      {
+        "start": 53.040000000000006,
+        "end": 54.52,
+        "text": " Os passos voltam."
+      },
+      {
+        "start": 54.52,
+        "end": 58.160000000000004,
+        "text": " Se você falar, o Ademir vai até a casa da Dona Célia com o alicate."
+      },
+      {
+        "start": 58.160000000000004,
+        "end": 60.0,
+        "text": " E você chega no seu dinheiro."
+      },
+      {
+        "start": 60.0,
+        "end": 64.2,
+        "text": " Se você calar, mente pro Homem do Anel e vai sozinho atrás do Renato."
+      },
+      {
+        "start": 64.2,
+        "end": 67.4,
+        "text": " Se ele descobrir, a próxima cadeira é a sua."
+      },
+      {
+        "start": 67.4,
+        "end": 70.08,
+        "text": " Na parte cinco, vocês escolheram contar."
+      },
+      {
+        "start": 70.08,
+        "end": 72.60000000000001,
+        "text": " O seu comentário pode sair no jornal da próxima parte."
+      },
+      {
+        "start": 72.60000000000001,
+        "end": 74.4,
+        "text": " Falar ou calar?"
+      },
+      {
+        "start": 74.4,
+        "end": 75.84,
+        "text": " Comenta uma palavra só."
+      },
+      {
+        "start": 75.84,
+        "end": 77.84,
+        "text": " O que a maioria escolher virá a parte sete."
+      }
+    ],
+    "transcript": "Hoje o seu rosto ganhou um preço, você foi contar pro Ademir, mas não contou tudo. Antes de dar o play, você corta um pedaço da gravação, a parte em que o Toninho diz quem encheu a sua mochila. Se o Ademir souber que você sabe, você vira um problema. Cinco da manhã, no São Jorge, o Ademir escuta tudo em silêncio. Dessa vez você aceita, o café é horrível, você bebe mesmo assim. À seis, o Toninho chega achando que veio trabalhar. O Ademir tranca o portão. Minutos depois, o Toninho está amarrado na mesma cadeira em que o Renato esteve. O Toninho não fala. Aí o seu celular vibra. A polícia oferece cinquenta mil reais por informações sobre você. Quando os passos somem, o Toninho levanta a cabeça. A mãe do Renato. Você liga pro Renato. Caixa postal. Liga de novo. Nada. Os passos voltam. Se você falar, o Ademir vai até a casa da Dona Célia com o alicate. E você chega no seu dinheiro. Se você calar, mente pro Homem do Anel e vai sozinho atrás do Renato. Se ele descobrir, a próxima cadeira é a sua. Na parte cinco, vocês escolheram contar. O seu comentário pode sair no jornal da próxima parte. Falar ou calar? Comenta uma palavra só. O que a maioria escolher virá a parte sete.",
+    "reviewRequired": true,
+    "differencesToReview": [
+      {
+        "requested": "ganha um preço",
+        "transcribed": "ganhou um preço"
+      },
+      {
+        "requested": "vira a parte sete",
+        "transcribed": "virá a parte sete"
+      }
+    ],
+    "note": "Diferenças identificadas na transcrição automática; podem incluir erros do reconhecedor. Não houve edição nem regeneração. Conferência final a cargo do Claude Code conforme pedido.",
+    "model_sha256": "9b45e1009dcc4ab601eff815b61d80e60ce3fd8c74c1a14f4a282258286b51ae"
+  },
+  "audioSha256": "b8d9f722f351745a21991da7c85ee559860d09db1567fcd9d78aee5d53cd930a"
+}
