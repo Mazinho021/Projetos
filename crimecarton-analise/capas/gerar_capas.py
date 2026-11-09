@@ -36,6 +36,9 @@ COVERS = [
     # The two bags of the division night: the old clothes and the money.
     dict(part=5, title='A DIVISÃO', line='QUEM TE ROUBOU?', art='../episodio-05/cena-15-noite-da-divisao.png',
          scale=1.3, focus=(.5, .5), at=(540, 760)),
+    # The reward poster on the pole, with Zinho's face: the price on it.
+    dict(part=6, title='A RECOMPENSA', line='QUANTO VALE O SEU ROSTO?', art='../episodio-06/montagem/arte/cartaz.png',
+         scale=1.25, focus=(.48, .45), at=(540, 640)),
 ]
 
 

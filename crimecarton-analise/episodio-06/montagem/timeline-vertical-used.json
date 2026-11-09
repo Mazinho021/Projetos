@@ -1,0 +1,1496 @@
+{
+  "timing_status": "aligned_to_voice",
+  "style": "guia-de-estilo-referencia.md",
+  "script": "roteiro-ep06-contar.txt",
+  "alignment": [
+    "episodio-01/montagem/alinhamento-narracao.json",
+    "episodio-06/montagem/alinhamento-narrador.json",
+    "episodio-06/montagem/alinhamento-ademir.json",
+    "episodio-06/montagem/alinhamento-toninho.json",
+    "episodio-06/montagem/alinhamento-toninho-gravacao.json"
+  ],
+  "audio": "narracao-ep06.wav",
+  "tail": 2.0,
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4.74,
+      "kind": "art",
+      "asset": "../episodio-01/cena-01-base.png",
+      "zoom": 0.06
+    },
+    {
+      "start": 4.74,
+      "end": 7.86,
+      "kind": "black"
+    },
+    {
+      "start": 7.86,
+      "end": 10.77,
+      "kind": "art",
+      "asset": "montagem/arte/cartaz.png",
+      "zoom": 0.07
+    },
+    {
+      "start": 10.77,
+      "end": 14.87,
+      "kind": "art",
+      "asset": "cena-02-meio-fio.png",
+      "zoom": 0.04,
+      "direction": "out"
+    },
+    {
+      "start": 14.87,
+      "end": 20.86,
+      "kind": "art",
+      "asset": "montagem/arte/tela-editar.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 20.86,
+      "end": 24.85,
+      "kind": "art",
+      "asset": "montagem/arte/tela-cortado.png",
+      "zoom": 0.03,
+      "direction": "out"
+    },
+    {
+      "start": 24.85,
+      "end": 33.36,
+      "kind": "art",
+      "asset": "cena-04-ademir-escuta.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 33.36,
+      "end": 37.48,
+      "kind": "art",
+      "asset": "cena-05-socio-de-verdade.png",
+      "zoom": 0.05
+    },
+    {
+      "start": 37.48,
+      "end": 44.28,
+      "kind": "art",
+      "asset": "cena-06-cafe.png",
+      "zoom": 0.04,
+      "direction": "out"
+    },
+    {
+      "start": 44.28,
+      "end": 49.23,
+      "kind": "art",
+      "asset": "cena-07-portao-trancado.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 49.23,
+      "end": 53.67,
+      "kind": "art",
+      "asset": "cena-08-toninho-amarrado.png",
+      "zoom": 0.04,
+      "direction": "out"
+    },
+    {
+      "start": 53.67,
+      "end": 55.88,
+      "kind": "art",
+      "asset": "cena-09-onde-ta.png",
+      "zoom": 0.05
+    },
+    {
+      "start": 55.88,
+      "end": 59.03,
+      "kind": "art",
+      "asset": "cena-10-toninho-calado.png",
+      "zoom": 0.06
+    },
+    {
+      "start": 59.03,
+      "end": 62.89,
+      "kind": "art",
+      "asset": "montagem/arte/tela-recompensa.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 62.89,
+      "end": 71.02,
+      "kind": "art",
+      "asset": "cena-12-ademir-meio-sorriso.png",
+      "zoom": 0.05
+    },
+    {
+      "start": 71.02,
+      "end": 74.13,
+      "kind": "art",
+      "asset": "cena-13-ademir-sai.png",
+      "zoom": 0.04,
+      "direction": "out"
+    },
+    {
+      "start": 74.13,
+      "end": 81.43,
+      "kind": "art",
+      "asset": "cena-14-toninho-cochicha.png",
+      "zoom": 0.05
+    },
+    {
+      "start": 81.43,
+      "end": 85.73,
+      "kind": "art",
+      "asset": "cena-15-bolo-das-quatro.png",
+      "zoom": 0.04,
+      "direction": "out"
+    },
+    {
+      "start": 85.73,
+      "end": 91.05,
+      "kind": "art",
+      "asset": "montagem/arte/tela-caixa-postal.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 91.05,
+      "end": 95.19,
+      "kind": "art",
+      "asset": "cena-17-alicate.png",
+      "zoom": 0.04
+    },
+    {
+      "start": 95.19,
+      "end": 104.13,
+      "kind": "art",
+      "asset": "cena-18-opcao-falar.png",
+      "zoom": 0.03
+    },
+    {
+      "start": 104.13,
+      "end": 114.82,
+      "kind": "art",
+      "asset": "cena-19-opcao-calar.png",
+      "zoom": 0.03
+    },
+    {
+      "start": 114.82,
+      "end": 124.22,
+      "kind": "art",
+      "asset": "../episodio-05/montagem/arte/opcoes-vertical.png",
+      "zoom": 0.02,
+      "direction": "out",
+      "brightness": 0.3
+    },
+    {
+      "start": 124.22,
+      "end": 131.58,
+      "kind": "art",
+      "asset": "montagem/arte/opcoes-vertical.png",
+      "zoom": 0.02,
+      "direction": "out"
+    }
+  ],
+  "graphics": [
+    {
+      "type": "tag",
+      "start": 0.15,
+      "end": 10.77,
+      "text": "PARTE 6",
+      "y": 297,
+      "x": 112,
+      "size": 32
+    },
+    {
+      "type": "phrase",
+      "start": 0.2,
+      "end": 2.26,
+      "y": 700,
+      "size": 71,
+      "lines": [
+        {
+          "text": "O ASSALTO",
+          "at": 0.12,
+          "color": "white"
+        },
+        {
+          "text": "DEU CERTO.",
+          "at": 0.94,
+          "color": "yellow"
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "phrase",
+      "start": 2.26,
+      "end": 4.74,
+      "y": 700,
+      "size": 71,
+      "lines": [
+        {
+          "style": "label",
+          "text": "SEU PARCEIRO FICOU COM",
+          "at": 2.33
+        },
+        {
+          "text": "R$ 10.000.000",
+          "at": 2.41,
+          "color": "green",
+          "size": 67,
+          "count": {
+            "from": 0,
+            "to": 10000000,
+            "start": 2.722,
+            "end": 4.264
+          }
+        },
+        {
+          "style": "label",
+          "text": "EM DINHEIRO VIVO",
+          "at": 3.74
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "phrase",
+      "start": 4.79,
+      "end": 7.86,
+      "y": 560,
+      "size": 58,
+      "lines": [
+        {
+          "text": "VOCÊ FICOU COM",
+          "at": 4.86,
+          "color": "white"
+        },
+        {
+          "text": "O ROSTO",
+          "at": 6.48,
+          "color": "yellow"
+        },
+        {
+          "text": "NO JORNAL.",
+          "at": 6.76,
+          "color": "yellow"
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "stars",
+      "start": 4.79,
+      "end": 7.86,
+      "y": 790,
+      "x": 330,
+      "at": 6.482,
+      "step": 0.12
+    },
+    {
+      "type": "vignette",
+      "start": 7.86,
+      "end": 10.77,
+      "color": "alert",
+      "strength": 0.45
+    },
+    {
+      "type": "phrase",
+      "start": 7.91,
+      "end": 10.77,
+      "y": 960,
+      "size": 49,
+      "lines": [
+        {
+          "text": "O SEU ROSTO",
+          "at": 7.91,
+          "color": "white"
+        },
+        {
+          "text": "GANHOU UM PREÇO.",
+          "at": 9.29,
+          "color": "yellow",
+          "shake": true
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "tag",
+      "start": 10.77,
+      "end": 14.27,
+      "text": "PARTES 1 A 5 NO PERFIL",
+      "y": 297,
+      "color": "white",
+      "size": 20
+    },
+    {
+      "type": "hud",
+      "start": 10.77,
+      "end": 59.15,
+      "label": "A SUA PARTE",
+      "dy": 67,
+      "values": [
+        {
+          "at": 10.77,
+          "text": "R$ 0",
+          "color": "red"
+        }
+      ],
+      "stars": [
+        {
+          "at": 10.77,
+          "count": 5,
+          "step": 0
+        }
+      ]
+    },
+    {
+      "type": "hud",
+      "start": 59.15,
+      "end": 75.81,
+      "label": "RECOMPENSA",
+      "dy": 67,
+      "values": [
+        {
+          "at": 59.15,
+          "text": "R$ 50 MIL",
+          "color": "red",
+          "shake": true
+        }
+      ],
+      "stars": [
+        {
+          "at": 59.15,
+          "count": 5,
+          "step": 0
+        }
+      ]
+    },
+    {
+      "type": "hud",
+      "start": 75.81,
+      "end": 95.19,
+      "label": "O PARCEIRO",
+      "dy": 67,
+      "values": [
+        {
+          "at": 75.81,
+          "text": "NA DONA CÉLIA",
+          "color": "yellow"
+        }
+      ],
+      "stars": [
+        {
+          "at": 75.81,
+          "count": 5,
+          "step": 0
+        }
+      ]
+    },
+    {
+      "type": "tag",
+      "start": 14.27,
+      "end": 24.85,
+      "text": "O CORTE · 04:52",
+      "y": 297,
+      "color": "yellow",
+      "size": 21
+    },
+    {
+      "type": "tag",
+      "start": 24.85,
+      "end": 44.28,
+      "text": "O SÃO JORGE · 05:00",
+      "y": 297,
+      "color": "yellow",
+      "size": 21
+    },
+    {
+      "type": "tag",
+      "start": 44.28,
+      "end": 59.03,
+      "text": "A CADEIRA · 06:00",
+      "y": 297,
+      "color": "yellow",
+      "size": 21
+    },
+    {
+      "type": "tag",
+      "start": 59.03,
+      "end": 74.13,
+      "text": "A RECOMPENSA",
+      "y": 297,
+      "color": "alert",
+      "size": 21
+    },
+    {
+      "type": "tag",
+      "start": 74.13,
+      "end": 95.19,
+      "text": "A VIRADA",
+      "y": 297,
+      "color": "alert",
+      "size": 21
+    },
+    {
+      "type": "phrase",
+      "start": 10.82,
+      "end": 14.87,
+      "y": 960,
+      "size": 58,
+      "lines": [
+        {
+          "text": "VOCÊ CONTOU.",
+          "at": 10.89,
+          "color": "white"
+        },
+        {
+          "text": "MAS NÃO TUDO.",
+          "at": 13.54,
+          "color": "yellow"
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "ring",
+      "start": 17.96,
+      "end": 20.86,
+      "x": 365,
+      "y": 640,
+      "r": 75,
+      "color": "red"
+    },
+    {
+      "type": "ring",
+      "start": 16.08,
+      "end": 17.96,
+      "x": 360,
+      "y": 743,
+      "r": 105,
+      "color": "yellow"
+    },
+    {
+      "type": "phrase",
+      "start": 14.92,
+      "end": 20.86,
+      "y": 970,
+      "size": 38,
+      "lines": [
+        {
+          "style": "label",
+          "text": "O TRECHO QUE DIZ",
+          "at": 17.96
+        },
+        {
+          "text": "QUEM ENCHEU A MOCHILA",
+          "at": 19.02,
+          "color": "white",
+          "size": 38
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "phrase",
+      "start": 20.91,
+      "end": 24.85,
+      "y": 960,
+      "size": 52,
+      "lines": [
+        {
+          "style": "label",
+          "text": "SE ELE SOUBER QUE VOCÊ SABE,",
+          "at": 20.98
+        },
+        {
+          "text": "VOCÊ VIRA",
+          "at": 23.31,
+          "color": "white"
+        },
+        {
+          "text": "UM PROBLEMA.",
+          "at": 23.71,
+          "color": "red"
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "phrase",
+      "start": 24.9,
+      "end": 29.49,
+      "y": 990,
+      "size": 63,
+      "lines": [
+        {
+          "text": "05:00",
+          "at": 24.97,
+          "color": "yellow",
+          "size": 72
+        },
+        {
+          "style": "label",
+          "text": "ELE ESCUTA TUDO",
+          "at": 27.64
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "balloon",
+      "start": 29.59,
+      "end": 33.36,
+      "text": "“Me ajuda a pegar o dinheiro antes do Ademir, e a gente divide.”",
+      "x": 330,
+      "y": 420,
+      "tail": {
+        "x": 200,
+        "y": 545
+      },
+      "width": 460,
+      "style": "light"
+    },
+    {
+      "type": "tag",
+      "start": 29.59,
+      "end": 33.36,
+      "text": "A GRAVAÇÃO DO CARRO",
+      "y": 990,
+      "color": "white",
+      "size": 22,
+      "x": 330
+    },
+    {
+      "type": "balloon",
+      "start": 33.48,
+      "end": 37.48,
+      "text": "Agora sim. Sócio de verdade.",
+      "x": 360,
+      "y": 360,
+      "tail": {
+        "x": 350,
+        "y": 400
+      },
+      "width": 520
+    },
+    {
+      "type": "balloon",
+      "start": 37.6,
+      "end": 39.13,
+      "text": "Aceita um café?",
+      "x": 220,
+      "y": 400,
+      "tail": {
+        "x": 240,
+        "y": 480
+      },
+      "width": 300
+    },
+    {
+      "type": "stamp",
+      "start": 39.11,
+      "end": 44.28,
+      "text": "DESSA VEZ, SIM",
+      "y": 960,
+      "x": 330,
+      "angle": -7,
+      "color": "green",
+      "filled": true
+    },
+    {
+      "type": "pop",
+      "start": 41.07,
+      "end": 44.28,
+      "text": "ECA",
+      "x": 520,
+      "y": 430,
+      "size": 52,
+      "color": "white",
+      "angle": 8
+    },
+    {
+      "type": "phrase",
+      "start": 44.33,
+      "end": 49.23,
+      "y": 960,
+      "size": 63,
+      "lines": [
+        {
+          "text": "06:00",
+          "at": 44.4,
+          "color": "yellow",
+          "size": 72
+        },
+        {
+          "style": "label",
+          "text": "ELE VEIO TRABALHAR",
+          "at": 45.8
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "pop",
+      "start": 47.76,
+      "end": 49.23,
+      "text": "TRANC",
+      "x": 240,
+      "y": 620,
+      "size": 54,
+      "color": "white",
+      "angle": -8,
+      "shake": true
+    },
+    {
+      "type": "polaroid",
+      "start": 51.16,
+      "end": 53.67,
+      "image": "episodio-04/cena-06-renato-amarrado.png",
+      "focus": [
+        0.19,
+        0.38,
+        0.79,
+        0.7175
+      ],
+      "caption": "PARTE 4",
+      "sub": "a cadeira",
+      "x": 175,
+      "y": 880,
+      "size": 210,
+      "angle": -6
+    },
+    {
+      "type": "callout",
+      "start": 51.16,
+      "end": 53.67,
+      "text": "A MESMA CADEIRA",
+      "x": 470,
+      "y": 1000,
+      "target": {
+        "x": 470,
+        "y": 900
+      },
+      "color": "yellow"
+    },
+    {
+      "type": "balloon",
+      "start": 53.79,
+      "end": 55.88,
+      "text": "Onde está o parceiro?",
+      "x": 210,
+      "y": 365,
+      "tail": {
+        "x": 200,
+        "y": 410
+      },
+      "width": 360
+    },
+    {
+      "type": "phrase",
+      "start": 55.93,
+      "end": 59.03,
+      "y": 990,
+      "size": 51,
+      "lines": [
+        {
+          "text": "ELE NÃO FALA.",
+          "at": 56.31,
+          "color": "white",
+          "size": 51
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "pop",
+      "start": 57.99,
+      "end": 59.03,
+      "text": "VRRR",
+      "x": 520,
+      "y": 470,
+      "size": 56,
+      "color": "white",
+      "angle": -6,
+      "shake": true
+    },
+    {
+      "type": "ring",
+      "start": 59.94,
+      "end": 62.89,
+      "x": 443,
+      "y": 742,
+      "r": 85,
+      "color": "yellow"
+    },
+    {
+      "type": "phrase",
+      "start": 59.08,
+      "end": 62.89,
+      "y": 960,
+      "size": 72,
+      "lines": [
+        {
+          "text": "R$ 50 MIL",
+          "at": 59.94,
+          "color": "yellow",
+          "size": 72
+        },
+        {
+          "style": "label",
+          "text": "POR INFORMAÇÕES SOBRE VOCÊ",
+          "at": 60.84
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "balloon",
+      "start": 63.01,
+      "end": 66.17,
+      "text": "Cinquenta mil pela sua cabeça.",
+      "x": 360,
+      "y": 395,
+      "tail": {
+        "x": 360,
+        "y": 440
+      },
+      "width": 520
+    },
+    {
+      "type": "balloon",
+      "start": 66.17,
+      "end": 68.12,
+      "text": "Ainda bem que você é leal.",
+      "x": 360,
+      "y": 395,
+      "tail": {
+        "x": 360,
+        "y": 440
+      },
+      "width": 520
+    },
+    {
+      "type": "balloon",
+      "start": 68.12,
+      "end": 71.02,
+      "text": "Vigia ele. Vou buscar o alicate.",
+      "x": 360,
+      "y": 395,
+      "tail": {
+        "x": 360,
+        "y": 440
+      },
+      "width": 520
+    },
+    {
+      "type": "phrase",
+      "start": 71.07,
+      "end": 74.13,
+      "y": 990,
+      "size": 40,
+      "lines": [
+        {
+          "style": "label",
+          "text": "QUANDO OS PASSOS SOMEM,",
+          "at": 71.14
+        },
+        {
+          "text": "ELE LEVANTA A CABEÇA.",
+          "at": 72.94,
+          "color": "white",
+          "size": 40
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "balloon",
+      "start": 74.25,
+      "end": 75.81,
+      "text": "Quer o seu dinheiro?",
+      "x": 400,
+      "y": 405,
+      "tail": {
+        "x": 470,
+        "y": 470
+      },
+      "width": 420
+    },
+    {
+      "type": "balloon",
+      "start": 75.81,
+      "end": 81.43,
+      "text": "O seu parceiro está escondido na casa da Dona Célia.",
+      "x": 380,
+      "y": 405,
+      "tail": {
+        "x": 470,
+        "y": 470
+      },
+      "width": 500
+    },
+    {
+      "type": "polaroid",
+      "start": 79.31,
+      "end": 81.43,
+      "image": "episodio-05/cena-10-bolo.png",
+      "focus": [
+        0.0,
+        0.36,
+        0.45,
+        0.613
+      ],
+      "caption": "PARTE 5",
+      "sub": "a mãe do Renato",
+      "x": 330,
+      "y": 880,
+      "size": 210,
+      "angle": 5
+    },
+    {
+      "type": "vignette",
+      "start": 81.43,
+      "end": 85.73,
+      "color": "alert",
+      "strength": 0.55
+    },
+    {
+      "type": "polaroid",
+      "start": 81.48,
+      "end": 85.73,
+      "image": "episodio-05/cena-10-bolo.png",
+      "focus": [
+        0.0,
+        0.32,
+        0.8,
+        0.77
+      ],
+      "caption": "PARTE 5",
+      "sub": "o bolo",
+      "x": 490,
+      "y": 450,
+      "size": 160,
+      "angle": 6
+    },
+    {
+      "type": "phrase",
+      "start": 81.48,
+      "end": 85.73,
+      "y": 930,
+      "size": 51,
+      "lines": [
+        {
+          "style": "label",
+          "text": "“OU VOCÊ ACHA QUE ELA FEZ",
+          "at": 81.55
+        },
+        {
+          "text": "BOLO ÀS 4 DA MANHÃ",
+          "at": 82.97,
+          "color": "white",
+          "size": 45
+        },
+        {
+          "text": "PRA VOCÊ?”",
+          "at": 84.11,
+          "color": "yellow",
+          "shake": true
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "stamp",
+      "start": 89.8,
+      "end": 91.05,
+      "text": "NÃO ATENDE",
+      "y": 960,
+      "x": 330,
+      "angle": -7,
+      "color": "red",
+      "filled": true
+    },
+    {
+      "type": "balloon",
+      "start": 92.61,
+      "end": 95.19,
+      "text": "E aí? Ele falou alguma coisa?",
+      "x": 360,
+      "y": 430,
+      "tail": {
+        "x": 360,
+        "y": 515
+      },
+      "width": 420
+    },
+    {
+      "type": "tag",
+      "start": 95.24,
+      "end": 104.13,
+      "text": "OPÇÃO 1 · FALAR",
+      "y": 300,
+      "color": "white",
+      "size": 24,
+      "x": 330
+    },
+    {
+      "type": "tag",
+      "start": 96.67,
+      "end": 104.13,
+      "text": "− A DONA CÉLIA NA MIRA DO ALICATE",
+      "y": 950,
+      "color": "alert",
+      "size": 22,
+      "x": 330
+    },
+    {
+      "type": "tag",
+      "start": 98.43,
+      "end": 104.13,
+      "text": "+ VOCÊ CHEGA NO SEU DINHEIRO",
+      "y": 850,
+      "color": "green",
+      "size": 22,
+      "x": 330
+    },
+    {
+      "type": "tag",
+      "start": 100.41,
+      "end": 104.13,
+      "text": "+ O ADEMIR CONFIA EM VOCÊ DE VEZ",
+      "y": 900,
+      "color": "green",
+      "size": 22,
+      "x": 330
+    },
+    {
+      "type": "tag",
+      "start": 101.01,
+      "end": 104.13,
+      "text": "− VOCÊ ENTREGA A MÃE DO SEU AMIGO",
+      "y": 1000,
+      "color": "alert",
+      "size": 22,
+      "x": 330
+    },
+    {
+      "type": "tag",
+      "start": 104.18,
+      "end": 114.82,
+      "text": "OPÇÃO 2 · CALAR",
+      "y": 300,
+      "color": "white",
+      "size": 24,
+      "x": 330
+    },
+    {
+      "type": "tag",
+      "start": 105.31,
+      "end": 114.82,
+      "text": "− MENTE PRO HOMEM DO ANEL",
+      "y": 950,
+      "color": "alert",
+      "size": 22,
+      "x": 330
+    },
+    {
+      "type": "tag",
+      "start": 106.59,
+      "end": 114.82,
+      "text": "+ DESCOBRE O QUE O RENATO ESCONDE",
+      "y": 850,
+      "color": "green",
+      "size": 22,
+      "x": 330
+    },
+    {
+      "type": "tag",
+      "start": 108.42,
+      "end": 114.82,
+      "text": "− SE ELE DESCOBRIR, A CADEIRA É SUA",
+      "y": 1000,
+      "color": "alert",
+      "size": 22,
+      "x": 330
+    },
+    {
+      "type": "tag",
+      "start": 111.1,
+      "end": 114.82,
+      "text": "+ PROTEGE A DONA CÉLIA",
+      "y": 900,
+      "color": "green",
+      "size": 22,
+      "x": 330
+    },
+    {
+      "type": "bars",
+      "start": 114.86999999999999,
+      "end": 117.39,
+      "y": 500,
+      "x": 330,
+      "width": 500,
+      "title": "PARTE 5 · VOCÊS VOTARAM",
+      "title_at": 114.94,
+      "items": [
+        {
+          "label": "CONTAR",
+          "pct": 71,
+          "at": 115.04,
+          "winner": true
+        },
+        {
+          "label": "TOPAR",
+          "pct": 29,
+          "at": 115.19,
+          "winner": false
+        }
+      ]
+    },
+    {
+      "type": "stamp",
+      "start": 116.65,
+      "end": 117.39,
+      "text": "CONTAR",
+      "y": 860,
+      "x": 330,
+      "angle": -7,
+      "color": "yellow",
+      "filled": true
+    },
+    {
+      "type": "jornal",
+      "start": 117.39,
+      "end": 124.22,
+      "y": 340,
+      "x": 330,
+      "width": 500,
+      "title": "A VOZ DO BAIRRO",
+      "sub": "o que vocês comentaram na parte 5",
+      "items": [
+        {
+          "text": "Eu contaria, pois o Ademir é perigoso. Isso pode custar mais que dinheiro.",
+          "at": 117.69
+        },
+        {
+          "text": "Rapaz, eu contaria.",
+          "at": 118.19
+        },
+        {
+          "text": "Topar.",
+          "at": 118.69
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "start": 121.53,
+      "end": 124.22,
+      "y": 940,
+      "size": 51,
+      "lines": [
+        {
+          "style": "label",
+          "text": "O SEU COMENTÁRIO PODE SAIR",
+          "at": 121.58
+        },
+        {
+          "text": "NO JORNAL DA",
+          "at": 122.39,
+          "color": "white"
+        },
+        {
+          "text": "PRÓXIMA PARTE.",
+          "at": 123.0,
+          "color": "yellow"
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "phrase",
+      "start": 124.22,
+      "end": 131.58,
+      "y": 585,
+      "size": 69,
+      "lines": [
+        {
+          "text": "FALAR",
+          "at": 124.34,
+          "color": "white"
+        },
+        {
+          "text": "OU CALAR?",
+          "at": 125.22,
+          "color": "yellow"
+        }
+      ],
+      "x": 330
+    },
+    {
+      "type": "buttons",
+      "start": 126.1,
+      "end": 131.58,
+      "y": 800,
+      "x": 310,
+      "prompt": "COMENTA UMA PALAVRA",
+      "prompt_at": 126.15,
+      "items": [
+        {
+          "text": "FALAR",
+          "at": 126.54,
+          "style": "yellow"
+        },
+        {
+          "text": "CALAR",
+          "at": 126.86,
+          "style": "white"
+        }
+      ]
+    },
+    {
+      "type": "box",
+      "start": 127.6,
+      "end": 131.58,
+      "y": 940,
+      "x": 330,
+      "title": "PARTE 7",
+      "sub": "seu comentário pode sair no jornal"
+    }
+  ],
+  "sfx": [
+    {
+      "sound": "whoosh.wav",
+      "at": 4.38,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 7.5,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 10.41,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 24.49,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 43.92,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 58.67,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 73.77,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 81.07,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 94.83,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 114.46,
+      "gain": -2
+    },
+    {
+      "sound": "whoosh.wav",
+      "at": 123.86,
+      "gain": -2
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 9.248,
+      "gain": -5
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.76,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.799,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.841,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.886,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.933,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 2.984,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.04,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.101,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.17,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.248,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.341,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.458,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 3.624,
+      "gain": -18
+    },
+    {
+      "sound": "tique.wav",
+      "at": 4.264,
+      "gain": -18
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.482,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.602,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.722,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.842,
+      "gain": -16
+    },
+    {
+      "sound": "pop.wav",
+      "at": 6.962,
+      "gain": -16
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 6.852,
+      "gain": -5
+    },
+    {
+      "sound": "pop.wav",
+      "at": 10.77,
+      "gain": -12
+    },
+    {
+      "sound": "pop.wav",
+      "at": 16.084,
+      "gain": -10
+    },
+    {
+      "sound": "impacto-suave.wav",
+      "at": 23.673,
+      "gain": -7
+    },
+    {
+      "sound": "pop.wav",
+      "at": 39.134,
+      "gain": -10
+    },
+    {
+      "sound": "tranca.wav",
+      "at": 47.755,
+      "gain": -6
+    },
+    {
+      "sound": "pop.wav",
+      "at": 51.165,
+      "gain": -12
+    },
+    {
+      "sound": "vibracao.wav",
+      "at": 57.886,
+      "gain": -8
+    },
+    {
+      "sound": "notificacao.wav",
+      "at": 59.13,
+      "gain": -12
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 59.904,
+      "gain": -6
+    },
+    {
+      "sound": "passos.wav",
+      "at": 71.135,
+      "gain": -12
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 77.92,
+      "gain": -5
+    },
+    {
+      "sound": "pop.wav",
+      "at": 79.309,
+      "gain": -12
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 84.067,
+      "gain": -4
+    },
+    {
+      "sound": "chamada.wav",
+      "at": 85.948,
+      "gain": -14
+    },
+    {
+      "sound": "desliga.wav",
+      "at": 87.22,
+      "gain": -10
+    },
+    {
+      "sound": "impacto-suave.wav",
+      "at": 89.776,
+      "gain": -7
+    },
+    {
+      "sound": "passos.wav",
+      "at": 91.168,
+      "gain": -10
+    },
+    {
+      "sound": "pop.wav",
+      "at": 96.672,
+      "gain": -14
+    },
+    {
+      "sound": "pop.wav",
+      "at": 98.432,
+      "gain": -14
+    },
+    {
+      "sound": "pop.wav",
+      "at": 105.313,
+      "gain": -14
+    },
+    {
+      "sound": "pop.wav",
+      "at": 106.592,
+      "gain": -14
+    },
+    {
+      "sound": "pop.wav",
+      "at": 108.418,
+      "gain": -14
+    },
+    {
+      "sound": "tique.wav",
+      "at": 115.036,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 115.136,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 115.236,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 115.336,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 115.436,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 115.536,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 115.636,
+      "gain": -20
+    },
+    {
+      "sound": "tique.wav",
+      "at": 115.736,
+      "gain": -20
+    },
+    {
+      "sound": "impacto.wav",
+      "at": 116.63,
+      "gain": -5
+    },
+    {
+      "sound": "pop.wav",
+      "at": 126.543,
+      "gain": -10
+    },
+    {
+      "sound": "pop.wav",
+      "at": 126.863,
+      "gain": -10
+    },
+    {
+      "sound": "pop.wav",
+      "at": 127.602,
+      "gain": -10
+    }
+  ],
+  "captions": [],
+  "effects": [
+    "../../episodio-02/montagem/efeitos"
+  ]
+}

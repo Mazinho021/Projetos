@@ -1,0 +1,87 @@
+{
+ "source": "episodio-05/narracao-ep05-toninho.wav",
+ "cut": [
+  21.857,
+  25.175
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Me",
+   "start": 0.12,
+   "end": 0.363
+  },
+  {
+   "i": 1,
+   "text": "ajuda",
+   "start": 0.363,
+   "end": 0.583
+  },
+  {
+   "i": 2,
+   "text": "a",
+   "start": 0.583,
+   "end": 0.803
+  },
+  {
+   "i": 3,
+   "text": "pegar",
+   "start": 0.803,
+   "end": 0.883
+  },
+  {
+   "i": 4,
+   "text": "o",
+   "start": 0.883,
+   "end": 1.043
+  },
+  {
+   "i": 5,
+   "text": "dinheiro",
+   "start": 1.043,
+   "end": 1.303
+  },
+  {
+   "i": 6,
+   "text": "antes",
+   "start": 1.303,
+   "end": 1.523
+  },
+  {
+   "i": 7,
+   "text": "do",
+   "start": 1.523,
+   "end": 1.683
+  },
+  {
+   "i": 8,
+   "text": "Ademir,",
+   "start": 1.683,
+   "end": 2.103
+  },
+  {
+   "i": 9,
+   "text": "e",
+   "start": 2.103,
+   "end": 2.463
+  },
+  {
+   "i": 10,
+   "text": "a",
+   "start": 2.463,
+   "end": 2.563
+  },
+  {
+   "i": 11,
+   "text": "gente",
+   "start": 2.563,
+   "end": 2.723
+  },
+  {
+   "i": 12,
+   "text": "divide.",
+   "start": 2.723,
+   "end": 3.068
+  }
+ ]
+}

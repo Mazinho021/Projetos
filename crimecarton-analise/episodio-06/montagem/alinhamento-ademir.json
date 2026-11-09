@@ -1,0 +1,261 @@
+{
+ "audio": "narracao-ep06-ademir.wav",
+ "script": "narracao-ep06-ademir.txt",
+ "model": "medium",
+ "words_in_script": 35,
+ "words_matched_exactly": 35,
+ "pauses": [
+  [
+   0.0,
+   0.252
+  ],
+  [
+   1.799,
+   2.279
+  ],
+  [
+   3.73,
+   4.585
+  ],
+  [
+   5.28,
+   6.326
+  ],
+  [
+   7.591,
+   8.779
+  ],
+  [
+   11.306,
+   12.049
+  ],
+  [
+   13.355,
+   14.842
+  ],
+  [
+   15.456,
+   16.096
+  ],
+  [
+   17.018,
+   18.009
+  ],
+  [
+   18.285,
+   18.701
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Agora",
+   "start": 0.252,
+   "end": 1.54
+  },
+  {
+   "i": 1,
+   "text": "sim.",
+   "start": 1.54,
+   "end": 1.799
+  },
+  {
+   "i": 2,
+   "text": "Sócio",
+   "start": 2.279,
+   "end": 2.94
+  },
+  {
+   "i": 3,
+   "text": "de",
+   "start": 2.94,
+   "end": 3.22
+  },
+  {
+   "i": 4,
+   "text": "verdade.",
+   "start": 3.22,
+   "end": 3.73
+  },
+  {
+   "i": 5,
+   "text": "Aceita",
+   "start": 4.585,
+   "end": 4.92
+  },
+  {
+   "i": 6,
+   "text": "um",
+   "start": 4.92,
+   "end": 5.1
+  },
+  {
+   "i": 7,
+   "text": "café?",
+   "start": 5.1,
+   "end": 5.28
+  },
+  {
+   "i": 8,
+   "text": "Onde",
+   "start": 6.326,
+   "end": 6.78
+  },
+  {
+   "i": 9,
+   "text": "está",
+   "start": 6.78,
+   "end": 6.94
+  },
+  {
+   "i": 10,
+   "text": "o",
+   "start": 6.94,
+   "end": 7.1
+  },
+  {
+   "i": 11,
+   "text": "parceiro?",
+   "start": 7.1,
+   "end": 7.591
+  },
+  {
+   "i": 12,
+   "text": "Cinquenta",
+   "start": 8.779,
+   "end": 9.84
+  },
+  {
+   "i": 13,
+   "text": "mil",
+   "start": 9.84,
+   "end": 10.06
+  },
+  {
+   "i": 14,
+   "text": "pela",
+   "start": 10.06,
+   "end": 10.34
+  },
+  {
+   "i": 15,
+   "text": "sua",
+   "start": 10.34,
+   "end": 10.62
+  },
+  {
+   "i": 16,
+   "text": "cabeça.",
+   "start": 10.62,
+   "end": 11.306
+  },
+  {
+   "i": 17,
+   "text": "Ainda",
+   "start": 12.049,
+   "end": 12.38
+  },
+  {
+   "i": 18,
+   "text": "bem",
+   "start": 12.38,
+   "end": 12.6
+  },
+  {
+   "i": 19,
+   "text": "que",
+   "start": 12.6,
+   "end": 12.74
+  },
+  {
+   "i": 20,
+   "text": "você",
+   "start": 12.74,
+   "end": 13.06
+  },
+  {
+   "i": 21,
+   "text": "é",
+   "start": 13.06,
+   "end": 13.2
+  },
+  {
+   "i": 22,
+   "text": "leal.",
+   "start": 13.2,
+   "end": 13.355
+  },
+  {
+   "i": 23,
+   "text": "Vigia",
+   "start": 14.842,
+   "end": 15.28
+  },
+  {
+   "i": 24,
+   "text": "ele.",
+   "start": 15.28,
+   "end": 15.456
+  },
+  {
+   "i": 25,
+   "text": "Vou",
+   "start": 16.096,
+   "end": 16.22
+  },
+  {
+   "i": 26,
+   "text": "buscar",
+   "start": 16.22,
+   "end": 16.46
+  },
+  {
+   "i": 27,
+   "text": "o",
+   "start": 16.46,
+   "end": 16.6
+  },
+  {
+   "i": 28,
+   "text": "alicate.",
+   "start": 16.6,
+   "end": 17.018
+  },
+  {
+   "i": 29,
+   "text": "E",
+   "start": 18.009,
+   "end": 18.22
+  },
+  {
+   "i": 30,
+   "text": "aí?",
+   "start": 18.22,
+   "end": 18.285
+  },
+  {
+   "i": 31,
+   "text": "Ele",
+   "start": 18.701,
+   "end": 18.96
+  },
+  {
+   "i": 32,
+   "text": "falou",
+   "start": 18.96,
+   "end": 19.1
+  },
+  {
+   "i": 33,
+   "text": "alguma",
+   "start": 19.1,
+   "end": 19.38
+  },
+  {
+   "i": 34,
+   "text": "coisa?",
+   "start": 19.38,
+   "end": 19.56
+  }
+ ]
+}

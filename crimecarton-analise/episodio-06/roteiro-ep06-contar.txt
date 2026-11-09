@@ -1,5 +1,5 @@
 VINHETA: O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.
-NARRADOR: Hoje, o seu rosto ganha um preço.
+NARRADOR: Hoje, o seu rosto ganhou um preço.
 NARRADOR: Você foi contar pro Ademir. Mas não contou tudo.
 NARRADOR: Antes de dar o play, você corta um pedaço da gravação: a parte em que o Toninho diz quem encheu a sua mochila.
 NARRADOR: Se o Ademir souber que você sabe, você vira um problema.
@@ -9,12 +9,12 @@ ADEMIR: Agora sim. Sócio de verdade. Aceita um café?
 NARRADOR: Dessa vez, você aceita. O café é horrível. Você bebe mesmo assim.
 NARRADOR: Às seis, o Toninho chega achando que veio trabalhar. O Ademir tranca o portão.
 NARRADOR: Minutos depois, o Toninho está amarrado na mesma cadeira em que o Renato esteve.
-ADEMIR: Onde tá o parceiro?
+ADEMIR: Onde está o parceiro?
 NARRADOR: O Toninho não fala. Aí o seu celular vibra.
 NARRADOR: A polícia oferece cinquenta mil reais por informações sobre você.
 ADEMIR: Cinquenta mil pela sua cabeça. Ainda bem que você é leal. Vigia ele. Vou buscar o alicate.
 NARRADOR: Quando os passos somem, o Toninho levanta a cabeça.
-TONINHO: Quer o seu dinheiro? O seu parceiro tá escondido na casa da Dona Célia.
+TONINHO: Quer o seu dinheiro? O seu parceiro está escondido na casa da Dona Célia.
 NARRADOR: A mãe do Renato.
 TONINHO: Ou você acha que ela fez bolo às quatro da manhã pra você?
 NARRADOR: Você liga pro Renato. Caixa postal. Liga de novo. Nada.

@@ -1,0 +1,189 @@
+{
+ "audio": "narracao-ep06-toninho.wav",
+ "script": "narracao-ep06-toninho.txt",
+ "model": "medium",
+ "words_in_script": 27,
+ "words_matched_exactly": 25,
+ "pauses": [
+  [
+   0.919,
+   1.454
+  ],
+  [
+   4.109,
+   5.144
+  ],
+  [
+   5.487,
+   5.776
+  ],
+  [
+   8.101,
+   8.36
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Quer",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "i": 1,
+   "text": "o",
+   "start": 0.34,
+   "end": 0.46
+  },
+  {
+   "i": 2,
+   "text": "seu",
+   "start": 0.46,
+   "end": 0.56
+  },
+  {
+   "i": 3,
+   "text": "dinheiro?",
+   "start": 0.56,
+   "end": 0.919
+  },
+  {
+   "i": 4,
+   "text": "O",
+   "start": 1.454,
+   "end": 2.08
+  },
+  {
+   "i": 5,
+   "text": "seu",
+   "start": 2.08,
+   "end": 2.24
+  },
+  {
+   "i": 6,
+   "text": "parceiro",
+   "start": 2.24,
+   "end": 2.52
+  },
+  {
+   "i": 7,
+   "text": "está",
+   "start": 2.52,
+   "end": 2.68
+  },
+  {
+   "i": 8,
+   "text": "escondido",
+   "start": 2.68,
+   "end": 3.08
+  },
+  {
+   "i": 9,
+   "text": "na",
+   "start": 3.08,
+   "end": 3.22
+  },
+  {
+   "i": 10,
+   "text": "casa",
+   "start": 3.22,
+   "end": 3.44
+  },
+  {
+   "i": 11,
+   "text": "da",
+   "start": 3.44,
+   "end": 3.6
+  },
+  {
+   "i": 12,
+   "text": "Dona",
+   "start": 3.6,
+   "end": 3.92
+  },
+  {
+   "i": 13,
+   "text": "Célia.",
+   "start": 3.92,
+   "end": 4.109
+  },
+  {
+   "i": 14,
+   "text": "Ou",
+   "start": 5.144,
+   "end": 5.487
+  },
+  {
+   "i": 15,
+   "text": "você",
+   "start": 5.776,
+   "end": 6.2
+  },
+  {
+   "i": 16,
+   "text": "acha",
+   "start": 6.2,
+   "end": 6.32
+  },
+  {
+   "i": 17,
+   "text": "que",
+   "start": 6.32,
+   "end": 6.44
+  },
+  {
+   "i": 18,
+   "text": "ela",
+   "start": 6.44,
+   "end": 6.56
+  },
+  {
+   "i": 19,
+   "text": "fez",
+   "start": 6.56,
+   "end": 6.76
+  },
+  {
+   "i": 20,
+   "text": "bolo",
+   "start": 6.76,
+   "end": 6.96
+  },
+  {
+   "i": 21,
+   "text": "às",
+   "start": 6.96,
+   "end": 7.14
+  },
+  {
+   "i": 22,
+   "text": "quatro",
+   "start": 7.14,
+   "end": 7.38
+  },
+  {
+   "i": 23,
+   "text": "da",
+   "start": 7.38,
+   "end": 7.58
+  },
+  {
+   "i": 24,
+   "text": "manhã",
+   "start": 7.58,
+   "end": 7.7
+  },
+  {
+   "i": 25,
+   "text": "pra",
+   "start": 7.7,
+   "end": 7.88
+  },
+  {
+   "i": 26,
+   "text": "você?",
+   "start": 7.88,
+   "end": 8.101
+  }
+ ]
+}

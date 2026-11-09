@@ -1,6 +1,6 @@
 # Parte 6 — “A recompensa”
 
-**Situação em 09/11/2026:** o criador aprovou o roteiro (“Ok”). O pedido ao Codex está em [`pedido-codex-ep06.md`](pedido-codex-ep06.md): as 3 vozes e os 19 desenhos, em três lotes, com push depois de cada cena.
+**Situação em 09/11/2026:** a Parte 6 está pronta, nas duas versões ([`parte-06-a-recompensa.mp4`](parte-06-a-recompensa.mp4) e [`parte-06-a-recompensa-vertical.mp4`](parte-06-a-recompensa-vertical.mp4)), com 2 min 11,6 s. O Codex entregou as 3 vozes e os 19 desenhos pelo pedido em [`pedido-codex-ep06.md`](pedido-codex-ep06.md), e a montagem está em [`montagem/`](montagem/README.md). O texto do roteiro foi acertado para as gravações: “ganhou um preço”, “Onde está o parceiro?” e “está escondido”.
 
 ## A votação da Parte 5
 
