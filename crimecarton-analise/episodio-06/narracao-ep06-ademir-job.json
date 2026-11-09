@@ -1,0 +1,86 @@
+{
+  "jobId": "mcp_media_678ff406bd82a7bf3cfe3c33784cb67915884a3e9292ea2dc4d2a26c494a8066",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_678ff406bd82a7bf3cfe3c33784cb67915884a3e9292ea2dc4d2a26c494a8066/0.wav?hdnts=FullPath~Expires=1794323847~Signature=Kw_bG46-7GnjEGeObLGVSLP-pzxm7i5txN-x9PHtEQ-KzdGVSJ0kBzySy8BFuPojtBHh8mbgSGZ8W6J--Bf9BA",
+      "expiresAt": "2026-11-10T15:17:27.969Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 19.8
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep06-ademir-charon-v1-20261109-style500",
+    "voice": "Charon",
+    "style": "Português brasileiro. Ademir, 60 anos, dono de ferro-velho. Voz baixa, lenta, calma demais, fria e segura, sem gritos nem caricatura. Primeira fala satisfeita, quase simpática. “Onde tá o parceiro?” lenta e ameaçadora. Recompensa e lealdade com sorriso e ameaça escondida. Buscar alicate casual, como buscar café. Última fala leve, casual, de longe. Pausa entre parágrafos.",
+    "text": "Agora sim. Sócio de verdade. Aceita um café?\n\nOnde tá o parceiro?\n\nCinquenta mil pela sua cabeça. Ainda bem que você é leal. Vigia ele. Vou buscar o alicate.\n\nE aí? Ele falou alguma coisa?"
+  },
+  "audioEdited": false,
+  "verification": {
+    "engine": "faster-whisper",
+    "model": "medium",
+    "compute_type": "int8",
+    "initial_prompt": null,
+    "language": "pt",
+    "language_probability": 0.9987820982933044,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.0,
+        "text": " Agora sim, sócio de verdade."
+      },
+      {
+        "start": 4.0,
+        "end": 6.0,
+        "text": " Aceita um café?"
+      },
+      {
+        "start": 6.0,
+        "end": 8.0,
+        "text": " Onde está o parceiro?"
+      },
+      {
+        "start": 8.0,
+        "end": 12.0,
+        "text": " Cinquenta mil pela sua cabeça."
+      },
+      {
+        "start": 12.0,
+        "end": 14.0,
+        "text": " Ainda bem que você é leal."
+      },
+      {
+        "start": 14.0,
+        "end": 16.0,
+        "text": " Vigia ele."
+      },
+      {
+        "start": 16.0,
+        "end": 18.0,
+        "text": " Vou buscar o alicate."
+      },
+      {
+        "start": 18.0,
+        "end": 20.0,
+        "text": " E aí, ele falou alguma coisa?"
+      }
+    ],
+    "transcript": "Agora sim, sócio de verdade. Aceita um café? Onde está o parceiro? Cinquenta mil pela sua cabeça. Ainda bem que você é leal. Vigia ele. Vou buscar o alicate. E aí, ele falou alguma coisa?",
+    "reviewRequired": true,
+    "differencesToReview": [
+      {
+        "requested": "Onde tá o parceiro?",
+        "transcribed": "Onde está o parceiro?"
+      }
+    ],
+    "note": "Diferenças identificadas na transcrição automática; podem incluir erros do reconhecedor. Não houve edição nem regeneração. Conferência final a cargo do Claude Code conforme pedido.",
+    "model_sha256": "9b45e1009dcc4ab601eff815b61d80e60ce3fd8c74c1a14f4a282258286b51ae"
+  },
+  "audioSha256": "cbe4089e5b156fcfe648bd892de92d1ca9e93d6cae19bba1a9d7125fa6d5670f"
+}
