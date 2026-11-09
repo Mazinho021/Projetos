@@ -1,6 +1,6 @@
 # Parte 6 — “A recompensa”
 
-**Situação em 09/11/2026:** roteiro escrito no caminho do CONTAR, esperando o “ok” do criador. Nada foi pedido ao Codex ainda.
+**Situação em 09/11/2026:** o criador aprovou o roteiro (“Ok”). O pedido ao Codex está em [`pedido-codex-ep06.md`](pedido-codex-ep06.md): as 3 vozes e os 19 desenhos, em três lotes, com push depois de cada cena.
 
 ## A votação da Parte 5
 
@@ -63,7 +63,7 @@ Uma imagem por trecho. Os desenhos novos seguem a composição do `CLAUDE.md`: o
 | 21 | “Na parte cinco, vocês escolheram contar…” | Montada: a lembrança escurecida da Parte 5 | Barras, carimbo CONTAR e o jornal “A VOZ DO BAIRRO” |
 | 22 | “Falar ou calar?” | Montada: as duas opções lado a lado | Botões FALAR e CALAR e a caixa “PARTE 7” |
 
-São **18 desenhos novos**. As cenas 3, 12 e 17 têm o celular de frente, com a tela em branco, para os closes retos da montagem.
+São **19 desenhos novos**, numerados de 1 a 19 nos lotes, na ordem desta tabela: [`LOTE-01-CENAS-01-A-07.md`](LOTE-01-CENAS-01-A-07.md), [`LOTE-02-CENAS-08-A-14.md`](LOTE-02-CENAS-08-A-14.md) e [`LOTE-03-CENAS-15-A-19.md`](LOTE-03-CENAS-15-A-19.md). Os desenhos dos celulares (lotes: cenas 3, 11 e 16) têm o celular de frente, com a tela em branco, para os closes retos da montagem.
 
 ## Personagens
 
@@ -92,4 +92,4 @@ São **18 desenhos novos**. As cenas 3, 12 e 17 têm o celular de frente, com a 
 - **Sem custo:**
   - a fala “Me ajuda a pegar o dinheiro antes do Ademir, e a gente divide.” sai da gravação da Parte 5, com som de alto-falante de celular, porque é a gravação tocando;
   - a vinheta, da Parte 1, igualada por `igualar_vozes.py`.
-- **Total:** uns 4 créditos de voz. Os 18 desenhos vão para o Codex em lotes, com push depois de cada cena.
+- **Total:** uns 4 créditos de voz. Os 19 desenhos vão para o Codex em lotes, com push depois de cada cena.

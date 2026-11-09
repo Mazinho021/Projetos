@@ -1,0 +1,7 @@
+{
+  "idempotencyKey": "zinho-ep06-ademir-charon-v1-20261109",
+  "voice": "Charon",
+  "style": "Português brasileiro. A mesma voz do narrador, mas interpretando outro homem: o Ademir, de uns 60 anos, dono de um ferro-velho, o mesmo das Partes 3 a 5. Fala devagar, baixo e calmo, calmo demais, sem gritar e sem pressa. Frio e seguro de si, como quem tem o controle. “Agora sim. Sócio de verdade. Aceita um café?” sai satisfeito, quase simpático. “Onde tá o parceiro?” é baixa, lenta e ameaçadora, sem gritar. “Cinquenta mil pela sua cabeça. Ainda bem que você é leal.” sai com um sorriso na voz e uma ameaça escondida; “Vigia ele. Vou buscar o alicate.” sai casual, como quem vai buscar um café. A última fala, “E aí? Ele falou alguma coisa?”, é leve e casual, de longe. Natural, sem caricatura de vilão. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+  "text": "Agora sim. Sócio de verdade. Aceita um café?\n\nOnde tá o parceiro?\n\nCinquenta mil pela sua cabeça. Ainda bem que você é leal. Vigia ele. Vou buscar o alicate.\n\nE aí? Ele falou alguma coisa?",
+  "observacao": "As falas do Ademir na Parte 6, no mesmo estilo das Partes 4 e 5; o Claude Code passa a gravação pela voz do cobrador com voz_ademir.py, sem o som de celular. Uns 15 s. Geração paga, pedida pelo criador; mostrar o custo antes de executar. Não editar o áudio."
+}
