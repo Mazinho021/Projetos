@@ -107,6 +107,14 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 - **A Parte 5 saiu sem aliados**, por decisão do criador em 07/11/2026, mas a venda continua: quem comprar agora aparece na Parte 6. Em 08/11/2026, o criador marcou o prazo da lista da Parte 6: **segunda, 09/11, às 12h** (`fecha` em `site/netlify/lib/serie.mjs` e no `CONFIG` da página). Depois dele, o passe vale para a Parte 7. O passo a passo está em `crimecarton-analise/ideia-site-da-serie.md`.
 - Publicar com a ferramenta de deploy do Netlify e conferir no ar a página, o `/api/aliados` e os testes (`node --test crimecarton-analise/site/testes/*.test.mjs`).
 
+## Texto dos posts (decisão do criador em 09/11/2026)
+
+- **Sem a linha “Inspirado em @crimecarton”**, em nenhuma rede. Até a Parte 5, ela ia em todos os posts; o criador tirou em 09/11/2026.
+- **Hashtags:** `#apartequefaltou #seurostonojornal`.
+- O resto continua curto: a parte e o título (“Parte N – Título 🎒”), a pergunta da votação (“Topar ou contar? Comenta 👇”) e as hashtags. No Shorts, o título é “Parte N – Título 😨”.
+- Comentário para fixar: a pergunta, com “Comenta uma palavra 👇”.
+- **Marcar o conteúdo de IA** em todos os posts.
+
 ## Vozes
 
 - O narrador, a vinheta e o cobrador usam a voz Charon, gerada no OpusClip pelo Codex.
