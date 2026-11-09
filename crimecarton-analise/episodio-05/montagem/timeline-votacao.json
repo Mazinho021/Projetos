@@ -1,0 +1,396 @@
+{
+ "timing_status": "aligned_to_voice",
+ "style": "guia-de-estilo-referencia.md",
+ "audio": "montagem/vozes/votacao.wav",
+ "tail": 1.6,
+ "scenes": [
+  {
+   "start": 0,
+   "end": 4.09,
+   "kind": "art",
+   "asset": "cena-16-choque.png",
+   "zoom": 0.06,
+   "direction": "in"
+  },
+  {
+   "start": 4.09,
+   "end": 8.06,
+   "kind": "art",
+   "asset": "cena-17-toninho-encara.png",
+   "zoom": 0.05,
+   "direction": "in"
+  },
+  {
+   "start": 8.06,
+   "end": 14.21,
+   "kind": "art",
+   "asset": "cena-18-opcao-topar.png",
+   "zoom": 0.03,
+   "direction": "in"
+  },
+  {
+   "start": 14.21,
+   "end": 20.69,
+   "kind": "art",
+   "asset": "cena-19-opcao-contar.png",
+   "zoom": 0.03,
+   "direction": "in"
+  },
+  {
+   "start": 20.69,
+   "end": 28.3,
+   "kind": "art",
+   "asset": "montagem/arte/opcoes-vertical.png",
+   "zoom": 0.02,
+   "direction": "out"
+  }
+ ],
+ "graphics": [
+  {
+   "type": "tag",
+   "start": 0.05,
+   "end": 20.69,
+   "text": "VOCÊ DECIDE A PARTE 6",
+   "y": 230,
+   "x": 330,
+   "color": "yellow",
+   "size": 24
+  },
+  {
+   "type": "vignette",
+   "start": 0,
+   "end": 4.09,
+   "color": "alert",
+   "strength": 0.7
+  },
+  {
+   "type": "phrase",
+   "start": 0.05,
+   "end": 4.09,
+   "y": 930,
+   "size": 56,
+   "x": 330,
+   "lines": [
+    {
+     "style": "label",
+     "text": "QUEM VOCÊ LIVROU DA POLÍCIA",
+     "at": 0.05
+    },
+    {
+     "text": "FOI O PRIMEIRO",
+     "at": 2.33,
+     "color": "white"
+    },
+    {
+     "text": "A TE ROUBAR.",
+     "at": 3.09,
+     "color": "red",
+     "shake": true
+    }
+   ]
+  },
+  {
+   "type": "nametag",
+   "start": 4.29,
+   "end": 6.46,
+   "name": "TONINHO",
+   "sub": "o motorista do assalto",
+   "x": 330,
+   "y": 975,
+   "color": "alert"
+  },
+  {
+   "type": "balloon",
+   "start": 4.33,
+   "end": 6.46,
+   "text": "Me ajuda a pegar o dinheiro antes do Ademir,",
+   "x": 320,
+   "y": 370,
+   "tail": {
+    "x": 300,
+    "y": 420
+   },
+   "width": 440
+  },
+  {
+   "type": "balloon",
+   "start": 6.46,
+   "end": 8.06,
+   "text": "e a gente divide.",
+   "x": 320,
+   "y": 370,
+   "tail": {
+    "x": 300,
+    "y": 420
+   },
+   "width": 440
+  },
+  {
+   "type": "phrase",
+   "start": 6.41,
+   "end": 8.06,
+   "y": 950,
+   "size": 60,
+   "x": 330,
+   "lines": [
+    {
+     "text": "R$ 5 MILHÕES",
+     "at": 6.46,
+     "color": "green",
+     "size": 60
+    },
+    {
+     "style": "label",
+     "text": "PRA CADA UM?",
+     "at": 7.08
+    }
+   ]
+  },
+  {
+   "type": "tag",
+   "start": 8.11,
+   "end": 14.21,
+   "text": "OPÇÃO 1 · TOPAR",
+   "y": 300,
+   "x": 330,
+   "color": "white",
+   "size": 24
+  },
+  {
+   "type": "tag",
+   "start": 9.52,
+   "end": 14.21,
+   "text": "− TRAI O ADEMIR",
+   "y": 950,
+   "x": 330,
+   "color": "alert",
+   "size": 22
+  },
+  {
+   "type": "tag",
+   "start": 11.25,
+   "end": 14.21,
+   "text": "− CONFIA EM QUEM LEVOU O DINHEIRO",
+   "y": 1000,
+   "x": 330,
+   "color": "alert",
+   "size": 22
+  },
+  {
+   "type": "tag",
+   "start": 12.63,
+   "end": 14.21,
+   "text": "+ ELE SABE ONDE O PARCEIRO ESTÁ",
+   "y": 850,
+   "x": 330,
+   "color": "green",
+   "size": 22
+  },
+  {
+   "type": "tag",
+   "start": 13.13,
+   "end": 14.21,
+   "text": "+ O DINHEIRO ANTES DO ADEMIR",
+   "y": 900,
+   "x": 330,
+   "color": "green",
+   "size": 22
+  },
+  {
+   "type": "tag",
+   "start": 14.26,
+   "end": 20.69,
+   "text": "OPÇÃO 2 · CONTAR",
+   "y": 300,
+   "x": 330,
+   "color": "white",
+   "size": 24
+  },
+  {
+   "type": "tag",
+   "start": 15.8,
+   "end": 20.69,
+   "text": "+ GANHA A CONFIANÇA DO ADEMIR",
+   "y": 850,
+   "x": 330,
+   "color": "green",
+   "size": 22
+  },
+  {
+   "type": "tag",
+   "start": 17.47,
+   "end": 20.69,
+   "text": "− O TONINHO PAGA POR ISSO",
+   "y": 950,
+   "x": 330,
+   "color": "alert",
+   "size": 22
+  },
+  {
+   "type": "tag",
+   "start": 19.11,
+   "end": 20.69,
+   "text": "+ A GRAVAÇÃO PROVA QUE VOCÊ É LEAL",
+   "y": 900,
+   "x": 330,
+   "color": "green",
+   "size": 22
+  },
+  {
+   "type": "tag",
+   "start": 19.61,
+   "end": 20.69,
+   "text": "− FICA COM QUEM TE ROUBOU PRIMEIRO",
+   "y": 1000,
+   "x": 330,
+   "color": "alert",
+   "size": 22
+  },
+  {
+   "type": "phrase",
+   "start": 20.69,
+   "end": 28.3,
+   "y": 585,
+   "size": 69,
+   "x": 330,
+   "lines": [
+    {
+     "text": "TOPAR",
+     "at": 20.93,
+     "color": "white"
+    },
+    {
+     "text": "OU CONTAR?",
+     "at": 21.82,
+     "color": "yellow"
+    }
+   ]
+  },
+  {
+   "type": "buttons",
+   "start": 22.6,
+   "end": 28.3,
+   "y": 800,
+   "x": 310,
+   "prompt": "COMENTA UMA PALAVRA",
+   "prompt_at": 22.65,
+   "items": [
+    {
+     "text": "TOPAR",
+     "at": 23.16,
+     "style": "yellow"
+    },
+    {
+     "text": "CONTAR",
+     "at": 23.48,
+     "style": "white"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "start": 24.13,
+   "end": 28.3,
+   "y": 940,
+   "x": 330,
+   "title": "PARTE 6",
+   "sub": "seu comentário pode sair no jornal"
+  }
+ ],
+ "sfx": [
+  {
+   "sound": "impacto.wav",
+   "at": 3.05,
+   "gain": -4
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 3.73,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 7.7,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 13.85,
+   "gain": -2
+  },
+  {
+   "sound": "whoosh.wav",
+   "at": 20.33,
+   "gain": -2
+  },
+  {
+   "sound": "pop.wav",
+   "at": 4.29,
+   "gain": -10
+  },
+  {
+   "sound": "impacto-suave.wav",
+   "at": 6.42,
+   "gain": -7
+  },
+  {
+   "sound": "pop.wav",
+   "at": 9.52,
+   "gain": -14
+  },
+  {
+   "sound": "pop.wav",
+   "at": 11.25,
+   "gain": -14
+  },
+  {
+   "sound": "pop.wav",
+   "at": 15.8,
+   "gain": -14
+  },
+  {
+   "sound": "pop.wav",
+   "at": 17.47,
+   "gain": -14
+  },
+  {
+   "sound": "pop.wav",
+   "at": 12.63,
+   "gain": -16
+  },
+  {
+   "sound": "pop.wav",
+   "at": 13.13,
+   "gain": -16
+  },
+  {
+   "sound": "pop.wav",
+   "at": 19.11,
+   "gain": -16
+  },
+  {
+   "sound": "pop.wav",
+   "at": 19.61,
+   "gain": -16
+  },
+  {
+   "sound": "pop.wav",
+   "at": 23.16,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 23.48,
+   "gain": -10
+  },
+  {
+   "sound": "pop.wav",
+   "at": 24.13,
+   "gain": -10
+  }
+ ],
+ "captions": [],
+ "effects": [
+  "../../episodio-02/montagem/efeitos"
+ ]
+}

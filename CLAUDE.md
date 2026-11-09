@@ -58,7 +58,7 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 
 - **A tela muda a cada 1 ou 2 s.** As imagens podem ficar mais tempo, desde que entre algo novo por cima a cada fala.
 - **Comentários do público, num formato nosso: o recorte de jornal “A VOZ DO BAIRRO”** (`jornal`).
-  - Entra logo depois do resultado da votação, com 2 ou 3 comentários reais da parte anterior, impressos como cartas de leitor e assinados só “— leitor”.
+  - Entra logo depois do resultado da votação, com 2 ou 3 comentários reais da parte anterior, impressos como cartas de leitor e assinados só “— leitor”. **Da Parte 6 em diante, os dois vão para o final**, logo antes da pergunta (ver “Abertura”).
   - O jornal é onde o rosto do Zinho saiu, então o bairro opinando no jornal combina com a série.
   - Não usar os balões de comentário do @crimecarton, para não ficar igual.
 - **Balões de fala:** a fala de cada personagem aparece num balão perto da cabeça de quem fala (`balloon`), além da voz. O vídeo tem que se entender sem som.
@@ -87,6 +87,10 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
   - A regra de 01/11 punha esse momento nos 2 primeiros segundos. Na Parte 3, 39,5% passaram o vídeo no começo; na Parte 1, foram 26%. Mais de 90% do público não seguia o perfil, e quem via “PARTE 3” e o resumo da mochila achava que tinha perdido o começo. A história nova só começava aos 17 s.
   - Em 06/11, o criador decidiu que a vinheta vem antes desse momento. Na Parte 4, ele entra aos 8 s, e a história nova começa aos 24 s.
 - **Depois vem o resumo, com no máximo 6 a 8 s:** o aviso de que as outras partes estão no perfil, o que aconteceu na parte anterior e o resultado da votação.
+- **Mudança decidida pelo criador em 08/11/2026, vale da Parte 6 em diante:** na Parte 5, o resumo perdeu um terço do público (de 46% aos 12 s para 13% aos 22 s), e só uns 5% chegaram à pergunta. Nenhum voto chegou nos comentários. Por isso:
+  - **sai a frase falada** “Chegou agora? As outras partes estão no perfil.”; fica só uma etiqueta pequena na tela, como “PARTES 1 A 5 NO PERFIL”;
+  - o começo fica com a vinheta, o momento mais forte e, se precisar, uma frase curta do que aconteceu, e a história nova começa logo;
+  - **o resultado da votação anterior e o jornal “A VOZ DO BAIRRO” vão para o final**, logo antes da pergunta nova, com a frase “o seu comentário pode sair no jornal da próxima parte”, para dar um motivo de comentar.
 - **O tamanho total das partes continua o mesmo.** O criador não quer encurtar.
 
 ## Roteiros (o criador recusou dois roteiros da Parte 3 em 30 e 31/10/2026)
