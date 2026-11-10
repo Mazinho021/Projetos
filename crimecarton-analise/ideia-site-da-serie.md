@@ -42,6 +42,13 @@ Por decisão do criador, o site não cita o @crimecarton.
 - **as capas** vão da Parte 1 à 5. A da Parte 5 (`parte-05.jpg`) tem o carimbo azul “Em votação”, e a Parte 6 aparece como “em breve”;
 - **as vagas da Parte 6 fecham na segunda, 09/11/2026, às 12h**, prazo que o criador deu no mesmo dia (“Até amanhã 12h”). A contagem voltou ao topo, e o prazo está em `fecha`, em `site/netlify/lib/serie.mjs` e no `CONFIG` da página. Depois dele, o passe vale para a Parte 7, e a página avisa que as vagas desta parte fecharam.
 
+**Atualização de 10/11/2026, com a Parte 6 no ar** (pedida pelo criador: “atualiza o site com a parte 6”):
+
+- **o topo** mostra o fim da Parte 6 no celular (`votacao-parte-06.jpg`, o quadro de 130,4 s da versão vertical, com FALAR ou CALAR), e a faixa azul diz que a Parte 6 já está no perfil;
+- **a votação** está aberta: a pergunta da Parte 6, com FALAR e CALAR, e embaixo o resultado da Parte 5 (CONTAR, 5 a 2). O quadro “O caso até aqui” ganhou a recompensa (R$ 50.000) e o parceiro, na casa da Dona Célia;
+- **as capas** vão da Parte 1 à 6. A Parte 5 ganhou o carimbo “Contar · 5 a 2”, a Parte 6 (`parte-06.jpg`) tem o carimbo azul “Em votação”, e a Parte 7 aparece como “em breve”;
+- **as vagas são da Parte 7, ainda sem prazo** (`parte: 7` e `fecha: null` em `site/netlify/lib/serie.mjs` e no `CONFIG` da página). A lista da Parte 6 fechou em 09/11/2026, às 12h, sem aliados. Sem prazo, a contagem sai do topo e a página mostra “em breve”. **Falta combinar o prazo da Parte 7 com o criador.**
+
 O Mercado Pago está ligado desde 28/10/2026, direto com o token de produção. No mesmo dia, o criador fez a primeira compra de verdade, um Pix de R$ 9,90 com o @ `teste.golpe`. O pagamento foi aprovado e o @ ficou fora da lista, como devia. Em 29/10/2026, o criador aumentou as vagas da Parte 3 de 10 para 30, no site e no vídeo que chama aliados ([`chamada-aliado/`](chamada-aliado/)). Faltam duas coisas do criador:
 
 - a confirmação do prazo;
