@@ -1,44 +1,68 @@
 # Parte 7 — “A casa da mãe”
 
-**Situação em 10/11/2026:** roteiro escrito no caminho do FALAR, esperando o “ok” do criador. Nada foi pedido ao Codex ainda.
+**Situação em 10/11/2026:** roteiro na versão 3, em [`roteiro-ep07-falar.txt`](roteiro-ep07-falar.txt), esperando o “ok” do criador. Nada foi pedido ao Codex ainda.
 
-**Versão 2, do mesmo dia:** o criador achou que os roteiros precisam ser mais lapidados, porque o público não assiste até o fim, e as visualizações, os seguidores, os comentários e os compartilhamentos estão baixos. O roteiro em [`roteiro-ep07-falar.txt`](roteiro-ep07-falar.txt) foi reescrito com as regras propostas em “Como lapidar os roteiros”, abaixo; a primeira versão ficou em [`roteiro-ep07-falar-v1.txt`](roteiro-ep07-falar-v1.txt).
+## As versões do roteiro
 
-## Como lapidar os roteiros (proposta de 10/11/2026, esperando o criador)
+1. **Versão 1** ([`roteiro-ep07-falar-v1.txt`](roteiro-ep07-falar-v1.txt)): o primeiro roteiro no caminho do FALAR, com a vinheta e a escolha LEVAR ou SOLTAR.
+2. **Versão 2** ([`roteiro-ep07-falar-v2.txt`](roteiro-ep07-falar-v2.txt)): o criador disse que os roteiros precisam ser mais lapidados, porque o público não assiste até o fim e as visualizações, os seguidores, os comentários e os compartilhamentos estão baixos. O roteiro foi reescrito para se entender sozinho, com a escolha ENTREGAR ou SOLTAR.
+3. **Versão 3** ([`roteiro-ep07-falar.txt`](roteiro-ep07-falar.txt)): depois dos insights da Parte 6, o criador decidiu que **os vídeos começam direto no gancho, sem a vinheta**, e que **não quer vídeos curtos**. A versão 3 abre pelo gancho, conta em duas frases o que a vinheta contava e faz a pergunta logo na virada.
 
-**O que os números mostram:** o tempo médio caiu de 38 s (Parte 1) para 31 s (Parte 3) e 19 s (Parte 5); cada parte fica em torno de 1,5 mil visualizações, com 91% a 97% de quem não segue o perfil; vem 1 seguidor por parte, e os compartilhamentos estão perto de zero. A Parte 1, que se entende sozinha, foi a que mais prendeu (45% do vídeo) e a que mais teve comentários (21).
+## O que os números da Parte 6 mostram
 
-**Onde os roteiros erram:**
+**Instagram, gravação de tela do criador de 10/11/2026, às 20:04,** cerca de um dia depois de postar. A Parte 6 foi a primeira sem o resumo falado no começo.
 
-- **Quase todo mundo está vendo a série pela primeira vez,** mas os roteiros são escritos para quem viu tudo: nomes, objetos e lembranças (o Toninho, a foto da divisão, a cadeira, o Magrão). Quem chega não entende e passa.
-- **O gancho da parte chega tarde e é abstrato:** depois dos 8 s da vinheta, frases como “Hoje você descobre quem o seu parceiro é de verdade.”
-- **Muitas frases só levam os personagens de um lugar a outro,** sem pergunta nova: “Ele guarda o alicate no bolso e pega a chave do carro.”
-- **A pergunta final depende de conhecer a história** (“Levar ou soltar?”). Pouca gente sabe responder, e ninguém compartilha.
+| | Parte 5 | Parte 6 |
+|---|---|---|
+| Visualizações | 1.602 | 1.878 |
+| Tempo médio | 19 s | **38 s** |
+| Ainda assistindo aos 20 s | uns 15% | **47%** |
+| Taxa de pulados | 40,7% | 34,3% |
+| Curtidas | 53 | 110 |
+| Comentários | 2 | 14 |
+| Visitas ao perfil | 23 | 49 |
+| Seguidores | 1 | 3 |
+| Compartilhamentos | 0 | 0 |
 
-**As regras propostas:**
+- **Tirar o resumo do começo funcionou:** o tempo médio dobrou.
+- **Público:** 96,1% não seguem o perfil; 91,1% vieram da aba Reels.
+- **A curva de retenção,** lida da gravação com erro de uns 3 pontos, tem dois vazamentos:
+  - **O começo:** 68% aos 3 s e 58% aos 8 s. Um terço sai nos 3 primeiros segundos, ainda na vinheta.
+  - **O final:** o meio segura bem (28% em 1:00, 27% em 1:20 e 22% em 1:35), mas, quando as opções começam, em 1:35, a curva despenca: 15% em 1:46, 11% em 1:55, na votação anterior e no jornal, e **só uns 5% em 2:04, quando a pergunta é feita.** As pausas em silêncio para ler os prós e contras e o jornal (3,8 s, 3,8 s e 4 s) ficam todas nesse trecho.
 
-1. **Cada parte se entende sozinha.** Até os 10 s, quem nunca viu a série sabe quem é o Zinho, o que ele quer e o que está em jogo agora. Papéis no lugar de nomes (“a mãe do seu melhor amigo”, “o dono do ferro-velho”) e, no máximo, três personagens com nome por parte.
-2. **A primeira frase depois da vinheta é o gancho:** uma situação concreta e completa, com perigo, que já se entende sozinha.
+## Como lapidar os roteiros
+
+**Decisões do criador em 10/11/2026** (já no [`CLAUDE.md`](../../CLAUDE.md)):
+
+- **Os vídeos começam direto no gancho, sem a vinheta.**
+- **Sem vídeos curtos:** ele recusou os cortes das partes.
+
+**Onde os roteiros erravam:**
+
+- **Quase todo mundo está vendo a série pela primeira vez,** mas os roteiros eram escritos para quem viu tudo: nomes, objetos e lembranças (o Toninho, a foto da divisão, a cadeira). Quem chega não entende e passa.
+- **O gancho chegava tarde e era abstrato:** depois dos 8 s da vinheta, frases como “Hoje você descobre quem o seu parceiro é de verdade.”
+- **Muitas frases só levavam os personagens de um lugar a outro,** sem pergunta nova: “Ele guarda o alicate no bolso e pega a chave do carro.”
+- **A pergunta final dependia de conhecer a história** e só chegava depois de 30 s de opções, votação anterior e jornal.
+
+**As regras propostas, esperando o “ok” do criador junto com o roteiro:**
+
+1. **Cada parte se entende sozinha.** Até os 30 s, quem nunca viu a série sabe quem é o Zinho, o que ele quer e o que está em jogo. Papéis junto dos nomes (“a mãe do seu melhor amigo”, “o dono do ferro-velho”) e, no máximo, três personagens com nome por parte.
+2. **O vídeo abre pelo gancho:** uma situação concreta e perigosa da própria parte, que deixa uma pergunta aberta até a virada.
 3. **Uma pergunta nova ou uma revelação a cada 5 a 8 s.** Sai toda frase que só move personagens.
 4. **A virada mexe com uma emoção que todo mundo conhece:** traição de amigo, família contra dinheiro. É isso que o público comenta e manda para os amigos.
-5. **A pergunta final é uma pergunta moral que qualquer um responde,** seguida das duas palavras: “Você entregaria o irmão do seu melhor amigo por cinco milhões? Comenta entregar ou soltar.”
-6. **Pedir para seguir:** “E segue o perfil pra saber o que a maioria escolheu.”
+5. **A pergunta final é uma pergunta moral que qualquer um responde,** e vem **logo na virada**, antes das opções: “Você entregaria o irmão do seu melhor amigo por cinco milhões?”
+6. **O final é curto, sem pausas em silêncio:** as duas opções, com um pró e um contra cada, o pedido de comentário com o jornal na tela e o pedido para seguir e compartilhar. Uns 25 s, contra 36 s na Parte 6.
 
-**O que mudou na Parte 7, versão 2:**
+**A regra 6 muda o que foi combinado em 08/11/2026,** quando o resultado da votação anterior e o jornal ficaram logo antes da pergunta. Pela curva da Parte 6, esse trecho antes da pergunta custa três quartos de quem ainda estava assistindo. Na versão 3:
 
-- **O gancho:** “A mãe do seu melhor amigo está escondendo o homem que sumiu com os seus dez milhões. E você acabou de contar isso pro homem mais perigoso do bairro.”
-- **O Ademir é apresentado pelo papel:** “Dono do ferro-velho, anel de ouro no dedo. E agora, seu sócio.” O Toninho e o apelido Magrão saíram.
-- **A foto ganha uma explicação de uma linha:** “a única foto que prova o crime dele”.
-- **A emoção vem antes da virada:** “Você almoçou nessa mesa a infância inteira.” e “Hoje, na mesa, tem dois pratos.”
-- **A virada:** “O homem que te roubou é o irmão do Renato. O seu melhor amigo.” O parceiro só diz “Família primeiro, Zinho. O Renato não te contou?”.
-- **A escolha:** ENTREGAR ou SOLTAR, com a pergunta moral e o pedido para seguir. São 275 palavras, mais a vinheta.
+- **o resultado da votação anterior** vira um carimbo na tela, no começo, quando o Ademir diz “Você me contou onde ele está.”: “PARTE 6 · VOCÊS ESCOLHERAM FALAR”;
+- **o jornal “A VOZ DO BAIRRO”** aparece na tela junto com “O seu comentário pode sair no jornal da próxima parte.”, depois da pergunta.
 
 ## A votação da Parte 6
 
 - **Instagram, gravação de tela do criador de 10/11/2026, às 18:04,** umas 22 h depois de postar: **FALAR 5 × CALAR 2**, em 7 comentários.
   - FALAR: “Falar fala”, “Contar e depois mata o parceiro”, “Contar, e bola um plano pra se livrar do cara depois”, “Melhor falar a verdade ser leal” e “lealdade”. Este último foi contado como FALAR, porque na Parte 6 é o Ademir quem chama o Zinho de leal; sem ele, fica 4 a 2.
   - CALAR: “Ficar calado, o cara tá na maldade dos 50k” e “Eu não contaria, eu iria lá sozinho e fazia acontecer do meu jeito, não dá pra confiar no velhote.”
-  - Foram 7 votos em 22 h, contra nenhum nas primeiras 6 h da Parte 5. O resultado e o jornal no final parecem ter ajudado.
 - **Para o jornal “A VOZ DO BAIRRO”,** comentários reais da Parte 6, assinados só “— leitor”:
   - “Contar, e bola um plano pra se livrar do cara depois.”
   - “Ficar calado, o cara tá na maldade dos 50 mil.” (no original, “50k”)
@@ -46,44 +70,49 @@
 
 ## A ideia
 
-O arco pede, na Parte 7, “A proposta”: alguém oferece um acordo ao Zinho. No caminho do FALAR, isso vira a proposta do Ademir dentro da casa da Dona Célia: levar ou soltar o parceiro.
+O arco pede, na Parte 7, “A proposta”: alguém oferece um acordo ao Zinho. No caminho do FALAR, isso vira a proposta do Ademir dentro da casa da Dona Célia: entregar ou soltar o parceiro.
 
-- **O FALAR cumpre o que prometeu:** o Ademir vai até a casa da Dona Célia com o alicate, e o Zinho chega no dinheiro (as duas bolsas, “metade é sua”). A Dona Célia fica na mira, e a escolha do fim é sobre o filho dela.
-- **O Zinho age, como o público sugeriu** (“Contar, e bola um plano pra se livrar do cara depois”): no carro, ele recupera da lixeira a foto da divisão, a pista plantada na Parte 5. É a arma dele contra o Ademir.
+- **O gancho, que é um trecho do fim da própria parte:** “Cinco milhões em dinheiro vivo estão em cima da mesa. Pra ficar com eles, você só precisa entregar um homem. O problema é quem ele é.” Depois, “Uma hora antes.”
+- **O que a vinheta contava entra em duas frases:** “Ele é o seu parceiro do assalto. Sumiu com dez milhões e te deixou só com o rosto no jornal.”
+- **O FALAR cumpre o que prometeu:** o Ademir vai até a casa da Dona Célia com o alicate, e o Zinho chega no dinheiro.
+- **O Zinho age, como o público sugeriu** (“Contar, e bola um plano pra se livrar do cara depois”): no carro, ele recupera a foto da divisão, a pista plantada na Parte 5. É a arma dele contra o Ademir.
 - **O momento leve:** o Ademir põe um pagode antigo no rádio e canta junto, desafinado.
-- **A virada:** o parceiro do assalto sai do quarto dos fundos como quem está em casa. É o Magrão, o cara que o Renato apresentou ao Zinho para o assalto, e é o irmão mais velho do Renato: “Não machuca ele. É meu filho.” O bolo das quatro da manhã era para ele, e o Renato sabia (“Família primeiro”).
-  - **Por que o Zinho nunca soube:** ele era o “de fora” que o Renato levou para o assalto (Parte 2) e só conhecia o parceiro pelo apelido. O Magrão saiu de casa quando os meninos eram pequenos, e na lembrança do almoço da Parte 3 só aparecem o Zinho, o Renato e a Dona Célia.
-- **A escolha difícil, LEVAR ou SOLTAR:**
-  - **LEVAR:** o Magrão vai para a mesma cadeira do Toninho, e o Zinho fica com cinco milhões; a Dona Célia perde o filho, e o Renato vira inimigo;
-  - **SOLTAR:** o Zinho usa a foto para mandar o Ademir embora sem o Magrão; o homem do anel descobre que o Zinho guardou uma arma contra ele.
-- **Dois lugares só:** o carro do Ademir e a casa da Dona Célia, às 7 h.
-- **Tamanho:** 308 palavras, mais a vinheta. Dá uns 2 min 15 s, como as Partes 5 e 6.
+- **A virada:** o parceiro do assalto sai do quarto dos fundos de chinelo, como quem está em casa. “Não machuca ele. Ele é meu filho.” É o irmão mais velho do Renato.
+  - **Por que o Zinho nunca soube:** o irmão sumiu de casa quando o Zinho e o Renato eram crianças, e o Renato o apresentou para o assalto sem dizer quem era (“O Renato não te contou?”). O bolo das quatro da manhã da Parte 5 era para ele.
+  - **A traição em três frases:** “O seu melhor amigo te levou pro assalto. O irmão dele ficou com o dinheiro. E você ficou com a culpa.”
+  - **O parceiro não ganha nome:** é “o seu parceiro do assalto” e “o irmão do Renato”. Os nomes da parte são três: Ademir, Dona Célia e Renato. O Toninho não aparece.
+- **A escolha difícil, ENTREGAR ou SOLTAR:**
+  - **ENTREGAR:** os cinco milhões são do Zinho, e a Dona Célia perde um filho;
+  - **SOLTAR:** o Zinho ameaça o Ademir com a foto e vira o próximo alvo dele.
+- **Dois lugares só:** o carro do Ademir e a casa da Dona Célia.
+- **Tamanho:** 367 palavras, sem vinheta. Dá uns 2 min 15 s, como as outras partes.
 
-## Abertura e final (regras de 08/11/2026)
+## Abertura e final
 
-1. A vinheta, igual à da Parte 3.
-2. O momento forte: “Hoje você descobre quem o seu parceiro é de verdade.”, sobre a porta aberta da casa da Dona Célia e a sombra de um homem lá dentro.
-3. A história começa logo, com a consequência do FALAR, sem resumo falado; só a etiqueta “PARTES 1 A 6 NO PERFIL”.
-4. No final, depois das duas opções: o resultado da Parte 6 (FALAR, 5 a 2), o jornal com os comentários e “O seu comentário pode sair no jornal da próxima parte”. Depois, a pergunta e os botões.
+1. **O gancho,** desde o primeiro quadro: o dinheiro na mesa, com “R$ 5 MILHÕES NA MESA” na tela. Sem a vinheta.
+2. **“Uma hora antes.”** A etiqueta “PARTE 7” e “PARTES 1 A 6 NO PERFIL” só entram aqui, depois do gancho, para quem chega não achar logo de cara que perdeu o começo.
+3. **O carimbo “PARTE 6 · VOCÊS ESCOLHERAM FALAR”** entra na fala do Ademir, no carro.
+4. **No final:** a pergunta logo depois da virada; as duas opções, cada uma na sua cena, com um pró e um contra na tela enquanto o narrador fala; “Comenta entregar ou soltar”, com os botões e o jornal com os comentários da Parte 6; e “Segue pra ver a parte oito. E manda esse vídeo pra aquele amigo que te entregaria por bem menos.”
 
 ## Painel que muda com a história
 
-1. **Começo:** “RECOMPENSA R$ 50 MIL · SUSPEITA ★★★★★”.
-2. **Na virada:** “O PARCEIRO: IRMÃO DO RENATO”, em vermelho e tremendo.
-3. **No dinheiro:** “A SUA PARTE: R$ 5 MI?”.
+1. **No gancho:** “A SUA PARTE: R$ 5 MI?”.
+2. **No carro:** “A SUA PARTE R$ 0 · SUSPEITA ★★★★★”.
+3. **Na virada:** “O PARCEIRO: IRMÃO DO RENATO”, em vermelho e tremendo.
+4. **No dinheiro:** “A SUA PARTE: R$ 5 MI?”.
 
 ## Votação ilustrada
 
-| Opção | Prós (verde) | Contras (vermelho) |
+| Opção | Pró (verde) | Contra (vermelho) |
 |---|---|---|
-| **1 · ENTREGAR** | Você fica com cinco milhões. O Ademir confia em você de vez. | A Dona Célia perde o filho. O Renato vira seu inimigo. |
-| **2 · SOLTAR** | A Dona Célia fica com o filho. O irmão do Renato fica te devendo. | O Ademir descobre a foto. Você vira o próximo alvo dele. |
+| **1 · ENTREGAR** | R$ 5 milhões no seu bolso. | A Dona Célia perde um filho. |
+| **2 · SOLTAR** | A Dona Célia fica com o filho. | Você vira o próximo alvo do Ademir. |
 
 ## Vozes e custo
 
-- **Narrador:** Charon, uns 90 s, 2 créditos.
+- **Narrador:** Charon, uns 115 s, 2 ou 3 créditos.
 - **Ademir:** Charon no estilo do cobrador, passado por `voz_ademir.py`, 1 crédito.
 - **Dona Célia:** voz nova, de mulher de uns 60 anos, cansada e carinhosa. Sugestão: **Gacrux**, a voz madura do TTS. 1 crédito.
 - **O parceiro, irmão do Renato:** voz nova, de homem de uns 35 anos, debochado. Sugestão: **Umbriel**. 1 crédito.
-- **Vinheta:** a da Parte 1, igualada por `igualar_vozes.py`, sem custo.
-- **Total:** uns 5 créditos de voz, mais os desenhos pelo Codex, com os celulares de frente.
+- **Sem vinheta:** não há mais a voz da Parte 1 nem o `igualar_vozes.py`.
+- **Total:** uns 5 ou 6 créditos de voz, mais os desenhos pelo Codex, com os celulares de frente.

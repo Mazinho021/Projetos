@@ -1,20 +1,22 @@
-VINHETA: O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.
-NARRADOR: A mãe do seu melhor amigo está escondendo o homem que sumiu com os seus dez milhões. E você acabou de contar isso pro homem mais perigoso do bairro.
-NARRADOR: O Ademir. Dono do ferro-velho, anel de ouro no dedo. E agora, seu sócio.
-ADEMIR: Lealdade. Gostei.
-NARRADOR: Ele põe o alicate no bolso e dirige. No rádio, um pagode antigo. Ele canta junto. Desafinado.
-NARRADOR: No banco de trás, você faz uma coisa que ele não vê: tira da lixeira a única foto que prova o crime dele. Se ele te trair, ela vai pro jornal.
-NARRADOR: Sete da manhã. A casa da Dona Célia. Você almoçou nessa mesa a infância inteira.
-NARRADOR: Hoje, na mesa, tem dois pratos. Alguém tomou café aqui.
+NARRADOR: Cinco milhões em dinheiro vivo estão em cima da mesa. Pra ficar com eles, você só precisa entregar um homem. O problema é quem ele é.
+NARRADOR: Uma hora antes. Você está no carro do homem mais perigoso do bairro. O Ademir: dono do ferro-velho, anel de ouro no dedo, um alicate no bolso.
+ADEMIR: Você me contou onde ele está. Lealdade. Gostei.
+NARRADOR: Ele é o seu parceiro do assalto. Sumiu com dez milhões e te deixou só com o rosto no jornal. Roubou você. E roubou o Ademir.
+NARRADOR: No rádio, um pagode antigo. O Ademir canta junto. Desafinado.
+NARRADOR: No banco de trás, você faz uma coisa que ele não vê: recupera a única foto que liga o Ademir ao assalto. Se ele te trair, ela vai pro jornal.
+NARRADOR: O carro para numa casa que você conhece: a da Dona Célia, mãe do Renato, o seu melhor amigo. Você almoçou nessa mesa a infância inteira.
+NARRADOR: Hoje, na mesa, tem dois pratos e um bolo pela metade.
 ADEMIR: Bom dia, Dona Célia. Cadê ele?
 NARRADOR: Ela não responde. Só olha pro quarto dos fundos.
 NARRADOR: De lá sai o seu parceiro do assalto. De chinelo, como quem está em casa.
 DONA CÉLIA: Não machuca ele. Ele é meu filho.
-NARRADOR: O homem que te roubou é o irmão do Renato. O seu melhor amigo.
+NARRADOR: O homem que te roubou é o irmão mais velho do Renato. O filho que sumiu de casa quando vocês eram crianças.
 PARCEIRO: Família primeiro, Zinho. O Renato não te contou?
-NARRADOR: Debaixo da mesa, as duas bolsas. Dinheiro.
-ADEMIR: Metade é sua, sócio. Mas ele vem comigo pro ferro-velho.
-NARRADOR: E você sabe o que acontece com quem vai pro ferro-velho.
-NARRADOR: Se você entregar, fica com cinco milhões, e a Dona Célia perde um filho. Se você soltar, mostra a foto pro Ademir, e vira o próximo alvo dele.
-NARRADOR: Na parte seis, vocês escolheram falar. O seu comentário pode sair no jornal da próxima parte.
-NARRADOR: Você entregaria o irmão do seu melhor amigo por cinco milhões? Comenta entregar ou soltar. E segue o perfil pra saber o que a maioria escolheu.
+NARRADOR: O seu melhor amigo te levou pro assalto. O irmão dele ficou com o dinheiro. E você ficou com a culpa.
+NARRADOR: O Ademir puxa duas bolsas de debaixo da mesa. E vira o dinheiro em cima dela.
+ADEMIR: Metade é sua, sócio. Cinco milhões. Mas ele vem comigo pro ferro-velho.
+NARRADOR: E no ferro-velho tem uma cadeira e uma corda. O alicate, o Ademir já trouxe.
+NARRADOR: Você entregaria o irmão do seu melhor amigo por cinco milhões?
+NARRADOR: Se entregar, o dinheiro é seu, e a Dona Célia perde um filho. Se soltar, você ameaça o Ademir com a foto, e vira o próximo alvo dele.
+NARRADOR: Comenta entregar ou soltar. O seu comentário pode sair no jornal da próxima parte.
+NARRADOR: Segue pra ver a parte oito. E manda esse vídeo pra aquele amigo que te entregaria por bem menos.

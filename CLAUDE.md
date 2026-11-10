@@ -74,24 +74,34 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 - **Um momento leve por parte**, antes da virada, para a tensão pesar mais.
 - **Vozes:** o @crimecarton usa uma voz só, e nós mantemos as vozes próprias dos personagens, como o Renato na Algenib, com os balões por cima.
 
-## Abertura (decisões do criador em 01/11 e 06/11/2026, valem da Parte 4 em diante)
+## Abertura (decisões do criador em 01/11, 06/11, 08/11 e 10/11/2026)
 
-- **Primeiro vem a vinheta, o “nosso início de sempre”, igual à do vídeo da Parte 3 (decisão do criador em 06/11/2026):**
+- **Da Parte 7 em diante, o vídeo começa direto no gancho, sem a vinheta (decisão do criador em 10/11/2026).**
+  - O gancho é o momento mais forte da própria parte: uma situação concreta, com perigo, que quem nunca viu a série entende sozinho. A imagem e a frase ficam na tela desde o primeiro quadro.
+  - O que a vinheta contava (o assalto, o parceiro que sumiu com os dez milhões e o rosto no jornal) entra na narração da própria parte, em uma ou duas frases, logo depois do gancho.
+  - Motivo: na Parte 6, um terço do público saiu nos 3 primeiros segundos, ainda na vinheta, e 96% não seguia o perfil.
+- **Das Partes 4 a 6, a vinheta vinha primeiro,** o “nosso início de sempre”, igual à do vídeo da Parte 3 (decisão do criador em 06/11/2026). Fica registrada aqui para o caso de ela voltar:
   - as três frases fixas na voz da Parte 1: “O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.”;
   - nas duas primeiras, a arte da mochila, com “O ASSALTO / DEU CERTO.” e o contador de R$ 10.000.000;
   - na terceira, a tela preta com “VOCÊ FICOU COM / O ROSTO / NO JORNAL.” e as cinco estrelas de suspeita embaixo, que se acendem em “rosto”;
   - são uns 8 s, com a frase na tela desde o primeiro quadro. Os elementos, os tempos e os efeitos são os de `abertura()` da Parte 3, e só muda o número da etiqueta;
   - a voz é igualada ao narrador da parte por `igualar_vozes.py`;
   - a primeira montagem da Parte 4 saiu sem ela, e o criador sentiu falta. Ele pediu que ela viesse antes de tudo e, depois, mandou o vídeo da Parte 3 para ela ficar igual. O roteiro começa por ela.
-- **Logo depois, o momento mais forte da própria parte**, com imagem e frase na tela, antes de qualquer resumo (decisão de 01/11/2026).
+- **Nas Partes 4 a 6, logo depois vinha o momento mais forte da própria parte**, com imagem e frase na tela, antes de qualquer resumo (decisão de 01/11/2026). Da Parte 7 em diante, ele é o próprio começo do vídeo.
   - A regra de 01/11 punha esse momento nos 2 primeiros segundos. Na Parte 3, 39,5% passaram o vídeo no começo; na Parte 1, foram 26%. Mais de 90% do público não seguia o perfil, e quem via “PARTE 3” e o resumo da mochila achava que tinha perdido o começo. A história nova só começava aos 17 s.
   - Em 06/11, o criador decidiu que a vinheta vem antes desse momento. Na Parte 4, ele entra aos 8 s, e a história nova começa aos 24 s.
-- **Depois vem o resumo, com no máximo 6 a 8 s:** o aviso de que as outras partes estão no perfil, o que aconteceu na parte anterior e o resultado da votação.
+- **Nas Partes 4 e 5, depois vinha o resumo, com no máximo 6 a 8 s:** o aviso de que as outras partes estão no perfil, o que aconteceu na parte anterior e o resultado da votação.
 - **Mudança decidida pelo criador em 08/11/2026, vale da Parte 6 em diante:** na Parte 5, o resumo perdeu um terço do público (de 46% aos 12 s para 13% aos 22 s), e só uns 5% chegaram à pergunta. Nenhum voto chegou nos comentários. Por isso:
   - **sai a frase falada** “Chegou agora? As outras partes estão no perfil.”; fica só uma etiqueta pequena na tela, como “PARTES 1 A 5 NO PERFIL”;
-  - o começo fica com a vinheta, o momento mais forte e, se precisar, uma frase curta do que aconteceu, e a história nova começa logo;
+  - o começo fica com o momento mais forte e, se precisar, uma frase curta do que aconteceu, e a história nova começa logo (na Parte 6, a vinheta ainda vinha antes);
   - **o resultado da votação anterior e o jornal “A VOZ DO BAIRRO” vão para o final**, logo antes da pergunta nova, com a frase “o seu comentário pode sair no jornal da próxima parte”, para dar um motivo de comentar.
 - **O tamanho total das partes continua o mesmo.** O criador não quer encurtar.
+- **Funcionou na Parte 6:** sem o resumo falado no começo, o tempo médio assistido dobrou, de 19 s para 38 s, e os comentários foram de 2 para 14.
+
+## Sem vídeos curtos (decisão do criador em 10/11/2026)
+
+- **Não propor nem fazer cortes ou vídeos curtos das partes.** O Claude sugeriu, e o criador recusou.
+- O reel curto da votação da Parte 5 (`episodio-05/votacao-parte-05.mp4`) foi um pedido dele, uma vez só.
 
 ## Roteiros (o criador recusou dois roteiros da Parte 3 em 30 e 31/10/2026)
 
@@ -122,7 +132,7 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
   - O Codex gera as falas dele com outra voz do TTS, sem transformação.
   - **A voz do Renato é a Algenib**, escolhida pelo criador em 31/10/2026 entre três testes (Orus, Achird e Algenib). É a mais grave das três, um pouco rouca. Vale para todas as próximas partes.
   - O pedido de voz do Renato ao Codex usa `"voice": "Algenib"` e o estilo de [`episodio-03/pedido-narracao-renato-ep03-algenib.json`](crimecarton-analise/episodio-03/pedido-narracao-renato-ep03-algenib.json).
-- **A vinheta** é igualada ao narrador de cada parte por `igualar_vozes.py`.
+- **A vinheta** era igualada ao narrador de cada parte por `igualar_vozes.py`. Da Parte 7 em diante, os vídeos não têm vinheta.
 - **Conferir cada gravação com o faster-whisper `medium` sem dar o texto como dica.** O TTS troca palavras: na Parte 3, “depois eu mudei de lado” saiu como “mandei de lado”. Se uma palavra sair errada, cortar a frase ou gerar a fala de novo.
 - **Conferir também a faixa montada,** com o vídeo pronto: na Parte 5, o alinhamento pôs o “Cheguei.” do Renato numa respiração, e a montagem cortava a palavra. A conferência do vídeo pegou o erro antes da entrega.
 
