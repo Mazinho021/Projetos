@@ -58,7 +58,7 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 
 - **A tela muda a cada 1 ou 2 s.** As imagens podem ficar mais tempo, desde que entre algo novo por cima a cada fala.
 - **Comentários do público, num formato nosso: o recorte de jornal “A VOZ DO BAIRRO”** (`jornal`).
-  - Entra logo depois do resultado da votação, com 2 ou 3 comentários reais da parte anterior, impressos como cartas de leitor e assinados só “— leitor”. **Da Parte 6 em diante, os dois vão para o final**, logo antes da pergunta (ver “Abertura”).
+  - Entra logo depois do resultado da votação, com 2 ou 3 comentários reais da parte anterior, impressos como cartas de leitor e assinados só “— leitor”. Na Parte 6, os dois foram para o final, logo antes da pergunta. **Da Parte 7 em diante,** o resultado vira um carimbo no começo e o jornal aparece junto com o pedido de comentário (ver “Final”).
   - O jornal é onde o rosto do Zinho saiu, então o bairro opinando no jornal combina com a série.
   - Não usar os balões de comentário do @crimecarton, para não ficar igual.
 - **Balões de fala:** a fala de cada personagem aparece num balão perto da cabeça de quem fala (`balloon`), além da voz. O vídeo tem que se entender sem som.
@@ -70,7 +70,7 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 - **Etiqueta de nome** na primeira aparição de cada personagem (`nametag`), com o nome e quem é.
 - **Polaroide de lembrança** de partes anteriores (`polaroid`), como “PARTE 2 · a foto da divisão”.
 - **Carimbos e onomatopeias** (`stamp`, `pop`) nos momentos fortes, como “TOC TOC”.
-- **Votação ilustrada:** cada opção com a sua cena, o nome em etiqueta (“OPÇÃO 1 · TROCAR”) e prós e contras em verde e vermelho. Depois vêm os botões e a caixa da próxima parte.
+- **Votação ilustrada:** cada opção com a sua cena, o nome em etiqueta (“OPÇÃO 1 · TROCAR”) e prós e contras em verde e vermelho. Depois vêm os botões e a caixa da próxima parte. Da Parte 7 em diante, a pergunta vem antes das opções, e cada opção tem um pró e um contra, sem pausa em silêncio (ver “Final”).
 - **Um momento leve por parte**, antes da virada, para a tensão pesar mais.
 - **Vozes:** o @crimecarton usa uma voz só, e nós mantemos as vozes próprias dos personagens, como o Renato na Algenib, com os balões por cima.
 
@@ -79,6 +79,7 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 - **Da Parte 7 em diante, o vídeo começa direto no gancho, sem a vinheta (decisão do criador em 10/11/2026).**
   - O gancho é o momento mais forte da própria parte: uma situação concreta, com perigo, que quem nunca viu a série entende sozinho. A imagem e a frase ficam na tela desde o primeiro quadro.
   - O que a vinheta contava (o assalto, o parceiro que sumiu com os dez milhões e o rosto no jornal) entra na narração da própria parte, em uma ou duas frases, logo depois do gancho.
+  - A etiqueta “PARTE N” e o aviso “PARTES 1 A N−1 NO PERFIL” só entram depois do gancho, para quem chega não achar logo de cara que perdeu o começo.
   - Motivo: na Parte 6, um terço do público saiu nos 3 primeiros segundos, ainda na vinheta, e 96% não seguia o perfil.
 - **Das Partes 4 a 6, a vinheta vinha primeiro,** o “nosso início de sempre”, igual à do vídeo da Parte 3 (decisão do criador em 06/11/2026). Fica registrada aqui para o caso de ela voltar:
   - as três frases fixas na voz da Parte 1: “O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.”;
@@ -94,9 +95,20 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 - **Mudança decidida pelo criador em 08/11/2026, vale da Parte 6 em diante:** na Parte 5, o resumo perdeu um terço do público (de 46% aos 12 s para 13% aos 22 s), e só uns 5% chegaram à pergunta. Nenhum voto chegou nos comentários. Por isso:
   - **sai a frase falada** “Chegou agora? As outras partes estão no perfil.”; fica só uma etiqueta pequena na tela, como “PARTES 1 A 5 NO PERFIL”;
   - o começo fica com o momento mais forte e, se precisar, uma frase curta do que aconteceu, e a história nova começa logo (na Parte 6, a vinheta ainda vinha antes);
-  - **o resultado da votação anterior e o jornal “A VOZ DO BAIRRO” vão para o final**, logo antes da pergunta nova, com a frase “o seu comentário pode sair no jornal da próxima parte”, para dar um motivo de comentar.
+  - **o resultado da votação anterior e o jornal “A VOZ DO BAIRRO” vão para o final**, logo antes da pergunta nova, com a frase “o seu comentário pode sair no jornal da próxima parte”, para dar um motivo de comentar. **Isso valeu só na Parte 6:** da Parte 7 em diante, vale a seção “Final”.
 - **O tamanho total das partes continua o mesmo.** O criador não quer encurtar.
 - **Funcionou na Parte 6:** sem o resumo falado no começo, o tempo médio assistido dobrou, de 19 s para 38 s, e os comentários foram de 2 para 14.
+
+## Final (aprovado pelo criador em 10/11/2026, vale da Parte 7 em diante)
+
+Na Parte 6, 22% do público ainda assistia quando as opções começaram, e só uns 5% quando a pergunta foi feita, 30 s depois. Por isso:
+
+- **A pergunta vem logo na virada,** antes das opções.
+- **As duas opções são curtas:** cada uma na sua cena, com um pró e um contra na tela enquanto o narrador fala, sem pausas em silêncio para ler.
+- **O resultado da votação anterior vira um carimbo no começo do vídeo,** quando a história mostra a consequência dele, como “PARTE 6 · VOCÊS ESCOLHERAM FALAR”.
+- **O jornal “A VOZ DO BAIRRO” aparece na tela junto com o pedido de comentário:** “Comenta X ou Y. O seu comentário pode sair no jornal da próxima parte.”
+- **A última frase pede para seguir e compartilhar,** como “Segue pra ver a parte oito. E manda esse vídeo pra aquele amigo que te entregaria por bem menos.” Os compartilhamentos estavam em zero.
+- **O final todo tem uns 25 s,** contra 36 s na Parte 6.
 
 ## Sem vídeos curtos (decisão do criador em 10/11/2026)
 
@@ -109,6 +121,13 @@ O criador mandou a Parte 17 do @crimecarton para ver como ele monta as história
 - Evitar episódio de “correria”, que passa de lugar em lugar sem a história andar.
 - O Zinho precisa agir e decidir; ele não pode só seguir os outros.
 - Usar as pistas já plantadas (o anel de ouro, o Ferro-Velho São Jorge, a mãe do Renato, a “Cobrança”) para a história avançar.
+- **Roteiros lapidados (aprovado pelo criador em 10/11/2026, vale da Parte 7 em diante).** O criador achou que os roteiros precisavam ser mais lapidados: o público não assistia até o fim, e as visualizações, os seguidores, os comentários e os compartilhamentos estavam baixos. Quase todo o público (96%) está vendo a série pela primeira vez. Por isso:
+  - **cada parte se entende sozinha:** até os 30 s, quem nunca viu a série sabe quem é o Zinho, o que ele quer e o que está em jogo. Papéis junto dos nomes (“a mãe do seu melhor amigo”, “o dono do ferro-velho”) e, no máximo, três personagens com nome por parte;
+  - **o vídeo abre pelo gancho,** que deixa uma pergunta aberta até a virada (ver “Abertura”);
+  - **uma pergunta nova ou uma revelação a cada 5 a 8 s.** Sai toda frase que só leva os personagens de um lugar a outro;
+  - **a virada mexe com uma emoção que todo mundo conhece,** como traição de amigo ou família contra dinheiro;
+  - **a pergunta final é uma pergunta moral que qualquer um responde,** como “Você entregaria o irmão do seu melhor amigo por cinco milhões?” (ver “Final”);
+  - o modelo é o roteiro da Parte 7, em `crimecarton-analise/episodio-07/roteiro-ep07-falar.txt`.
 - **Mostrar o roteiro ao criador e esperar o “ok” antes de pedir as gerações pagas ao Codex.** Imagens e vozes custam créditos, e um roteiro recusado depois de gerado é crédito perdido.
 
 ## Site da série (lembrete do criador em 07/11/2026)

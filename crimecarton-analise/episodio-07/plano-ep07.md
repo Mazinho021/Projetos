@@ -1,6 +1,6 @@
 # Parte 7 — “A casa da mãe”
 
-**Situação em 10/11/2026:** roteiro na versão 3, em [`roteiro-ep07-falar.txt`](roteiro-ep07-falar.txt), esperando o “ok” do criador. Nada foi pedido ao Codex ainda.
+**Situação em 10/11/2026:** o criador aprovou o roteiro na versão 3, em [`roteiro-ep07-falar.txt`](roteiro-ep07-falar.txt), e a mudança do final (“Ok”). Falta preparar o pedido ao Codex.
 
 ## As versões do roteiro
 
@@ -44,7 +44,7 @@
 - **Muitas frases só levavam os personagens de um lugar a outro,** sem pergunta nova: “Ele guarda o alicate no bolso e pega a chave do carro.”
 - **A pergunta final dependia de conhecer a história** e só chegava depois de 30 s de opções, votação anterior e jornal.
 
-**As regras propostas, esperando o “ok” do criador junto com o roteiro:**
+**As regras, aprovadas pelo criador em 10/11/2026 junto com o roteiro** (já no [`CLAUDE.md`](../../CLAUDE.md), nas seções “Roteiros” e “Final”):
 
 1. **Cada parte se entende sozinha.** Até os 30 s, quem nunca viu a série sabe quem é o Zinho, o que ele quer e o que está em jogo. Papéis junto dos nomes (“a mãe do seu melhor amigo”, “o dono do ferro-velho”) e, no máximo, três personagens com nome por parte.
 2. **O vídeo abre pelo gancho:** uma situação concreta e perigosa da própria parte, que deixa uma pergunta aberta até a virada.
@@ -53,7 +53,7 @@
 5. **A pergunta final é uma pergunta moral que qualquer um responde,** e vem **logo na virada**, antes das opções: “Você entregaria o irmão do seu melhor amigo por cinco milhões?”
 6. **O final é curto, sem pausas em silêncio:** as duas opções, com um pró e um contra cada, o pedido de comentário com o jornal na tela e o pedido para seguir e compartilhar. Uns 25 s, contra 36 s na Parte 6.
 
-**A regra 6 muda o que foi combinado em 08/11/2026,** quando o resultado da votação anterior e o jornal ficaram logo antes da pergunta. Pela curva da Parte 6, esse trecho antes da pergunta custa três quartos de quem ainda estava assistindo. Na versão 3:
+**A regra 6 muda o que foi combinado em 08/11/2026,** quando o resultado da votação anterior e o jornal ficaram logo antes da pergunta, e o criador aprovou a mudança. Pela curva da Parte 6, esse trecho antes da pergunta custa três quartos de quem ainda estava assistindo. Na versão 3:
 
 - **o resultado da votação anterior** vira um carimbo na tela, no começo, quando o Ademir diz “Você me contou onde ele está.”: “PARTE 6 · VOCÊS ESCOLHERAM FALAR”;
 - **o jornal “A VOZ DO BAIRRO”** aparece na tela junto com “O seu comentário pode sair no jornal da próxima parte.”, depois da pergunta.
