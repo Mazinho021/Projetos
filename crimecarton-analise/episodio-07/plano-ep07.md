@@ -2,6 +2,37 @@
 
 **Situação em 10/11/2026:** roteiro escrito no caminho do FALAR, esperando o “ok” do criador. Nada foi pedido ao Codex ainda.
 
+**Versão 2, do mesmo dia:** o criador achou que os roteiros precisam ser mais lapidados, porque o público não assiste até o fim, e as visualizações, os seguidores, os comentários e os compartilhamentos estão baixos. O roteiro em [`roteiro-ep07-falar.txt`](roteiro-ep07-falar.txt) foi reescrito com as regras propostas em “Como lapidar os roteiros”, abaixo; a primeira versão ficou em [`roteiro-ep07-falar-v1.txt`](roteiro-ep07-falar-v1.txt).
+
+## Como lapidar os roteiros (proposta de 10/11/2026, esperando o criador)
+
+**O que os números mostram:** o tempo médio caiu de 38 s (Parte 1) para 31 s (Parte 3) e 19 s (Parte 5); cada parte fica em torno de 1,5 mil visualizações, com 91% a 97% de quem não segue o perfil; vem 1 seguidor por parte, e os compartilhamentos estão perto de zero. A Parte 1, que se entende sozinha, foi a que mais prendeu (45% do vídeo) e a que mais teve comentários (21).
+
+**Onde os roteiros erram:**
+
+- **Quase todo mundo está vendo a série pela primeira vez,** mas os roteiros são escritos para quem viu tudo: nomes, objetos e lembranças (o Toninho, a foto da divisão, a cadeira, o Magrão). Quem chega não entende e passa.
+- **O gancho da parte chega tarde e é abstrato:** depois dos 8 s da vinheta, frases como “Hoje você descobre quem o seu parceiro é de verdade.”
+- **Muitas frases só levam os personagens de um lugar a outro,** sem pergunta nova: “Ele guarda o alicate no bolso e pega a chave do carro.”
+- **A pergunta final depende de conhecer a história** (“Levar ou soltar?”). Pouca gente sabe responder, e ninguém compartilha.
+
+**As regras propostas:**
+
+1. **Cada parte se entende sozinha.** Até os 10 s, quem nunca viu a série sabe quem é o Zinho, o que ele quer e o que está em jogo agora. Papéis no lugar de nomes (“a mãe do seu melhor amigo”, “o dono do ferro-velho”) e, no máximo, três personagens com nome por parte.
+2. **A primeira frase depois da vinheta é o gancho:** uma situação concreta e completa, com perigo, que já se entende sozinha.
+3. **Uma pergunta nova ou uma revelação a cada 5 a 8 s.** Sai toda frase que só move personagens.
+4. **A virada mexe com uma emoção que todo mundo conhece:** traição de amigo, família contra dinheiro. É isso que o público comenta e manda para os amigos.
+5. **A pergunta final é uma pergunta moral que qualquer um responde,** seguida das duas palavras: “Você entregaria o irmão do seu melhor amigo por cinco milhões? Comenta entregar ou soltar.”
+6. **Pedir para seguir:** “E segue o perfil pra saber o que a maioria escolheu.”
+
+**O que mudou na Parte 7, versão 2:**
+
+- **O gancho:** “A mãe do seu melhor amigo está escondendo o homem que sumiu com os seus dez milhões. E você acabou de contar isso pro homem mais perigoso do bairro.”
+- **O Ademir é apresentado pelo papel:** “Dono do ferro-velho, anel de ouro no dedo. E agora, seu sócio.” O Toninho e o apelido Magrão saíram.
+- **A foto ganha uma explicação de uma linha:** “a única foto que prova o crime dele”.
+- **A emoção vem antes da virada:** “Você almoçou nessa mesa a infância inteira.” e “Hoje, na mesa, tem dois pratos.”
+- **A virada:** “O homem que te roubou é o irmão do Renato. O seu melhor amigo.” O parceiro só diz “Família primeiro, Zinho. O Renato não te contou?”.
+- **A escolha:** ENTREGAR ou SOLTAR, com a pergunta moral e o pedido para seguir. São 275 palavras, mais a vinheta.
+
 ## A votação da Parte 6
 
 - **Instagram, gravação de tela do criador de 10/11/2026, às 18:04,** umas 22 h depois de postar: **FALAR 5 × CALAR 2**, em 7 comentários.
@@ -45,14 +76,14 @@ O arco pede, na Parte 7, “A proposta”: alguém oferece um acordo ao Zinho. N
 
 | Opção | Prós (verde) | Contras (vermelho) |
 |---|---|---|
-| **1 · LEVAR** | Você fica com cinco milhões. O Ademir confia em você de vez. | A Dona Célia perde o filho. O Renato vira seu inimigo. |
-| **2 · SOLTAR** | A Dona Célia fica com o filho. O Magrão fica te devendo. | O Ademir descobre a foto. Você vira alvo do homem do anel. |
+| **1 · ENTREGAR** | Você fica com cinco milhões. O Ademir confia em você de vez. | A Dona Célia perde o filho. O Renato vira seu inimigo. |
+| **2 · SOLTAR** | A Dona Célia fica com o filho. O irmão do Renato fica te devendo. | O Ademir descobre a foto. Você vira o próximo alvo dele. |
 
 ## Vozes e custo
 
 - **Narrador:** Charon, uns 90 s, 2 créditos.
 - **Ademir:** Charon no estilo do cobrador, passado por `voz_ademir.py`, 1 crédito.
 - **Dona Célia:** voz nova, de mulher de uns 60 anos, cansada e carinhosa. Sugestão: **Gacrux**, a voz madura do TTS. 1 crédito.
-- **Magrão:** voz nova, de homem de uns 35 anos, debochado. Sugestão: **Umbriel**. 1 crédito.
+- **O parceiro, irmão do Renato:** voz nova, de homem de uns 35 anos, debochado. Sugestão: **Umbriel**. 1 crédito.
 - **Vinheta:** a da Parte 1, igualada por `igualar_vozes.py`, sem custo.
 - **Total:** uns 5 créditos de voz, mais os desenhos pelo Codex, com os celulares de frente.

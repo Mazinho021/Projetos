@@ -1,21 +1,20 @@
 VINHETA: O assalto deu certo. Seu parceiro ficou com dez milhões. Você ficou com o rosto no jornal.
-NARRADOR: Hoje você descobre quem o seu parceiro é de verdade.
-NARRADOR: Você fala. O seu parceiro está na casa da Dona Célia.
+NARRADOR: A mãe do seu melhor amigo está escondendo o homem que sumiu com os seus dez milhões. E você acabou de contar isso pro homem mais perigoso do bairro.
+NARRADOR: O Ademir. Dono do ferro-velho, anel de ouro no dedo. E agora, seu sócio.
 ADEMIR: Lealdade. Gostei.
-NARRADOR: Ele guarda o alicate no bolso e pega a chave do carro. O Toninho fica na cadeira.
-NARRADOR: No caminho, o Ademir liga o rádio num pagode antigo. E canta junto. Desafinado.
-NARRADOR: No banco de trás, você abre a lixeira do celular. A foto da divisão ainda está lá. Você recupera a foto. Se o Ademir te trair, ela vai pro jornal.
-NARRADOR: Sete da manhã. A porta da Dona Célia está aberta. Na mesa, dois pratos e o bolo de fubá pela metade.
+NARRADOR: Ele põe o alicate no bolso e dirige. No rádio, um pagode antigo. Ele canta junto. Desafinado.
+NARRADOR: No banco de trás, você faz uma coisa que ele não vê: tira da lixeira a única foto que prova o crime dele. Se ele te trair, ela vai pro jornal.
+NARRADOR: Sete da manhã. A casa da Dona Célia. Você almoçou nessa mesa a infância inteira.
+NARRADOR: Hoje, na mesa, tem dois pratos. Alguém tomou café aqui.
 ADEMIR: Bom dia, Dona Célia. Cadê ele?
 NARRADOR: Ela não responde. Só olha pro quarto dos fundos.
-NARRADOR: De lá sai o seu parceiro, de toalha no ombro, como quem está em casa. O Magrão, o cara que o Renato te apresentou pro assalto.
-DONA CÉLIA: Não machuca ele. É meu filho.
-NARRADOR: O Magrão é o irmão mais velho do Renato. E você nunca soube.
-MAGRÃO: O Renato não te contou, Zinho? Família primeiro.
-NARRADOR: Debaixo da mesa, as duas bolsas. O Ademir abre uma. Dinheiro.
-ADEMIR: Agora sim. Metade é sua, sócio.
-NARRADOR: Aí ele tira o alicate do bolso.
-ADEMIR: Ele roubou nós dois. Você decide: ele vem comigo pro São Jorge, ou fica aqui com a mãe.
-NARRADOR: Se você levar, ele vai pra mesma cadeira do Toninho, e você fica com cinco milhões. Mas a Dona Célia perde o filho, e o Renato vira seu inimigo. Se você soltar, usa a foto: ou o Ademir vai embora sem ele, ou ela vai pro jornal. Mas aí o homem do anel descobre que você guardou uma arma contra ele.
+NARRADOR: De lá sai o seu parceiro do assalto. De chinelo, como quem está em casa.
+DONA CÉLIA: Não machuca ele. Ele é meu filho.
+NARRADOR: O homem que te roubou é o irmão do Renato. O seu melhor amigo.
+PARCEIRO: Família primeiro, Zinho. O Renato não te contou?
+NARRADOR: Debaixo da mesa, as duas bolsas. Dinheiro.
+ADEMIR: Metade é sua, sócio. Mas ele vem comigo pro ferro-velho.
+NARRADOR: E você sabe o que acontece com quem vai pro ferro-velho.
+NARRADOR: Se você entregar, fica com cinco milhões, e a Dona Célia perde um filho. Se você soltar, mostra a foto pro Ademir, e vira o próximo alvo dele.
 NARRADOR: Na parte seis, vocês escolheram falar. O seu comentário pode sair no jornal da próxima parte.
-NARRADOR: Levar ou soltar? Comenta uma palavra só. O que a maioria escolher vira a parte oito.
+NARRADOR: Você entregaria o irmão do seu melhor amigo por cinco milhões? Comenta entregar ou soltar. E segue o perfil pra saber o que a maioria escolheu.
