@@ -90,7 +90,9 @@ Por decisão do criador, em 27/10/2026, a temporada passa de 5 para **pelo menos
    - A votação da Parte 5 deu **CONTAR**, por 5 a 2 no Instagram, em 09/11/2026, somando a Parte 5 e o reel curto da votação.
 6. **A recompensa:** sai uma recompensa por informações sobre Zinho, os vizinhos começam a desconfiar e o amigo some por algumas horas. A votação decide se Zinho confia nele.
    - No caminho do CONTAR (roteiro aprovado pelo criador em 09/11/2026, em [`episodio-06/`](episodio-06/plano-ep06.md)): o Zinho corta da gravação o pedaço em que o Toninho conta quem encheu a mochila e mostra o resto ao Ademir, que o chama de sócio de verdade. O Toninho acaba amarrado na mesma cadeira do Renato. A polícia oferece R$ 50 mil pelo Zinho. Sozinho com ele, o Toninho conta que o parceiro está escondido na casa da Dona Célia: o bolo das quatro da manhã não era para o Zinho. O Renato não atende. A votação é FALAR ou CALAR.
+   - A votação da Parte 6 deu **FALAR**, por 5 a 2 no Instagram, em 10/11/2026.
 7. **A proposta:** uma ligação oferece um acordo: Zinho assume a culpa e recebe uma parte. A votação decide se ele aceita ou recusa.
+   - No caminho do FALAR (roteiro esperando o “ok” do criador, em [`episodio-07/`](episodio-07/plano-ep07.md)), a proposta é do Ademir, na casa da Dona Célia: o parceiro do assalto é o Magrão, irmão mais velho do Renato, e o Ademir quer levá-lo para a cadeira do São Jorge. O Zinho, que recuperou a foto da divisão como arma, escolhe: LEVAR (cinco milhões, e a Dona Célia perde o filho) ou SOLTAR (usar a foto contra o Ademir).
 8. **A prova:** Zinho junta o que prova a armação: o áudio, a foto e o depoimento do motorista.
 9. **O traidor:** a verdade sobre o amigo vem à tona. Conforme as votações, ele vira aliado ou trai de novo.
 10. **O parceiro:** Zinho chega ao parceiro que ficou com os dez milhões.
