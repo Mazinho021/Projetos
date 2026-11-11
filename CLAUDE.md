@@ -174,6 +174,7 @@ Na Parte 6, 22% do público ainda assistia quando as opções começaram, e só 
 ## Codex
 
 - Pedidos em `.md` com os parâmetros em `.json`. Mostrar o custo antes de executar.
+- **O campo `style` dos pedidos de voz aceita no máximo 500 caracteres.** Na Parte 7, os estilos do narrador e do Ademir passavam disso, e o Codex os encurtou sozinho. Escrever o estilo já curto, com o mais importante primeiro.
 - **O commit e o push têm que ser feitos na mesma conversa do Codex que gerou os arquivos.** Uma conversa nova não enxerga os arquivos da outra, como aconteceu em 30/10/2026.
 - **Pedir commit e push logo depois de cada cena pronta.**
   - Em 02/11/2026, a conversa da Parte 4 travou no limite diário antes de fazer push, e nada foi entregue.
