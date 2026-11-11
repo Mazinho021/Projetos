@@ -1,5 +1,5 @@
 {
-  "jobId": "mcp_media_9e152324869ea6a001db6275d4312605b84af1ad63250b4a53fd47287e571b26",
+  "jobId": "mcp_media_87f7e3051c907f3c342a6a24d18f311c9026fea3b8f5305d7d5e644f36107aa0",
   "kind": "speech",
   "model": "gemini-3.8-flash-tts",
   "status": "succeeded",
@@ -9,19 +9,83 @@
   "priceVersion": "prd-2026-10-12-list-x75",
   "outputs": [
     {
-      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_9e152324869ea6a001db6275d4312605b84af1ad63250b4a53fd47287e571b26/0.wav?hdnts=FullPath~Expires=1794445501~Signature=LnHJgx3g4NzGTQO7GOWndhQGdGdNlnThvQXE0Ou0dXX2Naq2aHp05W7Vv4PhFwebTAoNtlm0UJwW82nwj1jqAw",
-      "expiresAt": "2026-11-12T01:05:01.724Z",
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_87f7e3051c907f3c342a6a24d18f311c9026fea3b8f5305d7d5e644f36107aa0/0.wav?hdnts=FullPath~Expires=1794501382~Signature=jUhI-c4ucjdJ_lLo_cbZklxY7AqjAv6-ShVd5wXviIPBtudR1wDp_VHTd69X313X0s9LX7_LJRQJO5PDWqXeAg",
+      "expiresAt": "2026-11-12T16:36:22.936Z",
       "mimeType": "audio/wav",
-      "durationSeconds": 15.4
+      "durationSeconds": 15.56
     }
   ],
-  "request": {
-    "idempotencyKey": "zinho-ep07-ademir-charon-v1-20261111-style500",
-    "voice": "Charon",
-    "style": "Português brasileiro. Ademir, 60 anos, dono do ferro-velho, voz Charon das Partes 3–6. Devagar, baixo, calmo demais, frio e seguro, sem pressa ou gritos. Primeira fala satisfeita, quase simpática; pausa antes de Gostei. Bom dia gentil; Cadê ele baixo e frio. Metade é sua e Cinco milhões generosos, sorriso na voz. Mas ele vem comigo pro ferro-velho: calmo, definitivo. Natural, sem caricatura de vilão. Pausa entre parágrafos.",
-    "text": "Você me contou onde ele está. Lealdade. Gostei.\n\nBom dia, Dona Célia. Cadê ele?\n\nMetade é sua, sócio. Cinco milhões. Mas ele vem comigo pro ferro-velho.",
-    "maxCredits": 1
+  "previous_job": {
+    "jobId": "mcp_media_9e152324869ea6a001db6275d4312605b84af1ad63250b4a53fd47287e571b26",
+    "kind": "speech",
+    "model": "gemini-3.8-flash-tts",
+    "status": "succeeded",
+    "estimatedCredits": 1,
+    "reservedCredits": 0,
+    "chargedCredits": 1,
+    "priceVersion": "prd-2026-10-12-list-x75",
+    "outputs": [
+      {
+        "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_9e152324869ea6a001db6275d4312605b84af1ad63250b4a53fd47287e571b26/0.wav?hdnts=FullPath~Expires=1794445501~Signature=LnHJgx3g4NzGTQO7GOWndhQGdGdNlnThvQXE0Ou0dXX2Naq2aHp05W7Vv4PhFwebTAoNtlm0UJwW82nwj1jqAw",
+        "expiresAt": "2026-11-12T01:05:01.724Z",
+        "mimeType": "audio/wav",
+        "durationSeconds": 15.4
+      }
+    ],
+    "request": {
+      "idempotencyKey": "zinho-ep07-ademir-charon-v1-20261111-style500",
+      "voice": "Charon",
+      "style": "Português brasileiro. Ademir, 60 anos, dono do ferro-velho, voz Charon das Partes 3–6. Devagar, baixo, calmo demais, frio e seguro, sem pressa ou gritos. Primeira fala satisfeita, quase simpática; pausa antes de Gostei. Bom dia gentil; Cadê ele baixo e frio. Metade é sua e Cinco milhões generosos, sorriso na voz. Mas ele vem comigo pro ferro-velho: calmo, definitivo. Natural, sem caricatura de vilão. Pausa entre parágrafos.",
+      "text": "Você me contou onde ele está. Lealdade. Gostei.\n\nBom dia, Dona Célia. Cadê ele?\n\nMetade é sua, sócio. Cinco milhões. Mas ele vem comigo pro ferro-velho.",
+      "maxCredits": 1
+    },
+    "verification": {
+      "engine": "faster-whisper",
+      "model": "medium",
+      "initial_prompt": null,
+      "language": "pt",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": " Você me contou onde ele está."
+        },
+        {
+          "start": 2,
+          "end": 5,
+          "text": " Lealdade. Gostei."
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "text": " Bom dia, Dona Célia."
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "text": " Cadê ele?"
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "text": " Metade é sua, sócio."
+        },
+        {
+          "start": 11,
+          "end": 13,
+          "text": " Cinco milhões."
+        },
+        {
+          "start": 13,
+          "end": 15,
+          "text": " Mas ele vem comigo para o Ferro Velho."
+        }
+      ],
+      "text": "Você me contou onde ele está. Lealdade. Gostei. Bom dia, Dona Célia. Cadê ele? Metade é sua, sócio. Cinco milhões. Mas ele vem comigo para o Ferro Velho.",
+      "review_note": "ASR compatível com o texto, com normalização de pontuação e contrações."
+    }
   },
+  "sha256": "e5e27d94a29a14521da584f8d270657e9f6d4b50c2d37c3242c5403ec7efbecb",
   "verification": {
     "engine": "faster-whisper",
     "model": "medium",
@@ -29,42 +93,35 @@
     "language": "pt",
     "segments": [
       {
-        "start": 0,
-        "end": 2,
-        "text": " Você me contou onde ele está."
+        "start": 0.0,
+        "end": 5.28,
+        "text": " Você me contou onde ele está. Lealdade. Gostei."
       },
       {
-        "start": 2,
-        "end": 5,
-        "text": " Lealdade. Gostei."
+        "start": 5.28,
+        "end": 8.68,
+        "text": " Bom dia, Dona Celia. Cadê ele?"
       },
       {
-        "start": 5,
-        "end": 7,
-        "text": " Bom dia, Dona Célia."
+        "start": 8.68,
+        "end": 13.040000000000001,
+        "text": " Metade é sua, sócio. Cinco milhões."
       },
       {
-        "start": 7,
-        "end": 9,
-        "text": " Cadê ele?"
-      },
-      {
-        "start": 9,
-        "end": 11,
-        "text": " Metade é sua, sócio."
-      },
-      {
-        "start": 11,
-        "end": 13,
-        "text": " Cinco milhões."
-      },
-      {
-        "start": 13,
-        "end": 15,
-        "text": " Mas ele vem comigo para o Ferro Velho."
+        "start": 13.040000000000001,
+        "end": 15.44,
+        "text": " Mas ele vem comigo pro Ferro Velho."
       }
     ],
-    "text": "Você me contou onde ele está. Lealdade. Gostei. Bom dia, Dona Célia. Cadê ele? Metade é sua, sócio. Cinco milhões. Mas ele vem comigo para o Ferro Velho.",
+    "text": "Você me contou onde ele está. Lealdade. Gostei. Bom dia, Dona Celia. Cadê ele? Metade é sua, sócio. Cinco milhões. Mas ele vem comigo pro Ferro Velho.",
     "review_note": "ASR compatível com o texto, com normalização de pontuação e contrações."
+  },
+  "request": {
+    "idempotencyKey": "zinho-ep07-ademir-charon-v1-20261111",
+    "voice": "Charon",
+    "style": "Português brasileiro. A mesma voz do narrador, mas interpretando outro homem: o Ademir, de uns 60 anos, dono de um ferro-velho, o mesmo das Partes 3 a 6. Fala devagar, baixo e calmo, calmo demais, sem gritar e sem pressa. Frio e seguro de si, como quem tem o controle. “Você me contou onde ele está. Lealdade. Gostei.” sai satisfeito, dirigindo, quase simpático, com uma pausa antes de “Gostei.”. “Bom dia, Dona Célia. Cadê ele?” começa educado, quase gentil, e “Cadê ele?” sai baixo e frio. “Metade é sua, sócio. Cinco milhões.” sai generoso, com um sorriso na voz; “Mas ele vem comigo pro ferro-velho.” sai calmo e definitivo, como quem não aceita resposta. Natural, sem caricatura de vilão. Cada parágrafo é uma fala separada: deixar uma pausa entre eles.",
+    "text": "Você me contou onde ele está. Lealdade. Gostei.\n\nBom dia, Dona Célia. Cadê ele?\n\nMetade é sua, sócio. Cinco milhões. Mas ele vem comigo pro ferro-velho.",
+    "observacao": "As falas do Ademir na Parte 7, no mesmo estilo das Partes 4 a 6; o Claude Code passa a gravação pela voz do cobrador com voz_ademir.py, sem o som de celular. Uns 12 s. Geração paga, pedida pelo criador; mostrar o custo antes de executar. Não editar o áudio.",
+    "style_note": "Instrução condensada a até 500 caracteres para o limite do OpusClip; falas mantidas intactas."
   }
 }
