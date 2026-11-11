@@ -1,0 +1,40 @@
+{
+  "jobId": "mcp_media_c203a32ddd904b09b7399a91ef02eca29ec28bf34d7878551698aad9352552fb",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_c203a32ddd904b09b7399a91ef02eca29ec28bf34d7878551698aad9352552fb/0.wav?hdnts=FullPath~Expires=1794445502~Signature=tWLLDdcNqQ9NkGpg-rCDLILRagGFBBXbS-lWHe6cxfUpmZnKWHd2tftLbxhbn3Q89fwcHBOqUOOvlZVCy1l9DQ",
+      "expiresAt": "2026-11-12T01:05:02.683Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 4.4
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep07-celia-gacrux-v1-20261111",
+    "voice": "Gacrux",
+    "style": "Português brasileiro. Dona Célia, mulher de uns 60 anos, mãe, de bairro, cansada e carinhosa. Está na própria cozinha, na frente de um homem perigoso, protegendo o filho. Fala baixo, com a voz embargada, quase chorando, mas firme. “Não machuca ele.” é um pedido urgente; depois de uma pausa curta, “Ele é meu filho.” sai mais baixo e decidido, como quem se põe na frente. Natural, sem drama de novela e sem gritar.",
+    "text": "Não machuca ele. Ele é meu filho.",
+    "maxCredits": 1
+  },
+  "verification": {
+    "engine": "faster-whisper",
+    "model": "medium",
+    "initial_prompt": null,
+    "language": "pt",
+    "segments": [
+      {
+        "start": 0,
+        "end": 4.16,
+        "text": " Não machuca ele. Ele é meu filho."
+      }
+    ],
+    "text": "Não machuca ele. Ele é meu filho.",
+    "review_note": "ASR compatível com o texto, com normalização de pontuação e contrações."
+  }
+}

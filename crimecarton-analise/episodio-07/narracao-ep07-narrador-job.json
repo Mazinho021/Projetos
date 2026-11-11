@@ -1,0 +1,245 @@
+{
+  "jobId": "mcp_media_80212e00f31009fe5126a47b42077db85628b95e3bdf131e673732061d36a65f",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 2,
+  "reservedCredits": 0,
+  "chargedCredits": 2,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_80212e00f31009fe5126a47b42077db85628b95e3bdf131e673732061d36a65f/0.wav?hdnts=FullPath~Expires=1794445500~Signature=6WlW0PZam9CP-1ehW2hTJzXUxSur1lm3s2rw5mqwpRQCA7NwW_7WlVpZGbUMSfpA08c_psaIxBCavo_R6LE7BA",
+      "expiresAt": "2026-11-12T01:05:00.423Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 109.56
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep07-narrador-charon-v1-20261111-style500",
+    "voice": "Charon",
+    "style": "Português brasileiro. Homem adulto, natural, conversacional, suspense contido, dicção clara, 140–150 palavras/min. Sem publicidade, caricatura ou gritos. Zinho: z inicial, nh palatal. Abertura firme; problema e revelação do irmão baixos, lentos. Uma hora antes: seca. Pagode: leve sorriso. Três frases da traição: pausadas, amargura crescente. Pergunta direta, lenta; opções claras e rápidas; encerramento caloroso. Pausas curtas nas revelações e entre parágrafos.",
+    "text": "Cinco milhões em dinheiro vivo estão em cima da mesa. Pra ficar com eles, você só precisa entregar um homem. O problema é quem ele é.\n\nUma hora antes. Você está no carro do homem mais perigoso do bairro. O Ademir: dono do ferro-velho, anel de ouro no dedo, um alicate no bolso.\n\nEle é o seu parceiro do assalto. Sumiu com dez milhões e te deixou só com o rosto no jornal. Roubou você. E roubou o Ademir.\n\nNo rádio, um pagode antigo. O Ademir canta junto. Desafinado.\n\nNo banco de trás, você faz uma coisa que ele não vê: recupera a única foto que liga o Ademir ao assalto. Se ele te trair, ela vai pro jornal.\n\nO carro para numa casa que você conhece: a da Dona Célia, mãe do Renato, o seu melhor amigo. Você almoçou nessa mesa a infância inteira.\n\nHoje, na mesa, tem dois pratos e um bolo pela metade.\n\nEla não responde. Só olha pro quarto dos fundos.\n\nDe lá sai o seu parceiro do assalto. De chinelo, como quem está em casa.\n\nO homem que te roubou é o irmão mais velho do Renato. O filho que sumiu de casa quando vocês eram crianças.\n\nO seu melhor amigo te levou pro assalto. O irmão dele ficou com o dinheiro. E você ficou com a culpa.\n\nO Ademir puxa duas bolsas de debaixo da mesa. E vira o dinheiro em cima dela.\n\nE no ferro-velho tem uma cadeira e uma corda. O alicate, o Ademir já trouxe.\n\nVocê entregaria o irmão do seu melhor amigo por cinco milhões?\n\nSe entregar, o dinheiro é seu, e a Dona Célia perde um filho. Se soltar, você ameaça o Ademir com a foto, e vira o próximo alvo dele.\n\nComenta entregar ou soltar. O seu comentário pode sair no jornal da próxima parte.\n\nSegue pra ver a parte oito. E manda esse vídeo pra aquele amigo que te entregaria por bem menos.",
+    "maxCredits": 2
+  },
+  "verification": {
+    "engine": "faster-whisper",
+    "model": "medium",
+    "initial_prompt": null,
+    "language": "pt",
+    "segments": [
+      {
+        "start": 0,
+        "end": 4.2,
+        "text": " Cinco milhões em dinheiro vivo estão em cima da mesa."
+      },
+      {
+        "start": 4.2,
+        "end": 7.8,
+        "text": " Para ficar com eles, você só precisa entregar um homem."
+      },
+      {
+        "start": 7.8,
+        "end": 10.6,
+        "text": " O problema é quem ele é."
+      },
+      {
+        "start": 10.6,
+        "end": 14.700000000000001,
+        "text": " Uma hora antes, você está no carro do homem mais perigoso do bairro,"
+      },
+      {
+        "start": 14.700000000000001,
+        "end": 18,
+        "text": " o Ademir, dono do ferro velho, anel de ouro no dedo,"
+      },
+      {
+        "start": 18,
+        "end": 19.8,
+        "text": " um alicate no bolso."
+      },
+      {
+        "start": 19.8,
+        "end": 21.6,
+        "text": " Ele é o seu parceiro do assalto."
+      },
+      {
+        "start": 21.6,
+        "end": 25.400000000000002,
+        "text": " Sumiu com dez milhões e te deixou só com o rosto num jornal."
+      },
+      {
+        "start": 25.400000000000002,
+        "end": 28.7,
+        "text": " Robou você e roubou o Ademir."
+      },
+      {
+        "start": 28.9,
+        "end": 30.7,
+        "text": " No rádio, um pagode antigo."
+      },
+      {
+        "start": 30.7,
+        "end": 33,
+        "text": " O Ademir cantar junto."
+      },
+      {
+        "start": 33,
+        "end": 34.4,
+        "text": " Desafinado."
+      },
+      {
+        "start": 34.4,
+        "end": 37,
+        "text": " No banco de trás, você faz uma coisa que ele não vê."
+      },
+      {
+        "start": 37,
+        "end": 40,
+        "text": " Recupera a única foto que liga o Ademir ao assalto."
+      },
+      {
+        "start": 40,
+        "end": 42.6,
+        "text": " Se ele te trair, ela vai para o jornal."
+      },
+      {
+        "start": 42.6,
+        "end": 45.099999999999994,
+        "text": " O carro para numa casa que você conhece,"
+      },
+      {
+        "start": 45.099999999999994,
+        "end": 48.6,
+        "text": " a da dona Sélia, mãe do Renato, o seu melhor amigo."
+      },
+      {
+        "start": 48.6,
+        "end": 51.3,
+        "text": " Você almoçou nessa mesa a infância inteira."
+      },
+      {
+        "start": 51.3,
+        "end": 55.1,
+        "text": " Hoje, na mesa, tem dois pratos e um bolo pela metade."
+      },
+      {
+        "start": 55.1,
+        "end": 56.7,
+        "text": " Ela não responde."
+      },
+      {
+        "start": 56.7,
+        "end": 58.800000000000004,
+        "text": " Só olha para o quarto dos fundos."
+      },
+      {
+        "start": 58.800000000000004,
+        "end": 61.2,
+        "text": " De lá sai o seu parceiro do assalto."
+      },
+      {
+        "start": 61.2,
+        "end": 62.5,
+        "text": " De chinelo."
+      },
+      {
+        "start": 62.5,
+        "end": 64.10000000000001,
+        "text": " Como quem está em casa."
+      },
+      {
+        "start": 64.10000000000001,
+        "end": 67.10000000000001,
+        "text": " O homem que te roubou é o irmão mais velho do Renato."
+      },
+      {
+        "start": 67.10000000000001,
+        "end": 70,
+        "text": " O filho que sumiu de casa quando vocês eram crianças."
+      },
+      {
+        "start": 70,
+        "end": 72.5,
+        "text": " O seu melhor amigo te levou para o assalto."
+      },
+      {
+        "start": 72.5,
+        "end": 74.4,
+        "text": " O irmão dele ficou com dinheiro."
+      },
+      {
+        "start": 74.4,
+        "end": 76.7,
+        "text": " E você ficou com a culpa."
+      },
+      {
+        "start": 76.7,
+        "end": 79.80000000000001,
+        "text": " O Ademir puxa duas bolsas de debaixo da mesa"
+      },
+      {
+        "start": 79.80000000000001,
+        "end": 82.10000000000001,
+        "text": " e vira o dinheiro em cima dela."
+      },
+      {
+        "start": 82.10000000000001,
+        "end": 84.9,
+        "text": " E no ferro velho tem uma cadeira e uma corda."
+      },
+      {
+        "start": 85,
+        "end": 86.10000000000001,
+        "text": " O alicate?"
+      },
+      {
+        "start": 86.10000000000001,
+        "end": 87.7,
+        "text": " O Ademir já trouxe."
+      },
+      {
+        "start": 87.7,
+        "end": 91.30000000000001,
+        "text": " Você entregaria o irmão do seu melhor amigo por cinco milhões?"
+      },
+      {
+        "start": 91.30000000000001,
+        "end": 95.10000000000001,
+        "text": " Se entregar, o dinheiro é seu e a dona Sélia perde um filho."
+      },
+      {
+        "start": 95.10000000000001,
+        "end": 97.9,
+        "text": " Se soltar, você ameaça o Ademir com a foto"
+      },
+      {
+        "start": 97.9,
+        "end": 99.9,
+        "text": " e vira o próximo alvo dele."
+      },
+      {
+        "start": 99.9,
+        "end": 102,
+        "text": " Comenta entregar ou soltar."
+      },
+      {
+        "start": 102,
+        "end": 104.9,
+        "text": " O seu comentário pode sair num jornal da próxima parte."
+      },
+      {
+        "start": 104.9,
+        "end": 106.4,
+        "text": " Segue para ver a parte 8"
+      },
+      {
+        "start": 106.4,
+        "end": 109.5,
+        "text": " e manda esse vídeo para aquele amigo que te entregaria por bem menos."
+      }
+    ],
+    "text": "Cinco milhões em dinheiro vivo estão em cima da mesa. Para ficar com eles, você só precisa entregar um homem. O problema é quem ele é. Uma hora antes, você está no carro do homem mais perigoso do bairro, o Ademir, dono do ferro velho, anel de ouro no dedo, um alicate no bolso. Ele é o seu parceiro do assalto. Sumiu com dez milhões e te deixou só com o rosto num jornal. Robou você e roubou o Ademir. No rádio, um pagode antigo. O Ademir cantar junto. Desafinado. No banco de trás, você faz uma coisa que ele não vê. Recupera a única foto que liga o Ademir ao assalto. Se ele te trair, ela vai para o jornal. O carro para numa casa que você conhece, a da dona Sélia, mãe do Renato, o seu melhor amigo. Você almoçou nessa mesa a infância inteira. Hoje, na mesa, tem dois pratos e um bolo pela metade. Ela não responde. Só olha para o quarto dos fundos. De lá sai o seu parceiro do assalto. De chinelo. Como quem está em casa. O homem que te roubou é o irmão mais velho do Renato. O filho que sumiu de casa quando vocês eram crianças. O seu melhor amigo te levou para o assalto. O irmão dele ficou com dinheiro. E você ficou com a culpa. O Ademir puxa duas bolsas de debaixo da mesa e vira o dinheiro em cima dela. E no ferro velho tem uma cadeira e uma corda. O alicate? O Ademir já trouxe. Você entregaria o irmão do seu melhor amigo por cinco milhões? Se entregar, o dinheiro é seu e a dona Sélia perde um filho. Se soltar, você ameaça o Ademir com a foto e vira o próximo alvo dele. Comenta entregar ou soltar. O seu comentário pode sair num jornal da próxima parte. Segue para ver a parte 8 e manda esse vídeo para aquele amigo que te entregaria por bem menos.",
+    "review_note": "ASR apresenta diferenças a conferir por escuta: 'cantar junto' por 'canta junto', 'num jornal' por 'no jornal', 'ficou com dinheiro' por 'ficou com o dinheiro'. Sélia/Robou podem ser grafias do ASR. Sem regeneração."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "jobId": "mcp_media_4b68a48a1af1f550d8716404c9627a05711eb900c4a9b4cdae0b90f8d2a9e1b1",
+  "kind": "speech",
+  "model": "gemini-3.8-flash-tts",
+  "status": "succeeded",
+  "estimatedCredits": 1,
+  "reservedCredits": 0,
+  "chargedCredits": 1,
+  "priceVersion": "prd-2026-10-12-list-x75",
+  "outputs": [
+    {
+      "url": "https://signed-ext.cdn.opus.pro/mcp-generation/org_1jd6d00nqAhSa0qwh06P0/mcp_media_4b68a48a1af1f550d8716404c9627a05711eb900c4a9b4cdae0b90f8d2a9e1b1/0.wav?hdnts=FullPath~Expires=1794445504~Signature=PF3-Vq37VKfCMyy0HP--PA4_pWXofa--6w9TF5iAaz8mJvDDkEYnzjCEPvt0rHGRqrZg_P2DO2v8VBdfu7o9AQ",
+      "expiresAt": "2026-11-12T01:05:04.054Z",
+      "mimeType": "audio/wav",
+      "durationSeconds": 5.72
+    }
+  ],
+  "request": {
+    "idempotencyKey": "zinho-ep07-parceiro-umbriel-v1-20261111",
+    "voice": "Umbriel",
+    "style": "Português brasileiro. O parceiro do assalto, irmão mais velho do Renato, homem de uns 35 anos, de bairro. Está de chinelo na casa da mãe, à vontade, como se nada tivesse acontecido. Fala com deboche tranquilo e um meio sorriso, sem culpa nenhuma. “Família primeiro, Zinho.” sai calmo e quase simpático; “O Renato não te contou?” sai com uma ironia leve, fingindo surpresa. Pronunciar Zinho com z inicial e nh palatal. Natural, sem caricatura de vilão e sem gritar.",
+    "text": "Família primeiro, Zinho. O Renato não te contou?",
+    "maxCredits": 1
+  },
+  "verification": {
+    "engine": "faster-whisper",
+    "model": "medium",
+    "initial_prompt": null,
+    "language": "pt",
+    "segments": [
+      {
+        "start": 0,
+        "end": 3,
+        "text": " Família Primeirozinho."
+      },
+      {
+        "start": 4,
+        "end": 6,
+        "text": " O Renato não te contou?"
+      }
+    ],
+    "text": "Família Primeirozinho. O Renato não te contou?",
+    "review_note": "ASR juntou 'primeiro, Zinho' como 'Primeirozinho'; conferir pronúncia por escuta. Sem regeneração."
+  }
+}
