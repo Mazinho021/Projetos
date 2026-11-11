@@ -8,6 +8,22 @@ Regras combinadas com o criador. Valem para toda sessão nova. O estado detalhad
 - Commits em português, com as linhas de atribuição pedidas no sistema.
 - Push com `git push -u origin claude/ecstatic-brown-xb2qxd`, sempre depois de `git pull --rebase`.
 
+## Modelo e esforço (pedido do criador em 10/11/2026)
+
+O criador perguntou se o trabalho precisa do modelo mais forte no esforço máximo. Não precisa: pela estimativa do próprio Claude Code, o máximo gasta umas 3,4 vezes o alto, e os erros das partes anteriores foram pegos pelas conferências, não por pensar mais. Ele pediu uma skill com a recomendação, e cada tipo de tarefa ganhou uma em `.claude/skills/`. A skill troca o modelo e o esforço sozinha, até a próxima mensagem:
+
+| Tarefa | Skill | Modelo e esforço |
+|---|---|---|
+| Roteiro, análise dos números e pedido ao Codex | `roteiro` | forte, alto |
+| Montagem, conferência e ajustes do vídeo | `montagem` | forte, médio |
+| Site, votos, textos de post e consertos pequenos com vários passos | `rotina` | leve, médio |
+| Problema que falhou duas vezes ou decisão grande da história | `maximo` | forte, máximo |
+
+- **No começo de cada pedido, chamar a skill do tipo da tarefa,** antes de qualquer outra coisa. A troca vale até a próxima mensagem, do criador ou de uma tarefa em segundo plano, então a skill é chamada de novo a cada vez. O criador também pode chamar pelo nome, como `/montagem`.
+- **Conversa, perguntas e respostas curtas ficam sem skill,** no modelo e no esforço da sessão, que o criador escolhe. O recomendado para a sessão é o esforço alto (`/effort high`). Trocar de modelo por pouca coisa gasta mais do que economiza, porque o modelo novo lê a conversa inteira de novo.
+- **O `maximo` só entra quando o mesmo problema falhou duas vezes ou numa decisão grande da história,** e o criador fica sabendo por quê.
+- **Se a montagem no esforço médio deixar passar mais erros,** subir a skill `montagem` para o alto.
+
 ## Composição das imagens (erro que o criador apontou em 31/10/2026)
 
 O painel “A SUA PARTE · SUSPEITA” cobre o topo de todo episódio, e a etiqueta da parte fica logo abaixo dele:
