@@ -12,7 +12,9 @@ Estilo enviado literalmente:
 
 Formato entregue: MP3, mono, 48 kHz, 192 kb/s. Origem: WAV mono 24 kHz do OpusClip; convertido para 48 kHz, sem acrescentar detalhe à resolução original. Apenas aparo do silêncio nas pontas e conversão de formato; sem música ou efeitos.
 
-Custo: 11 créditos autorizados, 1 por frase.
+Custo original: 11 créditos autorizados, 1 por frase. Regravação de abertura-0 em 11/11/2026: 1 crédito autorizado e cobrado.
+
+abertura-0 foi refeita em 11/11/2026 porque a abertura do site mudou: agora toca sozinha quando o site abre, sem depender da rolagem. Mesma voz Sulafat e mesmo estilo; as outras 10 frases não foram alteradas.
 
 Verificação técnica: todos os 11 MP3 decodificam sem erro. Silêncio inicial e final inferior a 0,2 s, medido com limiar de -50 dB.
 
@@ -22,7 +24,7 @@ Verificação técnica: todos os 11 MP3 decodificam sem erro. Silêncio inicial 
 |---|---:|
 | intro-0.mp3 | 8.208 s |
 | intro-1.mp3 | 4.032 s |
-| abertura-0.mp3 | 8.544 s |
+| abertura-0.mp3 | 8.256 s |
 | abertura-1.mp3 | 3.480 s |
 | sabores-0.mp3 | 6.864 s |
 | sabores-1.mp3 | 8.280 s |
@@ -32,9 +34,11 @@ Verificação técnica: todos os 11 MP3 decodificam sem erro. Silêncio inicial 
 | encomenda-0.mp3 | 8.376 s |
 | fim-0.mp3 | 5.160 s |
 
-Total dos arquivos: 76.560 s. As pausas entre cenas ficam a cargo da montagem do Claude.
+Total dos arquivos: 76.272 s. As pausas entre cenas ficam a cargo da montagem do Claude.
 
 ## Conferência do texto
+
+Regravação de abertura-0 (11/11/2026): conferida com faster-whisper medium, idioma pt, sem roteiro como dica. Transcrição: “Assim que o site abre, o cookie Nutella estoura e os pedaços se juntam no cookie do Matt, que ainda leva uma mordida.” Corresponde ao texto solicitado, desconsiderando pontuação, maiúsculas e a grafia “Matt” para “Mat”. MP3 validado: mono, 48 kHz, 192 kb/s, duração de 8.256 s; silêncio inicial de 0.103 s e final de 0.101 s, medidos a -50 dB. Sem alteração de velocidade ou tom.
 
 Conferência automática com faster-whisper medium, idioma pt, sem fornecer o roteiro como dica. Dez frases correspondem ao roteiro, desconsiderando pontuação, numerais e grafias de nomes próprios/homófonos.
 
@@ -58,7 +62,7 @@ Preparamos uma proposta de site à altura desses cookies.
 
 ### abertura-0
 
-Logo na abertura, o Cookie Nutella estoura com a rolagem, e os pedaços se juntam no Cookie do Mat, que ainda leva uma mordida.
+Assim que o site abre, o Cookie Nutella estoura, e os pedaços se juntam no Cookie do Mat, que ainda leva uma mordida.
 
 ### abertura-1
 
