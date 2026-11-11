@@ -1,6 +1,6 @@
 # Parte 7 — “A casa da mãe”
 
-**Situação em 10/11/2026:** o criador aprovou o roteiro na versão 3, em [`roteiro-ep07-falar.txt`](roteiro-ep07-falar.txt), e a mudança do final (“Ok”). Falta preparar o pedido ao Codex.
+**Situação em 11/11/2026:** o criador aprovou o roteiro na versão 3, em [`roteiro-ep07-falar.txt`](roteiro-ep07-falar.txt), e a mudança do final (“Ok”), em 10/11. O pedido ao Codex está em [`pedido-codex-ep07.md`](pedido-codex-ep07.md), com as 4 vozes e os 25 desenhos da tabela “Cenas”.
 
 ## As versões do roteiro
 
@@ -116,3 +116,38 @@ O arco pede, na Parte 7, “A proposta”: alguém oferece um acordo ao Zinho. N
 - **O parceiro, irmão do Renato:** voz nova, de homem de uns 35 anos, debochado. Sugestão: **Umbriel**. 1 crédito.
 - **Sem vinheta:** não há mais a voz da Parte 1 nem o `igualar_vozes.py`.
 - **Total:** uns 5 ou 6 créditos de voz, mais os desenhos pelo Codex, com os celulares de frente.
+
+## Cenas
+
+Uma imagem nova por trecho, e algo novo por cima a cada 1 ou 2 s. As lembranças são desenhos de partes anteriores, usados uma vez.
+
+| Cena | Trecho | Imagem | Por cima |
+|---|---|---|---|
+| 1 | “Cinco milhões em dinheiro vivo…” | O dinheiro na mesa, com a mão do anel | “R$ 5 MILHÕES NA MESA”; painel “A SUA PARTE: R$ 5 MI?” |
+| 2 | “…entregar um homem. O problema é quem ele é.” | Um homem em silhueta contra a janela, a mão da Dona Célia no braço dele | Etiqueta “QUEM É ELE?” |
+| 3 | “Uma hora antes.” | O sedã preto numa rua do bairro, de cima | “UMA HORA ANTES”; “PARTE 7” e “PARTES 1 A 6 NO PERFIL”; painel “R$ 0 · ★★★★★” |
+| 4 | “Você está no carro… um alicate no bolso.” | O Ademir dirige, o Zinho no banco de trás | Etiqueta de nome do Ademir; círculos no anel e no alicate |
+| 5 | Ademir: “Você me contou onde ele está…” | Os olhos do Ademir no retrovisor | Carimbo “PARTE 6 · VOCÊS ESCOLHERAM FALAR”; balão |
+| — | “Ele é o seu parceiro… E roubou o Ademir.” | Lembranças: o parceiro com as bolsas (Parte 4, cena 17) e o rosto no jornal | Polaroides “PARTE 4 · SUMIU COM R$ 10 MI” |
+| 6 | “No rádio, um pagode antigo…” | O Ademir canta de olhos fechados | Notas musicais (`pop`) |
+| 7 | “No banco de trás… ela vai pro jornal.” | Por cima do ombro, o celular escondido | `close_tela`: “Apagados recentemente” → “Recuperar”, com a foto da divisão; etiqueta “A SUA ARMA” |
+| 8 | “O carro para numa casa…” | A casa da Dona Célia, o carro e o Zinho | Etiquetas de nome da Dona Célia e do Renato (“o seu melhor amigo”) |
+| 9 | “Você almoçou nessa mesa a infância inteira.” | Lembrança: os dois meninos à mesa | Etiqueta “VOCÊ E O RENATO” |
+| 10 | “Hoje, na mesa, tem dois pratos…” | Dois pratos, o bolo pela metade e o moletom | Círculos nos dois pratos e no moletom |
+| 11 | Ademir: “Bom dia, Dona Célia. Cadê ele?” | O Ademir na porta | Balão |
+| 12 | “Ela não responde. Só olha pro quarto dos fundos.” | Close da Dona Célia, olhando para o corredor | Seta para o corredor |
+| 13 | “De lá sai o seu parceiro… De chinelo…” | Os chinelos saindo do corredor | Etiqueta “O SEU PARCEIRO” |
+| 14 | Dona Célia: “Não machuca ele. Ele é meu filho.” | Ela na frente do filho, de braços abertos | Balão |
+| 15 | “O homem que te roubou é o irmão mais velho do Renato.” | O rosto do parceiro, pela primeira vez | Painel “O PARCEIRO: IRMÃO DO RENATO”, vermelho e tremendo |
+| 16 | “O filho que sumiu de casa…” | A foto antiga na geladeira | Círculo no menino mais velho |
+| 17 | Parceiro: “Família primeiro, Zinho…” | Ele encostado na pia, debochado | Balão |
+| 18 | “O seu melhor amigo te levou pro assalto…” | Close do Zinho, traído | Uma polaroide por frase: o Renato (Parte 4), o parceiro com as bolsas e o rosto no jornal |
+| 19 | “O Ademir puxa duas bolsas…” | As bolsas saindo de debaixo da mesa | — |
+| 20 | “E vira o dinheiro em cima dela.” | O dinheiro caindo na mesa | Contador até R$ 10.000.000 |
+| 21 | Ademir: “Metade é sua, sócio…” e “O alicate, o Ademir já trouxe.” | O Ademir empurra o dinheiro; o alicate no bolso | Balão; painel “A SUA PARTE: R$ 5 MI?”; círculo no alicate |
+| 22 | “E no ferro-velho tem uma cadeira e uma corda.” | A cadeira vazia com a corda | — |
+| 23 | “Você entregaria o irmão do seu melhor amigo por cinco milhões?” | O Zinho olhando para a câmera | A pergunta na tela |
+| 24 | “Se entregar…” | O Ademir leva o parceiro; a Dona Célia chora | “OPÇÃO 1 · ENTREGAR”, pró e contra |
+| 25 | “Se soltar…” | O Zinho mostra o celular ao Ademir | `close_tela` com a foto; “OPÇÃO 2 · SOLTAR”, pró e contra |
+| — | “Comenta entregar ou soltar…” e “Segue pra ver a parte oito…” | O jornal “A VOZ DO BAIRRO” com os comentários da Parte 6 e os botões | — |
+
