@@ -30,5 +30,5 @@ Esta skill deixa o resto da vez no modelo forte com esforço alto, como o criado
 
 ## Pedido ao Codex
 
-- O mesmo formato da parte anterior: `pedido-codex-epNN.md`, os `LOTE-*.md` (uma imagem por trecho, com as regras de composição e os celulares de frente), os `pedido-narracao-*.json` e os `narracao-epNN-*.txt`.
+- O mesmo formato da parte anterior: `pedido-codex-epNN.md`, os `LOTE-*.md` (uma imagem por trecho, com as regras de composição, o celular de tamanho normal na mão, as imagens de referência de cada personagem e o estado dos objetos, como as portas do carro fechadas), os `pedido-narracao-*.json` e os `narracao-epNN-*.txt`.
 - Mostrar o custo e dar ao criador a mensagem para colar no Codex, como na seção “Codex” do `CLAUDE.md`.
