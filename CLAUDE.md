@@ -15,14 +15,14 @@ O criador perguntou se o trabalho precisa do modelo mais forte no esforço máxi
 | Tarefa | Skill | Modelo e esforço |
 |---|---|---|
 | Roteiro, análise dos números e pedido ao Codex | `roteiro` | forte, alto |
-| Montagem, conferência e ajustes do vídeo | `montagem` | forte, médio |
+| Montagem, conferência e ajustes do vídeo | `montagem` | forte, alto |
 | Site, votos, textos de post e consertos pequenos com vários passos | `rotina` | leve, médio |
 | Problema que falhou duas vezes ou decisão grande da história | `maximo` | forte, máximo |
 
 - **No começo de cada pedido, chamar a skill do tipo da tarefa,** antes de qualquer outra coisa. A troca vale até a próxima mensagem, do criador ou de uma tarefa em segundo plano, então a skill é chamada de novo a cada vez. O criador também pode chamar pelo nome, como `/montagem`.
 - **Conversa, perguntas e respostas curtas ficam sem skill,** no modelo e no esforço da sessão, que o criador escolhe. O recomendado para a sessão é o esforço alto (`/effort high`). Trocar de modelo por pouca coisa gasta mais do que economiza, porque o modelo novo lê a conversa inteira de novo.
 - **O `maximo` só entra quando o mesmo problema falhou duas vezes ou numa decisão grande da história,** e o criador fica sabendo por quê.
-- **Se a montagem no esforço médio deixar passar mais erros,** subir a skill `montagem` para o alto.
+- **A montagem subiu para o esforço alto em 12/11/2026:** no médio, deixou passar na Parte 7 o rosto diferente do Zinho e a porta do carro. Os dois erros vieram dos desenhos do Codex, mas a conferência não comparava rostos nem procurava objetos impossíveis; agora compara.
 
 ## Composição das imagens (erro que o criador apontou em 31/10/2026)
 
@@ -48,10 +48,16 @@ Na Parte 3, rostos e cabeças ficaram escondidos atrás do painel. Por isso:
 - **Mensagens no celular tortas e pouco visíveis** (erro que o criador apontou em 08/11/2026, depois de postar a Parte 5): os celulares dos desenhos são pequenos e inclinados, e a tela encaixada neles fica torta, escura e com letra miúda.
   - **Toda mensagem de celular ganha um close da tela, reto e grande,** logo depois do desenho da mão com o celular: `close_tela` em `episodio-05/montagem/compor_cenas.py`. A tela fica de frente, com letra grande, sobre o desenho desfocado e escuro, entre a etiqueta e as frases (de y ≈ 270 a 830), e à esquerda de x = 590 na vertical. O desenho pode manter a tela encaixada em perspectiva, como plano de chegada.
   - Os círculos, as etiquetas e os carimbos da mensagem vão no close, e não na tela pequena do desenho.
-  - **No pedido ao Codex:** o celular de frente para a câmera, reto, com a tela grande, ocupando pelo menos 40% da largura do desenho.
+  - **Celular de tamanho normal (decisão do criador em 12/11/2026, depois de ver a Parte 7):** a regra de 08/11 pedia o celular de frente e com pelo menos 40% da largura do desenho, e na Parte 7 ele saiu do tamanho de um tablet, com o Zinho segurando-o lá na frente e os dedos em volta. Isso ficou esquisito e não vale mais.
+    - **No pedido ao Codex:** o celular do tamanho de um celular de verdade, na mão, numa pose natural, de preferência com o personagem olhando para ele. A tela não precisa estar de frente para a câmera.
+    - **A mensagem fica visível no close da tela** (`close_tela`), de tamanho médio, que se lê sem ocupar a tela do vídeo inteira. O desenho mostra a pessoa com o celular, e o close mostra a mensagem.
   - **Antes de entregar:** olhar cada tela num quadro do tamanho de um celular (360 px de largura) e conferir que a mensagem se lê.
 - **Frases na tela:** ficam entre 65% e 80% da altura (y ≈ 830–1020 de 1280), longe dos rostos.
 - **Abertura:** a etiqueta “PARTE N” fica no canto esquerdo (x = 112). No centro, ela cobria a cabeça do Zinho na arte da mochila.
+- **O rosto e o traço dos personagens não podem mudar (erro que o criador apontou em 12/11/2026):** na Parte 7, o Zinho saiu com outro rosto nas cenas 18, 23 e 25, mais realista, com o rosto comprido, os olhos estreitos e outro cabelo. O traço tinha ficado certo nas cenas 4, 6 e 11.
+  - **No pedido ao Codex:** mandar usar como referência visual a folha [`zinho-referencia-v3.png`](crimecarton-analise/zinho-referencia-v3.png) e duas cenas boas recentes, e descrever o rosto: arredondado, de menino, olhos grandes e redondos com bastante branco, nariz pequeno, cabelo cacheado volumoso no topo e laterais curtas, sem barba, traço de cartoon e não realista. O mesmo vale para os outros personagens, com as suas referências.
+  - **Antes de montar:** recortar o rosto de cada personagem em todos os desenhos e olhar lado a lado com a referência, em tamanho grande (ver a skill `montagem`). Desenho com rosto diferente volta para o Codex antes da montagem.
+- **Objetos que não fazem sentido (erro que o criador apontou em 12/11/2026):** na cena 8 da Parte 7, a porta de trás do carro aparece aberta e fechada ao mesmo tempo. Antes de montar, olhar cada desenho em tamanho grande procurando portas, carros, mãos, dedos e objetos impossíveis ou duplicados. No pedido ao Codex, dizer o estado de cada coisa, como “todas as portas do carro fechadas”.
 - **Personagem na borda direita do desenho:** na vertical, ele fica atrás dos botões do TikTok. Nesse caso, mostrar o desenho num cartão menor, deslocado para a esquerda, como a lembrança do almoço na Parte 3 (`compor_cenas.py`).
 
 ## Cenas (pedido do criador em 31/10/2026, vale para todas as partes)
