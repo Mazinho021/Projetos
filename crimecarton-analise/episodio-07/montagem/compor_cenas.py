@@ -77,7 +77,7 @@ def lixeira(w, h):
     ImageDraw.Draw(f).text((14*k, lado - 22*k), '2 dias', font=font(round(20*k), 'Bold'), fill=(255, 255, 255),
                            anchor='lm')
     x0 = round((w - lado)/2)
-    im.alpha_composite(arredondar(f, round(12*k)), (x0, round(92*k)))
+    im.alpha_composite(arredondar(f, round(12*k)), (x0, round((h - lado)/2 - 20*k)))
     d.rounded_rectangle((40*k, h - 84*k, w - 40*k, h - 30*k), 27*k, fill=AZUL_IOS)
     d.text((w/2, h - 57*k), 'Recuperar', font=font(round(26*k), 'ExtraBold'), fill=(255, 255, 255), anchor='mm')
     return arredondar(im, round(16*k))
@@ -93,7 +93,7 @@ def recuperada(w, h):
     d.line((w/2 - 104*k, 65*k, w/2 - 96*k, 73*k, w/2 - 82*k, 57*k), fill=(255, 255, 255), width=round(4*k), joint='curve')
     d.text((w/2 + 12*k, 65*k), 'Foto recuperada', font=font(round(21*k), 'Bold'), fill=(255, 255, 255), anchor='mm')
     lado = round(min(w - 40*k, h - 250*k))
-    im.alpha_composite(arredondar(foto(lado), round(12*k)), (round((w - lado)/2), round(98*k)))
+    im.alpha_composite(arredondar(foto(lado), round(12*k)), (round((w - lado)/2), round((h - lado)/2 - 40*k)))
     y = h - 112*k
     d.rounded_rectangle((20*k, y, w - 20*k, h - 24*k), 16*k, fill=(30, 30, 34))
     d.text((40*k, y + 24*k), 'Enviar para', font=font(round(16*k), 'SemiBold'), fill=CINZA, anchor='lm')
@@ -121,8 +121,8 @@ def soltar(w, h):
 
 
 # Each close: the drawing behind it, the screen, and the phone's width and top in the 720 × 1280 frame.
-CLOSES = {'lixeira': ('cena-07-foto-recuperada.png', lixeira, 300, 280),
-          'recuperada': ('cena-07-foto-recuperada.png', recuperada, 300, 280),
+CLOSES = {'lixeira': ('cena-07-foto-recuperada.png', lixeira, 280, 335),
+          'recuperada': ('cena-07-foto-recuperada.png', recuperada, 280, 335),
           'soltar': ('cena-25-opcao-soltar.png', soltar, 250, 385)}
 
 

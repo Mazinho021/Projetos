@@ -498,8 +498,8 @@ def build(ed):
         stamp('E O ADEMIR', s(N('E roubou o Ademir.')) - .02, AT['pagode'], 1010 if not v else 990, x,
               'red', angle=5),
         # ---- the light moment
-        pop('LÁ LAIÁ', s(N('canta junto.')), AT['lixeira'], 470 if not v else 440, 430, 50, 'yellow', -10),
-        stamp('DESAFINADO', s(N('Desafinado.')) - .02, AT['lixeira'], 960, x, 'yellow'),
+        pop('LÁ LAIÁ', s(N('canta junto.')), AT['celular'], 470 if not v else 440, 430, 50, 'yellow', -10),
+        stamp('DESAFINADO', s(N('Desafinado.')) - .02, AT['celular'], 960, x, 'yellow'),
         # ---- the photo, on the screen itself (the phone faces the camera)
         phrase(AT['celular'] + .05, AT['lixeira'], 1030 if not v else 1000,
                [label('O QUE ELE NÃO VÊ', s(N('No banco de trás,')))], 40, x),
@@ -541,8 +541,8 @@ def build(ed):
         polaroid('episodio-04/cena-13-renato-aceita.png', [0.15, 0.25, 0.85, 0.64], 'O SEU AMIGO', 'te levou pro assalto',
                  s(N('O seu melhor amigo te')), AT['bolsas'], 140, 420 if not v else 445, 190, -6),
         polaroid('episodio-04/cena-17-parceiro.png', [0.1, 0.25, 0.9, 0.6875], 'O IRMÃO', 'ficou com o dinheiro',
-                 s(N('O irmão dele')), AT['bolsas'], 580 if not v else 490, 470 if not v else 700, 190, 5),
-        stamp('SÓ A CULPA', s(N('E você ficou')) + .3, AT['bolsas'], 960, x, 'red'),
+                 s(N('O irmão dele')), AT['bolsas'], 580 if not v else 470, 800 if not v else 830, 190, 5),
+        stamp('SÓ A CULPA', s(N('E você ficou')) + .3, AT['bolsas'], 1000, x - 60, 'red'),
         # ---- the proposal
         pop('TUM', s(N('duas bolsas')), AT['virado'], 520 if not v else 470, 470, 54, 'white', -8),
         phrase(AT['virado'] + .05, AT['metade'], 1040 if not v else 1010,
