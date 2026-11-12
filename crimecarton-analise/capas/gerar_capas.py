@@ -39,6 +39,9 @@ COVERS = [
     # The reward poster on the pole, with Zinho's face: the price on it.
     dict(part=6, title='A RECOMPENSA', line='QUANTO VALE O SEU ROSTO?', art='../episodio-06/montagem/arte/cartaz.png',
          scale=1.25, focus=(.48, .45), at=(540, 640)),
+    # Five million on the crochet tablecloth, under the hand with the ring: the hook of the part.
+    dict(part=7, title='A CASA DA MÃE', line='VOCÊ ENTREGARIA?', art='../episodio-07/cena-01-dinheiro-na-mesa.png',
+         scale=1.15, focus=(.45, .45), at=(540, 700)),
 ]
 
 
