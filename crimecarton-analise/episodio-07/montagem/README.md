@@ -2,7 +2,7 @@
 
 Esta pasta monta a Parte 7, **“A casa da mãe”**, com as ferramentas de [`episodio-01/montagem/`](../../episodio-01/montagem/) e o molde da [montagem da Parte 6](../../episodio-06/montagem/README.md). O roteiro está em [`../roteiro-ep07-falar.txt`](../roteiro-ep07-falar.txt), o plano cena por cena em [`../plano-ep07.md`](../plano-ep07.md) e o pedido ao Codex em [`../pedido-codex-ep07.md`](../pedido-codex-ep07.md).
 
-**Situação em 12/11/2026:** a Parte 7 está pronta nas duas versões, com 2 min 14,5 s: [`../parte-07-a-casa-da-mae.mp4`](../parte-07-a-casa-da-mae.mp4), para o Instagram, e [`../parte-07-a-casa-da-mae-vertical.mp4`](../parte-07-a-casa-da-mae-vertical.mp4), para o TikTok e o Shorts. Os 25 desenhos e as 4 vozes vieram do Codex, por 5 créditos de voz. A capa é [`../../capas/capa-parte-07.png`](../../capas/capa-parte-07.png).
+**Situação em 12/11/2026:** a Parte 7 foi refeita, depois que o criador apontou o rosto do Zinho diferente nas cenas 18, 23 e 25, o celular do tamanho de um tablet nas cenas 7 e 25 e a porta do carro aberta e fechada ao mesmo tempo na cena 8. O Codex refez as cenas 7, 8, 18, 23, 24 e 25 ([`../pedido-codex-ep07-refazer.md`](../pedido-codex-ep07-refazer.md)), e os rostos e os objetos foram conferidos em tamanho grande antes da montagem. Ela está pronta nas duas versões, com 2 min 14,5 s: [`../parte-07-a-casa-da-mae.mp4`](../parte-07-a-casa-da-mae.mp4), para o Instagram, e [`../parte-07-a-casa-da-mae-vertical.mp4`](../parte-07-a-casa-da-mae-vertical.mp4), para o TikTok e o Shorts. Os 25 desenhos e as 4 vozes vieram do Codex, por 5 créditos de voz. A capa é [`../../capas/capa-parte-07.png`](../../capas/capa-parte-07.png).
 
 É a primeira parte com as regras de 10/11/2026:
 
@@ -38,7 +38,7 @@ python crimecarton-analise/episodio-01/montagem/alinhar_narracao.py --model medi
 # 4. A voz do Ademir (a do cobrador, ao vivo)
 python crimecarton-analise/episodio-04/montagem/voz_ademir.py \
   --fonte $A/narracao-ep07-ademir.wav --saida $A/montagem/vozes/ademir.wav
-# 5. As telas dos celulares e as opções
+# 5. Os closes dos celulares e as opções
 python $A/montagem/compor_cenas.py
 # 6. A faixa de narração, as duas timelines e os vídeos
 python $A/montagem/montar_timeline.py
@@ -57,9 +57,9 @@ done
 ## O que cada script faz
 
 - [`compor_cenas.py`](compor_cenas.py) faz em `arte/`:
-  - **as telas dos celulares,** com letra grande, encaixadas com `encaixar_limpo`. Os celulares desta parte vieram de frente, então a tela do desenho já é o close:
-    - na cena 7, os “Apagados recentemente” com a foto da divisão (a da Parte 2) e o botão “Recuperar”; depois, a mesma foto com “Foto recuperada” e o jornal “A VOZ DO BAIRRO” entre os contatos para enviar;
-    - na cena 25, o celular de lado, com a foto e o botão “ENVIAR” para o jornal;
+  - **os closes dos celulares** (regra do criador de 12/11/2026): os desenhos mostram o Zinho com um celular de tamanho normal, e a mensagem aparece logo depois, num celular de tamanho médio sobre o desenho desfocado e escuro, de 300 px de largura no quadro de 720:
+    - na cena 7, os “Apagados recentemente” com a foto da divisão (a da Parte 2) e o botão “Recuperar”; depois, a foto com “Foto recuperada” e o jornal “A VOZ DO BAIRRO” entre os contatos para enviar;
+    - na cena 25, a foto e o botão “ENVIAR” para o jornal, num celular de 250 px;
   - **as duas opções lado a lado,** para o pedido de comentário.
 - [`montar_timeline.py`](montar_timeline.py) junta o narrador, o Ademir, a Dona Célia e o parceiro numa faixa, `../narracao-ep07.wav`, com as pausas de `PAUSES`, e monta as duas timelines.
   - **Os recortes:** a cena 4 sobe e vai para a esquerda (`CROP_04`), para o rosto do Ademir sair da coluna de botões do TikTok; a cena 13 mostra só as pernas e os chinelos (`CROP_13`), que estavam baixos demais; e a cena 21 desce o rosto do Ademir para longe do painel (`CROP_21`).

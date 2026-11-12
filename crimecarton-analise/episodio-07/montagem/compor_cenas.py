@@ -1,25 +1,23 @@
 #!/usr/bin/env python3
 """Part 7's images that the edit makes from Codex's drawings.
 
-Writes, in arte/:
+Writes, in arte/, for each layout (no suffix: Instagram; -vertical: TikTok and Shorts):
 
-- tela-lixeira.png: scene 7, the photos app's "Apagados recentemente" with the division's photo
-  (Part 2's) and a big "Recuperar" button, on the phone Zinho hides in the back seat;
-- tela-recuperada.png: the same drawing, the photo back in the album, ready to go to the paper;
-- tela-soltar.png: scene 25, the phone Zinho holds up to Ademir (sideways), the photo and the
-  button that sends it to "A VOZ DO BAIRRO";
-- opcoes.png and opcoes-vertical.png: scenes 24 and 25 side by side, for the comment request.
+- close-lixeira.png: scene 7's phone up close, the photos app's "Apagados recentemente" with the
+  division's photo (Part 2's) and the "Recuperar" button;
+- close-recuperada.png: the same phone, the photo back and the newspaper among the contacts;
+- close-soltar.png: scene 25's phone, the photo and the button that sends it to "A VOZ DO BAIRRO";
+- opcoes.png: scenes 24 and 25 side by side, for the comment request.
 
-The phones of this part face the camera, straight and big (the rule of 08/11/2026): the screen
-fitted into each drawing is its own close-up. achar_tela (Part 3) finds the blank screen, and
-encaixar_limpo (Part 4) fits the new one behind the fingers.
+The creator's rule of 12/11/2026: the phones in the drawings are normal-sized, in the hand, and
+the message is read on a close of the phone of medium size, over the drawing blurred and dark
+(the first cut of Part 7 had the screens fitted into tablet-sized phones, and he found it odd).
 
     python compor_cenas.py
 """
 from __future__ import annotations
 
 import importlib.util
-import math
 from pathlib import Path
 import sys
 
@@ -41,8 +39,7 @@ def _modulo(nome, caminho):
 # Part 6's tools; loading them also loads Parts 5, 4 and 3's.
 p6 = _modulo('compor_cenas_ep06', SERIE / 'episodio-06' / 'montagem' / 'compor_cenas.py')
 p5 = p6.p5
-font, achar_tela, encaixar_limpo, fundo_escuro, arredondar = p6.font, p6.achar_tela, p6.encaixar_limpo, \
-    p6.fundo_escuro, p6.arredondar
+font, fundo_escuro, arredondar = p6.font, p6.fundo_escuro, p6.arredondar
 CINZA, TEXTO, AZUL_IOS = p6.CINZA, p6.TEXTO, p6.AZUL_IOS
 status = p6.status
 
@@ -107,39 +104,57 @@ def recuperada(w, h):
 
 
 def soltar(w, h):
-    """Scene 25, sideways: the photo on the left, the send-to-the-paper button on the right."""
-    k = h/220
+    """Scene 25: the photo, ready to go to the newspaper, and the button that sends it."""
+    k = w/400
     im = Image.new('RGBA', (w, h), (0, 0, 0, 255))
     d = ImageDraw.Draw(im)
-    lado = round(h - 24*k)
-    im.alpha_composite(arredondar(foto(lado), round(10*k)), (round(12*k), round(12*k)))
-    x0 = lado + 26*k
-    cx = (x0 + w - 12*k)/2
-    d.text((cx, 40*k), 'A VOZ DO', font=font(round(22*k), 'ExtraBold'), fill=TEXTO, anchor='mm')
-    d.text((cx, 66*k), 'BAIRRO', font=font(round(22*k), 'ExtraBold'), fill=TEXTO, anchor='mm')
-    d.text((cx, 98*k), '1 foto anexada', font=font(round(15*k), 'Medium'), fill=CINZA, anchor='mm')
-    d.rounded_rectangle((x0, h - 82*k, w - 14*k, h - 22*k), 30*k, fill=(222, 52, 44))
-    d.text((cx, h - 52*k), 'ENVIAR', font=font(round(26*k), 'ExtraBold'), fill=(255, 255, 255), anchor='mm')
-    return arredondar(im, round(14*k))
+    status(d, w, '08:21', k)
+    d.rounded_rectangle((20*k, 52*k, 64*k, 88*k), 8*k, fill=JORNAL)
+    d.text((42*k, 70*k), 'J', font=font(round(22*k), 'ExtraBold'), fill=(255, 250, 240), anchor='mm')
+    d.text((78*k, 70*k), 'A VOZ DO BAIRRO', font=font(round(24*k), 'ExtraBold'), fill=TEXTO, anchor='lm')
+    lado = round(min(w - 40*k, h - 250*k))
+    im.alpha_composite(arredondar(foto(lado), round(12*k)), (round((w - lado)/2), round(106*k)))
+    d.text((w/2, 106*k + lado + 26*k), '1 foto anexada', font=font(round(18*k), 'Medium'), fill=CINZA, anchor='mm')
+    d.rounded_rectangle((40*k, h - 84*k, w - 40*k, h - 30*k), 27*k, fill=(222, 52, 44))
+    d.text((w/2, h - 57*k), 'ENVIAR', font=font(round(28*k), 'ExtraBold'), fill=(255, 255, 255), anchor='mm')
+    return arredondar(im, round(16*k))
 
 
-def na_tela(cena, desenhar, nome, busca=(.12, .15, .88, .85)):
-    """The screen of `cena`, found by achar_tela, with what `desenhar(w, h)` draws at its size."""
-    fundo = Image.open(desenho(cena)).convert('RGB')
-    quad, _ = achar_tela(fundo, busca=busca)
-    (x0, y0), (x1, y1), (x2, y2), (x3, y3) = [(x*W, y*H) for x, y in quad]
-    w = round((math.dist((x0, y0), (x1, y1)) + math.dist((x3, y3), (x2, y2)))/2)
-    h = round((math.dist((x0, y0), (x3, y3)) + math.dist((x1, y1), (x2, y2)))/2)
-    encaixar_limpo(fundo, desenhar(w, h), quad).save(ARTE / nome, optimize=True)
-    return quad
+# Each close: the drawing behind it, the screen, and the phone's width and top in the 720 × 1280 frame.
+CLOSES = {'lixeira': ('cena-07-foto-recuperada.png', lixeira, 300, 280),
+          'recuperada': ('cena-07-foto-recuperada.png', recuperada, 300, 280),
+          'soltar': ('cena-25-opcao-soltar.png', soltar, 250, 385)}
 
 
-def telas():
-    for cena, desenhar, nome in (('cena-07-foto-recuperada.png', lixeira, 'tela-lixeira.png'),
-                                 ('cena-07-foto-recuperada.png', recuperada, 'tela-recuperada.png'),
-                                 ('cena-25-opcao-soltar.png', soltar, 'tela-soltar.png')):
-        quad = na_tela(cena, desenhar, nome)
-        print(f'{nome}: tela em ' + ', '.join(f'({x:.3f}, {y:.3f})' for x, y in quad))
+def celular(tela):
+    """A phone of normal proportions (9:19.5) around a screen."""
+    borda = round(tela.width*.045)
+    w, h = tela.width + 2*borda, tela.height + 2*borda
+    im = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle((0, 0, w - 1, h - 1), round(w*.13), fill=(18, 18, 20, 255), outline=(70, 70, 76, 255),
+                        width=max(2, round(w*.006)))
+    im.alpha_composite(tela, (borda, borda))
+    d.rounded_rectangle((w/2 - w*.12, borda + w*.025, w/2 + w*.12, borda + w*.07), round(w*.025), fill=(0, 0, 0, 255))
+    return im
+
+
+def close(nome):
+    cena, desenhar, largura, topo = CLOSES[nome]
+    base = Image.open(desenho(cena)).convert('RGB').resize((W, H), Image.Resampling.LANCZOS)
+    base = base.filter(ImageFilter.GaussianBlur(24)).point(lambda v: round(v*.45)).convert('RGBA')
+    sw = round(largura*2*.91)
+    fone = celular(desenhar(sw, round(sw*19.5/9)))
+    for sufixo, centro in CENTRO.items():
+        fundo = base.copy()
+        x, y = round(centro*W - fone.width/2), topo*2
+        sombra = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+        ImageDraw.Draw(sombra).rounded_rectangle((x + 10, y + 30, x + fone.width - 10, y + fone.height + 20), 70,
+                                                 fill=(0, 0, 0, 200))
+        fundo.alpha_composite(sombra.filter(ImageFilter.GaussianBlur(30)))
+        fundo.alpha_composite(fone, (x, y))
+        fundo.convert('RGB').save(ARTE / f'close-{nome}{sufixo}.png', optimize=True)
+    print(f'close-{nome}: celular de {largura} px de largura, de y = {topo} a {topo + round(fone.height/2)}')
 
 
 # ---------------------------------------------------------------- the options
@@ -154,7 +169,7 @@ def opcoes(centro_x, nome, largura, borda=14):
     x0 = round(centro_x*W - (2*cw + gap)/2)
     y0 = round(.12*H)
     for k, (caminho, meio) in enumerate(((desenho('cena-24-opcao-entregar.png'), .58),
-                                         (ARTE / 'tela-soltar.png', .5))):
+                                         (desenho('cena-25-opcao-soltar.png'), .45))):
         arte = Image.open(caminho).convert('RGB').resize((W, H))
         alto = W*4/3
         topo = round(min(max(meio*H - alto/2, 0), H - alto))
@@ -172,7 +187,8 @@ def opcoes(centro_x, nome, largura, borda=14):
 
 def main():
     ARTE.mkdir(parents=True, exist_ok=True)
-    telas()
+    for nome in CLOSES:
+        close(nome)
     for sufixo, centro in CENTRO.items():
         opcoes(centro, f'opcoes{sufixo}.png', 1050 if not sufixo else 1010)
     print('arte/: ' + ', '.join(sorted(p.name for p in ARTE.glob('*.png'))))

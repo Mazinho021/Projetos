@@ -413,8 +413,10 @@ def build(ed):
         ('lembranca', cut(N('Ele é o seu parceiro')), art('../episodio-04/cena-17-parceiro.png', .04, brightness=.8)),
         ('tv', cut(N('Sumiu com dez')), dict(kind='tv', asset=desenho('cena-03-carro-no-bairro.png'))),
         ('pagode', cut(N('No rádio,')), art(desenho('cena-06-pagode.png'), .05)),
-        ('lixeira', cut(N('No banco de trás,')), art(arte('tela-lixeira.png'), .04)),
-        ('recuperada', cut(N('Se ele te trair,')), art(arte('tela-recuperada.png'), .03, direction='out')),
+        # The phone is normal-sized in the drawing, and the message is read on a close (12/11/2026).
+        ('celular', cut(N('No banco de trás,')), art(desenho('cena-07-foto-recuperada.png'), .05)),
+        ('lixeira', cut(N('recupera a única')), art(arte(f"close-lixeira{L['art']}.png"), .03)),
+        ('recuperada', cut(N('Se ele te trair,')), art(arte(f"close-recuperada{L['art']}.png"), .03, direction='out')),
         # Dona Célia's house.
         ('casa', cut(N('O carro para')), art(desenho('cena-08-casa-da-mae.png'), .04)),
         ('infancia', cut(N('Você almoçou')), art(desenho('cena-09-infancia.png'), .04, direction='out')),
@@ -437,7 +439,8 @@ def build(ed):
         # The question right at the turn, then the two options, short, with no silent pause.
         ('pergunta', cut(N('Você entregaria')), art(desenho('cena-23-pergunta.png'), .05, brightness=.6)),
         ('entregar', cut(N('Se entregar,')), art(desenho('cena-24-opcao-entregar.png'), .04)),
-        ('soltar', cut(N('Se soltar,')), art(arte('tela-soltar.png'), .03)),
+        ('soltar', cut(N('Se soltar,')), art(desenho('cena-25-opcao-soltar.png'), .04)),
+        ('ameaca', cut(N('você ameaça')), art(arte(f"close-soltar{L['art']}.png"), .03)),
         ('escolha', cut(N('Comenta entregar')), art(arte(f"opcoes{L['art']}.png"), .02, direction='out')),
     ]
     plan.sort(key=lambda item: item[1])
@@ -498,10 +501,10 @@ def build(ed):
         pop('LÁ LAIÁ', s(N('canta junto.')), AT['lixeira'], 470 if not v else 440, 430, 50, 'yellow', -10),
         stamp('DESAFINADO', s(N('Desafinado.')) - .02, AT['lixeira'], 960, x, 'yellow'),
         # ---- the photo, on the screen itself (the phone faces the camera)
-        phrase(AT['lixeira'] + .05, AT['recuperada'], 1030 if not v else 1000,
+        phrase(AT['celular'] + .05, AT['lixeira'], 1030 if not v else 1000,
                [label('O QUE ELE NÃO VÊ', s(N('No banco de trás,')))], 40, x),
-        tag('A ÚNICA PROVA CONTRA O ADEMIR', s(N('recupera a única')), AT['recuperada'], 390 if not v else 420, 'alert', x, 22),
-        stamp('SUA ARMA', s(N('Se ele te trair,')) + .1, AT['casa'], 400 if not v else 430, x, 'red'),
+        tag('A ÚNICA PROVA CONTRA O ADEMIR', s(N('recupera a única')), AT['recuperada'], 960 if not v else 940, 'alert', x, 22),
+        stamp('SUA ARMA', s(N('Se ele te trair,')) + .1, AT['casa'], 975 if not v else 955, x, 'red'),
         # ---- the house
         callout('A MÃE DO RENATO', s(N('a da Dona Célia,')), AT['infancia'], 250 if not v else 240, 400 if not v else 430,
                 CASA, 'yellow'),
@@ -565,11 +568,11 @@ def build(ed):
                 line('POR R$ 5 MILHÕES?', s(N('cinco milhões?', after=200)), 'yellow', size=50, shake=True)], 50, x),
         # ---- the options: one pro and one con each, while the narrator speaks
         tag('OPÇÃO 1 · ENTREGAR', AT['entregar'] + .05, AT['soltar'], 330 if not v else 360, 'white', x, 26),
-        tag('+ R$ 5 MILHÕES NO SEU BOLSO', s(N('o dinheiro é seu,')), AT['soltar'], 420 if not v else 450, 'green', x, 22),
-        tag('− A DONA CÉLIA PERDE UM FILHO', s(N('e a Dona Célia')), AT['soltar'], 480 if not v else 510, 'alert', x, 22),
+        tag('+ R$ 5 MILHÕES NO SEU BOLSO', s(N('o dinheiro é seu,')), AT['soltar'], 960 if not v else 940, 'green', x, 22),
+        tag('− A DONA CÉLIA PERDE UM FILHO', s(N('e a Dona Célia')), AT['soltar'], 1015 if not v else 995, 'alert', x, 22),
         tag('OPÇÃO 2 · SOLTAR', AT['soltar'] + .05, AT['escolha'], 330 if not v else 360, 'white', x, 26),
-        tag('+ A DONA CÉLIA FICA COM O FILHO', s(N('você ameaça')), AT['escolha'], 900 if not v else 880, 'green', x, 22),
-        tag('− VOCÊ VIRA O PRÓXIMO ALVO', s(N('E vira o próximo')), AT['escolha'], 960 if not v else 940, 'alert', x, 22),
+        tag('+ A DONA CÉLIA FICA COM O FILHO', s(N('você ameaça')), AT['escolha'], 960 if not v else 940, 'green', x, 22),
+        tag('− VOCÊ VIRA O PRÓXIMO ALVO', s(N('E vira o próximo')), AT['escolha'], 1015 if not v else 995, 'alert', x, 22),
         # ---- the comment request with the newspaper, then follow and share
         {'type': 'buttons', 'start': round(s(N('Comenta entregar')) - .05, 2), 'end': jornal_at, 'y': 800,
          'x': x - (20 if v else 0), 'prompt': 'COMENTA UMA PALAVRA', 'prompt_at': round(s(N('Comenta entregar')), 2),
