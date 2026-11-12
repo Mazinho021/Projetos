@@ -221,7 +221,8 @@
       "end": 113.01,
       "kind": "art",
       "asset": "cena-23-pergunta.png",
-      "zoom": 0.05
+      "zoom": 0.05,
+      "brightness": 0.6
     },
     {
       "start": 113.01,
@@ -398,12 +399,12 @@
       "type": "hud",
       "start": 74.05,
       "end": 94.9,
-      "label": "O PARCEIRO",
+      "label": "O PARCEIRO É",
       "dy": 0,
       "values": [
         {
           "at": 74.05,
-          "text": "IRMÃO DO RENATO",
+          "text": "O IRMÃO",
           "color": "red",
           "shake": true
         }
