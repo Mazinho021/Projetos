@@ -63,7 +63,7 @@ done
   - **as duas opções lado a lado,** para o pedido de comentário.
 - [`montar_timeline.py`](montar_timeline.py) junta o narrador, o Ademir, a Dona Célia e o parceiro numa faixa, `../narracao-ep07.wav`, com as pausas de `PAUSES`, e monta as duas timelines.
   - **Os recortes:** a cena 4 sobe e vai para a esquerda (`CROP_04`), para o rosto do Ademir sair da coluna de botões do TikTok; a cena 13 mostra só as pernas e os chinelos (`CROP_13`), que estavam baixos demais; e a cena 21 desce o rosto do Ademir para longe do painel (`CROP_21`).
-  - **O painel muda com a história:** “A SUA PARTE R$ 5 MI?” no gancho, “R$ 0” no carro, “O PARCEIRO · IRMÃO DO RENATO”, em vermelho e tremendo, na virada, e “R$ 5 MI?” de novo quando o dinheiro cai na mesa.
+  - **O painel muda com a história:** “A SUA PARTE R$ 5 MI?” no gancho, “R$ 0” no carro, “O PARCEIRO É O IRMÃO”, em vermelho e tremendo, na virada, e “R$ 5 MI?” de novo quando o dinheiro cai na mesa.
   - **As lembranças:** o parceiro com as bolsas (Parte 4) e o cartão de TV com o rosto do Zinho, no lugar da vinheta; o Renato (Parte 4) em polaroide; e o Ademir com o alicate na porta do galpão (Parte 6), em “O alicate, o Ademir já trouxe.”.
   - **Os elementos:** etiquetas de nome do Ademir, da Dona Célia e do parceiro; os balões das quatro vozes; os carimbos “FALAR”, “ROUBOU VOCÊ”, “E O ADEMIR”, “DESAFINADO”, “SUA ARMA” e “SÓ A CULPA”; o contador até R$ 10.000.000; e o pagode desafinado como momento leve.
   - **As posições** de balões, círculos e etiquetas foram medidas em cada desenho, e cada plano foi conferido nas duas versões.

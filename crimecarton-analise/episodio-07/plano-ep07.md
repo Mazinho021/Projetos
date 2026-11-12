@@ -1,6 +1,6 @@
 # Parte 7 — “A casa da mãe”
 
-**Situação em 11/11/2026:** o criador aprovou o roteiro na versão 3, em [`roteiro-ep07-falar.txt`](roteiro-ep07-falar.txt), e a mudança do final (“Ok”), em 10/11. O pedido ao Codex está em [`pedido-codex-ep07.md`](pedido-codex-ep07.md), com as 4 vozes e os 25 desenhos da tabela “Cenas”.
+**Situação em 11/11/2026:** o criador aprovou o roteiro na versão 3, em [`roteiro-ep07-falar.txt`](roteiro-ep07-falar.txt), e a mudança do final (“Ok”), em 10/11. O pedido ao Codex está em [`pedido-codex-ep07.md`](pedido-codex-ep07.md), com as 4 vozes e os 25 desenhos da tabela “Cenas”. **A Parte 7 ficou pronta em 12/11/2026,** nas duas versões, com 2 min 14,5 s; a montagem está em [`montagem/README.md`](montagem/README.md).
 
 ## As versões do roteiro
 

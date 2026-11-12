@@ -435,7 +435,7 @@ def build(ed):
         ('cadeira', cut(N('E no ferro-velho')), art(desenho('cena-22-cadeira-e-corda.png'), .05)),
         ('alicate', cut(N('O alicate,')), art('../episodio-06/cena-17-alicate.png', .04, brightness=.85)),
         # The question right at the turn, then the two options, short, with no silent pause.
-        ('pergunta', cut(N('Você entregaria')), art(desenho('cena-23-pergunta.png'), .05)),
+        ('pergunta', cut(N('Você entregaria')), art(desenho('cena-23-pergunta.png'), .05, brightness=.6)),
         ('entregar', cut(N('Se entregar,')), art(desenho('cena-24-opcao-entregar.png'), .04)),
         ('soltar', cut(N('Se soltar,')), art(arte('tela-soltar.png'), .03)),
         ('escolha', cut(N('Comenta entregar')), art(arte(f"opcoes{L['art']}.png"), .02, direction='out')),
@@ -468,7 +468,7 @@ def build(ed):
         {'type': 'tag', 'start': hora + .1, 'end': perfil_fim, 'text': f'PARTE {PART}', 'y': ty, 'x': 112, 'size': 32},
         tag(f'PARTES 1 A {PART - 1} NO PERFIL', hora + .4, perfil_fim, ty + 52, 'white', size=20),
         hud(hora, AT['irmao'], 'A SUA PARTE', 'R$ 0', 'red', L['hud_dy']),
-        hud(AT['irmao'], AT['virado'], 'O PARCEIRO', 'IRMÃO DO RENATO', 'red', L['hud_dy'], shake=True),
+        hud(AT['irmao'], AT['virado'], 'O PARCEIRO É', 'O IRMÃO', 'red', L['hud_dy'], shake=True),
         hud(AT['virado'], AT['escolha'], 'A SUA PARTE', 'R$ 5 MI?', 'yellow', L['hud_dy'], shake=True),
         tag('O CARRO DO ADEMIR · 07:00', perfil_fim, AT['casa'], ty),
         tag('A CASA DA MÃE DO RENATO · 08:00', AT['casa'], AT['irmao'], ty),
