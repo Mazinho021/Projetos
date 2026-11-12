@@ -1,0 +1,67 @@
+{
+ "audio": "parceiro.wav",
+ "script": "parceiro.txt",
+ "model": "medium",
+ "words_in_script": 8,
+ "words_matched_exactly": 6,
+ "pauses": [
+  [
+   1.89,
+   3.257
+  ],
+  [
+   4.338,
+   4.69
+  ]
+ ],
+ "words": [
+  {
+   "i": 0,
+   "text": "Família",
+   "start": 0.0,
+   "end": 0.7
+  },
+  {
+   "i": 1,
+   "text": "primeiro,",
+   "start": 0.7,
+   "end": 1.426
+  },
+  {
+   "i": 2,
+   "text": "Zinho.",
+   "start": 1.426,
+   "end": 1.89
+  },
+  {
+   "i": 3,
+   "text": "O",
+   "start": 3.257,
+   "end": 3.46
+  },
+  {
+   "i": 4,
+   "text": "Renato",
+   "start": 3.46,
+   "end": 3.72
+  },
+  {
+   "i": 5,
+   "text": "não",
+   "start": 3.72,
+   "end": 3.9
+  },
+  {
+   "i": 6,
+   "text": "te",
+   "start": 3.9,
+   "end": 4.06
+  },
+  {
+   "i": 7,
+   "text": "contou?",
+   "start": 4.06,
+   "end": 4.338
+  }
+ ]
+}
