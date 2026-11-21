@@ -233,12 +233,31 @@
       "silencio_inicial_estimado_s": 0.1,
       "silencio_final_estimado_s": 0.1,
       "limiar_silencio_dbfs": -45
+    },
+    {
+      "arquivo": "fala13.wav",
+      "personagem": "narrador",
+      "voz_opusclip": "Achird",
+      "texto": "Foi aí que ele entendeu: nessa mansão, todo mundo obedece qualquer pedido. Até os dele.",
+      "texto_enviado": "Foi aí que ele entendeu: nessa mansão, todo mundo obedece qualquer pedido. Até os dele.",
+      "direcao": "Português do Brasil. Somente voz, sem música ou efeitos. Leia exatamente o texto, sem acrescentar palavras. Silêncio inicial e final no máximo 0,3 segundo. Pronunciar Vidal como Vi-DAL, com sílaba tônica no a. Narrador caloroso, contador de histórias. Firme, com esperança no fim.",
+      "job_id": "mcp_media_decfff74e8f3803e0986058ac767e946ad1019c9a1490a1bb0c1c016886c926b",
+      "idempotency_key": "tres-naos-3-20261121-fala13-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 6.76,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "bc2d06d1cad2586f84bad7f9ac1965ad3e206a00b28818027c18a5103dce23a5",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -45
     }
   ],
   "reaproveitamento": {
     "fala01.wav": "voz-opusclip-tres-naos-2/fala16.wav",
     "fala14.wav": "voz-opusclip-tres-naos-2/fala18.wav"
   },
-  "total_creditos_cobrados": 12,
+  "total_creditos_cobrados": 13,
   "observacao_verificacao": "Texto enviado preservado exatamente. Silêncios das extremidades medidos em janelas de 10 ms a -45 dBFS e reduzidos a até 0,1 s, preservando pausas internas. A direção registrada é a enviada à OpusClip. Falas 01 e 14 referenciadas para reaproveitamento, sem nova geração."
 }
