@@ -157,12 +157,31 @@
       "silencio_inicial_estimado_s": 0.1,
       "silencio_final_estimado_s": 0.1,
       "limiar_silencio_dbfs": -45
+    },
+    {
+      "arquivo": "fala09.wav",
+      "personagem": "narrador",
+      "voz_opusclip": "Achird",
+      "texto": "Embaixo das chaves, um caderno: os pedidos de amanhã.",
+      "texto_enviado": "Embaixo das chaves, um caderno: os pedidos de amanhã.",
+      "direcao": "Português do Brasil. Somente voz, sem música ou efeitos. Leia exatamente o texto, sem acrescentar palavras. Silêncio inicial e final no máximo 0,3 segundo. Pronunciar Vidal como Vi-DAL, com sílaba tônica no a. Narrador caloroso, contador de histórias. Suspense contido ao revelar o caderno.",
+      "job_id": "mcp_media_78587e992820af76bc7ecafec9e71141f0b5699b9ee4ba0c8dac6eb0ea6f8545",
+      "idempotency_key": "tres-naos-3-20261121-fala09-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 4.72,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "254ed0f85fe0c5304d87573493a9a2787925cdc25ca7e252d966cf4a282e476f",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -45
     }
   ],
   "reaproveitamento": {
     "fala01.wav": "voz-opusclip-tres-naos-2/fala16.wav",
     "fala14.wav": "voz-opusclip-tres-naos-2/fala18.wav"
   },
-  "total_creditos_cobrados": 8,
+  "total_creditos_cobrados": 9,
   "observacao_verificacao": "Texto enviado preservado exatamente. Silêncios das extremidades medidos em janelas de 10 ms a -45 dBFS e reduzidos a até 0,1 s, preservando pausas internas. A direção registrada é a enviada à OpusClip. Falas 01 e 14 referenciadas para reaproveitamento, sem nova geração."
 }
