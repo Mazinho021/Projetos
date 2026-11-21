@@ -43,12 +43,31 @@
       "silencio_inicial_estimado_s": 0.1,
       "silencio_final_estimado_s": 0.1,
       "limiar_silencio_dbfs": -45
+    },
+    {
+      "arquivo": "fala03.wav",
+      "personagem": "narrador",
+      "voz_opusclip": "Achird",
+      "texto": "Repara: ele não disse não. Mentir é de graça. O não é que custa caro.",
+      "texto_enviado": "Repara: ele não disse não. Mentir é de graça. O não é que custa caro.",
+      "direcao": "Português do Brasil. Somente voz, sem música ou efeitos. Leia exatamente o texto, sem acrescentar palavras. Silêncio inicial e final no máximo 0,3 segundo. Pronunciar Vidal como Vi-DAL, com sílaba tônica no a. Narrador caloroso, contador de histórias. Tom de piada, humor seco. Dê ênfase ao não em 'ele não disse não', destacando o não dito como palavra.",
+      "job_id": "mcp_media_7741e8089aba0c4a65d05d5ed5cff84154ffd8ad89049d7fcfe2a8492fe9220f",
+      "idempotency_key": "tres-naos-3-20261121-fala03-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 6.06,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "1f53309cf190169267496268f87c4419b8e794fab4491d67ed12a6dcd05d4909",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -45
     }
   ],
   "reaproveitamento": {
     "fala01.wav": "voz-opusclip-tres-naos-2/fala16.wav",
     "fala14.wav": "voz-opusclip-tres-naos-2/fala18.wav"
   },
-  "total_creditos_cobrados": 2,
+  "total_creditos_cobrados": 3,
   "observacao_verificacao": "Texto enviado preservado exatamente. Silêncios das extremidades medidos em janelas de 10 ms a -45 dBFS e reduzidos a até 0,1 s, preservando pausas internas. A direção registrada é a enviada à OpusClip. Falas 01 e 14 referenciadas para reaproveitamento, sem nova geração."
 }
