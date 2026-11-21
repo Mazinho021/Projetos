@@ -145,19 +145,19 @@
       "voz_opusclip": "Achird",
       "texto": "A da dona Lurdes ainda tinha o chaveiro de crochê que ela fez.",
       "texto_enviado": "A da dona Lurdes ainda tinha o chaveiro de crochê que ela fez.",
-      "direcao": "Português do Brasil. Somente voz, sem música ou efeitos. Leia exatamente o texto, sem acrescentar palavras. Silêncio inicial e final no máximo 0,3 segundo. Pronunciar Vidal como Vi-DAL, com sílaba tônica no a. Narrador caloroso, contador de histórias. Triste, devagar, com delicadeza.",
-      "job_id": "mcp_media_8a8b7daae2d5103044a5d2f843698cc99bcb23689a9fdee855336352ab7335ba",
-      "idempotency_key": "tres-naos-3-20261121-fala08-v1",
+      "direcao": "Português do Brasil. Somente voz, sem música ou efeitos. Leia exatamente o texto, sem acrescentar palavras. Silêncio inicial e final no máximo 0,3 segundo. Pronunciar Vidal como Vi-DAL, com sílaba tônica no a. Narrador caloroso, contador de histórias. Triste, devagar, com delicadeza. Atenção à fidelidade literal: diga 'ainda tinha o chaveiro', usando o artigo definido O; não diga 'um chaveiro'. Articule as palavras claramente mantendo o tom triste e devagar.",
+      "job_id": "mcp_media_4c02ecce9dd552b436b8758e3c094f7ac908dedb8ad71168c5f26b4c734be3a6",
+      "idempotency_key": "tres-naos-3-20261121-fala08-v2",
       "creditos_cobrados": 1,
-      "duracao_segundos": 3.8,
+      "duracao_segundos": 4.52,
       "frequencia_hz": 24000,
       "canais": 1,
       "formato": "PCM WAV 16-bit",
-      "sha256": "d46707dc33f451c840bc6e61cf54358fc8b34d3c06a4b5f3f5c9ab459130f5f7",
+      "sha256": "16dca4fd74cfecc65236cb2f74f38a670d9a73c36e0914bb850a4f27086cf555",
       "silencio_inicial_estimado_s": 0.1,
       "silencio_final_estimado_s": 0.1,
       "limiar_silencio_dbfs": -45,
-      "verificacao_texto": "pendente: ASR lê um chaveiro, roteiro pede o chaveiro"
+      "verificacao_texto": "Nova geração conferida por Whisper medium: artigo o em o chaveiro confirmado."
     },
     {
       "arquivo": "fala09.wav",
@@ -259,6 +259,16 @@
     "fala01.wav": "voz-opusclip-tres-naos-2/fala16.wav",
     "fala14.wav": "voz-opusclip-tres-naos-2/fala18.wav"
   },
-  "total_creditos_cobrados": 13,
-  "observacao_verificacao": "Texto enviado preservado exatamente. Silêncios das extremidades medidos em janelas de 10 ms a -45 dBFS e reduzidos a até 0,1 s, preservando pausas internas. A direção registrada é a enviada à OpusClip. Falas 01 e 14 referenciadas para reaproveitamento, sem nova geração. Revisão por Whisper small e medium. Leituras divergentes em 03, 12 e 13 resolvidas em nova transcrição; fidelidade de interpretação não validada por escuta. Na fala08, as transcrições repetiram \"um chaveiro\" em vez de \"o chaveiro\": possível divergência pendente de revisão ou nova geração."
+  "total_creditos_cobrados": 14,
+  "observacao_verificacao": "Texto enviado preservado exatamente. Silêncios das extremidades medidos em janelas de 10 ms a -45 dBFS e reduzidos a até 0,1 s, preservando pausas internas. Revisão por Whisper small e medium; leituras divergentes em 03, 12 e 13 resolvidas em nova transcrição. Fala08 refeita com aprovação de 1 crédito adicional, e o trecho o chaveiro confirmado na transcrição da nova versão. A direção registrada é a enviada à OpusClip; interpretação não validada por escuta. Falas 01 e 14 referenciadas para reaproveitamento, sem nova geração. Total de 14 créditos inclui a primeira versão substituída da fala08.",
+  "geracoes_substituidas": [
+    {
+      "arquivo": "fala08.wav",
+      "job_id": "mcp_media_8a8b7daae2d5103044a5d2f843698cc99bcb23689a9fdee855336352ab7335ba",
+      "idempotency_key": "tres-naos-3-20261121-fala08-v1",
+      "creditos_cobrados": 1,
+      "sha256": "d46707dc33f451c840bc6e61cf54358fc8b34d3c06a4b5f3f5c9ab459130f5f7",
+      "motivo": "Transcrição automática indicou um chaveiro em vez de o chaveiro."
+    }
+  ]
 }
