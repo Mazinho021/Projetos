@@ -1,0 +1,104 @@
+{
+  "titulo": "Carro, moto ou caminhão",
+  "marca": "Gconect Rastreadores",
+  "video": 10,
+  "provedor": "OpusClip AI voiceover",
+  "idioma": "pt-BR",
+  "modelo": "gemini-3.8-flash-tts",
+  "voz_fixa_serie": {
+    "voz_opusclip": "Orus",
+    "personagem": "narrador",
+    "genero": "masculino",
+    "idioma": "pt-BR"
+  },
+  "pronuncias": {
+    "Gconect": "Gê Conéct"
+  },
+  "substituicoes_de_voz": [],
+  "falas": [
+    {
+      "arquivo": "fala00.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Tem quem viva da moto. Tem quem leve a família de carro. Tem quem carregue o Brasil de caminhão.",
+      "texto_enviado": "Tem quem viva da moto. <short pause> Tem quem leve a família de carro. <short pause> Tem quem carregue o Brasil de caminhão.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Épico mas próximo, em três tempos. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_d8e9eea21ec68e72fb0d5e89dbcdaf9862ef4c7a373e557d335decb3b6f2df43",
+      "idempotency_key": "gconect-10-fala0-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 6.27,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "9df9182c935d966698ec8cfe8d43c7f7e05d1a4342d88e194b5565145578ded0",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 1.3,
+          "fim_s": 1.8,
+          "duracao_s": 0.5
+        },
+        {
+          "inicio_s": 3.59,
+          "fim_s": 4.09,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala01.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Pra todo mundo, a mesma pergunta: onde tá o que é seu, agora?",
+      "texto_enviado": "Pra todo mundo, a mesma pergunta: onde tá o que é seu, <short pause> agora?",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Direto, com pausa antes de agora. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_3c4a0bee167dfbbe6ec5b785f018881e56a2049a680c1535bf3b3925529f8126",
+      "idempotency_key": "gconect-10-fala1-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 4.88,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "a6f4a45569ff284feb50e0f26c9697a217c76b21024f037a0644441782a737dc",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 3.91,
+          "fim_s": 4.41,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala02.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Com a Gconect, a resposta tá na palma da mão.",
+      "texto_enviado": "Com a Gê Conéct, a resposta tá na palma da mão.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Confiante e caloroso. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_4292636fc242a2be7f4823ab8334e93e9a8ce4fcbf1358632c93dca4dde56fc0",
+      "idempotency_key": "gconect-10-fala2-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 3.0,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "58e713ccd66c37f5efdc91c72c4fd902472e8d806ccae8c7020f77457862face",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": []
+    }
+  ],
+  "total_creditos_cobrados": 3,
+  "duracao_total_falas_segundos": 14.15,
+  "fechamento": "Não gerado; reutilizar fala07.wav e fala08.wav do vídeo 01 (5,07 s).",
+  "observacao_verificacao": "Conferência automatizada de transcrição e silêncios. Extremidades aparadas para cerca de 0,1 s a -40 dBFS. Pausas entre frases ajustadas para 0,5 s; vídeo 08 fala01: 1 s. Sem adição de música ou efeitos. Vozes mantidas conforme catálogo e pedido; percepção de timbre e interpretação não validada por escuta humana."
+}
