@@ -1,0 +1,141 @@
+{
+  "titulo": "Ganha-pão",
+  "marca": "Gconect Rastreadores",
+  "video": 7,
+  "provedor": "OpusClip AI voiceover",
+  "idioma": "pt-BR",
+  "modelo": "gemini-3.8-flash-tts",
+  "voz_fixa_serie": {
+    "voz_opusclip": "Orus",
+    "personagem": "narrador",
+    "genero": "masculino",
+    "idioma": "pt-BR"
+  },
+  "pronuncias": {
+    "Gconect": "Gê Conéct"
+  },
+  "substituicoes_de_voz": [],
+  "falas": [
+    {
+      "arquivo": "fala00.wav",
+      "personagem": "motoboy",
+      "voz_solicitada": "Zubenelgenubi",
+      "voz_opusclip": "Zubenelgenubi",
+      "texto": "Dezoito entregas hoje. E ainda tem mais.",
+      "texto_enviado": "Dezoito entregas hoje. <short pause> E ainda tem mais.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Casual, cansado mas orgulhoso. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_f4956b1d6126ce30197f66ab18a153f7be82fe237b3b9caa8a61c8e3f1f2d3a4",
+      "idempotency_key": "gconect-07-fala0-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 3.63,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "65578bce9a2dc36fb61eaa87b8bc672e51de0eb111040c46ef573cc617f87574",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 2.29,
+          "fim_s": 2.79,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala01.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Pra quem vive de entrega, a moto não é só uma moto.",
+      "texto_enviado": "Pra quem vive de entrega, a moto não é só uma moto.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Sério e próximo. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_6ec1e93ca28b57a601643caf871f7cc2280b99e426332bc78b9abae5f4aa198a",
+      "idempotency_key": "gconect-07-fala1-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 3.03,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "5eb4c5c7591cdbc393b80fd1ef0e80eafb784f4fb08aa8e0e9b0acde075365e9",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": []
+    },
+    {
+      "arquivo": "fala02.wav",
+      "personagem": "motoboy",
+      "voz_solicitada": "Zubenelgenubi",
+      "voz_opusclip": "Zubenelgenubi",
+      "texto": "É o aluguel, é o mercado, é tudo.",
+      "texto_enviado": "É o aluguel, é o mercado, é tudo.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Enumeração com ritmo, sincera. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_42c2849023cc9e488bd0379b8c570d7ff41ff497481a2741aa16d22b21bf56e1",
+      "idempotency_key": "gconect-07-fala2-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 3.2,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "864a362d489dc015d3aaed6dcbb18415eeca69aa7b965b37fb0a8edecdd31604",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": []
+    },
+    {
+      "arquivo": "fala03.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Com a Gconect, você vê onde ela está e cada corrida que ela fez.",
+      "texto_enviado": "Com a Gê Conéct, você vê onde ela está e cada corrida que ela fez.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Claro e confiante. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_2025fc3d4a6a733ec12502103c64c33924bd5dfdd5e629eb6cd7d8e74cb7b8f0",
+      "idempotency_key": "gconect-07-fala3-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 4.23,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "42a92b607ae3dcd9ad55b5aede42a47166cd6d30cb24e263c5669cd4cb7699b1",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": []
+    },
+    {
+      "arquivo": "fala04.wav",
+      "personagem": "motoboy",
+      "voz_solicitada": "Zubenelgenubi",
+      "voz_opusclip": "Zubenelgenubi",
+      "texto": "Aí sim. Dá pra rodar tranquilo.",
+      "texto_enviado": "Aí sim. <short pause> Dá pra rodar tranquilo.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Aliviado, sorrindo. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_85ecd788df37a39506abebcd855e8e539f22e870c3a466fe8ecaf8f7949a8fd8",
+      "idempotency_key": "gconect-07-fala4-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 3.44,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "2d3810547b54c01bf8a85d0819cb4de98ed01cc1d7570bd9701e6cc76ef661f5",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 1.27,
+          "fim_s": 1.77,
+          "duracao_s": 0.5
+        }
+      ]
+    }
+  ],
+  "total_creditos_cobrados": 5,
+  "duracao_total_falas_segundos": 17.53,
+  "fechamento": "Não gerado; reutilizar fala07.wav e fala08.wav do vídeo 01 (5,07 s).",
+  "observacao_verificacao": "Conferência automatizada de transcrição e silêncios. Extremidades aparadas para cerca de 0,1 s a -40 dBFS. Pausas entre frases ajustadas para 0,5 s; vídeo 08 fala01: 1 s. Sem adição de música ou efeitos. Vozes mantidas conforme catálogo e pedido; percepção de timbre e interpretação não validada por escuta humana."
+}
