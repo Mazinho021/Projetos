@@ -1,0 +1,43 @@
+{
+  "busca": "dentista em Cidade Exemplo (dados inventados para teste)",
+  "places": [
+    {
+      "id": "EXEMPLO_1", "displayName": {"text": "Clínica Sorriso Exemplo"},
+      "formattedAddress": "Rua Exemplo, 100 - Centro, Cidade Exemplo - SP, 13000-000, Brasil",
+      "addressComponents": [
+        {"longText": "Centro", "shortText": "Centro", "types": ["sublocality_level_1", "sublocality"]},
+        {"longText": "Cidade Exemplo", "shortText": "Cidade Exemplo", "types": ["administrative_area_level_2"]},
+        {"longText": "São Paulo", "shortText": "SP", "types": ["administrative_area_level_1"]}
+      ],
+      "location": {"latitude": -22.9, "longitude": -47.06},
+      "nationalPhoneNumber": "(19) 99999-0001", "rating": 4.8, "userRatingCount": 63,
+      "primaryType": "dental_clinic", "primaryTypeDisplayName": {"text": "Clínica odontológica"},
+      "types": ["dental_clinic", "dentist", "health"], "googleMapsUri": "https://maps.google.com/?cid=1",
+      "businessStatus": "OPERATIONAL",
+      "regularOpeningHours": {"weekdayDescriptions": ["segunda-feira: 08:00–18:00", "sábado: 08:00–12:00", "domingo: Fechado"]},
+      "reviews": [
+        {"rating": 5, "text": {"text": "Atendimento excelente, fiz meu clareamento e amei o resultado."}, "authorAttribution": {"displayName": "Cliente A"}, "relativePublishTimeDescription": "há 2 semanas"},
+        {"rating": 3, "text": {"text": "Bom, mas demorou."}, "authorAttribution": {"displayName": "Cliente B"}, "relativePublishTimeDescription": "há 1 mês"}
+      ]
+    },
+    {
+      "id": "EXEMPLO_2", "displayName": {"text": "Dra. Exemplo Odontologia"},
+      "formattedAddress": "Av. Exemplo, 200 - Jardim, Cidade Exemplo - SP",
+      "addressComponents": [{"longText": "Cidade Exemplo", "types": ["administrative_area_level_2"]}],
+      "nationalPhoneNumber": "(19) 3333-0002", "rating": 4.5, "userRatingCount": 12,
+      "websiteUri": "https://www.instagram.com/exemplo.odonto/",
+      "primaryType": "dentist", "primaryTypeDisplayName": {"text": "Dentista"}, "types": ["dentist"],
+      "businessStatus": "OPERATIONAL"
+    },
+    {
+      "id": "EXEMPLO_3", "displayName": {"text": "Odonto Concorrente Exemplo"},
+      "nationalPhoneNumber": "(19) 99999-0003", "rating": 4.7, "userRatingCount": 210,
+      "websiteUri": "https://odontoconcorrente.exemplo.com.br",
+      "primaryType": "dentist", "types": ["dentist"], "businessStatus": "OPERATIONAL"
+    },
+    {
+      "id": "EXEMPLO_4", "displayName": {"text": "Consultório Fechado Exemplo"},
+      "primaryType": "dentist", "types": ["dentist"], "businessStatus": "CLOSED_PERMANENTLY"
+    }
+  ]
+}

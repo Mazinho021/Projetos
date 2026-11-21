@@ -1,0 +1,24 @@
+{
+  "vendedor": {
+    "nome": "SEU NOME",
+    "whatsapp": "5500000000000",
+    "cidade": "SUA CIDADE"
+  },
+  "previas": {
+    "dominio": "previas.SEUDOMINIO.com.br",
+    "observacao": "A sessão de sites publica cada prévia em https://<dominio>/<slug>/ e devolve o link."
+  },
+  "dias_entre_mensagens": [0, 2, 5, 10],
+  "mensagens": {
+    "1": "Oi, tudo bem? Aqui é o {vendedor}, faço sites para negócios aqui de {cidade}. Vi que a {empresa} tem {avaliacoes} avaliações ótimas no Google, mas quem procura vocês não acha um site. Montei uma prévia de como ficaria, sem compromisso: {link}\n\nPosso te mandar o valor se curtir? (Se não fizer sentido, é só me avisar que eu não mando mais.)",
+    "2": "Oi! Conseguiu abrir a prévia? Um detalhe: a {concorrente} aparece com site quando alguém procura \"{categoria} em {cidade}\". Com o de vocês, esse cliente cai direto na {empresa}.",
+    "2_sem_concorrente": "Oi! Conseguiu abrir a prévia? Hoje, quem procura \"{categoria} em {cidade}\" no Google cai em quem tem site. Com o de vocês, esse cliente cai direto na {empresa}.",
+    "3": "Fiz um ajuste na prévia da {empresa}: coloquei um botão de agendar direto no WhatsApp de vocês. Dá uma olhada: {link}",
+    "4": "Vou tirar a prévia da {empresa} do ar no fim da semana, para liberar espaço. Se quiser que eu deixe guardada, é só falar. Abraço!"
+  },
+  "planos": [
+    {"nome": "Essencial", "entrada": 0, "mensal": 79, "inclui": "Site de uma página, domínio e hospedagem"},
+    {"nome": "Profissional", "entrada": 497, "mensal": 99, "inclui": "Tudo do Essencial + Google Meu Negócio otimizado, até 5 páginas e formulário", "destaque": true},
+    {"nome": "Completo", "entrada": 997, "mensal": 297, "inclui": "Tudo do Profissional + anúncios no Google e relatório todo mês (verba à parte)"}
+  ]
+}

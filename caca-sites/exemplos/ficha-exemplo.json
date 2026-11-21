@@ -1,0 +1,39 @@
+{
+  "place_id": "EXEMPLO_1",
+  "nome": "Clínica Sorriso Exemplo",
+  "nicho": "odonto",
+  "categoria": "Clínica odontológica",
+  "categoria_google": "dental_clinic",
+  "telefone": "(19) 99999-0001",
+  "whatsapp": "5519999990001",
+  "endereco": "Rua Exemplo, 100 - Centro, Cidade Exemplo - SP, 13000-000, Brasil",
+  "bairro": "Centro",
+  "cidade": "Cidade Exemplo",
+  "uf": "SP",
+  "lat": -22.9,
+  "lng": -47.06,
+  "maps": "https://maps.google.com/?cid=1",
+  "nota": 4.8,
+  "avaliacoes": 63,
+  "horario": [
+    "segunda-feira: 08:00–18:00",
+    "sábado: 08:00–12:00",
+    "domingo: Fechado"
+  ],
+  "resumo": "",
+  "avaliacoes_destaque": [
+    {
+      "autor": "Cliente A",
+      "nota": 5,
+      "texto": "Atendimento excelente, fiz meu clareamento e amei o resultado.",
+      "quando": "há 2 semanas"
+    }
+  ],
+  "situacao_site": "sem_site",
+  "site_atual": "",
+  "concorrente": "Odonto Concorrente Exemplo",
+  "busca": "dentista em Cidade Exemplo (dados inventados para teste)",
+  "coletado_em": "2026-11-21",
+  "pontos": 9,
+  "slug": "clinica-sorriso-exemplo-cidade-exemplo"
+}
