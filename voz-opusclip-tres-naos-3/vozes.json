@@ -1,0 +1,35 @@
+{
+  "titulo": "Nesse mundo: os três nãos",
+  "capitulo": 3,
+  "escolha_do_publico": "B",
+  "provedor": "OpusClip AI voiceover",
+  "idioma": "pt-BR",
+  "modelo": "gemini-3.8-flash-tts",
+  "falas": [
+    {
+      "arquivo": "fala00.wav",
+      "personagem": "narrador",
+      "voz_opusclip": "Achird",
+      "texto": "Nesse mundo, quem fica sem nãos obedece qualquer pedido. O Davi ainda tem três.",
+      "texto_enviado": "Nesse mundo, quem fica sem nãos obedece qualquer pedido. O Davi ainda tem três.",
+      "direcao": "Português do Brasil. Somente voz, sem música ou efeitos. Leia exatamente o texto, sem acrescentar palavras. Silêncio inicial e final no máximo 0,3 segundo. Pronunciar Vidal como Vi-DAL, com sílaba tônica no a. Narrador caloroso, contador de histórias. Apresentação clara da regra do mundo.",
+      "job_id": "mcp_media_6cb29c7a75e9c2b6283f69b58541cdc8f226153435ead3ae0dbee22067d42fcd",
+      "idempotency_key": "tres-naos-3-20261121-fala00-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 5.56,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "5809ef359d94cbf99453e2f72c96968a367d90b5a55421f15e97e65172d67e9a",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -45
+    }
+  ],
+  "reaproveitamento": {
+    "fala01.wav": "voz-opusclip-tres-naos-2/fala16.wav",
+    "fala14.wav": "voz-opusclip-tres-naos-2/fala18.wav"
+  },
+  "total_creditos_cobrados": 1,
+  "observacao_verificacao": "Texto enviado preservado exatamente. Silêncios das extremidades medidos em janelas de 10 ms a -45 dBFS e reduzidos a até 0,1 s, preservando pausas internas. A direção registrada é a enviada à OpusClip. Falas 01 e 14 referenciadas para reaproveitamento, sem nova geração."
+}
