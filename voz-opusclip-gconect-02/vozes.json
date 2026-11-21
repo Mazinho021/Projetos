@@ -1,0 +1,141 @@
+{
+  "titulo": "Só fui na padaria",
+  "marca": "Gconect Rastreadores",
+  "video": 2,
+  "provedor": "OpusClip AI voiceover",
+  "idioma": "pt-BR",
+  "modelo": "gemini-3.8-flash-tts",
+  "voz_fixa_serie": {
+    "voz_opusclip": "Orus",
+    "personagem": "narrador",
+    "genero": "masculino",
+    "idioma": "pt-BR"
+  },
+  "pronuncias": {
+    "Gconect": "Gê Conéct"
+  },
+  "substituicoes_de_voz": [],
+  "falas": [
+    {
+      "arquivo": "fala00.wav",
+      "personagem": "filho",
+      "voz_solicitada": "Puck",
+      "voz_opusclip": "Puck",
+      "texto": "Pai, tá aqui a chave. Fui só na padaria, tá?",
+      "texto_enviado": "Pai, tá aqui a chave. <short pause> Fui só na padaria, tá?",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Jovem, natural, inocente demais e meio apressado. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_3473d7c6eb5aeea419c625a67b38e4d82f3befb38f4823b74a944ab5481f78da",
+      "idempotency_key": "gconect-02-fala0-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 2.69,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "c7352cad9e33a5d441229fcd5796a36217cdada50bae58365786b8a60db7a20a",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 1.03,
+          "fim_s": 1.53,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala01.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "A padaria fica a dois quarteirões. Mas o histórico de trajeto contou outra história.",
+      "texto_enviado": "A padaria fica a dois quarteirões. <short pause> Mas o histórico de trajeto contou outra história.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Seco, humor contido. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_766608cff769f06834ee65f9c0205953aff34eb0dbe9d0048a4d2d5c5f1e9bdc",
+      "idempotency_key": "gconect-02-fala1-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 5.55,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "3821306fc2b4cc461fc21ee861d11320d065cfc73e34e3f145482d2b45600422",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 2.1,
+          "fim_s": 2.6,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala02.wav",
+      "personagem": "pai",
+      "voz_solicitada": "Algenib",
+      "voz_opusclip": "Algenib",
+      "texto": "Padaria longe essa, hein?",
+      "texto_enviado": "Padaria longe essa, hein?",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Calmo e irônico, sem bravura. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_5d02e569d1927068e7aed4202bd354250b35cf406228cb736832034c6bb1bf18",
+      "idempotency_key": "gconect-02-fala2-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 1.71,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "f1e473f75de49ad0fec8d3cb12b7d247ba82b07ccfaccbc231d6b90874815a46",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": []
+    },
+    {
+      "arquivo": "fala03.wav",
+      "personagem": "filho",
+      "voz_solicitada": "Puck",
+      "voz_opusclip": "Puck",
+      "texto": "É que... tinha fila.",
+      "texto_enviado": "É que... tinha fila.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Sem graça, hesitando no é que. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_38a11520592e4fd11d2d66c94a31d7b36bdc0916fd8796bfef5e828749e2def9",
+      "idempotency_key": "gconect-02-fala3-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 2.91,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "01041165ed6bb1a98a8a0b2da4ba70ab9678ae23229f8001bb9c4ca606f18772",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": []
+    },
+    {
+      "arquivo": "fala04.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Com a Gconect, você vê cada rua por onde o seu carro passou.",
+      "texto_enviado": "Com a Gê Conéct, você vê cada rua por onde o seu carro passou.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Confiante e caloroso. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_bb16600ad9c976f56623bac0261dd1378da272e01d54ec4fb7daaab2d8b41e9d",
+      "idempotency_key": "gconect-02-fala4-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 3.94,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "cbd1234a06f9059c8e408047ef58c6fffe5afe362705abe276726fa740ebbd72",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": []
+    }
+  ],
+  "total_creditos_cobrados": 5,
+  "duracao_total_falas_segundos": 16.8,
+  "fechamento": "Não gerado; reutilizar fala07.wav e fala08.wav do vídeo 01 (5,07 s).",
+  "observacao_verificacao": "Conferência automatizada de transcrição e silêncios. Extremidades aparadas para cerca de 0,1 s a -40 dBFS. Pausas entre frases ajustadas para 0,5 s; vídeo 08 fala01: 1 s. Sem adição de música ou efeitos. Vozes mantidas conforme catálogo e pedido; percepção de timbre e interpretação não validada por escuta humana."
+}
