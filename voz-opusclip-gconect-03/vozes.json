@@ -1,0 +1,153 @@
+{
+  "titulo": "Chegou bem?",
+  "marca": "Gconect Rastreadores",
+  "video": 3,
+  "provedor": "OpusClip AI voiceover",
+  "idioma": "pt-BR",
+  "modelo": "gemini-3.8-flash-tts",
+  "voz_fixa_serie": {
+    "voz_opusclip": "Orus",
+    "personagem": "narrador",
+    "genero": "masculino",
+    "idioma": "pt-BR"
+  },
+  "pronuncias": {
+    "Gconect": "Gê Conéct"
+  },
+  "substituicoes_de_voz": [],
+  "falas": [
+    {
+      "arquivo": "fala00.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Meia-noite. O filho saiu com o carro e parou de responder.",
+      "texto_enviado": "Meia-noite. <short pause> O filho saiu com o carro e parou de responder.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Baixo e tenso. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_c8d4b2b9f55ba04b67fc3fb801e0063b1f736eb70344d62681250573bd56b354",
+      "idempotency_key": "gconect-03-fala0-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 4.49,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "1216d0a6a8166043b4eb8a275c4e7936bed4cf8a456b4377c88737b2dc955baf",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 0.99,
+          "fim_s": 1.49,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala01.wav",
+      "personagem": "mãe",
+      "voz_solicitada": "Sulafat",
+      "voz_opusclip": "Sulafat",
+      "texto": "Filho, chegou bem? Filho?",
+      "texto_enviado": "Filho, chegou bem? <short pause> Filho?",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz feminina. Voz feminina, mãe preocupada; segundo Filho mais baixo e aflito. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_2a58e6b8a48bf16df76316efc92e3d2dda24010f6ed11853946c73338f9c2a45",
+      "idempotency_key": "gconect-03-fala1-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 2.49,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "8fc1f0df21b74a1715c9a79d7cf95928177a43c8e120e08a67b5f5986c236b7b",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 1.45,
+          "fim_s": 1.95,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala02.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Em vez de ligar dez vezes, ela abriu o aplicativo. Carro parado, na porta da casa do amigo.",
+      "texto_enviado": "Em vez de ligar dez vezes, ela abriu o aplicativo. <short pause> Carro parado, na porta da casa do amigo.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Calmo, desfazendo a tensão. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_7fb8ea993f98fcd76350d3d65a442014b8b78f19baa7273ad07f3347edb4a979",
+      "idempotency_key": "gconect-03-fala2-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 6.25,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "2979798a2d7e7b54e19848a130ff53296f92091907326d70b6e3aa9a07184fbe",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 3.1,
+          "fim_s": 3.6,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala03.wav",
+      "personagem": "mãe",
+      "voz_solicitada": "Sulafat",
+      "voz_opusclip": "Sulafat",
+      "texto": "[suspiro de alívio] Ufa. Tá tudo bem.",
+      "texto_enviado": "<sigh> Ufa. <short pause> Tá tudo bem.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz feminina. Voz feminina, suspiro de alívio, quase rindo. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_8f83f1eee2302ff5c9b2bf6bcfecd9587145aab1178baf7009c48ba5e2074d52",
+      "idempotency_key": "gconect-03-fala3-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 2.76,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "25725c08112ec59c5691c9dd26ac6e820cfc6e1396055d73b9b9ffc1ecaa562c",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 1.43,
+          "fim_s": 1.93,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala04.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Com a Gconect, você sabe onde o seu carro está, a qualquer hora.",
+      "texto_enviado": "Com a Gê Conéct, você sabe onde o seu carro está, a qualquer hora.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Caloroso. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_067a33c82d14baac8056cb84051d7bbc0e80e4df894196a95d0cde73d572bcc6",
+      "idempotency_key": "gconect-03-fala4-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 4.62,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "f0b753a3670c6c9c4afc4c9b9fd173630bf4c590afe5278b469f9a7d981a74c3",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": []
+    }
+  ],
+  "total_creditos_cobrados": 5,
+  "duracao_total_falas_segundos": 20.61,
+  "fechamento": "Não gerado; reutilizar fala07.wav e fala08.wav do vídeo 01 (5,07 s).",
+  "observacao_verificacao": "Conferência automatizada de transcrição e silêncios. Extremidades aparadas para cerca de 0,1 s a -40 dBFS. Pausas entre frases ajustadas para 0,5 s; vídeo 08 fala01: 1 s. Sem adição de música ou efeitos. Vozes mantidas conforme catálogo e pedido; percepção de timbre e interpretação não validada por escuta humana."
+}
