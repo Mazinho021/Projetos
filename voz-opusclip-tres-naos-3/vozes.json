@@ -81,12 +81,31 @@
       "silencio_inicial_estimado_s": 0.1,
       "silencio_final_estimado_s": 0.1,
       "limiar_silencio_dbfs": -45
+    },
+    {
+      "arquivo": "fala05.wav",
+      "personagem": "narrador",
+      "voz_opusclip": "Achird",
+      "texto": "A senha, só o segurança sabia. Mas o segurança tem zero. O Davi pediu, e ele respondeu dormindo.",
+      "texto_enviado": "A senha, só o segurança sabia. Mas o segurança tem zero. O Davi pediu, e ele respondeu dormindo.",
+      "direcao": "Português do Brasil. Somente voz, sem música ou efeitos. Leia exatamente o texto, sem acrescentar palavras. Silêncio inicial e final no máximo 0,3 segundo. Pronunciar Vidal como Vi-DAL, com sílaba tônica no a. Narrador caloroso, contador de histórias. Tom de piada, humor seco no final.",
+      "job_id": "mcp_media_95656329e788988809f5661c6c22c8cc4a11d203681bdba8551b60a322914e4e",
+      "idempotency_key": "tres-naos-3-20261121-fala05-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 7.88,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "6ab7ab41addc8059d3f82d2f1cc44c3098579e6016ab12961856db9f0c3d6da2",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -45
     }
   ],
   "reaproveitamento": {
     "fala01.wav": "voz-opusclip-tres-naos-2/fala16.wav",
     "fala14.wav": "voz-opusclip-tres-naos-2/fala18.wav"
   },
-  "total_creditos_cobrados": 4,
+  "total_creditos_cobrados": 5,
   "observacao_verificacao": "Texto enviado preservado exatamente. Silêncios das extremidades medidos em janelas de 10 ms a -45 dBFS e reduzidos a até 0,1 s, preservando pausas internas. A direção registrada é a enviada à OpusClip. Falas 01 e 14 referenciadas para reaproveitamento, sem nova geração."
 }
