@@ -1,0 +1,88 @@
+{
+  "titulo": "24 horas",
+  "marca": "Gconect Rastreadores",
+  "video": 6,
+  "provedor": "OpusClip AI voiceover",
+  "idioma": "pt-BR",
+  "modelo": "gemini-3.8-flash-tts",
+  "voz_fixa_serie": {
+    "voz_opusclip": "Orus",
+    "personagem": "narrador",
+    "genero": "masculino",
+    "idioma": "pt-BR"
+  },
+  "pronuncias": {
+    "Gconect": "Gê Conéct"
+  },
+  "substituicoes_de_voz": [],
+  "falas": [
+    {
+      "arquivo": "fala00.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Seis da manhã, você saindo pro trabalho. Meio-dia, almoço corrido. Seis da tarde, trânsito. Meia-noite, sono pesado.",
+      "texto_enviado": "Seis da manhã, você saindo pro trabalho. <short pause> Meio-dia, almoço corrido. <short pause> Seis da tarde, trânsito. <short pause> Meia-noite, sono pesado.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Ritmo de relógio, cada frase um pouco mais calma que a anterior. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_bf5998a3496fdb5743f06f9172051afa0e0086329e618644b93f76a6a7e69424",
+      "idempotency_key": "gconect-06-fala0-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 10.01,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "3f2c797ae76291a4ccffc2c698f392665132b9a295e50dc99ba67cc6fcc4633a",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 2.89,
+          "fim_s": 3.39,
+          "duracao_s": 0.5
+        },
+        {
+          "inicio_s": 5.25,
+          "fim_s": 5.75,
+          "duracao_s": 0.5
+        },
+        {
+          "inicio_s": 7.48,
+          "fim_s": 7.98,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala01.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "E a Gconect? Acordada o tempo todo.",
+      "texto_enviado": "E a Gê Conéct? <short pause> Acordada o tempo todo.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Confiante, com um sorriso. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_f941a476dfec6b034806053d7b900532d3de0dd4eaeb430825b7f13b2f6ca59e",
+      "idempotency_key": "gconect-06-fala1-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 3.44,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "b203c344c6e26e9b96a49a1655bd4d409d1726b16dc031683f6f665d4fed9ee1",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 1.28,
+          "fim_s": 1.78,
+          "duracao_s": 0.5
+        }
+      ]
+    }
+  ],
+  "total_creditos_cobrados": 2,
+  "duracao_total_falas_segundos": 13.45,
+  "fechamento": "Não gerado; reutilizar fala07.wav e fala08.wav do vídeo 01 (5,07 s).",
+  "observacao_verificacao": "Conferência automatizada de transcrição e silêncios. Extremidades aparadas para cerca de 0,1 s a -40 dBFS. Pausas entre frases ajustadas para 0,5 s; vídeo 08 fala01: 1 s. Sem adição de música ou efeitos. Vozes mantidas conforme catálogo e pedido; percepção de timbre e interpretação não validada por escuta humana."
+}
