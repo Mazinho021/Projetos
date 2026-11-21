@@ -1,0 +1,114 @@
+{
+  "titulo": "Mil carros iguais",
+  "marca": "Gconect Rastreadores",
+  "video": 9,
+  "provedor": "OpusClip AI voiceover",
+  "idioma": "pt-BR",
+  "modelo": "gemini-3.8-flash-tts",
+  "voz_fixa_serie": {
+    "voz_opusclip": "Orus",
+    "personagem": "narrador",
+    "genero": "masculino",
+    "idioma": "pt-BR"
+  },
+  "pronuncias": {
+    "Gconect": "Gê Conéct"
+  },
+  "substituicoes_de_voz": [],
+  "falas": [
+    {
+      "arquivo": "fala00.wav",
+      "personagem": "motorista",
+      "voz_solicitada": "Fenrir",
+      "voz_opusclip": "Fenrir",
+      "texto": "Eu parei aqui. Certeza absoluta. Ou foi ali? Gente, todo carro prata é igual!",
+      "texto_enviado": "Eu parei aqui. <short pause> Certeza absoluta. <short pause> Ou foi ali? <short pause> Gente, todo carro prata é igual!",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Cômico, começa seguro e vai se desesperando; pausa clara antes de Ou foi ali. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_48c4e0305819f23b74dfce7cb75de1ef337ca0ea5324d6747d76d23bfcb8181a",
+      "idempotency_key": "gconect-09-fala0-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 6.55,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "20a756dede102c1cc775daf55e90bf528a66e729af6bb9455dcd7b5bfad160ec",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 1.12,
+          "fim_s": 1.62,
+          "duracao_s": 0.5
+        },
+        {
+          "inicio_s": 2.97,
+          "fim_s": 3.47,
+          "duracao_s": 0.5
+        },
+        {
+          "inicio_s": 4.09,
+          "fim_s": 4.59,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala01.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Calma. Abre o aplicativo. A Gconect mostra onde ele está, no meio de mil.",
+      "texto_enviado": "Calma. <short pause> Abre o aplicativo. <short pause> A Gê Conéct mostra onde ele está, no meio de mil.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Calmo, com humor. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_79dc40318c81fbac29827ed9030a8973e96d980e05748808755908d76cda5b82",
+      "idempotency_key": "gconect-09-fala1-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 6.71,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "235d9c06d6aee89c57a9f23d2422aa0d69db389b4516985bf394b582055d2be9",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 0.86,
+          "fim_s": 1.36,
+          "duracao_s": 0.5
+        },
+        {
+          "inicio_s": 2.68,
+          "fim_s": 3.18,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala02.wav",
+      "personagem": "motorista",
+      "voz_solicitada": "Fenrir",
+      "voz_opusclip": "Fenrir",
+      "texto": "Ah... era no outro andar.",
+      "texto_enviado": "Ah... era no outro andar.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Sem graça, rindo de si mesmo. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_06eb600302609255321fe4e94da66d2c47642eed0e8f310a2b41d3d2a58b67da",
+      "idempotency_key": "gconect-09-fala2-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 3.82,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "d5d5a83f75939e8178c0b369cec72cf03e536c78a55347a9009f9433af10a680",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": []
+    }
+  ],
+  "total_creditos_cobrados": 3,
+  "duracao_total_falas_segundos": 17.08,
+  "fechamento": "Não gerado; reutilizar fala07.wav e fala08.wav do vídeo 01 (5,07 s).",
+  "observacao_verificacao": "Conferência automatizada de transcrição e silêncios. Extremidades aparadas para cerca de 0,1 s a -40 dBFS. Pausas entre frases ajustadas para 0,5 s; vídeo 08 fala01: 1 s. Sem adição de música ou efeitos. Vozes mantidas conforme catálogo e pedido; percepção de timbre e interpretação não validada por escuta humana."
+}
