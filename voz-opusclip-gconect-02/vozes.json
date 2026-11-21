@@ -12,7 +12,7 @@
     "idioma": "pt-BR"
   },
   "pronuncias": {
-    "Gconect": "Gê Conéct"
+    "Gconect": "Jê Conéct"
   },
   "substituicoes_de_voz": [],
   "falas": [
@@ -118,16 +118,16 @@
       "voz_solicitada": "Orus",
       "voz_opusclip": "Orus",
       "texto": "Com a Gconect, você vê cada rua por onde o seu carro passou.",
-      "texto_enviado": "Com a Gê Conéct, você vê cada rua por onde o seu carro passou.",
-      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Confiante e caloroso. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
-      "job_id": "mcp_media_bb16600ad9c976f56623bac0261dd1378da272e01d54ec4fb7daaab2d8b41e9d",
-      "idempotency_key": "gconect-02-fala4-20261121-v1",
+      "texto_enviado": "Com a Jê Conéct, você vê cada rua por onde o seu carro passou.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Narrador masculino Orus, confiante e caloroso, firme e próximo, sem exagero de locutor. Pronuncie Jê como o nome da letra G em português brasileiro, com som inicial /ʒ/, nunca guê ou /g/. Conéct com ênfase em néct. Manter exatamente todas as palavras do texto. Somente fala, sem música ou efeitos. No máximo 0,3 segundo de silêncio inicial e final.",
+      "job_id": "mcp_media_667a1d085b6a0a7b8f4e36ffa82c06b1d5af888b1d2f87a264c5379a03f8bfd1",
+      "idempotency_key": "gconect-02-fala04-orus-je-correcao-20261121-v2",
       "creditos_cobrados": 1,
-      "duracao_segundos": 3.94,
+      "duracao_segundos": 3.55,
       "frequencia_hz": 24000,
       "canais": 1,
       "formato": "PCM WAV 16-bit",
-      "sha256": "cbd1234a06f9059c8e408047ef58c6fffe5afe362705abe276726fa740ebbd72",
+      "sha256": "dbc78dd7879cb7474fbe96ae30b89b0d4c910c13794e5d285ef87fd57e341c9f",
       "silencio_inicial_estimado_s": 0.1,
       "silencio_final_estimado_s": 0.1,
       "limiar_silencio_dbfs": -40,
@@ -135,7 +135,7 @@
     }
   ],
   "total_creditos_cobrados": 5,
-  "duracao_total_falas_segundos": 16.8,
+  "duracao_total_falas_segundos": 16.41,
   "fechamento": "Não gerado; reutilizar fala07.wav e fala08.wav do vídeo 01 (5,07 s).",
   "observacao_verificacao": "Conferência automatizada de transcrição e silêncios. Extremidades aparadas para cerca de 0,1 s a -40 dBFS. Pausas entre frases ajustadas para 0,5 s; vídeo 08 fala01: 1 s. Sem adição de música ou efeitos. Vozes mantidas conforme catálogo e pedido; percepção de timbre e interpretação não validada por escuta humana."
 }
