@@ -1,0 +1,78 @@
+{
+  "titulo": "Menos de dois reais por dia",
+  "marca": "Gconect Rastreadores",
+  "video": 5,
+  "provedor": "OpusClip AI voiceover",
+  "idioma": "pt-BR",
+  "modelo": "gemini-3.8-flash-tts",
+  "voz_fixa_serie": {
+    "voz_opusclip": "Orus",
+    "personagem": "narrador",
+    "genero": "masculino",
+    "idioma": "pt-BR"
+  },
+  "pronuncias": {
+    "Gconect": "Gê Conéct"
+  },
+  "substituicoes_de_voz": [],
+  "falas": [
+    {
+      "arquivo": "fala00.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Quanto você pagou na sua moto? E quanto ia custar ficar sem ela?",
+      "texto_enviado": "Quanto você pagou na sua moto? <short pause> E quanto ia custar ficar sem ela?",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Direto, curioso na primeira pergunta, sério na segunda. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_7a8856c3d8a277fb292d435a4f09360de372f4882eb7c94929dfe3254bb0cead",
+      "idempotency_key": "gconect-05-fala0-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 4.19,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "e8c2f18f756972b9da666f91bbb0dd60386650b5ee9ccbd567a3286a81b67bc5",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 1.56,
+          "fim_s": 2.06,
+          "duracao_s": 0.5
+        }
+      ]
+    },
+    {
+      "arquivo": "fala01.wav",
+      "personagem": "narrador",
+      "voz_solicitada": "Orus",
+      "voz_opusclip": "Orus",
+      "texto": "Pra proteger, a Gconect custa menos de dois reais por dia. Menos que um cafezinho.",
+      "texto_enviado": "Pra proteger, a Gê Conéct custa menos de dois reais por dia. <short pause> Menos que um cafezinho.",
+      "direcao": "Português brasileiro natural, anúncio para Reels. Voz masculina. Leve e convincente, sorrindo na última frase. Somente fala, sem música ou efeitos. Pausas claras de cerca de meio segundo entre frases, salvo exceção indicada. No máximo 0,3 segundo de silêncio inicial e final. Não pronunciar tags.",
+      "job_id": "mcp_media_32596e6fa393e661614f7ff7f833f9669543155b7e15f307abca29f18847a5fd",
+      "idempotency_key": "gconect-05-fala1-20261121-v1",
+      "creditos_cobrados": 1,
+      "duracao_segundos": 5.99,
+      "frequencia_hz": 24000,
+      "canais": 1,
+      "formato": "PCM WAV 16-bit",
+      "sha256": "0ba00ed7f08c932c78384e3be05651696acc569506f1e293ac64c212d36d3a19",
+      "silencio_inicial_estimado_s": 0.1,
+      "silencio_final_estimado_s": 0.1,
+      "limiar_silencio_dbfs": -40,
+      "pausas_para_corte": [
+        {
+          "inicio_s": 4.14,
+          "fim_s": 4.64,
+          "duracao_s": 0.5
+        }
+      ]
+    }
+  ],
+  "total_creditos_cobrados": 2,
+  "duracao_total_falas_segundos": 10.18,
+  "fechamento": "Não gerado; reutilizar fala07.wav e fala08.wav do vídeo 01 (5,07 s).",
+  "observacao_verificacao": "Conferência automatizada de transcrição e silêncios. Extremidades aparadas para cerca de 0,1 s a -40 dBFS. Pausas entre frases ajustadas para 0,5 s; vídeo 08 fala01: 1 s. Sem adição de música ou efeitos. Vozes mantidas conforme catálogo e pedido; percepção de timbre e interpretação não validada por escuta humana."
+}
