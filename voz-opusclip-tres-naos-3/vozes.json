@@ -156,7 +156,8 @@
       "sha256": "d46707dc33f451c840bc6e61cf54358fc8b34d3c06a4b5f3f5c9ab459130f5f7",
       "silencio_inicial_estimado_s": 0.1,
       "silencio_final_estimado_s": 0.1,
-      "limiar_silencio_dbfs": -45
+      "limiar_silencio_dbfs": -45,
+      "verificacao_texto": "pendente: ASR lê um chaveiro, roteiro pede o chaveiro"
     },
     {
       "arquivo": "fala09.wav",
@@ -259,5 +260,5 @@
     "fala14.wav": "voz-opusclip-tres-naos-2/fala18.wav"
   },
   "total_creditos_cobrados": 13,
-  "observacao_verificacao": "Texto enviado preservado exatamente. Silêncios das extremidades medidos em janelas de 10 ms a -45 dBFS e reduzidos a até 0,1 s, preservando pausas internas. A direção registrada é a enviada à OpusClip. Falas 01 e 14 referenciadas para reaproveitamento, sem nova geração."
+  "observacao_verificacao": "Texto enviado preservado exatamente. Silêncios das extremidades medidos em janelas de 10 ms a -45 dBFS e reduzidos a até 0,1 s, preservando pausas internas. A direção registrada é a enviada à OpusClip. Falas 01 e 14 referenciadas para reaproveitamento, sem nova geração. Revisão por Whisper small e medium. Leituras divergentes em 03, 12 e 13 resolvidas em nova transcrição; fidelidade de interpretação não validada por escuta. Na fala08, as transcrições repetiram \"um chaveiro\" em vez de \"o chaveiro\": possível divergência pendente de revisão ou nova geração."
 }
